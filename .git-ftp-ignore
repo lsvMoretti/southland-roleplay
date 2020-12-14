@@ -1,0 +1,7 @@
+.gitignore
+*/.gitignore      # ignore files in sub directories
+*/.gitkeep
+Client/*
+ClothingConverter/*
+SignalR/*
+Server/*

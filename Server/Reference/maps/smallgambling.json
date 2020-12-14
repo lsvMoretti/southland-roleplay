@@ -1,0 +1,2874 @@
+{
+  "MapName": "smallgambling",
+  "IsInterior": false,
+  "MapObjects": [
+    {
+      "Model": 3188625299,
+      "Position": {
+        "X": -1172.6964,
+        "Y": -1181.2162,
+        "Z": -150.0
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3188625299,
+      "Position": {
+        "X": -1172.6996,
+        "Y": -1173.279,
+        "Z": -150.0
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3188625299,
+      "Position": {
+        "X": -1181.4777,
+        "Y": -1173.283,
+        "Z": -150.0
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3188625299,
+      "Position": {
+        "X": -1181.476,
+        "Y": -1181.2295,
+        "Z": -150.0
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3188625299,
+      "Position": {
+        "X": -1172.6958,
+        "Y": -1165.3359,
+        "Z": -150.0
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3188625299,
+      "Position": {
+        "X": -1181.478,
+        "Y": -1165.3447,
+        "Z": -150.0
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1185.7526,
+        "Y": -1181.1624,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1185.7478,
+        "Y": -1173.0725,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1185.7478,
+        "Y": -1164.9789,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1173.581,
+        "Y": -1185.1797,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3584148813,
+      "Position": {
+        "X": -1177.2495,
+        "Y": -1185.1049,
+        "Z": -148.74077
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": true,
+      "Frozen": true,
+      "LodDistance": 30,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 30
+    },
+    {
+      "Model": 1593135630,
+      "Position": {
+        "X": -1175.8964,
+        "Y": -1172.1573,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1593135630,
+      "Position": {
+        "X": -1173.2393,
+        "Y": -1174.4862,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 3388854276,
+      "Position": {
+        "X": -1183.9974,
+        "Y": -1173.8788,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1865404709,
+      "Position": {
+        "X": -1181.6237,
+        "Y": -1166.1074,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1019644700,
+      "Position": {
+        "X": -1173.6501,
+        "Y": -1181.7726,
+        "Z": -149.30098
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2528215952,
+      "Position": {
+        "X": -1172.0865,
+        "Y": -1178.3992,
+        "Z": -148.6759
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2528215952,
+      "Position": {
+        "X": -1176.4088,
+        "Y": -1181.8085,
+        "Z": -148.6759
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 3192690208,
+      "Position": {
+        "X": -1175.1571,
+        "Y": -1184.8127,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 1793667637,
+      "Position": {
+        "X": -1175.5768,
+        "Y": -1179.1046,
+        "Z": -148.66911
+      },
+      "Rotation": {
+        "X": -1.4033414E-14,
+        "Y": 7.016706E-15,
+        "Z": 5.099994
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 3836784261,
+      "Position": {
+        "X": -1174.3473,
+        "Y": -1184.8069,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 3192690208,
+      "Position": {
+        "X": -1173.5343,
+        "Y": -1184.8147,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 2598687019,
+      "Position": {
+        "X": -1171.2776,
+        "Y": -1179.103,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 1753238891,
+      "Position": {
+        "X": -1173.6432,
+        "Y": -1178.6006,
+        "Z": -148.66977
+      },
+      "Rotation": {
+        "X": -1.4033416E-14,
+        "Y": 7.016708E-15,
+        "Z": 7.1999907
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 993353915,
+      "Position": {
+        "X": -1175.1182,
+        "Y": -1179.2854,
+        "Z": -149.07591
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2010966735,
+      "Position": {
+        "X": -1174.584,
+        "Y": -1179.0321,
+        "Z": -149.08102
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 67883626,
+      "Position": {
+        "X": -1175.8666,
+        "Y": -1181.4222,
+        "Z": -149.06104
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 3773666191,
+      "Position": {
+        "X": -1175.2815,
+        "Y": -1178.9652,
+        "Z": -148.67598
+      },
+      "Rotation": {
+        "X": -1.4033418E-14,
+        "Y": 7.01671E-15,
+        "Z": -144.60016
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2456611903,
+      "Position": {
+        "X": -1176.234,
+        "Y": -1180.0594,
+        "Z": -148.67094
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2675939568,
+      "Position": {
+        "X": -1172.4199,
+        "Y": -1184.626,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 846652480,
+      "Position": {
+        "X": -1176.312,
+        "Y": -1180.8433,
+        "Z": -148.67099
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2583440873,
+      "Position": {
+        "X": -1171.5303,
+        "Y": -1178.5736,
+        "Z": -148.66962
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 3990339795,
+      "Position": {
+        "X": -1172.3175,
+        "Y": -1179.0547,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 18704222,
+      "Position": {
+        "X": -1173.2576,
+        "Y": -1179.0415,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 3874153059,
+      "Position": {
+        "X": -1175.8689,
+        "Y": -1179.5756,
+        "Z": -148.66977
+      },
+      "Rotation": {
+        "X": -1.4033416E-14,
+        "Y": 7.016708E-15,
+        "Z": 54.499825
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 3925937179,
+      "Position": {
+        "X": -1176.1547,
+        "Y": -1183.7018,
+        "Z": -149.07089
+      },
+      "Rotation": {
+        "X": -1.40334166E-14,
+        "Y": 7.0167083E-15,
+        "Z": 113.099525
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 1850701663,
+      "Position": {
+        "X": -1176.3988,
+        "Y": -1175.4391,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1850701663,
+      "Position": {
+        "X": -1174.4207,
+        "Y": -1177.0353,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1850701663,
+      "Position": {
+        "X": -1176.6226,
+        "Y": -1174.8894,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1850701663,
+      "Position": {
+        "X": -1173.4792,
+        "Y": -1177.0564,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1850701663,
+      "Position": {
+        "X": -1172.6809,
+        "Y": -1177.0499,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1850701663,
+      "Position": {
+        "X": -1171.9526,
+        "Y": -1177.0708,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 986810493,
+      "Position": {
+        "X": -1173.2108,
+        "Y": -1171.9778,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 2380792685,
+      "Position": {
+        "X": -1171.9564,
+        "Y": -1179.0135,
+        "Z": -148.98924
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 35,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 35
+    },
+    {
+      "Model": 2644815621,
+      "Position": {
+        "X": -1184.0015,
+        "Y": -1182.782,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.99989
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 13,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 2644815621,
+      "Position": {
+        "X": -1183.9991,
+        "Y": -1178.2719,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.99989
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 13,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 3388854276,
+      "Position": {
+        "X": -1184.0034,
+        "Y": -1169.6702,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1169.5721,
+        "Y": -1173.1296,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1169.5658,
+        "Y": -1165.0496,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 1593135630,
+      "Position": {
+        "X": -1175.8597,
+        "Y": -1168.5868,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1593135630,
+      "Position": {
+        "X": -1173.3136,
+        "Y": -1166.1125,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 986810493,
+      "Position": {
+        "X": -1173.2052,
+        "Y": -1168.6339,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 1194029334,
+      "Position": {
+        "X": -1169.6473,
+        "Y": -1170.3009,
+        "Z": -147.71451
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 2,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1173.6185,
+        "Y": -1161.3003,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1181.6873,
+        "Y": -1161.3003,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 583850254,
+      "Position": {
+        "X": -1181.3832,
+        "Y": -1181.1598,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 583850254,
+      "Position": {
+        "X": -1172.5962,
+        "Y": -1181.1328,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 583850254,
+      "Position": {
+        "X": -1172.6008,
+        "Y": -1173.1938,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 583850254,
+      "Position": {
+        "X": -1181.3756,
+        "Y": -1173.2324,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 583850254,
+      "Position": {
+        "X": -1172.5991,
+        "Y": -1165.2911,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 583850254,
+      "Position": {
+        "X": -1181.3671,
+        "Y": -1165.2983,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1169.5742,
+        "Y": -1181.209,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1169.5742,
+        "Y": -1181.209,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427405,
+        "Y": 179.99997,
+        "Z": 179.99997
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1169.5721,
+        "Y": -1173.1296,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427405,
+        "Y": 179.99997,
+        "Z": 179.99997
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1169.5658,
+        "Y": -1165.0496,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427403,
+        "Y": 179.99994,
+        "Z": 179.99994
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1173.6196,
+        "Y": -1161.3003,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.000104273924,
+        "Y": 179.9999,
+        "Z": -89.99936
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1181.6853,
+        "Y": -1161.3003,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.000104273924,
+        "Y": 179.9999,
+        "Z": -89.99936
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1185.7478,
+        "Y": -1164.9789,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427399,
+        "Y": 179.9999,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1185.7478,
+        "Y": -1173.0725,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427399,
+        "Y": 179.9999,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1185.7526,
+        "Y": -1181.1624,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427396,
+        "Y": 179.9999,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1181.6819,
+        "Y": -1185.18,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427396,
+        "Y": 179.9999,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1173.5845,
+        "Y": -1185.1797,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427396,
+        "Y": 179.9999,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3917661608,
+      "Position": {
+        "X": -1169.6206,
+        "Y": -1175.0554,
+        "Z": -147.71451
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 50,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 50
+    },
+    {
+      "Model": 513682938,
+      "Position": {
+        "X": -1169.6494,
+        "Y": -1181.9565,
+        "Z": -147.71451
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 50,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 50
+    },
+    {
+      "Model": 2124237493,
+      "Position": {
+        "X": -1185.0443,
+        "Y": -1164.5844,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 2520158452,
+      "Position": {
+        "X": -1170.0275,
+        "Y": -1184.6449,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 84687827,
+      "Position": {
+        "X": -1185.6826,
+        "Y": -1176.3715,
+        "Z": -147.71451
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -4.098112E-05,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 276954077,
+      "Position": {
+        "X": -1181.0706,
+        "Y": -1184.5048,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1430014549,
+      "Position": {
+        "X": -1177.9393,
+        "Y": -1164.7362,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 30,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 30
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1181.6819,
+        "Y": -1185.18,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.000104273924,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2989156284,
+      "Position": {
+        "X": -1179.2335,
+        "Y": -1183.8755,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3860852799,
+      "Position": {
+        "X": -1177.9563,
+        "Y": -1182.5863,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3671685777,
+      "Position": {
+        "X": -1176.6605,
+        "Y": -1183.8574,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3086975581,
+      "Position": {
+        "X": -1177.3003,
+        "Y": -1182.5834,
+        "Z": -148.77081
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": true,
+      "Frozen": true,
+      "LodDistance": 40,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 40
+    },
+    {
+      "Model": 2989156284,
+      "Position": {
+        "X": -1179.2335,
+        "Y": -1183.8755,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427406,
+        "Y": -180.0,
+        "Z": -180.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2989156284,
+      "Position": {
+        "X": -1176.6646,
+        "Y": -1183.8602,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427403,
+        "Y": 179.99994,
+        "Z": 179.99994
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2989156284,
+      "Position": {
+        "X": -1177.9602,
+        "Y": -1182.5851,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.00010427396,
+        "Y": 179.9999,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2247548087,
+      "Position": {
+        "X": -1176.6094,
+        "Y": -1186.6355,
+        "Z": -148.07393
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 3860852799,
+      "Position": {
+        "X": -1170.9839,
+        "Y": -1164.0658,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 992647982,
+      "Position": {
+        "X": -1185.1016,
+        "Y": -1162.6648,
+        "Z": -149.24524
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1176.3368,
+        "Y": -1164.0658,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3671685777,
+      "Position": {
+        "X": -1181.7227,
+        "Y": -1164.0658,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2989156284,
+      "Position": {
+        "X": -1184.398,
+        "Y": -1164.0658,
+        "Z": -148.441
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2247548087,
+      "Position": {
+        "X": -1182.6826,
+        "Y": -1164.1292,
+        "Z": -148.18387
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1181.6853,
+        "Y": -1164.0658,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.000104273924,
+        "Y": 179.9999,
+        "Z": -89.99936
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 2230324134,
+      "Position": {
+        "X": -1173.6196,
+        "Y": -1164.0658,
+        "Z": -145.51093
+      },
+      "Rotation": {
+        "X": 0.000104273924,
+        "Y": 179.9999,
+        "Z": -89.99936
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 106,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 106
+    },
+    {
+      "Model": 3775898501,
+      "Position": {
+        "X": -1171.6685,
+        "Y": -1164.0413,
+        "Z": -148.77185
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": true,
+      "Frozen": true,
+      "LodDistance": 30,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 30
+    },
+    {
+      "Model": 810899590,
+      "Position": {
+        "X": -1183.4946,
+        "Y": -1163.1016,
+        "Z": -149.44098
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 20,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 20
+    },
+    {
+      "Model": 2353589337,
+      "Position": {
+        "X": -1181.6373,
+        "Y": -1161.7449,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 2353589337,
+      "Position": {
+        "X": -1180.8375,
+        "Y": -1161.7434,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 1282927707,
+      "Position": {
+        "X": -1184.7435,
+        "Y": -1162.3689,
+        "Z": -149.10385
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1282927707,
+      "Position": {
+        "X": -1184.8148,
+        "Y": -1163.7717,
+        "Z": -149.10385
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1282927707,
+      "Position": {
+        "X": -1184.8148,
+        "Y": -1163.841,
+        "Z": -149.10385
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1282927707,
+      "Position": {
+        "X": -1184.8148,
+        "Y": -1163.7717,
+        "Z": -149.06577
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1282927707,
+      "Position": {
+        "X": -1184.8148,
+        "Y": -1163.7717,
+        "Z": -149.02766
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 1282927707,
+      "Position": {
+        "X": -1184.8148,
+        "Y": -1163.7717,
+        "Z": -148.98958
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 3584148813,
+      "Position": {
+        "X": -1170.4253,
+        "Y": -1161.3354,
+        "Z": -148.76463
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": true,
+      "Frozen": true,
+      "LodDistance": 30,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 30
+    },
+    {
+      "Model": 3531165681,
+      "Position": {
+        "X": -1178.0233,
+        "Y": -1161.8278,
+        "Z": -149.91095
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 4063788866,
+      "Position": {
+        "X": -1173.1554,
+        "Y": -1163.7292,
+        "Z": -149.90096
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 30,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 30
+    },
+    {
+      "Model": 168901740,
+      "Position": {
+        "X": -1185.3229,
+        "Y": -1161.7732,
+        "Z": -144.71092
+      },
+      "Rotation": {
+        "X": -1.4033411E-14,
+        "Y": 7.016708E-15,
+        "Z": 65.39955
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 70,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 70
+    },
+    {
+      "Model": 2954561821,
+      "Position": {
+        "X": -1184.9349,
+        "Y": -1164.8333,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 2954561821,
+      "Position": {
+        "X": -1170.2357,
+        "Y": -1184.2723,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 1000,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 1000
+    },
+    {
+      "Model": 3956240264,
+      "Position": {
+        "X": -1176.7325,
+        "Y": -1182.7738,
+        "Z": -145.14314
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": -90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 65,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 65
+    },
+    {
+      "Model": 2369898685,
+      "Position": {
+        "X": -1174.4008,
+        "Y": -1185.1045,
+        "Z": -146.89742
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": -0.0,
+        "Z": 179.9999
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 35,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 35
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1184.3612,
+        "Y": -1182.7622,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 67,
+        "Green": 44,
+        "Blue": 27
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1184.3612,
+        "Y": -1178.0615,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 67,
+        "Green": 44,
+        "Blue": 27
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1184.3612,
+        "Y": -1173.7147,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 67,
+        "Green": 44,
+        "Blue": 27
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1184.3612,
+        "Y": -1169.6512,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 67,
+        "Green": 44,
+        "Blue": 27
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1181.2815,
+        "Y": -1166.339,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 67,
+        "Green": 44,
+        "Blue": 27
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1171.9766,
+        "Y": -1166.339,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 32,
+        "Green": 26,
+        "Blue": 64
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1172.0305,
+        "Y": -1173.7147,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 32,
+        "Green": 26,
+        "Blue": 64
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1172.9451,
+        "Y": -1180.9421,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 48,
+        "Green": 27,
+        "Blue": 15
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1177.9918,
+        "Y": -1183.8208,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 16,
+        "Green": 9,
+        "Blue": 5
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 2756229782,
+      "Position": {
+        "X": -1178.0282,
+        "Y": -1180.9421,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 100,
+      "LightColor": {
+        "Red": 48,
+        "Green": 27,
+        "Blue": 15
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 100
+    },
+    {
+      "Model": 3449848423,
+      "Position": {
+        "X": -1184.0428,
+        "Y": -1162.7147,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": {
+        "Red": 46,
+        "Green": 46,
+        "Blue": 46
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 3449848423,
+      "Position": {
+        "X": -1176.8176,
+        "Y": -1162.5802,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": {
+        "Red": 46,
+        "Green": 46,
+        "Blue": 46
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 3449848423,
+      "Position": {
+        "X": -1171.5741,
+        "Y": -1162.4591,
+        "Z": -144.69093
+      },
+      "Rotation": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 60,
+      "LightColor": {
+        "Red": 46,
+        "Green": 46,
+        "Blue": 46
+      },
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 60
+    },
+    {
+      "Model": 1517151235,
+      "Position": {
+        "X": -1185.6826,
+        "Y": -1162.6587,
+        "Z": -147.81105
+      },
+      "Rotation": {
+        "X": 0.000104274026,
+        "Y": 179.99992,
+        "Z": 90.0
+      },
+      "Dimension": -2147483648,
+      "Dynamic": false,
+      "Frozen": true,
+      "LodDistance": 50,
+      "LightColor": null,
+      "OnFire": false,
+      "TextureVariation": 0,
+      "Visible": true,
+      "StreamRange": 50
+    }
+  ]
+}

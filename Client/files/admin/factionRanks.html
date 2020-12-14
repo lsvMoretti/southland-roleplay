@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="bg-transparent centered" onload="factionRanksLoaded()">
+
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4 rounded bg-dark">
+                            <div class="topright">
+                                <img width="20px" src="../data/close.png" style="cursor: pointer" onclick="ClosePage()">
+                            </div>
+                            <h4 class="center text-white">Faction Management</h4>
+                            <br>
+                            <div id="errorDiv">
+                                <h6 class="center text-red" id="errorText"></h6>
+                            </div>
+                            <br>
+                            <div id="table-wrapper">
+                                <div id="table-scroll">
+                                    <table id="RankTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Invite</th>
+                                                <th>Promote</th>
+                                                <th>Add Ranks</th>
+                                                <th>Delete Rank</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="factionHandler.js"></script>
+
+    <script src="../data/jquery-3.3.1.slim.min.js"></script>
+    <script src="../data/popper.min.js"></script>
+    <script src="../data/bootstrap.min.js"></script>
+</body>

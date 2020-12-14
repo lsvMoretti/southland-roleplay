@@ -1,0 +1,2462 @@
+[
+  {
+    "InteriorName": "Modern 1 Apartment",
+    "Position": {
+      "X": -786.8663,
+      "Y": 315.7642,
+      "Z": 217.6385,
+      "Normalized": {
+        "X": -0.89891946,
+        "Y": 0.36073038,
+        "Z": 0.24863118
+      }
+    },
+    "Ipl": "apa_v_mp_h_01_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Modern 2 Apartment",
+    "Position": {
+      "X": -786.9563,
+      "Y": 315.6229,
+      "Z": 187.9136,
+      "Normalized": {
+        "X": -0.9061474,
+        "Y": 0.36342663,
+        "Z": 0.2163747
+      }
+    },
+    "Ipl": "apa_v_mp_h_01_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Modern 3 Apartment",
+    "Position": {
+      "X": -774.0126,
+      "Y": 342.0428,
+      "Z": 196.6864,
+      "Normalized": {
+        "X": -0.89092153,
+        "Y": 0.39370587,
+        "Z": 0.22639446
+      }
+    },
+    "Ipl": "apa_v_mp_h_01_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mody 1 Apartment",
+    "Position": {
+      "X": -787.0749,
+      "Y": 315.8198,
+      "Z": 217.6386,
+      "Normalized": {
+        "X": -0.89894456,
+        "Y": 0.36070836,
+        "Z": 0.24857232
+      }
+    },
+    "Ipl": "apa_v_mp_h_02_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mody 2 Apartment",
+    "Position": {
+      "X": -786.8195,
+      "Y": 315.5634,
+      "Z": 187.9137,
+      "Normalized": {
+        "X": -0.90614176,
+        "Y": 0.363419,
+        "Z": 0.21641105
+      }
+    },
+    "Ipl": "apa_v_mp_h_02_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mody 3 Apartment",
+    "Position": {
+      "X": -774.1382,
+      "Y": 342.0316,
+      "Z": 196.6864,
+      "Normalized": {
+        "X": -0.89095587,
+        "Y": 0.39364424,
+        "Z": 0.22636643
+      }
+    },
+    "Ipl": "apa_v_mp_h_02_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vibrant 1 Apartment",
+    "Position": {
+      "X": -786.6245,
+      "Y": 315.6175,
+      "Z": 217.6385,
+      "Normalized": {
+        "X": -0.89892083,
+        "Y": 0.36067414,
+        "Z": 0.24870797
+      }
+    },
+    "Ipl": "apa_v_mp_h_03_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vibrant 2 Apartment",
+    "Position": {
+      "X": -786.9584,
+      "Y": 315.7974,
+      "Z": 187.9135,
+      "Normalized": {
+        "X": -0.9060816,
+        "Y": 0.3636002,
+        "Z": 0.21635829
+      }
+    },
+    "Ipl": "apa_v_mp_h_03_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vibrant 3 Apartment",
+    "Position": {
+      "X": -774.0223,
+      "Y": 342.1718,
+      "Z": 196.6863,
+      "Normalized": {
+        "X": -0.89087176,
+        "Y": 0.39382744,
+        "Z": 0.22637884
+      }
+    },
+    "Ipl": "apa_v_mp_h_03_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Sharp 1 Apartment",
+    "Position": {
+      "X": -787.0902,
+      "Y": 315.7039,
+      "Z": 217.6384,
+      "Normalized": {
+        "X": -0.89899087,
+        "Y": 0.36058754,
+        "Z": 0.24858005
+      }
+    },
+    "Ipl": "apa_v_mp_h_04_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Sharp 2 Apartment",
+    "Position": {
+      "X": -787.0902,
+      "Y": 315.7039,
+      "Z": 217.6384,
+      "Normalized": {
+        "X": -0.89899087,
+        "Y": 0.36058754,
+        "Z": 0.24858005
+      }
+    },
+    "Ipl": "apa_v_mp_h_04_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Sharp 3 Apartment",
+    "Position": {
+      "X": -787.0902,
+      "Y": 315.7039,
+      "Z": 217.6384,
+      "Normalized": {
+        "X": -0.89899087,
+        "Y": 0.36058754,
+        "Z": 0.24858005
+      }
+    },
+    "Ipl": "apa_v_mp_h_04_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Monochrome 1 Apartment",
+    "Position": {
+      "X": -786.9887,
+      "Y": 315.7393,
+      "Z": 217.6386,
+      "Normalized": {
+        "X": -0.89895546,
+        "Y": 0.36066025,
+        "Z": 0.24860255
+      }
+    },
+    "Ipl": "apa_v_mp_h_05_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Monochrome 2 Apartment",
+    "Position": {
+      "X": -786.8809,
+      "Y": 315.6634,
+      "Z": 187.9136,
+      "Normalized": {
+        "X": -0.90611655,
+        "Y": 0.36349568,
+        "Z": 0.21638805
+      }
+    },
+    "Ipl": "apa_v_mp_h_05_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Monochrome 3 Apartment",
+    "Position": {
+      "X": -774.0675,
+      "Y": 342.0773,
+      "Z": 196.6864,
+      "Normalized": {
+        "X": -0.8909207,
+        "Y": 0.39371726,
+        "Z": 0.22637817
+      }
+    },
+    "Ipl": "apa_v_mp_h_05_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Seductive 1 Apartment",
+    "Position": {
+      "X": -787.1423,
+      "Y": 315.6943,
+      "Z": 217.6384,
+      "Normalized": {
+        "X": -0.89900583,
+        "Y": 0.36055875,
+        "Z": 0.24856776
+      }
+    },
+    "Ipl": "apa_v_mp_h_06_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Seductive 2 Apartment",
+    "Position": {
+      "X": -787.0961,
+      "Y": 315.815,
+      "Z": 187.9135,
+      "Normalized": {
+        "X": -0.9061034,
+        "Y": 0.36356556,
+        "Z": 0.21632561
+      }
+    },
+    "Ipl": "apa_v_mp_h_06_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Seductive 3 Apartment",
+    "Position": {
+      "X": -773.9552,
+      "Y": 341.9892,
+      "Z": 196.6862,
+      "Normalized": {
+        "X": -0.89092964,
+        "Y": 0.39367694,
+        "Z": 0.22641306
+      }
+    },
+    "Ipl": "apa_v_mp_h_06_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Regal 1 Apartment",
+    "Position": {
+      "X": -787.029,
+      "Y": 315.7113,
+      "Z": 217.6385,
+      "Normalized": {
+        "X": -0.8989747,
+        "Y": 0.36061758,
+        "Z": 0.24859506
+      }
+    },
+    "Ipl": "apa_v_mp_h_07_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Regal 2 Apartment",
+    "Position": {
+      "X": -787.0574,
+      "Y": 315.6567,
+      "Z": 187.9135,
+      "Normalized": {
+        "X": -0.90615535,
+        "Y": 0.36342207,
+        "Z": 0.21634868
+      }
+    },
+    "Ipl": "apa_v_mp_h_07_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Regal 3 Apartment",
+    "Position": {
+      "X": -774.0109,
+      "Y": 342.0965,
+      "Z": 196.6863,
+      "Normalized": {
+        "X": -0.8908995,
+        "Y": 0.39375877,
+        "Z": 0.22638921
+      }
+    },
+    "Ipl": "apa_v_mp_h_07_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Aqua 1 Apartment",
+    "Position": {
+      "X": -786.9469,
+      "Y": 315.5655,
+      "Z": 217.6383,
+      "Normalized": {
+        "X": -0.8990108,
+        "Y": 0.36050308,
+        "Z": 0.24863072
+      }
+    },
+    "Ipl": "apa_v_mp_h_08_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Aqua 2 Apartment",
+    "Position": {
+      "X": -786.9756,
+      "Y": 315.723,
+      "Z": 187.9134,
+      "Normalized": {
+        "X": -0.90611345,
+        "Y": 0.36351934,
+        "Z": 0.21636106
+      }
+    },
+    "Ipl": "apa_v_mp_h_08_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Aqua 3 Apartment",
+    "Position": {
+      "X": -774.0349,
+      "Y": 342.0296,
+      "Z": 196.6862,
+      "Normalized": {
+        "X": -0.89093226,
+        "Y": 0.39368406,
+        "Z": 0.2263904
+      }
+    },
+    "Ipl": "apa_v_mp_h_08_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Rich 1",
+    "Position": {
+      "X": -141.1987,
+      "Y": -620.913,
+      "Z": 168.8205,
+      "Normalized": {
+        "X": -0.2143387,
+        "Y": -0.94254196,
+        "Z": 0.2562684
+      }
+    },
+    "Ipl": "ex_dt1_02_office_02b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Cool 1",
+    "Position": {
+      "X": -141.5429,
+      "Y": -620.9524,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.21482503,
+        "Y": -0.9424431,
+        "Z": 0.25622514
+      }
+    },
+    "Ipl": "ex_dt1_02_office_02c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Contrast 1",
+    "Position": {
+      "X": -141.2896,
+      "Y": -620.9618,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.21445541,
+        "Y": -0.94252247,
+        "Z": 0.25624284
+      }
+    },
+    "Ipl": "ex_dt1_02_office_02a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Warm 1",
+    "Position": {
+      "X": -141.4966,
+      "Y": -620.8292,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.21479583,
+        "Y": -0.9424363,
+        "Z": 0.25627413
+      }
+    },
+    "Ipl": "ex_dt1_02_office_01a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Classical 1",
+    "Position": {
+      "X": -141.3997,
+      "Y": -620.9006,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.21463363,
+        "Y": -0.94247824,
+        "Z": 0.2562561
+      }
+    },
+    "Ipl": "ex_dt1_02_office_01b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Vintage 1",
+    "Position": {
+      "X": -141.5361,
+      "Y": -620.9186,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.21482559,
+        "Y": -0.9424394,
+        "Z": 0.2562381
+      }
+    },
+    "Ipl": "ex_dt1_02_office_01c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Ice 1",
+    "Position": {
+      "X": -141.392,
+      "Y": -621.0451,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.2145781,
+        "Y": -0.9425051,
+        "Z": 0.25620377
+      }
+    },
+    "Ipl": "ex_dt1_02_office_03a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Conservative 1",
+    "Position": {
+      "X": -141.1945,
+      "Y": -620.8729,
+      "Z": 168.8204,
+      "Normalized": {
+        "X": -0.21434495,
+        "Y": -0.94253653,
+        "Z": 0.25628334
+      }
+    },
+    "Ipl": "ex_dt1_02_office_03b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Polished 1",
+    "Position": {
+      "X": -141.4924,
+      "Y": -621.0035,
+      "Z": 168.8205,
+      "Normalized": {
+        "X": -0.21473624,
+        "Y": -0.9424672,
+        "Z": 0.25621077
+      }
+    },
+    "Ipl": "ex_dt1_02_office_03c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 1",
+    "Position": {
+      "X": -191.0133,
+      "Y": -579.1428,
+      "Z": 135.0,
+      "Normalized": {
+        "X": -0.30582002,
+        "Y": -0.927231,
+        "Z": 0.21614045
+      }
+    },
+    "Ipl": "imp_dt1_02_cargarage_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 2",
+    "Position": {
+      "X": -117.4989,
+      "Y": -568.1132,
+      "Z": 135.0,
+      "Normalized": {
+        "X": -0.19726591,
+        "Y": -0.9537908,
+        "Z": 0.22664805
+      }
+    },
+    "Ipl": "imp_dt1_02_cargarage_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 3",
+    "Position": {
+      "X": -136.078,
+      "Y": -630.1852,
+      "Z": 135.0,
+      "Normalized": {
+        "X": -0.2065881,
+        "Y": -0.9567216,
+        "Z": 0.20495152
+      }
+    },
+    "Ipl": "imp_dt1_02_cargarage_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mod Shop",
+    "Position": {
+      "X": -146.6166,
+      "Y": -596.6301,
+      "Z": 166.0,
+      "Normalized": {
+        "X": -0.23038009,
+        "Y": -0.93749076,
+        "Z": 0.26083744
+      }
+    },
+    "Ipl": "imp_dt1_02_modgarage",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Rich 2",
+    "Position": {
+      "X": -75.8466,
+      "Y": -826.9893,
+      "Z": 243.3859,
+      "Normalized": {
+        "X": -0.08764437,
+        "Y": -0.9556256,
+        "Z": 0.281244
+      }
+    },
+    "Ipl": "ex_dt1_11_office_02b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Cool 2",
+    "Position": {
+      "X": -75.49945,
+      "Y": -827.05,
+      "Z": 243.386,
+      "Normalized": {
+        "X": -0.08724043,
+        "Y": -0.9556652,
+        "Z": 0.28123516
+      }
+    },
+    "Ipl": "ex_dt1_11_office_02c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Contrast 2",
+    "Position": {
+      "X": -75.49827,
+      "Y": -827.1889,
+      "Z": 243.386,
+      "Normalized": {
+        "X": -0.08722569,
+        "Y": -0.9556792,
+        "Z": 0.28119203
+      }
+    },
+    "Ipl": "ex_dt1_11_office_02a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Warm 2",
+    "Position": {
+      "X": -75.44054,
+      "Y": -827.1487,
+      "Z": 243.3859,
+      "Normalized": {
+        "X": -0.08716338,
+        "Y": -0.9556808,
+        "Z": 0.28120607
+      }
+    },
+    "Ipl": "ex_dt1_11_office_01a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Classical 2",
+    "Position": {
+      "X": -75.63942,
+      "Y": -827.1022,
+      "Z": 243.3859,
+      "Normalized": {
+        "X": -0.0873959,
+        "Y": -0.95565695,
+        "Z": 0.28121486
+      }
+    },
+    "Ipl": "ex_dt1_11_office_01b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Vintage 2",
+    "Position": {
+      "X": -75.47446,
+      "Y": -827.2621,
+      "Z": 243.386,
+      "Normalized": {
+        "X": -0.08719135,
+        "Y": -0.95568883,
+        "Z": 0.28117
+      }
+    },
+    "Ipl": "ex_dt1_11_office_01c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Ice 2",
+    "Position": {
+      "X": -75.56978,
+      "Y": -827.1152,
+      "Z": 243.3859,
+      "Normalized": {
+        "X": -0.08731479,
+        "Y": -0.95566493,
+        "Z": 0.28121278
+      }
+    },
+    "Ipl": "ex_dt1_11_office_03a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Conservative 2",
+    "Position": {
+      "X": -75.51953,
+      "Y": -827.0786,
+      "Z": 243.3859,
+      "Normalized": {
+        "X": -0.08726069,
+        "Y": -0.9556661,
+        "Z": 0.28122556
+      }
+    },
+    "Ipl": "ex_dt1_11_office_03b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Polished 2",
+    "Position": {
+      "X": -75.41915,
+      "Y": -827.1118,
+      "Z": 243.3858,
+      "Normalized": {
+        "X": -0.08714241,
+        "Y": -0.9556792,
+        "Z": 0.28121802
+      }
+    },
+    "Ipl": "ex_dt1_11_office_03c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 1-2",
+    "Position": {
+      "X": -84.2193,
+      "Y": -823.0851,
+      "Z": 221.0,
+      "Normalized": {
+        "X": -0.098342285,
+        "Y": -0.9611107,
+        "Z": 0.25806016
+      }
+    },
+    "Ipl": "imp_dt1_11_cargarage_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 2-2",
+    "Position": {
+      "X": -69.8627,
+      "Y": -824.7498,
+      "Z": 221.0,
+      "Normalized": {
+        "X": -0.08154866,
+        "Y": -0.962706,
+        "Z": 0.25796676
+      }
+    },
+    "Ipl": "imp_dt1_11_cargarage_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 3-2",
+    "Position": {
+      "X": -80.4318,
+      "Y": -813.2536,
+      "Z": 221.0,
+      "Normalized": {
+        "X": -0.09500831,
+        "Y": -0.9606381,
+        "Z": 0.26105142
+      }
+    },
+    "Ipl": "imp_dt1_11_cargarage_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mod Shop-2",
+    "Position": {
+      "X": -73.9039,
+      "Y": -821.6204,
+      "Z": 284.0,
+      "Normalized": {
+        "X": -0.08470797,
+        "Y": -0.9417337,
+        "Z": 0.32551816
+      }
+    },
+    "Ipl": "imp_dt1_11_modgarage",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Rich 3",
+    "Position": {
+      "X": -1579.756,
+      "Y": -565.0661,
+      "Z": 108.523,
+      "Normalized": {
+        "X": -0.9396145,
+        "Y": -0.3360926,
+        "Z": 0.06454781
+      }
+    },
+    "Ipl": "ex_sm_13_office_02b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Cool 3",
+    "Position": {
+      "X": -1579.678,
+      "Y": -565.0034,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.93962073,
+        "Y": -0.33607414,
+        "Z": 0.06455137
+      }
+    },
+    "Ipl": "ex_sm_13_office_02c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Contrast 3",
+    "Position": {
+      "X": -1579.583,
+      "Y": -565.0399,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.9396074,
+        "Y": -0.33611128,
+        "Z": 0.064554326
+      }
+    },
+    "Ipl": "ex_sm_13_office_02a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Warm 3",
+    "Position": {
+      "X": -1579.702,
+      "Y": -565.0366,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.9396162,
+        "Y": -0.33608717,
+        "Z": 0.06455007
+      }
+    },
+    "Ipl": "ex_sm_13_office_01a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Classical 3",
+    "Position": {
+      "X": -1579.643,
+      "Y": -564.9685,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.93962497,
+        "Y": -0.33606234,
+        "Z": 0.06455309
+      }
+    },
+    "Ipl": "ex_sm_13_office_01b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Vintage 3",
+    "Position": {
+      "X": -1579.681,
+      "Y": -565.0003,
+      "Z": 108.523,
+      "Normalized": {
+        "X": -0.9396216,
+        "Y": -0.33607197,
+        "Z": 0.06455136
+      }
+    },
+    "Ipl": "ex_sm_13_office_01c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Ice 3",
+    "Position": {
+      "X": -1579.677,
+      "Y": -565.0689,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.9396084,
+        "Y": -0.3361089,
+        "Z": 0.064550556
+      }
+    },
+    "Ipl": "ex_sm_13_office_03a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Conservative 3",
+    "Position": {
+      "X": -1579.708,
+      "Y": -564.9634,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.93963045,
+        "Y": -0.3360474,
+        "Z": 0.0645508
+      }
+    },
+    "Ipl": "ex_sm_13_office_03b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Polished 3",
+    "Position": {
+      "X": -1579.693,
+      "Y": -564.8981,
+      "Z": 108.5229,
+      "Normalized": {
+        "X": -0.93964165,
+        "Y": -0.33601576,
+        "Z": 0.06455219
+      }
+    },
+    "Ipl": "ex_sm_13_office_03c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 1-3",
+    "Position": {
+      "X": -1581.112,
+      "Y": -567.245,
+      "Z": 85.5,
+      "Normalized": {
+        "X": -0.94004095,
+        "Y": -0.3372522,
+        "Z": 0.050833527
+      }
+    },
+    "Ipl": "imp_sm_13_cargarage_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 2-3",
+    "Position": {
+      "X": -1568.739,
+      "Y": -562.0455,
+      "Z": 85.5,
+      "Normalized": {
+        "X": -0.9401661,
+        "Y": -0.33684132,
+        "Z": 0.051241286
+      }
+    },
+    "Ipl": "imp_sm_13_cargarage_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 3-3",
+    "Position": {
+      "X": -1563.557,
+      "Y": -574.4314,
+      "Z": 85.5,
+      "Normalized": {
+        "X": -0.93742335,
+        "Y": -0.34439766,
+        "Z": 0.051261127
+      }
+    },
+    "Ipl": "imp_sm_13_cargarage_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mod Shop-3",
+    "Position": {
+      "X": -1578.023,
+      "Y": -576.4251,
+      "Z": 104.2,
+      "Normalized": {
+        "X": -0.9374941,
+        "Y": -0.34245074,
+        "Z": 0.0619046
+      }
+    },
+    "Ipl": "imp_sm_13_modgarage",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Rich 4",
+    "Position": {
+      "X": -1392.667,
+      "Y": -480.4736,
+      "Z": 72.04217,
+      "Normalized": {
+        "X": -0.9441937,
+        "Y": -0.32574922,
+        "Z": 0.048842806
+      }
+    },
+    "Ipl": "ex_sm_15_office_02b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Cool 4",
+    "Position": {
+      "X": -1392.542,
+      "Y": -480.4011,
+      "Z": 72.04211,
+      "Normalized": {
+        "X": -0.9441996,
+        "Y": -0.3257313,
+        "Z": 0.048847456
+      }
+    },
+    "Ipl": "ex_sm_15_office_02c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Executive Contrast 4",
+    "Position": {
+      "X": -1392.626,
+      "Y": -480.4856,
+      "Z": 72.04212,
+      "Normalized": {
+        "X": -0.94418824,
+        "Y": -0.325765,
+        "Z": 0.048843928
+      }
+    },
+    "Ipl": "ex_sm_15_office_02a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Warm 4",
+    "Position": {
+      "X": -1392.617,
+      "Y": -480.6363,
+      "Z": 72.04208,
+      "Normalized": {
+        "X": -0.94415617,
+        "Y": -0.32585824,
+        "Z": 0.04884256
+      }
+    },
+    "Ipl": "ex_sm_15_office_01a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Classical 4",
+    "Position": {
+      "X": -1392.532,
+      "Y": -480.7649,
+      "Z": 72.04207,
+      "Normalized": {
+        "X": -0.9441231,
+        "Y": -0.3259539,
+        "Z": 0.04884382
+      }
+    },
+    "Ipl": "ex_sm_15_office_01b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Old Spice Vintage 4",
+    "Position": {
+      "X": -1392.611,
+      "Y": -480.5562,
+      "Z": 72.04214,
+      "Normalized": {
+        "X": -0.9441724,
+        "Y": -0.32581097,
+        "Z": 0.04884365
+      }
+    },
+    "Ipl": "ex_sm_15_office_01c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Ice 5",
+    "Position": {
+      "X": -1392.563,
+      "Y": -480.549,
+      "Z": 72.0421,
+      "Normalized": {
+        "X": -0.94417036,
+        "Y": -0.3258166,
+        "Z": 0.048845198
+      }
+    },
+    "Ipl": "ex_sm_15_office_03a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Conservative 4",
+    "Position": {
+      "X": -1392.528,
+      "Y": -480.475,
+      "Z": 72.04206,
+      "Normalized": {
+        "X": -0.94418323,
+        "Y": -0.32577905,
+        "Z": 0.048847068
+      }
+    },
+    "Ipl": "ex_sm_15_office_03b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Power Broker Polished 4",
+    "Position": {
+      "X": -1392.416,
+      "Y": -480.7485,
+      "Z": 72.04207,
+      "Normalized": {
+        "X": -0.94411796,
+        "Y": -0.32596818,
+        "Z": 0.048847623
+      }
+    },
+    "Ipl": "ex_sm_15_office_03c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 1-4",
+    "Position": {
+      "X": -1388.84,
+      "Y": -478.7402,
+      "Z": 56.1,
+      "Normalized": {
+        "X": -0.94472003,
+        "Y": -0.3256498,
+        "Z": 0.038160477
+      }
+    },
+    "Ipl": "imp_sm_15_cargarage_a",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 2-4",
+    "Position": {
+      "X": -1388.86,
+      "Y": -478.7574,
+      "Z": 48.1,
+      "Normalized": {
+        "X": -0.94490016,
+        "Y": -0.32571888,
+        "Z": 0.032724462
+      }
+    },
+    "Ipl": "imp_sm_15_cargarage_b",
+    "Description": null
+  },
+  {
+    "InteriorName": "Garage 3-4",
+    "Position": {
+      "X": -1374.682,
+      "Y": -474.3586,
+      "Z": 56.1,
+      "Normalized": {
+        "X": -0.94460034,
+        "Y": -0.32595125,
+        "Z": 0.038548607
+      }
+    },
+    "Ipl": "imp_sm_15_cargarage_c",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mod Shop-4",
+    "Position": {
+      "X": -1391.245,
+      "Y": -473.9638,
+      "Z": 77.2,
+      "Normalized": {
+        "X": -0.9452745,
+        "Y": -0.32203236,
+        "Z": 0.052453153
+      }
+    },
+    "Ipl": "imp_sm_15_modgarage",
+    "Description": null
+  },
+  {
+    "InteriorName": "Clubhouse 1",
+    "Position": {
+      "X": 1107.04,
+      "Y": -3157.399,
+      "Z": -37.51859,
+      "Normalized": {
+        "X": 0.33084887,
+        "Y": -0.94361705,
+        "Z": -0.011212768
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_0_biker_dlc_int_01_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Clubhouse 2",
+    "Position": {
+      "X": 998.4809,
+      "Y": -3164.711,
+      "Z": -38.90733,
+      "Normalized": {
+        "X": 0.30086365,
+        "Y": -0.9535951,
+        "Z": -0.011723611
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_1_biker_dlc_int_02_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Meth Lab",
+    "Position": {
+      "X": 997.5482,
+      "Y": -3200.537,
+      "Z": -36.3937,
+      "Normalized": {
+        "X": 0.29754546,
+        "Y": -0.95464593,
+        "Z": -0.010855395
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_2_biker_dlc_int_ware01_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Weed Farm",
+    "Position": {
+      "X": 1065.857,
+      "Y": -3183.387,
+      "Z": -39.16349,
+      "Normalized": {
+        "X": 0.31747344,
+        "Y": -0.9481954,
+        "Z": -0.011665137
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_3_biker_dlc_int_ware02_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Cocaine Lockup",
+    "Position": {
+      "X": 1088.763,
+      "Y": -3188.536,
+      "Z": -38.99347,
+      "Normalized": {
+        "X": 0.32312077,
+        "Y": -0.946287,
+        "Z": -0.0115724
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_4_biker_dlc_int_ware03_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Counterfeit Cash Factory",
+    "Position": {
+      "X": 1138.415,
+      "Y": -3198.326,
+      "Z": -39.66572,
+      "Normalized": {
+        "X": 0.33530906,
+        "Y": -0.94203573,
+        "Z": -0.011683152
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_5_biker_dlc_int_ware04_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Document Forgery Office",
+    "Position": {
+      "X": 1173.283,
+      "Y": -3196.641,
+      "Z": -39.00797,
+      "Normalized": {
+        "X": 0.3445378,
+        "Y": -0.9387026,
+        "Z": -0.011454798
+      }
+    },
+    "Ipl": "bkr_biker_interior_placement_interior_6_biker_dlc_int_ware05_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Warehouse Small",
+    "Position": {
+      "X": 1087.849,
+      "Y": -3099.215,
+      "Z": -38.99995,
+      "Normalized": {
+        "X": 0.33117417,
+        "Y": -0.9434949,
+        "Z": -0.011872766
+      }
+    },
+    "Ipl": "ex_exec_warehouse_placement_interior_1_int_warehouse_s_dlc_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Warehouse Medium",
+    "Position": {
+      "X": 1048.302,
+      "Y": -3097.103,
+      "Z": -38.99993,
+      "Normalized": {
+        "X": 0.32058758,
+        "Y": -0.9471438,
+        "Z": -0.011926805
+      }
+    },
+    "Ipl": "ex_exec_warehouse_placement_interior_0_int_warehouse_m_dlc_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Warehouse Large",
+    "Position": {
+      "X": 992.762,
+      "Y": -3097.747,
+      "Z": -38.99586,
+      "Normalized": {
+        "X": 0.30516732,
+        "Y": -0.9522233,
+        "Z": -0.011987024
+      }
+    },
+    "Ipl": "ex_exec_warehouse_placement_interior_2_int_warehouse_l_dlc_milo",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vehicle Warehouse",
+    "Position": {
+      "X": 994.5925,
+      "Y": -3002.594,
+      "Z": -39.64699,
+      "Normalized": {
+        "X": 0.31441784,
+        "Y": -0.9492019,
+        "Z": -0.012533496
+      }
+    },
+    "Ipl": "imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_",
+    "Description": null
+  },
+  {
+    "InteriorName": "Lost MC Clubhouse",
+    "Position": {
+      "X": 982.0083,
+      "Y": -100.8747,
+      "Z": 74.84512,
+      "Normalized": {
+        "X": 0.99191856,
+        "Y": -0.10189272,
+        "Z": 0.07560045
+      }
+    },
+    "Ipl": "bkr_bi_hw1_13_int",
+    "Description": null
+  },
+  {
+    "InteriorName": "Union Depository",
+    "Position": {
+      "X": 2.6968,
+      "Y": -667.0166,
+      "Z": 16.13061,
+      "Normalized": {
+        "X": 0.0040418627,
+        "Y": -0.9996995,
+        "Z": 0.024175953
+      }
+    },
+    "Ipl": "FINBANK",
+    "Description": null
+  },
+  {
+    "InteriorName": "Trevors Trailer Dirty",
+    "Position": {
+      "X": 1975.552,
+      "Y": 3820.538,
+      "Z": 33.44833,
+      "Normalized": {
+        "X": 0.45930114,
+        "Y": 0.88824666,
+        "Z": 0.007776488
+      }
+    },
+    "Ipl": "TrevorsMP",
+    "Description": null
+  },
+  {
+    "InteriorName": "Trevors Trailer Clean",
+    "Position": {
+      "X": 1975.552,
+      "Y": 3820.538,
+      "Z": 33.44833,
+      "Normalized": {
+        "X": 0.45930114,
+        "Y": 0.88824666,
+        "Z": 0.007776488
+      }
+    },
+    "Ipl": "TrevorsTrailerTidy",
+    "Description": null
+  },
+  {
+    "InteriorName": "Stadium",
+    "Position": {
+      "X": -248.6731,
+      "Y": -2010.603,
+      "Z": 30.14562,
+      "Normalized": {
+        "X": -0.12273201,
+        "Y": -0.99232835,
+        "Z": 0.014878299
+      }
+    },
+    "Ipl": "SP1_10_real_interior",
+    "Description": null
+  },
+  {
+    "InteriorName": "Jewel Store",
+    "Position": {
+      "X": -630.07,
+      "Y": -236.332,
+      "Z": 38.05704,
+      "Normalized": {
+        "X": -0.9348082,
+        "Y": -0.35063577,
+        "Z": 0.056463618
+      }
+    },
+    "Ipl": "post_hiest_unload",
+    "Description": null
+  },
+  {
+    "InteriorName": "FIB Lobby",
+    "Position": {
+      "X": 110.4,
+      "Y": -744.2,
+      "Z": 45.7496,
+      "Normalized": {
+        "X": 0.14647079,
+        "Y": -0.98735106,
+        "Z": 0.06069728
+      }
+    },
+    "Ipl": "FIBlobby",
+    "Description": null
+  },
+  {
+    "InteriorName": "2 Car Garage",
+    "Position": {
+      "X": 173.2903,
+      "Y": -1003.6,
+      "Z": -99.65707,
+      "Normalized": {
+        "X": 0.16934206,
+        "Y": -0.980734,
+        "Z": -0.09738648
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "4 Car Garage",
+    "Position": {
+      "X": 197.8153,
+      "Y": -1002.293,
+      "Z": -99.65749,
+      "Normalized": {
+        "X": 0.19271298,
+        "Y": -0.9764405,
+        "Z": -0.09708699
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "10 Car Garage",
+    "Position": {
+      "X": 229.9559,
+      "Y": -981.7928,
+      "Z": -99.66071,
+      "Normalized": {
+        "X": 0.22694293,
+        "Y": -0.96892893,
+        "Z": -0.09835492
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Low End Apartment",
+    "Position": {
+      "X": 266.1273,
+      "Y": -1007.511,
+      "Z": -101.0086,
+      "Normalized": {
+        "X": 0.25419286,
+        "Y": -0.9623293,
+        "Z": -0.09647889
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Medium End Apartment",
+    "Position": {
+      "X": 346.6075,
+      "Y": -1012.648,
+      "Z": -99.19622,
+      "Normalized": {
+        "X": 0.32245243,
+        "Y": -0.94207656,
+        "Z": -0.092283234
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "4 Integrity Way, Apt 28",
+    "Position": {
+      "X": -23.49449,
+      "Y": 597.8414,
+      "Z": 80.03088,
+      "Normalized": {
+        "X": -0.038921893,
+        "Y": 0.99040747,
+        "Z": 0.1325823
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "4 Integrity Way, Apt 30",
+    "Position": {
+      "X": -17.54274,
+      "Y": -588.6515,
+      "Z": 90.11487,
+      "Normalized": {
+        "X": -0.029445611,
+        "Y": -0.9880556,
+        "Z": 0.15125842
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Dell Perro Heights, Apt 4",
+    "Position": {
+      "X": -1456.943,
+      "Y": -534.215,
+      "Z": 74.04458,
+      "Normalized": {
+        "X": -0.9378088,
+        "Y": -0.3438649,
+        "Z": 0.047661204
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Dell Perro Heights, Apt 7",
+    "Position": {
+      "X": -1451.86,
+      "Y": -523.5939,
+      "Z": 56.92902,
+      "Normalized": {
+        "X": -0.9400571,
+        "Y": -0.339019,
+        "Z": 0.036860667
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Richard Majestic, Apt 2",
+    "Position": {
+      "X": -919.4082,
+      "Y": -368.6953,
+      "Z": 114.275,
+      "Normalized": {
+        "X": -0.92203677,
+        "Y": -0.3697494,
+        "Z": 0.11460171
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Tinsel Towers, Apt 42",
+    "Position": {
+      "X": -610.5037,
+      "Y": 59.09584,
+      "Z": 98.20042,
+      "Normalized": {
+        "X": -0.982831,
+        "Y": 0.09513656,
+        "Z": 0.1580898
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Eclipse Towers, Apt 3",
+    "Position": {
+      "X": -776.8801,
+      "Y": 323.6757,
+      "Z": 211.9972,
+      "Normalized": {
+        "X": -0.8951257,
+        "Y": 0.37294096,
+        "Z": 0.24426436
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "3655 Wild Oats Drive",
+    "Position": {
+      "X": -174.1733,
+      "Y": 497.699,
+      "Z": 137.6653,
+      "Normalized": {
+        "X": -0.31960157,
+        "Y": 0.9132593,
+        "Z": 0.25261074
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2044 North Conker Avenue",
+    "Position": {
+      "X": 342.05,
+      "Y": 437.8131,
+      "Z": 149.3821,
+      "Normalized": {
+        "X": 0.5945383,
+        "Y": 0.7609901,
+        "Z": 0.2596503
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2045 North Conker Avenue",
+    "Position": {
+      "X": 373.8355,
+      "Y": 423.5041,
+      "Z": 145.9079,
+      "Normalized": {
+        "X": 0.64074785,
+        "Y": 0.725879,
+        "Z": 0.2500837
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2862 Hillcrest Avenue",
+    "Position": {
+      "X": -682.0886,
+      "Y": 592.3275,
+      "Z": 145.3931,
+      "Normalized": {
+        "X": -0.7454472,
+        "Y": 0.6473483,
+        "Z": 0.15889853
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2868 Hillcrest Avenue",
+    "Position": {
+      "X": -758.6028,
+      "Y": 619.0494,
+      "Z": 144.1539,
+      "Normalized": {
+        "X": -0.7665076,
+        "Y": 0.6255,
+        "Z": 0.14565602
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2874 Hillcrest Avenue",
+    "Position": {
+      "X": -859.8859,
+      "Y": 691.3547,
+      "Z": 152.8608,
+      "Normalized": {
+        "X": -0.7719696,
+        "Y": 0.6206693,
+        "Z": 0.13723202
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2677 Whispymound Drive",
+    "Position": {
+      "X": 117.2296,
+      "Y": 559.8178,
+      "Z": 184.3049,
+      "Normalized": {
+        "X": 0.19508295,
+        "Y": 0.9315984,
+        "Z": 0.30670363
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "2133 Mad Wayne Thunder",
+    "Position": {
+      "X": -1289.805,
+      "Y": 449.5435,
+      "Z": 97.90253,
+      "Normalized": {
+        "X": -0.94187224,
+        "Y": 0.3282764,
+        "Z": 0.071492724
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Bunker Interior",
+    "Position": {
+      "X": 899.5518,
+      "Y": -3246.038,
+      "Z": -98.04907,
+      "Normalized": {
+        "X": 0.26694494,
+        "Y": -0.96327245,
+        "Z": -0.029096384
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "CharCreator",
+    "Position": {
+      "X": 402.5164,
+      "Y": -1002.847,
+      "Z": -99.2587,
+      "Normalized": {
+        "X": 0.37092793,
+        "Y": -0.9241461,
+        "Z": -0.091469124
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mission Carpark",
+    "Position": {
+      "X": 405.9228,
+      "Y": -954.1149,
+      "Z": -99.6627,
+      "Normalized": {
+        "X": 0.38969097,
+        "Y": -0.9159623,
+        "Z": -0.095677435
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Torture Room",
+    "Position": {
+      "X": 136.5146,
+      "Y": -2203.149,
+      "Z": 7.30914,
+      "Normalized": {
+        "X": 0.061844457,
+        "Y": -0.9980804,
+        "Z": 0.0033112194
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Solomon's Office",
+    "Position": {
+      "X": -1005.84,
+      "Y": -478.92,
+      "Z": 50.02733,
+      "Normalized": {
+        "X": -0.90196943,
+        "Y": -0.42946312,
+        "Z": 0.04486113
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Psychiatrist's Office",
+    "Position": {
+      "X": -1902.348,
+      "Y": -572.7907,
+      "Z": 19.09722,
+      "Normalized": {
+        "X": -0.95749253,
+        "Y": -0.28829783,
+        "Z": 0.00961204
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Omega's Garage",
+    "Position": {
+      "X": 2331.344,
+      "Y": 2574.073,
+      "Z": 46.68137,
+      "Normalized": {
+        "X": 0.67123586,
+        "Y": 0.74112195,
+        "Z": 0.013440406
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Movie Theatre",
+    "Position": {
+      "X": -1427.299,
+      "Y": -245.1012,
+      "Z": 16.8039,
+      "Normalized": {
+        "X": -0.9855074,
+        "Y": -0.16923508,
+        "Z": 0.011602593
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Motel",
+    "Position": {
+      "X": 152.2605,
+      "Y": -1004.471,
+      "Z": -98.99999,
+      "Normalized": {
+        "X": 0.1491642,
+        "Y": -0.9840445,
+        "Z": -0.09698677
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Mandrazos Ranch",
+    "Position": {
+      "X": 1396.355,
+      "Y": 1141.521,
+      "Z": 114.3336,
+      "Normalized": {
+        "X": 0.7726647,
+        "Y": 0.63165385,
+        "Z": 0.06326582
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Life Invader Office",
+    "Position": {
+      "X": -1044.193,
+      "Y": -236.9535,
+      "Z": 37.96496,
+      "Normalized": {
+        "X": -0.97459364,
+        "Y": -0.22115968,
+        "Z": 0.035434455
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Lester's House",
+    "Position": {
+      "X": 1273.9,
+      "Y": -1719.305,
+      "Z": 54.77141,
+      "Normalized": {
+        "X": 0.59513545,
+        "Y": -0.80321795,
+        "Z": 0.025587885
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "FBI Top Floor",
+    "Position": {
+      "X": 134.5835,
+      "Y": -749.339,
+      "Z": 258.152,
+      "Normalized": {
+        "X": 0.16741209,
+        "Y": -0.9321232,
+        "Z": 0.32112232
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "FBI Floor 47",
+    "Position": {
+      "X": 134.5835,
+      "Y": -766.486,
+      "Z": 234.152,
+      "Normalized": {
+        "X": 0.16560556,
+        "Y": -0.9431643,
+        "Z": 0.288125
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "FBI Floor 49",
+    "Position": {
+      "X": 134.635,
+      "Y": -765.831,
+      "Z": 242.152,
+      "Normalized": {
+        "X": 0.1653163,
+        "Y": -0.9403524,
+        "Z": 0.2973348
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "IAA Office",
+    "Position": {
+      "X": 117.22,
+      "Y": -620.938,
+      "Z": 206.1398,
+      "Normalized": {
+        "X": 0.17635581,
+        "Y": -0.93419224,
+        "Z": 0.31013435
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Smuggler's Run Hangar",
+    "Position": {
+      "X": -1266.802,
+      "Y": -3014.837,
+      "Z": -49.0,
+      "Normalized": {
+        "X": -0.3873373,
+        "Y": -0.9218163,
+        "Z": -0.014982237
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Avenger Interior",
+    "Position": {
+      "X": 520.0,
+      "Y": 4750.0,
+      "Z": -70.0,
+      "Normalized": {
+        "X": 0.108811855,
+        "Y": 0.9939544,
+        "Z": -0.014647749
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Facility",
+    "Position": {
+      "X": 345.0041,
+      "Y": 4842.001,
+      "Z": -59.9997,
+      "Normalized": {
+        "X": 0.07106677,
+        "Y": 0.997395,
+        "Z": -0.012359229
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Server Farm",
+    "Position": {
+      "X": 2168.0,
+      "Y": 2920.0,
+      "Z": -84.0,
+      "Normalized": {
+        "X": 0.5959625,
+        "Y": 0.8026802,
+        "Z": -0.0230908
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Submarine",
+    "Position": {
+      "X": 514.33,
+      "Y": 4886.18,
+      "Z": -62.59,
+      "Normalized": {
+        "X": 0.10467533,
+        "Y": 0.9944248,
+        "Z": -0.012738181
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "IAA Facility",
+    "Position": {
+      "X": 2147.91,
+      "Y": 2921.0,
+      "Z": -61.9,
+      "Normalized": {
+        "X": 0.59232485,
+        "Y": 0.8055184,
+        "Z": -0.01707004
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Nightclub",
+    "Position": {
+      "X": -1569.379,
+      "Y": -3017.259,
+      "Z": -74.40615,
+      "Normalized": {
+        "X": -0.46133593,
+        "Y": -0.8869559,
+        "Z": -0.021872493
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Nightclub Warehouse",
+    "Position": {
+      "X": -1505.783,
+      "Y": -3012.587,
+      "Z": -80.0,
+      "Normalized": {
+        "X": -0.44696626,
+        "Y": -0.8942356,
+        "Z": -0.02374665
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Terrorbyte Interior",
+    "Position": {
+      "X": -1421.015,
+      "Y": -3012.587,
+      "Z": -80.0,
+      "Normalized": {
+        "X": -0.42649162,
+        "Y": -0.9041728,
+        "Z": -0.024010535
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Bahama Mamas West",
+    "Position": {
+      "X": -1387.384,
+      "Y": -588.557,
+      "Z": 30.31952,
+      "Normalized": {
+        "X": -0.92040277,
+        "Y": -0.3904539,
+        "Z": 0.020114237
+      }
+    },
+    "Ipl": "hei_sm_16_interior_v_bahama_milo_",
+    "Description": null
+  },
+  {
+    "InteriorName": "Split Sides West Comedy Club",
+    "Position": {
+      "X": 382.6698,
+      "Y": -1001.339,
+      "Z": -99.00004,
+      "Normalized": {
+        "X": 0.35546598,
+        "Y": -0.93015426,
+        "Z": -0.09196217
+      }
+    },
+    "Ipl": "hei_hw1_blimp_interior_v_comedy_milo_",
+    "Description": null
+  },
+  {
+    "InteriorName": "Avenger Interior",
+    "Position": {
+      "X": 520.0,
+      "Y": 4750.0,
+      "Z": -70.0,
+      "Normalized": {
+        "X": 0.108811855,
+        "Y": 0.9939544,
+        "Z": -0.014647749
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Tequi-la-la",
+    "Position": {
+      "X": -564.6385,
+      "Y": 277.7336,
+      "Z": 83.13632,
+      "Normalized": {
+        "X": -0.8895925,
+        "Y": 0.43757156,
+        "Z": 0.13098195
+      }
+    },
+    "Ipl": "apa_ss1_11_interior_v_rockclub_milo_",
+    "Description": null
+  },
+  {
+    "InteriorName": "Floyd's Apartment",
+    "Position": {
+      "X": -1150.703,
+      "Y": -1520.713,
+      "Z": 10.633,
+      "Normalized": {
+        "X": -0.60339767,
+        "Y": -0.797421,
+        "Z": 0.005575659
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Michael_premier",
+    "Position": {
+      "X": -813.3,
+      "Y": 177.5,
+      "Z": 75.76,
+      "Normalized": {
+        "X": -0.9729814,
+        "Y": 0.21234994,
+        "Z": 0.09063455
+      }
+    },
+    "Ipl": "Michael_premier",
+    "Description": null
+  },
+  {
+    "InteriorName": "6 CAR GARAGE",
+    "Position": {
+      "X": 199.971,
+      "Y": -999.667,
+      "Z": -100.0,
+      "Normalized": {
+        "X": 0.1952147,
+        "Y": -0.97589004,
+        "Z": -0.097621515
+      }
+    },
+    "Ipl": "V_GARAGEM",
+    "Description": null
+  },
+  {
+    "InteriorName": "Franklin's Vinewood Home",
+    "Position": {
+      "X": 7.994648,
+      "Y": 538.5573,
+      "Z": 176.0281,
+      "Normalized": {
+        "X": 0.014108583,
+        "Y": 0.9504209,
+        "Z": 0.31064624
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Franklin's Aunts House",
+    "Position": {
+      "X": -14.08369,
+      "Y": -1440.43,
+      "Z": 31.10155,
+      "Normalized": {
+        "X": -0.009774675,
+        "Y": -0.9997192,
+        "Z": 0.021585787
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vanilla Unicorn",
+    "Position": {
+      "X": 127.6424,
+      "Y": -1296.912,
+      "Z": 29.26953,
+      "Normalized": {
+        "X": 0.09792231,
+        "Y": -0.9949407,
+        "Z": 0.02245445
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Lifeinvader",
+    "Position": {
+      "X": -1047.921,
+      "Y": -233.1176,
+      "Z": 39.0144,
+      "Normalized": {
+        "X": -0.9754945,
+        "Y": -0.21700579,
+        "Z": 0.03631794
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Michael's House",
+    "Position": {
+      "X": -815.7581,
+      "Y": 178.5198,
+      "Z": 72.15312,
+      "Normalized": {
+        "X": -0.9732556,
+        "Y": 0.21298641,
+        "Z": 0.08608364
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Michael's Garage",
+    "Position": {
+      "X": -806.9432,
+      "Y": 186.1182,
+      "Z": 72.47498,
+      "Normalized": {
+        "X": -0.9707072,
+        "Y": 0.22388971,
+        "Z": 0.08718332
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Stadium Vip Bar",
+    "Position": {
+      "X": 2797.927,
+      "Y": -3943.155,
+      "Z": 185.2357,
+      "Normalized": {
+        "X": 0.5782621,
+        "Y": -0.8149523,
+        "Z": 0.038283624
+      }
+    },
+    "Ipl": "xs_arena_interior_vip",
+    "Description": null
+  },
+  {
+    "InteriorName": "ModShop Hayes",
+    "Position": {
+      "X": 482.9214,
+      "Y": -1313.043,
+      "Z": 29.20045,
+      "Normalized": {
+        "X": 0.34510696,
+        "Y": -0.93833137,
+        "Z": 0.02086733
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Arena",
+    "Position": {
+      "X": 2829.0066,
+      "Y": -3892.391,
+      "Z": 140,
+      "Normalized": {
+        "X": 0.593066,
+        "Y": -0.80487525,
+        "Z": 0.021180928
+      }
+    },
+    "Ipl": "xs_arena_interior",
+    "Description": null
+  },
+  {
+    "InteriorName": "Yacht Interior",
+    "Position": {
+      "X": -3191.682,
+      "Y": -217.7284,
+      "Z": 5.885169,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vinewood Casino",
+    "Position": {
+      "X": 1100.000,
+      "Y": 220.000,
+      "Z": -50.000,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "vw_casino_main",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vinewood Garage",
+    "Position": {
+      "X": 1295.000,
+      "Y": 230.000,
+      "Z": -50.000,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "vw_casino_garage",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vinewood Car Park",
+    "Position": {
+      "X": 1380.000,
+      "Y": 200.000,
+      "Z": -50.000,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "vw_casino_carpark",
+    "Description": null
+  },
+  {
+    "InteriorName": "Vinewood Penthouse",
+    "Position": {
+      "X": 981.0066,
+      "Y": 56.624176,
+      "Z": 116.15747,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "vw_casino_penthouse",
+    "Description": null
+  },
+  {
+    "InteriorName": "Arcade",
+    "Position": {
+      "X": 2737.767,
+      "Y": -374.43958,
+      "Z": -47.99341,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "ch_DLC_Arcade",
+    "Description": null
+  },
+  {
+    "InteriorName": "Casino Hotel",
+    "Position": {
+      "X": 2504.400,
+      "Y": -257.200,
+      "Z": -39.100,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "vw_casino_penthouse",
+    "Description": null
+  },
+  {
+    "InteriorName": "Yellow Jack Inn",
+    "Position": {
+      "X": 1989.7318,
+      "Y": 3052.7869,
+      "Z": 47.208008,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Small Gambling",
+    "Position": {
+      "X": -1177.8462,
+      "Y": -1184.5187,
+      "Z": -148.92383,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+]

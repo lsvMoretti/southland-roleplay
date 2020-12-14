@@ -1,0 +1,209 @@
+@font-face {
+    font-family: 'Barlow';
+    src: url('../data/fonts/BarlowCondensed-Regular.ttf');
+    font-family: 'Oswald-SemiBold';
+    src: url('../data/fonts/Oswald-SemiBold.ttf');
+    font-family: 'Oswald-Regular';
+    src: url('../data/fonts/Oswald-Regular.ttf')
+}
+
+#bodyDiv {
+    background-color: transparent;
+}
+
+#directionArea {
+    position: fixed;
+    /*
+    bottom: 20px;
+    left: 310px;
+        */
+    bottom: 4.2vh;
+    right: 1vw;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+}
+
+#directionText {
+    display: inline-block;
+    color: rgba(10, 134, 236, 1);
+    line-height: 20px;
+    text-align: center;
+    font-size: 18px;
+    font: inherit;
+    font-family: Arial;
+    text-shadow: -0.1px -0.1px 0 #000, 0.1px -0.1px 0 #000, -0.1px 0.1px 0 #000, 0.1px 0.1px 0 #000;
+}
+
+#compassIcon {
+    width: 25px;
+    fill: rgba(10, 134, 236, 1);
+}
+
+#moneyArea {
+    position: fixed;
+    /*bottom: 116px;
+    left: 310px;*/
+    bottom: 7.5vh;
+    right: 1vw;
+    fill: #4c963f;
+    color: #4c963f;
+    padding: 2px;
+    text-shadow: -0.1px -0.1px 0 #000, 0.1px -0.1px 0 #000, -0.1px 0.1px 0 #000, 0.1px 0.1px 0 #000;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    margin: 2px;
+}
+
+#moneyIcon {
+    width: 25px;
+}
+
+#timeArea {
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    position: fixed;
+    /*bottom: 149px;
+    left: 310px;*/
+    bottom: 10.7vh;
+    right: 1vw;
+    fill: rgba(165, 129, 29, 1);
+    color: rgba(165, 129, 29, 1);
+    padding: 2px;
+    text-shadow: -0.1px -0.1px 0 #000, 0.1px -0.1px 0 #000, -0.1px 0.1px 0 #000, 0.1px 0.1px 0 #000;
+    margin: 2px;
+}
+
+#clockIcon {
+    width: 25px;
+}
+
+#healthArea {
+    position: fixed;
+    /*bottom: 84px;
+    left: 310px;*/
+    bottom: 13.9vh;
+    right: 1vw;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#healthBar {
+    border: none;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+    #healthBar::-webkit-progress-value {
+        background: #6fbc62;
+    }
+
+#healthIcon {
+    width: 25px;
+    fill: #6fbc62;
+}
+
+#armorArea {
+    position: fixed;
+    /*bottom: 52px;
+    left: 310px;*/
+    bottom: 17.2vh;
+    right: 1vw;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#armorBar {
+    border: none;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+    #armorBar::-webkit-progress-value {
+        background: #3c59db;
+    }
+
+#armorIcon {
+    width: 25px;
+    fill: #3c59db;
+}
+
+.hideme {
+    visibility: hidden;
+    display: none;
+}
+
+#fuelArea {
+    
+    bottom: 17.2vh;
+    right: 1vw;
+    position: fixed;
+    /*bottom: 116px;
+    right: 20px;*/
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+    color: yellow;
+}
+
+#fuelIcon {
+    width: 25px;
+    fill: orangered;
+}
+
+#fuelBar {
+    border: none;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 3px;
+    padding: 2px;
+}
+
+    #fuelBar::-webkit-progress-value {
+        background: orangered;
+    }
+
+#speedo {
+    position: fixed;
+    /*bottom: 149px;
+    right: 20px;*/
+    bottom: 20.4vh;
+    right: 1vw;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+    color: yellow;
+}
+
+#odo {
+    position: fixed;
+    /*bottom: 180px;
+    right: 20px;*/
+    bottom: 23.3vh;
+    right: 1vw;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    padding: 2px;
+    margin: 2px;
+    color: #ff33cc;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

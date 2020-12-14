@@ -1,0 +1,1672 @@
+[
+  {
+    "ID": "ITEM_VEHICLE_KEY",
+    "Name": "Vehicle Key",
+    "Description": "Useful for unlocking vehicles.",
+    "Weight": 0,
+    "Capacity": 0,
+    "Price": 0,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_PROPERTY_KEY",
+    "Name": "Property Key",
+    "Description": "Useful for unlocking buildings.",
+    "Weight": 0,
+    "Capacity": 0,
+    "Price": 0,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_BANK_CARD",
+    "Name": "Bank Card",
+    "Description": "This piece of plastic holds money.",
+    "Weight": 0,
+    "Capacity": 0,
+    "Price": 0,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_APARTMENT_KEY",
+    "Name": "Apartment Key",
+    "Description": "Useful for unlocking apartments.",
+    "Weight": 0,
+    "Capacity": 0,
+    "Price": 0,
+    "Stackable": false
+  },
+
+  //Electronics (Phones, Radio, GPS, etc)
+  {
+    "ID": "ITEM_PHONE",
+    "Name": "Tinkle Splash",
+    "Description": "A sturdy mobile phone, some say it is unbreakable.",
+    "Weight": 0.133,
+    "Capacity": 0.15,
+    "Price": 50,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_EXPENSIVEPHONE",
+    "Name": "iFruit 9iX",
+    "Description": "A Smartphone, capable of calling friends if you have any that is.",
+    "Weight": 0.133,
+    "Capacity": 0.2,
+    "Price": 300,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_BOOMBOX",
+    "Name": "Boom Box",
+    "Description": "This thing plays music.",
+    "Weight": 5.25,
+    "Capacity": 10,
+    "Price": 150,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_RADIO",
+    "Name": "Radio",
+    "Description": "Useful for talking people from afar.",
+    "Weight": 0.22,
+    "Capacity": 0.28,
+    "Price": 30,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_EARPIECE",
+    "Name": "Earpiece",
+    "Description": "You connect this to the radio and put it in your ear.",
+    "Weight": 0.1,
+    "Capacity": 0.01,
+    "Price": 10,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_GPS",
+    "Name": "GPS",
+    "Description": "You can navigate electronically.",
+    "Weight": 0.18,
+    "Capacity": 0.16,
+    "Price": 50,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_DIGITAL_CAMERA",
+    "Name": "Digital Camera",
+    "Description": "You can take 360p Pictures with this.",
+    "Weight": 0.13,
+    "Capacity": 0.21,
+    "Price": 50,
+    "Stackable": false
+  },
+
+  //Backpacks (Wearables)
+  {
+    "ID": "ITEM_BACKPACK",
+    "Name": "Backpack",
+    "Description": "A simple backpack.",
+    "Weight": 0,
+    "Capacity": 3,
+    "Price": 80,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_DUFFELBAG",
+    "Name": "Duffelbag",
+    "Description": "A sports bag with large a large capacity.",
+    "Weight": 0,
+    "Capacity": 5,
+    "Price": 150,
+    "Stackable": false
+  },
+
+  //Consumables (Food)
+  {
+    "ID": "ITEM_SANDWICH",
+    "Name": "Plain Sandwich",
+    "Description": "A plain looking sandwich.",
+    "Weight": 0.2,
+    "Capacity": 0.25,
+    "Price": 5,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DOUGHNUT",
+    "Name": "Glazed Doughnut",
+    "Description": "A glazed doughnut.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 2,
+    "Stackable": true
+  },
+
+  //Consumable (Phat Chips)
+  {
+    "ID": "ITEM_PHATCHIPS_PAPRIKA",
+    "Name": "Phat Chips - Trinkle Chips Paprika",
+    "Description": "Trinkle Chips Paprika.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_CHEESE",
+    "Name": "Phat Chips - Big Cheese",
+    "Description": "Big Cheese Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_HABANERO",
+    "Name": "Phat Chips - Trinkle Chips Habanero",
+    "Description": "Trinkle Chips Habanero.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_STICKYRIB",
+    "Name": "Phat Chips - Sticky Ribs",
+    "Description": "Sticky Ribs Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_SALTSAUCE",
+    "Name": "Phat Chips - Salt & Sauce",
+    "Description": "Salt & Sauce Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_SUPERSALT",
+    "Name": "Phat Chips - Supersalt",
+    "Description": "Supersalt Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_SOURCREAM",
+    "Name": "Phat Chips - Radical Sour Cream",
+    "Description": "Radical Sour Cream Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_BLACKLIQUORICE",
+    "Name": "Phat Chips - Black Liquorice Quinoa",
+    "Description": "Black Liquorice Quinoa Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_HONEYMUSTARD",
+    "Name": "Phat Chips - Funky Honey Mustard Greens",
+    "Description": "Funky Honey Mustard Greens Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_KETCHUP",
+    "Name": "Phat Chips - Ketchup Bronze",
+    "Description": "Ketchup Bronze Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_CHIPOTLE",
+    "Name": "Phat Chips - Chipotle Wheat Grass",
+    "Description": "Chipotle Wheat Grass Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_BAVARIAN",
+    "Name": "Phat Chips - Bavarian Car Key Party",
+    "Description": "Bavarian Car Key Party Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_GREEKGREENS",
+    "Name": "Phat Chips - Dry Greek Rub Greens",
+    "Description": "Dry Greek Rub Greens Chips.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PHATCHIPS_SALMONRANCHER",
+    "Name": "Phat Chips - Norwegian Salmon Rancher Surprise",
+    "Description": "Norwegian Salmon Rancher Surprise.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 2,
+    "Stackable": true
+  },
+
+  //Consumables (Candy Box)
+  {
+    "ID": "ITEM_CANDYBOX_MILK",
+    "Name": "Candy Box - Milk Chocolate Bar",
+    "Description": "Milk Chocolate Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_CARAMEL",
+    "Name": "Candy Box - Caramel Bar",
+    "Description": "Caramel Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_WHITE",
+    "Name": "Candy Box - White Chocolate Bar",
+    "Description": "White Chocolate Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_DARK",
+    "Name": "Candy Box - Dark Chocolate Bar",
+    "Description": "Dark Chocolate Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_MINT",
+    "Name": "Candy Box - Mint Chocoalte Bar",
+    "Description": "Mint Chocoalte Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_EARTHQUAKES",
+    "Name": "Candy Box - EarthQuakes",
+    "Description": "EarthQuakes Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_PSQS",
+    "Name": "Candy Box - P's & Q's",
+    "Description": "P's & Q's.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_ZEBRABAR",
+    "Name": "Candy Box - ZebraBar",
+    "Description": "ZebraBar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_CAPTAINSLOG",
+    "Name": "Candy Box - Captain's Log",
+    "Description": "Captain's Log.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CANDYBOX_METEORITE",
+    "Name": "Candy Box - Meteorite Bar",
+    "Description": "Meteorite Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+
+  //Cosumables (Sweets)
+  {
+    "ID": "ITEM_SWEETNOTHINGS",
+    "Name": "Sweet Nothings - Sweet & Sour",
+    "Description": "Sweet Nothings Sweets.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_EGOCHASER",
+    "Name": "EgoChaser Energy Bar",
+    "Description": "EgoChaser Energy Bar.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_RELEASEPINK",
+    "Name": "Release Starwberry Gum",
+    "Description": "Release Starwberry Gum.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_RELEASEBLUE",
+    "Name": "Release Peppermint Gum",
+    "Description": "Release Peppermint Gum.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_RELEASEGREEN",
+    "Name": "Release Spearmint Gum",
+    "Description": "Release Spearmint Gum.",
+    "Weight": 0.1,
+    "Capacity": 0.25,
+    "Price": 1,
+    "Stackable": true
+  },
+
+  //Consumables (Soda)
+  {
+    "ID": "ITEM_SPRUNK",
+    "Name": "Can of Sprunk",
+    "Description": "A carbonated drink.",
+    "Weight": 0.366,
+    "Capacity": 0.355,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_ECOLA",
+    "Name": "Can of eCola",
+    "Description": "A carbonated drink.",
+    "Weight": 0.366,
+    "Capacity": 0.355,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_LIGHTSPRUNK",
+    "Name": "Can of Light Sprunk",
+    "Description": "A carbonated drink.",
+    "Weight": 0.366,
+    "Capacity": 0.355,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_ECOLALIGHT",
+    "Name": "Can of eCola Light",
+    "Description": "A carbonated drink.",
+    "Weight": 0.366,
+    "Capacity": 0.355,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_ORANGOTANG",
+    "Name": "Can of Orang-O-Tang",
+    "Description": "A carbonated drink.",
+    "Weight": 0.366,
+    "Capacity": 0.355,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DIETORANGOTANG",
+    "Name": "Can of Diet Orang-O-Tang",
+    "Description": "A carbonated drink.",
+    "Weight": 0.366,
+    "Capacity": 0.355,
+    "Price": 1,
+    "Stackable": true
+  },
+
+  //Consumables (Water)
+  {
+    "ID": "ITEM_WATERBOTTLE",
+    "Name": "Basic Water Bottle",
+    "Description": "A Bottle of Basic Water.",
+    "Weight": 0.35,
+    "Capacity": 0.35,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_RAINEWATER",
+    "Name": "Raine Water Bottle",
+    "Description": "A Bottle of Raine Water.",
+    "Weight": 0.35,
+    "Capacity": 0.35,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_RIVIERAWATER",
+    "Name": "Riviera Water Bottle",
+    "Description": "A Bottle of Riviera Water.",
+    "Weight": 0.35,
+    "Capacity": 0.35,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CLOUDWATER",
+    "Name": "Cloud Water Bottle",
+    "Description": "A Bottle of Cloud Water.",
+    "Weight": 0.35,
+    "Capacity": 0.35,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_TIKIWATER",
+    "Name": "Tiki Water Bottle",
+    "Description": "A Bottle of Tiki Water.",
+    "Weight": 0.35,
+    "Capacity": 0.35,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CLEVERWATER",
+    "Name": "Clever Water Bottle",
+    "Description": "A Bottle of Clever Water.",
+    "Weight": 0.35,
+    "Capacity": 0.35,
+    "Price": 1,
+    "Stackable": true
+  },
+
+  //Consumables (Coffee)
+  {
+    "ID": "ITEM_CUPCOFFEE",
+    "Name": "Cup of Coffee",
+    "Description": "A hot cup of coffee.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CUPLATTE",
+    "Name": "Cup of Latte",
+    "Description": "A hot cup of Latte.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CUPMOCKA",
+    "Name": "Cup of Mocka",
+    "Description": "A hot cup of Mocka.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CUPAMERICANO",
+    "Name": "Cup of Americano",
+    "Description": "A hot cup of Americano.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CUPESPRESSO",
+    "Name": "Cup of Espresso",
+    "Description": "A hot cup of Espresso.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CUPHOTCHOCO",
+    "Name": "Cup of Hot Chocolate",
+    "Description": "A hot cup of hot chocolate.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CUPMACCHIATO",
+    "Name": "Cup of Macchiato",
+    "Description": "A hot cup of Macchiato.",
+    "Weight": 0.3,
+    "Capacity": 0.35,
+    "Price": 3,
+    "Stackable": true
+  },
+
+  //Consumables (Alcohol Beverage)
+  {"ID":"ITEM_PISSWASSER_BEER","Name":"Piswasser Beer Bottle","Description":"A bottle of Piswasser.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_AM_BEER","Name":"AM Beer Bottle","Description":"A bottle of AM Beer.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_DUSCHE_GOLD_BEER","Name":"Dusche Gold Beer Bottle","Description":"A bottle of Dusche Gold.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_LOGGER_BEER","Name":"Logger Beer Bottle","Description":"A bottle of Logger.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_PATRIOT_BEER","Name":"Patriot Beer Bottle","Description":"A bottle of Patriot.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_CERVEZA_BEER","Name":"Cerveza Barracho","Description":"A bottle of Cerveza Barracho.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_BLARNEYS_STOUT_BEER","Name":"Blarneys Stout Beer Bottle","Description":"A bottle of Blarneys Stout.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_LOGGER_LIGHT_BEER","Name":"Logger Light Beer Bottle","Description":"A bottle of Logger Light.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {"ID":"ITEM_JAKEYS_LAGER","Name":"Jakey's Lager Bottle","Description":"A bottle of Jakey's Lager.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+
+  //Consumables (Alcohol Cases)
+  {"ID":"ITEM_PISSWASSER_CASE","Name":"Pi�wasser 12 Pack","Description":"12 bottles of Pi�wasser.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_AM_BEER_CASE","Name":"AM Beer 12 Pack","Description":"12 bottles of AM Beer.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_DUSCHE_GOLD_CASE","Name":"Dusche Gold 12 Pack","Description":"12 bottles of Dusche Gold.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_LOGGER_CASE","Name":"Logger Beer 12 Pack","Description":"12 bottles of Logger.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_PATRIOT_CASE","Name":"Patriot Beer 12 Pack","Description":"12 bottles of Patriot.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_CERVEZA_CASE","Name":"Cerveza Barracho 12 Pack","Description":"12 bottles of Cerveza Barracho.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_BLARNEYS_STOUT_CASE","Name":"Blarneys Stout 12 Pack","Description":"12 bottles of Blarneys Stout.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_LOGGER_LIGHT_CASE","Name":"Logger Light Beer 12 Pack","Description":"12 bottles of Logger Light.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {"ID":"ITEM_JAKEYS_LAGER_CASE","Name":"Jakey's Lager 12 Pack","Description":"12 bottles of Jakey's Lager.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+
+  //Smoking (Tabacco)
+  {
+    "ID": "ITEM_SMOKING_69BRAND",
+    "Name": "69 Brand Cigars",
+    "Description": "A pack of 69 Brand Cigars.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_CARDIAQUE",
+    "Name": "Cardiaque Cigarettes",
+    "Description": "A pack of Cardiaque Cigarettes.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_DEBONAIRE",
+    "Name": "Debonaire Cigarettes",
+    "Description": "A pack of Debonaire Cigarettes.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_ATHENA200S",
+    "Name": "Athena 200's Cigarettes",
+    "Description": "A pack of Athena 200's Cigarettes.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_CANCER",
+    "Name": "Cancer Cigarettes",
+    "Description": "A pack of Cancer Cigarettes.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_HOMIESSHARP",
+    "Name": "Homies Sharp Cigarettes",
+    "Description": "A pack of Homies Sharp Cigarettes.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_ESTANCIA",
+    "Name": "Estancia Cigars",
+    "Description": "A pack of Estancia Cigars.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_REDWOOD",
+    "Name": "Redwood Cigarettes",
+    "Description": "A pack of Redwood Cigarettes.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_SMOKING_YUKON",
+    "Name": "Yukon Tabacco Chew",
+    "Description": "A packet of Yukon Tabacco Chews.",
+    "Weight": 0.20,
+    "Capacity": 0.20,
+    "Price": 12,
+    "Stackable": true
+  },
+
+  //Useables (Vehicle)
+  {
+    "ID": "ITEM_ENGINEOIL",
+    "Name": "Engine Oil",
+    "Description": "Item description",
+    "Weight": 0.25,
+    "Capacity": 0.27,
+    "Price": 35,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_TRANSMISSIONOIL",
+    "Name": "Transmission Oil",
+    "Description": "Item description",
+    "Weight": 0.5,
+    "Capacity": 0.52,
+    "Price": 80,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_FUELCAN",
+    "Name": "Fuelcan (10 Litres)",
+    "Description": "A fuel can filled with fuel.",
+    "Weight": 8,
+    "Capacity": 10,
+    "Price": 50,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_FUELCAN_EMPTY",
+    "Name": "Fuelcan (Empty)",
+    "Description": "An empty fuel can.",
+    "Weight": 1.75,
+    "Capacity": 10,
+    "Price": 10,
+    "Stackable": false
+  },
+  // Weapons - Melee
+  {
+    "ID": "ITEM_WEAPON_MELEE_BOTTLE",
+    "Name": "Broken Bottle",
+    "Description": "A Broken Bottle.",
+    "Weight": 1,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_MELEE_BAT",
+    "Name": "Baseball Bat",
+    "Description": "A Baseball Bat.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 15,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_MELEE_CROWBAR",
+    "Name": "Crowbar",
+    "Description": "A Crowbar.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 20,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_MELEE_HAMMER",
+    "Name": "Hammer",
+    "Description": "A Claw Hammer. Useful for removing nails",
+    "Weight": 2,
+    "Capacity": 0.8,
+    "Price": 20,
+    "Stackable": false
+  },
+  //Equipment (New Weapons)
+  {
+    "ID": "ITEM_WEAPON_PISTOL",
+    "Name": "Pistol",
+    "Description": "Pistol.",
+    "Weight": 2,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_PISTOL_MK2",
+    "Name": "Pistol MK2",
+    "Description": "Pistol.",
+    "Weight": 2,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_COMBATPISTOL",
+    "Name": "Combat Pistol",
+    "Description": "Combat Pistol.",
+    "Weight": 2,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_APPISTOL",
+    "Name": "Auto Pistol",
+    "Description": "Auto Pistol.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_PISTOL50",
+    "Name": "Pistol 50",
+    "Description": "Pistol 50.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SNS",
+    "Name": "SNS",
+    "Description": "SNS.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SNS_MK2",
+    "Name": "SNS MK2",
+    "Description": "SNS MK2.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_HEAVYPISTOL",
+    "Name": "Heavy Pistol",
+    "Description": "Heavy Pistol.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_VINTAGEPISTOL",
+    "Name": "Vintage Pistol",
+    "Description": "Vintage Pistol.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_REVOLVER",
+    "Name": "Revolver",
+    "Description": "Revolver.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_REVOLVER_MK2",
+    "Name": "Revolver MK2",
+    "Description": "Revolver MK2.",
+    "Weight": 2.5,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_MICROSMG",
+    "Name": "Micro SMG",
+    "Description": "Micro SMG.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SMG",
+    "Name": "SMG",
+    "Description": "SMG.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SMG_MK2",
+    "Name": "SMG MK2",
+    "Description": "SMG MK2.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_ASSAULTSMG",
+    "Name": "Assault SMG",
+    "Description": "Assault SMG.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_COMBATPDW",
+    "Name": "Combat PDW",
+    "Description": "Combat PDW.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_MACHINEPISTOL",
+    "Name": "Machine Pistol",
+    "Description": "Machine Pistol.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_MINISMG",
+    "Name": "Mini SMG",
+    "Description": "Mini SMG.",
+    "Weight": 3,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_PUMPSHOTGUN",
+    "Name": "Pump Shotgun",
+    "Description": "Pump Shotgun.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_PUMPSHOTGUN_MK2",
+    "Name": "Pump Shotgun MK2",
+    "Description": "Pump Shotgun MK2.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SAWNOFFSHOTGUN",
+    "Name": "Sawnoff Shotgun",
+    "Description": "Sawnoff Shotgun.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_ASSAULTSHOTGUN",
+    "Name": "Assault Shotgun",
+    "Description": "Assault Shotgun.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_BULLPUPSHOTGUN",
+    "Name": "Bullpup Shotgun",
+    "Description": "Bullpup Shotgun.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_HEAVYSHOTGUN",
+    "Name": "Heavy Shotgun",
+    "Description": "Heavy Shotgun.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_ASSAULTRIFLE",
+    "Name": "Assault Rifle",
+    "Description": "Assault Rifle.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_ASSAULTRIFLE_MK2",
+    "Name": "Assault Rifle MK2",
+    "Description": "Assault Rifle MK2.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_CARBINE",
+    "Name": "Carbine",
+    "Description": "Carbine Rifle.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_CARBINE_MK2",
+    "Name": "Carbine MK2",
+    "Description": "Carbine Rifle MK2.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_ADVANCEDRIFLE",
+    "Name": "Advanced Rifle",
+    "Description": "Advanced Rifle.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SPECIALCARBINE",
+    "Name": "Special Carbine Rifle",
+    "Description": "Special Carbine.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SPECIALCARBINE_MK2",
+    "Name": "Special Carbine Rifle MK2",
+    "Description": "Special Carbine MK2.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_BULLPUPRIFLE",
+    "Name": "Bullpup Rifle",
+    "Description": "Bullpup Rifle.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_BULLPUPRIFLE_MK2",
+    "Name": "Bullpup Rifle MK2",
+    "Description": "Bullpup Rifle MK2.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_GUSENBERG",
+    "Name": "Tommygun",
+    "Description": "Tommygun.",
+    "Weight": 4,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_SNIPERRIFLE",
+    "Name": "Sniper Rifle",
+    "Description": "Sniper Rifle.",
+    "Weight": 6,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_HEAVYSNIPER",
+    "Name": "Heavy Sniper Rifle",
+    "Description": "Heavy Sniper Rifle.",
+    "Weight": 6,
+    "Capacity": 0.8,
+    "Price": 555,
+    "Stackable": false
+  },
+
+  //Equipment (Ammo)
+  {
+    "ID": "ITEM_WEAPON_AMMO_45ACP",
+    "Name": "45ACP Bullets",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_9MM",
+    "Name": "9MM Bullets",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_50AE",
+    "Name": ".50 Cal Action Express Bullets",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_320",
+    "Name": ".320 Cal Bullets",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_556",
+    "Name": "5.56 Cal Bullets",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_762",
+    "Name": "7.62 Cal Bullets",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_12G",
+    "Name": "12 Gauge Shell",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_338",
+    "Name": ".338 Lapua Magnum Bullet",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_WEAPON_AMMO_50",
+    "Name": ".50 Cal Bullet",
+    "Description": "Bullet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_GRENADE",
+	  "Name": "Grenade",
+	  "Description": "Grenade",
+	  "Weight": 0.3,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_BZGAS",
+	  "Name": "Gas Grenade",
+	  "Description": "Gas Grenade",
+	  "Weight": 0.3,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_MOLOTOV",
+	  "Name": "Molotov Cocktail",
+	  "Description": "A thing of beauty",
+	  "Weight": 0.6,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_PROXMINE",
+	  "Name": "Proximity Mine",
+	  "Description": "Goes boom",
+	  "Weight": 0.6,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_BASEBALL",
+	  "Name": "Baseball",
+	  "Description": "Goes with a bat?",
+	  "Weight": 0.2,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_SMOKEGRENADE",
+	  "Name": "Smoke Grenade",
+	  "Description": "Reduces visibility",
+	  "Weight": 0.2,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_KNIFE",
+	  "Name": "Knife",
+	  "Description": "It cuts",
+	  "Weight": 0.2,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_MACHETE",
+	  "Name": "Machete",
+	  "Description": "A big thing that cuts",
+	  "Weight": 0.2,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_WEAPON_SWITCHBLADE",
+	  "Name": "Switchblade",
+	  "Description": "A small thing that cuts",
+	  "Weight": 0.2,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+
+  // Police Duty Weapons
+  {
+    "ID": "ITEM_POLICE_WEAPON_STUNGUN",
+    "Name": "Stun Gun",
+    "Description": "A Police Issued Taser",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_POLICE_WEAPON_PISTOL",
+    "Name": "Combat Pistol",
+    "Description": "A Police Issued Pistol",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_POLICE_WEAPON_NIGHTSTICK",
+    "Name": "Nightstick",
+    "Description": "A Police Issued Nightstick",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_POLICE_WEAPON_FLASHLIGHT",
+    "Name": "Flashlight",
+    "Description": "A Police Issued Flashlight",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+	  "ID": "ITEM_POLICE_WEAPON_SHOTGUN",
+	  "Name": "Shotgun",
+	  "Description": "A Police Issued Shotgun",
+	  "Weight": 0.6,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_POLICE_WEAPON_AR",
+	  "Name": "Assault Rife",
+	  "Description": "A Police Issued AR",
+	  "Weight": 0.6,
+	  "Capacity": 0.1,
+	  "Price": 1,
+	  "Stackable": false
+  },
+
+  // Fire Department Weapons & Items
+  {
+    "ID": "ITEM_FIRE_WEAPON_FLASHLIGHT",
+    "Name": "Flashlight",
+    "Description": "A Fire Department Issued Flashlight",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_FIRE_WEAPON_HATCHET",
+    "Name": "Hatchet",
+    "Description": "A Fire Department Issued Hatchet",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_FIRE_WEAPON_CROWBAR",
+    "Name": "Crowbar",
+    "Description": "A Fire Department Issued Crowbar",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_FIRE_WEAPON_FIRE_EXTINGUISHER",
+    "Name": "Fire Extinguisher",
+    "Description": "A Fire Department Issued Fire Extinguisher",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
+  },
+
+
+  //Resources (Natural)
+  {
+    "ID": "ITEM_RESOURCE_FISH",
+    "Name": "Fish",
+    "Description": "This is a Fish.",
+    "Weight": 0.5,
+    "Capacity": 0.5,
+    "Price": 1,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_RESOURCE_WATER",
+    "Name": "Water",
+    "Description": "This is water.",
+    "Weight": 0.2,
+    "Capacity": 0.2,
+    "Price": 1,
+    "Stackable": false
+  },
+
+  //Condoms (Vending Machine)
+  {
+    "ID": "ITEM_SMALLCONDOM",
+    "Name": "Small Condom",
+    "Description": "A Small Condom.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_MEDIUMCONDOM",
+    "Name": "Medium Condom",
+    "Description": "A Medium Condom.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_LARGECONDOM",
+    "Name": "Large Condom",
+    "Description": "A Large Condom.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_XLCONDOM",
+    "Name": "XL Condom",
+    "Description": "An XL Condom.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": true
+  },
+
+  //Components (Manufactured)
+  {
+    "ID": "ITEM_COMPONENT_FOOD",
+    "Name": "Food Component",
+    "Description": "A food component needed for food manufacturing.",
+    "Weight": 1,
+    "Capacity": 10,
+    "Price": 10,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_COMPONENT_BEVERAGE",
+    "Name": "Beverage Component",
+    "Description": "A beverage component needed for beverage manufacturing.",
+    "Weight": 1,
+    "Capacity": 10,
+    "Price": 10,
+    "Stackable": false
+  },
+
+  // Clothes 
+  {
+    "ID": "ITEM_CLOTHES",
+    "Name": "Clothes Item",
+    "Description": "Clothes you wear on yourself.",
+    "Weight": 0,
+    "Capacity": 0.35,
+    "Price": 0,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_CLOTHES_ACCESSORY",
+    "Name": "Accessory Item",
+    "Description": "Accessory you wear on yourself.",
+    "Weight": 0,
+    "Capacity": 0.35,
+    "Price": 0,
+    "Stackable": false
+  },
+
+  // Drugs
+  {
+    "ID": "ITEM_DRUG_MUSHROOM",
+    "Name": "Psilocybin Mushroom",
+    "Description": "A Wild Kinda Mushroom",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_MARIJUANASEED",
+    "Name": "Marijuana Seed",
+    "Description": "Home Growable Marijuana",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 2,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_WEED",
+    "Name": "Marijuana",
+    "Description": "A Green Nature Plant",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 28,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_HEROIN",
+    "Name": "Heroin",
+    "Description": "A Strange White Powder",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_METH",
+    "Name": "Crystal Meth",
+    "Description": "A Strange Clear Object Almost Like Glass",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_COCAINE",
+    "Name": "Cocaine",
+    "Description": "A Popular White Powder",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_ECSTASY",
+    "Name": "Ecstasy",
+    "Description": "A Pill That Comes In A Range of Styles",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_XANAX",
+    "Name": "Xanax",
+    "Description": "Medication used to treat anxiety and panic disorders.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 5,
+    "Stackable": true
+  },
+
+  // Police Ticket
+  {
+    "ID": "ITEM_POLICE_TICKET",
+    "Name": "Ticket",
+    "Description": "Given out by the Police",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": false
+  },
+
+  // Licenses
+  {
+    "ID": "ITEM_DRIVING_LICENSE",
+    "Name": "Drivers License",
+    "Description": "Proven you've passed the DMV Test",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_VEHICLE_MOD",
+    "Name": "A vehicle mod",
+    "Description": "This has to be fitted to a vehicle!",
+    "Weight": 0,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_DICE",
+    "Name": "Six Sided Dice",
+    "Description": "You can play games with this!",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 3,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_SPRAYCAN",
+    "Name": "Spray Can",
+    "Description": "You can tag stuff with this!",
+    "Weight": 0.25,
+    "Capacity": 0.1,
+    "Price": 10,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_GRAFFITISTRIPPER",
+    "Name": "Graffiti Stripper",
+    "Description": "You can de-tag stuff with this!",
+    "Weight": 0.25,
+    "Capacity": 0.1,
+    "Price": 7,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_DELIVERYPRODUCT",
+    "Name": "Delivery Product",
+    "Description": "You can sell this to a warehouse!",
+    "Weight": 0.5,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_WAREHOUSEPRODUCT",
+    "Name": "Warehouse Product",
+    "Description": "You can sell this to a business!",
+    "Weight": 0.5,
+    "Capacity": 0.1,
+    "Price": 0,
+    "Stackable": true
+  },
+  {
+	  "ID": "ITEM_MAKEUP",
+	  "Name": "Mary Poppins Makeup Bag",
+	  "Description": "A bag used to hold your makeup.",
+	  "Weight": 0.1,
+	  "Capacity": 0.1,
+	  "Price": 25,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_DEADFISH",
+	  "Name": "Dead Fish",
+	  "Description": "It smells.",
+	  "Weight": 0.1,
+	  "Capacity": 0.1,
+	  "Price": 25,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_USED_DIAPER",
+	  "Name": "Used Diaper",
+	  "Description": "It smells.",
+	  "Weight": 0.1,
+	  "Capacity": 0.1,
+	  "Price": 25,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_SOILED_UNDERWEAR",
+	  "Name": "Soiled Underwear",
+	  "Description": "Moretti's Underwear",
+	  "Weight": 0.1,
+	  "Capacity": 0.1,
+	  "Price": 25,
+	  "Stackable": false
+  },
+  {
+	  "ID": "ITEM_ROTTING_CHEESE",
+	  "Name": "Rotting Cheese",
+	  "Description": "It smells.",
+	  "Weight": 0.1,
+	  "Capacity": 0.1,
+	  "Price": 25,
+	  "Stackable": false
+  },
+  {
+    "ID": "ITEM_BEEFY_BURGER",
+    "Name": "Beefy Burger",
+    "Description": "A somewhat Beefy Burger.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_HOTDOG",
+    "Name": "Hotdog",
+    "Description": "A dog that's hot.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_PLACEABLEOBJECT",
+    "Name": "Placeable Object",
+    "Description": "An object that can be placed.",
+    "Weight": 2,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
+  }
+  
+]

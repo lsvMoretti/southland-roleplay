@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="background center" id="bodyClass" onload="pageLoaded()">
+    <div class="container-fluid col-md-8">
+        <div class="row rounded bg-dark vertical-center">
+            <div class="col-md-12">
+                <br>
+                <h3 class="text-white text-center">Online Players</h3>
+                <h6 class="text-white text-center" id="playerCount">0 Online Players</h6>
+                <div class="background-white">
+                    <div id="table-wrapper">
+                        <div id="table-scroll-lg">
+                            <table id="playerTable">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Player Name</th>
+                                        <th class="text-center">ID</th>
+                                        <th class="text-center">PM</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <script src="onlinePlayers.js"></script>
+
+        <script src="../data/jquery-3.3.1.slim.min.js"></script>
+        <script src="../data/popper.min.js"></script>
+        <script src="../data/bootstrap.min.js"></script>
+</body>
+</html>

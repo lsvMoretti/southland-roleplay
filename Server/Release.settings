@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Server" GeneratedClassName="Release">
+  <Profiles />
+  <Settings>
+    <Setting Name="YandexApi" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">trnsl.1.1.20200122T202410Z.ce6fcfb3911891ea.a91edf36218b2fa96961c74789be40f102963c54</Value>
+    </Setting>
+    <Setting Name="MySqlPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">q8CsLozf</Value>
+    </Setting>
+    <Setting Name="MySqlDb" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">gameserver</Value>
+    </Setting>
+    <Setting Name="MySqlUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">gameserver</Value>
+    </Setting>
+    <Setting Name="MySqlDebug" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">gameserver</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
+

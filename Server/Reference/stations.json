@@ -1,0 +1,39 @@
+[
+  {
+    "StationName": "181fm Classic Hits",
+    "StationUrl": "http://listen.livestreamingservice.com:8132"
+  },
+  {
+    "StationName": "181fm Good Time Oldies",
+    "StationUrl": "http://listen.livestreamingservice.com:8046"
+  },
+  {
+    "StationName": "181fm The Office",
+    "StationUrl": "http://listen.livestreamingservice.com:8002"
+  },
+  {
+    "StationName": "181fm The Mix",
+    "StationUrl": "http://listen.livestreamingservice.com:8032"
+  },
+  {
+    "StationName": "Vibe FM 98.8",
+    "StationUrl": "http://85.144.1.222:8000/live.mp3"
+  },
+  {
+    "StationName": "UDM Source",
+    "StationUrl": "https://udmsource.radioca.st/stream"
+  },
+  {
+    "StationName": "Rasta Music",
+    "StationUrl": "http://808.rastamusic.com/rastamusic.mp3"
+  },
+  {
+    "StationName": "One Love Hip Hop",
+    "StationUrl": "http://listen.one.hiphop/live.mp3"
+  },
+  {
+    "StationName": "Hot 108 Jamz",
+    "StationUrl": "http://listen.hot108.com/hot108?aw_0_req.gdpr=true&esPlayer&cb=145971.mp3"
+  },
+
+]

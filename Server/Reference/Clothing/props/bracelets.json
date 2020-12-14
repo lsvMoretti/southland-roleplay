@@ -1,0 +1,298 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Wrist Chain (R)",
+        "DisplayNameFemale": "Gold Snake Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chunky Wrist Chain (R)",
+        "DisplayNameFemale": "Gold Diamond Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Square Wrist Chain (R)",
+        "DisplayNameFemale": "Gold Plain Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Skull Wrist Chain (R)",
+        "DisplayNameFemale": "Gold Le Chien Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tread Wrist Chain (R)",
+        "DisplayNameFemale": "Gold Detail Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gear Wrist Chains (R)",
+        "DisplayNameFemale": "Gold Swirl Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spiked Gauntlet (R)",
+        "DisplayNameFemale": "Gold Textured Cuff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Gauntlet (R)",
+        "DisplayNameFemale": "Light Wrist Chain (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chocolate Gauntlet (R)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Gauntlet (R)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Gauntlet (R)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chunky Wrist Chain (R)",
+        "DisplayNameFemale": "Chunky Wrist Chain (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Square Wrist Chain (R)",
+        "DisplayNameFemale": "Square Wrist Chain (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Skull Wrist Chain (R)",
+        "DisplayNameFemale": "Skull Wrist Chain (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tread Wrist Chain (R)",
+        "DisplayNameFemale": "Tread Wrist Chain (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gear Wrist Chains (R)",
+        "DisplayNameFemale": "Gear Wrist Chains (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spiked Gauntlet (R)",
+        "DisplayNameFemale": "Spiked Gauntlet (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Gauntlet (R)",
+        "DisplayNameFemale": "Black Gauntlet (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chocolate Gauntlet (R)",
+        "DisplayNameFemale": "Chocolate Gauntlet (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Gauntlet (R)",
+        "DisplayNameFemale": "Tan Gauntlet (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Gauntlet (R)",
+        "DisplayNameFemale": "Ox Blood Gauntlet (R)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    }
+  ]
+}

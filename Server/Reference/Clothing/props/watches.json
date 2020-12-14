@@ -1,0 +1,2636 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Deep Sea Watch",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 0,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Watch",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 0,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Watch",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 0,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Watch",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 0,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Faced Silver Watch",
+        "DisplayNameFemale": "Pewter Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 1,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White LED, Black Strap",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 1,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red LED, White Strap",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 1,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red LED, Brown Strap",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 1,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White LED, Tan Strap",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 1,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow LED",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 2,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Sports",
+        "DisplayNameFemale": "Gold Fashion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 2,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Sports",
+        "DisplayNameFemale": "Silver Fashion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 2,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Sports",
+        "DisplayNameFemale": "Copper Fashion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 2,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Sports",
+        "DisplayNameFemale": "Black Fashion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 2,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Sports",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 3,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pendulus Sport Black Sports",
+        "DisplayNameFemale": "Gold CaCa Di Lusso",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 3,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pfister Design Red Sports",
+        "DisplayNameFemale": "Silver CaCa Di Lusso",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 3,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Sports",
+        "DisplayNameFemale": "Pink Gold CaCa Di Lusso",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 3,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Sports",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 3,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Sports",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 4,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Watch",
+        "DisplayNameFemale": "Silver Didier Sachs Mignon",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 4,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Watch",
+        "DisplayNameFemale": "Pink Gold Didier Sachs Mignon",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 4,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Watch",
+        "DisplayNameFemale": "Gold Didier Sachs Mignon",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 4,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Gold Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 5,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red LED, White Strap",
+        "DisplayNameFemale": "Gold iFruit Link",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 5,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red LED, Brown Strap",
+        "DisplayNameFemale": "Silver iFruit Link",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 5,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White LED, Gold Strap",
+        "DisplayNameFemale": "Pink Gold iFruit Link",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 5,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow LED, Yellow Strap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 6,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Gold Kronos Quantum",
+        "DisplayNameFemale": "White iFruit Tech",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 6,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Quantum",
+        "DisplayNameFemale": "Pink iFruit Tech",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 6,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Kronos Quantum",
+        "DisplayNameFemale": "PRB iFruit Tech",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 7,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Gaulle Retro Hex",
+        "DisplayNameFemale": "Gold Le Chien Marquise",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 7,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Gaulle Retro Hex",
+        "DisplayNameFemale": "Silver Le Chien Marquise",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 7,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Gaulle Retro Hex",
+        "DisplayNameFemale": "Pink Gold Le Chien Marquise",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 8,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Covgari Supernova",
+        "DisplayNameFemale": "Gray Fufu Jeunesse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 8,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Covgari Supernova",
+        "DisplayNameFemale": "Black Fufu Jeunesse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 8,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Gold Covgari Supernova",
+        "DisplayNameFemale": "Blue Fufu Jeunesse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 9,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Pendulus Galaxis",
+        "DisplayNameFemale": "Silver Anna Rex Prestige",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 9,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Pendulus Galaxis",
+        "DisplayNameFemale": "Gold Anna Rex Prestige",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 9,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Pendulus Galaxis",
+        "DisplayNameFemale": "Carbon Anna Rex Prestige",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 10,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Crowex Chromosphere",
+        "DisplayNameFemale": "Lime iFruit Snap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 10,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Crowex Chromosphere",
+        "DisplayNameFemale": "White iFruit Snap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 10,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Crowex Chromosphere",
+        "DisplayNameFemale": "Neon iFruit Snap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 11,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Gold Vangelico Geomeister",
+        "DisplayNameFemale": "Light Wrist Chain (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 11,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Vangelico Geomeister",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 11,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Vangelico Geomeister",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 12,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold iFruit Link",
+        "DisplayNameFemale": "Chunky Wrist Chain (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 12,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver iFruit Link",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 12,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Gold iFruit Link",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 13,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon iFruit Tech",
+        "DisplayNameFemale": "Square Wrist Chain (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 13,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lime iFruit Tech",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 13,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "PRB iFruit Tech",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 14,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Covgari Explorer",
+        "DisplayNameFemale": "Skull Wrist Chain (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 14,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Gold Covgari Explorer",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 14,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Covgari Explorer",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 15,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Pendulus Gravity",
+        "DisplayNameFemale": "Tread Wrist Chain (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 15,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Pendulus Gravity",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 15,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Pendulus Gravity",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 16,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Covgari Universe",
+        "DisplayNameFemale": "Gear Wrist Chains (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 16,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Covgari Universe",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 16,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Covgari Universe",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 17,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Copper Gaulle Destiny",
+        "DisplayNameFemale": "Spiked Gauntlet (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 17,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vintage Gaulle Destiny",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 17,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Gaulle Destiny",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 18,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Medici Radial",
+        "DisplayNameFemale": "Black Gauntlet (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 18,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Medici Radial",
+        "DisplayNameFemale": "Chocolate Gauntlet (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 18,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Medici Radial",
+        "DisplayNameFemale": "Tan Gauntlet (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 19,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Pendulus Timestar",
+        "DisplayNameFemale": "Gold Enduring Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 19,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Pendulus Timestar",
+        "DisplayNameFemale": "Silver Enduring Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 19,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Pendulus Timestar",
+        "DisplayNameFemale": "Black Enduring Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 20,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Carbon Kronos Submariner",
+        "DisplayNameFemale": "Gold Kronos Tempo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 20,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Kronos Submariner",
+        "DisplayNameFemale": "Silver Kronos Tempo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 20,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Kronos Submariner",
+        "DisplayNameFemale": "Black Kronos Tempo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red iFruit Snap",
+        "DisplayNameFemale": "Gold Kronos Pulse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue iFruit Snap",
+        "DisplayNameFemale": "Silver Kronos Pulse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mint iFruit Snap",
+        "DisplayNameFemale": "Black Kronos Pulse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 22,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Wrist Chain (L)",
+        "DisplayNameFemale": "Gold Kronos Ära",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 23,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chunky Wrist Chain (L)",
+        "DisplayNameFemale": "Gold Ceaseless",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 24,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Square Wrist Chain (L)",
+        "DisplayNameFemale": "Silver Crowex Époque",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 25,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Skull Wrist Chain (L)",
+        "DisplayNameFemale": "Gold Kronos Quad",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 26,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tread Wrist Chain (L)",
+        "DisplayNameFemale": "Silver Crowex Rond",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 27,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gear Wrist Chains (L)",
+        "DisplayNameFemale": "Silver SASS Wrist Piece",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 28,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spiked Gauntlet (L)",
+        "DisplayNameFemale": "Silver SASS Bracelet",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Gauntlet (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chocolate Gauntlet (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Gauntlet (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Gauntlet (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 30,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Enduring Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 30,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Enduring Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 30,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Enduring Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 30,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Deck Enduring Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 30,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Royal Enduring Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 30,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Enduring Watch",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 31,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Kronos Tempo",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 31,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Tempo",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 31,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Kronos Tempo",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 31,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Fifty Kronos Tempo",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 31,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Roulette Kronos Tempo",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 31,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Baroque Kronos Tempo",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Kronos Pulse",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Pulse",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Kronos Pulse",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Fifty Kronos Pulse",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Roulette Kronos Pulse",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spade Kronos Pulse",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Fame or Shame Kronos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Fame or Shame Kronos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Fame or Shame Kronos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 32,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Fame or Shame Kronos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 33,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Kronos Ära",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 33,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Ära",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 33,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Kronos Ära",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 33,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Fifty Kronos Ära",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 33,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Spade Kronos Ära",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 33,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Spade Kronos Ära",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 34,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Ceaseless",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 34,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Ceaseless",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 34,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Ceaseless",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 34,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spade Ceaseless",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 34,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mixed Metals Ceaseless",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 34,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Ceaseless",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 35,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Crowex Époque",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 35,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Crowex Époque",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 35,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Crowex Époque",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 35,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wheel Crowex Époque",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 35,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Suits Crowex Époque",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 35,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Crowex Époque",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 36,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Kronos Quad",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 36,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Quad",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 36,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Kronos Quad",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 36,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Kronos Quad",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 36,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fifty Kronos Quad",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 36,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Suits Kronos Quad",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 37,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Crowex Rond",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 37,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Crowex Rond",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 37,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Crowex Rond",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 37,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spade Crowex Rond",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 37,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Royalty Crowex Rond",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 37,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dice Crowex Rond",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 38,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver SASS Wrist Piece",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 38,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold SASS Wrist Piece",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 38,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black SASS Wrist Piece",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 39,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver SASS Bracelet",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 39,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold SASS Bracelet",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 39,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black SASS Bracelet",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 18,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Gauntlet (L)",
+        "DisplayNameFemale": "Ox Blood Gauntlet (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 19,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Deck Enduring Watch",
+        "DisplayNameFemale": "Deck Enduring Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 19,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Royal Enduring Watch",
+        "DisplayNameFemale": "Royal Enduring Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 19,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Enduring Watch",
+        "DisplayNameFemale": "Roulette Enduring Watch",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 20,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Fifty Kronos Tempo",
+        "DisplayNameFemale": "Gold Fifty Kronos Tempo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 20,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Roulette Kronos Tempo",
+        "DisplayNameFemale": "Gold Roulette Kronos Tempo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 20,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Baroque Kronos Tempo",
+        "DisplayNameFemale": "Baroque Kronos Tempo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Fifty Kronos Pulse",
+        "DisplayNameFemale": "Silver Fifty Kronos Pulse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Roulette Kronos Pulse",
+        "DisplayNameFemale": "Silver Roulette Kronos Pulse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spade Kronos Pulse",
+        "DisplayNameFemale": "Spade Kronos Pulse",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Fame or Shame Kronos",
+        "DisplayNameFemale": "Red Fame or Shame Kronos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Fame or Shame Kronos",
+        "DisplayNameFemale": "Green Fame or Shame Kronos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Fame or Shame Kronos",
+        "DisplayNameFemale": "Blue Fame or Shame Kronos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 21,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Fame or Shame Kronos",
+        "DisplayNameFemale": "Black Fame or Shame Kronos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 22,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Ära",
+        "DisplayNameFemale": "Silver Kronos Ära",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 22,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Kronos Ära",
+        "DisplayNameFemale": "Black Kronos Ära",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 22,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Fifty Kronos Ära",
+        "DisplayNameFemale": "Gold Fifty Kronos Ära",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 22,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Spade Kronos Ära",
+        "DisplayNameFemale": "Tan Spade Kronos Ära",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 22,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Spade Kronos Ära",
+        "DisplayNameFemale": "Brown Spade Kronos Ära",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 23,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Ceaseless",
+        "DisplayNameFemale": "Silver Ceaseless",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 23,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Ceaseless",
+        "DisplayNameFemale": "Black Ceaseless",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 23,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spade Ceaseless",
+        "DisplayNameFemale": "Spade Ceaseless",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 23,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mixed Metals Ceaseless",
+        "DisplayNameFemale": "Mixed Metals Ceaseless",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 23,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Ceaseless",
+        "DisplayNameFemale": "Roulette Ceaseless",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 24,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Crowex Époque",
+        "DisplayNameFemale": "Gold Crowex Époque",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 24,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Crowex Époque",
+        "DisplayNameFemale": "Black Crowex Époque",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 24,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wheel Crowex Époque",
+        "DisplayNameFemale": "Wheel Crowex Époque",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 24,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Suits Crowex Époque",
+        "DisplayNameFemale": "Suits Crowex Époque",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 24,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Crowex Époque",
+        "DisplayNameFemale": "Roulette Crowex Époque",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 25,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Kronos Quad",
+        "DisplayNameFemale": "Silver Kronos Quad",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 25,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Kronos Quad",
+        "DisplayNameFemale": "Black Kronos Quad",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 25,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Roulette Kronos Quad",
+        "DisplayNameFemale": "Roulette Kronos Quad",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 25,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fifty Kronos Quad",
+        "DisplayNameFemale": "Fifty Kronos Quad",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 25,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Suits Kronos Quad",
+        "DisplayNameFemale": "Suits Kronos Quad",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 26,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Crowex Rond",
+        "DisplayNameFemale": "Gold Crowex Rond",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 26,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Crowex Rond",
+        "DisplayNameFemale": "Black Crowex Rond",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 26,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spade Crowex Rond",
+        "DisplayNameFemale": "Spade Crowex Rond",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 26,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Royalty Crowex Rond",
+        "DisplayNameFemale": "Royalty Crowex Rond",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 26,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dice Crowex Rond",
+        "DisplayNameFemale": "Dice Crowex Rond",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 27,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold SASS Wrist Piece",
+        "DisplayNameFemale": "Gold SASS Wrist Piece",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 27,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black SASS Wrist Piece",
+        "DisplayNameFemale": "Black SASS Wrist Piece",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 28,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold SASS Bracelet",
+        "DisplayNameFemale": "Gold SASS Bracelet",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 28,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black SASS Bracelet",
+        "DisplayNameFemale": "Black SASS Bracelet",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    }
+  ]
+}

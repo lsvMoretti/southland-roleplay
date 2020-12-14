@@ -1,0 +1,277 @@
+[
+  {
+    "Name": "Drink Tray 1",
+    "ObjectName": "apa_mp_h_acc_drink_tray_02",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Bottle 1",
+    "ObjectName": "apa_mp_h_acc_bottle_01",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Bottle 2",
+    "ObjectName": "apa_mp_h_acc_bottle_02",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Ceramic Bowl",
+    "ObjectName": "apa_mp_h_acc_bowl_ceramic_01",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Coffee Machine",
+    "ObjectName": "apa_mp_h_acc_coffeemachine_01",
+    "Cost": 50.0
+  },
+  {
+    "Name": "White Plastic Chair",
+    "ObjectName": "bkr_prop_clubhouse_chair_03",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Wooden Interior Door",
+    "ObjectName": "apa_heist_apart2_door",
+    "Cost": 300.0
+  },
+  {
+    "Name": "Wooden Exterior Door",
+    "ObjectName": "apa_p_mp_door_01",
+    "Cost": 500.0
+  },
+  {
+    "Name": "Aluminum Exterior Door",
+    "ObjectName": "apa_p_mp_door_02",
+    "Cost": 400.0
+  },
+  {
+    "Name": "Plush White Loveseat",
+    "ObjectName": "apa_mp_h_stn_sofa2seat_02",
+    "Cost": 500.0
+  },
+  {
+    "Name": "Plush White Sectional",
+    "ObjectName": "apa_mp_h_stn_sofacorn_01",
+    "Cost": 1050.0
+  },
+  {
+    "Name": "Majestic Brown Loveseat",
+    "ObjectName": "prop_couch_01",
+    "Cost": 750.0
+  },
+  {
+    "Name": "Majestic Brown Sofa",
+    "ObjectName": "prop_couch_03",
+    "Cost": 900.0
+  },
+  {
+    "Name": "Brown Suede Couch",
+    "ObjectName": "prop_couch_04",
+    "Cost": 800.0
+  },
+  {
+    "Name": "Glass Vase Grey",
+    "ObjectName": "apa_mp_h_acc_vase_flowers_01",
+    "Cost": 30.0
+  },
+  {
+    "Name": "Black Vase",
+    "ObjectName": "apa_mp_h_acc_vase_flowers_02",
+    "Cost": 25.0
+  },
+  {
+    "Name": "Black Globe Vase",
+    "ObjectName": "apa_mp_h_acc_vase_flowers_03",
+    "Cost": 20.0
+  },
+  {
+    "Name": "Standing Vase",
+    "ObjectName": "apa_mp_h_acc_vase_flowers_04",
+    "Cost": 35.0
+  },
+  {
+    "Name": "Glass Vase Clear",
+    "ObjectName": "ex_mp_h_acc_vase_flowers_01",
+    "Cost": 30.0
+  },
+  {
+    "Name": "Volcantor Bong",
+    "ObjectName": "prop_bong_01",
+    "Cost": 50.0
+  },
+  {
+    "Name": "Copper Ashtray",
+    "ObjectName": "ex_prop_ashtray_luxe_02",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Black Ashtray",
+    "ObjectName": "ex_prop_exec_ashtray_01",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Black Ashtray Full",
+    "ObjectName": "prop_ashtray_01",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Outside Ashtray",
+    "ObjectName": "prop_cs_ashtray",
+    "Cost": 45.0
+  },
+  {
+    "Name": "Mars Abstract Art",
+    "ObjectName": "apa_mp_h_acc_artwalll_01",
+    "Cost": 400.0
+  },
+  {
+    "Name": "Sunset Abstract Art",
+    "ObjectName": "apa_mp_h_acc_artwalll_02",
+    "Cost": 400.0
+  },
+  {
+    "Name": "Blue Night Abstract Art",
+    "ObjectName": "apa_mp_h_acc_artwalll_03",
+    "Cost": 400.0
+  },
+  {
+    "Name": "Blue Sky Abstract Art",
+    "ObjectName": "apa_mp_h_acc_artwallm_02",
+    "Cost": 400.0
+  },
+  {
+    "Name": "Brown Modern Bed",
+    "ObjectName": "apa_mp_h_bed_with_table_02",
+    "Cost": 1700.0
+  },
+  {
+    "Name": "Pill Bottle",
+    "ObjectName": "ng_proc_drug01a002",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Baking Soda",
+    "ObjectName": "bkr_prop_coke_bakingsoda_o",
+    "Cost": 3.0
+  },
+  {
+    "Name": "CCTV Left-mounted",
+    "ObjectName": "ba_prop_battle_cctv_cam_01a",
+    "Cost": 200.0
+  },
+  {
+    "Name": "CCTV Right-mounted",
+    "ObjectName": "ba_prop_battle_cctv_cam_01b",
+    "Cost": 200.0
+  },
+  {
+    "Name": "CCTV Bottom-mounted",
+    "ObjectName": "ch_prop_ch_cctv_cam_01a",
+    "Cost": 200.0
+  },
+  {
+    "Name": "Old Widescreen TV",
+    "ObjectName": "prop_tv_03",
+    "Cost": 75.0
+  },
+  {
+    "Name": "Retro TV",
+    "ObjectName": "prop_tv_05",
+    "Cost": 15.0
+  },
+  {
+    "Name": "Vintage TV",
+    "ObjectName": "prop_tv_07",
+    "Cost": 50.0
+  },
+  {
+    "Name": "Wall Mounted LCD-TV",
+    "ObjectName": "prop_tv_flat_01",
+    "Cost": 500.0
+  },
+  {
+    "Name": "LCD-TV (White)",
+    "ObjectName": "prop_tv_flat_02",
+    "Cost": 400.0
+  },
+  {
+    "Name": "LCD-TV (Black)",
+    "ObjectName": "prop_tv_flat_02b",
+    "Cost": 400.0
+  },
+  {
+    "Name": "Large LCD TV",
+    "ObjectName": "vw_prop_vw_cinema_tv_01",
+    "Cost": 700.0
+  },
+  {
+    "Name": "TV Remote",
+    "ObjectName": "v_res_tt_tvremote",
+    "Cost": 5.0
+  },
+  {
+    "Name": "Ceiling LCD TV",
+    "ObjectName": "xm_prop_x17_tv_ceiling_01",
+    "Cost": 600.0
+  },
+  {
+    "Name": "Burger Shot Bag",
+    "ObjectName": "ng_proc_food_bag01a",
+    "Cost": 1700.0
+  },
+  {
+    "Name": "Cluckin Bell Carton",
+    "ObjectName": "ng_proc_food_burg01a",
+    "Cost": 1.0
+  },
+  {
+    "Name": "Cluckin Bell Carton (Open)",
+    "ObjectName": "ng_proc_food_burg02a",
+    "Cost": 1.0
+  },
+  {
+    "Name": "Burger Shot Carton (Open)",
+    "ObjectName": "ng_proc_food_burg02c",
+    "Cost": 1.0
+  },
+  {
+    "Name": "Bag of chips",
+    "ObjectName": "ng_proc_food_chips01a",
+    "Cost": 1.0
+  },
+  {
+    "Name": "Burger Shot Carton",
+    "ObjectName": "prop_food_bs_burg3",
+    "Cost": 1.0
+  },
+  {
+    "Name": "Burger Shot Soda",
+    "ObjectName": "prop_food_bs_juice01",
+    "Cost": 1.0
+  },
+  {
+    "Name": "Black Executive Chair",
+    "ObjectName": "vw_prop_vw_offchair_02",
+    "Cost": 700.0
+  },
+  {
+    "Name": "Black Office Chair",
+    "ObjectName": "v_corp_offchair",
+    "Cost": 200.0
+  },
+  {
+    "Name": "Leather Folding Chair",
+    "ObjectName": "apa_mp_h_din_chair_09",
+    "Cost": 20.0
+  },
+  {
+    "Name": "Dark Arm Chair",
+    "ObjectName": "apa_mp_h_stn_chairarm_24",
+    "Cost": 300.0
+  },
+  {
+    "Name": "Treadmill",
+    "ObjectName": "apa_p_apdlc_treadmill_s",
+    "Cost": 300.0
+  }
+]

@@ -1,0 +1,5310 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Hornet Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Two-Tone Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Orange Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Marble Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Topaz Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Beige Sports Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Shell Sports Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Sports Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 0,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Sports Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Copper Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Wraparounds",
+        "DisplayNameFemale": "Blue Tint Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red Tint Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Tint Marbles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Winter Shades",
+        "DisplayNameFemale": "Marble Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Silver Shades",
+        "DisplayNameFemale": "Copper Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crimson Polarized Shades",
+        "DisplayNameFemale": "Orange Tint Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Summer Shades",
+        "DisplayNameFemale": "Pink Tint Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Autumn Shades",
+        "DisplayNameFemale": "Walnut Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Rust Shades",
+        "DisplayNameFemale": "Black Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Steel Shades",
+        "DisplayNameFemale": "Vintage Red Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Polarized Shades",
+        "DisplayNameFemale": "Gold Mademoiselles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Stank Glasses",
+        "DisplayNameFemale": "Shell Mademoiselle Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Stank Glasses",
+        "DisplayNameFemale": "Black Mademoiselle Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 2,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Stank Glasses",
+        "DisplayNameFemale": "White Mademoiselle Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slate Janitor Frames",
+        "DisplayNameFemale": "Zebra Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Janitor Frames",
+        "DisplayNameFemale": "Ombre Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Janitor Frames",
+        "DisplayNameFemale": "Flame Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Janitor Frames",
+        "DisplayNameFemale": "Violet Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Janitor Frames",
+        "DisplayNameFemale": "Sun Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoke Janitor Frames",
+        "DisplayNameFemale": "Silver Accent Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Janitor Frames",
+        "DisplayNameFemale": "Party Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Janitor Frames",
+        "DisplayNameFemale": "Gold Shields",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Janitor Glasses",
+        "DisplayNameFemale": "Shell Shield Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Janitor Glasses",
+        "DisplayNameFemale": "Black Shield Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 3,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Janitor Glasses",
+        "DisplayNameFemale": "White Shield Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Brown Glasses",
+        "DisplayNameFemale": "Deep Walnut Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Gray Glasses",
+        "DisplayNameFemale": "Marble Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Black Glasses",
+        "DisplayNameFemale": "Beige Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Tortoiseshell Glasses",
+        "DisplayNameFemale": "Aqua Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Walnut Glasses",
+        "DisplayNameFemale": "Dice Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Marble Glasses",
+        "DisplayNameFemale": "Black Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Smoke Glasses",
+        "DisplayNameFemale": "Toffee Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enema Smoke Shades",
+        "DisplayNameFemale": "Red Retro",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Enema Glasses",
+        "DisplayNameFemale": "Shell Retro Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Enema Glasses",
+        "DisplayNameFemale": "Black Retro Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 4,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Enema Glasses",
+        "DisplayNameFemale": "White Retro Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Aviators, Brown Tint",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Aviators, Green Tint",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Aviators, Blue Tint",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Aviators, Dark Tint",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Aviators, Blue Tint",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Aviators, Copper Tint",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Aviator Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Aviator Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 5,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Aviator Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Tint Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Casuals",
+        "DisplayNameFemale": "Champagne Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zap Casuals",
+        "DisplayNameFemale": "Platinum Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tortoiseshell Casuals",
+        "DisplayNameFemale": "Sapphire Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Casuals",
+        "DisplayNameFemale": "Amethyst Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Casuals",
+        "DisplayNameFemale": "Gold Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Camo Collection Casuals",
+        "DisplayNameFemale": "White Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lemon Casuals",
+        "DisplayNameFemale": "Gray Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blood Casuals",
+        "DisplayNameFemale": "Garnet Figure 8s",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Casual Glasses",
+        "DisplayNameFemale": "Shell Figure 8 Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Casual Glasses",
+        "DisplayNameFemale": "Black Figure 8 Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 7,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Casual Glasses",
+        "DisplayNameFemale": "White Figure 8 Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Eyewear",
+        "DisplayNameFemale": "Orange Tint Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Eyewear",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Eyewear",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoke Cop Frames",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Coffee Cop Frames",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Cop Frames",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slate Cop Frames",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Cop Frames",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Cop Glasses",
+        "DisplayNameFemale": "Shell Squared Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Cop Glasses",
+        "DisplayNameFemale": "Black Squared Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 8,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Cop Glasses",
+        "DisplayNameFemale": "White Squared Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Black",
+        "DisplayNameFemale": "Lime Tint Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Gray",
+        "DisplayNameFemale": "Orange Tint Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow White",
+        "DisplayNameFemale": "Blue Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Ash",
+        "DisplayNameFemale": "Tropic Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Copper",
+        "DisplayNameFemale": "Fly Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Tortoiseshell",
+        "DisplayNameFemale": "Crimson Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Marble",
+        "DisplayNameFemale": "Green Tint Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hawaiian Snow Walnut",
+        "DisplayNameFemale": "Pink Shooters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell HS Glasses",
+        "DisplayNameFemale": "Shell Shooter Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black HS Glasses",
+        "DisplayNameFemale": "Black Shooter Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 9,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White HS Glasses",
+        "DisplayNameFemale": "White Shooter Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Bull Emic",
+        "DisplayNameFemale": "Luxury Ice Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Bull Emic",
+        "DisplayNameFemale": "Black Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Bull Emic",
+        "DisplayNameFemale": "Green Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Bull Emic",
+        "DisplayNameFemale": "Luxury Cowhide Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Bull Emic",
+        "DisplayNameFemale": "Orange Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slate Bull Emic",
+        "DisplayNameFemale": "Black Pattern Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Bull Emic",
+        "DisplayNameFemale": "Blue Pattern Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tint Bull Emic",
+        "DisplayNameFemale": "Pink Pattern Sports",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Bull Emic Glasses",
+        "DisplayNameFemale": "Shell HS Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Bull Emic Glasses",
+        "DisplayNameFemale": "Black HS Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 10,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Bull Emic Glasses",
+        "DisplayNameFemale": "White HS Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pewter Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Steel Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Bronze Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Neon Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Copper Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 11,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Slate Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slate Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tint Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tint Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Copper Elvis",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Elvis Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Elvis Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 12,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Elvis Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Black Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Polarized Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Choco Polarized Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slate Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Olive Polarized Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Polarized Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Candy Polarized Hipsters",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Hipster Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Hipster Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 13,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Hipster Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Brown Marble Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Marble Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Cat Eyes",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hornet Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Guns",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Gun Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Gun Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 15,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Gun Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Pink Wraparounds",
+        "DisplayNameFemale": "DS Brown Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Purple Wraparounds",
+        "DisplayNameFemale": "DS Blue Tint Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Orange Wraparounds",
+        "DisplayNameFemale": "DS Green Marble Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Red Wraparounds",
+        "DisplayNameFemale": "DS Teal Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Crimson Wraparounds",
+        "DisplayNameFemale": "DS White Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Lime Wraparounds",
+        "DisplayNameFemale": "DS Pink Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Yellow Wraparounds",
+        "DisplayNameFemale": "DS Red Bugs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Wraparound Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Wraparound Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 16,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Wraparound Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Refined",
+        "DisplayNameFemale": "Purple Tint Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Refined",
+        "DisplayNameFemale": "Blue Leopard Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Refined",
+        "DisplayNameFemale": "Purple Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Refined, Warm Tint",
+        "DisplayNameFemale": "Teal Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Refined, Cool Tint",
+        "DisplayNameFemale": "Tan Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hornet Refined",
+        "DisplayNameFemale": "Pink Striped Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Refined",
+        "DisplayNameFemale": "White Squared",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Refined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Refined Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Refined Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 17,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Refined Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Superior",
+        "DisplayNameFemale": "Steel Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Steel Superior",
+        "DisplayNameFemale": "Pewter Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Superior",
+        "DisplayNameFemale": "Gold Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Superior",
+        "DisplayNameFemale": "Black Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Superior",
+        "DisplayNameFemale": "Yellow Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bronze Superior, Warm Tint",
+        "DisplayNameFemale": "Copper Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Superior, Cool Tint",
+        "DisplayNameFemale": "Gold Stem Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Superior, Hot Tint",
+        "DisplayNameFemale": "Silver Stem Slim Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Superior Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Superior Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 18,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Superior Glasses",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Gold Trends",
+        "DisplayNameFemale": "Black Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Silver Trends",
+        "DisplayNameFemale": "Orange Hinge Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Dipped Trends",
+        "DisplayNameFemale": "Pink Hinge Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Trends",
+        "DisplayNameFemale": "Marbled Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crimson Trends",
+        "DisplayNameFemale": "Latte Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Dipped Trends",
+        "DisplayNameFemale": "Vixen Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Trends",
+        "DisplayNameFemale": "Sunshine Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White & Gold Trends",
+        "DisplayNameFemale": "Eccentric Plastic Frames",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Trend Glasses",
+        "DisplayNameFemale": "Shell Plastic Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Trend Glasses",
+        "DisplayNameFemale": "Black Plastic Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 19,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Trend Glasses",
+        "DisplayNameFemale": "White Plastic Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sunset Docks",
+        "DisplayNameFemale": "Black Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Docks",
+        "DisplayNameFemale": "Two-Tone Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Docks",
+        "DisplayNameFemale": "Red Marble Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Checked Docks",
+        "DisplayNameFemale": "Multicolored Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Docks",
+        "DisplayNameFemale": "Peach Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Docks",
+        "DisplayNameFemale": "Baby Blue Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crimson Docks",
+        "DisplayNameFemale": "Red Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Docks",
+        "DisplayNameFemale": "Lime Retro Classics",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Dock Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Dock Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 20,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Dock Glasses",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Star Frame Shades",
+        "DisplayNameFemale": "Black Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 22,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Star Spangled Shades",
+        "DisplayNameFemale": "Star Frame Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Star Spangled Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 23,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Outlaw Goggles",
+        "DisplayNameFemale": "Black Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Outlaw Goggles",
+        "DisplayNameFemale": "Zap Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mono Outlaw Goggles",
+        "DisplayNameFemale": "Tortoiseshell Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Outlaw Goggles",
+        "DisplayNameFemale": "Red Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Outlaw Goggles",
+        "DisplayNameFemale": "White Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Outlaw Goggles",
+        "DisplayNameFemale": "Camo Collection Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tropical Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dusk Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Grayscale Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Urban Ski",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Tan Outlaw Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Outlaw Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mono Outlaw Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Ox Blood Outlaw Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Outlaw Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Beige Outlaw Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 26,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Tropical Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dot Fade Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Fade Tint Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Walnut Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Horizon Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Vine Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Herringbone Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Tint Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Magenta Tint Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Electric Blue Tint Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Argyle Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Rim Tint Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Rim Tint Aviators",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Deep Shades",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Two Tone Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Urban Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Urban Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Digital Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Houndstooth Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mute Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sunrise Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Striped Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mono Deep Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Fame or Shame Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Fame or Shame Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Fame or Shame Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 29,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Fame or Shame Shades",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Marble Glasses",
+        "DisplayNameFemale": "Shell Marble Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Marble Glasses",
+        "DisplayNameFemale": "Black Marble Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 1,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Marble Glasses",
+        "DisplayNameFemale": "White Marble Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Bug Glasses",
+        "DisplayNameFemale": "Shell Bug Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Bug Glasses",
+        "DisplayNameFemale": "Black Bug Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 6,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Bug Glasses",
+        "DisplayNameFemale": "White Bug Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Cat Eye Glasses",
+        "DisplayNameFemale": "Shell Cat Eye Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Cat Eye Glasses",
+        "DisplayNameFemale": "Black Cat Eye Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 14,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Cat Eye Glasses",
+        "DisplayNameFemale": "White Cat Eye Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Hipsters",
+        "DisplayNameFemale": "Blue Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Marble Hipsters",
+        "DisplayNameFemale": "Marble Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dipped Hipsters",
+        "DisplayNameFemale": "Dipped Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Hipsters",
+        "DisplayNameFemale": "Red Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Hipsters",
+        "DisplayNameFemale": "Orange Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hot Pink Hipsters",
+        "DisplayNameFemale": "Hot Pink Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 21,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Hipsters",
+        "DisplayNameFemale": "Brown Hipsters",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lemon Casuals",
+        "DisplayNameFemale": "Lemon Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blood Casuals",
+        "DisplayNameFemale": "Blood Casuals",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shell Casual Glasses",
+        "DisplayNameFemale": "Shell Casual Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Casual Glasses",
+        "DisplayNameFemale": "Black Casual Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 24,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Casual Glasses",
+        "DisplayNameFemale": "White Casual Glasses",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 25,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Urban Ski",
+        "DisplayNameFemale": "Yellow Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Urban Ski",
+        "DisplayNameFemale": "Green Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dusk Urban Ski",
+        "DisplayNameFemale": "Dusk Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Grayscale Urban Ski",
+        "DisplayNameFemale": "Grayscale Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Urban Ski",
+        "DisplayNameFemale": "Pink Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Urban Ski",
+        "DisplayNameFemale": "Orange Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 27,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Urban Ski",
+        "DisplayNameFemale": "Brown Urban Ski",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 28,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dot Fade Aviators",
+        "DisplayNameFemale": "Dot Fade Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Fade Tint Aviators",
+        "DisplayNameFemale": "Orange Fade Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Walnut Aviators",
+        "DisplayNameFemale": "Walnut Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Horizon Aviators",
+        "DisplayNameFemale": "Horizon Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Vine Aviators",
+        "DisplayNameFemale": "Purple Vine Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Herringbone Aviators",
+        "DisplayNameFemale": "Herringbone Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Tint Aviators",
+        "DisplayNameFemale": "Gold Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Magenta Tint Aviators",
+        "DisplayNameFemale": "Magenta Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Electric Blue Tint Aviators",
+        "DisplayNameFemale": "Electric Blue Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Argyle Aviators",
+        "DisplayNameFemale": "Blue Argyle Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Rim Tint Aviators",
+        "DisplayNameFemale": "Black Rim Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Rim Tint Aviators",
+        "DisplayNameFemale": "White Rim Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Deep Shades",
+        "DisplayNameFemale": "Black Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Two Tone Deep Shades",
+        "DisplayNameFemale": "Two Tone Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Deep Shades",
+        "DisplayNameFemale": "White Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Deep Shades",
+        "DisplayNameFemale": "Red Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Deep Shades",
+        "DisplayNameFemale": "Aqua Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Deep Shades",
+        "DisplayNameFemale": "Green Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Urban Deep Shades",
+        "DisplayNameFemale": "Green Urban Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Urban Deep Shades",
+        "DisplayNameFemale": "Pink Urban Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Digital Deep Shades",
+        "DisplayNameFemale": "Digital Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Deep Shades",
+        "DisplayNameFemale": "Splinter Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Deep Shades",
+        "DisplayNameFemale": "Zebra Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Houndstooth Deep Shades",
+        "DisplayNameFemale": "Houndstooth Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mute Deep Shades",
+        "DisplayNameFemale": "Mute Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sunrise Deep Shades",
+        "DisplayNameFemale": "Sunrise Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Striped Deep Shades",
+        "DisplayNameFemale": "Striped Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mono Deep Shades",
+        "DisplayNameFemale": "Mono Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Fame or Shame Shades",
+        "DisplayNameFemale": "Black Fame or Shame Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Fame or Shame Shades",
+        "DisplayNameFemale": "Red Fame or Shame Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Fame or Shame Shades",
+        "DisplayNameFemale": "Blue Fame or Shame Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Fame or Shame Shades",
+        "DisplayNameFemale": "White Fame or Shame Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    }
+  ]
+}

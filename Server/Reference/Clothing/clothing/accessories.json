@@ -1,0 +1,9146 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "No Tie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Chain",
+        "DisplayNameFemale": "Gold Deco Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Chain",
+        "DisplayNameFemale": "Silver Deco Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bronze Chain",
+        "DisplayNameFemale": "Pearl Deco Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Chain",
+        "DisplayNameFemale": "Gold Hoop Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Chain",
+        "DisplayNameFemale": "Silver Hoop Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bronze Chain",
+        "DisplayNameFemale": "Pink Hoop Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Diamond Earrings",
+        "DisplayNameFemale": "Harsh Souls Sweatband",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Diamond Earrings",
+        "DisplayNameFemale": "Prolaps Sweatband",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Diamond Earrings",
+        "DisplayNameFemale": "LC Sweatband",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Sweatband",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Sweatband",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Sweatband",
+        "DisplayNameFemale": "Zebra Bangles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Sweatband",
+        "DisplayNameFemale": "Gold Bangles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Sweatband",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Sweatband",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Striped Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "LS Panic Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "LC Penetrators Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "LC Salamanders Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sky Blue Sweatband",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sweatband 14",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 4,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sweatband 15",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Scarf",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Scarf",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Scarf",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Scarf",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Scarf",
+        "DisplayNameFemale": "White Leather Straps",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 5,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Scarf",
+        "DisplayNameFemale": "Rainbow Leather Straps",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Scarf",
+        "DisplayNameFemale": "Onyx Pendant",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Scarf",
+        "DisplayNameFemale": "Pearl Pendant",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Scarf",
+        "DisplayNameFemale": "Jade Pendant",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Scarf",
+        "DisplayNameFemale": "Carnelian Pendant",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Scarf",
+        "DisplayNameFemale": "Aquamarine Pendant",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 6,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Scarf",
+        "DisplayNameFemale": "Amethyst Pendant",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "None",
+        "DisplayNameFemale": "Gold Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "None",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "None",
+        "DisplayNameFemale": "Black Tassel Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Tie",
+        "DisplayNameFemale": "Floral Bangles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Tie",
+        "DisplayNameFemale": "MyMy Psychedelic Bangles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Tie",
+        "DisplayNameFemale": "Green Bangles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tie",
+        "DisplayNameFemale": "Red Bangles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Two-Tone Plaid Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 10,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Striped Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Bowtie",
+        "DisplayNameFemale": "MyMy Black Heart Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Bowtie",
+        "DisplayNameFemale": "MyMy Pink Heart Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Bowtie",
+        "DisplayNameFemale": "Rose Heart Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Bowtie",
+        "DisplayNameFemale": "All Silver Heart Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Plaid Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Plaid Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Earth Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 11,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Plaid Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Skinny Tie",
+        "DisplayNameFemale": "White Beads",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Skinny Tie",
+        "DisplayNameFemale": "Silver Beads",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Skinny Tie",
+        "DisplayNameFemale": "Black Beads",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Two-Tone Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 12,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Striped Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "None",
+        "DisplayNameFemale": "Spotted Bow Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "None",
+        "DisplayNameFemale": "Black & White Leather Straps",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 15,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "None",
+        "DisplayNameFemale": "Red Tassel Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 16,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Covgari Silver Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 16,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gaulle Gold Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 16,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bronze Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 17,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Covgari Silver Chain",
+        "DisplayNameFemale": "Stripy Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 17,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gaulle Gold Chain",
+        "DisplayNameFemale": "Joy Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 17,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bronze Chain",
+        "DisplayNameFemale": "Snowflake Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 18,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Christmas Tie",
+        "DisplayNameFemale": "Stripy Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 19,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Skinny Christmas Tie",
+        "DisplayNameFemale": "Black Loose Bow Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Vest Tie",
+        "DisplayNameFemale": "Charcoal Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Vest Tie",
+        "DisplayNameFemale": "Khaki Hatch Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ivory Vest Tie",
+        "DisplayNameFemale": "White Stripy Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Vest Tie",
+        "DisplayNameFemale": "Green Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Vest Tie",
+        "DisplayNameFemale": "Purple Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tie",
+        "DisplayNameFemale": "White Skinny Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Tie",
+        "DisplayNameFemale": "Gray Skinny Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Tie",
+        "DisplayNameFemale": "Black Skinny Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 21,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Striped Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Bowtie",
+        "DisplayNameFemale": "Charcoal Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Bowtie",
+        "DisplayNameFemale": "Khaki Hatch Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Bowtie",
+        "DisplayNameFemale": "White Stripy Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Bowtie",
+        "DisplayNameFemale": "Green Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Bowtie",
+        "DisplayNameFemale": "Purple Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Bowtie",
+        "DisplayNameFemale": "Fuchsia Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Bowtie",
+        "DisplayNameFemale": "Gray Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Bowtie",
+        "DisplayNameFemale": "Tan Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Bowtie",
+        "DisplayNameFemale": "Blue Stripy Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Bowtie",
+        "DisplayNameFemale": "Teal Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Bowtie",
+        "DisplayNameFemale": "Orange Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ocean Bowtie",
+        "DisplayNameFemale": "Blue Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sandy Bowtie",
+        "DisplayNameFemale": "Tan Stripy Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Earth Bowtie",
+        "DisplayNameFemale": "Pink Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Berry Bowtie",
+        "DisplayNameFemale": "Green Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Skinny Tie",
+        "DisplayNameFemale": "Black Bow Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Skinny Tie",
+        "DisplayNameFemale": "White Bow Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Skinny Tie",
+        "DisplayNameFemale": "Red Bow Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 23,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Tie",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 24,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Striped Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Skinny Tie",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 25,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Tie",
+        "DisplayNameFemale": "Charcoal Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Tie",
+        "DisplayNameFemale": "Khaki Hatch Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Tie",
+        "DisplayNameFemale": "White Stripy Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tie",
+        "DisplayNameFemale": "Green Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Tie",
+        "DisplayNameFemale": "Purple Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Tie",
+        "DisplayNameFemale": "Fuchsia Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tie",
+        "DisplayNameFemale": "Gray Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Tie",
+        "DisplayNameFemale": "Tan Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Tie",
+        "DisplayNameFemale": "Blue Stripy Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tie",
+        "DisplayNameFemale": "Teal Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Tie",
+        "DisplayNameFemale": "Orange Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Tie",
+        "DisplayNameFemale": "Blue Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Tie",
+        "DisplayNameFemale": "Tan Stripy Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Tie",
+        "DisplayNameFemale": "Pink Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Tie",
+        "DisplayNameFemale": "Green Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 26,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Striped Tie",
+        "DisplayNameFemale": "Blue Hatch Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Skinny Tie",
+        "DisplayNameFemale": "White Skinny Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Skinny Tie",
+        "DisplayNameFemale": "Gray Skinny Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Skinny Tie",
+        "DisplayNameFemale": "Black Skinny Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 27,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Tie",
+        "DisplayNameFemale": "Charcoal Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Tie",
+        "DisplayNameFemale": "Khaki Hatch Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Tie",
+        "DisplayNameFemale": "White Stripy Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tie",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Tie",
+        "DisplayNameFemale": "Purple Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Tie",
+        "DisplayNameFemale": "Fuchsia Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tie",
+        "DisplayNameFemale": "Gray Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Tie",
+        "DisplayNameFemale": "Tan Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Tie",
+        "DisplayNameFemale": "Blue Stripy Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tie",
+        "DisplayNameFemale": "Teal Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Tie",
+        "DisplayNameFemale": "Orange Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Tie",
+        "DisplayNameFemale": "Blue Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Tie",
+        "DisplayNameFemale": "Tan Stripy Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Tie",
+        "DisplayNameFemale": "Pink Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Tie",
+        "DisplayNameFemale": "Green Diamond Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 28,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Striped Tie",
+        "DisplayNameFemale": "Blue Hatch Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Skinny Tie",
+        "DisplayNameFemale": "Gold SN Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Skinny Tie",
+        "DisplayNameFemale": "Platinum SN Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoky Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Striped Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 29,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gent Skinny Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 30,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Scarf",
+        "DisplayNameFemale": "Gold Skull Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 30,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Scarf",
+        "DisplayNameFemale": "Platinum Skull Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 30,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 30,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 30,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 30,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 31,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Scarf",
+        "DisplayNameFemale": "Platinum Balaclava Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 31,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 31,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 31,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 31,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 31,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 32,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "USA Bow Tie",
+        "DisplayNameFemale": "Gold Zorse Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 32,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Star Bow Tie",
+        "DisplayNameFemale": "Platinum Zorse Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 32,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Star Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 33,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold LC Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 34,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stripy Scarf",
+        "DisplayNameFemale": "Gold Dix Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 34,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Joy Scarf",
+        "DisplayNameFemale": "Platinum Dix Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 34,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snowflake Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 34,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Storm Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 35,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stripy Scarf",
+        "DisplayNameFemale": "Gold Le Chien Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 35,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Joy Scarf",
+        "DisplayNameFemale": "Platinum Le Chien Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 35,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snowflake Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 35,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Storm Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 36,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Loose Bow Tie",
+        "DisplayNameFemale": "Gold SN Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Loose Tie",
+        "DisplayNameFemale": "Gold Skull Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Hatch Loose Tie",
+        "DisplayNameFemale": "Platinum Skull Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Stripy Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Diamond Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fuchsia Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Diamond Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Stripy Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Teal Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Diamond Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Stripy Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Diamond Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 37,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Hatch Loose Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Straight Tie",
+        "DisplayNameFemale": "Platinum Balaclava Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Hatch Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Stripy Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Diamond Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fuchsia Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Diamond Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Stripy Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Teal Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Diamond Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Stripy Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Diamond Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 38,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Hatch Straight Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Slack Tie",
+        "DisplayNameFemale": "Gold Zorse Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Hatch Slack Tie",
+        "DisplayNameFemale": "Platinum Zorse Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Stripy Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Diamond Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fuchsia Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Diamond Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Stripy Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Teal Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Diamond Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Stripy Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Diamond Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 39,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Hatch Slack Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 40,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold LC Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 41,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Dix Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 42,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold SN Necklace",
+        "DisplayNameFemale": "Gold Le Chien Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 42,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum SN Necklace",
+        "DisplayNameFemale": "Platinum Le Chien Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 43,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Skull Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 43,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Skull Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 44,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Balaclava Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 45,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Zorse Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 45,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Zorse Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 46,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold LC Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 46,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum LC Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 47,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Dix Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 47,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Dix Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 48,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Le Chien Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 48,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Le Chien Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 49,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold SN Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 49,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum SN Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 50,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Skull Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 50,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Skull Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 51,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Balaclava Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 52,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Zorse Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 52,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Zorse Necklace",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 53,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold LC Necklace",
+        "DisplayNameFemale": "Gold Loose Link Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 53,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum LC Necklace",
+        "DisplayNameFemale": "Platinum Loose Link Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 54,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Dix Necklace",
+        "DisplayNameFemale": "Gold Belcher Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 54,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Dix Necklace",
+        "DisplayNameFemale": "Platinum Belcher Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 55,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Le Chien Necklace",
+        "DisplayNameFemale": "Gold Pretzel Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 55,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Le Chien Necklace",
+        "DisplayNameFemale": "Platinum Pretzel Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 56,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 56,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 56,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 57,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Diamond Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 57,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Diamond Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 57,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 58,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Heavy Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 58,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Heavy Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 58,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 59,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Heavy Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 59,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Heavy Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 60,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 60,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 61,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Popcorn Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 61,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Popcorn Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 62,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Rope Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 62,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Rope Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 62,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 63,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Plaid Woolen Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 63,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Plaid Woolen Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 63,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Tan Plaid Woolen Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 64,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Loose Link Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 64,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Loose Link Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 64,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 65,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Belcher Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 65,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Belcher Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 65,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 66,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Pretzel Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 66,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Pretzel Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 66,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 67,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 67,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 67,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 68,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Diamond Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 68,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Diamond Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 68,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 69,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Heavy Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 69,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Heavy Curb Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 69,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 70,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Heavy Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 70,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Heavy Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 70,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 71,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 71,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Square Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 71,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 71,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 71,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 72,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Popcorn Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 72,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Popcorn Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 72,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 72,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 72,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 73,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Gold Rope Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 73,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Platinum Rope Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 73,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 73,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 73,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 74,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Loose Link Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 74,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Loose Link Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 75,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Belcher Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 75,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Belcher Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 76,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Pretzel Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 76,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Pretzel Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 77,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Curb Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 77,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Curb Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 78,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Diamond Curb Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 78,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Diamond Curb Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 79,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Heavy Curb Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 79,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Heavy Curb Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 80,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Heavy Square Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 80,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Heavy Square Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 81,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Square Chain",
+        "DisplayNameFemale": "Gold Magnetics Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 81,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Square Chain",
+        "DisplayNameFemale": "Platinum Magnetics Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 82,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Popcorn Chain",
+        "DisplayNameFemale": "Gold Magnetics Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 82,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Popcorn Chain",
+        "DisplayNameFemale": "Platinum Magnetics Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 83,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Rope Chain",
+        "DisplayNameFemale": "Tan Desert Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 83,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Rope Chain",
+        "DisplayNameFemale": "Khaki Desert Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 84,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Plaid Woolen Scarf",
+        "DisplayNameFemale": "Black Bead Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 84,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Plaid Woolen Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 84,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plaid Woolen Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 84,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Plaid Woolen Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 84,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Plaid Woolen Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 84,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Plaid Woolen Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 85,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Loose Link Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 85,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Loose Link Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 86,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Belcher Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 86,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Belcher Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Pretzel Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Pretzel Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 88,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Curb Chain",
+        "DisplayNameFemale": "Black Suspenders",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 88,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Curb Chain",
+        "DisplayNameFemale": "White Suspenders",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 89,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Diamond Curb Chain",
+        "DisplayNameFemale": "Gold Rim Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 89,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Diamond Curb Chain",
+        "DisplayNameFemale": "Platinum Rim Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 90,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Heavy Curb Chain",
+        "DisplayNameFemale": "Gold Rim Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 90,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Heavy Curb Chain",
+        "DisplayNameFemale": "Platinum Rim Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 91,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Heavy Square Chain",
+        "DisplayNameFemale": "Gold Alloy Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 91,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Heavy Square Chain",
+        "DisplayNameFemale": "Platinum Alloy Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 92,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Square Chain",
+        "DisplayNameFemale": "Gold Alloy Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 92,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Square Chain",
+        "DisplayNameFemale": "Platinum Alloy Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 93,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Popcorn Chain",
+        "DisplayNameFemale": "Gold Bead Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 93,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Popcorn Chain",
+        "DisplayNameFemale": "Pearl Bead Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 94,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Rope Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 94,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Rope Chain",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 95,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 95,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 96,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 96,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 97,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 97,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 98,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 98,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 98,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 98,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 99,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Epsilon Medallion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 99,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 99,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 99,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 100,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Epsilon Medallion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 100,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 100,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 100,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 101,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Epsilon Medallion",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 101,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 103,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Dog With Cone Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 103,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 104,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Dog With Cone Chain",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 104,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 104,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 105,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 105,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 105,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 106,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 106,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 106,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 107,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 107,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 108,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 108,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 109,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 109,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 110,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Magnetics Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 110,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Magnetics Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 111,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Magnetics Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 111,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Magnetics Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 112,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Desert Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 112,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Desert Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 112,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Desert Scarf",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 113,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Bead Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 114,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 115,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 115,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 116,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 117,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 118,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Full Bowtie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 119,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Rim Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 119,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Rim Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Rim Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Rim Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Alloy Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Alloy Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Alloy Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Alloy Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 123,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Bead Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 123,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pearl Bead Necklace",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 125,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 126,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 127,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 128,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 129,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Epsilon Medallion",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 130,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Epsilon Medallion",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 131,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Epsilon Medallion",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mocha Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Pattern Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Pattern Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Pattern Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 132,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Loose Bow Tie",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 133,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 134,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dog With Cone Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 135,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dog With Cone Chain",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Copper Deco Earrings",
+        "DisplayNameFemale": "Copper Deco Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "B&W Deco Earrings",
+        "DisplayNameFemale": "B&W Deco Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 1,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Striped Deco Earrings",
+        "DisplayNameFemale": "Blue Striped Deco Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Copper Hoop Earrings",
+        "DisplayNameFemale": "Copper Hoop Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Hoop Earrings",
+        "DisplayNameFemale": "Purple Hoop Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 2,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Hoop Earrings",
+        "DisplayNameFemale": "White Hoop Earrings",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Striped Sweatband",
+        "DisplayNameFemale": "Aqua Striped Sweatband",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Check Sweatband",
+        "DisplayNameFemale": "Pink Check Sweatband",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 3,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Squeezers Sweatband",
+        "DisplayNameFemale": "Squeezers Sweatband",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Necklace",
+        "DisplayNameFemale": "Silver Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 7,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 8,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 9,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Floral Bow Scarf",
+        "DisplayNameFemale": "Floral Bow Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Bow Scarf",
+        "DisplayNameFemale": "Pink Bow Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Bow Scarf",
+        "DisplayNameFemale": "Red Bow Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Bow Scarf",
+        "DisplayNameFemale": "Leopard Bow Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 13,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Bow Scarf",
+        "DisplayNameFemale": "White Bow Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Summer Leather Straps",
+        "DisplayNameFemale": "Summer Leather Straps",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Candy Leather Straps",
+        "DisplayNameFemale": "Candy Leather Straps",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 14,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Check Leather Straps",
+        "DisplayNameFemale": "Pink Check Leather Straps",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 15,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Tassel Scarf",
+        "DisplayNameFemale": "Purple Tassel Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 15,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Olive Tassel Scarf",
+        "DisplayNameFemale": "Olive Tassel Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 15,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tassel Scarf",
+        "DisplayNameFemale": "Pink Tassel Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 15,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Teal Tassel Scarf",
+        "DisplayNameFemale": "Teal Tassel Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 17,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Storm Scarf",
+        "DisplayNameFemale": "Storm Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 18,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Joy Scarf",
+        "DisplayNameFemale": "Joy Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 18,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snowflake Scarf",
+        "DisplayNameFemale": "Snowflake Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 18,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Storm Scarf",
+        "DisplayNameFemale": "Storm Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fuchsia Loose Tie",
+        "DisplayNameFemale": "Fuchsia Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Diamond Loose Tie",
+        "DisplayNameFemale": "Gray Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Loose Tie",
+        "DisplayNameFemale": "Tan Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Stripy Loose Tie",
+        "DisplayNameFemale": "Blue Stripy Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Teal Loose Tie",
+        "DisplayNameFemale": "Teal Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Loose Tie",
+        "DisplayNameFemale": "Orange Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Diamond Loose Tie",
+        "DisplayNameFemale": "Blue Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Stripy Loose Tie",
+        "DisplayNameFemale": "Tan Stripy Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Loose Tie",
+        "DisplayNameFemale": "Pink Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Diamond Loose Tie",
+        "DisplayNameFemale": "Green Diamond Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 20,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Hatch Loose Tie",
+        "DisplayNameFemale": "Blue Hatch Loose Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 22,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Hatch Straight Tie",
+        "DisplayNameFemale": "Blue Hatch Straight Tie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 33,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum LC Necklace",
+        "DisplayNameFemale": "Platinum LC Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 36,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum SN Necklace",
+        "DisplayNameFemale": "Platinum SN Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 40,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum LC Necklace",
+        "DisplayNameFemale": "Platinum LC Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 41,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Platinum Dix Necklace",
+        "DisplayNameFemale": "Platinum Dix Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 46,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 47,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 48,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 49,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 50,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 51,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 51,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 52,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 63,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Plaid Woolen Scarf",
+        "DisplayNameFemale": "Gray Plaid Woolen Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 63,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Plaid Woolen Scarf",
+        "DisplayNameFemale": "Black Plaid Woolen Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 63,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Plaid Woolen Scarf",
+        "DisplayNameFemale": "Peach Plaid Woolen Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 83,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Desert Scarf",
+        "DisplayNameFemale": "Black Desert Scarf",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 87,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 88,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Suspenders",
+        "DisplayNameFemale": "Red Suspenders",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 102,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    }
+  ]
+}

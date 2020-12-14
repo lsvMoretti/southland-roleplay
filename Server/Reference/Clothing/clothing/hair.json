@@ -1,0 +1,2706 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Close Shave",
+        "DisplayNameFemale": "Close Shave",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 1,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Buzzcut Dark Brown",
+        "DisplayNameFemale": "Short Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 1,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Buzzcut Light Brown",
+        "DisplayNameFemale": "Short Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 1,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Buzzcut Auburn",
+        "DisplayNameFemale": "Short Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 1,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Buzzcut Blond",
+        "DisplayNameFemale": "Short Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 1,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Buzzcut Black",
+        "DisplayNameFemale": "Short Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 1,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Short Purple",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 2,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Dark Brown",
+        "DisplayNameFemale": "Layered Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 2,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Light Brown",
+        "DisplayNameFemale": "Layered Bob Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 2,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Auburn",
+        "DisplayNameFemale": "Layered Bob Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 2,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Blond",
+        "DisplayNameFemale": "Layered Bob Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 2,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Black",
+        "DisplayNameFemale": "Layered Bob Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 2,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Purple",
+        "DisplayNameFemale": "Layered Bob Green",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 3,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Shaved Dark Brown",
+        "DisplayNameFemale": "Pigtails Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 3,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Shaved Light Brown",
+        "DisplayNameFemale": "Pigtails Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 3,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Shaved Auburn",
+        "DisplayNameFemale": "Pigtails Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 3,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Shaved Blond",
+        "DisplayNameFemale": "Pigtails Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 3,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Shaved Black",
+        "DisplayNameFemale": "Pigtails Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 3,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Shaved Red",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting Spiked Dark Brown",
+        "DisplayNameFemale": "Ponytail Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting Spiked Light Brown",
+        "DisplayNameFemale": "Ponytail Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting Spiked Auburn",
+        "DisplayNameFemale": "Ponytail Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting Spiked Blond",
+        "DisplayNameFemale": "Ponytail Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting Spiked Black",
+        "DisplayNameFemale": "Ponytail Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Ponytail Blue",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 4,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting Spiked Blue",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 5,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut Dark Brown",
+        "DisplayNameFemale": "Braided Mohawk Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 5,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut Light Brown",
+        "DisplayNameFemale": "Braided Mohawk Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 5,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut Auburn",
+        "DisplayNameFemale": "Braided Mohawk Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 5,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut Blond",
+        "DisplayNameFemale": "Braided Mohawk Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 5,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut Black",
+        "DisplayNameFemale": "Braided Mohawk Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 5,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut Green",
+        "DisplayNameFemale": "Braided Mohawk Pink",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 6,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker Dark Brown",
+        "DisplayNameFemale": "Braids Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 6,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker Light Brown",
+        "DisplayNameFemale": "Braids Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 6,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker Auburn",
+        "DisplayNameFemale": "Braids Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 6,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker Blond",
+        "DisplayNameFemale": "Braids Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 6,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker Black",
+        "DisplayNameFemale": "Braids Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 6,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker Purple Fade",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail Dark Brown",
+        "DisplayNameFemale": "Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail Light Brown",
+        "DisplayNameFemale": "Bob Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail Auburn",
+        "DisplayNameFemale": "Bob Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail Blond",
+        "DisplayNameFemale": "Bob Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail Black",
+        "DisplayNameFemale": "Bob Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Bob Purple Fade",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 7,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail Purple",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 8,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cornrows Dark Brown",
+        "DisplayNameFemale": "Faux Hawk Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 8,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cornrows Light Brown",
+        "DisplayNameFemale": "Faux Hawk Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 8,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cornrows Auburn",
+        "DisplayNameFemale": "Faux Hawk Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 8,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cornrows Blond",
+        "DisplayNameFemale": "Faux Hawk Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 8,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cornrows Black",
+        "DisplayNameFemale": "Faux Hawk Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked Dark Brown",
+        "DisplayNameFemale": "French Twist Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked Light Brown",
+        "DisplayNameFemale": "French Twist Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked Auburn",
+        "DisplayNameFemale": "French Twist Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked Blond",
+        "DisplayNameFemale": "French Twist Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked Black",
+        "DisplayNameFemale": "French Twist Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 9,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked Red",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Brushed Dark Brown",
+        "DisplayNameFemale": "Long Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Brushed Light Brown",
+        "DisplayNameFemale": "Long Bob Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Brushed Auburn",
+        "DisplayNameFemale": "Long Bob Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Brushed Blond",
+        "DisplayNameFemale": "Long Bob Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Brushed Black",
+        "DisplayNameFemale": "Long Bob Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey Dark Brown",
+        "DisplayNameFemale": "Loose Tied Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey Light Brown",
+        "DisplayNameFemale": "Loose Tied Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey Auburn",
+        "DisplayNameFemale": "Loose Tied Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey Blond",
+        "DisplayNameFemale": "Loose Tied Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey Black",
+        "DisplayNameFemale": "Loose Tied Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey Blue",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 12,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Caesar Dark Brown",
+        "DisplayNameFemale": "Pixie Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 12,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Caesar Light Brown",
+        "DisplayNameFemale": "Pixie Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 12,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Caesar Auburn",
+        "DisplayNameFemale": "Pixie Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 12,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Caesar Blond",
+        "DisplayNameFemale": "Pixie Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 12,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Caesar Black",
+        "DisplayNameFemale": "Pixie Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 13,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped Dark Brown",
+        "DisplayNameFemale": "Shaved Bangs Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 13,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped Light Brown",
+        "DisplayNameFemale": "Shaved Bangs Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 13,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped Auburn",
+        "DisplayNameFemale": "Shaved Bangs Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 13,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped Blond",
+        "DisplayNameFemale": "Shaved Bangs Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 13,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped Black",
+        "DisplayNameFemale": "Shaved Bangs Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 13,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped Green",
+        "DisplayNameFemale": "Shaved Bangs Blue Fade",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 14,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dreads Dark Brown",
+        "DisplayNameFemale": "Top Knot Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 14,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dreads Light Brown",
+        "DisplayNameFemale": "Top Knot Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 14,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dreads Auburn",
+        "DisplayNameFemale": "Top Knot Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 14,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dreads Blond",
+        "DisplayNameFemale": "Top Knot Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 14,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dreads Black",
+        "DisplayNameFemale": "Top Knot Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair Dark Brown",
+        "DisplayNameFemale": "Wavy Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair Light Brown",
+        "DisplayNameFemale": "Wavy Bob Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair Auburn",
+        "DisplayNameFemale": "Wavy Bob Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair Blond",
+        "DisplayNameFemale": "Wavy Bob Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair Black",
+        "DisplayNameFemale": "Wavy Bob Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair Purple Fade",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 16,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shaggy Curls Dark Brown",
+        "DisplayNameFemale": "Pin Up Girl Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 16,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shaggy Curls Light Brown",
+        "DisplayNameFemale": "Pin Up Girl Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 16,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shaggy Curls Auburn",
+        "DisplayNameFemale": "Pin Up Girl Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 16,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shaggy Curls Blonde",
+        "DisplayNameFemale": "Pin Up Girl Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 16,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shaggy Curls Black",
+        "DisplayNameFemale": "Pin Up Girl Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 17,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Surfer Dude Dark Brown",
+        "DisplayNameFemale": "Messy Bun Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 17,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Surfer Dude Light Brown",
+        "DisplayNameFemale": "Messy Bun Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 17,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Surfer Dude Auburn",
+        "DisplayNameFemale": "Messy Bun Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 17,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Surfer Dude Blonde",
+        "DisplayNameFemale": "Messy Bun Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 17,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Surfer Dude Black",
+        "DisplayNameFemale": "Messy Bun Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 18,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Side Part Dark Brown",
+        "DisplayNameFemale": "Flapper Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 18,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Side Part Light Brown",
+        "DisplayNameFemale": "Flapper Bob Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 18,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Side Part Auburn",
+        "DisplayNameFemale": "Flapper Bob Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 18,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Side Part Blonde",
+        "DisplayNameFemale": "Flapper Bob Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 18,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Side Part Black",
+        "DisplayNameFemale": "Flapper Bob Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 19,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "High Slicked Sides Dark Brown",
+        "DisplayNameFemale": "Tight Bun Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 19,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "High Slicked Sides Light Brown",
+        "DisplayNameFemale": "Tight Bun Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 19,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "High Slicked Sides Auburn",
+        "DisplayNameFemale": "Tight Bun Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 19,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "High Slicked Sides Blonde",
+        "DisplayNameFemale": "Tight Bun Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 19,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "High Slicked Sides Black",
+        "DisplayNameFemale": "Tight Bun Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 20,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Slicked Dark Brown",
+        "DisplayNameFemale": "Twisted Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 20,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Slicked Light Brown",
+        "DisplayNameFemale": "Twisted Bob Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 20,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Slicked Auburn",
+        "DisplayNameFemale": "Twisted Bob Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 20,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Slicked Blonde",
+        "DisplayNameFemale": "Twisted Bob Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 20,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Slicked Black",
+        "DisplayNameFemale": "Twisted Bob Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 21,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Youth Dark Brown",
+        "DisplayNameFemale": "Big Bangs Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 21,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Youth Blonde",
+        "DisplayNameFemale": "Big Bangs Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 21,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Youth Auburn",
+        "DisplayNameFemale": "Big Bangs Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 21,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Youth Light Brown",
+        "DisplayNameFemale": "Big Bangs Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 21,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Youth Black",
+        "DisplayNameFemale": "Big Bangs Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 22,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Dark Brown",
+        "DisplayNameFemale": "Braided Top Knot Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 22,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Light Brown",
+        "DisplayNameFemale": "Braided Top Knot Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 22,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Auburn",
+        "DisplayNameFemale": "Braided Top Knot Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 22,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Blonde",
+        "DisplayNameFemale": "Braided Top Knot Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 22,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Black",
+        "DisplayNameFemale": "Braided Top Knot Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 23,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mullet Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 24,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Classic Cornrows",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 25,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Palm Cornrows",
+        "DisplayNameFemale": "Pinched Cornrows",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 26,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lightning Cornrows",
+        "DisplayNameFemale": "Leaf Cornrows",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 27,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Whipped Cornrows",
+        "DisplayNameFemale": "Zig Zag Cornrows",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 28,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zig Zag Cornrows",
+        "DisplayNameFemale": "Pigtail Bangs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 29,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snail Cornrows",
+        "DisplayNameFemale": "Wave Braids",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 30,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hightop",
+        "DisplayNameFemale": "Coil Braids",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 31,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Loose Swept Back",
+        "DisplayNameFemale": "Rolled Quiff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 32,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Undercut Swept Back",
+        "DisplayNameFemale": "Loose Swept Back",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 33,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Undercut Swept Side",
+        "DisplayNameFemale": "Undercut Swept Back",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 34,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spiked Mohawk",
+        "DisplayNameFemale": "Undercut Swept Side",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 35,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mod",
+        "DisplayNameFemale": "Spiked Mohawk",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 36,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Layered Mod",
+        "DisplayNameFemale": "Bandana and Braid",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 37,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Buzzcut",
+        "DisplayNameFemale": "Skinbyrd",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 38,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk",
+        "DisplayNameFemale": "Layered Mod",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 39,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster",
+        "DisplayNameFemale": "Short",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 40,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Side Parting",
+        "DisplayNameFemale": "Layered Bob",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 41,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shorter Cut",
+        "DisplayNameFemale": "Pigtails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 42,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Biker",
+        "DisplayNameFemale": "Ponytail",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 43,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ponytail",
+        "DisplayNameFemale": "Braided Mohawk",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 44,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cornrows",
+        "DisplayNameFemale": "Braids",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 45,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slicked",
+        "DisplayNameFemale": "Bob",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 46,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Brushed",
+        "DisplayNameFemale": "Faux Hawk",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 47,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spikey",
+        "DisplayNameFemale": "French Twist",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 48,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Caesar",
+        "DisplayNameFemale": "Long Bob",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 49,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chopped",
+        "DisplayNameFemale": "Loose Tied",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 50,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dreads",
+        "DisplayNameFemale": "Pixie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 51,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Hair",
+        "DisplayNameFemale": "Shaved Bangs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 52,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Shaggy Curls Dark Brown",
+        "DisplayNameFemale": "Top Knot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 53,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Surfer Dude Dark Brown",
+        "DisplayNameFemale": "Wavy Bob",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 54,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Side Part Dark Brown",
+        "DisplayNameFemale": "Messy Bun Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 55,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "High Slicked Sides Dark Brown",
+        "DisplayNameFemale": "Pin Up Girl Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 56,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Slicked Dark Brown",
+        "DisplayNameFemale": "Tight Bun Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 57,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hipster Youth Dark Brown",
+        "DisplayNameFemale": "Twisted Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 58,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Dark Brown",
+        "DisplayNameFemale": "Flapper Bob Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 59,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Classic Cornrows",
+        "DisplayNameFemale": "Big Bangs Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 60,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Palm Cornrows",
+        "DisplayNameFemale": "Braided Top Knot Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 61,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lightning Cornrows",
+        "DisplayNameFemale": "Mullet Chestnut",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 62,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Whipped Cornrows",
+        "DisplayNameFemale": "Pinched Cornrows",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 63,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zig Zag Cornrows",
+        "DisplayNameFemale": "Leaf Cornrows",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 64,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snail Cornrows",
+        "DisplayNameFemale": "Zig Zag Cornrows",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 65,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hightop",
+        "DisplayNameFemale": "Pigtail Bangs",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 66,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Loose Swept Back",
+        "DisplayNameFemale": "Wave Braids",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 67,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Undercut Swept Back",
+        "DisplayNameFemale": "Coil Braids",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 68,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Undercut Swept Side",
+        "DisplayNameFemale": "Rolled Quiff",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 69,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Spiked Mohawk",
+        "DisplayNameFemale": "Loose Swept Back",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 70,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mod",
+        "DisplayNameFemale": "Undercut Swept Back",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 71,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Layered Mod",
+        "DisplayNameFemale": "Undercut Swept Side",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 72,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flattop",
+        "DisplayNameFemale": "Spiked Mohawk",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 73,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Military Buzzcut",
+        "DisplayNameFemale": "Bandana and Braid",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 74,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Impotent Rage",
+        "DisplayNameFemale": "Layered Mod",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 8,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Faux Hawk Pink",
+        "DisplayNameFemale": "Faux Hawk Pink",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 10,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Long Bob Purple Fade",
+        "DisplayNameFemale": "Long Bob Purple Fade",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 11,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Loose Tied Green",
+        "DisplayNameFemale": "Loose Tied Green",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 12,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pixie Blue",
+        "DisplayNameFemale": "Pixie Blue",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 14,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 15,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wavy Bob Red Fade",
+        "DisplayNameFemale": "Wavy Bob Red Fade",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 18,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flapper Bob Blue",
+        "DisplayNameFemale": "Flapper Bob Blue",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 23,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Blonde",
+        "DisplayNameFemale": "Mullet Blonde",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 23,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Auburn",
+        "DisplayNameFemale": "Mullet Auburn",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 23,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Black",
+        "DisplayNameFemale": "Mullet Black",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 23,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mullet Brown",
+        "DisplayNameFemale": "Mullet Brown",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 75,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Skinbyrd",
+        "DisplayNameFemale": "Skinbyrd",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 76,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Neat Bun",
+        "DisplayNameFemale": "Neat Bun",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 77,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Short Bob",
+        "DisplayNameFemale": "Short Bob",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 2,
+        "drawable": 78,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Impotent Rage",
+        "DisplayNameFemale": "Impotent Rage",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    }
+  ]
+}
