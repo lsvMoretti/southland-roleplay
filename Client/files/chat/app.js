@@ -102,7 +102,7 @@ window.addEventListener('load', function () {
     msgInputBlock = document.querySelector('.msginput');
     msgInputLine = document.querySelector('.msginput input');
 
-    addString('<b>{ffffff}Connected to {0081FF}Paradigm Roleplay!</b>');
+    addString('<b>{ffffff}Connected to {0081FF}Southland Roleplay!</b>');
     alt.emit('chatloaded');
 });
 
