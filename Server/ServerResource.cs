@@ -67,21 +67,18 @@ namespace Server
         {
             try
             {
-                
-               /* AltEntitySync.Init(1, 100,
-                    (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
-                    (entity, threadCount) => (entity.Id % threadCount), 
-                    (entityId, entityType, threadCount) => (entityId % threadCount),
-                    (threadId) => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 300),
-                    new IdProvider());
-                
-                */
-               
+                /* AltEntitySync.Init(1, 100,
+                     (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
+                     (entity, threadCount) => (entity.Id % threadCount),
+                     (entityId, entityType, threadCount) => (entityId % threadCount),
+                     (threadId) => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 300),
+                     new IdProvider());
+
+                 */
+
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
 
-                
-                Console.WriteLine("Starting Los Santos V - AltV");
-
+                Console.WriteLine("Starting Southland Roleplay");
 
                 Alt.OnPlayerConnect += ConnectionHandler.AltOnOnPlayerConnect;
                 Alt.OnPlayerDisconnect += ConnectionHandler.OnPlayerDisconnect;
@@ -90,7 +87,7 @@ namespace Server
                 Alt.OnPlayerDead += DeathHandler.OnPlayerDeath;
                 Alt.OnWeaponDamage += DamageHandler.AltOnOnWeaponDamage;
                 Alt.OnPlayerDamage += DamageHandler.AltOnOnPlayerDamage;
-                
+
                 CommandExtension.Init();
                 GameWorld.InitGameWorld();
 #if RELEASE
@@ -109,8 +106,8 @@ namespace Server
                 #endregion Dev Callbacks
 
                 Alt.OnClient<IPlayer>("LoginScreenLoaded", ConnectionHandler.OnLoginViewLoaded);
-                
-                Alt.OnClient<IPlayer, string, string>("recieveLoginRequest", ConnectionHandler.ReceiveLoginRequest); 
+
+                Alt.OnClient<IPlayer, string, string>("recieveLoginRequest", ConnectionHandler.ReceiveLoginRequest);
 
                 ChatExtension chatExtension = new ChatExtension();
 
@@ -181,7 +178,6 @@ namespace Server
 
                 Alt.OnClient<IPlayer, string>("RequestNewBankAccount", BankHandler.RequestNewBankAccount);
 
-
                 #endregion Bank System
 
                 #region Atm System
@@ -213,7 +209,6 @@ namespace Server
                         newHudInfo = new HudInfo(player.Health, 0, Settings.ServerSettings.Hour, Settings.ServerSettings.Minute);
                     }
 
-
                     player.Emit("hud:RecieveMoneyUpdate", JsonConvert.SerializeObject(newHudInfo));
                 });
 
@@ -244,7 +239,7 @@ namespace Server
 
                 Alt.OnClient<IPlayer>("admin:dealership:callClosePage", AdminCommands.EventCloseDealershipEditPage);
 
-                Alt.OnClient<IPlayer, string, string, string, string>("admin:dealership:editDealershipVehicle",  AdminCommands.EditDealershipVehicle);
+                Alt.OnClient<IPlayer, string, string, string, string>("admin:dealership:editDealershipVehicle", AdminCommands.EditDealershipVehicle);
 
                 Alt.OnClient<IPlayer, string>("admin:dealership:removeDealershipVehicle", AdminCommands.RemoveDealershipVehicle);
 
@@ -264,7 +259,7 @@ namespace Server
                 Alt.OnClient<IPlayer, string, string>("phone:handleAddContact", PhoneCommands.AddContact);
 
                 Alt.OnClient<IPlayer, string, string>("911:startCall", Handler911.On911LocationReturn);
-                
+
                 Alt.OnClient<IPlayer, string, string>("311:startCall", Handler911.On311LocationReturn);
 
                 #endregion Phone System
@@ -383,7 +378,6 @@ namespace Server
 
                 Alt.OnClient<IPlayer>("Player:CancelCrouch", (player) =>
                 {
-                    
                     if (!player.IsSpawned()) return;
 
                     player.Emit("SetWalkStyle", player.GetClass().WalkStyle);
@@ -406,6 +400,7 @@ namespace Server
                 {
                     player.SetData("weaponEvent:CurrentAmmo", ammo);
                 });
+
                 #endregion Weapon System
 
                 #region Clerk Job
@@ -432,7 +427,6 @@ namespace Server
                     Alt.EmitAllClients("OnSetSirenSoundState", vehicle, state);
                 });
 
-                
                 Alt.OnClient<IPlayer, IVehicle, int>("SetSirenLightState", (player, vehicle, state) =>
                 {
                     Alt.EmitAllClients("OnSetSirenLightState", vehicle, state);
@@ -440,7 +434,6 @@ namespace Server
 
                 Alt.OnClient<IPlayer, IVehicle, bool>("VehicleHornState", (player, vehicle, state) =>
                 {
-                    
                     Alt.EmitAllClients("OnVehicleHornState", vehicle, state);
                 });
 
@@ -453,13 +446,13 @@ namespace Server
 
                 Alt.OnClient<IPlayer, IVehicle, bool>("VehicleHandler:SetBombBayDoorState", VehicleHandler.SetBombBayDoorState);
 
-                #endregion
+                #endregion ELS Sync
 
                 #region Door System
 
                 Alt.OnClient<IPlayer, string, float, float, float>("sendClosestDoor", DoorHandler.OnReturnClosestDoor);
 
-                #endregion
+                #endregion Door System
 
                 Alt.OnClient<IPlayer>("SendPlayerDimension", CharacterHandler.FetchPlayerDimension);
 
@@ -469,7 +462,7 @@ namespace Server
 
                 Alt.OnClient<IPlayer, string>("LinKDiscord:SendUserId", DiscordCommands.OnReturnDiscordLinkUserId);
 
-                #endregion
+                #endregion Discord Intergration
 
                 #region Two Factor
 
@@ -477,15 +470,14 @@ namespace Server
                 Alt.OnClient<IPlayer>("TFA:ClosePage", TwoFactorHandler.OnTwoFactorSetupClose);
                 Alt.OnClient<IPlayer, string>("TFA:SendCodeInput", TwoFactorHandler.OnRequestTwoFactor);
 
-
-                #endregion
+                #endregion Two Factor
 
                 #region Food Stand Job
 
                 Alt.OnClient<IPlayer, string, string>("FoodStand:FetchLocationData", FoodStandCommands.OnLocationDataReturn);
 
-                #endregion
-                
+                #endregion Food Stand Job
+
                 Alt.OnClient<IPlayer, Vector3, Vector3>("InteriorMapping:AddObject", PurchaseObjectHandler.OnInteriorMappingSaveObject);
                 Alt.OnClient<IPlayer, Vector3, Vector3>("InteriorMapping:MoveObject", PurchaseObjectHandler.OnFinishMovingObject);
 
@@ -494,7 +486,7 @@ namespace Server
                 Alt.OnClient<IPlayer, IVehicle>("newSirenHandler:HornPress", SirenHandler.OnHornPress);
                 Alt.OnClient<IPlayer, IVehicle>("newSirenHandler:HornRelease", SirenHandler.OnHornRelease);
 
-                #endregion
+                #endregion Siren Handler
             }
             catch (Exception e)
             {
@@ -514,7 +506,7 @@ namespace Server
         public override void OnStop()
         {
             SaveEverything();
-            Console.WriteLine("Stopped Los Santos V - AltV");
+            Console.WriteLine("Stopped Southland Roleplay");
         }
 
         private static void SaveEverything()
@@ -550,7 +542,7 @@ namespace Server
 
                 if (vehicleData == null) continue;
 
-                if(vehicleData.FactionId > 0) continue;
+                if (vehicleData.FactionId > 0) continue;
 
                 DegreeRotation rotation = vehicle.Rotation;
 
@@ -579,11 +571,11 @@ namespace Server
             LoadVehicle.ResetAllVehiclesSpawnStatus();
 
             LoadVehicle.LoadFactionVehicles();
-            
+
             LoadVehicle.LoadCharacterVehicles();
 
             //await MapHandler.LoadMaps();
-            
+
             LoadProperties.LoadAllProperties();
 
             Clothes.LoadClothingItems();
@@ -609,7 +601,7 @@ namespace Server
             Logging.InitLogging();
 
             JobHandler.InitTaxiJobLocation();
-    
+
             BusHandler.InitBusJob();
 
             FocusHandler.InitFocuses();
@@ -651,16 +643,15 @@ namespace Server
             SceneHandler.LoadAllScenes();
 
             OpenInventoryHandler.CheckOpenInventoryLocations();
-            
+
             FoodStandHandler.FetchFoodStandPositions();
             FoodStandCommands.StartFoodStandTimer();
-            
+
             GrowingHandler.InitDrugGrowing();
 
             PurchaseObjectHandler.LoadBuyableObjects();
-            
-            WelcomePlayer.InitPed();
 
+            WelcomePlayer.InitPed();
         }
     }
 }

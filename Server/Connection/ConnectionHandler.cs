@@ -23,8 +23,6 @@ namespace Server.Connection
     {
         public static void OnLoginViewLoaded(IPlayer player)
         {
-           
-                
             using Context context = new Context();
 
             foreach (Models.Account account in context.Account.ToList())
@@ -35,26 +33,26 @@ namespace Server.Connection
                 if (player.SocialClubId.ToString() != account.LastSocial) continue;
                 if (player.HardwareIdHash != Convert.ToUInt64(account.HardwareIdHash)) continue;
                 if (player.HardwareIdExHash != Convert.ToUInt64(account.HardwareIdExHash)) continue;
-                    
+
                 AutoLoginPlayer(player, account);
                 return;
             }
         }
-        
+
         public static void AltOnOnPlayerConnect(IPlayer player, string reason)
         {
             try
             {
                 Console.WriteLine($"{player.Name} has connected.");
                 player.Emit("showLogin");
-                player.SendInfoMessage($"Welcome to Paradigm Roleplay. Upon logging in, you accept the server rules.");
+                player.SendInfoMessage($"Welcome to Southland Roleplay. Upon logging in, you accept the server rules.");
                 player.SendInfoMessage($"Version: v{Utility.Build} - Build: {Utility.LastUpdate}");
-                player.SendInfoMessage("Please visit https://paradigmroleplay.com for more information!");
+                player.SendInfoMessage("Please visit https://sol-rp.com for more information!");
 
                 player.Spawn(new Position(0, 0, 72));
 
                 player.FreezePlayer(true);
-                
+
                 Position startCamPos = new Position(400.465f, 1052.056f, 323.8427f);
 
                 CameraExtension.InterpolateCamera(player, startCamPos, new Rotation(0, 0, -95), 90, startCamPos + new Position(0, 50, -50), new Rotation(0, 0, 180), 90, 20000);
@@ -85,7 +83,6 @@ namespace Server.Connection
                 {
                     player.SendMotdMessage();
                 }
-
             }
             catch (Exception e)
             {
@@ -96,7 +93,6 @@ namespace Server.Connection
 
         private static void AutoLoginPlayer(IPlayer player, Models.Account playerAccount)
         {
-
             try
             {
                 player.ChatInput(false);
@@ -129,18 +125,17 @@ namespace Server.Connection
                     player.Kick("Already Logged In!");
                     return;
                 }
-            
-#if DEBUG
-            if (playerAccount.AdminLevel < AdminLevel.Support)
-            {
-                if (!playerAccount.Tester)
-                {
-                    player.Kick("Server Not Ready");
-                    return;
-                }
-            }
-#endif
 
+#if DEBUG
+                if (playerAccount.AdminLevel < AdminLevel.Support)
+                {
+                    if (!playerAccount.Tester)
+                    {
+                        player.Kick("Server Not Ready");
+                        return;
+                    }
+                }
+#endif
 
                 bool acceptedCharacters = Models.Character.FetchCharacters(playerAccount).Any(x => x.BioStatus == 2);
 
@@ -151,7 +146,6 @@ namespace Server.Connection
                     return;
                 }
 
-                
                 player.GetClass().AccountId = playerAccount.Id;
 
                 if (playerAccount.Enable2FA)
@@ -191,7 +185,6 @@ namespace Server.Connection
                 Console.WriteLine(e);
                 return;
             }
-
         }
 
         public static void ReceiveLoginRequest(IPlayer player, string user, string password)
@@ -252,16 +245,15 @@ namespace Server.Connection
                 }
 
 #if DEBUG
-            if (playerAccount.AdminLevel < AdminLevel.Support)
-            {
-                if (!playerAccount.Tester)
+                if (playerAccount.AdminLevel < AdminLevel.Support)
                 {
-                    player.Kick("Server Not Ready");
-                    return;
+                    if (!playerAccount.Tester)
+                    {
+                        player.Kick("Server Not Ready");
+                        return;
+                    }
                 }
-            }
 #endif
-
 
                 bool acceptedCharacters = Models.Character.FetchCharacters(playerAccount).Any(x => x.BioStatus == 2);
 
@@ -303,7 +295,6 @@ namespace Server.Connection
                 }
 
                 CompleteLogin(player);
-
             }
             catch (Exception e)
             {
@@ -315,14 +306,12 @@ namespace Server.Connection
 
         public static void CompleteLogin(IPlayer player)
         {
-
             try
             {
                 List<string> characterNames = new List<string>();
                 using Context context = new Context();
 
                 Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
-
 
                 if (playerAccount == null)
                 {
@@ -331,18 +320,16 @@ namespace Server.Connection
                     return;
                 }
 
-
                 player.SendInfoNotification($"Welcome back {playerAccount.Username}.");
 
                 characterNames = Models.Character.FetchCharacterNames(playerAccount);
-            
+
                 if (!characterNames.Any())
                 {
                     player.SendErrorNotification("An error occurred fetching your character names.");
                     player.Kick("Error Fetching Character Names");
                     return;
                 }
-
 
                 playerAccount.LastIp = player.Ip;
                 playerAccount.LastSocial = player.SocialClubId.ToString();
@@ -393,7 +380,6 @@ namespace Server.Connection
                     SignalR.SendUserLogout(playerAccount);
 
                     context.SaveChanges();
-                    
                 }
 
                 Console.WriteLine($"{player.Name} ({player.FetchCharacter()?.Name}) has disconnected. Reason: {reason}");
@@ -413,9 +399,8 @@ namespace Server.Connection
 
                 if (adminReport != null)
                 {
-
                     AdminHandler.AdminReports.Remove(adminReport);
-                    
+
                     AdminReportObject reportObject =
                         AdminHandler.AdminReportObjects.FirstOrDefault(x =>
                             x.CharacterId == player.GetClass().CharacterId);
@@ -425,7 +410,6 @@ namespace Server.Connection
                         SignalR.RemoveReport(reportObject);
                         AdminHandler.AdminReportObjects.Remove(reportObject);
                     }
-                    
                 }
             }
             catch (Exception e)
