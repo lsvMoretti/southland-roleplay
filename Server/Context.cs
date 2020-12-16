@@ -60,19 +60,19 @@ namespace Server
         public DbSet<Door> Doors { get; set; }
 
         public DbSet<Storage> Storages { get; set; }
-        
+
         public DbSet<Marijuana> Marijuana { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 #if DEBUG
 
-                optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDebug};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};SslMode=none;Convert Zero Datetime=true;");
-            
+            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDebug};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};SslMode=none;Convert Zero Datetime=true;");
+
 #endif
 
 #if RELEASE
-            
+
             optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDb};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};SslMode=none;Convert Zero Datetime=true;");
 #endif
         }
