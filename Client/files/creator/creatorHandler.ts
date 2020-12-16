@@ -34,8 +34,8 @@ alt.everyTick(() => {
 });
 
 alt.on('connectionComplete', (hasMapChanged: any) => {
-    alt.loadModel(native.getHashKey('mp_m_freemode_01'));
-    alt.loadModel(native.getHashKey('mp_f_freemode_01'));
+    native.requestModel(native.getHashKey('mp_m_freemode_01'));
+    native.requestModel(native.getHashKey('mp_f_freemode_01'));
     native.requestAnimDict("mp_creator_headik");
 });
 

@@ -23,6 +23,13 @@ namespace Server.Developer
 {
     public class TestCommands
     {
+        [Command("cayo", AdminLevel.Support)]
+        public static void Command_GotoCayo(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+            player.SetPosition(4895.28f, -5744.58f, 26.351f);
+        }
+    
         [Command("save", onlyOne: true)]
         public static void Command_SavePos(IPlayer player, string sName = "")
         {
