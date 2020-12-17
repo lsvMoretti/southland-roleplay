@@ -44,8 +44,6 @@ namespace Server.Extensions
             return context.Vehicle.Find(result);
         }
 
-
-
         /// <summary>
         /// Set the vehicle’s distance in Meters
         /// </summary>
@@ -144,7 +142,7 @@ namespace Server.Extensions
 
                 if (vehicleData == null)
                 {
-                    vehicle.Remove();
+                    vehicle.Delete();
                     return true;
                 }
 
@@ -163,7 +161,7 @@ namespace Server.Extensions
 
                 context.SaveChanges();
 
-                vehicle.Remove();
+                vehicle.Delete();
 
                 return true;
             }

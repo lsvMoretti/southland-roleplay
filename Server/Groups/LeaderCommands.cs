@@ -105,8 +105,6 @@ namespace Server.Groups
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"Vehicle position updated.");
         }
 
@@ -144,8 +142,6 @@ namespace Server.Groups
 
             List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId == activeFaction.Id).ToList();
 
-            
-
             int removeCount = 0;
             int loadCount = 0;
 
@@ -157,8 +153,7 @@ namespace Server.Groups
                 if (targetVehicle != null)
                 {
                     if (targetVehicle.Occupants().Any()) continue;
-
-                    targetVehicle.Remove();
+                    targetVehicle.Delete();
                     removeCount++;
                 }
 
@@ -356,8 +351,6 @@ namespace Server.Groups
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You have removed {targetCharacter.Name} from the faction!");
 
             targetPlayer.SendInfoNotification(
@@ -535,7 +528,6 @@ namespace Server.Groups
             targetCharacterDb.FactionList = JsonConvert.SerializeObject(targetFactions);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have changed {targetCharacter.Name}'s rank to {selectedRank.Name}.");
 
@@ -704,7 +696,6 @@ namespace Server.Groups
             factionDb.RanksJson = JsonConvert.SerializeObject(factionRanks);
 
             context.SaveChanges();
-            
         }
 
         public static void OnRanksAddRank(IPlayer player, string rankName)
@@ -763,8 +754,6 @@ namespace Server.Groups
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You've added {newRank.Name} to {activeFaction.Name}.");
         }
 
@@ -820,9 +809,8 @@ namespace Server.Groups
 
             foreach (Models.Character character in characters.OrderBy(x => x.Name).ToList())
             {
-                if(string.IsNullOrEmpty(character.FactionList)) continue;
-                
-                
+                if (string.IsNullOrEmpty(character.FactionList)) continue;
+
                 List<PlayerFaction> targetFactions =
                     JsonConvert.DeserializeObject<List<PlayerFaction>>(character.FactionList);
 
@@ -884,8 +872,6 @@ namespace Server.Groups
                 characterDb.FactionList = JsonConvert.SerializeObject(playerFactions);
 
                 context.SaveChanges();
-
-                
 
                 player.SendInfoNotification($"You've removed {characterName} from your faction.");
 

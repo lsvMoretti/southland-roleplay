@@ -71,7 +71,7 @@ namespace Server.Jobs.Bus
                                 continue;
                             }
 
-                            vehicle.Remove();
+                            vehicle.Delete();
 
                             IPlayer targetPlayer = Alt.Server.GetPlayers()
                                 .FirstOrDefault(x => x.GetClass().CharacterId == keyValuePair.Key);
@@ -93,7 +93,7 @@ namespace Server.Jobs.Bus
 
                     if (Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == keyValuePair.Key) == null)
                     {
-                        vehicle.Remove();
+                        vehicle.Delete();
                         BusVehicles.Remove(keyValuePair.Key);
                     }
                 }
