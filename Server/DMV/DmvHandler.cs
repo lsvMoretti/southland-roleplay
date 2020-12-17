@@ -125,7 +125,7 @@ namespace Server.DMV
                 return;
             }
 
-            playerVehicle.Delete();
+            playerVehicle.Remove();
 
             if (success)
             {

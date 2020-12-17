@@ -62,7 +62,14 @@ namespace Server.Character
                     return;
                 }
 
-                _paydayAmount = playerCharacter.TotalHours <= 150 ? 520 : 120;
+                if(playerCharacter.TotalHours <= 150)
+                {
+                    _paydayAmount = 520;
+                }
+                else
+                {
+                    _paydayAmount = 120;
+                }
 
                 List<BankAccount> playerBankAccounts = BankAccount.FindCharacterBankAccounts(playerCharacter);
 

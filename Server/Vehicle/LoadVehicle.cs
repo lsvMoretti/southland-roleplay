@@ -31,6 +31,7 @@ namespace Server.Vehicle
                     if (string.IsNullOrEmpty(vehicle.PartDamages))
                     {
                         vehicle.PartDamages = JsonConvert.SerializeObject(new List<byte>());
+                        
                     }
 
                     if (string.IsNullOrEmpty(vehicle.PartBulletHoles))
@@ -40,6 +41,7 @@ namespace Server.Vehicle
                 }
 
                 context.SaveChanges();
+                
             }
             catch (Exception e)
             {
@@ -58,12 +60,14 @@ namespace Server.Vehicle
 
             List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId != 0).ToList();
 
+            
+
             foreach (Models.Vehicle factionVehicle in factionVehicles)
             {
                 if (!string.IsNullOrEmpty(factionVehicle.GarageId)) continue;
 
                 Position vehiclePosition = new Position(factionVehicle.PosX, factionVehicle.PosY, factionVehicle.PosZ);
-                await LoadDatabaseVehicle(factionVehicle, vehiclePosition, true);
+                await LoadDatabaseVehicle(factionVehicle, vehiclePosition ,true);
             }
 
             sw.Stop();
@@ -77,13 +81,13 @@ namespace Server.Vehicle
         public static async void LoadCharacterVehicles()
         {
             Console.WriteLine($"Loading Character Vehicles");
-
+            
             using Context context = new Context();
 
             List<Models.Character> characters = context.Character.ToList();
 
             int count = 0;
-
+            
             foreach (Models.Character character in characters)
             {
                 List<Models.Vehicle> vehicles = Models.Vehicle.FetchCharacterVehicles(character.Id);
@@ -92,14 +96,14 @@ namespace Server.Vehicle
                 {
                     if (vehicle.Spawned) continue;
                     if (!string.IsNullOrEmpty(vehicle.GarageId)) continue;
-
+                    
                     Position vehiclePosition = new Position(vehicle.PosX, vehicle.PosY, vehicle.PosZ);
 
                     await LoadDatabaseVehicle(vehicle, vehiclePosition);
                     count++;
                 }
             }
-
+            
             Console.WriteLine($"Loaded {count} character vehicles.");
         }
 
@@ -132,7 +136,7 @@ namespace Server.Vehicle
             /*vehicle = await AltAsync.Do(() => Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
                 new DegreeRotation(0, 0, vehicleData.RotZ)));*/
 
-            vehicle = Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
+            vehicle = Alt.Server.CreateVehicle((uint) vModelResult, spawnPosition,
                 new Rotation(0, 0, vehicleData.RotZ));
 
             if (vehicle == null)
@@ -173,6 +177,7 @@ namespace Server.Vehicle
 
             if (!ignoreDamage)
             {
+                
                 if (!string.IsNullOrEmpty(vehicleData.DamageData))
                 {
                     vehicle.DamageData = vehicleData.DamageData;
@@ -204,6 +209,7 @@ namespace Server.Vehicle
                     }
                 }
 
+            
                 if (!string.IsNullOrEmpty(vehicleData.PartBulletHoles))
                 {
                     List<byte> partHoles = JsonConvert.DeserializeObject<List<byte>>(vehicleData.PartBulletHoles);
@@ -217,16 +223,20 @@ namespace Server.Vehicle
                 }
             }
 
+
+
+
             vehicle.SetVehicleId(vehicleData.Id);
 
             //vehicle.SetSyncedMetaData("FUELLEVEL", vehicleData.FuelLevel);
 
             vehicle.GetClass().FuelLevel = vehicleData.FuelLevel;
 
-            vehicle.GetClass().Distance = (float)Decimal.Round((Decimal)vehicleData.Odometer, 2);
+            vehicle.GetClass().Distance = (float) Decimal.Round((Decimal) vehicleData.Odometer, 2);
 
             LoadVehicleMods(vehicle);
 
+            
             vehicle.SetSyncedMetaData("VehicleAnchorStatus", vehicleData.Anchor);
 
             using (Context context = new Context())
@@ -315,7 +325,9 @@ namespace Server.Vehicle
 
             context.SaveChanges();
 
-            vehicle.Delete();
+            
+
+            vehicle.Remove();
         }
     }
 }

@@ -145,6 +145,7 @@ namespace Server.Jobs.Bus
                 return;
             }
 
+
             if (!BusHandler.BusVehicles.ContainsKey(player.GetClass().CharacterId))
             {
                 player.SendErrorNotification("Your not on a bus route!");
@@ -155,7 +156,7 @@ namespace Server.Jobs.Bus
 
             IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
 
-            targetVehicle?.Delete();
+            targetVehicle?.Remove();
 
             BusHandler.BusVehicles.Remove(keyValuePair.Key);
 
@@ -172,7 +173,7 @@ namespace Server.Jobs.Bus
 
             IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
 
-            targetVehicle?.Delete();
+            targetVehicle?.Remove();
 
             BusHandler.BusVehicles.Remove(keyValuePair.Key);
 
