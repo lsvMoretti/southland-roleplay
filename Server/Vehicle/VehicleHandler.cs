@@ -71,7 +71,7 @@ namespace Server.Vehicle
 
                 Models.Vehicle vehicleData = context.Vehicle.Find(vehicle.GetClass().Id);
 
-                if(vehicleData.Class == 13) continue;
+                if (vehicleData.Class == 13) continue;
 
                 if (vehicleData.Engine)
                 {
@@ -107,10 +107,8 @@ namespace Server.Vehicle
 
                     context.SaveChanges();
                 }
-
-                
             }
-            
+
             fuelTimer.Start();
         }
 
@@ -119,7 +117,6 @@ namespace Server.Vehicle
             try
             {
                 oneMinuteTimer.Stop();
-            
 
                 List<IVehicle> vehicleList = Alt.Server.GetVehicles().Where(x => x.FetchVehicleData() != null).ToList();
 
@@ -134,13 +131,10 @@ namespace Server.Vehicle
                 {
                     foreach (IVehicle vehicle in vehicleList)
                     {
-                    
                         if (!vehicle.Exists) continue;
                         Models.Vehicle vehicleData = context.Vehicle.Find(vehicle.GetClass().Id);
 
                         //vehicleData.Odometer = vehicle.GetVehicleDistance();
-
-                
 
                         if (vehicle.LockState == VehicleLockState.Locked)
                         {
@@ -151,7 +145,7 @@ namespace Server.Vehicle
                         {
                             vehicleData.Locked = false;
                         }
-                
+
                         if (vehicleData.FactionId != 0)
                         {
                             Models.Vehicle.UpdateVehicle(vehicle, false, null, false);
@@ -160,7 +154,6 @@ namespace Server.Vehicle
                         {
                             Models.Vehicle.UpdateVehicle(vehicle);
                         }
-                    
                     }
                 }
                 context.SaveChanges();
@@ -271,7 +264,6 @@ namespace Server.Vehicle
                     {
                         // Industrial, Utility, Vans, Commercial & driver
 
-                        
                         using Context context = new Context();
 
                         var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
@@ -284,7 +276,6 @@ namespace Server.Vehicle
                         }
 
                         context.SaveChanges();
-                        
                     }
 
                     if (vehicleClass == 13 && seat == 0)
@@ -357,7 +348,6 @@ namespace Server.Vehicle
             vehicleDb.Class = classId;
 
             context.SaveChanges();
-            
         }
 
         public static void AltOnOnPlayerLeaveVehicle(IVehicle vehicle, IPlayer player, byte seat)
@@ -532,12 +522,12 @@ namespace Server.Vehicle
 
         public static void ToggleVehicleExtra(IPlayer player, IVehicle vehicle, int intSlot, bool state)
         {
-            byte slot = (byte) intSlot;
+            byte slot = (byte)intSlot;
 
             //vehicle?.ToggleExtra(slot, state);
 
 #if DEBUG
-            
+
             Console.WriteLine($"Vehicle Extra: {intSlot} set to {state}");
 #endif
 
@@ -547,7 +537,7 @@ namespace Server.Vehicle
         public static void SetBombBayDoorState(IPlayer player, IVehicle vehicle, bool state)
         {
 #if DEBUG
-            
+
             Console.WriteLine($"Bomby Door State Set to: {state}");
 #endif
             Alt.EmitAllClients("SetBombBayDoorState", vehicle, state);

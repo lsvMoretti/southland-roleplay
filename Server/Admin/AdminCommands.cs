@@ -388,7 +388,7 @@ namespace Server.Admin
                     return;
                 }
 
-                targetVehicle = LoadVehicle.LoadDatabaseVehicle(vehicleData, player.Position.Around(2f)).Result;
+                targetVehicle = LoadVehicle.LoadDatabaseVehicleAsync(vehicleData, player.Position.Around(2f)).Result;
 
                 targetVehicle.Dimension = player.Dimension;
 

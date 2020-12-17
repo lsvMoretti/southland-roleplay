@@ -559,7 +559,7 @@ namespace Server.Vehicle
 
             if (vehicleData == null) return null;
 
-            IVehicle vehicle = LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition, true).Result;
+            IVehicle vehicle = LoadVehicle.LoadDatabaseVehicleAsync(vehicleData, vehiclePosition, true).Result;
 
             return vehicle;
         }
@@ -1277,7 +1277,7 @@ namespace Server.Vehicle
 
                 Position spawnPosition = new Position(propertyGarage.PosX, propertyGarage.PosY, propertyGarage.PosZ);
 
-                await LoadVehicle.LoadDatabaseVehicle(selectedVehicle, spawnPosition);
+                await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, spawnPosition);
 
                 player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
             }
@@ -1335,7 +1335,7 @@ namespace Server.Vehicle
                 }
                 Position spawnPosition = new Position(garage.PosX, garage.PosY, garage.PosZ);
 
-                await LoadVehicle.LoadDatabaseVehicle(selectedVehicle, spawnPosition);
+                await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, spawnPosition);
 
                 player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
 
@@ -1344,7 +1344,7 @@ namespace Server.Vehicle
 
             Position vehiclePosition = new Position(selectedVehicle.PosX, selectedVehicle.PosY, selectedVehicle.PosZ);
 
-            await LoadVehicle.LoadDatabaseVehicle(selectedVehicle, vehiclePosition);
+            await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, vehiclePosition);
 
             player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
         }
@@ -1627,7 +1627,7 @@ namespace Server.Vehicle
             context.SaveChanges();
             
 
-            LoadVehicle.LoadDatabaseVehicle(storedVehicle, trunkPosition);
+            LoadVehicle.LoadDatabaseVehicleAsync(storedVehicle, trunkPosition);
 
             player.SendInfoNotification($"You have removed {storedVehicle.Name} from your vehicle trunk.");
 

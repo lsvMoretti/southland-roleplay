@@ -31,7 +31,6 @@ namespace Server.Vehicle
                     if (string.IsNullOrEmpty(vehicle.PartDamages))
                     {
                         vehicle.PartDamages = JsonConvert.SerializeObject(new List<byte>());
-                        
                     }
 
                     if (string.IsNullOrEmpty(vehicle.PartBulletHoles))
@@ -41,7 +40,6 @@ namespace Server.Vehicle
                 }
 
                 context.SaveChanges();
-                
             }
             catch (Exception e)
             {
@@ -60,14 +58,12 @@ namespace Server.Vehicle
 
             List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId != 0).ToList();
 
-            
-
             foreach (Models.Vehicle factionVehicle in factionVehicles)
             {
                 if (!string.IsNullOrEmpty(factionVehicle.GarageId)) continue;
 
                 Position vehiclePosition = new Position(factionVehicle.PosX, factionVehicle.PosY, factionVehicle.PosZ);
-                await LoadDatabaseVehicle(factionVehicle, vehiclePosition ,true);
+                await LoadDatabaseVehicleAsync(factionVehicle, vehiclePosition, true);
             }
 
             sw.Stop();
@@ -81,13 +77,13 @@ namespace Server.Vehicle
         public static async void LoadCharacterVehicles()
         {
             Console.WriteLine($"Loading Character Vehicles");
-            
+
             using Context context = new Context();
 
             List<Models.Character> characters = context.Character.ToList();
 
             int count = 0;
-            
+
             foreach (Models.Character character in characters)
             {
                 List<Models.Vehicle> vehicles = Models.Vehicle.FetchCharacterVehicles(character.Id);
@@ -96,14 +92,14 @@ namespace Server.Vehicle
                 {
                     if (vehicle.Spawned) continue;
                     if (!string.IsNullOrEmpty(vehicle.GarageId)) continue;
-                    
+
                     Position vehiclePosition = new Position(vehicle.PosX, vehicle.PosY, vehicle.PosZ);
 
-                    await LoadDatabaseVehicle(vehicle, vehiclePosition);
+                    await LoadDatabaseVehicleAsync(vehicle, vehiclePosition);
                     count++;
                 }
             }
-            
+
             Console.WriteLine($"Loaded {count} character vehicles.");
         }
 
@@ -118,11 +114,11 @@ namespace Server.Vehicle
                 if (!string.IsNullOrEmpty(playerVehicle.GarageId)) continue;
 
                 Position vehiclePosition = new Position(playerVehicle.PosX, playerVehicle.PosY, playerVehicle.PosZ);
-                await LoadDatabaseVehicle(playerVehicle, vehiclePosition);
+                await LoadDatabaseVehicleAsync(playerVehicle, vehiclePosition);
             }
         }
 
-        public static async Task<IVehicle> LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
+        public static async Task<IVehicle> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
 
@@ -133,10 +129,135 @@ namespace Server.Vehicle
                 vModelResult = (int)Alt.Hash(vehicleData.Model);
             }
 
-            /*vehicle = await AltAsync.Do(() => Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
-                new DegreeRotation(0, 0, vehicleData.RotZ)));*/
+            vehicle = await AltAsync.CreateVehicle((uint)vModelResult, spawnPosition,
+                new Rotation(0, 0, vehicleData.RotZ));
 
-            vehicle = Alt.Server.CreateVehicle((uint) vModelResult, spawnPosition,
+            vehicle = Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
+                new Rotation(0, 0, vehicleData.RotZ));
+
+            if (vehicle == null)
+                return null;
+
+            //vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
+
+            vehicle.ManualEngineControl = true;
+
+            vehicle.NumberplateText = vehicleData.Plate;
+
+            if (vehicleData.FactionId == 0)
+            {
+                vehicle.EngineOn = vehicleData.FuelLevel > 0 && vehicleData.Engine;
+            }
+            else
+            {
+                vehicle.EngineOn = false;
+            }
+
+            if (vehicleData.Locked)
+            {
+                vehicle.LockState = VehicleLockState.Locked;
+            }
+
+            if (!vehicleData.Locked)
+            {
+                vehicle.LockState = VehicleLockState.Unlocked;
+            }
+
+            if (vehicleData.FactionId != 0)
+            {
+                vehicle.LockState = VehicleLockState.Locked;
+                vehicle.GetClass().FuelLevel = 100;
+            }
+
+            if (!ignoreDamage)
+            {
+                if (!string.IsNullOrEmpty(vehicleData.DamageData))
+                {
+                    vehicle.DamageData = vehicleData.DamageData;
+                }
+
+                if (!string.IsNullOrEmpty(vehicleData.HealthData))
+                {
+                    vehicle.HealthData = vehicleData.HealthData;
+                }
+
+                if (!string.IsNullOrEmpty(vehicleData.AppearanceData))
+                {
+                    vehicle.AppearanceData = vehicleData.AppearanceData;
+                }
+
+                vehicle.BodyHealth = vehicleData.BodyHealth;
+                vehicle.BodyAdditionalHealth = vehicleData.BodyAdditionalHealth;
+                vehicle.DirtLevel = vehicleData.DirtLevel;
+
+                if (!string.IsNullOrEmpty(vehicleData.PartDamages))
+                {
+                    List<byte> partDamages = JsonConvert.DeserializeObject<List<byte>>(vehicleData.PartDamages);
+
+                    foreach (byte partDamage in partDamages)
+                    {
+                        int index = partDamages.IndexOf(partDamage);
+
+                        vehicle.SetPartDamageLevel((byte)index, partDamage);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(vehicleData.PartBulletHoles))
+                {
+                    List<byte> partHoles = JsonConvert.DeserializeObject<List<byte>>(vehicleData.PartBulletHoles);
+
+                    foreach (byte partDamage in partHoles)
+                    {
+                        int index = partHoles.IndexOf(partDamage);
+
+                        vehicle.SetPartBulletHoles((byte)index, partDamage);
+                    }
+                }
+            }
+
+            vehicle.SetVehicleId(vehicleData.Id);
+
+            //vehicle.SetSyncedMetaData("FUELLEVEL", vehicleData.FuelLevel);
+
+            vehicle.GetClass().FuelLevel = vehicleData.FuelLevel;
+
+            vehicle.GetClass().Distance = (float)Decimal.Round((Decimal)vehicleData.Odometer, 2);
+
+            LoadVehicleMods(vehicle);
+
+            vehicle.SetSyncedMetaData("VehicleAnchorStatus", vehicleData.Anchor);
+
+            using (Context context = new Context())
+            {
+                Models.Vehicle vehicleDb = context.Vehicle.Find(vehicleData.Id);
+
+                if (vehicleDb == null) return null;
+
+                vehicleDb.Spawned = true;
+
+                if (!string.IsNullOrEmpty(vehicleDb.GarageId))
+                {
+                    vehicleDb.GarageId = string.Empty;
+                }
+
+                context.SaveChanges();
+            }
+
+            return vehicle;
+        }
+
+        public static IVehicle LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
+        {
+            IVehicle vehicle = null;
+
+            bool modelParse = int.TryParse(vehicleData.Model, out int vModelResult);
+
+            if (!modelParse)
+            {
+                vModelResult = (int)Alt.Hash(vehicleData.Model);
+            }
+
+            vehicle = Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
                 new Rotation(0, 0, vehicleData.RotZ));
 
             if (vehicle == null)
@@ -177,7 +298,6 @@ namespace Server.Vehicle
 
             if (!ignoreDamage)
             {
-                
                 if (!string.IsNullOrEmpty(vehicleData.DamageData))
                 {
                     vehicle.DamageData = vehicleData.DamageData;
@@ -209,7 +329,6 @@ namespace Server.Vehicle
                     }
                 }
 
-            
                 if (!string.IsNullOrEmpty(vehicleData.PartBulletHoles))
                 {
                     List<byte> partHoles = JsonConvert.DeserializeObject<List<byte>>(vehicleData.PartBulletHoles);
@@ -223,37 +342,32 @@ namespace Server.Vehicle
                 }
             }
 
-
-
-
             vehicle.SetVehicleId(vehicleData.Id);
 
             //vehicle.SetSyncedMetaData("FUELLEVEL", vehicleData.FuelLevel);
 
             vehicle.GetClass().FuelLevel = vehicleData.FuelLevel;
 
-            vehicle.GetClass().Distance = (float) Decimal.Round((Decimal) vehicleData.Odometer, 2);
+            vehicle.GetClass().Distance = (float)Decimal.Round((Decimal)vehicleData.Odometer, 2);
 
             LoadVehicleMods(vehicle);
 
-            
             vehicle.SetSyncedMetaData("VehicleAnchorStatus", vehicleData.Anchor);
 
-            using (Context context = new Context())
+            using Context context = new Context();
+
+            Models.Vehicle vehicleDb = context.Vehicle.Find(vehicleData.Id);
+
+            if (vehicleDb == null) return null;
+
+            vehicleDb.Spawned = true;
+
+            if (!string.IsNullOrEmpty(vehicleDb.GarageId))
             {
-                Models.Vehicle vehicleDb = context.Vehicle.Find(vehicleData.Id);
-
-                if (vehicleDb == null) return null;
-
-                vehicleDb.Spawned = true;
-
-                if (!string.IsNullOrEmpty(vehicleDb.GarageId))
-                {
-                    vehicleDb.GarageId = string.Empty;
-                }
-
-                context.SaveChanges();
+                vehicleDb.GarageId = string.Empty;
             }
+
+            context.SaveChanges();
 
             return vehicle;
         }
@@ -324,8 +438,6 @@ namespace Server.Vehicle
             }
 
             context.SaveChanges();
-
-            
 
             vehicle.Remove();
         }
