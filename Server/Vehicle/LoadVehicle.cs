@@ -255,14 +255,14 @@ namespace Server.Vehicle
             }
 
             vehicle = Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
-                new Rotation(0, 0, vehicleData.RotZ));
+                new DegreeRotation(0, 0, vehicleData.RotZ));
 
             if (vehicle == null)
             {
                 return null;
             }
 
-            vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
+            //vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
 
             vehicle.ManualEngineControl = true;
 
