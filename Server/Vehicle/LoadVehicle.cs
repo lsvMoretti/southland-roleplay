@@ -135,7 +135,7 @@ namespace Server.Vehicle
             if (vehicle == null)
                 return null;
 
-            //vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
+            vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
 
             vehicle.ManualEngineControl = true;
 
