@@ -132,9 +132,6 @@ namespace Server.Vehicle
             vehicle = await AltAsync.CreateVehicle((uint)vModelResult, spawnPosition,
                 new Rotation(0, 0, vehicleData.RotZ));
 
-            vehicle = Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition,
-                new Rotation(0, 0, vehicleData.RotZ));
-
             if (vehicle == null)
                 return null;
 
