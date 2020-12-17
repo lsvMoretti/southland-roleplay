@@ -111,63 +111,71 @@ namespace Server.Groups
         [Command("ftow", commandType: CommandType.Faction, description: "[Leader] Tows the faction vehicles")]
         public static void LeaderCommandFTow(IPlayer player)
         {
-            Faction activeFaction = Faction.FetchFaction(player.FetchCharacter().ActiveFaction);
-
-            if (activeFaction == null)
+            try
             {
-                player.SendErrorNotification("You are not in an active faction.");
-                return;
-            }
+                Faction activeFaction = Faction.FetchFaction(player.FetchCharacter().ActiveFaction);
 
-            List<PlayerFaction> playerFactions =
-                JsonConvert.DeserializeObject<List<PlayerFaction>>(player.FetchCharacter().FactionList);
-
-            PlayerFaction playerFaction = playerFactions.FirstOrDefault(x => x.Id == activeFaction.Id);
-
-            if (playerFaction == null)
-            {
-                player.SendErrorNotification("You are not in your active faction.");
-                return;
-            }
-
-            bool canFTow = playerFaction.Leader;
-
-            if (!canFTow)
-            {
-                player.SendPermissionError();
-                return;
-            }
-
-            using Context context = new Context();
-
-            List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId == activeFaction.Id).ToList();
-
-            int removeCount = 0;
-            int loadCount = 0;
-
-            foreach (Models.Vehicle factionVehicle in factionVehicles)
-            {
-                IVehicle targetVehicle =
-                    Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == factionVehicle.Id);
-
-                if (targetVehicle != null)
+                if (activeFaction == null)
                 {
-                    if (targetVehicle.Occupants().Any()) continue;
-                    targetVehicle.Delete();
-                    removeCount++;
+                    player.SendErrorNotification("You are not in an active faction.");
+                    return;
                 }
 
-                if (!string.IsNullOrEmpty(factionVehicle.GarageId)) continue;
+                List<PlayerFaction> playerFactions =
+                    JsonConvert.DeserializeObject<List<PlayerFaction>>(player.FetchCharacter().FactionList);
 
-                IVehicle vehicle = LoadVehicle.LoadDatabaseVehicle(factionVehicle,
-                    new Position(factionVehicle.PosX, factionVehicle.PosY, factionVehicle.PosZ), true).Result;
+                PlayerFaction playerFaction = playerFactions.FirstOrDefault(x => x.Id == activeFaction.Id);
 
-                loadCount++;
+                if (playerFaction == null)
+                {
+                    player.SendErrorNotification("You are not in your active faction.");
+                    return;
+                }
+
+                bool canFTow = playerFaction.Leader;
+
+                if (!canFTow)
+                {
+                    player.SendPermissionError();
+                    return;
+                }
+
+                using Context context = new Context();
+
+                List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId == activeFaction.Id).ToList();
+
+                int removeCount = 0;
+                int loadCount = 0;
+
+                foreach (Models.Vehicle factionVehicle in factionVehicles)
+                {
+                    IVehicle targetVehicle =
+                        Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == factionVehicle.Id);
+
+                    if (targetVehicle != null)
+                    {
+                        if (targetVehicle.Occupants().Any()) continue;
+                        targetVehicle.Remove();
+                        removeCount++;
+                    }
+
+                    if (!string.IsNullOrEmpty(factionVehicle.GarageId)) continue;
+
+                    IVehicle vehicle = LoadVehicle.LoadDatabaseVehicle(factionVehicle,
+                        new Position(factionVehicle.PosX, factionVehicle.PosY, factionVehicle.PosZ), true).Result;
+
+                    loadCount++;
+                }
+
+                player.SendInfoNotification($"Removed {removeCount} vehicles, Loaded {loadCount} vehicles.");
+
+                Logging.AddToCharacterLog(player, $"has respawned {activeFaction.Name}'s vehicles.");
             }
-
-            player.SendInfoNotification($"Removed {removeCount} vehicles, Loaded {loadCount} vehicles.");
-
-            Logging.AddToCharacterLog(player, $"has respawned {activeFaction.Name}'s vehicles.");
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return;
+            }
         }
 
         [Command("invite", onlyOne: true, commandType: CommandType.Faction,
