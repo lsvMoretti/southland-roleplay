@@ -1,9 +1,9 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-var LastAmmo;
-var WeaponHash;
+let LastAmmo;
+let WeaponHash;
 alt.onServer('fetchCurrentAmmo', (returnEvent, weaponHash) => {
-    var ammo = native.getAmmoInPedWeapon(alt.Player.local.scriptID, weaponHash);
+    let ammo = native.getAmmoInPedWeapon(alt.Player.local.scriptID, weaponHash);
     alt.log('Current Ammo: ' + ammo);
     alt.emitServer(returnEvent, ammo);
 });
@@ -14,7 +14,12 @@ alt.onServer('WeaponEquipped', (weaponHash) => {
     LastAmmo = native.getAmmoInPedWeapon(alt.Player.local.scriptID, weaponHash);
 });
 alt.everyTick(() => {
-    var scriptId = alt.Player.local.scriptID;
+    let scriptId = alt.Player.local.scriptID;
+    if (native.isPedArmed(scriptId, 6)) {
+        native.disableControlAction(1, 140, true);
+        native.disableControlAction(1, 141, true);
+        native.disableControlAction(1, 142, true);
+    }
 });
 alt.setInterval(() => {
     let player = alt.Player.local.scriptID;
