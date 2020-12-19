@@ -146,6 +146,7 @@ namespace Server.Groups
                 if (activeFaction.SubFactionType == SubFactionTypes.Law)
                 {
                     player.DeleteData("Police:SwatUniform");
+                    player.DeleteMetaData("PoliceDuty");
                     PoliceHandler.RemovePoliceItems(player);
                 }
 
@@ -162,7 +163,6 @@ namespace Server.Groups
                 }
 
                 context.SaveChanges();
-                
 
                 player.SetData("FACTION:DUTYCLOTHING", "");
 
@@ -192,11 +192,13 @@ namespace Server.Groups
                     return;
                 }
 
-                
                 characterDb.FactionDuty = true;
 
                 context.SaveChanges();
-                
+
+                if (activeFaction.SubFactionType == SubFactionTypes.Law)
+                {
+                }
 
                 player.SendInfoNotification($"You've gone on duty.");
 
@@ -217,6 +219,8 @@ namespace Server.Groups
                     uniformCharacter.DutyStatus = 1;
 
                     context.SaveChanges();
+
+                    player.SetSyncedMetaData("PoliceDuty", true);
 
                     #region Law Clothing
 
@@ -310,7 +314,6 @@ namespace Server.Groups
 
             if (option == "Shotgun")
             {
-                
                 PoliceHandler.AddPoliceItems(player, 1);
                 player.SendInfoNotification($"Shotgun Given");
 
@@ -318,7 +321,6 @@ namespace Server.Groups
             }
             if (option == "Assault Rifle")
             {
-                
                 PoliceHandler.AddPoliceItems(player, 2);
                 player.SendInfoNotification($"Assault Rifle Given");
 
@@ -601,14 +603,11 @@ namespace Server.Groups
                 #endregion Fire Clothing
             }
 
-            
             WeaponInfo generalInfo = new WeaponInfo(1, true, "LSFD");
 
             if (option == "Flashlight")
             {
                 Inventory.Inventory playerInventory = player.FetchInventory();
-
-
 
                 bool success = playerInventory.AddItem(new InventoryItem("ITEM_FIRE_WEAPON_FLASHLIGHT", "Flashlight", generalInfo.ToString()));
 

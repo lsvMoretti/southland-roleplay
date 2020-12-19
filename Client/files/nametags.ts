@@ -1,16 +1,14 @@
 ﻿import * as alt from 'alt-client';
 import * as native from 'natives';
 
+var nameTagEnabled = true;
 
- var nameTagEnabled = true;
-
-export function ToggleNameTags(state: boolean){
+export function ToggleNameTags(state: boolean) {
     nameTagEnabled = state;
 }
 
 alt.everyTick(() => {
-
-    if(!nameTagEnabled) return;
+    if (!nameTagEnabled) return;
 
     let players = alt.Player.all;
 
@@ -29,10 +27,12 @@ alt.everyTick(() => {
         let playerId = player.getSyncedMeta("playerId");
         let isTyping: boolean = player.getSyncedMeta("TypeStatus");
         let stealthStatus = player.getSyncedMeta("StealthStatus");
-        
+
         if (playerName == undefined) continue;
 
         let isSpectating: boolean = player.getSyncedMeta("IsSpectating");
+
+        let isPdDuty: boolean = player.getSyncedMeta("PoliceDuty");
 
         let canSee = native.hasEntityClearLosToEntity(player.scriptID, localPlayer.scriptID, 17);
 
@@ -45,11 +45,11 @@ alt.everyTick(() => {
         }
 
         let range = 15;
-        
-        if(stealthStatus !== undefined && stealthStatus == true){
+
+        if (stealthStatus !== undefined && stealthStatus == true) {
             range = 7.5;
         }
-        
+
         if (distance <= range && player != localPlayer && canSee && !isSpectating) {
             let scale = distance / (range * range);
 
@@ -63,7 +63,11 @@ alt.everyTick(() => {
                 drawAme(aMe, screenPos[1], screenPos[2] - 0.070, scale, 194, 162, 218, 175, true);
             }
 
-            drawText(playerName, playerId, screenPos[1], screenPos[2] - 0.030, scale, 255, 255, 255, 175, true, isTyping);
+            if (isPdDuty) {
+                drawText(playerName, playerId, screenPos[1], screenPos[2] - 0.030, scale, 0, 144, 255, 175, true, isTyping);
+            } else {
+                drawText(playerName, playerId, screenPos[1], screenPos[2] - 0.030, scale, 255, 255, 255, 175, true, isTyping);
+            }
         }
     }
 });
