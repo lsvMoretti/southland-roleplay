@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Server.Models;
 
 namespace Server
@@ -67,13 +68,13 @@ namespace Server
         {
 #if DEBUG
 
-            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDebug};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};SslMode=none;Convert Zero Datetime=true;");
+            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDebug};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass}", new MySqlServerVersion(new Version(8, 0, 22)));
 
 #endif
 
 #if RELEASE
 
-            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDb};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};SslMode=none;Convert Zero Datetime=true;");
+            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDb};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass}", new MySqlServerVersion(new Version(8, 0, 22)));
 #endif
         }
 

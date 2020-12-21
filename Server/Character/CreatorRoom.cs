@@ -182,7 +182,6 @@ namespace Server.Character
                         }
 
                         context.SaveChanges();
-                        
 
                         int index = playerCharacters.IndexOf(playerCharacter);
 
@@ -262,7 +261,7 @@ namespace Server.Character
 
                 player.SetData("INCREATORROOM", true);
                 player.SetData("CHARACTERLABELS", JsonConvert.SerializeObject(textLabels));
-                
+
                 Alt.EmitAllClients("clearBlood", player);
 
                 Models.Account playerAccount = player.FetchAccount();
@@ -312,7 +311,7 @@ namespace Server.Character
             {
                 if (player.Position.Distance(position) <= 1.5f)
                 {
-                    nearestCharacter = Positions.IndexOf(position);
+                    nearestCharacter = Array.IndexOf(Positions, position, 0);
                 }
             }
 
@@ -373,8 +372,6 @@ namespace Server.Character
 
                 if (playerCharacter.StartStage == 1)
                 {
-                    
-
                     bool previousTutorialCompleted = Models.Character
                         .FetchCharacters(player.FetchAccount()).Any(x => x.StartStage == 2);
 
@@ -447,7 +444,7 @@ namespace Server.Character
                 player.Emit("CharacterLoaded", true);
 
                 player.Emit("hud:CharacterLoaded");
-                
+
                 player.SetPlayerNameTag($"{player.GetClass().Name}");
 
                 Logging.AddToCharacterLog(player, $"Left the Creator Room.");
@@ -481,7 +478,6 @@ namespace Server.Character
 
                 if (playerCharacter.InJail && playerCharacter.JailMinutes >= 1)
                 {
-                    
                     KeyValuePair<Position, int> cell = PoliceHandler.JailCells.OrderBy(x => x.Value).FirstOrDefault();
 
                     PoliceHandler.JailCells.Remove(cell.Key);
@@ -516,13 +512,11 @@ namespace Server.Character
                     characterPosition = PoliceHandler.UnJailPosition + new Position(0, 0, 0.25f);
                     player.SendInfoNotification($"You have been released from jail.");
                     context.SaveChanges();
-                    
 
                     player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                         switchOut: true);
                     CharacterHandler.LoadCustomCharacter(player, true);
 
-                    
                     if (player.HasData("InJailCell"))
                     {
                         player.GetData("InJailCell", out Position cellPosition);

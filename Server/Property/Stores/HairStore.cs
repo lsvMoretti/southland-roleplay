@@ -165,15 +165,19 @@ namespace Server.Property.Stores
                 case 0:
                     hairName = "Hair Color";
                     break;
+
                 case 1:
                     hairName = "Hair Highlight";
                     break;
+
                 case 2:
                     hairName = "Facial Hair Color";
                     break;
+
                 case 3:
                     hairName = "Eyebrow Color";
                     break;
+
                 case 4:
                     hairName = "Chest Hair Color";
                     break;
@@ -212,17 +216,14 @@ namespace Server.Property.Stores
             player.GetData("HairStore:AdjustHairIndex", out int type);
 
             int newIndex = int.Parse(listText);
-             
+
             player.SetData("HairStore:ColorIndex", newIndex);
 
             player.Emit("HairStore:HairColorChange", type, newIndex);
-
-
         }
 
         public static void OnHairColorSelect(IPlayer player, string option)
         {
-
             if (option == "Close")
             {
                 player.LoadCharacterCustomization();
@@ -241,8 +242,8 @@ namespace Server.Property.Stores
 
             if (type == 0)
             {
-                //  "Hair Color" 
-                
+                //  "Hair Color"
+
                 HairInfo hairInfo = JsonConvert.DeserializeObject<HairInfo>(customCharacter.Hair);
 
                 hairInfo.Color = index;
@@ -325,7 +326,6 @@ namespace Server.Property.Stores
             {
                 // Chest Hair Color
 
-            
                 customCharacter.ChestHairColor = index;
 
                 playerCharacter.CustomCharacter = JsonConvert.SerializeObject(customCharacter);
@@ -418,7 +418,7 @@ namespace Server.Property.Stores
                 return;
             }
 
-            int hairIndex = hairNames.IndexOf(selectedHair);
+            int hairIndex = Array.IndexOf(hairNames, selectedHair, 0);
 
             int hair = player.GetClass().IsMale ? _maleHairIntList[hairIndex] : _femaleHairIntList[hairIndex];
 
@@ -438,8 +438,6 @@ namespace Server.Property.Stores
             playerCharacter.CustomCharacter = JsonConvert.SerializeObject(customCharacter);
 
             context.SaveChanges();
-
-            
 
             CharacterHandler.LoadCustomCharacter(player, true, true);
 
@@ -495,7 +493,7 @@ namespace Server.Property.Stores
 
             string selectedHair = _facialHair[selectedIndex];
 
-            int index = _facialHair.IndexOf(selectedHair);
+            int index = Array.IndexOf(_facialHair, selectedHair, 0);
 
             if (player.FetchCharacter().Money < facialHairCost)
             {
@@ -528,8 +526,6 @@ namespace Server.Property.Stores
             playerCharacter.CustomCharacter = JsonConvert.SerializeObject(customCharacter);
 
             context.SaveChanges();
-
-            
 
             CharacterHandler.LoadCustomCharacter(player, true, true);
 

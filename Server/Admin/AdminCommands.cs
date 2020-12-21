@@ -791,7 +791,7 @@ namespace Server.Admin
             {
                 Color = DiscordColor.Blue,
                 Description = $"{player.FetchAccount().Username} has created a dealership.",
-                ThumbnailUrl = "http://ls-v.com/img/logo.jpg",
+                Thumbnail = new DiscordEmbedBuilder.EmbedThumbnail { Url = "http://ls-v.com/img/logo.jpg" },
                 Timestamp = DateTimeOffset.Now,
                 Title = "Dealership System",
             };
