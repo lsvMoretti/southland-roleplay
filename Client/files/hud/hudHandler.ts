@@ -6,6 +6,10 @@ var hudWebView: alt.WebView = undefined;
 var localPlayer: any = undefined;
 
 alt.everyTick(() => {
+    if(native.isHudComponentActive(14)){
+        // Rectile
+        native.hideHudComponentThisFrame(14);
+    }
     if (HudState) {
         // Street
         native.hideHudComponentThisFrame(9);

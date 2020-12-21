@@ -67,14 +67,12 @@ namespace Server
         {
             try
             {
-                /* AltEntitySync.Init(1, 100,
-                     (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
-                     (entity, threadCount) => (entity.Id % threadCount),
-                     (entityId, entityType, threadCount) => (entityId % threadCount),
-                     (threadId) => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 300),
-                     new IdProvider());
-
-                 */
+                AltEntitySync.Init(1, 100, (threadId) => false,
+                    (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
+                    (entity, threadCount) => (entity.Id % threadCount),
+                    (entityId, entityType, threadCount) => (entityId % threadCount),
+                    (threadId) => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 300),
+                    new IdProvider());
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
 
@@ -90,9 +88,13 @@ namespace Server
 
                 CommandExtension.Init();
                 GameWorld.InitGameWorld();
+                /*
 #if RELEASE
                 SignalR.StartConnection();
 #endif
+                */
+                SignalR.StartConnection();
+
                 ServerLoaded();
                 Console.WriteLine($"Server Loaded");
 

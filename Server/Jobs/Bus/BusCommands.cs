@@ -112,7 +112,7 @@ namespace Server.Jobs.Bus
                 busVehicle.PrimaryColor = 6;
                 busVehicle.SecondaryColor = 6;
                 busVehicle.NumberplateText = "TRANSIT";
-                busVehicle.SetNumberPlateStyle(NumberPlateStyle.BlueWhite3);
+                busVehicle.SetNumberPlateStyleExt(NumberPlateStyle.BlueWhite3);
                 busVehicle.SetData("FUELLEVEL", 100);
                 busVehicle.SetData("bus:emptyTime", DateTime.Now.AddMinutes(10));
                 busVehicle.SetData("ODOREADING", 193921124f);
@@ -144,7 +144,6 @@ namespace Server.Jobs.Bus
 
                 return;
             }
-
 
             if (!BusHandler.BusVehicles.ContainsKey(player.GetClass().CharacterId))
             {

@@ -260,8 +260,6 @@ namespace Server.Character.Clothing
 
                     context.SaveChanges();
 
-                    
-
                     CharacterHandler.NextMaskId++;
                 }
             }
@@ -282,7 +280,7 @@ namespace Server.Character.Clothing
             ClothesData currentClothesData = playerClothesDatas.FirstOrDefault(i => i.slot == selectedItem);
 
             Inventory.Inventory playerInventory = player.FetchInventory();
-            
+
             int nakedItem = new int();
 
             if (player.IsMale())
@@ -402,8 +400,6 @@ namespace Server.Character.Clothing
                     player.SendNotification($"Your anonymity has been turned ~r~off~w~.");
 
                     context.SaveChanges();
-
-                    
                 }
 
                 player.GetClass().Name = dbCharacter.Name;

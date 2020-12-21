@@ -23,7 +23,6 @@ namespace Server.Groups.EUP
             new EupOutfit("Police Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{334, 0}),
             new EupOutfit("SWAT", new []{1, 0}, new []{127, 0}, new []{25, 0},  new []{336, 0}),
             new EupOutfit("SWAT Tee", new []{0, 0}, new []{127, 0}, new []{25, 0},  new []{335, 1}),
-
         };
 
         public static List<EupProp> MalePoliceProps = new List<EupProp>
@@ -63,14 +62,12 @@ namespace Server.Groups.EUP
             new EupProp("Deputy Chief", EupPropType.Clothing,10, new []{82, 3}),
             new EupProp("Assistant Chief", EupPropType.Clothing,10, new []{82, 4}),
             new EupProp("Chief of Police", EupPropType.Clothing,10, new []{82, 5}),
-
         };
 
-        #endregion
+        #endregion LSPD Male
 
         #region LSPD Female
 
-        
         public static List<EupOutfit> FemalePoliceOutfits = new List<EupOutfit>
         {
             new EupOutfit("Class C - Short", new []{14, 0}, new []{34, 0}, new []{25, 0},  new []{349, 0}),
@@ -81,10 +78,8 @@ namespace Server.Groups.EUP
             new EupOutfit("Police Jacket", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{351, 0}),
             new EupOutfit("SWAT", new []{14, 0}, new []{132, 0}, new []{25, 0},  new []{347, 0}),
             new EupOutfit("SWAT Tee", new []{14, 0}, new []{127, 0}, new []{25, 0},  new []{348, 1}),
-
         };
 
-        
         public static List<EupProp> FemalePoliceProps = new List<EupProp>
         {
             new EupProp("No Badge", EupPropType.Clothing, 5, new []{85, -1}),
@@ -104,9 +99,9 @@ namespace Server.Groups.EUP
             new EupProp("SWAT Vest", EupPropType.Clothing,9, new []{57, 0}),
         };
 
-        #endregion
+        #endregion LSPD Female
 
-        [Command("eup", commandType: CommandType.Faction, description:"Display EUP Outfit Menu")]
+        //[Command("eup", commandType: CommandType.Faction, description:"Display EUP Outfit Menu")]
         public static void CommandEup(IPlayer player)
         {
             if (!player.IsSpawned())
@@ -199,7 +194,7 @@ namespace Server.Groups.EUP
             {
                 player.SetClothes(10, 78, 0);
             }
-            
+
             if (selectedOutfit.Name == "Police Jacket")
             {
                 player.SetClothes(8, 166, 0);
@@ -209,7 +204,7 @@ namespace Server.Groups.EUP
 
             Logging.AddToCharacterLog(player, $"has switched EUP outfit to {selectedOutfit.Name}.");
         }
-        
+
         public static void OnFemalePoliceSelect(IPlayer player, string option)
         {
             if (option == "Close") return;
@@ -244,7 +239,7 @@ namespace Server.Groups.EUP
                 // 80?
                 //player.SetClothes(10, 78, 0);
             }
-            
+
             if (selectedOutfit.Name == "Police Jacket")
             {
                 player.SetClothes(8, 201, 0);
@@ -260,8 +255,6 @@ namespace Server.Groups.EUP
         private static void ShowMalePoliceProps(IPlayer player)
         {
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
-
-            
 
             foreach (EupProp malePoliceProp in MalePoliceProps)
             {
@@ -288,7 +281,6 @@ namespace Server.Groups.EUP
                 return;
             }
 
-
             EupProp selectedProp = MalePoliceProps.FirstOrDefault(x => x.Name == option);
 
             if (selectedProp == null)
@@ -307,19 +299,17 @@ namespace Server.Groups.EUP
                 player.SetAccessory(selectedProp.Slot, selectedProp.Data[0], selectedProp.Data[1]);
             }
 
-
             player.SendNotification($"~y~You've selected the {selectedProp.Name}.");
 
             Logging.AddToCharacterLog(player, $"has equipped prop {selectedProp.Name}.");
         }
 
-        #endregion
+        #endregion Male Police Props
 
         #region Male Police Ranks
 
         private static void ShowMalePoliceRanks(IPlayer player)
         {
-            
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             foreach (EupProp malePoliceRank in MalePoliceRanks)
@@ -343,7 +333,7 @@ namespace Server.Groups.EUP
                 player.SendErrorNotification("Unable to find the rank.");
                 return;
             }
-            
+
             if (selectedRank.PropType == EupPropType.Clothing)
             {
                 player.SetClothes(selectedRank.Slot, selectedRank.Data[0], selectedRank.Data[1]);
@@ -359,16 +349,13 @@ namespace Server.Groups.EUP
             Logging.AddToCharacterLog(player, $"has set their rank prop to {option}.");
         }
 
-        #endregion
+        #endregion Male Police Ranks
 
-        
         #region Female Police Props
 
         private static void ShowFemalePoliceProps(IPlayer player)
         {
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
-
-            
 
             foreach (EupProp femalePoliceProp in FemalePoliceProps)
             {
@@ -395,7 +382,6 @@ namespace Server.Groups.EUP
                 return;
             }
 
-
             EupProp selectedProp = FemalePoliceProps.FirstOrDefault(x => x.Name == option);
 
             if (selectedProp == null)
@@ -414,12 +400,11 @@ namespace Server.Groups.EUP
                 player.SetAccessory(selectedProp.Slot, selectedProp.Data[0], selectedProp.Data[1]);
             }
 
-
             player.SendNotification($"~y~You've selected the {selectedProp.Name}.");
 
             Logging.AddToCharacterLog(player, $"has equipped prop {selectedProp.Name}.");
         }
 
-        #endregion
+        #endregion Female Police Props
     }
 }

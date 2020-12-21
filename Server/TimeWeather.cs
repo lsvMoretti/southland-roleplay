@@ -62,9 +62,8 @@ namespace Server
                     serverSettings.Minute += 1;
                 }
 
-
 #if RELEASE
-                
+
                 SignalR.SendGameTime();
                 Console.Title =
                     $"alt:V Server - Game Time: {serverSettings.Hour:D2}:{serverSettings.Minute:D2} - V{Utility.Build} - {Utility.LastUpdate}";
@@ -72,8 +71,8 @@ namespace Server
 #endif
 
 #if DEBUG
-            Console.Title =
- $"alt:V Server - Game Time: {serverSettings.Hour}:{serverSettings.Minute} - V{Utility.Build} - {Utility.LastUpdate} [DEBUG MODE]";
+                Console.Title =
+     $"alt:V Server - Game Time: {serverSettings.Hour}:{serverSettings.Minute} - V{Utility.Build} - {Utility.LastUpdate} [DEBUG MODE]";
 #endif
 
                 foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
@@ -105,7 +104,6 @@ namespace Server
                 if (timeNow.Minute != 0 && timeNow.Minute != 15 && timeNow.Minute != 30 &&
                     timeNow.Minute != 45)
                 {
-                
                     _minuteTimer.Start();
                     return;
                 }
@@ -232,6 +230,8 @@ namespace Server
 
                 DateTime currentTime = DateTime.Now;
 
+#if RELEASE
+
                 if (currentTime.Month == 12)
                 {
                     if (currentTime.Day >= 18 && currentTime.Day <= 31)
@@ -244,6 +244,8 @@ namespace Server
                 {
                     CurrentWeatherType = WeatherType.Halloween;
                 }
+
+#endif
 
                 return currentWeather;
             }

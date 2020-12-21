@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Numerics;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography.X509Certificates;
 using System.Timers;
 using AltV.Net;
@@ -33,6 +32,14 @@ namespace Server.Property
         public static void BuyCommand(IPlayer player)
         {
             if (player.FetchCharacter() == null) return;
+
+            bool hasCurrentWeaponData = player.GetData("CurrentWeaponHash", out uint weaponHash);
+
+            if (hasCurrentWeaponData || weaponHash != 0)
+            {
+                player.SendErrorNotification("You must holster your weapon before the clerk can serve you.");
+                return;
+            }
 
             Models.Property property = Models.Property.FetchNearbyProperty(player, 5f);
 
@@ -76,7 +83,7 @@ namespace Server.Property
             player.SetData("INSTOREID", property.Id);
 
             bool hasWelcomeData = player.GetData(WelcomePlayer.WelcomeData, out int welcomeStage);
-            
+
             if (property.PropertyType == PropertyType.LowEndClothes ||
                 property.PropertyType == PropertyType.MedClothes || property.PropertyType == PropertyType.HighClothes)
             {
@@ -150,7 +157,7 @@ namespace Server.Property
                     WelcomePlayer.OnBuyCommand(player);
                 }
             }
-            
+
             foreach (var gameItem in gameItems)
             {
                 menuItems.Add(new NativeMenuItem(gameItem.Name, $"${gameItem.Price}"));
@@ -240,7 +247,7 @@ namespace Server.Property
                     context.Backpacks.Remove(newBackpack);
 
                     context.SaveChanges();
-                    
+
                     player.SendErrorNotification("There was an error adding the backpack to your inventory!");
                     return;
                 }
@@ -354,7 +361,7 @@ namespace Server.Property
 
                     context.Phones.Remove(phoneDb);
                     context.SaveChanges();
-                    
+
                     return;
                 }
 
@@ -379,11 +386,10 @@ namespace Server.Property
                 }
 
                 player.RemoveCash(price);
-                
+
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
 
                 return;
-
             }
 
             bool added = playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name));
@@ -468,16 +474,15 @@ namespace Server.Property
 
             if (interior.IsMapped == true)
             {
-                player.SetPosition(interior.Position, player.Rotation, 5000 ,unfreezeTime: 5000);
+                player.SetPosition(interior.Position, player.Rotation, 5000, unfreezeTime: 5000);
             }
-
             else
             {
                 player.Position = interior.Position;
             }
 
             int dimension = nearestProperty.Id;
-            
+
             player.Dimension = dimension;
             player.SetSyncedMetaData("PlayerDimension", dimension);
 
@@ -630,8 +635,6 @@ namespace Server.Property
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You've set {nearestProperty.BusinessName} required products to {amount}.");
 
             Logging.AddToCharacterLog(player,
@@ -685,8 +688,6 @@ namespace Server.Property
             property.ProductBuyPrice = amount;
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've set {nearestProperty.BusinessName} product buy price to {amount:C}.");
 
@@ -749,7 +750,6 @@ namespace Server.Property
             player.AddCash(amount);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've withdraw {amount:C} from your business.");
 
@@ -811,7 +811,6 @@ namespace Server.Property
             player.RemoveCash(amount);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've deposited {amount:C} into your business.");
 
@@ -897,7 +896,6 @@ namespace Server.Property
             player.SendInfoNotification($"You've started to mortgage {propertyDb.Address}. Deposited {depositAmount:C}. Left to pay {mortgageValue:C}.");
             player.SendInfoNotification($"Next mortgage payment should be made by {propertyDb.LastMortgagePayment.AddMonths(2)}.");
 
-            
             LoadProperties.ReloadProperty(propertyDb);
         }
 
@@ -919,7 +917,7 @@ namespace Server.Property
                 player.SendErrorNotification("This property is already owned.");
                 return;
             }
-            
+
             player.SetData("property:PurchasingProperty", nearestProperty.Id);
 
             PaymentHandler.ShowPaymentSelection(player, "property:PurchasePropertyHandler");
@@ -959,7 +957,7 @@ namespace Server.Property
                 if (playerCharacter.Money < property.Value)
                 {
                     player.SendErrorNotification($"You don't have the required amount of {property.Value:C} on you.");
-                    
+
                     return;
                 }
 
@@ -976,8 +974,6 @@ namespace Server.Property
                 player.SendInfoNotification($"You've bought {property.Address} for {property.Value:C}.");
 
                 context.SaveChanges();
-
-                
 
                 LoadProperties.ReloadProperty(property);
 
@@ -1025,8 +1021,6 @@ namespace Server.Property
             player.SendInfoNotification($"You've bought {property.Address} for {property.Value:C}.");
 
             context.SaveChanges();
-
-            
 
             LoadProperties.ReloadProperty(property);
         }
@@ -1092,7 +1086,7 @@ namespace Server.Property
 
         public static void HandleSellMortgageProperty(IPlayer player, Models.Property property)
         {
-            double depositAmount = property.Value * 0.2; 
+            double depositAmount = property.Value * 0.2;
             double mortgageValue = property.Value * 1.05;
             double afterPayment = mortgageValue - depositAmount;
             double totalPayments = afterPayment - property.MortgageValue;
@@ -1127,8 +1121,7 @@ namespace Server.Property
                 return;
             }
 
-            
-            double depositAmount = property.Value * 0.2; 
+            double depositAmount = property.Value * 0.2;
             double mortgageValue = property.Value * 1.05;
             double afterPayment = mortgageValue - depositAmount;
             double totalPayments = afterPayment - property.MortgageValue;
@@ -1223,7 +1216,6 @@ namespace Server.Property
                             selectedProperty.BuyinValue = 0;
 
                             context.SaveChanges();
-                            
 
                             LoadProperties.ReloadProperty(selectedProperty);
                             return;
@@ -1246,7 +1238,7 @@ namespace Server.Property
                         selectedProperty.BuyinValue = 0;
 
                         context.SaveChanges();
-                        
+
                         LoadProperties.ReloadProperty(selectedProperty);
 
                         return;
@@ -1264,7 +1256,7 @@ namespace Server.Property
                 selectedProperty.OwnerId = 0;
                 selectedProperty.Key = Utility.GenerateRandomString(8);
                 context.SaveChanges();
-                
+
                 LoadProperties.ReloadProperty(selectedProperty);
                 return;
             }
@@ -1377,8 +1369,6 @@ namespace Server.Property
 
             context.SaveChanges();
 
-            
-
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> oldKeys = playerInventory.GetInventoryItems("ITEM_PROPERTY_KEY")
@@ -1429,8 +1419,6 @@ namespace Server.Property
 
                 context.SaveChanges();
 
-                
-
                 Logging.AddToCharacterLog(player,
                     $"has sold {selectedProperty.Address} and the voucher has been return to them.");
 
@@ -1440,8 +1428,6 @@ namespace Server.Property
             }
 
             context.SaveChanges();
-
-            
 
             LifestyleChoice propertyVoucher = Models.Property.FetchPropertyLifestyle(selectedProperty);
 
@@ -1502,7 +1488,7 @@ namespace Server.Property
                         }
                     }
                 }
-                if(nearestProperty == null) return false;
+                if (nearestProperty == null) return false;
             }
 
             using Context context = new Context();
@@ -1517,7 +1503,6 @@ namespace Server.Property
             if (!hasKey)
             {
                 hasKey = player.GetClass().AdminDuty;
-                
             }
 
             if (!hasKey)
@@ -1536,8 +1521,6 @@ namespace Server.Property
 
             Logging.AddToCharacterLog(player,
                 $"Has set property Id {propertyDb.Id} lock status to {propertyDb.Locked}");
-
-            
 
             return true;
         }
@@ -1593,7 +1576,6 @@ namespace Server.Property
             context.SaveChanges();
 
             player.SendInfoNotification($"You've set the storage location.");
-            
         }
 
         [Command("pinv", commandType: CommandType.Property, description: "Storage: Used to view your property storage")]
@@ -1705,7 +1687,7 @@ namespace Server.Property
                         }
                     }
                 }
-                
+
                 menuItems.Add(inventoryItem.Quantity > 1
                     ? new NativeMenuItem(inventoryItem.CustomName, $"Quantity: {inventoryItem.Quantity}")
                     : new NativeMenuItem(inventoryItem.CustomName));
@@ -1760,7 +1742,6 @@ namespace Server.Property
                 playerCharacter.BackpackId = 0;
 
                 context.SaveChanges();
-                
 
                 player.LoadCharacterCustomization();
             }
@@ -1802,7 +1783,7 @@ namespace Server.Property
                         }
                     }
                 }
-                
+
                 menuItems.Add(inventoryItem.Quantity > 1
                     ? new NativeMenuItem(inventoryItem.CustomName, $"Quantity: {inventoryItem.Quantity}")
                     : new NativeMenuItem(inventoryItem.CustomName));
@@ -1866,7 +1847,7 @@ namespace Server.Property
                 playerCharacter.BackpackId = backPackId;
 
                 context.SaveChanges();
-                
+
                 player.LoadCharacterCustomization();
             }
 
@@ -1902,7 +1883,6 @@ namespace Server.Property
                     player.SendErrorNotification("You are not near a property.");
                     return;
                 }
-
             }
 
             if (nearProperty.OwnerId != player.FetchCharacter().Id)
@@ -1933,7 +1913,6 @@ namespace Server.Property
             }
 
             context.SaveChanges();
-            
 
             PropertyHandler.ReloadPropertyRadio(property);
         }
@@ -2011,17 +1990,17 @@ namespace Server.Property
             }
 
             player.SendNotification("~g~You've set this business to active!");
-            
+
             using Context context = new Context();
 
             Models.Property property = context.Property.Find(nearProperty.Id);
-            
+
             property.LastSetActive = DateTime.Now;
 
-            context.SaveChanges();   
+            context.SaveChanges();
         }
 
-        [Command("penter", commandType: CommandType.Property, description:"Entrances: Used to enter exit different entrances")]
+        [Command("penter", commandType: CommandType.Property, description: "Entrances: Used to enter exit different entrances")]
         public static void CommandPEnter(IPlayer player)
         {
             if (!player.IsSpawned())
@@ -2072,14 +2051,14 @@ namespace Server.Property
 
                         player.Position = new Vector3(propertyDoor.ExitPosX, propertyDoor.ExitPosY, propertyDoor.ExitPosZ);
                         player.Dimension = (int)propertyDoor.ExitDimension;
-                        
+
                         DoorHandler.UpdateDoorsForPlayer(player);
                     }
                 }
             }
         }
 
-        [Command("pexit", commandType: CommandType.Property, description:"Entrances: Used to exit additional property entrances")]
+        [Command("pexit", commandType: CommandType.Property, description: "Entrances: Used to exit additional property entrances")]
         public static void CommandPExit(IPlayer player)
         {
             if (!player.IsSpawned())
@@ -2112,7 +2091,7 @@ namespace Server.Property
                             }
                             player.Position = new Vector3(propertyDoor.EnterPosX, propertyDoor.EnterPosY, propertyDoor.EnterPosZ);
                             player.Dimension = (int)propertyDoor.ExitDimension;
-                            
+
                             DoorHandler.UpdateDoorsForPlayer(player);
                             return;
                         }

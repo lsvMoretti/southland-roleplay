@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
 using AltV.Net.Elements.Entities;
 using Server.Chat;
 using Server.Commands;
@@ -193,7 +192,6 @@ namespace Server.Jobs.Delivery
             warehouseDb.Products += amount;
 
             context.SaveChanges();
-            
 
             double pay = amount * (warehouse.MinPrice * 1.2);
 
@@ -288,8 +286,6 @@ namespace Server.Jobs.Delivery
             warehouse.Products -= amount;
 
             context.SaveChanges();
-
-            
 
             if (amount > 1)
             {
@@ -455,8 +451,6 @@ namespace Server.Jobs.Delivery
                 propertyDb.Products += amount;
 
                 context.SaveChanges();
-
-                
 
                 double earnings = totalCost * 1.15;
 

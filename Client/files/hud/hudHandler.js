@@ -3,6 +3,9 @@ import * as native from 'natives';
 var hudWebView = undefined;
 var localPlayer = undefined;
 alt.everyTick(() => {
+    if (native.isHudComponentActive(14)) {
+        native.hideHudComponentThisFrame(14);
+    }
     if (HudState) {
         native.hideHudComponentThisFrame(9);
         native.hideHudComponentThisFrame(7);

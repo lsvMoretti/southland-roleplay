@@ -32,7 +32,7 @@ alt.onServer('LoadNPCPreview', LoadNPCPreview);
 alt.onServer('destroyNPCPreviews', destroyNPCPreviews);
 
 alt.onServer('loadTattooData',
-(collection: string, overlay: string) => {
+    (collection: string, overlay: string) => {
         var localPlayer = alt.Player.local.scriptID;
 
         alt.log('Loading Tattoo Data: ' + collection + ',' + overlay);
@@ -40,13 +40,12 @@ alt.onServer('loadTattooData',
         var hairTattooCollection = native.getHashKey(collection);
         var hairTattooOverlay = native.getHashKey(overlay);
 
-        alt.log('After Hash: ' +hairTattooCollection + ','+hairTattooOverlay);
-        
+        alt.log('After Hash: ' + hairTattooCollection + ',' + hairTattooOverlay);
+
         native.addPedDecorationFromHashes(localPlayer, hairTattooCollection, hairTattooOverlay);
-});
+    });
 
 alt.onServer('ClearTattoos', () => {
-
     native.clearPedDecorations(alt.Player.local.scriptID);
 });
 
@@ -66,84 +65,78 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
     if (pos === 0) {
         alt.log('Loading in Char 0');
         if (customCharacter.Gender == 0) {
-            alt.loadModel(1885233650);
+            native.requestModel(1885233650);
             ped = native.createPed(0, 1885233650, 197.6044, -922.8659, 30.678345, 275.42, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
-            alt.loadModel(-1667301416);
+            native.requestModel(-1667301416);
             ped = native.createPed(0, -1667301416, 197.6044, -922.8659, 30.678345, 275.42, false, true);
             pedArray.push(ped);
         }
     }
     if (pos === 1) {
-        
         alt.log('Loading in Char 1');
         if (customCharacter.Gender == 0) {
-            alt.loadModel(1885233650);
+            native.requestModel(1885233650);
             ped = native.createPed(0, 1885233650, 199.7011, -924.0923, 30.678345, 278, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
-            alt.loadModel(-1667301416);
+            native.requestModel(-1667301416);
             ped = native.createPed(0, -1667301416, 199.7011, -924.0923, 30.678345, 278, false, true);
             pedArray.push(ped);
         }
     }
     if (pos === 2) {
-        
         alt.log('Loading in Char 2');
         if (customCharacter.Gender == 0) {
-            alt.loadModel(1885233650);
+            native.requestModel(1885233650);
             ped = native.createPed(0, 1885233650, 202.36484, -925.9912, 30.678345, 271, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
-            alt.loadModel(-1667301416);
+            native.requestModel(-1667301416);
             ped = native.createPed(0, -1667301416, 202.36484, -925.9912, 30.678345, 271, false, true);
             pedArray.push(ped);
         }
     }
     if (pos === 3) {
-        
         alt.log('Loading in Char 3');
         if (customCharacter.Gender == 0) {
-            alt.loadModel(1885233650);
+            native.requestModel(1885233650);
             ped = native.createPed(0, 1885233650, 204.90988, -927.82416, 30.678345, 269.93, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
-            alt.loadModel(-1667301416);
+            native.requestModel(-1667301416);
             ped = native.createPed(0, -1667301416, 204.90988, -927.82416, 30.678345, 269.93, false, true);
             pedArray.push(ped);
         }
     }
     if (pos === 4) {
-        
         alt.log('Loading in Char 4');
-            if (customCharacter.Gender == 0) {
-                alt.loadModel(1885233650);
-                ped = native.createPed(0, 1885233650, 207.67912, -930.211, 30.678345, 269.02, false, true);
-                pedArray.push(ped);
-            }
-            else if (customCharacter.Gender == 1) {
-                alt.loadModel(-1667301416);
-                ped = native.createPed(0, -1667301416, 207.67912, -930.211, 30.678345, 269.02, false, true);
-                pedArray.push(ped);
-            }
-            alt.log('Char4: ' + ped);
-
+        if (customCharacter.Gender == 0) {
+            native.requestModel(1885233650);
+            ped = native.createPed(0, 1885233650, 207.67912, -930.211, 30.678345, 269.02, false, true);
+            pedArray.push(ped);
+        }
+        else if (customCharacter.Gender == 1) {
+            native.requestModel(-1667301416);
+            ped = native.createPed(0, -1667301416, 207.67912, -930.211, 30.678345, 269.02, false, true);
+            pedArray.push(ped);
+        }
+        alt.log('Char4: ' + ped);
     }
     if (pos === 5) {
-        
         alt.log('Loading in Char 5');
         if (customCharacter.Gender == 0) {
-            alt.loadModel(1885233650);
+            native.requestModel(1885233650);
             ped = native.createPed(0, 1885233650, 210.1055, -932.04395, 30.678345, 271, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
-            alt.loadModel(-1667301416);
+            native.requestModel(-1667301416);
             ped = native.createPed(0, -1667301416, 210.1055, -932.04395, 30.678345, 271, false, true);
             pedArray.push(ped);
         }
@@ -178,7 +171,7 @@ function setCustomCharacter(ped: number, customCharacterJson: string, clothesJso
     for (let index = 0; index < apperanceInfo.length; index++) {
         const element = apperanceInfo[index];
 
-        if(element.Value == -1){
+        if (element.Value == -1) {
             element.Value = 255;
         }
 
@@ -214,7 +207,7 @@ function setCustomCharacter(ped: number, customCharacterJson: string, clothesJso
     var characterClothes = JSON.parse(clothesJson);
     var accessories = JSON.parse(accessoryJson);
 
-    characterClothes.forEach((element: { slot: number; drawable: number; texture: number; })  => {
+    characterClothes.forEach((element: { slot: number; drawable: number; texture: number; }) => {
         native.setPedComponentVariation(ped, element.slot, element.drawable, element.texture, 0);
     });
 

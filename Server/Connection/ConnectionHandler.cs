@@ -142,7 +142,7 @@ namespace Server.Connection
                 if (!acceptedCharacters)
                 {
                     player.SendErrorNotification("You don't have any accepted characters on your account.");
-                    player.SendInfoNotification($"Visit the UCP: https://ucp.paradigmroleplay.com to create some characters!");
+                    player.SendInfoNotification($"Visit the UCP: https://ucp.sol-rp.com to create some characters!");
                     return;
                 }
 
@@ -260,7 +260,7 @@ namespace Server.Connection
                 if (!acceptedCharacters)
                 {
                     player.SendErrorNotification("You don't have any accepted characters on your account.");
-                    player.SendInfoNotification($"Visit the UCP: https://ucp.paradigmroleplay.com to create some characters!");
+                    player.SendInfoNotification($"Visit the UCP: https://ucp.sol-rp.com to create some characters!");
                     return;
                 }
 

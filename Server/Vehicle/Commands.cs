@@ -82,7 +82,6 @@ namespace Server.Vehicle
             }
 
             context.SaveChanges();
-            
         }
 
         [Command("vexamine", onlyOne: true, commandType: CommandType.Vehicle,
@@ -145,7 +144,7 @@ namespace Server.Vehicle
                 player.SendLoginError();
                 return;
             }
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             if (!player.IsInVehicle)
@@ -172,7 +171,6 @@ namespace Server.Vehicle
 
                 playerInventory.RemoveItem(fuelCan);
 
-                
                 player.Vehicle.GetClass().FuelLevel += 10;
 
                 player.SendInfoNotification($"You've filled the vehicle up with 10 more litres of fuel!");
@@ -190,7 +188,7 @@ namespace Server.Vehicle
             if (!player.IsInVehicle && nearPump)
             {
                 Inventory.Inventory playerInventory = player.FetchInventory();
-                
+
                 double fuelCanCost = 10 * 0.33;
 
                 if (!playerInventory.HasItem("ITEM_FUELCAN_EMPTY"))
@@ -208,7 +206,7 @@ namespace Server.Vehicle
                 InventoryItem emptyFuelCan = playerInventory.GetItem("ITEM_FUELCAN_EMPTY");
 
                 playerInventory.RemoveItem(emptyFuelCan);
-                
+
                 playerInventory.AddItem(new InventoryItem("ITEM_FUELCAN_EMPTY", "Fuelcan (10 Litres)"));
 
                 player.RemoveCash(fuelCanCost);
@@ -285,7 +283,7 @@ namespace Server.Vehicle
                     {
                         canUnlock = keyList.Any(x => x.ItemValue == keyCode);
                     }
-                    
+
                     if (nearestVehicle.GetData("Trucking:Owner", out int truckOwner))
                     {
                         if (truckOwner != player.GetClass().CharacterId)
@@ -354,7 +352,7 @@ namespace Server.Vehicle
                         {
                             vehicleData.Locked = false;
                             context.SaveChanges();
-                            
+
                             nearestVehicle.LockState = VehicleLockState.Unlocked;
                             player.SendEmoteMessage($"unlocks the {nearestVehicle.FetchVehicleData()?.Name}.");
                             Logging.AddToCharacterLog(player,
@@ -365,7 +363,7 @@ namespace Server.Vehicle
 
                         vehicleData.Locked = true;
                         context.SaveChanges();
-                        
+
                         nearestVehicle.LockState = VehicleLockState.Locked;
 
                         player.SendEmoteMessage($"locks the {nearestVehicle.FetchVehicleData()?.Name}.");
@@ -444,13 +442,12 @@ namespace Server.Vehicle
                 }
             }
 
-
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             var keyList = playerInventory.GetInventoryItems("ITEM_VEHICLE_KEY");
 
             bool canEngine = false;
-            
+
             if (player.Vehicle.GetData("Trucking:Owner", out int truckOwner))
             {
                 bool hasLoadData = player.Vehicle.HasData("Trucking:Loading");
@@ -459,7 +456,7 @@ namespace Server.Vehicle
                     player.SendErrorNotification("The truck is being loaded.");
                     return false;
                 }
-                
+
                 if (truckOwner != player.GetClass().CharacterId)
                 {
                     player.SendPermissionError();
@@ -468,7 +465,7 @@ namespace Server.Vehicle
 
                 canEngine = true;
             }
-            
+
             bool isDmvVehicle = player.Vehicle.GetData("DMV:OwnerCharacter", out int characterId);
 
             if (isDmvVehicle)
@@ -498,7 +495,6 @@ namespace Server.Vehicle
                 if (!canEngine)
                 {
                     canEngine = player.GetClass().AdminDuty;
-                    
                 }
 
                 if (!canEngine)
@@ -534,7 +530,6 @@ namespace Server.Vehicle
             vehicleDb.Engine = !vehicleDb.Engine;
 
             context.SaveChanges();
-            
 
             player.Vehicle.EngineOn = vehicleDb.Engine;
 
@@ -559,7 +554,7 @@ namespace Server.Vehicle
 
             if (vehicleData == null) return null;
 
-            IVehicle vehicle = LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition, true).Result;
+            IVehicle vehicle = LoadVehicle.LoadDatabaseVehicleAsync(vehicleData, vehiclePosition, true).Result;
 
             return vehicle;
         }
@@ -817,12 +812,12 @@ namespace Server.Vehicle
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            VehicleDoorState driverFrontDoorState = playerVehicle.GetDoorState(VehicleDoor.DriverFront);
-            VehicleDoorState passFrontDoorState = playerVehicle.GetDoorState(VehicleDoor.PassengerFront);
-            VehicleDoorState driverRearDoorState = playerVehicle.GetDoorState(VehicleDoor.DriverRear);
-            VehicleDoorState passRearDoorState = playerVehicle.GetDoorState(VehicleDoor.PassengerRear);
-            VehicleDoorState trunkDoorState = playerVehicle.GetDoorState(VehicleDoor.Trunk);
-            VehicleDoorState hoodDoorState = playerVehicle.GetDoorState(VehicleDoor.Hood);
+            VehicleDoorState driverFrontDoorState = (VehicleDoorState)playerVehicle.GetDoorState((byte)VehicleDoor.DriverFront);
+            VehicleDoorState passFrontDoorState = (VehicleDoorState)playerVehicle.GetDoorState((byte)VehicleDoor.PassengerFront);
+            VehicleDoorState driverRearDoorState = (VehicleDoorState)playerVehicle.GetDoorState((byte)VehicleDoor.DriverRear);
+            VehicleDoorState passRearDoorState = (VehicleDoorState)playerVehicle.GetDoorState((byte)VehicleDoor.PassengerRear);
+            VehicleDoorState trunkDoorState = (VehicleDoorState)playerVehicle.GetDoorState((byte)VehicleDoor.Trunk);
+            VehicleDoorState hoodDoorState = (VehicleDoorState)playerVehicle.GetDoorState((byte)VehicleDoor.Hood);
 
             if (player.Seat == 1 || !player.IsInVehicle)
             {
@@ -1098,8 +1093,6 @@ namespace Server.Vehicle
 
             context.SaveChanges();
 
-            
-
             if (currentFactionVehicle)
             {
                 player.SendInfoNotification($"You've set the vehicle to your active faction. {activeFaction.Name}.");
@@ -1166,7 +1159,7 @@ namespace Server.Vehicle
 
             Models.Property property = Models.Property.FetchProperty(propertyGarage.PropertyId);
 
-            if(property == null)
+            if (property == null)
             {
                 NotificationExtension.SendErrorNotification(player, "An error occurred fetching the property.");
                 return;
@@ -1216,7 +1209,7 @@ namespace Server.Vehicle
                 if (!hasData) return;
 
                 player.DeleteData("VGetGarage");
-            
+
                 Models.Character playerCharacter = player.FetchCharacter();
 
                 if (playerCharacter == null)
@@ -1237,7 +1230,6 @@ namespace Server.Vehicle
                     {
                         vehicleList.Add(garageVehicle);
                     }
-
                     else if (garageVehicle.OwnerId == playerCharacter.OwnerId)
                     {
                         vehicleList.Add(garageVehicle);
@@ -1251,7 +1243,7 @@ namespace Server.Vehicle
                     player.SendErrorNotification("An error occurred fetching the vehicle.");
                     return;
                 }
-            
+
                 using Context context = new Context();
 
                 Models.Property property = await context.Property.FindAsync(pGarage.PropertyId);
@@ -1277,7 +1269,7 @@ namespace Server.Vehicle
 
                 Position spawnPosition = new Position(propertyGarage.PosX, propertyGarage.PosY, propertyGarage.PosZ);
 
-                await LoadVehicle.LoadDatabaseVehicle(selectedVehicle, spawnPosition);
+                await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, spawnPosition);
 
                 player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
             }
@@ -1312,7 +1304,7 @@ namespace Server.Vehicle
                     player.SendErrorNotification("Unable to find this garage.");
                     return;
                 }
-                
+
                 using Context context = new Context();
 
                 Models.Property property = await context.Property.FindAsync(garage.PropertyId);
@@ -1335,7 +1327,7 @@ namespace Server.Vehicle
                 }
                 Position spawnPosition = new Position(garage.PosX, garage.PosY, garage.PosZ);
 
-                await LoadVehicle.LoadDatabaseVehicle(selectedVehicle, spawnPosition);
+                await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, spawnPosition);
 
                 player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
 
@@ -1344,7 +1336,7 @@ namespace Server.Vehicle
 
             Position vehiclePosition = new Position(selectedVehicle.PosX, selectedVehicle.PosY, selectedVehicle.PosZ);
 
-            await LoadVehicle.LoadDatabaseVehicle(selectedVehicle, vehiclePosition);
+            await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, vehiclePosition);
 
             player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
         }
@@ -1355,7 +1347,7 @@ namespace Server.Vehicle
         {
             if (!player.IsSpawned()) return;
 
-            if(player.Vehicle?.FetchVehicleData() == null)
+            if (player.Vehicle?.FetchVehicleData() == null)
             {
                 player.SendPermissionError();
                 return;
@@ -1392,10 +1384,10 @@ namespace Server.Vehicle
 
             // Fetch amount of vehicles in garage
             int garageVehicles = Models.Vehicle.FetchPropertyGarageVehicles(pGarage.Id).Count;
-            
+
             // If it has space remaining
             int remaining = pGarage.VehicleCount - garageVehicles;
-            
+
             if (remaining <= 0)
             {
                 player.SendErrorNotification("This garage is full.");
@@ -1513,7 +1505,6 @@ namespace Server.Vehicle
 
             context.SaveChanges();
 
-
             AltAsync.Do(() => { LoadVehicle.UnloadVehicle(targetVehicle); });
 
             player.SendInfoNotification($"You have put {targetVehicleData.Name} into your trunk.");
@@ -1625,9 +1616,8 @@ namespace Server.Vehicle
             targetVehicleDb.IsStored = false;
 
             context.SaveChanges();
-            
 
-            LoadVehicle.LoadDatabaseVehicle(storedVehicle, trunkPosition);
+            LoadVehicle.LoadDatabaseVehicleAsync(storedVehicle, trunkPosition);
 
             player.SendInfoNotification($"You have removed {storedVehicle.Name} from your vehicle trunk.");
 
@@ -1693,7 +1683,6 @@ namespace Server.Vehicle
                 // Else you get 5%
                 vehicleValue = vehicleBoughtPrice * 0.05;
             }
-
 
             Console.WriteLine($"Mileage: {vehicleMileage}. Scrap Value: {vehicleValue:C}");
 
@@ -1819,7 +1808,6 @@ namespace Server.Vehicle
             vehicleContext.SalePrice = salePrice;
 
             context.SaveChanges();
-            
 
             if (salePrice == 0)
             {

@@ -55,7 +55,7 @@ namespace Server.Extensions
                 }
             }
 
-            VehicleDoorState hoodState = vehicle.GetDoorState(VehicleDoor.Hood);
+            VehicleDoorState hoodState = (VehicleDoorState)vehicle.GetDoorState((byte)VehicleDoor.Hood);
 
             if (hoodState == VehicleDoorState.Closed)
             {
@@ -66,7 +66,7 @@ namespace Server.Extensions
                 menuItems.Add("Close Hood");
             }
 
-            VehicleDoorState trunkState = vehicle.GetDoorState(VehicleDoor.Trunk);
+            VehicleDoorState trunkState = (VehicleDoorState)vehicle.GetDoorState((byte)VehicleDoor.Trunk);
 
             if (trunkState == VehicleDoorState.Closed)
             {
@@ -100,25 +100,25 @@ namespace Server.Extensions
 
             if (selectedItem == "Open Hood")
             {
-                targetVehicle.SetDoorState(VehicleDoor.Hood, VehicleDoorState.OpenedLevel7);
+                targetVehicle.SetDoorState((byte)VehicleDoor.Hood, (byte)VehicleDoorState.OpenedLevel7);
                 return;
             }
 
             if (selectedItem == "Close Hood")
             {
-                targetVehicle.SetDoorState(VehicleDoor.Hood, VehicleDoorState.Closed);
+                targetVehicle.SetDoorState((byte)VehicleDoor.Hood, (byte)VehicleDoorState.Closed);
                 return;
             }
 
             if (selectedItem == "Open Trunk")
             {
-                targetVehicle.SetDoorState(VehicleDoor.Trunk, VehicleDoorState.OpenedLevel7);
+                targetVehicle.SetDoorState((byte)VehicleDoor.Trunk, (byte)VehicleDoorState.OpenedLevel7);
                 return;
             }
 
             if (selectedItem == "Close Trunk")
             {
-                targetVehicle.SetDoorState(VehicleDoor.Trunk, VehicleDoorState.Closed);
+                targetVehicle.SetDoorState((byte)VehicleDoor.Trunk, (byte)VehicleDoorState.Closed);
                 return;
             }
 
@@ -141,8 +141,6 @@ namespace Server.Extensions
                 vehicleDb.Locked = true;
                 context.SaveChanges();
             }
-
-            
         }
     }
 }

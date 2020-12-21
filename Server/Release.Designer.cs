@@ -12,7 +12,7 @@ namespace Server {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Release : global::System.Configuration.ApplicationSettingsBase {
         
         private static Release defaultInstance = ((Release)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Release())));
@@ -62,7 +62,7 @@ namespace Server {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("devgame")]
+        [global::System.Configuration.DefaultSettingValueAttribute("gameserver")]
         public string MySqlDebug {
             get {
                 return ((string)(this["MySqlDebug"]));
