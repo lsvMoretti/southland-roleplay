@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using AltV.Net.Data;
-using Remotion.Linq.Utilities;
 using Server.Extensions;
 using Server.Extensions.Marker;
 using Server.Extensions.TextLabel;
@@ -62,7 +61,6 @@ namespace Server.Jobs.Delivery
             List<Warehouse> warehousePoints =
                 context.Warehouse.ToList();
 
-            
             List<Warehouse> inRangeList = new List<Warehouse>();
 
             foreach (Warehouse warehousePoint in warehousePoints)

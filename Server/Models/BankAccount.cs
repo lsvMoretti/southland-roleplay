@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using AltV.Net.Elements.Entities;
-using Microsoft.EntityFrameworkCore.Query.ResultOperators.Internal;
 using Newtonsoft.Json;
 using Serilog;
 using Server.Chat;
@@ -167,8 +166,6 @@ namespace Server.Models
 
             context.SaveChanges();
 
-            
-
             return true;
         }
 
@@ -198,7 +195,6 @@ namespace Server.Models
 
             if (databaseAccount == null)
             {
-                
                 return false;
             }
 
@@ -206,7 +202,6 @@ namespace Server.Models
             databaseAccount.Pin = newPin;
 
             context.SaveChanges();
-            
 
             playerInventory.AddItem(newBankCard);
 
@@ -222,9 +217,8 @@ namespace Server.Models
 
     public enum BankAccountType
     {
-
-        Debit, 
-        Credit, 
+        Debit,
+        Credit,
         Savings
     }
 
