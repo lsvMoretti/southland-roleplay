@@ -8,7 +8,6 @@ using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using Remotion.Linq.Parsing.Structure.IntermediateModel;
 using Server.Backpack;
 using Server.Chat;
 using Server.Commands;
@@ -50,7 +49,6 @@ namespace Server.Inventory
                     return;
                 }
 
-
                 if (isOwner)
                 {
                     player.SetData("IsInventoryOwner", true);
@@ -62,9 +60,7 @@ namespace Server.Inventory
                         player.SetData("ShowingInventoryId", inventoryId);
                     }
                     player.SetData("IsInventoryOwner", false);
-
                 }
-
 
                 List<InventoryItem> inventoryItems = inventory.GetInventory().OrderBy(x => x.CustomName).ToList();
 
@@ -128,7 +124,7 @@ namespace Server.Inventory
                             }
                         }
                     }
-                    
+
                     if (item.Id.Contains("AMMO"))
                     {
                         int.TryParse(item.ItemValue, out int ammoCount);
@@ -145,8 +141,6 @@ namespace Server.Inventory
                             continue;
                         }
                     }
-                    
-                    
 
                     if (item.Quantity > 1)
                     {
@@ -192,13 +186,12 @@ namespace Server.Inventory
             {
                 player.FreezeInput(false);
                 player.FreezePlayer(false);
-                
+
                 bool hasInventoryId = player.GetData("ShowingInventoryId", out int inventoryId);
 
                 if (hasInventoryId)
                 {
                     inventory = new Inventory(InventoryData.GetInventoryData(inventoryId));
-
                 }
 
                 if (inventory == null)
@@ -324,10 +317,7 @@ namespace Server.Inventory
                 return;
             }
 
-
             if (!isOwner) return;
-
-
 
             InventoryItem item = inventory.GetInventory().FirstOrDefault(i => i.CustomName == option);
 
@@ -579,7 +569,7 @@ namespace Server.Inventory
                 {
                     if (!target.IsSpawned()) continue;
 
-                    if(target.Dimension != player.Dimension) continue;
+                    if (target.Dimension != player.Dimension) continue;
 
                     Position targetPosition = target.Position;
 
@@ -624,19 +614,19 @@ namespace Server.Inventory
                     {
                         new NativeListItem("Inventory", item.QuantityListString)
                     };
-                    
+
                     NativeMenu backPackMenu = new NativeMenu("Inventory:Backpack:QuantitySelect", "Inventory", "Select a quantity")
                     {
                         ListTrigger = "Inventory:Backpack:QuantityChange",
                         ListMenuItems = backpackQuantityItems
                     };
-                    
+
                     player.SetData("Inventory:Backpack:Quantity", 1);
-                    
+
                     NativeUi.ShowNativeMenu(player, backPackMenu, true);
                     return;
                 }
-                
+
                 bool transferItem = inventory.TransferItem(backpackInventory, item, item.Quantity);
 
                 if (!transferItem)
@@ -676,19 +666,18 @@ namespace Server.Inventory
         {
             bool tryParse = int.TryParse(listText, out int quantity);
             if (!tryParse) return;
-            
+
             player.SetData("Inventory:Backpack:Quantity", quantity);
         }
 
         public static void OnBackPackQuantitySelect(IPlayer player, string option)
         {
             if (option == "Close") return;
-            
-            
+
             player.GetData("SELECTEDINVITEM", out int itemIndex);
 
             player.GetData("Inventory:Backpack:Quantity", out int quantity);
-            
+
             if (itemIndex == -1)
             {
                 player.SendErrorNotification("An error has occurred. #ER03");
@@ -705,8 +694,7 @@ namespace Server.Inventory
                 player.SetData("SELECTEDINVITEM", -1);
                 return;
             }
-            
-            
+
             Inventory backpackInventory = player.FetchBackpackInventory();
 
             if (backpackInventory == null)
@@ -715,9 +703,8 @@ namespace Server.Inventory
                 return;
             }
 
-                
             bool transferItem = inventory.TransferItem(backpackInventory, item, quantity);
-            
+
             if (!transferItem)
             {
                 player.SendErrorNotification("An error occurred moving the item!");
@@ -725,10 +712,10 @@ namespace Server.Inventory
             }
 
             player.SendNotification($"~y~You've stored {item.CustomName} in your backpack.");
-            
+
             player.DeleteData("Inventory:Backpack:Quantity");
         }
-        
+
         public static void OnInventoryDropItemQuantitySelect(IPlayer player, string args)
         {
             if (args == "Close") return;
@@ -793,7 +780,6 @@ namespace Server.Inventory
                 return;
             }
 
-            
             if (item.Id.Contains("PHONE"))
             {
                 using Context context = new Context();
@@ -893,7 +879,6 @@ namespace Server.Inventory
 
                 return;
             }
-
 
             bool success = inventory.RemoveItem(item, quantity);
             if (!success)
@@ -1201,7 +1186,6 @@ namespace Server.Inventory
 
                 player.SendInfoNotification($"You've picked up {droppedItem.Item.CustomName} from the ground.");
 
-                
                 if (droppedItem.Item.Id.Contains("PHONE"))
                 {
                     using Context context = new Context();
@@ -1232,7 +1216,7 @@ namespace Server.Inventory
                 player.SendSyntaxMessage("/giveitem [NameOrId]");
                 return;
             }
-            
+
             Inventory inventory = player.FetchInventory();
 
             if (inventory == null)
@@ -1303,27 +1287,27 @@ namespace Server.Inventory
                 {
                     stringList.Add(i.ToString());
                 }
-                
+
                 List<NativeListItem> listItems = new List<NativeListItem>
                 {
                     new NativeListItem("Quantity", stringList)
                 };
-                
+
                 NativeMenu menu = new NativeMenu("Inventory:SelectedItemGiveToPlayerQuantity", "Inventory",
                     "Select a quantity")
                 {
                     ListTrigger = "Inventory:SelectedItemGiveToPlayerQuantityList",
-                    ListMenuItems =  listItems
+                    ListMenuItems = listItems
                 };
-                
+
                 player.SetData("Inventory:GiveSelectedInventoryItemIndex", inventoryItems.IndexOf(selectedItem));
                 player.SetData("Inventory:GiveSelectedInventoryQuantity", 1);
-                
+
                 NativeUi.ShowNativeMenu(player, menu, true);
 
                 return;
             }
-            
+
             bool hasData = player.GetData("Inventory:SelectItemGiveToPlayer", out int targetId);
 
             if (!hasData)
@@ -1367,19 +1351,19 @@ namespace Server.Inventory
 
             player.GetData("Inventory:GiveSelectedInventoryItemIndex", out int itemIndex);
             player.GetData("Inventory:GiveSelectedInventoryQuantity", out int quantity);
-            
+
             Inventory inventory = player.FetchInventory();
 
             List<InventoryItem> inventoryItems = inventory.GetInventory();
 
             InventoryItem selectedItem = inventoryItems[itemIndex];
-            
+
             if (selectedItem == null)
             {
                 player.SendErrorNotification("Unable to find the selected item.");
                 return;
             }
-            
+
             bool hasData = player.GetData("Inventory:SelectItemGiveToPlayer", out int targetId);
 
             if (!hasData)
@@ -1415,15 +1399,13 @@ namespace Server.Inventory
             player.SendInfoNotification($"You've given {targetPlayer.GetClass().Name} x{quantity} of {selectedItem.CustomName}.");
 
             targetPlayer.SendInfoNotification($"You've received x{quantity} of {selectedItem.CustomName} from {player.GetClass().Name}.");
-
         }
 
         public static void SelectedItemGiveToPlayerQuantityChange(IPlayer player, string itemText, string listText)
         {
             int quantity = int.Parse(listText);
-            
+
             player.SetData("Inventory:GiveSelectedInventoryQuantity", quantity);
         }
-        
     }
 }
