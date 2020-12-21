@@ -31,7 +31,7 @@ namespace Server.Groups
             List<PlayerFaction> playerFactions =
                 JsonConvert.DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList);
 
-            if (!EnumerableExtensions.Any(playerFactions))
+            if (!playerFactions.Any())
             {
                 player.SendErrorNotification("You are not in any factions.");
                 return;
@@ -94,8 +94,6 @@ namespace Server.Groups
                 playerCharacter.ActiveFaction = selectedFaction.Id;
 
                 context.SaveChanges();
-
-                
 
                 player.SendInfoNotification($"You've set the {selectedFaction.Name} faction as your active faction.");
                 return;
@@ -199,7 +197,7 @@ namespace Server.Groups
         {
             if (!player.IsSpawned()) return;
 
-            if(args == "")
+            if (args == "")
             {
                 player.SendSyntaxMessage("/dep (Message)");
                 return;
@@ -229,7 +227,6 @@ namespace Server.Groups
                 return;
             }
 
-            
             Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
             if (activeFaction == null)
@@ -238,7 +235,6 @@ namespace Server.Groups
                 return;
             }
 
-            
             PlayerFaction playerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == activeFaction.Id);
@@ -266,9 +262,9 @@ namespace Server.Groups
             {
                 Models.Character targetCharacter = target.FetchCharacter();
 
-                if(targetCharacter == null) continue;
-                
-                if(!targetCharacter.FactionDuty) continue;
+                if (targetCharacter == null) continue;
+
+                if (!targetCharacter.FactionDuty) continue;
 
                 bool canReceive = target.IsLeo(true);
 
@@ -284,11 +280,11 @@ namespace Server.Groups
                                  SubFactionTypes.Government;
                 }
 
-                if(!canReceive) continue;
+                if (!canReceive) continue;
 
                 target.SendRadioMessage($"[Departmental - {factionName}] {rank} {playerCharacter.Name} says: {args}");
             }
-            
+
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk);
             DiscordHandler.SendMessageToDepartmentalChannel($"[{factionName}] {rank} {playerCharacter.Name} says: {args}");
         }

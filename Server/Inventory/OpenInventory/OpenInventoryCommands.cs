@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AltV.Net.Elements.Entities;
 using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
@@ -85,7 +86,6 @@ namespace Server.Inventory.OpenInventory
 
             foreach (InventoryItem inventoryItem in storageInventory.GetInventory())
             {
-                
                 if (inventoryItem.Id.Contains("WEAPON") && !inventoryItem.Id.Contains("AMMO"))
                 {
                     WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(inventoryItem.ItemValue);
@@ -100,7 +100,7 @@ namespace Server.Inventory.OpenInventory
                         }
                     }
                 }
-                
+
                 menuItems.Add(new NativeMenuItem(inventoryItem.CustomName, $"Quantity: {inventoryItem.Quantity}"));
             }
 
@@ -152,7 +152,7 @@ namespace Server.Inventory.OpenInventory
 
             Inventory playerInventory = player.FetchInventory();
 
-            if(playerInventory == null)
+            if (playerInventory == null)
             {
                 player.SendErrorNotification("Unable to fetch your inventory!");
                 return;
@@ -170,7 +170,7 @@ namespace Server.Inventory.OpenInventory
             player.SendEmoteMessage($"reaches in and takes an item from the bin.");
         }
 
-        #endregion
+        #endregion Take items
 
         #region Store Items
 
@@ -188,28 +188,26 @@ namespace Server.Inventory.OpenInventory
 
             foreach (InventoryItem inventoryItem in playerInventory.GetInventory())
             {
-                    if (inventoryItem.Id.Contains("WEAPON") && !inventoryItem.Id.Contains("AMMO"))
-                    {
-                        WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(inventoryItem.ItemValue);
+                if (inventoryItem.Id.Contains("WEAPON") && !inventoryItem.Id.Contains("AMMO"))
+                {
+                    WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(inventoryItem.ItemValue);
 
-                        if (weaponInfo != null)
+                    if (weaponInfo != null)
+                    {
+                        if (weaponInfo.AmmoCount > 0)
                         {
-                            if (weaponInfo.AmmoCount > 0)
-                            {
-                                NativeMenuItem menuItem = new NativeMenuItem(inventoryItem.CustomName, $"{inventoryItem.ItemInfo.Description} - Bullets: {weaponInfo.AmmoCount}");
-                                menuItems.Add(menuItem);
-                                continue;
-                            }
+                            NativeMenuItem menuItem = new NativeMenuItem(inventoryItem.CustomName, $"{inventoryItem.ItemInfo.Description} - Bullets: {weaponInfo.AmmoCount}");
+                            menuItems.Add(menuItem);
+                            continue;
                         }
-                        
                     }
+                }
                 menuItems.Add(new NativeMenuItem(inventoryItem.CustomName, $"Quantity: {inventoryItem.Quantity}."));
             }
 
-            NativeMenu menu = new NativeMenu("OpenInventory:StoreItem", "Storage", "", menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("OpenInventory:StoreItem", "Storage", "", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
-            
         }
 
         public static void OnOWStoreItemSelect(IPlayer player, string option, int index)
@@ -231,7 +229,7 @@ namespace Server.Inventory.OpenInventory
                 player.SendErrorNotification("Unable to find the item.");
                 return;
             }
-            
+
             bool hasNearData = player.GetData("NearOWStorage", out int storageId);
 
             if (!hasNearData)
@@ -261,16 +259,14 @@ namespace Server.Inventory.OpenInventory
             player.SendInfoNotification($"You've stored {selectedItem.CustomName} in the bin. Bin Id: {nearStorage.Id}.");
 
             player.SendEmoteMessage($"reaches into the bin placing an item.");
-
         }
 
-        #endregion
+        #endregion Store Items
 
         [Command("sbalance", commandType: CommandType.Inventory,
             description: "Used to interact with the open world storages")]
         public static void OICommandViewBalance(IPlayer player)
         {
-            
             if (!player.IsSpawned()) return;
 
             Storage nearStorage = Storage.FetchNearestStorage(player.Position);
@@ -281,11 +277,10 @@ namespace Server.Inventory.OpenInventory
             Logging.AddToCharacterLog(player, $"has looked at the balance in storage container ID {nearStorage.Id}.");
         }
 
-        [Command("sdeposit", onlyOne: true,commandType: CommandType.Inventory,
+        [Command("sdeposit", onlyOne: true, commandType: CommandType.Inventory,
             description: "Used to interact with the open world storage")]
         public static void OICommandDeposit(IPlayer player, string args = "")
         {
-            
             if (!player.IsSpawned()) return;
 
             if (args == "")
@@ -329,13 +324,10 @@ namespace Server.Inventory.OpenInventory
             Logging.AddToCharacterLog(player, $"has stored {amount:C} into the storage container ID {storage.Id}.");
         }
 
-        
-
         [Command("swithdraw", onlyOne: true, commandType: CommandType.Inventory,
             description: "Used to interact with the open world storage")]
         public static void OICommandWithdraw(IPlayer player, string args = "")
         {
-            
             if (!player.IsSpawned()) return;
 
             if (args == "")
@@ -378,6 +370,5 @@ namespace Server.Inventory.OpenInventory
 
             Logging.AddToCharacterLog(player, $"has taken {amount:C} from the storage container ID {storage.Id}.");
         }
-
     }
 }
