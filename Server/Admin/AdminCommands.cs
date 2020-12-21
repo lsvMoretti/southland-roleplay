@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using AltV.Net;
 using AltV.Net.Data;
@@ -112,8 +111,6 @@ namespace Server.Admin
             context.Teleport.Add(newTeleport);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've added a new teleport at this location with the following name: {args}");
 
@@ -235,7 +232,7 @@ namespace Server.Admin
 
             string adminUsername = player.FetchAccount().Username;
 
-            using Context context =new Context();
+            using Context context = new Context();
 
             Models.Account targetAccount = context.Account.Find(targetPlayer.GetClass().AccountId);
 
@@ -257,9 +254,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
-            
             targetPlayer.Position = PoliceHandler.JailLocation;
             targetPlayer.Dimension = targetPlayer.GetPlayerId();
 
@@ -269,7 +263,6 @@ namespace Server.Admin
 
             Logging.AddToAdminLog(player, $"has admin jailed {targetAccount.Username} for {time:##'Minutes'}.");
         }
-
 
         [Command("pveh", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Character: Shows a list of player vehicles")]
         public static void CommandPlayerVehicles(IPlayer player, string nameorid = "")
@@ -678,7 +671,6 @@ namespace Server.Admin
             selectedDealership.CamRotZ = camRot;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've updated the camera position for dealership: {selectedDealership.Name}.");
         }
@@ -747,7 +739,7 @@ namespace Server.Admin
 
             context.Dealership.Remove(dealership);
             context.SaveChanges();
-            
+
             DealershipHandler.UnloadDealership(oldDealership);
         }
 
@@ -773,8 +765,6 @@ namespace Server.Admin
 
             if (dealershipExists)
             {
-                
-
                 player.SendErrorNotification($"A dealership already exists with name: {dealershipName}.");
                 return;
             }
@@ -809,8 +799,6 @@ namespace Server.Admin
             embedBuilder.AddField("Dealership ID", newDealership.Id.ToString());
             embedBuilder.AddField("Dealership Name", newDealership.Name);
 
-            
-
             DealershipHandler.LoadDealerships();
         }
 
@@ -837,8 +825,6 @@ namespace Server.Admin
 
             if (selectedDealership == null)
             {
-                
-
                 player.SendErrorNotification($"Unable to find a dealership by the id {dealerId}");
 
                 return;
@@ -854,8 +840,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You have updated the vehicle location for dealership id {dealerId}");
         }
 
@@ -866,6 +850,7 @@ namespace Server.Admin
 
             AdminCommandEditDealership(player);
         }
+
         [Command("editdealership", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description: "Dealership: Edits a dealership")]
         public static void AdminCommandEditDealership(IPlayer player)
         {
@@ -883,8 +868,6 @@ namespace Server.Admin
                     break;
                 }
             }
-
-            
 
             if (nearDealership == null)
             {
@@ -951,8 +934,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification(
                 $"You have added the {newDealershipVehicle.VehName} to {nearestDealership.Name} for {newDealershipVehicle.VehPrice.ToString("C0")}");
         }
@@ -1008,8 +989,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification(
                 $"You have updated the {newDealershipVehicle.VehName} to {nearestDealership.Name} for {newDealershipVehicle.VehPrice.ToString("C0")}");
         }
@@ -1055,8 +1034,6 @@ namespace Server.Admin
             nearestDealership.VehicleList = JsonConvert.SerializeObject(vehicleList);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You have removed {dealershipVehicle.VehName} from the {nearestDealership.Name}.");
         }
@@ -1108,7 +1085,6 @@ namespace Server.Admin
             currentDealership.Name = dealerName;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have updated the dealership name to {dealerName}");
             DealershipHandler.LoadDealerships();
@@ -1214,8 +1190,6 @@ namespace Server.Admin
             contextFaction.RanksJson = JsonConvert.SerializeObject(factionRanks);
 
             context.SaveChanges();
-
-            
         }
 
         public static void FetchFactionMembers(IPlayer player, string factionIdString)
@@ -1314,8 +1288,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification(
                 $"You've removed {playerCharacter.Name} from {Faction.FetchFaction(selectedPlayerFaction.Id).Name}.");
 
@@ -1391,8 +1363,6 @@ namespace Server.Admin
             playerCharacter.FactionList = JsonConvert.SerializeObject(playerFactions);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification(
                 $"You have set {playerCharacter.Name}'s rank to {selectedRank.Name} in {selectedFaction.Name}.");
@@ -1520,7 +1490,7 @@ namespace Server.Admin
             if (targetCharacter == null)
             {
                 player.SendErrorNotification("An error occurred fetching the character information.");
-                
+
                 return;
             }
 
@@ -1532,7 +1502,7 @@ namespace Server.Admin
             if (hasData)
             {
                 player.SendErrorNotification("This player is already in this faction.");
-                
+
                 return;
             }
 
@@ -1558,7 +1528,6 @@ namespace Server.Admin
                 $"You've been added to the {selectedFaction.Name} faction with the rank of {selectedRank.Name}.");
 
             context.SaveChanges();
-            
         }
 
         [Command("createfaction", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description: "Faction: Creates a faction")]
@@ -1660,7 +1629,7 @@ namespace Server.Admin
             if (targetCharacter == null)
             {
                 player.SendErrorNotification("Player not spawned.");
-                
+
                 return;
             }
 
@@ -1672,7 +1641,6 @@ namespace Server.Admin
 
             if (activePlayerFaction == null)
             {
-                
                 player.SendErrorNotification("This player isn't in an active faction.");
                 return;
             }
@@ -1686,8 +1654,6 @@ namespace Server.Admin
             targetCharacter.FactionList = JsonConvert.SerializeObject(playerFactions);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've set {targetPlayer.Name} leader status to {activePlayerFaction.Leader} for faction id {activePlayerFaction.Id}.");
 
@@ -1742,7 +1708,7 @@ namespace Server.Admin
             AdminReportObject adminReportObject =
                 AdminHandler.AdminReportObjects[AdminHandler.AdminReports.IndexOf(adminReport)];
             AdminHandler.AdminReportObjects.Remove(adminReportObject);
-            
+
             AdminHandler.AdminReports.Remove(adminReport);
             targetPlayer.SendInfoNotification(
                 $"Your report ID {adminReport.Id} has been accepted. Please await for them to contact you.");
@@ -1762,7 +1728,7 @@ namespace Server.Admin
                 }
             }
 
-            SignalR.RemoveReport(adminReportObject);            
+            SignalR.RemoveReport(adminReportObject);
 
             DiscordHandler.SendMessageToReportsChannel(
                 $"Admin {player.FetchAccount().Username} has accepted report ID {adminReport.Id}");
@@ -1812,7 +1778,7 @@ namespace Server.Admin
             AdminReportObject adminReportObject =
                 AdminHandler.AdminReportObjects[AdminHandler.AdminReports.IndexOf(adminReport)];
             AdminHandler.AdminReportObjects.Remove(adminReportObject);
-            
+
             AdminHandler.AdminReports.Remove(adminReport);
             targetPlayer.SendInfoNotification($"Your report ID: {adminReport.Id} has been denied.");
 
@@ -1825,10 +1791,8 @@ namespace Server.Admin
                     $"Admin {player.FetchAccount().Username} has denied report ID: {adminReport.Id}.");
             }
 
-            
-            
             SignalR.RemoveReport(adminReportObject);
-            
+
             DiscordHandler.SendMessageToReportsChannel(
                 $"Admin {player.FetchAccount().Username} has denied report ID {adminReport.Id}");
 
@@ -1883,8 +1847,6 @@ namespace Server.Admin
             context.AdminRecords.Add(newAdminRecord);
 
             context.SaveChanges();
-
-            
 
             Logging.AddToCharacterLog(targetPlayer,
                 $"has been kicked by {player.FetchAccount().Username}. Reason: {reason}");
@@ -1941,8 +1903,6 @@ namespace Server.Admin
 
             Bans newBan = new Bans(targetPlayer.Ip, targetPlayer.SocialClubId.ToString(), targetPlayer.HardwareIdHash.ToString(), targetPlayer.HardwareIdExHash.ToString());
 
-
-
             AdminRecord newAdminRecord = new AdminRecord
             {
                 AccountId = targetPlayer.GetClass().AccountId,
@@ -1967,8 +1927,6 @@ namespace Server.Admin
             targetAccount.UnBanTime = days == -1 ? DateTime.MaxValue : DateTime.Now.AddDays(days);
 
             context.SaveChanges();
-
-            
 
             Logging.AddToCharacterLog(targetPlayer,
                 $"has been banned by {player.FetchAccount().Username}. Reason: {reason}. Unban time: {targetAccount.UnBanTime}");
@@ -2187,8 +2145,6 @@ namespace Server.Admin
 
             DiscordHandler.SendMessageToLogChannel(
                 $"{player.FetchAccount().Username} has deleted the character {targetCharacter.Name} and all assets.");
-
-            
         }
 
         [Command("deletevehicle", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description: "Vehicle: Permanently deletes a vehicle")]
@@ -2232,8 +2188,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             string username = player.FetchAccount().Username;
 
             player.SendInfoNotification($"You have deleted vehicle ID {vehicleData.Id} from the server.");
@@ -2255,9 +2209,8 @@ namespace Server.Admin
 
             player.SetData("admin:property:PropertyNumber", args);
 
-            if(player.FetchAccount().AdminLevel >= AdminLevel.HeadAdmin)
+            if (player.FetchAccount().AdminLevel >= AdminLevel.HeadAdmin)
             {
-                
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>
                 {
                     new NativeMenuItem("House"),
@@ -2277,7 +2230,6 @@ namespace Server.Admin
             }
             else
             {
-    
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>
                 {
                     new NativeMenuItem("House"),
@@ -2287,7 +2239,6 @@ namespace Server.Admin
 
                 NativeUi.ShowNativeMenu(player, menu, true);
             }
-
         }
 
         public static void OnCreatePropertyTypeSelect(IPlayer player, string option)
@@ -2402,8 +2353,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You've created property ID {newProperty.Id} at {newProperty.Address}.");
 
             Logging.AddToAdminLog(player, $"has created a new property ID {newProperty.Id} at {newProperty.Address}");
@@ -2427,8 +2376,6 @@ namespace Server.Admin
             context.Property.Remove(propertyDb);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You have removed {propertyDb.Address} from the system.");
             Logging.AddToAdminLog(player, $"has removed property {propertyDb.Address} from the system.");
@@ -2485,8 +2432,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You've set {nearbyPropertyDb.Address} blip to {blipId}, color to {blipColor}.");
 
             Logging.AddToAdminLog(player, $"has set {nearbyPropertyDb.Address} blip to {blipId}, color to {blipColor}.");
@@ -2514,8 +2459,6 @@ namespace Server.Admin
             player.SendInfoNotification($"You've set {propertyDb.Address} enterable state to: {propertyDb.Enterable}.");
 
             context.SaveChanges();
-
-            
 
             Logging.AddToAdminLog(player, $"has set {propertyDb.Address} enterable state to: {propertyDb.Enterable}.");
             LoadProperties.ReloadProperty(propertyDb);
@@ -2545,8 +2488,6 @@ namespace Server.Admin
             propertyDb.BusinessName = args;
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've set the business name for {propertyDb.Address} to {args}.");
 
@@ -2595,8 +2536,6 @@ namespace Server.Admin
             property.InteractionPoints = JsonConvert.SerializeObject(interactionPoints);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've added a new point to property id {propertyId}.");
         }
@@ -2657,7 +2596,6 @@ namespace Server.Admin
 
                 context.SaveChanges();
 
-                
                 foreach (IPlayer targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
                 {
                     targetPlayer.LoadInteriorProp(args);
@@ -2758,8 +2696,6 @@ namespace Server.Admin
 
                 context.SaveChanges();
 
-                
-
                 player.SendInfoNotification($"You've removed {args} from Apartment {apartment.Name}");
 
                 foreach (IPlayer targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
@@ -2795,8 +2731,6 @@ namespace Server.Admin
                 property.PropList = JsonConvert.SerializeObject(propList);
 
                 context.SaveChanges();
-
-                
 
                 player.SendInfoNotification($"You've removed {args} from property {property.Address}.");
 
@@ -2842,7 +2776,6 @@ namespace Server.Admin
             property.Value = value;
 
             context.SaveChanges();
-            
 
             LoadProperties.ReloadProperty(property);
 
@@ -2906,7 +2839,6 @@ namespace Server.Admin
             editProperty.ItemList = JsonConvert.SerializeObject(gameItems);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have added in {newGameItem.Name} into {nearestProperty.BusinessName}");
 
@@ -2989,8 +2921,6 @@ namespace Server.Admin
             property.ItemList = JsonConvert.SerializeObject(gameItems);
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've removed {option} from {nearestProperty.BusinessName}.");
 
@@ -3249,8 +3179,6 @@ namespace Server.Admin
 
             Faction activeFaction = Faction.FetchFaction(targetCharacter.ActiveFaction);
 
-            
-
             List<Models.Motel> motelList = new List<Models.Motel>();
 
             foreach (MotelObject motelObject in MotelHandler.MotelObjects)
@@ -3276,7 +3204,6 @@ namespace Server.Admin
                 }
             }
 
-
             List<AdminRecord> playerAdminRecords = AdminRecord.FetchAdminRecords(targetCharacter.OwnerId);
             int banCount = playerAdminRecords.Count(x => x.RecordType == AdminRecordType.Ban);
             int kickCount = playerAdminRecords.Count(x => x.RecordType == AdminRecordType.Kick);
@@ -3300,7 +3227,6 @@ namespace Server.Admin
                 player.SendStatsMessage($"Active Faction: {activeFaction.Name}, Rank: {playerRank?.Name}");
             }
 
-            
             if (motelRooms.Any())
             {
                 player.SendStatsMessage($"Motel: {motelList.FirstOrDefault(x => x.Id == motelRooms.FirstOrDefault()?.MotelId)?.Name} - Room {motelRooms.FirstOrDefault()?.Id}.");
@@ -3401,8 +3327,6 @@ namespace Server.Admin
 
             DeliveryHandler.LoadDeliveryPoint(newDeliveryPoint);
 
-            
-
             Logging.AddToAdminLog(player, $"has created a new delivery point. Name: {newDeliveryPoint.Name}, Id: {newDeliveryPoint.Id}, Type: {newDeliveryPoint.PointType.ToString()}");
         }
 
@@ -3446,7 +3370,6 @@ namespace Server.Admin
 
             deliveryPoint.CostPerItem = (float)price;
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set the delivery point {deliveryPoint.Name}'s price per item to {price:C}");
 
@@ -3502,7 +3425,6 @@ namespace Server.Admin
             context.SaveChanges();
 
             WarehouseHandler.LoadWarehouse(newWarehouse);
-            
 
             player.SendInfoNotification($"You've created a new warehouse called: {newWarehouse}.");
             player.SendInfoNotification($"You can now use /setmaxproducts, /setminprice & /setmaxprice");
@@ -3543,7 +3465,6 @@ namespace Server.Admin
 
             if (warehouse == null)
             {
-                
                 player.SendErrorNotification("Unable to find a warehouse by that type.");
                 return;
             }
@@ -3551,7 +3472,6 @@ namespace Server.Admin
             warehouse.MaxProducts = maxProducts;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set {warehouse.Name}'s max products to: {maxProducts}.");
 
@@ -3591,7 +3511,6 @@ namespace Server.Admin
 
             if (warehouse == null)
             {
-                
                 player.SendErrorNotification("Unable to find a warehouse by that type.");
                 return;
             }
@@ -3599,7 +3518,6 @@ namespace Server.Admin
             warehouse.MinPrice = minPrice;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set {warehouse.Name}'s min price to: {minPrice:C}.");
 
@@ -3639,7 +3557,6 @@ namespace Server.Admin
 
             if (warehouse == null)
             {
-                
                 player.SendErrorNotification("Unable to find a warehouse by that type.");
                 return;
             }
@@ -3647,7 +3564,6 @@ namespace Server.Admin
             warehouse.MaxPrice = maxPrice;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set {warehouse.Name}'s max price to: {maxPrice:C}.");
 
@@ -3799,8 +3715,6 @@ namespace Server.Admin
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You've set {property.Address}'s interior to {selectedInterior.InteriorName}.");
 
             Logging.AddToAdminLog(player, $"has set property id {property.Id}'s interior to {selectedInterior.InteriorName}.");
@@ -3871,7 +3785,6 @@ namespace Server.Admin
             property.Products = products;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set {property.BusinessName} products to {products}.");
 
@@ -3908,7 +3821,6 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"Has set vehicle Id {vehicleDb.Id} engine status to {vehicleDb.Engine}");
 
             context.SaveChanges();
-            
         }
 
         [Command("vehicle", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
@@ -4177,7 +4089,6 @@ namespace Server.Admin
                 vehicle.Livery = livery;
 
                 context.SaveChanges();
-                
             }
 
             player.SendInfoNotification($"You've set the vehicle livery to {livery}.");
@@ -4353,7 +4264,6 @@ namespace Server.Admin
             context.FishingPoints.Add(newPoint);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've added a new fishing point.");
 
@@ -4419,7 +4329,6 @@ namespace Server.Admin
             context.Motels.Add(newMotel);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've created {newMotel.Name} with the ID {newMotel.Id}.");
 
@@ -4520,7 +4429,6 @@ namespace Server.Admin
             motel.RoomList = JsonConvert.SerializeObject(motelRooms);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've added a Room {newMotelRoom.Id} to motel {motel.Name}.");
             player.SendInfoNotification($"Use /reloadmotels when fished");
@@ -4551,7 +4459,6 @@ namespace Server.Admin
             context.Garages.Add(newGarage);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've added a new garage. The exterior has been made, now do /setgarageint {newGarage.Id} inside an interior.");
         }
@@ -4593,8 +4500,6 @@ namespace Server.Admin
             context.SaveChanges();
 
             player.SendInfoNotification($"Garage ID {garage.Id} interior position has been updated!");
-
-            
         }
 
         [Command("gipl", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Garage: Used to set the garage IPL")]
@@ -4702,8 +4607,6 @@ namespace Server.Admin
                 }
             }
 
-            
-
             return;
         }
 
@@ -4786,7 +4689,6 @@ namespace Server.Admin
 
             context.Clerks.Add(newClerk);
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"New clerk job added. Name: {newClerk.StoreName}, Id: {newClerk.Id}.");
 
@@ -4846,7 +4748,6 @@ namespace Server.Admin
             clerk.Positions = JsonConvert.SerializeObject(clerkPositions, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've added a new position to clerk id {clerk.Id}");
         }
@@ -4890,7 +4791,6 @@ namespace Server.Admin
             clerk.PropertyId = propertyId;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set clerk id {clerkId}'s linked property id to {propertyId}");
         }
@@ -4965,7 +4865,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has searched for mask ID {maskId}. Result: {targetPlayer.FetchCharacter().Name}");
         }
 
-        [Command("fetchrental", AdminLevel.Moderator, true, commandType: CommandType.Admin, description:"Rental: Used to fetch a players rental car")]
+        [Command("fetchrental", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Rental: Used to fetch a players rental car")]
         public static void AdminCommandFetchRental(IPlayer player, string args = "")
         {
             if (args == "")
@@ -4985,7 +4885,7 @@ namespace Server.Admin
             bool tryGetRental =
                 VehicleRental.RentalVehicles.TryGetValue(targetPlayer.GetClass().CharacterId, out IVehicle rental);
 
-            if(!tryGetRental || rental == null)
+            if (!tryGetRental || rental == null)
             {
                 player.SendErrorNotification("Unable to find a rental car for this player.");
                 return;
@@ -5040,12 +4940,10 @@ namespace Server.Admin
                 return;
             }
 
-            if(targetPlayer.FetchCharacter() == null)
+            if (targetPlayer.FetchCharacter() == null)
             {
                 player.SendErrorNotification("Target not spawned!");
                 return;
-
-
             }
 
             targetPlayer.AddCash(money);
@@ -5078,7 +4976,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Ping for {targetPlayer.GetClass().Name} ({targetPlayer.FetchAccount().Username}) is {targetPlayer.Ping}.");
         }
 
-        [Command("setmileage", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description:"Sets a vehicle's odometer reading")]
+        [Command("setmileage", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Sets a vehicle's odometer reading")]
         public static void AdminCommandSetMileage(IPlayer player, string args = "")
         {
             if (args == "")
@@ -5089,7 +4987,7 @@ namespace Server.Admin
 
             IVehicle playerVehicle = player.Vehicle;
 
-            if(playerVehicle == null)
+            if (playerVehicle == null)
             {
                 player.SendErrorNotification("You must be in a vehicle.");
                 return;
@@ -5097,7 +4995,7 @@ namespace Server.Admin
 
             Models.Vehicle vehicleData = playerVehicle.FetchVehicleData();
 
-            if(vehicleData == null)
+            if (vehicleData == null)
             {
                 player.SendErrorNotification("You must be in a server vehicle.");
                 return;
@@ -5117,8 +5015,8 @@ namespace Server.Admin
 
             double mileage = Math.Round(distance * 1609, 2);
 
-            vehicleDb.Odometer = (float) mileage;
-            playerVehicle.GetClass().Distance = (float) mileage;
+            vehicleDb.Odometer = (float)mileage;
+            playerVehicle.GetClass().Distance = (float)mileage;
             context.SaveChanges();
             player.SendInfoNotification($"You've set the mileage to {args} miles.");
         }
@@ -5139,12 +5037,11 @@ namespace Server.Admin
             {
                 player.SendErrorNotification("Player not found!");
                 return;
-                
             }
 
             Models.Character targetCharacter = targetPlayer.FetchCharacter();
 
-            if(targetCharacter == null)
+            if (targetCharacter == null)
             {
                 player.SendErrorNotification("Player not spawned!");
                 return;
@@ -5156,7 +5053,6 @@ namespace Server.Admin
                 new NativeMenuItem("Goto"),
                 new NativeMenuItem("Revive")
             };
-
 
             List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(targetCharacter.Id);
 
@@ -5175,7 +5071,6 @@ namespace Server.Admin
             player.SetData("AdminCommand:ManagingPlayer", targetCharacter.Id);
 
             NativeMenu menu = new NativeMenu("AdminCommand:OnManagePlayer", "Manage", $"Managing {targetCharacter.Name}", menuItems);
-
 
             NativeUi.ShowNativeMenu(player, menu, true);
         }
@@ -5221,7 +5116,6 @@ namespace Server.Admin
 
             if (option == "Goto")
             {
-             
                 // Sends player to admin
 
                 player.Position = targetPlayer.Position;
@@ -5243,7 +5137,7 @@ namespace Server.Admin
 
             if (option == "Vehicles")
             {
-                // Views Vehicles 
+                // Views Vehicles
 
                 List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(targetCharacter.Id);
 
@@ -5332,7 +5226,7 @@ namespace Server.Admin
 
             NativeMenu menu = new NativeMenu("AdminCommand:OnManagePlayer:Vehicle:Selected", "Manage", $"Select an option for {selectedVehicle.Name}.", menuItems);
 
-            NativeUi.ShowNativeMenu(player,  menu, true);
+            NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnManagingPlayerSelectVehicleSelected(IPlayer player, string option)
@@ -5425,7 +5319,7 @@ namespace Server.Admin
                 player.SendErrorNotification("Player not spawned!");
                 return;
             }
-            
+
             List<Models.Property> playerProperties = Models.Property.FetchCharacterProperties(targetCharacter);
 
             Models.Property selectedProperty = playerProperties.FirstOrDefault(x => x.Address == option);
@@ -5447,15 +5341,12 @@ namespace Server.Admin
             player.SetData("AdminCommand:ManagingPlayer:PropertyId", selectedProperty.Id);
 
             NativeUi.ShowNativeMenu(player, menu, true);
-
-
         }
 
         public static void OnManagePlayerPropertiesSelected(IPlayer player, string option)
         {
             if (option == "Close") return;
 
-            
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
             IPlayer targetPlayer = Alt.Server.GetPlayers()
@@ -5479,7 +5370,7 @@ namespace Server.Admin
 
             Models.Property selectedProperty = Models.Property.FetchProperty(propertyId);
 
-            if(selectedProperty == null)
+            if (selectedProperty == null)
             {
                 player.SendErrorNotification("Unable to find property!");
                 return;
@@ -5498,7 +5389,7 @@ namespace Server.Admin
             {
                 targetPlayer.Position = selectedProperty.FetchExteriorPosition();
 
-                targetPlayer.Dimension = (int) selectedProperty.ExtDimension;
+                targetPlayer.Dimension = (int)selectedProperty.ExtDimension;
 
                 player.SendInfoNotification($"You've sent {targetCharacter.Name} to {selectedProperty.Address}.");
 
@@ -5520,7 +5411,7 @@ namespace Server.Admin
 
             IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
 
-            if(targetPlayer?.FetchCharacter() == null)
+            if (targetPlayer?.FetchCharacter() == null)
             {
                 player.SendErrorNotification("This player couldn't be found!");
                 return;
@@ -5538,7 +5429,7 @@ namespace Server.Admin
                 player.SendSyntaxMessage("/createapartmentcomplex [Name]");
                 return;
             }
-            
+
             ApartmentComplexes newComplex = new ApartmentComplexes
             {
                 ComplexName = args,
@@ -5550,7 +5441,6 @@ namespace Server.Admin
                 GaragePosZ = 0,
                 ApartmentList = JsonConvert.SerializeObject(new List<Apartment>())
             };
-
 
             using Context context = new Context();
 
@@ -5569,7 +5459,6 @@ namespace Server.Admin
             description: "Used to delete an apartment complex")]
         public static void AdminCommandDeleteApartmentComplex(IPlayer player)
         {
-
             List<ApartmentComplexes> apartmentComplexes = ApartmentComplexes.FetchApartmentComplexes();
 
             ApartmentComplexes nearestComplex = null;
@@ -5592,9 +5481,8 @@ namespace Server.Admin
                 return;
             }
 
-            
             ApartmentHandler.UnloadApartmentComplex(nearestComplex);
-            
+
             using Context context = new Context();
 
             ApartmentComplexes complex = context.ApartmentComplexes.Find(nearestComplex.Id);
@@ -5604,13 +5492,13 @@ namespace Server.Admin
                 player.SendErrorNotification("An error occurred fetching the complex data.");
                 return;
             }
-            
+
             context.ApartmentComplexes.Remove(complex);
 
             context.SaveChanges();
 
             player.SendInfoNotification($"You've deleted apartment complex: {complex.ComplexName}");
-            
+
             Logging.AddToAdminLog(player, $"has deleted apartment complex: {complex.ComplexName}.");
         }
 
@@ -5641,23 +5529,22 @@ namespace Server.Admin
             }
 
             List<Apartment> apartments = JsonConvert.DeserializeObject<List<Apartment>>(nearestComplex.ApartmentList);
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             foreach (Apartment apartment in apartments)
             {
                 menuItems.Add(new NativeMenuItem(apartment.Name, $"Floor: {apartment.Floor}"));
             }
-            
+
             NativeMenu menu = new NativeMenu("AdminCommand:DeleteApartment", nearestComplex.ComplexName, "Select an apartment to delete", menuItems)
             {
                 PassIndex = true
             };
-            
-            player.SetData("EditingApartmentComplex", nearestComplex.Id);
-            
-            NativeUi.ShowNativeMenu(player, menu, true);
 
+            player.SetData("EditingApartmentComplex", nearestComplex.Id);
+
+            NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnDeleteApartmentSelect(IPlayer player, string option, int index)
@@ -5669,9 +5556,9 @@ namespace Server.Admin
             }
 
             player.GetData("EditingApartmentComplex", out int complexId);
-            
+
             player.DeleteData("EditingApartmentComplex");
-            
+
             using Context context = new Context();
 
             ApartmentComplexes complex = context.ApartmentComplexes.FirstOrDefault(x => x.Id == complexId);
@@ -5697,9 +5584,9 @@ namespace Server.Admin
             complex.ApartmentList = JsonConvert.SerializeObject(apartments);
 
             context.SaveChanges();
-            
+
             player.SendInfoNotification($"You've removed apartment {selectedApartment.Name} from {complex.ComplexName}.");
-            
+
             Logging.AddToAdminLog(player, $"has removed apartment {selectedApartment.Name} from {complex.ComplexName}.");
         }
 
@@ -5754,7 +5641,6 @@ namespace Server.Admin
                 return;
             }
 
-            
             player.SetData("ATAPARTMENTCOMPLEX", nearestComplex.Id);
             player.SetData("CreateAparmtent:Floor", floor);
             player.SetData("CreateAparmtent:Price", price);
@@ -5774,11 +5660,9 @@ namespace Server.Admin
                 }
             }
 
-            NativeMenu interiorMenu = new NativeMenu("AdminCommand:CreateApartment:InteriorSelect", "Interiors", "Select an Interior for the Apartment", menuItems) { PassIndex = true};
-
+            NativeMenu interiorMenu = new NativeMenu("AdminCommand:CreateApartment:InteriorSelect", "Interiors", "Select an Interior for the Apartment", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, interiorMenu, true);
-
         }
 
         public static void OnCreateApartmentInteriorSelect(IPlayer player, string option, int index)
@@ -5794,7 +5678,7 @@ namespace Server.Admin
 
             Interiors interior = Interiors.InteriorList[index];
 
-            if(interior == null)
+            if (interior == null)
             {
                 player.SendErrorNotification("An error occurred fetching the interior.");
                 return;
@@ -5825,7 +5709,7 @@ namespace Server.Admin
             using Context context = new Context();
 
             var complex = context.ApartmentComplexes.Find(complexId);
-            if(complex == null)
+            if (complex == null)
             {
                 player.SendErrorNotification("Unable to find this complex.");
                 return;
@@ -5833,7 +5717,7 @@ namespace Server.Admin
 
             List<Apartment> apartments = JsonConvert.DeserializeObject<List<Apartment>>(complex.ApartmentList);
 
-            if(apartments.Any(x => x.Name == apartmentName))
+            if (apartments.Any(x => x.Name == apartmentName))
             {
                 player.SendErrorNotification("An apartment already exists with this name.");
                 return;
@@ -5848,20 +5732,18 @@ namespace Server.Admin
             player.SendInfoNotification($"You've created a new apartment named {apartmentName} at the {complex.ComplexName}.");
 
             Logging.AddToAdminLog(player, $"has created a new apartment named {apartmentName} at the {complex.ComplexName}.");
-
         }
 
         [Command("createexit", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
             description: "Property: Used to create additional entrance / exit points")]
         public static void AdminCommandCreateExit(IPlayer player)
         {
-            
             if (player.Dimension == 0)
             {
                 player.SendErrorNotification("You're not in a property.");
                 return;
-            } 
-            
+            }
+
             Models.Property insideProperty = Models.Property.FetchProperty(player.Dimension);
 
             if (insideProperty == null)
@@ -5882,7 +5764,6 @@ namespace Server.Admin
                 EnterDimension = 0
             };
 
-            
             player.SetData("makingPropertyDoor", JsonConvert.SerializeObject(propertyDoor));
             player.SetData("makingPropertyDoorAt", insideProperty.Id);
         }
@@ -5891,7 +5772,6 @@ namespace Server.Admin
             description: "Property: Used to create additional entrance / exit points")]
         public static void AdminCommandCreateEntrance(IPlayer player)
         {
-
             if (!player.HasData("makingPropertyDoor"))
             {
                 player.SendErrorNotification("You need to do /createexit first.");
@@ -5911,7 +5791,7 @@ namespace Server.Admin
             propertyDoor.EnterDimension = (uint)player.Dimension;
 
             using Context context = new Context();
-            
+
             player.GetData("makingPropertyDoorAt", out int propertyId);
 
             var propertyDb = context.Property.Find(propertyId);
@@ -5937,7 +5817,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've added a new entrance to this property.");
         }
 
-        [Command("createbusroute", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description:"Used to create a new bus route")]
+        [Command("createbusroute", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Used to create a new bus route")]
         public static void AdminCommandCreateBusRoute(IPlayer player, string args = "")
         {
             if (args == "" || args.Trim().Length < 2)
@@ -6010,7 +5890,7 @@ namespace Server.Admin
 
             BusRoute busRoute = context.BusRoutes.Find(routeId);
 
-            if(busRoute == null)
+            if (busRoute == null)
             {
                 player.SendErrorNotification("Unable to find a route by this ID.");
                 return;
@@ -6023,16 +5903,16 @@ namespace Server.Admin
             busRoute.BusStops = JsonConvert.SerializeObject(busStops);
 
             context.SaveChanges();
-            
+
             player.SendInfoNotification($"You've added the {newStop.Name} to the bus route: {busRoute.RouteName}.");
 
             Logging.AddToAdminLog(player, $"has added the {newStop.Name} to the bus route: {busRoute.RouteName}.");
         }
 
-        [Command("addpgarage", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description:"Property: Used to add a garage to a property")]
+        [Command("addpgarage", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Property: Used to add a garage to a property")]
         public static void AdminCommandAddPropertyGarage(IPlayer player, string args = "")
         {
-            if(args == "")
+            if (args == "")
             {
                 player.SendSyntaxMessage("/addpgarage [PropertyId] [Garage Size]");
                 return;
@@ -6040,7 +5920,7 @@ namespace Server.Admin
 
             string[] argsSplit = args.Split(' ');
 
-            if(argsSplit.Length < 2)
+            if (argsSplit.Length < 2)
             {
                 player.SendSyntaxMessage("/addpgarage [PropertyId] [Garage Size]");
                 return;
@@ -6049,7 +5929,7 @@ namespace Server.Admin
             bool idParse = int.TryParse(argsSplit[0], out int propertyId);
             bool sizeParse = int.TryParse(argsSplit[1], out int garageSize);
 
-            if(!idParse || !sizeParse || propertyId <= 0 || garageSize <= 0)
+            if (!idParse || !sizeParse || propertyId <= 0 || garageSize <= 0)
             {
                 player.SendSyntaxMessage("/addpgarage [PropertyId] [Garage Size]");
                 return;
@@ -6070,9 +5950,9 @@ namespace Server.Admin
                 GarageType = GarageTypes.None,
                 Id = Utility.GenerateRandomString(6),
                 PosX = player.Position.X,
-                PosY =  player.Position.Y,
-                PosZ =  player.Position.Z,
-                PropertyId =  propertyId,
+                PosY = player.Position.Y,
+                PosZ = player.Position.Z,
+                PropertyId = propertyId,
                 VehicleCount = garageSize
             };
 
@@ -6117,7 +5997,6 @@ namespace Server.Admin
         {
             if (option == "Close") return;
 
-            
             List<Interiors> interiorList = Interiors.InteriorList;
 
             Interiors selectedInterior = interiorList[index];
@@ -6137,13 +6016,12 @@ namespace Server.Admin
 
             player.SendInfoNotification($"You have gone to interior: {selectedInterior.InteriorName}.");
         }
-        
-        [Command("registerdoor", AdminLevel.Administrator, commandType: CommandType.Admin, description:"Doors: Used to register a door")]
+
+        [Command("registerdoor", AdminLevel.Administrator, commandType: CommandType.Admin, description: "Doors: Used to register a door")]
         public static void CommandDoorTest(IPlayer player)
         {
             player.Emit("getClosestDoor");
         }
-
 
         [Command("setdoorowner", AdminLevel.Administrator, true, commandType: CommandType.Admin,
             description: "Door: Used to set a door to a character")]
@@ -6157,7 +6035,7 @@ namespace Server.Admin
 
             string[] argSplit = args.Split(' ');
 
-            if(argSplit.Length != 2)
+            if (argSplit.Length != 2)
             {
                 player.SendSyntaxMessage("/setdoorowner [DoorId] [Character Id]");
                 return;
@@ -6201,7 +6079,7 @@ namespace Server.Admin
 
             string[] argSplit = args.Split(' ');
 
-            if(argSplit.Length != 2)
+            if (argSplit.Length != 2)
             {
                 player.SendSyntaxMessage("/setdoorowner [DoorId] [Property Id]");
                 return;
@@ -6240,7 +6118,7 @@ namespace Server.Admin
 
             player.SendNotification($"~r~You've set door id {doorId} property to {propertyId}.");
         }
-        
+
         [Command("setdoorfaction", AdminLevel.Administrator, true, commandType: CommandType.Admin,
             description: "Door: Used to set a door to a faction")]
         public static void AdminCommandSetDoorFaction(IPlayer player, string args = "")
@@ -6253,7 +6131,7 @@ namespace Server.Admin
 
             string[] argSplit = args.Split(' ');
 
-            if(argSplit.Length != 2)
+            if (argSplit.Length != 2)
             {
                 player.SendSyntaxMessage("/setdoorfaction [DoorId] [Faction Id]");
                 return;
@@ -6293,10 +6171,9 @@ namespace Server.Admin
             player.SendNotification($"~r~You've set door id {doorId} faction to {factionId}.");
         }
 
-        [Command("alockdoor", AdminLevel.Administrator, true, commandType: CommandType.Admin, description:"Doors: Used to lock/unlock a door")]
+        [Command("alockdoor", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Doors: Used to lock/unlock a door")]
         public static void AdminCommandALockDoor(IPlayer player, string args = "")
         {
-            
             Door nearestDoor = null;
 
             if (args == "")
@@ -6321,7 +6198,6 @@ namespace Server.Admin
                 player.SendNotification("~r~Your not by a door.");
                 return;
             };
-            
 
             using Context context = new Context();
 
@@ -6386,7 +6262,6 @@ namespace Server.Admin
             door.Dimension = player.Dimension;
             context.SaveChanges();
             player.SendInfoNotification($"Door set to your dimension of {player.Dimension}.");
-            
         }
 
         [Command("aduty", AdminLevel.Moderator, commandType: CommandType.Admin,
@@ -6412,8 +6287,6 @@ namespace Server.Admin
                     player.SetPlayerId(CreatorRoom.NextId);
                     CreatorRoom.NextId++;
                 }
-
-
             }
             else
             {
@@ -6432,9 +6305,7 @@ namespace Server.Admin
 
                 int index = rnd.Next(0, AdminHandler.AdminModels.Count - 1);
 
-                player.Model = (uint) AdminHandler.AdminModels[index];
-
-                
+                player.Model = (uint)AdminHandler.AdminModels[index];
 
                 player.SetData("OldAdminId", player.GetPlayerId());
 
@@ -6555,9 +6426,8 @@ namespace Server.Admin
             Settings.ServerSettings.MOTD = args;
 
             Logging.AddToAdminLog(player, $"has set the MOTD to {args}.");
-
         }
-        
+
         [Command("setweather", AdminLevel.Management, true, commandType: CommandType.Admin,
             description: "Used to set the server weather")]
         public static void AdminCommandSetWeather(IPlayer player, string args = "")
@@ -6567,7 +6437,7 @@ namespace Server.Admin
                 player.SendSyntaxMessage("/setweather [CityId]\nPlease use OpenWeatherMap for the weather ID");
                 return;
             }
-            
+
             bool tryParse = int.TryParse(args, out int weatherId);
 
             if (!tryParse)
@@ -6575,13 +6445,12 @@ namespace Server.Admin
                 player.SendSyntaxMessage("/setweather [CityId]\nPlease use OpenWeatherMap for the weather ID");
                 return;
             }
-            
+
             Settings.ServerSettings.WeatherLocation = weatherId;
-            
+
             player.SendInfoNotification($"You've set the weather to: {weatherId}.");
 
             Logging.AddToAdminLog(player, $"has set the weather to {args}.");
-
         }
 
         [Command("changeaddress", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin,
@@ -6593,7 +6462,7 @@ namespace Server.Admin
                 player.SendSyntaxMessage("/changeaddress [New Full Address]");
                 return;
             }
-            
+
             Models.Property nearestProperty = Models.Property.FetchNearbyProperty(player, 5f);
 
             if (nearestProperty == null)
@@ -6601,7 +6470,7 @@ namespace Server.Admin
                 player.SendErrorNotification("Your not near a property!");
                 return;
             }
-            
+
             using Context context = new Context();
 
             Models.Property property = context.Property.Find(nearestProperty.Id);
@@ -6615,11 +6484,11 @@ namespace Server.Admin
             property.Address = args;
 
             context.SaveChanges();
-            
+
             LoadProperties.ReloadProperty(property);
-            
+
             player.SendInfoMessage($"Updated {nearestProperty.Address} has been changed to {args}.");
-            
+
             Logging.AddToAdminLog(player, $"has updated property {property.Id} from {nearestProperty.Address} has been changed to {args}.");
         }
 
@@ -6628,20 +6497,20 @@ namespace Server.Admin
         public static void AdminCommandReloadMaps(IPlayer player)
         {
             MapHandler.ReloadMaps();
-            
+
             player.SendInfoNotification($"Maps reloaded");
-            
+
             Logging.AddToAdminLog(player, $"has reloaded maps");
         }
 
-        [Command("reloadbuyobjects", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description:"Used to reload buyable objects for mapping")]
+        [Command("reloadbuyobjects", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description: "Used to reload buyable objects for mapping")]
         public static void ReloadBuyObjects(IPlayer player)
         {
             PurchaseObjectHandler.LoadBuyableObjects();
             player.SendInfoNotification($"Reloaded buyable objects.");
         }
 
-        [Command("vstats", AdminLevel.Moderator, commandType: CommandType.Admin, description:"Used to view vehicle stats")]
+        [Command("vstats", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Used to view vehicle stats")]
         public static void AdminVehicleStatsCommand(IPlayer player)
         {
             IVehicle vehicle = player.Vehicle ?? VehicleHandler.FetchNearestVehicle(player);
@@ -6653,10 +6522,9 @@ namespace Server.Admin
             }
 
             Models.Vehicle vehicleData = vehicle.FetchVehicleData();
-            
+
             Models.Character ownerData = Models.Character.GetCharacter(vehicleData.OwnerId);
 
-            
             player.SendInfoMessage($"Vehicle Id: {vehicleData.Id}, Inventory Id: {vehicleData.InventoryId}");
             if (ownerData == null)
             {
@@ -6667,9 +6535,9 @@ namespace Server.Admin
                 player.SendInfoMessage($"Owner: {ownerData.Name}, Purchase Price: {vehicleData.VehiclePrice:C}");
             }
             List<VehicleMods> vehicleMods = JsonConvert.DeserializeObject<List<VehicleMods>>(vehicleData.VehicleMods);
-            
+
             player.SendInfoMessage($"Color 1: {vehicleData.Color1}, Color 2: {vehicleData.Color2}, Vehicle Color: {vehicleData.WheelColor}, Mod count: {vehicleMods.Count(x => x.modType > 0)}");
-            player.SendInfoMessage($"Mileage: {vehicleData.Odometer/1609} Miles");
+            player.SendInfoMessage($"Mileage: {vehicleData.Odometer / 1609} Miles");
             if (vehicleData.FactionId > 0)
             {
                 Faction vehicleFaction = Faction.FetchFaction(vehicleData.FactionId);
@@ -6681,11 +6549,11 @@ namespace Server.Admin
             }
         }
 
-        [Command("avmod", AdminLevel.HeadAdmin,commandType: CommandType.Admin, description: "Used to admin mod a vehicle")]
+        [Command("avmod", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description: "Used to admin mod a vehicle")]
         public static void AdminCommandModVehicle(IPlayer player)
         {
             player.SetData("AdminModVehicle", true);
-            
+
             Vehicle.ModShop.ModHandler.ShowVehicleModMenu(player);
         }
 
@@ -6709,7 +6577,7 @@ namespace Server.Admin
 
             List<FocusTypes> targetFocuses =
                 JsonConvert.DeserializeObject<List<FocusTypes>>(target.FetchCharacter().FocusJson);
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             if (!targetFocuses.Contains(FocusTypes.Mechanic))
@@ -6730,22 +6598,22 @@ namespace Server.Admin
             {
                 menuItems.Add(new NativeMenuItem("~r~Revoke Stealth Focus"));
             }
-            
-            NativeMenu menu = new NativeMenu("Admin:SetPlayerFocuses", "Focuses",$"Set {target.GetClass().Name} Focus", menuItems);
-            
+
+            NativeMenu menu = new NativeMenu("Admin:SetPlayerFocuses", "Focuses", $"Set {target.GetClass().Name} Focus", menuItems);
+
             NativeUi.ShowNativeMenu(player, menu, true);
-            
+
             player.SetData("AdjustingFocus", target.GetClass().CharacterId);
         }
 
         public static void OnSelectFocus(IPlayer player, string option)
         {
             player.GetData("AdjustingFocus", out int targetCharacterId);
-            
+
             player.DeleteData("AdjustingFocus");
 
             if (option.Contains("Close")) return;
-            
+
             using Context context = new Context();
 
             Models.Character targetCharacter = context.Character.Find(targetCharacterId);
@@ -6783,10 +6651,7 @@ namespace Server.Admin
             }
 
             targetCharacter.FocusJson = JsonConvert.SerializeObject(focuses);
-            context.SaveChanges();   
-            
-            
+            context.SaveChanges();
         }
-
     }
 }
