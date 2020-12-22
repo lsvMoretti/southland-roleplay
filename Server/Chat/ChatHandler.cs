@@ -101,7 +101,7 @@ namespace Server.Chat
             return color;
         }
 
-        public static void SendMessageToNearbyPlayers(IPlayer player, string message, MessageType type, float range = 10,
+        public static async void SendMessageToNearbyPlayers(IPlayer player, string message, MessageType type, float range = 10,
             bool excludePlayer = false)
         {
             string secondMessage = string.Empty;
@@ -111,27 +111,35 @@ namespace Server.Chat
                 case MessageType.Talk:
                     range = 7.5f;
                     break;
+
                 case MessageType.Shout:
                     range = 28f;
                     break;
+
                 case MessageType.Whisper:
                     range = 0.8f;
                     break;
+
                 case MessageType.Me:
                     range = 8f;
                     break;
+
                 case MessageType.Do:
                     range = 8f;
                     break;
+
                 case MessageType.Ooc:
                     range = 5.5f;
                     break;
+
                 case MessageType.My:
                     range = 8f;
                     break;
+
                 case MessageType.Low:
                     range = 3f;
                     break;
+
                 case MessageType.DoLow:
                     range = 3f;
                     break;
@@ -150,11 +158,11 @@ namespace Server.Chat
 
             Language.Language playerLanguage = player.GetClass().SpokenLanguage;
 
-            ITranslation translatedText = null;
+            string translatedText = null;
 
             if (playerLanguage.Code != "en")
             {
-                translatedText = LanguageHandler.FetchTranslation(playerLanguage, message);
+                translatedText = await LanguageHandler.FetchTranslation(playerLanguage, message);
                 if (translatedText == null)
                 {
                     player.SendErrorNotification("An error occurred translating.");
@@ -197,8 +205,7 @@ namespace Server.Chat
 
             foreach (IPlayer target in Alt.Server.GetPlayers())
             {
-                if(!target.IsSpawned()) continue;
-                
+                if (!target.IsSpawned()) continue;
 
                 List<Language.Language> targetLanguages = target.GetClass().SpokenLanguages;
 
@@ -270,7 +277,6 @@ namespace Server.Chat
 
                                     break;
 
-                                    
                                 case MessageType.Low:
                                     // We send the message
 
@@ -295,7 +301,6 @@ namespace Server.Chat
 
                                     break;
 
-                                
                                 case MessageType.My:
                                     // We send the message
                                     target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name}'s {message}");

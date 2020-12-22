@@ -25,16 +25,6 @@ namespace Server {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("trnsl.1.1.20200122T202410Z.ce6fcfb3911891ea.a91edf36218b2fa96961c74789be40f102963" +
-            "c54")]
-        public string YandexApi {
-            get {
-                return ((string)(this["YandexApi"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("q8CsLozf")]
         public string MySqlPass {
             get {
@@ -66,6 +56,15 @@ namespace Server {
         public string MySqlDebug {
             get {
                 return ((string)(this["MySqlDebug"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("73ee4d81fbac4d5c8e6e39a00263d1bd")]
+        public string TranslationKeyOne {
+            get {
+                return ((string)(this["TranslationKeyOne"]));
             }
         }
     }
