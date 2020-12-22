@@ -6,7 +6,6 @@ using AltV.Net.Elements.Entities;
 using Newtonsoft.Json;
 using Server.Extensions;
 using Server.Language;
-using Yandex.Translator;
 
 namespace Server.Chat
 {
