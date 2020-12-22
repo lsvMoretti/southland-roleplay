@@ -82,6 +82,8 @@ namespace Server.Language
                     var result = JsonConvert.DeserializeObject<List<Dictionary<string, List<Dictionary<string, string>>>>>(responseBody);
                     var translation = result[0]["translations"][0]["text"];
 
+                    Console.WriteLine($"Translation to {toLanguage.LanguageName}. Text: {textToTranslate}. Translation: {translation}");
+
                     return translation;
                 }
             }
