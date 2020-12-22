@@ -55,36 +55,33 @@ namespace Server.Language
             {
                 string COGNITIVE_SERVICES_KEY = Release.Default.TranslationKeyOne;
 
+                string COGNITIVE_SERVICES_REGION = "northeurope";
+
                 string TEXT_TRANSLATION_API_ENDPOINT = "https://api.cognitive.microsofttranslator.com/";
 
-                string endpoint = string.Format(TEXT_TRANSLATION_API_ENDPOINT, "TRANSLATE");
+                string route = $"/translate?api-version=3.0&from=en&to={toLanguage.Code}";
 
-                string uri = string.Format(endpoint + "&from=en&to={0}", toLanguage.Code);
-
-                System.Object[] body = new System.Object[] { new { Text = textToTranslate } };
+                object[] body = new object[] { new { Text = textToTranslate } };
 
                 var requestBody = JsonConvert.SerializeObject(body);
 
                 using (var client = new HttpClient())
-
                 using (var request = new HttpRequestMessage())
                 {
+                    // Build the request.
                     request.Method = HttpMethod.Post;
-                    request.RequestUri = new Uri(uri);
+                    request.RequestUri = new Uri(TEXT_TRANSLATION_API_ENDPOINT + route);
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
                     request.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
-                    request.Headers.Add("Ocp-Apim-Subscription-Region", "northeurope");
-                    request.Headers.Add("X-ClientTraceId", Guid.NewGuid().ToString());
+                    request.Headers.Add("Ocp-Apim-Subscription-Region", COGNITIVE_SERVICES_REGION);
 
-                    var response = await client.SendAsync(request);
-                    var responseBody = await response.Content.ReadAsStringAsync();
+                    // Send the request and get response.
+                    HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+                    // Read response as a string.
+                    string result = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine(result);
 
-                    var result = JsonConvert.DeserializeObject<List<Dictionary<string, List<Dictionary<string, string>>>>>(responseBody);
-                    var translation = result[0]["translations"][0]["text"];
-
-                    Console.WriteLine($"Translation to {toLanguage.LanguageName}. Text: {textToTranslate}. Translation: {translation}");
-
-                    return translation;
+                    return result;
                 }
             }
             catch (Exception e)
