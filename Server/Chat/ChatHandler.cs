@@ -105,44 +105,19 @@ namespace Server.Chat
         {
             string secondMessage = string.Empty;
 
-            switch (type)
+            range = type switch
             {
-                case MessageType.Talk:
-                    range = 7.5f;
-                    break;
-
-                case MessageType.Shout:
-                    range = 28f;
-                    break;
-
-                case MessageType.Whisper:
-                    range = 0.8f;
-                    break;
-
-                case MessageType.Me:
-                    range = 8f;
-                    break;
-
-                case MessageType.Do:
-                    range = 8f;
-                    break;
-
-                case MessageType.Ooc:
-                    range = 5.5f;
-                    break;
-
-                case MessageType.My:
-                    range = 8f;
-                    break;
-
-                case MessageType.Low:
-                    range = 3f;
-                    break;
-
-                case MessageType.DoLow:
-                    range = 3f;
-                    break;
-            }
+                MessageType.Talk => 7.5f,
+                MessageType.Shout => 28f,
+                MessageType.Whisper => 0.8f,
+                MessageType.Me => 8f,
+                MessageType.Do => 8f,
+                MessageType.Ooc => 5.5f,
+                MessageType.My => 8f,
+                MessageType.Low => 3f,
+                MessageType.DoLow => 3f,
+                _ => range
+            };
 
             float distanceGap = range / ChatRanges;
 

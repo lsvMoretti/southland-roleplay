@@ -59,7 +59,7 @@ namespace Server.Language
 
                 string endpoint = string.Format(TEXT_TRANSLATION_API_ENDPOINT, "TRANSLATE");
 
-                string uri = string.Format(endpoint + "&from=en&to={1}", toLanguage.Code);
+                string uri = string.Format(endpoint + "&from=en&to={0}", toLanguage.Code);
 
                 System.Object[] body = new System.Object[] { new { Text = textToTranslate } };
 
