@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using AltV.Net.Elements.Entities;
-using Catharsis.Commons;
 using Newtonsoft.Json;
 using Server.Models;
-using Yandex.Translator;
 
 namespace Server.Inventory.OpenInventory
 {
@@ -53,7 +51,7 @@ namespace Server.Inventory.OpenInventory
             int binCount = 0;
 
             if (storages.Count >= storageLocations.Count) return;
-            
+
             foreach (StorageLocation storageLocation in storageLocations)
             {
                 Storage storage = storages.FirstOrDefault(x =>
@@ -83,15 +81,12 @@ namespace Server.Inventory.OpenInventory
                     binCount++;
                 }
 
-
-
                 context.Storages.Add(newStorage);
             }
 
             context.SaveChanges();
 
             Console.WriteLine($"Added {storageLocations.Count - context.Storages.Count()} new storages.");
-
         }
     }
 }
