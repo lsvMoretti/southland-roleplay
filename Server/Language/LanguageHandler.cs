@@ -49,7 +49,7 @@ namespace Server.Language
             positionLabel.Add();
         }
 
-        public static async Task<string> FetchTranslation(Language toLanguage, string textToTranslate)
+        public static async Task<Translation> FetchTranslation(Language toLanguage, string textToTranslate)
         {
             try
             {
@@ -79,9 +79,8 @@ namespace Server.Language
                     HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
                     // Read response as a string.
                     string result = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine(result);
 
-                    return result;
+                    return JsonConvert.DeserializeObject<Translation>(result);
                 }
             }
             catch (Exception e)
