@@ -1,5 +1,6 @@
 ﻿import * as alt from 'alt-client';
 import * as native from 'natives';
+import Screen from "./NativeUi/utils/Screen";
 
 var nameTagEnabled = true;
 
@@ -56,9 +57,27 @@ alt.everyTick(() => {
             if (scale < 0.3) {
                 scale = 0.3;
             }
-
+            
             let screenPos = native.getScreenCoordFromWorldCoord(playerPos2.x, playerPos2.y, playerPos2.z + 1, null, null);
 
+            if(player.vehicle != null){
+                // In a vehicle
+                let seatId = null;
+                let maxPassengers = native.getVehicleMaxNumberOfPassengers(player.vehicle.scriptID);
+                for(let vi = -1; vi < maxPassengers; vi++){
+                    let pedInSeat = native.getPedInVehicleSeat(player.vehicle.scriptID, vi, null);
+                    if(pedInSeat == player.scriptID){
+                        seatId = vi;
+                        break;
+                    }
+                }
+                if(seatId == null) return;
+                
+                for (let seatPos = 0; seatPos < seatId; seatPos++){
+                    screenPos = native.getScreenCoordFromWorldCoord(playerPos2.x, playerPos2.y, playerPos2.z + 0.2, null, null);
+                }
+            }
+            
             if (ameActive) {
                 drawAme(aMe, screenPos[1], screenPos[2] - 0.070, scale, 194, 162, 218, 175, true);
             }
