@@ -48,24 +48,37 @@ namespace Server.Character
                 player.SendErrorNotification("Unable to find this player.");
                 return;
             }
-
-            if (targetPlayer == player)
-            {
-                player.SendErrorNotification("You can't do this!");
-                return;
-            }
-
+            
             if (player.Position.Distance(targetPlayer.Position) > 3f || player.Dimension != targetPlayer.Dimension)
             {
                 player.SendErrorNotification("You're not near this player!");
                 return;
             }
 
-            bool hasBlindfoldData = player.HasData("Blindfolded");
-
-            if (hasBlindfoldData)
+            if (player == targetPlayer)
             {
-                player.SendErrorNotification("You can't do this!");
+                // Blindfolding self
+                bool blindfoldedByOther = player.HasData("BlindfoldedByOthers");
+
+                if (blindfoldedByOther)
+                {
+                    player.SendErrorNotification("You can't do this!");
+                    return;
+                }
+
+                bool blindfolded = player.HasData("Blindfolded");
+
+                if (!blindfolded)
+                {
+                    targetPlayer.Emit("Blindfolded", true);
+                    targetPlayer.SetData("Blindfolded", true);
+                }
+                else
+                {
+                    targetPlayer.Emit("Blindfolded", false);
+                    targetPlayer.DeleteData("Blindfolded");
+                }
+
                 return;
             }
 
@@ -77,11 +90,13 @@ namespace Server.Character
                 targetPlayer.Emit("Blindfolded", true);
                 player.SendEmoteMessage($"ties a blindfold around {targetPlayer.GetClass().Name}'s eyes.");
                 targetPlayer.SetData("Blindfolded", true);
+                targetPlayer.SetData("BlindfoldedByOthers", true);
                 return;
             }
             targetPlayer.Emit("Blindfolded", false);
             player.SendEmoteMessage($"unties the blindfold from around {targetPlayer.GetClass().Name}'s eyes.");
-            targetPlayer.SetData("Blindfolded", false);
+            targetPlayer.DeleteData("Blindfolded");
+            targetPlayer.DeleteData("BlindfoldedByOthers");
             return;
 
         }
