@@ -1,3 +1,5 @@
+import chat from "../chat";
+
 function colorify(text) {
     let matches = [];
     let m = null;
@@ -245,11 +247,11 @@ if ('alt' in window) {
         timeStamp = toggle;
     });
     alt.on('changeFontSize', (fontSize) => {
-        let chatBox = document.getElementById('chatbox');
+        let chatBox = document.getElementById('chatboxDiv');
         
         if(fontSize === -3)
         {
-            chatBox.style.fontSize = "0.5em";
+            chatBox.font.fontSize = "0.5em";
         }
         if(fontSize === -2)
         {
