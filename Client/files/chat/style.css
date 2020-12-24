@@ -49,6 +49,7 @@ body {
     opacity: .8;
     transition: all .5s;
     font-weight: bolder;
+    font-size: 0.8em;
 }
 
 .chatbox.active {
@@ -62,7 +63,7 @@ body {
     padding: 0px 0px;
     margin: 0px;
     text-shadow: -1px -1px 0 rgba(0,0,0,1), 1px -1px 0 rgba(0,0,0,1), -1px 1px 0 rgba(0,0,0,1), 1px 1px 0 rgba(0,0,0,1);
-    font-size: 0.8em;
+    
     color: rgba(255, 255, 255, 1);
     width: 100%;
     /*word-break: break-all;*/

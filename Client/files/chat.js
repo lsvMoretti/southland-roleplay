@@ -6,6 +6,21 @@ let loaded = false;
 let opened = false;
 let hidden = false;
 let input = true;
+let localStorage = alt.LocalStorage.get();
+let fontSize = localStorage.get("Chat:FontSize");
+if (fontSize == null) {
+    fontSize = 0;
+    localStorage.set("Chat:FontSize", fontSize);
+    localStorage.save();
+}
+alt.onServer("Chat:ChangeFontSize", (newFontSize) => {
+    fontSize = newFontSize;
+    localStorage.set("Chat:FontSize", fontSize);
+    localStorage.save();
+    if (view != null) {
+        view.emit("changeFontSize", fontSize);
+    }
+});
 alt.onServer('chat:EnableTimestamp', (toggle) => {
     view.emit('TimeStampToggle', toggle);
 });
@@ -27,6 +42,7 @@ view.on('chatloaded', () => {
         addMessage(msg.name, msg.text);
     }
     loaded = true;
+    view.emit("changeFontSize", fontSize);
 });
 view.on('chatmessage', (text) => {
     alt.emitServer('sendChatMessage', text);

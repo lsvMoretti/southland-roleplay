@@ -16,6 +16,41 @@ namespace Server.Chat
 {
     public class ChatCommands
     {
+        [Command("fontsize", onlyOne: true, commandType: CommandType.Chat, description: "Used to set your font style")]
+        public static void CommandFontSize(IPlayer player, string args = "")
+        {
+            if (player?.FetchCharacter() == null) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+
+            if (args.Length < 1)
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+
+            bool tryParse = int.TryParse(args, out int fontSize);
+            
+            if(!tryParse)
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+
+            if (fontSize < -3 || fontSize > 3)
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+            player.Emit("Chat:ChangeFontSize", fontSize);
+            
+            player.SendInfoNotification($"You've changed your font size to {fontSize}");
+        }
+        
         [Command("ame", onlyOne: true, commandType: CommandType.Chat, description: "An above head emote command")]
         public static void CommandAMe(IPlayer player, string args = "")
         {
