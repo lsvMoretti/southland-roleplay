@@ -1,5 +1,13 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+alt.onServer('Blindfolded', (blindfolded) => {
+    if (blindfolded) {
+        native.doScreenFadeOut(1000);
+    }
+    else {
+        native.doScreenFadeIn(1000);
+    }
+});
 alt.onServer('freezePlayer', freezePlayer);
 alt.onServer('OnTimeUpdate', () => {
     alt.setMsPerGameMinute(30000);

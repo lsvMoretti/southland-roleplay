@@ -29,6 +29,63 @@ namespace Server.Character
 {
     public class CharacterCommands
     {
+        [Command("blindfold", onlyOne: true, commandType: CommandType.Character,
+            description: "Used to blindfold others")]
+        public static void CharacterCommandBlindfold(IPlayer player, string args = "")
+        {
+            if (!player.IsSpawned()) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/blindfold [NameOrId]");
+                return;
+            }
+
+            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+
+            if (targetPlayer == null || !targetPlayer.IsSpawned())
+            {
+                player.SendErrorNotification("Unable to find this player.");
+                return;
+            }
+
+            if (targetPlayer == player)
+            {
+                player.SendErrorNotification("You can't do this!");
+                return;
+            }
+
+            if (player.Position.Distance(targetPlayer.Position) > 3f || player.Dimension != targetPlayer.Dimension)
+            {
+                player.SendErrorNotification("You're not near this player!");
+                return;
+            }
+
+            bool hasBlindfoldData = player.HasData("Blindfolded");
+
+            if (hasBlindfoldData)
+            {
+                player.SendErrorNotification("You can't do this!");
+                return;
+            }
+
+            bool targetBlindfolded = targetPlayer.HasData("Blindfolded");
+
+            if (!targetBlindfolded)
+            {
+                // Not blindfolded
+                targetPlayer.Emit("Blindfolded", true);
+                player.SendEmoteMessage($"ties a blindfold around {targetPlayer.GetClass().Name}'s eyes.");
+                targetPlayer.SetData("Blindfolded", true);
+                return;
+            }
+            targetPlayer.Emit("Blindfolded", false);
+            player.SendEmoteMessage($"unties the blindfold from around {targetPlayer.GetClass().Name}'s eyes.");
+            targetPlayer.SetData("Blindfolded", false);
+            return;
+
+        }
+        
         [Command("setage", onlyOne: true, commandType: CommandType.Character, description: "Used to set your age")]
         public static void CharacterCommandSetAge(IPlayer player, string args)
         {
