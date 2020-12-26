@@ -427,9 +427,9 @@ namespace Server.Character
 
             bool isLaw = player.IsLeo(true);
 
-            bool isHelperDuty = player.HasSyncedMetaData(HelperCommands.HelperDutyData);
+            bool isHelper = player.FetchAccount().Helper;
 
-            player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw, isHelperDuty);
+            player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw, isHelper);
         }
 
         [Command("onduty", commandType: CommandType.Character, description: "Shows a list of on duty law and medical staff")]

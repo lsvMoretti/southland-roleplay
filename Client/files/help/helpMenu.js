@@ -15,6 +15,7 @@ function showHelperOption(option){
     if(option === undefined || option === false) return;
     
     let helperDiv = document.getElementById('helperDiv');
+    console.log('Showing Helper')
     helperDiv.classList.remove('hideme');
 }
 
