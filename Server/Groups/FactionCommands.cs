@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using AltV.Net;
+using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
 using Server.Chat;
@@ -17,6 +19,47 @@ namespace Server.Groups
 {
     public class FactionCommands
     {
+        [Command("factions", commandType: CommandType.Faction, description: "View online numbers in a faction")]
+        public static async void FactionCommandViewOnlineNumbers(IPlayer player)
+        {
+            if (!player.GetClass().Spawned)
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            player.SendInfoMessage("____[Online Faction Members]____");
+            
+            await using Context context = new Context();
+
+            List<Faction> factions = await context.Faction.ToListAsync();
+
+            foreach (Faction faction in factions)
+            {
+                int factionCount = 0;
+                
+                foreach (IPlayer client in Alt.Server.GetPlayers())
+                {
+                    if (!client.IsSpawned()) continue;
+
+                    Models.Character clientCharacter = client.FetchCharacter();
+
+                    if (clientCharacter == null) continue;
+
+                    List<PlayerFaction> clientFactions =
+                        JsonConvert.DeserializeObject<List<PlayerFaction>>(clientCharacter.FactionList);
+
+                    if (clientFactions.All(x => x.Id != faction.Id)) continue;
+
+                    factionCount++;
+                }
+
+                if (factionCount == 0) continue;
+                
+                player.SendInfoMessage($"{faction.Name} - {factionCount} Members Online.");
+            }
+        }
+    
         [Command("faction", commandType: CommandType.Faction, description: "Allows you to manage your personal factions.")]
         public static void FactionCommandFaction(IPlayer player)
         {
