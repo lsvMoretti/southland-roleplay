@@ -131,6 +131,15 @@ namespace Server.Character
                 }
                 player.Emit($"helpMenu:ReturnAnim", JsonConvert.SerializeObject(helpCommands));
             }
+            
+            if (option == "helper")
+            {
+                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Helper).OrderByDescending(x => x.Key))
+                {
+                    helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
+                }
+                player.Emit($"helpMenu:ReturnAnim", JsonConvert.SerializeObject(helpCommands));
+            }
         }
 
         public static void OnHelpMenuClose(IPlayer player)

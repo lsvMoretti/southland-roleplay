@@ -8,6 +8,14 @@ if ('alt' in window) {
     alt.on('HelpMenu:ReceiveListData', receiveListData);
     alt.on('HelpMenu:ShowAdminOption', showAdminOption);
     alt.on('HelpMenu:ShowLawOption', showLawOption);
+    alt.on('HelpMenu:ShowHelperOption', showHelperOption);
+}
+
+function showHelperOption(option){
+    if(option === undefined || option === false) return;
+    
+    let helperDiv = document.getElementById('helperDiv');
+    helperDiv.classList.remove('hideme');
 }
 
 function showLawOption(option) {

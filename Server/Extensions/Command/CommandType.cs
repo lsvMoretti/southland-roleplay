@@ -4,6 +4,7 @@
     {
         Unassigned,
         Admin,
+        Helper,
         Character,
         Faction,
         Vehicle,

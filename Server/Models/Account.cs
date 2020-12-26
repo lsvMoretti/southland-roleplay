@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Server.Models
@@ -106,6 +107,8 @@ namespace Server.Models
         public string HardwareIdExHash { get; set; }
         
         public bool AutoLogin { get; set; }
+        
+        public bool Helper { get; set; }
 
         public static Account FindAccountById(int id)
         {
@@ -130,6 +133,6 @@ namespace Server.Models
 
     public enum AdminLevel
     {
-        None, Support, Moderator, Administrator, HeadAdmin, Management, Director
+        None, Moderator, Administrator, HeadAdmin, Management, Director
     }
 }

@@ -42,7 +42,7 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
-        [Command("tp", AdminLevel.Support, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
+        [Command("tp", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
         public static void CommandTP(IPlayer player)
         {
             Models.Account playerAccount = player.FetchAccount();
@@ -397,7 +397,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have spawned vehicle ID: {vid} and teleported it to you.");
         }
 
-        [Command("goto", AdminLevel.Support, true, commandType: CommandType.Admin, description: "Player: TP to another player")]
+        [Command("goto", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Player: TP to another player")]
         public static void AdminCommandGoto(IPlayer player, string idorname = "")
         {
             if (idorname == "")
@@ -612,7 +612,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've refueled this vehicle to {fuelResult}%");
         }
 
-        [Command("mark", AdminLevel.Support, commandType: CommandType.Admin, description: "Other: Marks a point to return to with /gotomark")]
+        [Command("mark", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Marks a point to return to with /gotomark")]
         public static void AdminCommandMarkPosition(IPlayer player)
         {
             player.SendInfoNotification($"You have marked this position. You can use /gotomark.");
@@ -620,7 +620,7 @@ namespace Server.Admin
             player.SetData("admin:markedDimension", player.Dimension);
         }
 
-        [Command("gotomark", AdminLevel.Support, commandType: CommandType.Admin, description: "Other: Used with /mark to return to a position")]
+        [Command("gotomark", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Used with /mark to return to a position")]
         public static void AdminCommandGotoMark(IPlayer player)
         {
             bool hasMarkData = player.GetData("admin:markedPosition", out Position position);
@@ -1666,7 +1666,7 @@ namespace Server.Admin
 
         #region Admin Reports
 
-        [Command("ar", AdminLevel.Support, true, "acceptreport", commandType: CommandType.Admin, description: "Report: Accepts a report")]
+        [Command("ar", AdminLevel.Moderator, true, "acceptreport", commandType: CommandType.Admin, description: "Report: Accepts a report")]
         public static void AdminCommandAcceptReport(IPlayer player, string idString = "")
         {
             if (idString == "")
@@ -1717,7 +1717,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Player TP ID: {targetPlayer.GetPlayerId()}");
 
             var onlineAdmins = Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Support).ToList();
+                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator).ToList();
 
             if (onlineAdmins.Any())
             {
@@ -1737,7 +1737,7 @@ namespace Server.Admin
                 $"has accepted report ID {adminReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
 
-        [Command("dr", AdminLevel.Support, true, "denyreport", commandType: CommandType.Admin, description: "Report: Denies a report")]
+        [Command("dr", AdminLevel.Moderator, true, "denyreport", commandType: CommandType.Admin, description: "Report: Denies a report")]
         public static void AdminCommandDenyReport(IPlayer player, string idString = "")
         {
             if (idString == "")
@@ -1785,7 +1785,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have declined report ID: {adminReport.Id}.");
 
             foreach (IPlayer onlineAdmin in Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Support))
+                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator))
             {
                 onlineAdmin.SendAdminMessage(
                     $"Admin {player.FetchAccount().Username} has denied report ID: {adminReport.Id}.");
@@ -4110,7 +4110,7 @@ namespace Server.Admin
             Models.Graffiti.DeleteGraffiti(nearestGraffiti);
         }
 
-        [Command("pid", AdminLevel.Support, commandType: CommandType.Admin,
+        [Command("pid", AdminLevel.Moderator, commandType: CommandType.Admin,
             description: "Property: Used to fetch property id")]
         public static void AdminCommandFetchPropertyId(IPlayer player)
         {
@@ -4955,7 +4955,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've given {money:C} to {targetPlayer.GetClass().Name}.");
         }
 
-        [Command("ping", AdminLevel.Support, true, commandType: CommandType.Admin,
+        [Command("ping", AdminLevel.Moderator, true, commandType: CommandType.Admin,
             description: "Used to view another players ping")]
         public static void AdminCommandViewPing(IPlayer player, string args = "")
         {
@@ -5021,7 +5021,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've set the mileage to {args} miles.");
         }
 
-        [Command("manage", AdminLevel.Support, true, commandType: CommandType.Admin,
+        [Command("manage", AdminLevel.Moderator, true, commandType: CommandType.Admin,
             description: "Other: Used to do shit to a player")]
         public static void AdminCommandManagePlayer(IPlayer player, string args = "")
         {
@@ -5970,7 +5970,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has added a new garage to {property.Address}.");
         }
 
-        [Command("gotoint", AdminLevel.Support, commandType: CommandType.Admin,
+        [Command("gotoint", AdminLevel.Moderator, commandType: CommandType.Admin,
             description: "TP: Used to go to an interior")]
         public static void AdminCommandGotoInterior(IPlayer player)
         {
@@ -6652,6 +6652,52 @@ namespace Server.Admin
 
             targetCharacter.FocusJson = JsonConvert.SerializeObject(focuses);
             context.SaveChanges();
+        }
+
+        [Command("makehelper", AdminLevel.Management, true, commandType: CommandType.Admin,
+            description: "Used to promote or demote a helper")]
+        public static async void AdminCommandMakeHelper(IPlayer player, string args = "")
+        {
+            if (string.IsNullOrWhiteSpace(args))
+            {
+                player.SendSyntaxMessage("/makehelper [NameOrId]");
+                return;
+            }
+
+            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+
+            if (targetPlayer == null)
+            {
+                player.SendErrorNotification("Unable to find this player!");
+                return;
+            }
+
+            if (targetPlayer.FetchAccount() == null)
+            {
+                player.SendErrorNotification("This player isn't logged in!");
+                return;
+            }
+            
+            await using Context context = new Context();
+
+            Models.Account target = context.Account.FirstOrDefault(x => x.Id == targetPlayer.GetClass().AccountId);
+            
+            if (target == null)
+            {
+                player.SendErrorNotification("This player isn't logged in!");
+                return;
+            }
+
+            target.Helper = !target.Helper;
+            await context.SaveChangesAsync();
+
+            string message =
+                $"You have {(target.Helper ? "promoted" : "demoted")} {target.Username} {(target.Helper ? "to" : "from")} helper!";
+            player.SendInfoNotification(message);
+
+            string playerMessage =
+                $"You have been {(target.Helper ? "promoted" : "demoted")} {(target.Helper ? "to" : "from")} helper by {player.GetClass().UcpName}";
+            targetPlayer.SendInfoMessage(playerMessage);
         }
     }
 }

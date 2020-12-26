@@ -427,7 +427,9 @@ namespace Server.Character
 
             bool isLaw = player.IsLeo(true);
 
-            player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw);
+            bool isHelperDuty = player.HasSyncedMetaData(HelperCommands.HelperDutyData);
+
+            player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw, isHelperDuty);
         }
 
         [Command("onduty", commandType: CommandType.Character, description: "Shows a list of on duty law and medical staff")]
@@ -543,6 +545,9 @@ namespace Server.Character
             }
         }
 
+        #region Report System
+
+        
         [Command("report", onlyOne: true, commandType: CommandType.Character, description: "Report a situation to the admin team")]
         public static void CommandReport(IPlayer player, string message = "")
         {
@@ -589,13 +594,13 @@ namespace Server.Character
 
                     if (adminAccount == null) continue;
 
-                    if (adminAccount.AdminLevel < AdminLevel.Support && !adminAccount.Developer) continue;
+                    if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
 
                     onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
                 }
             }
             
-            player.SendAdminMessage($"You've submitted a report. Your report ID is {newReport.Id}.");
+            player.SendAdminMessage($"You've submitted a report. Your report ID is {newReport.Id}. You can use /cr to cancel the report");
         }
 
         [Command("cancelreport", commandType: CommandType.Character, 
@@ -671,6 +676,131 @@ namespace Server.Character
             
             SignalR.SendReportMessage(reportId, message);
         }
+
+        #endregion
+
+        #region Help Me System
+
+        [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Helper!")]
+        public static void CommandHelpMe(IPlayer player, string message = "")
+        {
+            if (player.FetchCharacter() == null)
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            if (message == "")
+            {
+                player.SendSyntaxMessage($"/helpme [Message]");
+                return;
+            }
+
+            if (message.Length < 5)
+            {
+                player.SendErrorNotification("Message length must be greater than five!");
+                return;
+            }
+
+            int helpCount =
+                AdminHandler.HelpReports.Count(x => x.Player.GetClass().AccountId == player.GetClass().AccountId);
+
+            
+            if (helpCount >= 1)
+            {
+                player.SendErrorNotification("You can only have one helpme open at a time.");
+                return;
+            }
+            
+            HelpReport newReport = AdminHandler.AddHelpReport(player, message);
+
+            player.SendInfoNotification($"You've created a new helpme id {newReport.Id}. Please await for further assistance.");
+
+            List<IPlayer> onlinePlayers = Alt.Server.GetPlayers().ToList();
+
+            if (onlinePlayers.Any())
+            {
+                foreach (IPlayer onlinePlayer in onlinePlayers)
+                {
+                    Models.Account playerAccount = onlinePlayer?.FetchAccount();
+
+                    if (playerAccount == null) continue;
+
+                    if (!playerAccount.Helper) continue;
+
+                    onlinePlayer.SendAdminMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
+                }
+            }
+            
+            player.SendHelperMessage($"You've submitted a help me. Your help me ID is {newReport.Id}.");
+        }
+        
+        [Command("cancelhelp", commandType: CommandType.Character, 
+            description: "Used to cancel your active helpme", alternatives: "ch")]
+        public static void CommandCancelHelp(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
+
+            if (helpReport == null)
+            {
+                player.SendErrorNotification("You don't have an admin report outstanding.");
+                return;
+            }
+            
+            AdminHandler.CloseHelpReport(helpReport.Id);
+            
+            player.SendInfoNotification($"You've closed your help request.");
+        }
+
+        
+        [Command("helpr", onlyOne: true, commandType: CommandType.Character,
+            description: "Used to reply to a helpme")]
+        public static void CommandHelpReply(IPlayer player, string args = "")
+        {
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/helpr [HelpId] [Message]");
+                return;
+            }
+
+            string[] argSplit = args.Split(" ");
+
+            if (argSplit.Length < 2)
+            {
+                player.SendSyntaxMessage("/helpr [HelpId] [Message]");
+                return;
+            }
+
+            bool idParse = int.TryParse(argSplit[0], out int reportId);
+
+            if (!idParse)
+            {
+                player.SendSyntaxMessage("/helpr [HelpId] [Message]");
+                return;
+            }
+
+            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == reportId);
+
+            if (helpReport == null)
+            {
+                player.SendErrorNotification("Request not found!");
+                return;
+            }
+
+            if (helpReport.Player != player)
+            {
+                player.SendErrorNotification("You didn't create this report!");
+                return;
+            }
+            
+            string message = string.Join(' ', argSplit.Skip(1));
+            
+            player.SendAdminMessage($"Help Reply: {message}.");
+        }
+        
+        #endregion
         
         [Command("describe", onlyOne: true, alternatives: "description", commandType: CommandType.Character, description: "Sets your description for players to look at")]
         public static void CommandSetDescription(IPlayer player, string args = "")

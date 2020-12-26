@@ -23,7 +23,7 @@ namespace Server.Developer
 {
     public class TestCommands
     {
-        [Command("cayo", AdminLevel.Support)]
+        [Command("cayo", AdminLevel.Moderator)]
         public static void Command_GotoCayo(IPlayer player)
         {
             if (!player.IsSpawned()) return;
@@ -75,7 +75,7 @@ namespace Server.Developer
             player.SendInfoNotification($"Distance to {targetPlayer.GetClass().Name} (PID: {targetPlayer.GetPlayerId()}) is {player.Position.Distance(targetPlayer.Position)}.");
         }
 
-        [Command("anim", AdminLevel.Support, true)]
+        [Command("anim", AdminLevel.Moderator, true)]
         public static void AnimTest(IPlayer player, string args = "")
         {
             if (args == "")
@@ -127,7 +127,7 @@ namespace Server.Developer
 
         }
 
-        [Command("c", AdminLevel.Support, true)]
+        [Command("c", AdminLevel.Moderator, true)]
         public static void DevClothesCommand(IPlayer player, string args = "")
         {
             if (args == "")
@@ -160,7 +160,7 @@ namespace Server.Developer
 
         }
 
-        [Command("ca", AdminLevel.Support, true)]
+        [Command("ca", AdminLevel.Moderator, true)]
         public static void DevAccessoriesCommand(IPlayer player, string args = "")
         {
             if (args == "")

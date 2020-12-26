@@ -1,17 +1,19 @@
 import * as alt from 'alt-client';
-var helpWindow = undefined;
-var commandJson = undefined;
-var currentOption = undefined;
-var showAdminOption = false;
-var showLawOption = false;
+let helpWindow = undefined;
+let commandJson = undefined;
+let currentOption = undefined;
+let showAdminOption = false;
+let showLawOption = false;
+let showHelperOption = false;
 alt.onServer('helpMenu:ShowHelpMenu', showHelpMenu);
 alt.onServer('helpMenu:ReturnAnim', returnAnimList);
-function showHelpMenu(showAdmin, showLaw) {
+function showHelpMenu(showAdmin, showLaw, showHelper) {
     if (helpWindow !== undefined) {
         closeHelpMenu();
     }
     showAdminOption = showAdmin;
     showLawOption = showLaw;
+    showHelperOption = showHelper;
     helpWindow = new alt.WebView("http://resource/files/help/helpMenu.html", false);
     helpWindow.focus();
     alt.showCursor(true);
@@ -23,6 +25,7 @@ function showHelpMenu(showAdmin, showLaw) {
 function mainPageLoaded() {
     helpWindow.emit('HelpMenu:ShowAdminOption', showAdminOption);
     helpWindow.emit('HelpMenu:ShowLawOption', showLawOption);
+    helpWindow.emit('HelpMenu:ShowHelperOption', showHelperOption);
 }
 function fetchCommands(option) {
     if (option === 'anim') {
@@ -60,6 +63,9 @@ function fetchCommands(option) {
     }
     if (option === 'law') {
         currentOption = 'Law';
+    }
+    if (option === 'helper') {
+        currentOption = 'Helper';
     }
     alt.emitServer('HelpMenu:FetchCommands', option);
 }
