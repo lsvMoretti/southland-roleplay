@@ -31,10 +31,12 @@ namespace Server.Admin
                 // Not on duty
                 player.SetSyncedMetaData(HelperDutyData, true);
                 player.SendInfoNotification("You've gone on Helper Duty!");
+                player.GetClass().Name = player.GetClass().UcpName;
                 return;
             }
             
             player.DeleteSyncedMetaData(HelperDutyData);
+            player.GetClass().Name = player.FetchCharacter().Name;
             player.SendInfoNotification("You've gone off Helper Duty!");
         }
         

@@ -34,6 +34,8 @@ alt.everyTick(() => {
         let isSpectating: boolean = player.getSyncedMeta("IsSpectating");
 
         let isPdDuty: boolean = player.getSyncedMeta("PoliceDuty");
+        
+        let isHelperDuty: boolean = player.getSyncedMeta("HELPERONDUTY");
 
         let canSee = native.hasEntityClearLosToEntity(player.scriptID, localPlayer.scriptID, 17);
 
@@ -84,7 +86,10 @@ alt.everyTick(() => {
 
             if (isPdDuty) {
                 drawText(playerName, playerId, screenPos[1], screenPos[2] - 0.030, scale, 0, 144, 255, 175, true, isTyping);
-            } else {
+            } if(isHelperDuty) {
+                drawText(playerName, playerId, screenPos[1], screenPos[2] - 0.030, scale, 242, 33, 33, 175, true, isTyping);
+            }
+            else {
                 drawText(playerName, playerId, screenPos[1], screenPos[2] - 0.030, scale, 255, 255, 255, 175, true, isTyping);
             }
         }

@@ -9,6 +9,7 @@ using System.Timers;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using Newtonsoft.Json;
+using Server.Admin;
 using Server.Character;
 using Server.Chat;
 using Server.Inventory;
@@ -774,6 +775,11 @@ namespace Server.Extensions
             {
 
                 if (_player.GetClass().AdminDuty)
+                {
+                    return _player.GetClass().UcpName;
+                }
+
+                if (_player.HasSyncedMetaData(HelperCommands.HelperDutyData))
                 {
                     return _player.GetClass().UcpName;
                 }
