@@ -79,11 +79,17 @@ namespace Server.Language
                     // Send the request and get response.
                     HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
                     Console.WriteLine($"Translation as String: {await response.Content.ReadAsStringAsync()}");
-                    Translations result = JsonConvert.DeserializeObject<Translations>(await response.Content.ReadAsStringAsync());
-                    Console.WriteLine(
-                        $"Result: {result.translations.FirstOrDefault()?.text}");
+                    string result = await response.Content.ReadAsStringAsync();
+                    string trim = result.Trim('[', ']');
+                    Console.WriteLine($"After Trim: {trim}");
+                    Translations translation =
+                        JsonConvert.DeserializeObject<Translations>(trim);
 
-                    return result;
+                ;
+                    Console.WriteLine(
+                        $"Result: {translation.translations.FirstOrDefault()?.text}");
+
+                    return translation;
                 }
             }
             catch (Exception e)
