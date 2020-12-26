@@ -778,7 +778,7 @@ namespace Server.Character
 
                     if (!playerAccount.Helper) continue;
 
-                    onlinePlayer.SendAdminMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
+                    onlinePlayer.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
                 }
             }
             
