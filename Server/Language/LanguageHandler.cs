@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using AltV.Net.Data;
@@ -77,10 +78,15 @@ namespace Server.Language
 
                     // Send the request and get response.
                     HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-                    // Read response as a string.
-                    string result = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Translation as String: {await response.Content.ReadAsStringAsync()}");
+                    Console.WriteLine(
+                        $"Translation as JSON: {await response.Content.ReadFromJsonAsync<Translation>()}");
+                    // Read response as a JSON object.
+                    Translation result = await response.Content.ReadFromJsonAsync<Translation>();
+                    Console.WriteLine(
+                        $"Result: {result.Translations.FirstOrDefault()?.Text}");
 
-                    return JsonConvert.DeserializeObject<Translation>(result);
+                    return result;
                 }
             }
             catch (Exception e)
