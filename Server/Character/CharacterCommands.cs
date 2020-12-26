@@ -546,7 +546,32 @@ namespace Server.Character
         }
 
         #region Report System
+        
+        [Command("admins", commandType: CommandType.Character, description: "See on duty admins!")]
+        public static void CommandViewAdmins(IPlayer player)
+        {
+            if (player.FetchCharacter() == null)
+            {
+                player.SendLoginError();
+                return;
+            }
 
+            var onlineAdmins = Alt.GetAllPlayers().Where(x => x.GetClass().AdminDuty)
+                .OrderByDescending(x => x.FetchAccount().AdminLevel).ThenByDescending(n => n.GetClass().UcpName);
+
+            if (!onlineAdmins.Any())
+            {
+                player.SendErrorMessage("No on-duty admins"); 
+                return;
+            }
+            
+            player.SendAdminMessage("____[On Duty Admins]____");
+            
+            foreach (var onlineAdmin in onlineAdmins)
+            {
+                player.SendAdminMessage(onlineAdmin.GetClass().UcpName);
+            }
+        }
         
         [Command("report", onlyOne: true, commandType: CommandType.Character, description: "Report a situation to the admin team")]
         public static void CommandReport(IPlayer player, string message = "")
@@ -680,6 +705,31 @@ namespace Server.Character
         #endregion
 
         #region Help Me System
+
+        [Command("helpers", commandType: CommandType.Character, description: "See onduty helpers!")]
+        public static void CommandViewHelpers(IPlayer player)
+        {
+            if (player.FetchCharacter() == null)
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            var onlineHelpers = Alt.GetAllPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
+
+            if (!onlineHelpers.Any())
+            {
+                player.SendErrorMessage("No on-duty helpers"); 
+                return;
+            }
+            
+            player.SendHelperMessage("____[On Duty Helpers]____");
+            
+            foreach (var onlineHelper in onlineHelpers)
+            {
+                player.SendHelperMessage(onlineHelper.GetClass().UcpName);
+            }
+        }
 
         [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Helper!")]
         public static void CommandHelpMe(IPlayer player, string message = "")
