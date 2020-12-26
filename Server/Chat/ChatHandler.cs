@@ -136,12 +136,21 @@ namespace Server.Chat
 
             if (playerLanguage.Code != "en")
             {
-                Translation translation = await LanguageHandler.FetchTranslation(playerLanguage, message);
+                try
+                {
+                    Translation translation = await LanguageHandler.FetchTranslation(playerLanguage, message);
 
-                translatedText = translation.Translations.FirstOrDefault()?.Text;
-                if (translatedText == null)
+                    translatedText = translation.Translations.FirstOrDefault()?.Text;
+                    if (translatedText == null)
+                    {
+                        player.SendErrorNotification("An error occurred translating.");
+                        return;
+                    }
+                }
+                catch (Exception e)
                 {
                     player.SendErrorNotification("An error occurred translating.");
+                    Console.WriteLine(e);
                     return;
                 }
             }
