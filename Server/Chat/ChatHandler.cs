@@ -138,9 +138,9 @@ namespace Server.Chat
             {
                 try
                 {
-                    Translation translation = await LanguageHandler.FetchTranslation(playerLanguage, message);
+                    Translations translation = await LanguageHandler.FetchTranslation(playerLanguage, message);
 
-                    translatedText = translation.Translations.FirstOrDefault()?.Text;
+                    translatedText = translation.translations.FirstOrDefault()?.text;
                     if (translatedText == null)
                     {
                         player.SendErrorNotification("An error occurred translating.");

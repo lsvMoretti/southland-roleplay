@@ -50,7 +50,7 @@ namespace Server.Language
             positionLabel.Add();
         }
 
-        public static async Task<Translation> FetchTranslation(Language toLanguage, string textToTranslate)
+        public static async Task<Translations> FetchTranslation(Language toLanguage, string textToTranslate)
         {
             try
             {
@@ -80,11 +80,11 @@ namespace Server.Language
                     HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
                     Console.WriteLine($"Translation as String: {await response.Content.ReadAsStringAsync()}");
                     Console.WriteLine(
-                        $"Translation as JSON: {await response.Content.ReadFromJsonAsync<Translation>()}");
+                        $"Translation as JSON: {await response.Content.ReadFromJsonAsync<Translations>()}");
                     // Read response as a JSON object.
-                    Translation result = await response.Content.ReadFromJsonAsync<Translation>();
+                    Translations result = await response.Content.ReadFromJsonAsync<Translations>();
                     Console.WriteLine(
-                        $"Result: {result.Translations.FirstOrDefault()?.Text}");
+                        $"Result: {result.translations.FirstOrDefault()?.text}");
 
                     return result;
                 }
