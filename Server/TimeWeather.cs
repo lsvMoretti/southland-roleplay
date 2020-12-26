@@ -212,7 +212,7 @@ namespace Server
                 if (currentWeatherType == 800)
                 {
                     //Clear
-                    CurrentWeatherType = WeatherType.Clear;
+                    CurrentWeatherType = WeatherType.ExtraSunny;
                 }
 
                 if (currentWeatherType >= 801 || currentWeatherType <= 804)

@@ -75,8 +75,9 @@ alt.everyTick(() => {
                 }
                 if(seatId == null) return;
                 
-                for (let seatPos = 0; seatPos < seatId; seatPos++){
-                    screenPos = native.getScreenCoordFromWorldCoord(playerPos2.x, playerPos2.y, playerPos2.z + 0.2, null, null);
+                for (let seatPos = -1; seatPos < seatId; seatPos++){
+                    // 0.05
+                    screenPos[2] = screenPos[2] - 0.04;
                 }
             }
             

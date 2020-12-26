@@ -68,7 +68,7 @@ namespace Server.Chat
                 return;
             }
 
-            player.SetSyncedMetaData("ChatCommand:Ame", args);
+            player.SetSyncedMetaData("ChatCommand:Ame", $"{player.GetClass().Name} {args}");
             player.SetSyncedMetaData("ChatCommand:AmeActive", true);
 
             Timer newTimer = new Timer(5000) { AutoReset = false, Enabled = true };
