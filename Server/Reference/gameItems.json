@@ -1667,6 +1667,15 @@
     "Capacity": 0.1,
     "Price": 25,
     "Stackable": false
+  },
+  {
+    "ID": "ITEM_VEHICLE_PLATE",
+    "Name": "Vehicle Plate",
+    "Description": "A vehicle's number plate.",
+    "Weight": 2,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
   }
   
 ]

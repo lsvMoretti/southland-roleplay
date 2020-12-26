@@ -139,7 +139,12 @@ namespace Server.Vehicle
 
             vehicle.ManualEngineControl = true;
 
-            vehicle.NumberplateText = vehicleData.Plate;
+            vehicle.NumberplateText = !vehicleData.HasPlateBeenStolen ? vehicleData.Plate : "__";
+            
+            if (!string.IsNullOrWhiteSpace(vehicleData.StolenPlate))
+            {
+                vehicle.NumberplateText = vehicleData.StolenPlate;
+            }
 
             if (vehicleData.FactionId == 0)
             {
@@ -266,7 +271,12 @@ namespace Server.Vehicle
 
             vehicle.ManualEngineControl = true;
 
-            vehicle.NumberplateText = vehicleData.Plate;
+            vehicle.NumberplateText = !vehicleData.HasPlateBeenStolen ? vehicleData.Plate : "__";
+
+            if (!string.IsNullOrWhiteSpace(vehicleData.StolenPlate))
+            {
+                vehicle.NumberplateText = vehicleData.StolenPlate;
+            }
 
             if (vehicleData.FactionId == 0)
             {

@@ -314,6 +314,8 @@ namespace Server.Extensions
                     Vehicle.Commands.OnGarageVGetSelect(player, selectedItem, index);
 
                 if (serverTrigger == "vehicle:ConfirmScrap") Vehicle.Commands.OnConfirmVehicleScrap(player, selectedItem);
+                
+                if(serverTrigger == "VehicleCommand:PlaceStolePlate") Vehicle.Commands.OnPlaceStolePlateSelect(player, selectedItem);
 
                 #endregion Vehicle Commands
 

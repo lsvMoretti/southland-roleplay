@@ -21,6 +21,175 @@ namespace Server.Vehicle
 {
     public class Commands
     {
+        [Command("takeplate", commandType: CommandType.Vehicle, description: "Used to remove a vehicles number plate")]
+        public static void VehicleCommandTakePlate(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            IVehicle nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
+
+            if (nearestVehicle == null || nearestVehicle.Dimension != player.Dimension)
+            {
+                player.SendErrorNotification("You must be near a vehicle!");
+                return;
+            }
+
+            Models.Vehicle vehicleData = nearestVehicle.FetchVehicleData();
+            
+            if (vehicleData == null || vehicleData.FactionId > 0)
+            {
+                player.SendErrorNotification("You can't do that on this vehicle!");
+                return;
+            }
+
+            if (vehicleData.HasPlateBeenStolen)
+            {
+                player.SendErrorNotification("Looks like the plate has been taken!");
+                return;
+            }
+
+            Inventory.Inventory playerInventory = player.FetchInventory();
+            
+            StolenPlate stolenPlate = new StolenPlate(vehicleData);
+            
+            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {vehicleData.Plate}", JsonConvert.SerializeObject(stolenPlate));
+
+            using Context context = new Context();
+
+            Models.Vehicle vehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleData.Id);
+
+            if (vehicleDb == null) return;
+            
+            if (!playerInventory.AddItem(newPlateItem))
+            {
+                player.SendErrorNotification("There was an error adding the plate to your inventory.");
+                return;
+            }
+
+            vehicleDb.HasPlateBeenStolen = true;
+            context.SaveChanges();
+
+            nearestVehicle.NumberplateText = "__";
+            
+            player.SendEmoteMessage("reaches down and takes a plate from the vehicle.");
+        }
+
+        [Command("placeplate", commandType: CommandType.Vehicle,
+            description: "Used to place a stolen or removed plate onto a vehicle")]
+        public static void VehicleCommandPlacePlate(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            IVehicle nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
+
+            if (nearestVehicle == null || nearestVehicle.Dimension != player.Dimension)
+            {
+                player.SendErrorNotification("You must be near a vehicle!");
+                return;
+            }
+
+            Models.Vehicle vehicleData = nearestVehicle.FetchVehicleData();
+            
+            if (vehicleData == null || vehicleData.FactionId > 0)
+            {
+                player.SendErrorNotification("You can't do that on this vehicle!");
+                return;
+            }
+            
+            List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
+
+            List<InventoryItem> plateItems = player.FetchInventory().GetInventoryItems("ITEM_VEHICLE_PLATE");
+
+            if (!plateItems.Any())
+            {
+                player.SendErrorNotification("You don't have any plates on you!");
+                return;
+            }
+
+            foreach (InventoryItem plateItem in plateItems)
+            {
+                StolenPlate stolenPlate = JsonConvert.DeserializeObject<StolenPlate>(plateItem.ItemValue);
+                
+                menuItems.Add(new NativeMenuItem(stolenPlate.Plate, stolenPlate.Model));
+            }
+            
+            NativeMenu menu = new NativeMenu("VehicleCommand:PlaceStolePlate", "Plates", "Select a plate", menuItems);
+            
+            player.SetData("PLACINGSTOLENPLATE", vehicleData.Id);
+            
+            NativeUi.ShowNativeMenu(player, menu);
+        }
+
+        public static void OnPlaceStolePlateSelect(IPlayer player, string option)
+        {
+            if (option == "Close") return;
+
+            Inventory.Inventory playerInventory = player.FetchInventory();
+            
+            List<InventoryItem> plateItems = playerInventory.GetInventoryItems("ITEM_VEHICLE_PLATE");
+
+            bool hasIdData = player.GetData("PLACINGSTOLENPLATE", out int vehicleId);
+
+            if (!hasIdData)
+            {
+                player.SendErrorNotification("An error occurred.");
+                return;
+            }
+
+            StolenPlate stolenPlate = null;
+            InventoryItem stolenItem = null;
+
+            foreach (InventoryItem inventoryItem in plateItems)
+            {
+                StolenPlate plateInfo = JsonConvert.DeserializeObject<StolenPlate>(inventoryItem.ItemValue);
+
+                if (plateInfo.Plate != option) continue;
+                stolenItem = inventoryItem;
+                stolenPlate = plateInfo;
+                break;
+            }
+
+            if (stolenPlate == null || stolenItem == null)
+            {
+                player.SendErrorNotification("Unable to find this plate in your inventory!");
+                return;
+            }
+
+            IVehicle nearVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+
+            if (nearVehicle == null || nearVehicle.Position.Distance(player.Position) > 5)
+            {
+                player.SendErrorNotification("You must be near the vehicle!");
+                return;
+            }
+            
+            using Context context = new Context();
+
+            Models.Vehicle vehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleId);
+
+            if (vehicleDb == null)
+            {
+                player.SendErrorNotification("You must be near the vehicle!");
+                return;
+            }
+            
+            bool tryRemove = playerInventory.RemoveItem(stolenItem);
+
+            if (!tryRemove)
+            {
+                player.SendErrorNotification("There was an error removing this plate from your inventory.");
+                return;
+            }
+
+            vehicleDb.StolenPlate = stolenPlate.Plate;
+
+            context.SaveChanges();
+            
+            nearVehicle.NumberplateText = stolenPlate.Plate;
+            
+            player.SendEmoteMessage("reaches down and places a vehicle plate onto their vehicle.");
+        }
+        
         [Command("vattributes", onlyOne: true, commandType: CommandType.Vehicle,
             description: "Used to set a vehicle description")]
         public static void VehicleCommandAttributes(IPlayer player, string description = "")
