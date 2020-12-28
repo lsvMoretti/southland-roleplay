@@ -52,7 +52,7 @@ namespace Server.Motel
 
             using Context context = new Context();
 
-            Models.Motel motel = context.Motels.Find(nearRoom.MotelId);
+            var motel = context.Motels.Find(nearRoom.MotelId);
 
             if (motel == null)
             {
@@ -117,7 +117,7 @@ namespace Server.Motel
 
             using Context context = new Context();
 
-            Models.Motel motel = context.Motels.Find(nearRoom.MotelId);
+            var motel = context.Motels.Find(nearRoom.MotelId);
 
             if (motel == null)
             {

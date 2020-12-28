@@ -13,11 +13,11 @@ namespace Server.Account
         {
             Models.Account playerAccount = player.FetchAccount();
 
-            string secretCode = Utility.GenerateRandomString(12);
+            var secretCode = Utility.GenerateRandomString(12);
 
             TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
 
-            SetupCode setupInfo = tfa.GenerateSetupCode("Los Santos V", playerAccount.Username, secretCode, false, 300);
+            var setupInfo = tfa.GenerateSetupCode("Los Santos V", playerAccount.Username, secretCode, false, 300);
 
             //string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
             string manualEntrySetupCode = setupInfo.ManualEntryKey;

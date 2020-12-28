@@ -40,7 +40,7 @@ namespace Server.Jobs.Fishing
                 using Context fishContext = new Context();
                 List<FishingPoint> fishPoints = fishContext.FishingPoints.ToList();
 
-                foreach (FishingPoint fishingPoint in fishPoints)
+                foreach (var fishingPoint in fishPoints)
                 {
                     if (fishingPoint.PointType == FishingPointType.FishSpot)
                     {

@@ -106,7 +106,7 @@ namespace Server.Inventory
                     itemList.Add(new NativeMenuItem("Apartment Keys"));
                 }
 
-                foreach (InventoryItem item in inventoryItems)
+                foreach (var item in inventoryItems)
                 {
                     if (item.Id == "ITEM_CLOTHES" || item.Id == "ITEM_CLOTHES_ACCESSORY" || item.Id == "ITEM_VEHICLE_KEY" || item.Id == "ITEM_PROPERTY_KEY" || item.Id == "ITEM_APARTMENT_KEY") continue;
 
@@ -209,7 +209,7 @@ namespace Server.Inventory
 
                 NativeMenu inventoryMenu = new NativeMenu("InventoryMenuSelect", "Inventory", "Your Inventory");
 
-                foreach (InventoryItem clothingItem in inventoryItems)
+                foreach (var clothingItem in inventoryItems)
                 {
                     if (clothingItem.Quantity > 1)
                     {
@@ -238,7 +238,7 @@ namespace Server.Inventory
 
                 NativeMenu inventoryMenu = new NativeMenu("InventoryMenuSelect", "Inventory", "Your Inventory");
 
-                foreach (InventoryItem clothingItem in inventoryItems)
+                foreach (var clothingItem in inventoryItems)
                 {
                     if (clothingItem.Quantity > 1)
                     {
@@ -267,7 +267,7 @@ namespace Server.Inventory
 
                 NativeMenu inventoryMenu = new NativeMenu("InventoryMenuSelect", "Inventory", "Your Inventory");
 
-                foreach (InventoryItem clothingItem in inventoryItems)
+                foreach (var clothingItem in inventoryItems)
                 {
                     if (clothingItem.Quantity > 1)
                     {
@@ -296,7 +296,7 @@ namespace Server.Inventory
 
                 NativeMenu inventoryMenu = new NativeMenu("InventoryMenuSelect", "Inventory", "Your Inventory");
 
-                foreach (InventoryItem clothingItem in inventoryItems)
+                foreach (var clothingItem in inventoryItems)
                 {
                     if (clothingItem.Quantity > 1)
                     {
@@ -784,7 +784,7 @@ namespace Server.Inventory
             {
                 using Context context = new Context();
 
-                Phones? phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == item.ItemValue);
+                var phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == item.ItemValue);
 
                 if (phone != null)
                 {
@@ -890,7 +890,7 @@ namespace Server.Inventory
             {
                 using Context context = new Context();
 
-                Phones? phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == item.ItemValue);
+                var phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == item.ItemValue);
 
                 if (phone != null)
                 {
@@ -1119,7 +1119,7 @@ namespace Server.Inventory
                 {
                     using Context context = new Context();
 
-                    Phones? phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == item.ItemValue);
+                    var phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == item.ItemValue);
 
                     if (phone != null)
                     {
@@ -1190,7 +1190,7 @@ namespace Server.Inventory
                 {
                     using Context context = new Context();
 
-                    Phones? phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == droppedItem.Item.ItemValue);
+                    var phone = context.Phones.FirstOrDefault(x => x.PhoneNumber == droppedItem.Item.ItemValue);
 
                     if (phone != null)
                     {
@@ -1247,7 +1247,7 @@ namespace Server.Inventory
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (InventoryItem item in inventory.GetInventory())
+            foreach (var item in inventory.GetInventory())
             {
                 menuItems.Add(new NativeMenuItem(item.CustomName, $"Quantity: {item.Quantity}."));
             }

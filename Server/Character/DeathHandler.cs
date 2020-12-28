@@ -215,7 +215,7 @@ namespace Server.Character
             {
                 using Context context = new Context();
 
-                Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+                var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                 if (!string.IsNullOrEmpty(playerCharacter.CurrentWeapon))
                 {

@@ -380,7 +380,7 @@ namespace Server.Jobs.Delivery
                 List<InventoryItem> RemoveItems = new List<InventoryItem>();
                 List<int> RemoveCount = new List<int>();
 
-                foreach (InventoryItem inventoryItem in productItems)
+                foreach (var inventoryItem in productItems)
                 {
                     if (count >= amount) break;
 

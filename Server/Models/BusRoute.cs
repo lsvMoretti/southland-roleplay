@@ -79,7 +79,7 @@ namespace Server.Models
         public static List<BusStop> FetchBusStops(int routeId)
         {
             using Context context = new Context();
-            BusRoute busRoute = context.BusRoutes.Find(routeId);
+            var busRoute = context.BusRoutes.Find(routeId);
 
             if (busRoute == null)
             {
@@ -92,11 +92,11 @@ namespace Server.Models
         public static void AddBusStop(int routeId, BusStop busStop)
         {
             Context context = new Context();
-            BusRoute busRoute = context.BusRoutes.Find(routeId);
+            var busRoute = context.BusRoutes.Find(routeId);
 
             if (busRoute == null) return;
 
-            List<BusStop> stopList = JsonConvert.DeserializeObject<List<BusStop>>(busRoute.BusStops);
+            var stopList = JsonConvert.DeserializeObject<List<BusStop>>(busRoute.BusStops);
 
             stopList.Add(busStop);
 

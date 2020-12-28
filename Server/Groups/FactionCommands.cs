@@ -296,7 +296,7 @@ namespace Server.Groups
 
             string factionName = "";
 
-            foreach (string s in factionNameSplit)
+            foreach (var s in factionNameSplit)
             {
                 factionName += s.First();
             }

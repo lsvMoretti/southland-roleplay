@@ -189,7 +189,7 @@ namespace Server.Graffiti
 
             using Context context = new Context();
 
-            Models.Character characterDatabase = context.Character.Find(player.GetClass().CharacterId);
+            var characterDatabase = context.Character.Find(player.GetClass().CharacterId);
 
             if (characterDatabase == null)
             {

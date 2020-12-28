@@ -114,7 +114,7 @@ namespace Server.Property.Stores
 
             float playerMoney = player.FetchCharacter().Money;
 
-            int tattooCost = selectedZone switch
+            var tattooCost = selectedZone switch
             {
                 1 =>
                 // Head
@@ -178,7 +178,7 @@ namespace Server.Property.Stores
             player.GetData("tattoo:collectionHash", out uint collectionHash);
             player.GetData("tattoo:overlay", out uint overlay);
 
-            int tattooCost = selectedZone switch
+            var tattooCost = selectedZone switch
             {
                 1 =>
                 // Head
@@ -253,7 +253,7 @@ namespace Server.Property.Stores
 
                     if (!interactionPoints.Any()) continue;
 
-                    foreach (PropertyInteractionPoint propertyInteractionPoint in interactionPoints)
+                    foreach (var propertyInteractionPoint in interactionPoints)
                     {
                         Position interactionPointPos = new Position(propertyInteractionPoint.PosX, propertyInteractionPoint.PosY, propertyInteractionPoint.PosZ);
 
@@ -299,7 +299,7 @@ namespace Server.Property.Stores
         {
             if (option == "Close") return;
 
-            int selectedZone = option switch
+            var selectedZone = option switch
             {
                 "Head" => 1,
                 "Torso" => 0,

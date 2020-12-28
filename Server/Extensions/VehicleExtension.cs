@@ -97,7 +97,7 @@ namespace Server.Extensions
                     return data;
                 }
 
-                VehicleEntity vehicleEntity = new VehicleEntity(vehicle);
+                var vehicleEntity = new VehicleEntity(vehicle);
                 vehicle.SetData("vehicle-class", vehicleEntity);
 
                 return vehicleEntity;

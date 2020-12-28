@@ -53,7 +53,7 @@ namespace Server.Focuses
                 }
 
                 using Context context = new Context();
-                Models.Character playerCharacterDb = context.Character.Find(playerCharacter.Id);
+                var playerCharacterDb = context.Character.Find(playerCharacter.Id);
 
                 playerFocuses.Add(FocusTypes.Mechanic);
 
@@ -99,7 +99,7 @@ namespace Server.Focuses
                 }
 
                 using Context context = new Context();
-                Models.Character playerCharacterDb = context.Character.Find(playerCharacter.Id);
+                var playerCharacterDb = context.Character.Find(playerCharacter.Id);
 
                 playerFocuses.Remove(FocusTypes.Mechanic);
 
@@ -185,7 +185,7 @@ namespace Server.Focuses
                 return;
             }
 
-            Models.Vehicle vehicleData = player.Vehicle.FetchVehicleData();
+            var vehicleData = player.Vehicle.FetchVehicleData();
 
             if (vehicleData == null)
             {
@@ -213,7 +213,7 @@ namespace Server.Focuses
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (InventoryItem inventoryItem in modItems)
+            foreach (var inventoryItem in modItems)
             {
                 menuItems.Add(new NativeMenuItem(inventoryItem.CustomName));
             }
@@ -227,7 +227,7 @@ namespace Server.Focuses
         {
             if (option == "Close") return;
 
-            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
+            var vehicleInventory = player.Vehicle.FetchInventory();
 
             List<InventoryItem> modItems = vehicleInventory.GetInventory()
                 .Where(x => x.Id == "ITEM_VEHICLE_MOD").ToList();
@@ -339,7 +339,7 @@ namespace Server.Focuses
                 return;
             }
 
-            Models.Vehicle vehicleData = player.Vehicle.FetchVehicleData();
+            var vehicleData = player.Vehicle.FetchVehicleData();
 
             if (vehicleData == null)
             {
@@ -366,7 +366,7 @@ namespace Server.Focuses
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (KeyValuePair<int, int> modData in modList)
+            foreach (var modData in modList)
             {
                 if (modData.Key == 0)
                 {
@@ -700,7 +700,7 @@ namespace Server.Focuses
             }
 
             using Context context = new Context();
-            Models.Vehicle vDb = context.Vehicle.Find(player.Vehicle.FetchVehicleData().Id);
+            var vDb = context.Vehicle.Find(player.Vehicle.FetchVehicleData().Id);
 
             if (vDb == null) return;
 
@@ -968,7 +968,7 @@ namespace Server.Focuses
 
             using Context context = new Context();
 
-            Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
+            var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
             if (vehicleDb == null)
             {

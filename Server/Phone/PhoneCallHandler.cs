@@ -94,7 +94,7 @@ namespace Server.Phone
             List<PhoneContact> targetContacts =
                 JsonConvert.DeserializeObject<List<PhoneContact>>(targetPhone.ContactList);
 
-            PhoneContact? contact = targetContacts.FirstOrDefault(x => x.PhoneNumber == callerPhone.PhoneNumber);
+            var contact = targetContacts.FirstOrDefault(x => x.PhoneNumber == callerPhone.PhoneNumber);
             
             if (contact != null)
             {

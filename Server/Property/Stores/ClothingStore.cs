@@ -45,7 +45,7 @@ namespace Server.Property.Stores
         {
             if (option == "Close") return;
 
-            ClothingStore clothingStore = new ClothingStore();
+            var clothingStore = new ClothingStore();
 
             if (option == "Clothing")
             {
@@ -120,7 +120,7 @@ namespace Server.Property.Stores
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (KeyValuePair<ClothesData, ClothesInfo> keyValuePair in clothesList.Where(x => x.Key.slot == selectedSlot))
+            foreach (var keyValuePair in clothesList.Where(x => x.Key.slot == selectedSlot))
             {
                 if (player.IsMale())
                 {
@@ -188,13 +188,13 @@ namespace Server.Property.Stores
                     return;
                 }
 
-                KeyValuePair<ClothesData, ClothesInfo> selectedItem = clothesList[index];
+                var selectedItem = clothesList[index];
 
                 List<KeyValuePair<ClothesData, ClothesInfo>> updatedClothesList = new List<KeyValuePair<ClothesData, ClothesInfo>>();
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-                foreach (KeyValuePair<ClothesData, ClothesInfo> clothesInfo in Clothes.DictClothesInfo)
+                foreach (var clothesInfo in Clothes.DictClothesInfo)
                 {
                     if (clothesInfo.Key.slot != selectedItem.Key.slot) continue;
                     if (clothesInfo.Key.drawable != selectedItem.Key.drawable) continue;
@@ -206,7 +206,7 @@ namespace Server.Property.Stores
                             continue;
                         }
 
-                        NativeMenuItem item = new NativeMenuItem($"{clothesInfo.Value.DisplayNameMale}", $"~g~${clothesInfo.Value.Price}");
+                        var item = new NativeMenuItem($"{clothesInfo.Value.DisplayNameMale}", $"~g~${clothesInfo.Value.Price}");
                         menuItems.Add(item);
                         updatedClothesList.Add(clothesInfo);
                     }
@@ -217,7 +217,7 @@ namespace Server.Property.Stores
                             continue;
                         }
 
-                        NativeMenuItem item = new NativeMenuItem($"{clothesInfo.Value.DisplayNameFemale}", $"~g~${clothesInfo.Value.Price}");
+                        var item = new NativeMenuItem($"{clothesInfo.Value.DisplayNameFemale}", $"~g~${clothesInfo.Value.Price}");
                         menuItems.Add(item);
                         updatedClothesList.Add(clothesInfo);
                     }
@@ -266,7 +266,7 @@ namespace Server.Property.Stores
                     return;
                 }
 
-                KeyValuePair<ClothesData, ClothesInfo> selectedItem = updatedClothesList[index];
+                var selectedItem = updatedClothesList[index];
 
                 player.SetClothes(selectedItem.Key.slot, selectedItem.Key.drawable, selectedItem.Key.texture);
             }
@@ -297,7 +297,7 @@ namespace Server.Property.Stores
                     return;
                 }
 
-                KeyValuePair<ClothesData, ClothesInfo> selectedItem = updatedClothesList[index];
+                var selectedItem = updatedClothesList[index];
 
                 player.SetClothes(selectedItem.Key.slot, selectedItem.Key.drawable, selectedItem.Key.texture);
             }
@@ -389,7 +389,7 @@ namespace Server.Property.Stores
 
                 Clothes.LoadClothes(player, JsonConvert.DeserializeObject<List<ClothesData>>(player.FetchCharacter().ClothesJson), JsonConvert.DeserializeObject<List<AccessoryData>>(player.FetchCharacter().AccessoryJson));
 
-                ClothesData clothesItem = selectedItem.Key;
+                var clothesItem = selectedItem.Key;
 
                 clothesItem.male = player.IsMale();
 
@@ -510,7 +510,7 @@ namespace Server.Property.Stores
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (KeyValuePair<ClothesData, ClothesInfo> keyValuePair in accessoryList)
+            foreach (var keyValuePair in accessoryList)
             {
                 if (player.IsMale())
                 {
@@ -569,13 +569,13 @@ namespace Server.Property.Stores
                     return;
                 }
 
-                KeyValuePair<ClothesData, ClothesInfo> selectedItem = accessoryList[index];
+                var selectedItem = accessoryList[index];
 
                 List<KeyValuePair<ClothesData, ClothesInfo>> updatedAccessoryList = new List<KeyValuePair<ClothesData, ClothesInfo>>();
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-                foreach (KeyValuePair<ClothesData, ClothesInfo> clothesInfo in Clothes.DictAccessoriesInfo.Where(x => x.Key.slot == selectedItem.Key.slot && x.Key.drawable == selectedItem.Key.drawable))
+                foreach (var clothesInfo in Clothes.DictAccessoriesInfo.Where(x => x.Key.slot == selectedItem.Key.slot && x.Key.drawable == selectedItem.Key.drawable))
                 {
                     if (player.IsMale())
                     {
@@ -641,7 +641,7 @@ namespace Server.Property.Stores
                     return;
                 }
 
-                KeyValuePair<ClothesData, ClothesInfo> selectedItem = updatedAccessoryList[index];
+                var selectedItem = updatedAccessoryList[index];
 
                 player.SetAccessory(selectedItem.Key.slot, selectedItem.Key.drawable, selectedItem.Key.texture);
             }
@@ -673,7 +673,7 @@ namespace Server.Property.Stores
                     return;
                 }
 
-                KeyValuePair<ClothesData, ClothesInfo> selectedItem = updatedAccessoryList[index];
+                var selectedItem = updatedAccessoryList[index];
 
                 player.SetAccessory(selectedItem.Key.slot, selectedItem.Key.drawable, selectedItem.Key.texture);
             }
@@ -779,7 +779,7 @@ namespace Server.Property.Stores
                 player.LoadCharacterCustomization();
                 player.Position = player.Position;
 
-                ClothesData clothesItem = selectedItem.Key;
+                var clothesItem = selectedItem.Key;
 
                 clothesItem.male = player.IsMale();
 

@@ -36,7 +36,7 @@ namespace Server.Weapons
 
             using (Context context = new Context())
             {
-                Models.Character playerCharacter = context.Character.Find(player.FetchCharacterId());
+                var playerCharacter = context.Character.Find(player.FetchCharacterId());
 
                 if (playerCharacter == null)
                 {

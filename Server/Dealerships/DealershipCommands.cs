@@ -34,7 +34,7 @@ namespace Server.Dealerships
             List<DealershipVehicle> dealershipVehicles =
                 JsonConvert.DeserializeObject<List<DealershipVehicle>>(nearestDealership.VehicleList);
 
-            IOrderedEnumerable<DealershipVehicle> orderedList = dealershipVehicles.OrderByDescending(x => x.VehName);
+            var orderedList = dealershipVehicles.OrderByDescending(x => x.VehName);
 
             string jsonString = JsonConvert.SerializeObject(orderedList);
 

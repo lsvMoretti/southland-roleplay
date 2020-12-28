@@ -70,7 +70,7 @@ namespace Server.Graffiti
                 if (graffitiPosition.Distance(position) <= range) graffitiList.Add(keyValuePair.Key);
             }
 
-            IOrderedEnumerable<Models.Graffiti> orderedList = graffitiList.OrderByDescending(x => FetchGraffitiPosition(x).Distance(position));
+            var orderedList = graffitiList.OrderByDescending(x => FetchGraffitiPosition(x).Distance(position));
 
             return orderedList.FirstOrDefault();
         }

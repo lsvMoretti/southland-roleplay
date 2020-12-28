@@ -196,7 +196,7 @@ namespace Server.Groups.Police.MDT
 
             if (targetProperties.Any())
             {
-                foreach (Models.Property targetProperty in targetProperties)
+                foreach (var targetProperty in targetProperties)
                 {
                     propertyAddress.Add(targetProperty.Address);
                 }

@@ -284,7 +284,7 @@ namespace Server.Inventory
         /// <returns></returns>
         public InventoryItem GetItem(string id, string value)
         {
-            IEnumerable<InventoryItem> foundItems = _items.Where(i => i.Id == id);
+            var foundItems = _items.Where(i => i.Id == id);
             return foundItems.FirstOrDefault(item => item.ItemValue == value);
         }
 

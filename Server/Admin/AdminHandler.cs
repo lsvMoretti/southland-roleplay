@@ -39,7 +39,7 @@ namespace Server.Admin
             HelpReports.Remove(helpReport);
 
             
-            List<IPlayer> onlineHelpers = Alt.Server.GetPlayers()
+            var onlineHelpers = Alt.Server.GetPlayers()
                 .Where(x => x.FetchAccount()?.Helper == true).ToList();
 
             if (!onlineHelpers.Any()) return;
@@ -104,7 +104,7 @@ namespace Server.Admin
             AdminReportObjects.Remove(reportObject);
             
             
-            List<IPlayer> onlineAdmins = Alt.Server.GetPlayers()
+            var onlineAdmins = Alt.Server.GetPlayers()
                 .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator).ToList();
 
             if (!onlineAdmins.Any()) return;

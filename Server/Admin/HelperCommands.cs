@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using AltV.Net;
 using AltV.Net.Elements.Entities;
 using Server.Chat;
@@ -88,7 +87,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have accepted help request ID {helpReport.Id}. Message: {helpReport.Message}.");
             player.SendInfoNotification($"Player ID: {targetPlayer.GetPlayerId()}");
 
-            List<IPlayer> onlineHelpers = Alt.Server.GetPlayers()
+            var onlineHelpers = Alt.Server.GetPlayers()
                 .Where(x => x.FetchAccount()?.Helper == true).ToList();
 
             if (onlineHelpers.Any())

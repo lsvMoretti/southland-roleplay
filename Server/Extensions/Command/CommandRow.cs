@@ -27,7 +27,7 @@ namespace Server.Extensions
         {
             try
             {
-                List<object> args = new List<object> { player };
+                var args = new List<object> { player };
 
                 if (_classAttribute.AdminLevel != AdminLevel.None)
                 {
@@ -52,7 +52,7 @@ namespace Server.Extensions
                 {
                     if (parameters != null)
                     {
-                        string output = string.Join(' ', parameters);
+                        var output = string.Join(' ', parameters);
                         args.Add(output);
                     }
                 }
@@ -62,7 +62,7 @@ namespace Server.Extensions
                     {
                         args.AddRange(parameters);
 
-                        for (int i = 0; i < _parameters.Length; i++)
+                        for (var i = 0; i < _parameters.Length; i++)
                         {
                             if (i == 0) continue;
 

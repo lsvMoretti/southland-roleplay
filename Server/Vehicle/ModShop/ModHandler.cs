@@ -1019,7 +1019,7 @@ namespace Server.Vehicle.ModShop
 
             string modName = modNames[modSelectedIndex];
 
-            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
+            var vehicleInventory = player.Vehicle.FetchInventory();
 
             if (vehicleInventory == null)
             {
@@ -1096,7 +1096,7 @@ namespace Server.Vehicle.ModShop
                 return;
             }
 
-            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
+            var vehicleInventory = player.Vehicle.FetchInventory();
 
             if (vehicleInventory == null)
             {
@@ -1323,7 +1323,7 @@ namespace Server.Vehicle.ModShop
 
             string modName = modNames[selectedWheelIndex];
 
-            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
+            var vehicleInventory = player.Vehicle.FetchInventory();
 
             if (vehicleInventory == null)
             {

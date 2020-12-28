@@ -64,10 +64,10 @@ namespace Server.Language
 
                 object[] body = new object[] { new { Text = textToTranslate } };
 
-                string requestBody = JsonConvert.SerializeObject(body);
+                var requestBody = JsonConvert.SerializeObject(body);
 
-                using (HttpClient client = new HttpClient())
-                using (HttpRequestMessage request = new HttpRequestMessage())
+                using (var client = new HttpClient())
+                using (var request = new HttpRequestMessage())
                 {
                     // Build the request.
                     request.Method = HttpMethod.Post;

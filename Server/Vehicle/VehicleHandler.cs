@@ -12,7 +12,6 @@ using AltV.Net.Enums;
 using Newtonsoft.Json;
 using Server.Chat;
 using Server.Extensions;
-using Server.Models;
 
 namespace Server.Vehicle
 {
@@ -234,7 +233,7 @@ namespace Server.Vehicle
                     vehicle.EngineOn = true;
                 }
 
-                Models.Vehicle vehicleData = vehicle.FetchVehicleData();
+                var vehicleData = vehicle.FetchVehicleData();
 
                 if (vehicleData != null)
                 {
@@ -267,7 +266,7 @@ namespace Server.Vehicle
 
                         using Context context = new Context();
 
-                        InventoryData inventoryData = context.Inventory.Find(vehicleData.InventoryId);
+                        var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
 
                         if (inventoryData == null) return;
 
@@ -286,7 +285,7 @@ namespace Server.Vehicle
 
                         using Context context = new Context();
 
-                        InventoryData inventoryData = context.Inventory.Find(vehicleData.InventoryId);
+                        var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
 
                         if (inventoryData == null) return;
 
@@ -302,7 +301,7 @@ namespace Server.Vehicle
                     {
                         using Context context = new Context();
 
-                        InventoryData inventoryData = context.Inventory.Find(vehicleData.InventoryId);
+                        var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
 
                         if (inventoryData == null) return;
 
@@ -342,7 +341,7 @@ namespace Server.Vehicle
 
             using Context context = new Context();
 
-            Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
+            var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
             if (vehicleDb == null) return;
 

@@ -92,7 +92,7 @@ namespace Server.Jobs.Clerk
                     // Counter 1
                     using Context context = new Context();
 
-                    Models.Property property = context.Property.Find(clerk.PropertyId);
+                    var property = context.Property.Find(clerk.PropertyId);
 
                     if (property != null)
                     {
@@ -135,7 +135,7 @@ namespace Server.Jobs.Clerk
             {
                 using Context context = new Context();
 
-                Models.Property property = context.Property.Find(clerk.PropertyId);
+                var property = context.Property.Find(clerk.PropertyId);
 
                 if (property != null && property.ClerkActive)
                 {
@@ -162,7 +162,7 @@ namespace Server.Jobs.Clerk
 
             using Context context = new Context();
 
-            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+            var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
             playerCharacter.PaydayAmount += 7;
 

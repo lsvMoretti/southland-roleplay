@@ -638,7 +638,7 @@ namespace Server.Extensions
                 return data;
             }
 
-            PlayerEntity playerEntity = new PlayerEntity(player);
+            var playerEntity = new PlayerEntity(player);
             player.SetData("player-class", playerEntity);
 
             return playerEntity;
@@ -900,7 +900,7 @@ namespace Server.Extensions
             {
                 Context context = new Context();
 
-                Models.Character playerCharacter = context.Character.Find(CharacterId);
+                var playerCharacter = context.Character.Find(CharacterId);
 
                 if (playerCharacter == null) return;
 

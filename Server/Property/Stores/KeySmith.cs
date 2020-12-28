@@ -205,7 +205,7 @@ namespace Server.Property.Stores
                             return;
                         }
 
-                        string newKey = Utility.GenerateRandomString(8);
+                        var newKey = Utility.GenerateRandomString(8);
 
                         using Context context = new Context();
 

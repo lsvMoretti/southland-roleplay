@@ -20,7 +20,7 @@ namespace Server.Character.Tattoo
 
                 TattooList = new Dictionary<TattooData, string>();
 
-                string[] tattooFiles = Directory.GetFiles(@"data\tattoo");
+                var tattooFiles = Directory.GetFiles(@"data\tattoo");
 
                 Console.WriteLine($"Found {tattooFiles.Length} Tattoo Files.");
 

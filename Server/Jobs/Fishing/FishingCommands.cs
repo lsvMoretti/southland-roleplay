@@ -119,7 +119,7 @@ namespace Server.Jobs.Fishing
 
                 string caughtItem = fishingItems[randomIndex];
 
-                bool isFish = caughtItem switch
+                var isFish = caughtItem switch
                 {
                     "Used Condom" => false,
                     "Tire" => false,
@@ -214,7 +214,7 @@ namespace Server.Jobs.Fishing
 
             if (fishSpaceLeft < fishItems.Count)
             {
-                List<InventoryItem> removeFishList = fishItems.Take(fishSpaceLeft).ToList();
+                var removeFishList = fishItems.Take(fishSpaceLeft).ToList();
 
                 List<DateTime> dates = new List<DateTime>();
 
@@ -225,13 +225,13 @@ namespace Server.Jobs.Fishing
                     playerInventory.RemoveItem(removeFish);
                 }
 
-                int count = dates.Count;
+                var count = dates.Count;
                 double temp = 0D;
                 for (int i = 0; i < count; i++)
                 {
                     temp += dates[i].Ticks / (double)count;
                 }
-                DateTime averageDate = new DateTime((long)temp);
+                var averageDate = new DateTime((long)temp);
 
                 TimeSpan diffTimeSpan = DateTime.Now - averageDate;
 
@@ -258,7 +258,7 @@ namespace Server.Jobs.Fishing
 
                 using Context context = new Context();
 
-                FishingPoint fishPointDb = context.FishingPoints.Find(fishPoint.Id);
+                var fishPointDb = context.FishingPoints.Find(fishPoint.Id);
                 fishPointDb.FishCount += fishSpaceLeft;
                 context.SaveChanges();
                 
@@ -273,13 +273,13 @@ namespace Server.Jobs.Fishing
                 playerInventory.RemoveItem(fishItem);
             }
 
-            int dateCount = allDates.Count;
+            var dateCount = allDates.Count;
             double dateTemp = 0D;
             for (int i = 0; i < dateCount; i++)
             {
                 dateTemp += allDates[i].Ticks / (double)dateCount;
             }
-            DateTime fishAverageDate = new DateTime((long)dateTemp);
+            var fishAverageDate = new DateTime((long)dateTemp);
 
             TimeSpan fishAverageTimeSpan = DateTime.Now - fishAverageDate;
 
@@ -304,7 +304,7 @@ namespace Server.Jobs.Fishing
 
             using Context fishContext = new Context();
 
-            FishingPoint pointDb = fishContext.FishingPoints.Find(fishPoint.Id);
+            var pointDb = fishContext.FishingPoints.Find(fishPoint.Id);
             pointDb.FishCount += fishItems.Count;
             fishContext.SaveChanges();
             

@@ -36,7 +36,7 @@ namespace Server.Weapons
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (InventoryItem weaponItem in weaponItems)
+            foreach (var weaponItem in weaponItems)
             {
                 if (weaponItem.Quantity > 1)
                 {
@@ -594,7 +594,7 @@ namespace Server.Weapons
                 
                 using Context unequipContext = new Context();
 
-                Models.Character pC = unequipContext.Character.Find(player.GetClass().CharacterId);
+                var pC = unequipContext.Character.Find(player.GetClass().CharacterId);
 
                 if (pC == null)
                 {
@@ -626,7 +626,7 @@ namespace Server.Weapons
 
             using Context context = new Context();
 
-            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+            var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
             if (playerCharacter == null)
             {

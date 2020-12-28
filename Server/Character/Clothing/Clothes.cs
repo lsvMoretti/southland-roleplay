@@ -668,7 +668,7 @@ namespace Server.Character.Clothing
 
             var pair = clothesData.FirstOrDefault(i => i.Key == data.slot);
 
-            Dictionary<int, int> newValue = new Dictionary<int, int> { { data.drawable, data.texture } };
+            var newValue = new Dictionary<int, int> { { data.drawable, data.texture } };
 
             clothesData.Remove(pair.Key);
 
@@ -696,9 +696,9 @@ namespace Server.Character.Clothing
 
                 player.SetAccessory(data.slot, data.drawable, data.texture);
 
-                List<AccessoryData> oldDataList = JsonConvert.DeserializeObject<List<AccessoryData>>(player.FetchCharacter().AccessoryJson);
+                var oldDataList = JsonConvert.DeserializeObject<List<AccessoryData>>(player.FetchCharacter().AccessoryJson);
 
-                AccessoryData? pair = oldDataList.FirstOrDefault(i => i.slot == data.slot);
+                var pair = oldDataList.FirstOrDefault(i => i.slot == data.slot);
 
                 oldDataList.Remove(pair);
 
@@ -750,7 +750,7 @@ namespace Server.Character.Clothing
                 List<AccessoryData> accessory =
                     JsonConvert.DeserializeObject<List<AccessoryData>>(dbCharacter.AccessoryJson);
 
-                AccessoryData? selectedAccessory = accessory.FirstOrDefault(i => i.slot == accessoryData.slot);
+                var selectedAccessory = accessory.FirstOrDefault(i => i.slot == accessoryData.slot);
 
                 accessory.Remove(selectedAccessory);
                 accessory.Add(accessoryData);
@@ -784,7 +784,7 @@ namespace Server.Character.Clothing
             List<ClothesData> clothes =
                 JsonConvert.DeserializeObject<List<ClothesData>>(dbCharacter.ClothesJson);
 
-            ClothesData? selectedClothes = clothes.FirstOrDefault(i => i.slot == clothesData.slot);
+            var selectedClothes = clothes.FirstOrDefault(i => i.slot == clothesData.slot);
 
             clothes.Remove(selectedClothes);
 

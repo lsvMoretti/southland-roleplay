@@ -50,7 +50,7 @@ namespace Server.Motel
 
             Alt.EmitAllClients("Motel:ClearRoomLabels");
 
-            foreach (Models.Motel motel in motels)
+            foreach (var motel in motels)
             {
                 LoadMotel(motel);
             }
@@ -166,7 +166,7 @@ namespace Server.Motel
 
             using Context context = new Context();
 
-            Models.Motel motel = context.Motels.Find(nearRoom.MotelId);
+            var motel = context.Motels.Find(nearRoom.MotelId);
 
             if (motel == null)
             {

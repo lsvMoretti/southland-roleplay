@@ -105,7 +105,7 @@ namespace Server.Jobs.Delivery
                 }
             }
 
-            List<DeliveryPoint> ordered = inRangeList.OrderBy(x => FetchPosition(x).Distance(position)).ToList();
+            var ordered = inRangeList.OrderBy(x => FetchPosition(x).Distance(position)).ToList();
 
             foreach (DeliveryPoint deliveryPoint in ordered)
             {

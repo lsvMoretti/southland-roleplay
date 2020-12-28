@@ -145,7 +145,7 @@ namespace Server.Character
 
             ServerSettings serverSettings = ServerSettings.FetchServerSettings();
 
-            TimeZoneInfo info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
+            var info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
 
             DateTimeOffset localServerTime = DateTimeOffset.Now;
 
@@ -356,7 +356,7 @@ namespace Server.Character
             context.SaveChanges();
             
 
-            string walkName = walkId switch
+            var walkName = walkId switch
             {
                 0 => "Default",
                 1 => "Ballistic",
@@ -556,7 +556,7 @@ namespace Server.Character
                 return;
             }
 
-            IOrderedEnumerable<IPlayer> onlineAdmins = Alt.GetAllPlayers().Where(x => x.GetClass().AdminDuty)
+            var onlineAdmins = Alt.GetAllPlayers().Where(x => x.GetClass().AdminDuty)
                 .OrderByDescending(x => x.FetchAccount().AdminLevel).ThenByDescending(n => n.GetClass().UcpName);
 
             if (!onlineAdmins.Any())
@@ -567,7 +567,7 @@ namespace Server.Character
             
             player.SendAdminMessage("____[On Duty Admins]____");
             
-            foreach (IPlayer onlineAdmin in onlineAdmins)
+            foreach (var onlineAdmin in onlineAdmins)
             {
                 player.SendAdminMessage(onlineAdmin.GetClass().UcpName);
             }
@@ -715,7 +715,7 @@ namespace Server.Character
                 return;
             }
 
-            IOrderedEnumerable<IPlayer> onlineHelpers = Alt.GetAllPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
+            var onlineHelpers = Alt.GetAllPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
 
             if (!onlineHelpers.Any())
             {
@@ -725,7 +725,7 @@ namespace Server.Character
             
             player.SendHelperMessage("____[On Duty Helpers]____");
             
-            foreach (IPlayer onlineHelper in onlineHelpers)
+            foreach (var onlineHelper in onlineHelpers)
             {
                 player.SendHelperMessage(onlineHelper.GetClass().UcpName);
             }
@@ -1042,7 +1042,7 @@ namespace Server.Character
 
             using Context context = new Context();
 
-            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+            var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
             playerCharacter.PosX = player.Position.X;
             playerCharacter.PosY = player.Position.Y;
