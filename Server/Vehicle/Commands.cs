@@ -35,7 +35,7 @@ namespace Server.Vehicle
             }
 
             Models.Vehicle vehicleData = nearestVehicle.FetchVehicleData();
-            
+
             if (vehicleData == null || vehicleData.FactionId > 0)
             {
                 player.SendErrorNotification("You can't do that on this vehicle!");
@@ -49,17 +49,21 @@ namespace Server.Vehicle
             }
 
             Inventory.Inventory playerInventory = player.FetchInventory();
-            
+
             StolenPlate stolenPlate = new StolenPlate(vehicleData);
-            
-            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {vehicleData.Plate}", JsonConvert.SerializeObject(stolenPlate));
+
+            string plate = string.IsNullOrEmpty(vehicleData.StolenPlate) ? vehicleData.Plate : vehicleData.StolenPlate;
+
+            stolenPlate.Plate = plate;
+
+            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {plate}", JsonConvert.SerializeObject(stolenPlate));
 
             using Context context = new Context();
 
             Models.Vehicle vehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleData.Id);
 
             if (vehicleDb == null) return;
-            
+
             if (!playerInventory.AddItem(newPlateItem))
             {
                 player.SendErrorNotification("There was an error adding the plate to your inventory.");
@@ -67,10 +71,16 @@ namespace Server.Vehicle
             }
 
             vehicleDb.HasPlateBeenStolen = true;
+
+            if (!string.IsNullOrEmpty(vehicleDb.StolenPlate))
+            {
+                vehicleDb.StolenPlate = null;
+            }
+
             context.SaveChanges();
 
             nearestVehicle.NumberplateText = "__";
-            
+
             player.SendEmoteMessage("reaches down and takes a plate from the vehicle.");
         }
 
@@ -89,13 +99,13 @@ namespace Server.Vehicle
             }
 
             Models.Vehicle vehicleData = nearestVehicle.FetchVehicleData();
-            
+
             if (vehicleData == null || vehicleData.FactionId > 0)
             {
                 player.SendErrorNotification("You can't do that on this vehicle!");
                 return;
             }
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             List<InventoryItem> plateItems = player.FetchInventory().GetInventoryItems("ITEM_VEHICLE_PLATE");
@@ -109,14 +119,14 @@ namespace Server.Vehicle
             foreach (InventoryItem plateItem in plateItems)
             {
                 StolenPlate stolenPlate = JsonConvert.DeserializeObject<StolenPlate>(plateItem.ItemValue);
-                
+
                 menuItems.Add(new NativeMenuItem(stolenPlate.Plate, stolenPlate.Model));
             }
-            
+
             NativeMenu menu = new NativeMenu("VehicleCommand:PlaceStolePlate", "Plates", "Select a plate", menuItems);
-            
+
             player.SetData("PLACINGSTOLENPLATE", vehicleData.Id);
-            
+
             NativeUi.ShowNativeMenu(player, menu);
         }
 
@@ -125,7 +135,7 @@ namespace Server.Vehicle
             if (option == "Close") return;
 
             Inventory.Inventory playerInventory = player.FetchInventory();
-            
+
             List<InventoryItem> plateItems = playerInventory.GetInventoryItems("ITEM_VEHICLE_PLATE");
 
             bool hasIdData = player.GetData("PLACINGSTOLENPLATE", out int vehicleId);
@@ -162,7 +172,7 @@ namespace Server.Vehicle
                 player.SendErrorNotification("You must be near the vehicle!");
                 return;
             }
-            
+
             using Context context = new Context();
 
             Models.Vehicle vehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleId);
@@ -172,7 +182,7 @@ namespace Server.Vehicle
                 player.SendErrorNotification("You must be near the vehicle!");
                 return;
             }
-            
+
             bool tryRemove = playerInventory.RemoveItem(stolenItem);
 
             if (!tryRemove)
@@ -181,15 +191,23 @@ namespace Server.Vehicle
                 return;
             }
 
-            vehicleDb.StolenPlate = stolenPlate.Plate;
+            string plate = stolenPlate.Plate;
+
+            vehicleDb.StolenPlate = plate;
+
+            if (vehicleDb.Plate == plate)
+            {
+                vehicleDb.StolenPlate = null;
+                vehicleDb.HasPlateBeenStolen = false;
+            }
 
             context.SaveChanges();
-            
-            nearVehicle.NumberplateText = stolenPlate.Plate;
-            
+
+            nearVehicle.NumberplateText = plate;
+
             player.SendEmoteMessage("reaches down and places a vehicle plate onto their vehicle.");
         }
-        
+
         [Command("vattributes", onlyOne: true, commandType: CommandType.Vehicle,
             description: "Used to set a vehicle description")]
         public static void VehicleCommandAttributes(IPlayer player, string description = "")
