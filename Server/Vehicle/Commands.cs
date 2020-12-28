@@ -52,7 +52,11 @@ namespace Server.Vehicle
 
             StolenPlate stolenPlate = new StolenPlate(vehicleData);
 
-            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {vehicleData.Plate}", JsonConvert.SerializeObject(stolenPlate));
+            string plate = string.IsNullOrEmpty(vehicleData.StolenPlate) ? vehicleData.Plate : vehicleData.StolenPlate;
+
+            stolenPlate.Plate = plate;
+
+            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {plate}", JsonConvert.SerializeObject(stolenPlate));
 
             using Context context = new Context();
 
@@ -67,6 +71,12 @@ namespace Server.Vehicle
             }
 
             vehicleDb.HasPlateBeenStolen = true;
+
+            if (!string.IsNullOrEmpty(vehicleDb.StolenPlate))
+            {
+                vehicleDb.StolenPlate = string.Empty;
+            }
+
             context.SaveChanges();
 
             nearestVehicle.NumberplateText = "__";
@@ -181,11 +191,19 @@ namespace Server.Vehicle
                 return;
             }
 
-            vehicleDb.StolenPlate = stolenPlate.Plate;
+            string plate = stolenPlate.Plate;
+
+            vehicleDb.StolenPlate = plate;
+
+            if (vehicleDb.Plate == plate)
+            {
+                vehicleDb.StolenPlate = string.Empty;
+                vehicleDb.HasPlateBeenStolen = false;
+            }
 
             context.SaveChanges();
 
-            nearVehicle.NumberplateText = stolenPlate.Plate;
+            nearVehicle.NumberplateText = plate;
 
             player.SendEmoteMessage("reaches down and places a vehicle plate onto their vehicle.");
         }
