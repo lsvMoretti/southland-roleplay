@@ -19,7 +19,7 @@ namespace Server.Models
         /// <summary>
         /// Phone Number relating to phone (Formatted like 213-1234567)
         /// </summary>
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
 
         /// <summary>
         /// Status of the Phones power
@@ -29,17 +29,17 @@ namespace Server.Models
         /// <summary>
         /// JSON of PhoneCall history (List)
         /// </summary>
-        public string CallHistory { get; set; }
+        public string? CallHistory { get; set; }
 
         /// <summary>
         /// JSON of PhoneMessage history (list)
         /// </summary>
-        public string MessageHistory { get; set; }
+        public string? MessageHistory { get; set; }
 
         /// <summary>
         /// JSON of PhoneContact history (list)
         /// </summary>
-        public string ContactList { get; set; }
+        public string? ContactList { get; set; }
 
         /// <summary>
         /// Current Character ID that the phone is on

@@ -58,12 +58,12 @@ namespace Server.Models
         /// <summary>
         /// IPL to be loaded
         /// </summary>
-        public string Ipl { get; set; }
+        public string? Ipl { get; set; }
 
         /// <summary>
         /// Json of Prop List
         /// </summary>
-        public string PropJson { get; set; }
+        public string? PropJson { get; set; }
 
         /// <summary>
         /// Sets the color

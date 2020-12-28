@@ -12,7 +12,7 @@ namespace Server.Models
         /// <summary>
         /// The name of the Faction
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The factions main type
@@ -27,12 +27,12 @@ namespace Server.Models
         /// <summary>
         /// Ranks saved into JSON
         /// </summary>
-        public string RanksJson { get; set; }
+        public string? RanksJson { get; set; }
 
         /// <summary>
         /// Divisions saved into JSON
         /// </summary>
-        public string DivisionJson { get; set; }
+        public string? DivisionJson { get; set; }
 
         /// <summary>
         /// Adds a faction to the DB

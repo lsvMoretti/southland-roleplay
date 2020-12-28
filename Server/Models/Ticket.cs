@@ -13,8 +13,8 @@ namespace Server.Models
         public int OwnerId { get; set; }
 
         public int OfficerId { get; set; }
-        public string OfficerName { get; set; }
-        public string Reason { get; set; }
+        public string? OfficerName { get; set; }
+        public string? Reason { get; set; }
         public double Amount { get; set; }
         public DateTime DateTime { get; set; }
         public bool Paid { get; set; }

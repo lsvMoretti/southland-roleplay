@@ -23,12 +23,12 @@ namespace Server.Models
         /// <summary>
         /// Vehicle model
         /// </summary>
-        public string Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// Vehicle name
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The vehicle class
@@ -38,7 +38,7 @@ namespace Server.Models
         /// <summary>
         /// vehicle plate
         /// </summary>
-        public string Plate { get; set; }
+        public string? Plate { get; set; }
 
         /// <summary>
         /// Vehicle position X
@@ -88,7 +88,7 @@ namespace Server.Models
         /// <summary>
         /// Keys
         /// </summary>
-        public string Keycode { get; set; }
+        public string? Keycode { get; set; }
 
         /// <summary>
         /// Is the vehicle spawned?
@@ -98,22 +98,22 @@ namespace Server.Models
         /// <summary>
         /// Garage ID of parked vehicle
         /// </summary>
-        public string GarageId { get; set; }
+        public string? GarageId { get; set; }
 
         /// <summary>
         /// List of Serialized Mods
         /// </summary>
-        public string VehicleMods { get; set; }
+        public string? VehicleMods { get; set; }
 
         /// <summary>
         /// Custom Color 1
         /// </summary>
-        public string Color1 { get; set; }
+        public string? Color1 { get; set; }
 
         /// <summary>
         /// Custom Color 2
         /// </summary>
-        public string Color2 { get; set; }
+        public string? Color2 { get; set; }
 
         /// <summary>
         /// Vehicle Front Wheel Type
@@ -158,7 +158,7 @@ namespace Server.Models
         /// <summary>
         /// Stored Vehicles Json (List<int>)
         /// </summary>
-        public string StoredVehicles { get; set; }
+        public string? StoredVehicles { get; set; }
 
         /// <summary>
         /// Is the vehicle stored
@@ -183,7 +183,7 @@ namespace Server.Models
         /// <summary>
         /// Description of vehicle
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Sale Price of a Vehicle. 0 = not for sale
@@ -198,14 +198,14 @@ namespace Server.Models
         /// <summary>
         /// Vehicles Damage Data
         /// </summary>
-        public string DamageData { get; set; }
+        public string? DamageData { get; set; }
 
         /// <summary>
         /// Vehicles Health Data
         /// </summary>
-        public string HealthData { get; set; }
+        public string? HealthData { get; set; }
 
-        public string AppearanceData { get; set; }
+        public string? AppearanceData { get; set; }
 
         public uint BodyHealth { get; set; }
 
@@ -216,12 +216,12 @@ namespace Server.Models
         /// <summary>
         /// List of Byte
         /// </summary>
-        public string PartDamages { get; set; }
+        public string? PartDamages { get; set; }
 
         /// <summary>
         /// List of byte
         /// </summary>
-        public string PartBulletHoles { get; set; }
+        public string? PartBulletHoles { get; set; }
 
         /// <summary>
         /// Status of the Anchor
@@ -230,7 +230,7 @@ namespace Server.Models
 
         public bool HasPlateBeenStolen { get; set; }
 
-        public string StolenPlate { get; set; }
+        public string? StolenPlate { get; set; }
 
         /// <summary>
         /// Find vehicle
@@ -262,7 +262,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="plate"></param>
         /// <returns></returns>
-        public static Models.Vehicle FetchVehicle(string plate)
+        public static Models.Vehicle FetchVehicle(string? plate)
         {
             using Context context = new Context();
             return context.Vehicle.FirstOrDefault(i => i.Plate == plate);
@@ -279,13 +279,13 @@ namespace Server.Models
             return context.Vehicle.Where(i => i.OwnerId == ownerId).ToList();
         }
 
-        public static List<Vehicle> FetchPropertyGarageVehicles(string garageId)
+        public static List<Vehicle> FetchPropertyGarageVehicles(string? garageId)
         {
             using Context context = new Context();
             return context.Vehicle.Where(i => i.GarageId == garageId).ToList();
         }
 
-        public static async void UpdateVehicle(IVehicle vehicle, bool despawn = false, string garage = null, bool updatePos = true)
+        public static async void UpdateVehicle(IVehicle vehicle, bool despawn = false, string? garage = null, bool updatePos = true)
         {
             if (vehicle.FetchVehicleData() == null) return;
 

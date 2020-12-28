@@ -15,7 +15,7 @@ namespace Server.Models
         /// <summary>
         /// Dealership Name
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Interaction Point X
@@ -55,7 +55,7 @@ namespace Server.Models
         /// <summary>
         /// JSON of DealershipVehicle
         /// </summary>
-        public string VehicleList { get; set; }
+        public string? VehicleList { get; set; }
 
         public float CamPosX { get; set; }
         public float CamPosY { get; set; }
@@ -86,7 +86,6 @@ namespace Server.Models
 
             context.Dealership.Add(dealership);
             context.SaveChanges();
-            
 
             return dealership.Id;
         }
@@ -100,8 +99,6 @@ namespace Server.Models
             Context context = new Context();
 
             List<Dealership> dealershipList = context.Dealership.ToList();
-
-            
 
             return dealershipList;
         }

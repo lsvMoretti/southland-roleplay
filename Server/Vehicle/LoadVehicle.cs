@@ -22,10 +22,12 @@ namespace Server.Vehicle
             try
             {
                 using Context context = new Context();
-                List<Models.Vehicle> vehicles = context.Vehicle.Where(x => x.Spawned).ToList();
+                var vehicles = context.Vehicle.Where(x => x.Spawned).ToList();
 
                 foreach (Models.Vehicle vehicle in vehicles)
                 {
+                    Alt.Log($"Loading vehicle {vehicle.Id}");
+
                     vehicle.Spawned = false;
 
                     if (string.IsNullOrEmpty(vehicle.PartDamages))
@@ -40,11 +42,13 @@ namespace Server.Vehicle
                 }
 
                 context.SaveChanges();
+
+                Alt.Log("All vehicles loaded");
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
+                return;
             }
         }
 

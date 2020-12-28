@@ -13,7 +13,7 @@ namespace Server.Models
         /// <summary>
         /// Name of Warehouse
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// PosX of Warehouse

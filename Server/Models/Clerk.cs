@@ -9,12 +9,12 @@ namespace Server.Models
     public class Clerk
     {
         [Key] public int Id { get; set; }
-        public string StoreName { get; set; }
+        public string? StoreName { get; set; }
         public ClerkStoreType StoreType { get; set; }
         public float PosX { get; set; }
         public float PosY { get; set; }
         public float PosZ { get; set; }
-        public string Positions { get; set; }
+        public string? Positions { get; set; }
         public int PropertyId { get; set; }
 
         public static List<Clerk> FetchClerks()

@@ -15,32 +15,32 @@ namespace Server.Models
         /// <summary>
         /// Accounts Username
         /// </summary>
-        public string Username { get; set; }
+        public string? Username { get; set; }
 
         /// <summary>
         /// Accounts Email Address
         /// </summary>
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// Accounts Hashed Password
         /// </summary>
-        public string Password { get; set; }
+        public string? Password { get; set; }
 
         /// <summary>
         /// Last Serial logged in with
         /// </summary>
-        public string LastSerial { get; set; }
+        public string? LastSerial { get; set; }
 
         /// <summary>
         /// Last Social Club logged in with
         /// </summary>
-        public string LastSocial { get; set; }
+        public string? LastSocial { get; set; }
 
         /// <summary>
         /// Last address of player
         /// </summary>
-        public string LastIp { get; set; }
+        public string? LastIp { get; set; }
 
         /// <summary>
         /// The Date & Time of Registration
@@ -96,18 +96,18 @@ namespace Server.Models
 
         public bool Developer { get; set; }
 
-        public string DiscordId { get; set; }
+        public string? DiscordId { get; set; }
 
         public bool Enable2FA { get; set; }
 
-        public string TwoFactorUserCode { get; set; }
+        public string? TwoFactorUserCode { get; set; }
 
-        public string HardwareIdHash { get; set; }
+        public string? HardwareIdHash { get; set; }
 
-        public string HardwareIdExHash { get; set; }
-        
+        public string? HardwareIdExHash { get; set; }
+
         public bool AutoLogin { get; set; }
-        
+
         public bool Helper { get; set; }
 
         public static Account FindAccountById(int id)
@@ -126,7 +126,7 @@ namespace Server.Models
             using Context context = new Context();
             Account acc = context.Account.Add(account).Entity;
             context.SaveChanges();
-            
+
             return acc.Id;
         }
     }

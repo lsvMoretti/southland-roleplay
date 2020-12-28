@@ -23,12 +23,12 @@ namespace Server.Models
         /// <summary>
         /// The name of the business
         /// </summary>
-        public string BusinessName { get; set; }
+        public string? BusinessName { get; set; }
 
         /// <summary>
         /// The address of the Property
         /// </summary>
-        public string Address { get; set; }
+        public string? Address { get; set; }
 
         /// <summary>
         /// The Position X of the Property
@@ -48,17 +48,17 @@ namespace Server.Models
         /// <summary>
         /// The name of the interior used for the property
         /// </summary>
-        public string InteriorName { get; set; }
+        public string? InteriorName { get; set; }
 
         /// <summary>
         /// Additional Interaction points for the property
         /// </summary>
-        public string InteractionPoints { get; set; }
+        public string? InteractionPoints { get; set; }
 
         /// <summary>
         /// The game items that can be bought
         /// </summary>
-        public string ItemList { get; set; }
+        public string? ItemList { get; set; }
 
         /// <summary>
         /// The Inventory ID of the Property
@@ -68,7 +68,7 @@ namespace Server.Models
         /// <summary>
         /// The IPL to be loaded in when a player enters
         /// </summary>
-        public string Ipl { get; set; }
+        public string? Ipl { get; set; }
 
         /// <summary>
         /// The ID of the Blip
@@ -96,14 +96,14 @@ namespace Server.Models
         public int OwnerId { get; set; }
 
         /// <summary>
-        /// The unique key string code for the property.
+        /// The unique key string? code for the property.
         /// </summary>
-        public string Key { get; set; }
+        public string? Key { get; set; }
 
         /// <summary>
         /// The list of garages associated with a property.
         /// </summary>
-        public string GarageList { get; set; }
+        public string? GarageList { get; set; }
 
         /// <summary>
         /// If the property is Enterable
@@ -136,14 +136,14 @@ namespace Server.Models
         public int BuyinPaid { get; set; }
 
         /// <summary>
-        /// JSON of List string for props
+        /// JSON of List string? for props
         /// </summary>
-        public string PropList { get; set; }
+        public string? PropList { get; set; }
 
         /// <summary>
         /// List PropertyDoor's
         /// </summary>
-        public string DoorPositions { get; set; }
+        public string? DoorPositions { get; set; }
 
         /// <summary>
         /// Amount of Products required
@@ -169,18 +169,17 @@ namespace Server.Models
         public float InvPosY { get; set; }
         public float InvPosZ { get; set; }
 
-        public string MusicStation { get; set; }
+        public string? MusicStation { get; set; }
 
         public bool ClerkActive { get; set; }
         public double MortgageValue { get; set; }
         public DateTime LastMortgagePayment { get; set; }
-        
+
         public bool Hidden { get; set; }
-        
-        public string PropertyObjects { get; set; }
-        
+
+        public string? PropertyObjects { get; set; }
+
         public DateTime LastSetActive { get; set; }
-        
 
         /// <summary>
         /// Fetches total list of properties
@@ -228,7 +227,7 @@ namespace Server.Models
 
             float lastDistance = range;
             Property lastProperty = null;
-            
+
             foreach (Property property in properties)
             {
                 Position propertyPosition = new Vector3(property.PosX, property.PosY, property.PosZ);
@@ -270,7 +269,7 @@ namespace Server.Models
                 List<PropertyGarage> propertyGarages = FetchGarages(property);
 
                 if (!propertyGarages.Any()) continue;
-                
+
                 foreach (PropertyGarage propertyGarage in propertyGarages)
                 {
                     Position garagePosition = new Position(propertyGarage.PosX, propertyGarage.PosY, propertyGarage.PosZ);
@@ -279,7 +278,7 @@ namespace Server.Models
                     {
                         return propertyGarage;
                     }
-                }   
+                }
             }
 
             return null;

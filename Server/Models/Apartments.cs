@@ -11,7 +11,7 @@ namespace Server.Models
         [Key]
         public int Id { get; set; }
 
-        public string ComplexName { get; set; }
+        public string? ComplexName { get; set; }
 
         /// <summary>
         /// Position X of the Complex
@@ -31,7 +31,7 @@ namespace Server.Models
         /// <summary>
         /// JSON of Apartments
         /// </summary>
-        public string ApartmentList { get; set; }
+        public string? ApartmentList { get; set; }
 
         /// <summary>
         /// Garage Position X
@@ -74,7 +74,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public static ApartmentComplexes FetchApartmentComplex(string name)
+        public static ApartmentComplexes FetchApartmentComplex(string? name)
         {
             using Context context = new Context();
             return context.ApartmentComplexes.FirstOrDefault(s => s.ComplexName == name);
@@ -111,7 +111,7 @@ namespace Server.Models
         /// <summary>
         /// Apartment Name
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Owner ID of the Apartment
@@ -126,12 +126,12 @@ namespace Server.Models
         /// <summary>
         /// Apartment Key Code
         /// </summary>
-        public string KeyCode { get; set; }
+        public string? KeyCode { get; set; }
 
         /// <summary>
         /// Interior Name
         /// </summary>
-        public string InteriorName { get; set; }
+        public string? InteriorName { get; set; }
 
         /// <summary>
         /// Floor ID
@@ -144,8 +144,8 @@ namespace Server.Models
         public bool Locked { get; set; }
 
         /// <summary>
-        /// JSON of List<string> for props
+        /// JSON of List<string?> for props
         /// </summary>
-        public string PropList { get; set; }
+        public string? PropList { get; set; }
     }
 }

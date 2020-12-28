@@ -50,9 +50,9 @@ namespace Server.Models
         public float Balance { get; set; }
 
         /// <summary>
-        /// A history of Transactions, saved as JSON string from *BankTransaction*
+        /// A history of Transactions, saved as JSON string? from *BankTransaction*
         /// </summary>
-        public string TransactionHistoryJson { get; set; }
+        public string? TransactionHistoryJson { get; set; }
 
         /// <summary>
         /// The amount of Credit the account can have

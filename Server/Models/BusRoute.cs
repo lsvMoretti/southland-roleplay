@@ -15,12 +15,12 @@ namespace Server.Models
         [Key]
         public int Id { get; set; }
 
-        public string RouteName { get; set; }
+        public string? RouteName { get; set; }
 
         /// <summary>
         /// List of BusStop that are JSON'd
         /// </summary>
-        public string BusStops { get; set; }
+        public string? BusStops { get; set; }
 
         /// <summary>
         /// Adds a Bus Route to the Database
@@ -44,7 +44,6 @@ namespace Server.Models
 
             context.BusRoutes.Add(busRoute);
             context.SaveChanges();
-            
 
             return busRoute.Id;
         }

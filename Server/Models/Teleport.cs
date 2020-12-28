@@ -15,7 +15,7 @@ namespace Server.Models
         /// <summary>
         /// Teleport Name
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Teleport Pos X

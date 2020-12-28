@@ -11,7 +11,7 @@ namespace Server.Models
         [Key]
         public int ID { get; set; }
 
-        public string invetoryItems { get; set; }
+        public string? invetoryItems { get; set; }
         public float InventorySpace { get; set; }
         public float InventoryCapacity { get; set; }
 

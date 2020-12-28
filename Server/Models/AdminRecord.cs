@@ -36,7 +36,7 @@ namespace Server.Models
         /// <summary>
         /// Reason
         /// </summary>
-        public string Reason { get; set; }
+        public string? Reason { get; set; }
 
         /// <summary>
         /// If Jail or Ban, how long for
@@ -47,7 +47,7 @@ namespace Server.Models
         /// <summary>
         /// The admin username that completed the action
         /// </summary>
-        public string Admin { get; set; }
+        public string? Admin { get; set; }
 
         public static List<AdminRecord> FetchAdminRecords(int AccountId)
         {

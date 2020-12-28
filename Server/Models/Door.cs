@@ -11,7 +11,7 @@ namespace Server.Models
     {
         [Key] public int Id { get; set; }
 
-        public string Model { get; set; }
+        public string? Model { get; set; }
 
         public float PosX { get; set; }
         public float PosY { get; set; }
@@ -51,7 +51,6 @@ namespace Server.Models
 
         public Door()
         {
-
         }
 
         public Door(string model, Position position, bool locked = false, int ownerId = 0, int propertyId = 0, int factionId = 0, int dimension = 0)
@@ -72,7 +71,6 @@ namespace Server.Models
             using Context context = new Context();
 
             return context.Doors.Find(id);
-
         }
 
         public static Door FetchDoor(string model, Position position, int dimension)
