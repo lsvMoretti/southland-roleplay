@@ -35,7 +35,7 @@ namespace Server.Garage
 
                 Position vehiclePosition = player.Vehicle.Position;
 
-                foreach (var garage in Models.Garage.FetchGarages())
+                foreach (Models.Garage garage in Models.Garage.FetchGarages())
                 {
                     Position garagePosition = Models.Garage.FetchGarageExteriorPosition(garage);
 
@@ -50,7 +50,7 @@ namespace Server.Garage
             {
                 Position playerPosition = player.Position;
 
-                foreach (var garage in Models.Garage.FetchGarages())
+                foreach (Models.Garage garage in Models.Garage.FetchGarages())
                 {
                     Position garagePosition = Models.Garage.FetchGarageExteriorPosition(garage);
 
@@ -77,7 +77,7 @@ namespace Server.Garage
             if (player.IsInVehicle)
             {
                 IVehicle vehicle = player.Vehicle;
-                var occupants = vehicle.Occupants();
+                Dictionary<byte, int> occupants = vehicle.Occupants();
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
@@ -148,7 +148,7 @@ namespace Server.Garage
                         occupant.Emit("SetIntoVehicle", vehicle, vehicleSeat - 2);
                     };
 
-                    var occupantDb = context.Character.Find(occupant.GetClass().CharacterId);
+                    Models.Character occupantDb = context.Character.Find(occupant.GetClass().CharacterId);
 
                     if (occupantDb == null) continue;
 
@@ -161,7 +161,7 @@ namespace Server.Garage
 
                 player.Dimension = nearestGarage.Id;
                 
-                var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
+                Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
                 vehicleDb.Dimension = (uint)nearestGarage.Id;
 
@@ -181,7 +181,7 @@ namespace Server.Garage
 
                 if (propList.Any())
                 {
-                    foreach (var prop in propList)
+                    foreach (string prop in propList)
                     {
                         player.LoadInteriorProp(prop);
 
@@ -244,7 +244,7 @@ namespace Server.Garage
             if (player.IsInVehicle)
             {
                 IVehicle vehicle = player.Vehicle;
-                var occupants = vehicle.Occupants();
+                Dictionary<byte, int> occupants = vehicle.Occupants();
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
@@ -287,7 +287,7 @@ namespace Server.Garage
 
                     if (propList.Any())
                     {
-                        foreach (var prop in propList)
+                        foreach (string prop in propList)
                         {
                             occupant.UnloadInteriorProp(prop);
                         }
@@ -297,7 +297,7 @@ namespace Server.Garage
                     {
                         if (propList.Any())
                         {
-                            foreach (var prop in propList)
+                            foreach (string prop in propList)
                             {
                                 occupant.UnloadInteriorProp(prop);
 
@@ -335,7 +335,7 @@ namespace Server.Garage
                         occupant.Emit("SetIntoVehicle", vehicle, vehicleSeat - 2);
                     };
 
-                    var occupantDb = context.Character.Find(occupant.GetClass().CharacterId);
+                    Models.Character occupantDb = context.Character.Find(occupant.GetClass().CharacterId);
 
                     if (occupantDb == null) continue;
 
@@ -345,7 +345,7 @@ namespace Server.Garage
                 }
 
                 
-                var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
+                Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
                 vehicleDb.Dimension = (uint)nearestGarage.ExtDimension;
 
@@ -364,7 +364,7 @@ namespace Server.Garage
 
                 if (propList.Any())
                 {
-                    foreach (var prop in propList)
+                    foreach (string prop in propList)
                     {
                         player.UnloadInteriorProp(prop);
                     }
@@ -374,7 +374,7 @@ namespace Server.Garage
                 {
                     if (propList.Any())
                     {
-                        foreach (var prop in propList)
+                        foreach (string prop in propList)
                         {
                             player.UnloadInteriorProp(prop);
 

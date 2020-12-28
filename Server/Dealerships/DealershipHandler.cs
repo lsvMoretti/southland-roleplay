@@ -103,7 +103,7 @@ namespace Server.Dealerships
 
             if (previewVehicles.ContainsKey(player.GetPlayerId()))
             {
-                var vehId = previewVehicles[player.GetPlayerId()];
+                ushort vehId = previewVehicles[player.GetPlayerId()];
 
                 await AltAsync.Do(() =>
                 {
@@ -159,7 +159,7 @@ namespace Server.Dealerships
 
                 if (previewVehicles.ContainsKey(player.GetPlayerId()))
                 {
-                    var oldVehId = previewVehicles[player.GetPlayerId()];
+                    ushort oldVehId = previewVehicles[player.GetPlayerId()];
 
                     await AltAsync.Do(() =>
                     {
@@ -212,7 +212,7 @@ namespace Server.Dealerships
                 player.HideChat(true);
                 player.ShowCursor(true);
 
-                var delayTimer = new Timer(2000);
+                Timer delayTimer = new Timer(2000);
 
                 delayTimer.Start();
                 delayTimer.AutoReset = false;
@@ -522,7 +522,7 @@ namespace Server.Dealerships
 
                 int inventoryId = InventoryData.CreateDefaultInventory(inventorySpace, inventoryCapacity).ID;
 
-                var vehicleDb = context.Vehicle.Find(newVehicleId);
+                Models.Vehicle vehicleDb = context.Vehicle.Find(newVehicleId);
 
                 vehicleDb.InventoryId = inventoryId;
 

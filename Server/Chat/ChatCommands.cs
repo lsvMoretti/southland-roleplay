@@ -302,7 +302,7 @@ namespace Server.Chat
 
             string factionName = "";
 
-            foreach (var s in factionNameSplit)
+            foreach (string s in factionNameSplit)
             {
                 factionName += s.First();
             }

@@ -89,7 +89,7 @@ namespace Server.Property
         {
             if (!ActiveBusinessBlips.ContainsKey(property.Id)) return;
 
-            var activeBusiness = ActiveBusinessBlips.FirstOrDefault(x => x.Key == property.Id);
+            KeyValuePair<int, Blip>? activeBusiness = ActiveBusinessBlips.FirstOrDefault(x => x.Key == property.Id);
 
             activeBusiness.Value.Remove();
 

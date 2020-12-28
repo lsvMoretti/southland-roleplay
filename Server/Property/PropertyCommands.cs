@@ -47,14 +47,14 @@ namespace Server.Property
             {
                 List<Models.Property> properties = Models.Property.FetchProperties();
 
-                foreach (var lProperty in properties)
+                foreach (Models.Property lProperty in properties)
                 {
                     List<PropertyInteractionPoint> interactionPoints =
                         JsonConvert.DeserializeObject<List<PropertyInteractionPoint>>(lProperty.InteractionPoints);
 
                     if (!interactionPoints.Any()) continue;
 
-                    foreach (var propertyInteractionPoint in interactionPoints)
+                    foreach (PropertyInteractionPoint propertyInteractionPoint in interactionPoints)
                     {
                         Vector3 interactionPointPos = new Vector3(propertyInteractionPoint.PosX,
                             propertyInteractionPoint.PosY, propertyInteractionPoint.PosZ);
@@ -145,7 +145,7 @@ namespace Server.Property
 
             List<GameItem> gameItems = new List<GameItem>();
 
-            foreach (var item in itemList)
+            foreach (GameItem item in itemList)
             {
                 gameItems.Add(GameWorld.GetGameItem(item.ID));
             }
@@ -158,7 +158,7 @@ namespace Server.Property
                 }
             }
 
-            foreach (var gameItem in gameItems)
+            foreach (GameItem gameItem in gameItems)
             {
                 menuItems.Add(new NativeMenuItem(gameItem.Name, $"${gameItem.Price}"));
             }
@@ -357,7 +357,7 @@ namespace Server.Property
                 {
                     player.SendErrorNotification($"There was an issue adding this to your Inventory!");
                     using Context context = new Context();
-                    var phoneDb = context.Phones.Find(newPhone.Id);
+                    Phones phoneDb = context.Phones.Find(newPhone.Id);
 
                     context.Phones.Remove(phoneDb);
                     context.SaveChanges();
@@ -1272,7 +1272,7 @@ namespace Server.Property
                     return;
                 }
 
-                var orderedList = playerList.OrderByDescending(x => x.Position.Distance(player.Position));
+                IOrderedEnumerable<IPlayer> orderedList = playerList.OrderByDescending(x => x.Position.Distance(player.Position));
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
@@ -2009,12 +2009,12 @@ namespace Server.Property
                 return;
             }
 
-            foreach (var property in Models.Property.FetchProperties().Where(x => !string.IsNullOrEmpty(x.DoorPositions)).ToList())
+            foreach (Models.Property property in Models.Property.FetchProperties().Where(x => !string.IsNullOrEmpty(x.DoorPositions)).ToList())
             {
                 List<PropertyDoor> propertyDoors =
                     JsonConvert.DeserializeObject<List<PropertyDoor>>(property.DoorPositions);
 
-                foreach (var propertyDoor in propertyDoors)
+                foreach (PropertyDoor propertyDoor in propertyDoors)
                 {
                     if (player.Dimension != propertyDoor.EnterDimension) continue;
 
@@ -2043,7 +2043,7 @@ namespace Server.Property
 
                         if (propList.Any())
                         {
-                            foreach (var prop in propList)
+                            foreach (string prop in propList)
                             {
                                 player.LoadInteriorProp(prop);
                             }
@@ -2071,12 +2071,12 @@ namespace Server.Property
 
             if (insideProperty == null)
             {
-                foreach (var property in Models.Property.FetchProperties())
+                foreach (Models.Property property in Models.Property.FetchProperties())
                 {
                     List<PropertyDoor> externalPropertyDoors =
                         JsonConvert.DeserializeObject<List<PropertyDoor>>(property.DoorPositions);
 
-                    foreach (var propertyDoor in externalPropertyDoors)
+                    foreach (PropertyDoor propertyDoor in externalPropertyDoors)
                     {
                         if (player.Dimension != propertyDoor.EnterDimension) continue;
 
@@ -2110,7 +2110,7 @@ namespace Server.Property
                 return;
             }
 
-            foreach (var propertyDoor in propertyDoors)
+            foreach (PropertyDoor propertyDoor in propertyDoors)
             {
                 if (player.Dimension != propertyDoor.ExitDimension) continue;
 

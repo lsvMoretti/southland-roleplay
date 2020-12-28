@@ -74,7 +74,7 @@ namespace Server.Chat
         public static void SendCharityMessage(this IPlayer player, double amount)
         {
             
-            var info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
+            TimeZoneInfo info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
 
             DateTimeOffset localServerTime = DateTimeOffset.Now;
 

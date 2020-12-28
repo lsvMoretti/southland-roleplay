@@ -59,7 +59,7 @@ namespace Server.Character.Scenes
             {
                 Position scenePosition = scene.Position;
 
-                var distance = scenePosition.Distance(position);
+                float distance = scenePosition.Distance(position);
 
                 if (distance < lastDistance)
                 {
@@ -84,7 +84,7 @@ namespace Server.Character.Scenes
 
                 using Context context = new Context();
 
-                var dbScene = context.Scenes.Find(scene.DatabaseId);
+                Models.Scene dbScene = context.Scenes.Find(scene.DatabaseId);
 
                 if (dbScene == null) return false;
 

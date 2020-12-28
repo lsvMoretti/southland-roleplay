@@ -146,9 +146,9 @@ namespace Server.Audio
 
             player.Vehicle.SetData("CURRENTMUSICSTREAM", selectedStation.StationUrl);
 
-            foreach (var occupantId in player.Vehicle.Occupants())
+            foreach (KeyValuePair<byte, int> occupantId in player.Vehicle.Occupants())
             {
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
+                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
 
                 targetPlayer?.SendInfoNotification($"Now playing: {selectedStation.StationName}");
                 targetPlayer?.PlayMusicFromUrl(selectedStation.StationUrl);
@@ -182,9 +182,9 @@ namespace Server.Audio
 
             player.Vehicle.SetData("CURRENTMUSICSTREAM", string.Empty);
 
-            foreach (var occupantId in player.Vehicle.Occupants())
+            foreach (KeyValuePair<byte, int> occupantId in player.Vehicle.Occupants())
             {
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
+                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
 
                 targetPlayer?.StopMusic();
             }

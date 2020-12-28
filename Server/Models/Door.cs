@@ -79,7 +79,7 @@ namespace Server.Models
         {
             using Context context = new Context();
 
-            var door = context.Doors.FirstOrDefault(x => x.Model == model && x.Position() == position && x.Dimension == dimension);
+            Door? door = context.Doors.FirstOrDefault(x => x.Model == model && x.Position() == position && x.Dimension == dimension);
 
             return door;
         }

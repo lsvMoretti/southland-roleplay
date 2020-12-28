@@ -116,7 +116,7 @@ namespace Server.Extensions
                 if(player.Ping > )
             }*/
 
-            foreach (var player in Alt.Server.GetPlayers())
+            foreach (IPlayer player in Alt.Server.GetPlayers())
             {
                 Models.Character playerCharacter = player.FetchCharacter();
 

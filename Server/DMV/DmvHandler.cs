@@ -131,7 +131,7 @@ namespace Server.DMV
             {
                 using Context context = new Context();
 
-                var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+                Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                 if (playerCharacter == null)
                 {
@@ -145,7 +145,7 @@ namespace Server.DMV
                     return;
                 }
 
-                var licenses = JsonConvert.DeserializeObject<List<LicenseTypes>>(playerCharacter.LicensesHeld);
+                List<LicenseTypes> licenses = JsonConvert.DeserializeObject<List<LicenseTypes>>(playerCharacter.LicensesHeld);
 
                 licenses.Add(LicenseTypes.Driving);
 
@@ -158,7 +158,7 @@ namespace Server.DMV
 
                 context.SaveChanges();
 
-                var playerInventory = player.FetchInventory();
+                Inventory.Inventory playerInventory = player.FetchInventory();
 
                 bool added = playerInventory.AddItem(new InventoryItem("ITEM_DRIVING_LICENSE", "Drivers License", playerCharacter.Name));
 

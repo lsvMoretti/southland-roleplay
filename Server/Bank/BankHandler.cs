@@ -40,7 +40,7 @@ namespace Server.Bank
 
             foreach (KeyValuePair<int, Dictionary<string, Position>> keyValuePair in bankList)
             {
-                foreach (var bankInfo in keyValuePair.Value)
+                foreach (KeyValuePair<string, Position> bankInfo in keyValuePair.Value)
                 {
                     Blip bankBlip = new Blip(bankInfo.Key, bankInfo.Value, 108, 2, 1f);
                     bankBlip.Add();
@@ -91,7 +91,7 @@ namespace Server.Bank
                 return;
             }
 
-            var mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
+            Models.Property? mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
 
             if (mortgageProperty == null)
             {
@@ -140,7 +140,7 @@ namespace Server.Bank
 
             if (!player.IsSpawned()) return;
 
-            var mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
+            Models.Property? mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
 
             if (mortgageProperty == null)
             {

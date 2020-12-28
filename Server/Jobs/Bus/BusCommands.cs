@@ -151,7 +151,7 @@ namespace Server.Jobs.Bus
                 return;
             }
 
-            var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
+            KeyValuePair<int, IVehicle>? keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
             IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
 
@@ -168,7 +168,7 @@ namespace Server.Jobs.Bus
 
         public static void OnBusRouteFinish(IPlayer player)
         {
-            var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
+            KeyValuePair<int, IVehicle>? keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
             IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
 

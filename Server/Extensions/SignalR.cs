@@ -71,7 +71,7 @@ namespace Server.Extensions
 
             hubConnection.On<string, string>("AltVSendMessageToPlayer", (playerName, message) =>
             {
-                var client = Utility.FindPlayerByNameOrId(playerName);
+                IPlayer client = Utility.FindPlayerByNameOrId(playerName);
 
                 client?.SendChatMessage(message);
             });

@@ -142,7 +142,7 @@ namespace Server.Vehicle
 
                 int backPackId = player.FetchCharacter().BackpackId;
 
-                foreach (var inventoryItem in vehicleItems)
+                foreach (InventoryItem inventoryItem in vehicleItems)
                 {
                     if (backPackId > 0)
                     {

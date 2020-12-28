@@ -58,11 +58,11 @@ namespace Server.Groups.Police
 
             using Context context = new Context();
 
-            var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
             if (!string.IsNullOrEmpty(playerCharacter.CurrentWeapon))
             {
-                var currentWeapon = JsonConvert.DeserializeObject<InventoryItem>(playerCharacter.CurrentWeapon);
+                InventoryItem currentWeapon = JsonConvert.DeserializeObject<InventoryItem>(playerCharacter.CurrentWeapon);
 
                 if (currentWeapon.Id.Contains("ITEM_POLICE_WEAPON"))
                 {

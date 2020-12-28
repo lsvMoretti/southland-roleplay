@@ -30,7 +30,7 @@ namespace Server.Apartments
             }
 
             using Context context = new Context();
-            var apartmentComplex = context.ApartmentComplexes.Find(player.FetchCharacter().InsideApartmentComplex);
+            ApartmentComplexes apartmentComplex = context.ApartmentComplexes.Find(player.FetchCharacter().InsideApartmentComplex);
 
             if (apartmentComplex == null)
             {
@@ -74,10 +74,10 @@ namespace Server.Apartments
             }
             if (option == "close") return;
 
-            var apartmentComplex =
+            ApartmentComplexes apartmentComplex =
                 ApartmentComplexes.FetchApartmentComplex(player.FetchCharacter().InsideApartmentComplex);
 
-            var apartment = JsonConvert.DeserializeObject<List<Apartment>>(apartmentComplex.ApartmentList)
+            Apartment? apartment = JsonConvert.DeserializeObject<List<Apartment>>(apartmentComplex.ApartmentList)
                 .FirstOrDefault(x => x.Name == player.FetchCharacter().InsideApartment);
 
             if (option == "cash")
@@ -144,7 +144,7 @@ namespace Server.Apartments
             }
 
             using Context context = new Context();
-            var apartmentComplex = context.ApartmentComplexes.Find(player.FetchCharacter().InsideApartmentComplex);
+            ApartmentComplexes apartmentComplex = context.ApartmentComplexes.Find(player.FetchCharacter().InsideApartmentComplex);
 
             if (apartmentComplex == null)
             {

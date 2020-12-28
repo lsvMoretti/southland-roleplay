@@ -446,7 +446,7 @@ namespace Server.Vehicle
 
                     Inventory.Inventory playerInventory = player.FetchInventory();
 
-                    var keyList = playerInventory.GetInventoryItems("ITEM_VEHICLE_KEY");
+                    List<InventoryItem> keyList = playerInventory.GetInventoryItems("ITEM_VEHICLE_KEY");
 
                     if (nearestVehicle.GetData("RentalCar:KeyCode", out string keyCode))
                     {
@@ -613,7 +613,7 @@ namespace Server.Vehicle
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
-            var keyList = playerInventory.GetInventoryItems("ITEM_VEHICLE_KEY");
+            List<InventoryItem> keyList = playerInventory.GetInventoryItems("ITEM_VEHICLE_KEY");
 
             bool canEngine = false;
 
@@ -688,7 +688,7 @@ namespace Server.Vehicle
             }
 
             using Context context = new Context();
-            var vehicleDb = context.Vehicle.Find(player.Vehicle.GetVehicleId());
+            Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetVehicleId());
             if (vehicleDb == null)
             {
                 player.Vehicle.EngineOn = !player.Vehicle.EngineOn;

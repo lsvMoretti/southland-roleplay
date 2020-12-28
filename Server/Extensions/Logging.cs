@@ -43,9 +43,9 @@ namespace Server.Extensions
                     }
                 }
 
-                var characterFiles = Directory.GetFiles(_characterDirectory);
+                string[] characterFiles = Directory.GetFiles(_characterDirectory);
 
-                foreach (var characterFile in characterFiles)
+                foreach (string characterFile in characterFiles)
                 {
                     if (characterFile.EndsWith(".log"))
                     {
@@ -57,9 +57,9 @@ namespace Server.Extensions
                     }
                 }
 
-                var adminFiles = Directory.GetFiles(_adminDirectory);
+                string[] adminFiles = Directory.GetFiles(_adminDirectory);
 
-                foreach (var adminFile in adminFiles)
+                foreach (string adminFile in adminFiles)
                 {
                     if (adminFile.EndsWith(".log"))
                     {
@@ -71,9 +71,9 @@ namespace Server.Extensions
                     }
                 }
 
-                var bankFiles = Directory.GetFiles(_bankDirectory);
+                string[] bankFiles = Directory.GetFiles(_bankDirectory);
 
-                foreach (var bankFile in bankFiles)
+                foreach (string bankFile in bankFiles)
                 {
                     if (bankFile.EndsWith(".log"))
                     {

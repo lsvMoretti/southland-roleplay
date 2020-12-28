@@ -744,7 +744,7 @@ namespace Server.Vehicle.ModShop
                 // Engine Upgrade
                 if (modList.ContainsKey(modSlot))
                 {
-                    var modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
+                    KeyValuePair<int, int>? modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
 
                     if (modType == 1 && modInfo.Value < 0)
                     {
@@ -787,7 +787,7 @@ namespace Server.Vehicle.ModShop
             {
                 if (modList.ContainsKey(modSlot))
                 {
-                    var modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
+                    KeyValuePair<int, int>? modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
 
                     if (modType == 1 && modInfo.Value < 0)
                     {
@@ -819,7 +819,7 @@ namespace Server.Vehicle.ModShop
             {
                 if (modList.ContainsKey(modSlot))
                 {
-                    var modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
+                    KeyValuePair<int, int>? modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
 
                     if (modType == 1 && modInfo.Value < 0)
                     {
@@ -1019,7 +1019,7 @@ namespace Server.Vehicle.ModShop
 
             string modName = modNames[modSelectedIndex];
 
-            var vehicleInventory = player.Vehicle.FetchInventory();
+            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
 
             if (vehicleInventory == null)
             {
@@ -1097,7 +1097,7 @@ namespace Server.Vehicle.ModShop
                 return;
             }
 
-            var vehicleInventory = player.Vehicle.FetchInventory();
+            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
 
             if (vehicleInventory == null)
             {
@@ -1324,7 +1324,7 @@ namespace Server.Vehicle.ModShop
 
             string modName = modNames[selectedWheelIndex];
 
-            var vehicleInventory = player.Vehicle.FetchInventory();
+            Inventory.Inventory vehicleInventory = player.Vehicle.FetchInventory();
 
             if (vehicleInventory == null)
             {

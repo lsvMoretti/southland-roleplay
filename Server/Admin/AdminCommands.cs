@@ -875,7 +875,7 @@ namespace Server.Admin
                 return;
             }
 
-            var vehicleList = JsonConvert.DeserializeObject<List<DealershipVehicle>>(nearDealership.VehicleList)
+            IOrderedEnumerable<DealershipVehicle> vehicleList = JsonConvert.DeserializeObject<List<DealershipVehicle>>(nearDealership.VehicleList)
                 .OrderByDescending(x => x.VehName);
 
             player.ChatInput(false);
@@ -1558,7 +1558,7 @@ namespace Server.Admin
                 return;
             }
 
-            var factionTypes = factionType switch
+            FactionTypes factionTypes = factionType switch
             {
                 "business" => FactionTypes.Business,
                 "faction" => FactionTypes.Faction,
@@ -1716,7 +1716,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have accepted report ID {adminReport.Id}. Message: {adminReport.Message}.");
             player.SendInfoNotification($"Player TP ID: {targetPlayer.GetPlayerId()}");
 
-            var onlineAdmins = Alt.Server.GetPlayers()
+            List<IPlayer> onlineAdmins = Alt.Server.GetPlayers()
                 .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator).ToList();
 
             if (onlineAdmins.Any())
@@ -2063,7 +2063,7 @@ namespace Server.Admin
                 return;
             }
 
-            var playerVehicles = context.Vehicle.Where(x => x.OwnerId == targetCharacter.Id);
+            IQueryable<Models.Vehicle> playerVehicles = context.Vehicle.Where(x => x.OwnerId == targetCharacter.Id);
 
             foreach (Models.Vehicle playerVehicle in playerVehicles)
             {
@@ -2074,7 +2074,7 @@ namespace Server.Admin
                 context.Vehicle.Remove(playerVehicle);
             }
 
-            var playerProperties = context.Property.Where(x => x.OwnerId == targetCharacter.Id);
+            IQueryable<Models.Property> playerProperties = context.Property.Where(x => x.OwnerId == targetCharacter.Id);
 
             foreach (Models.Property playerProperty in playerProperties)
             {
@@ -2084,13 +2084,13 @@ namespace Server.Admin
                 playerProperty.VoucherUsed = false;
             }
 
-            var inventoryTable = context.Inventory.Find(targetCharacter.InventoryID);
+            InventoryData inventoryTable = context.Inventory.Find(targetCharacter.InventoryID);
 
             context.Inventory.Remove(inventoryTable);
 
-            var bankAccounts = context.BankAccount.Where(x => x.OwnerId == targetCharacter.Id);
+            IQueryable<BankAccount> bankAccounts = context.BankAccount.Where(x => x.OwnerId == targetCharacter.Id);
 
-            foreach (var bankAccount in bankAccounts)
+            foreach (BankAccount bankAccount in bankAccounts)
             {
                 context.BankAccount.Remove(bankAccount);
             }
@@ -2126,7 +2126,7 @@ namespace Server.Admin
                 List<MotelRoom> motelRooms =
                     JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
 
-                foreach (var motelRoom in motelRooms)
+                foreach (MotelRoom motelRoom in motelRooms)
                 {
                     if (motelRoom.OwnerId != targetCharacter.Id) continue;
 
@@ -3810,7 +3810,7 @@ namespace Server.Admin
             player.Vehicle.EngineOn = !player.Vehicle.EngineOn;
 
             using Context context = new Context();
-            var vehicleDb = context.Vehicle.Find(player.Vehicle.GetVehicleId());
+            Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetVehicleId());
 
             if (vehicleDb == null) return;
 
@@ -4084,7 +4084,7 @@ namespace Server.Admin
             {
                 using Context context = new Context();
 
-                var vehicle = context.Vehicle.Find(player.Vehicle.GetVehicleId());
+                Models.Vehicle vehicle = context.Vehicle.Find(player.Vehicle.GetVehicleId());
 
                 vehicle.Livery = livery;
 
@@ -4588,10 +4588,10 @@ namespace Server.Admin
 
             if (propList.Any())
             {
-                foreach (var client in Alt.Server.GetPlayers().Where(x =>
+                foreach (IPlayer client in Alt.Server.GetPlayers().Where(x =>
                     x.FetchCharacter() != null && x.FetchCharacter().InsideGarage == garageId))
                 {
-                    foreach (var prop in propList)
+                    foreach (string prop in propList)
                     {
                         client.UnloadInteriorProp(prop);
                         client.LoadInteriorProp(prop);
@@ -5011,7 +5011,7 @@ namespace Server.Admin
 
             using Context context = new Context();
 
-            var vehicleDb = context.Vehicle.Find(playerVehicle.GetClass().Id);
+            Models.Vehicle vehicleDb = context.Vehicle.Find(playerVehicle.GetClass().Id);
 
             double mileage = Math.Round(distance * 1609, 2);
 
@@ -5463,7 +5463,7 @@ namespace Server.Admin
 
             ApartmentComplexes nearestComplex = null;
 
-            foreach (var apartmentComplex in apartmentComplexes)
+            foreach (ApartmentComplexes apartmentComplex in apartmentComplexes)
             {
                 Position complexPosition =
                     new Position(apartmentComplex.PosX, apartmentComplex.PosY, apartmentComplex.PosZ);
@@ -5510,7 +5510,7 @@ namespace Server.Admin
 
             ApartmentComplexes nearestComplex = null;
 
-            foreach (var apartmentComplex in apartmentComplexes)
+            foreach (ApartmentComplexes apartmentComplex in apartmentComplexes)
             {
                 Position complexPosition =
                     new Position(apartmentComplex.PosX, apartmentComplex.PosY, apartmentComplex.PosZ);
@@ -5623,7 +5623,7 @@ namespace Server.Admin
 
             ApartmentComplexes nearestComplex = null;
 
-            foreach (var apartmentComplex in apartmentComplexes)
+            foreach (ApartmentComplexes apartmentComplex in apartmentComplexes)
             {
                 Position complexPosition =
                     new Position(apartmentComplex.PosX, apartmentComplex.PosY, apartmentComplex.PosZ);
@@ -5708,7 +5708,7 @@ namespace Server.Admin
 
             using Context context = new Context();
 
-            var complex = context.ApartmentComplexes.Find(complexId);
+            ApartmentComplexes complex = context.ApartmentComplexes.Find(complexId);
             if (complex == null)
             {
                 player.SendErrorNotification("Unable to find this complex.");
@@ -5794,7 +5794,7 @@ namespace Server.Admin
 
             player.GetData("makingPropertyDoorAt", out int propertyId);
 
-            var propertyDb = context.Property.Find(propertyId);
+            Models.Property propertyDb = context.Property.Find(propertyId);
 
             if (propertyDb == null)
             {
@@ -6052,7 +6052,7 @@ namespace Server.Admin
 
             using Context context = new Context();
 
-            var door = context.Doors.FirstOrDefault(x => x.Id == doorId);
+            Door? door = context.Doors.FirstOrDefault(x => x.Id == doorId);
 
             if (door == null)
             {
@@ -6104,7 +6104,7 @@ namespace Server.Admin
 
             using Context context = new Context();
 
-            var door = context.Doors.FirstOrDefault(x => x.Id == doorId);
+            Door? door = context.Doors.FirstOrDefault(x => x.Id == doorId);
 
             if (door == null)
             {
@@ -6156,7 +6156,7 @@ namespace Server.Admin
 
             using Context context = new Context();
 
-            var door = context.Doors.FirstOrDefault(x => x.Id == doorId);
+            Door? door = context.Doors.FirstOrDefault(x => x.Id == doorId);
 
             if (door == null)
             {
@@ -6319,7 +6319,7 @@ namespace Server.Admin
             {
                 using Context context = new Context();
 
-                var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+                Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                 if (!string.IsNullOrEmpty(playerCharacter.CurrentWeapon))
                 {

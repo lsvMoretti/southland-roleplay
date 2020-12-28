@@ -20,7 +20,7 @@ namespace Server.Character.Tattoo
 
                 TattooList = new Dictionary<TattooData, string>();
 
-                var tattooFiles = Directory.GetFiles(@"data\tattoo");
+                string[] tattooFiles = Directory.GetFiles(@"data\tattoo");
 
                 Console.WriteLine($"Found {tattooFiles.Length} Tattoo Files.");
 
@@ -183,7 +183,7 @@ namespace Server.Character.Tattoo
 
             foreach (TattooData tattooData in tattooList)
             {
-                var selectedTattooData = TattooList.FirstOrDefault(s => s.Key.Name == tattooData.Name);
+                KeyValuePair<TattooData, string>? selectedTattooData = TattooList.FirstOrDefault(s => s.Key.Name == tattooData.Name);
 
                 string collection = selectedTattooData.Value;
 

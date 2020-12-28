@@ -12,6 +12,7 @@ using AltV.Net.Enums;
 using Newtonsoft.Json;
 using Server.Chat;
 using Server.Extensions;
+using Server.Models;
 
 namespace Server.Vehicle
 {
@@ -84,7 +85,7 @@ namespace Server.Vehicle
                         vehicle.EngineOn = false;
                         if (vehicle.GetClass().Occupants.Any())
                         {
-                            var driverInfo = vehicle.GetClass().Occupants.FirstOrDefault(x => x.Key == 1);
+                            KeyValuePair<byte, int>? driverInfo = vehicle.GetClass().Occupants.FirstOrDefault(x => x.Key == 1);
 
                             IPlayer driver = Alt.Server.GetPlayers()
                                 .FirstOrDefault(x => x.GetPlayerId() == driverInfo.Value);
@@ -233,7 +234,7 @@ namespace Server.Vehicle
                     vehicle.EngineOn = true;
                 }
 
-                var vehicleData = vehicle.FetchVehicleData();
+                Models.Vehicle vehicleData = vehicle.FetchVehicleData();
 
                 if (vehicleData != null)
                 {
@@ -266,7 +267,7 @@ namespace Server.Vehicle
 
                         using Context context = new Context();
 
-                        var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
+                        InventoryData inventoryData = context.Inventory.Find(vehicleData.InventoryId);
 
                         if (inventoryData == null) return;
 
@@ -285,7 +286,7 @@ namespace Server.Vehicle
 
                         using Context context = new Context();
 
-                        var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
+                        InventoryData inventoryData = context.Inventory.Find(vehicleData.InventoryId);
 
                         if (inventoryData == null) return;
 
@@ -301,7 +302,7 @@ namespace Server.Vehicle
                     {
                         using Context context = new Context();
 
-                        var inventoryData = context.Inventory.Find(vehicleData.InventoryId);
+                        InventoryData inventoryData = context.Inventory.Find(vehicleData.InventoryId);
 
                         if (inventoryData == null) return;
 
@@ -341,7 +342,7 @@ namespace Server.Vehicle
 
             using Context context = new Context();
 
-            var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
+            Models.Vehicle vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
             if (vehicleDb == null) return;
 

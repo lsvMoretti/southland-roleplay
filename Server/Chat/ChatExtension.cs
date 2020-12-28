@@ -27,8 +27,8 @@ namespace Server.Chat
 
                 if (message[0] == '/')
                 {
-                    var splitMessage = message.Substring(1).Split(' ');
-                    var command = splitMessage[0].Trim().ToLower();
+                    string[] splitMessage = message.Substring(1).Split(' ');
+                    string command = splitMessage[0].Trim().ToLower();
                     splitMessage = splitMessage.Skip(1).ToArray();
 
                     Logging.AddToCharacterLog(player, $"Has used Command: /{command}. Full: {message}");

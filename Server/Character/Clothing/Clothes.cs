@@ -664,16 +664,16 @@ namespace Server.Character.Clothing
                 int torso = GetTorsoDataForTop(data.drawable, player.FetchCharacter().Sex == 0);
                 player.SetClothes((int)ClothesType.Torso, torso, 0);
 
-                var oldTorsoData = clothesData.FirstOrDefault(i => i.Key == (int)ClothesType.Torso);
+                KeyValuePair<int, Dictionary<int, int>>? oldTorsoData = clothesData.FirstOrDefault(i => i.Key == (int)ClothesType.Torso);
 
                 clothesData.Remove(oldTorsoData.Key);
 
                 clothesData.Add((int)ClothesType.Torso, new Dictionary<int, int> { { torso, 0 } });
             }
 
-            var pair = clothesData.FirstOrDefault(i => i.Key == data.slot);
+            KeyValuePair<int, Dictionary<int, int>>? pair = clothesData.FirstOrDefault(i => i.Key == data.slot);
 
-            var newValue = new Dictionary<int, int> { { data.drawable, data.texture } };
+            Dictionary<int, int> newValue = new Dictionary<int, int> { { data.drawable, data.texture } };
 
             clothesData.Remove(pair.Key);
 
@@ -701,9 +701,9 @@ namespace Server.Character.Clothing
 
                 player.SetAccessory(data.slot, data.drawable, data.texture);
 
-                var oldDataList = JsonConvert.DeserializeObject<List<AccessoryData>>(player.FetchCharacter().AccessoryJson);
+                List<AccessoryData> oldDataList = JsonConvert.DeserializeObject<List<AccessoryData>>(player.FetchCharacter().AccessoryJson);
 
-                var pair = oldDataList.FirstOrDefault(i => i.slot == data.slot);
+                AccessoryData? pair = oldDataList.FirstOrDefault(i => i.slot == data.slot);
 
                 oldDataList.Remove(pair);
 
@@ -755,7 +755,7 @@ namespace Server.Character.Clothing
                 List<AccessoryData> accessory =
                     JsonConvert.DeserializeObject<List<AccessoryData>>(dbCharacter.AccessoryJson);
 
-                var selectedAccessory = accessory.FirstOrDefault(i => i.slot == accessoryData.slot);
+                AccessoryData? selectedAccessory = accessory.FirstOrDefault(i => i.slot == accessoryData.slot);
 
                 accessory.Remove(selectedAccessory);
                 accessory.Add(accessoryData);
@@ -790,7 +790,7 @@ namespace Server.Character.Clothing
             List<ClothesData> clothes =
                 JsonConvert.DeserializeObject<List<ClothesData>>(dbCharacter.ClothesJson);
 
-            var selectedClothes = clothes.FirstOrDefault(i => i.slot == clothesData.slot);
+            ClothesData? selectedClothes = clothes.FirstOrDefault(i => i.slot == clothesData.slot);
 
             clothes.Remove(selectedClothes);
 

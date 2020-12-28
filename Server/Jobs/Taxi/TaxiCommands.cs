@@ -152,7 +152,7 @@ namespace Server.Jobs.Taxi
         {
             if (option == "Close") return;
 
-            var subString = option.Substring(9);
+            string subString = option.Substring(9);
 
             bool tryParse = int.TryParse(subString, out int callId);
 

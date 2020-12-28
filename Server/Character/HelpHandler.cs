@@ -17,7 +17,7 @@ namespace Server.Character
             if (option == "anim")
             {
                 // Fetch list of Animations
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Anim).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Anim).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -27,7 +27,7 @@ namespace Server.Character
 
             if (option == "character")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Character).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Character).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -37,7 +37,7 @@ namespace Server.Character
 
             if (option == "bank")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Bank).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Bank).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -47,7 +47,7 @@ namespace Server.Character
 
             if (option == "faction")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Faction).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Faction).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -57,7 +57,7 @@ namespace Server.Character
 
             if (option == "focus")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Focus).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Focus).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -67,7 +67,7 @@ namespace Server.Character
 
             if (option == "job")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Job).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Job).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -76,7 +76,7 @@ namespace Server.Character
             }
             if (option == "phone")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Phone).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Phone).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -85,7 +85,7 @@ namespace Server.Character
             }
             if (option == "vehicle")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Vehicle).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Vehicle).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -94,7 +94,7 @@ namespace Server.Character
             }
             if (option == "chat")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Chat).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Chat).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -103,7 +103,7 @@ namespace Server.Character
             }
             if (option == "property")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Property).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Property).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -114,7 +114,7 @@ namespace Server.Character
             {
                 AdminLevel playerAdminLevel = player.FetchAccount().AdminLevel;
 
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Admin).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Admin).OrderByDescending(x => x.Key))
                 {
                     if (command.Value.Attribute.AdminLevel > playerAdminLevel) continue;
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
@@ -125,7 +125,7 @@ namespace Server.Character
 
             if (option == "law")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Law).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Law).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }
@@ -134,7 +134,7 @@ namespace Server.Character
             
             if (option == "helper")
             {
-                foreach (var command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Helper).OrderByDescending(x => x.Key))
+                foreach (KeyValuePair<string, CommandRow> command in CommandExtension.Commands.Where(x => x.Value.Attribute.CommandType == CommandType.Helper).OrderByDescending(x => x.Key))
                 {
                     helpCommands.Add(new HelpCommand(command.Key, command.Value.Attribute.Description));
                 }

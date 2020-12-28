@@ -123,7 +123,7 @@ namespace Server.Extensions
             }
 
             using Context context = new Context();
-            var vehicleDb = context.Vehicle.Find(targetVehicle.GetVehicleId());
+            Models.Vehicle vehicleDb = context.Vehicle.Find(targetVehicle.GetVehicleId());
 
             if (vehicleDb == null) return;
 

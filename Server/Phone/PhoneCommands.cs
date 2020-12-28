@@ -690,17 +690,17 @@ namespace Server.Phone
 
             using Context context = new Context();
 
-            var playerPhone = context.Phones.Find(phone.Id);
+            Phones playerPhone = context.Phones.Find(phone.Id);
 
-            var playerPhoneMessages = JsonConvert.DeserializeObject<List<PhoneMessage>>(playerPhone.MessageHistory);
+            List<PhoneMessage> playerPhoneMessages = JsonConvert.DeserializeObject<List<PhoneMessage>>(playerPhone.MessageHistory);
 
             playerPhoneMessages.Add(playerPhoneMessage);
 
             playerPhone.MessageHistory = JsonConvert.SerializeObject(playerPhoneMessages);
 
-            var targetPhoneDb = context.Phones.Find(targetPhone.Id);
+            Phones targetPhoneDb = context.Phones.Find(targetPhone.Id);
 
-            var targetPhoneMessages = JsonConvert.DeserializeObject<List<PhoneMessage>>(targetPhoneDb.MessageHistory);
+            List<PhoneMessage> targetPhoneMessages = JsonConvert.DeserializeObject<List<PhoneMessage>>(targetPhoneDb.MessageHistory);
 
             targetPhoneMessages.Add(targetPhoneMessage);
 

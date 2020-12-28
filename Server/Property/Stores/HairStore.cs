@@ -463,7 +463,7 @@ namespace Server.Property.Stores
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (var facialHair in facialHairList)
+            foreach (string facialHair in facialHairList)
             {
                 menuItems.Add(new NativeMenuItem(facialHair, $"Cost ~g~{facialHairCost:C}"));
             }
@@ -517,7 +517,7 @@ namespace Server.Property.Stores
             CustomCharacter customCharacter =
                 JsonConvert.DeserializeObject<CustomCharacter>(playerCharacter.CustomCharacter);
 
-            var appearanceItems = JsonConvert.DeserializeObject<List<ApperanceInfo>>(customCharacter.Appearance);
+            List<ApperanceInfo> appearanceItems = JsonConvert.DeserializeObject<List<ApperanceInfo>>(customCharacter.Appearance);
 
             appearanceItems[1].Value = index;
 

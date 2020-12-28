@@ -140,7 +140,7 @@ namespace Server.Character.Clothing
 
                 List<InventoryItem> newList = new List<InventoryItem>();
 
-                foreach (var inventoryItem in items)
+                foreach (InventoryItem inventoryItem in items)
                 {
                     ClothesData data = Clothes.ConvertItemToClothesData(inventoryItem);
 
@@ -153,7 +153,7 @@ namespace Server.Character.Clothing
                     }
                 }
 
-                foreach (var inventoryItem in newList)
+                foreach (InventoryItem inventoryItem in newList)
                 {
                     if (inventoryItem.CustomName.ToLower() == "undefined" ||
                         inventoryItem.CustomName.ToLower() == "topless")
@@ -407,7 +407,7 @@ namespace Server.Character.Clothing
 
             playerClothesDatas.Remove(currentClothesData);
 
-            var newClothesData = new ClothesData(selectedItem, nakedItem, 0, player.IsMale());
+            ClothesData newClothesData = new ClothesData(selectedItem, nakedItem, 0, player.IsMale());
 
             if (player.IsMale())
             {
@@ -494,7 +494,7 @@ namespace Server.Character.Clothing
 
                 List<InventoryItem> newList = new List<InventoryItem>();
 
-                foreach (var inventoryItem in items)
+                foreach (InventoryItem inventoryItem in items)
                 {
                     ClothesData data = Clothes.ConvertItemToClothesData(inventoryItem);
 
@@ -507,7 +507,7 @@ namespace Server.Character.Clothing
                     }
                 }
 
-                foreach (var inventoryItem in newList)
+                foreach (InventoryItem inventoryItem in newList)
                 {
                     if (inventoryItem.CustomName.ToLower() == "undefined" ||
                         inventoryItem.CustomName.ToLower() == "topless")
@@ -578,7 +578,7 @@ namespace Server.Character.Clothing
                         currentClothesData.male = true;
                     }
 
-                    var clothesItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
+                    ClothesData clothesItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
                         currentClothesData.texture, player.IsMale());
 
                     newItem = Clothes.ConvertAccessoryToInventoryItem(clothesItem, player.IsMale());
@@ -594,7 +594,7 @@ namespace Server.Character.Clothing
                     playerInventory.RemoveItem(playerInventory.GetInventory()
                         .FirstOrDefault(s => s.CustomName == selectedItem.CustomName));
 
-                    var newAccessory = new AccessoryData(newClothesData.slot, newClothesData.drawable,
+                    AccessoryData newAccessory = new AccessoryData(newClothesData.slot, newClothesData.drawable,
                         newClothesData.texture, player.IsMale());
 
                     Clothes.SetAccessories(player, newAccessory);
@@ -607,7 +607,7 @@ namespace Server.Character.Clothing
                 }
                 else
                 {
-                    var newAccessory = new AccessoryData(newClothesData.slot, newClothesData.drawable,
+                    AccessoryData newAccessory = new AccessoryData(newClothesData.slot, newClothesData.drawable,
                         newClothesData.texture, player.IsMale());
 
                     Clothes.SetAccessories(player, newAccessory);
@@ -639,7 +639,7 @@ namespace Server.Character.Clothing
 
                 Inventory.Inventory playerInventory = player.FetchInventory();
 
-                var accessoryItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
+                ClothesData accessoryItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
                     currentClothesData.texture, player.IsMale());
 
                 bool added =
@@ -653,7 +653,7 @@ namespace Server.Character.Clothing
 
                 playerClothesDatas.Remove(currentClothesData);
 
-                var newClothesData = new ClothesData(selectedItem, -1, 0, player.IsMale());
+                ClothesData newClothesData = new ClothesData(selectedItem, -1, 0, player.IsMale());
 
                 if (player.IsMale())
                 {
