@@ -208,7 +208,7 @@ namespace Server.Models
         public string AppearanceData { get; set; }
 
         public uint BodyHealth { get; set; }
-        
+
         public uint BodyAdditionalHealth { get; set; }
 
         public byte DirtLevel { get; set; }
@@ -227,6 +227,10 @@ namespace Server.Models
         /// Status of the Anchor
         /// </summary>
         public bool Anchor { get; set; }
+
+        public bool HasPlateBeenStolen { get; set; }
+
+        public string StolenPlate { get; set; }
 
         /// <summary>
         /// Find vehicle
@@ -249,7 +253,7 @@ namespace Server.Models
             using Context context = new Context();
             context.Vehicle.Add(vehicle);
             context.SaveChanges();
-            
+
             return vehicle.Id;
         }
 
@@ -301,7 +305,6 @@ namespace Server.Models
                     vehicle.LockState = VehicleLockState.Unlocked;
                 }
 
-
                 veh.DamageData = vehicle.DamageData;
                 veh.HealthData = vehicle.HealthData;
                 veh.AppearanceData = vehicle.AppearanceData;
@@ -335,7 +338,7 @@ namespace Server.Models
                     veh.PosY = vehicle.Position.Y;
                     veh.PosZ = vehicle.Position.Z;
                     veh.RotZ = rotation.Yaw;
-                    veh.Dimension = (uint) vehicle.Dimension;
+                    veh.Dimension = (uint)vehicle.Dimension;
                 }
 
                 if (despawn)
@@ -353,7 +356,6 @@ namespace Server.Models
                 veh.Odometer = vehicle.GetClass().Distance;
 
                 context.SaveChanges();
-
             }
 
             if (despawn)
