@@ -46,6 +46,7 @@ namespace Server.Extensions
         {
             try
             {
+                
                 player.ChatInput(true);
                 player.HideChat(false);
 
@@ -99,13 +100,13 @@ namespace Server.Extensions
                 if (serverTrigger == "AdminCommand:OnManagePlayer:Vehicle:Selected")
                     AdminCommands.OnManagingPlayerSelectVehicleSelected(player, selectedItem);
 
-                if (serverTrigger == "AdminCommand:OnManagePlayer:Properties") AdminCommands.OnManagingPlayerSelectProperty(player, selectedItem);
+                if(serverTrigger == "AdminCommand:OnManagePlayer:Properties") AdminCommands.OnManagingPlayerSelectProperty(player, selectedItem);
 
-                if (serverTrigger == "AdminCommand:OnManagePlayer:Properties:Selected") AdminCommands.OnManagePlayerPropertiesSelected(player, selectedItem);
+                if(serverTrigger == "AdminCommand:OnManagePlayer:Properties:Selected") AdminCommands.OnManagePlayerPropertiesSelected(player, selectedItem);
 
-                if (serverTrigger == "AdminCommand:CreateApartment:InteriorSelect") AdminCommands.OnCreateApartmentInteriorSelect(player, selectedItem, index);
+                if(serverTrigger == "AdminCommand:CreateApartment:InteriorSelect") AdminCommands.OnCreateApartmentInteriorSelect(player, selectedItem, index);
 
-                if (serverTrigger == "AdminCommand:GotoInterior") AdminCommands.OnGotoInteriorSelect(player, selectedItem, index);
+                if(serverTrigger == "AdminCommand:GotoInterior") AdminCommands.OnGotoInteriorSelect(player, selectedItem, index);
 
                 if (serverTrigger == "Admin:SetPlayerFocuses") AdminCommands.OnSelectFocus(player, selectedItem);
 
@@ -142,8 +143,8 @@ namespace Server.Extensions
 
                 if (serverTrigger == "inventory:DeleteItem:SelectQuantity") InventoryCommands.OnInventoryDeleteItemQuantitySelect(player, selectedItem);
 
-                if (serverTrigger == "Inventory:Backpack:QuantitySelect") InventoryCommands.OnBackPackQuantitySelect(player, selectedItem);
-
+                if(serverTrigger == "Inventory:Backpack:QuantitySelect") InventoryCommands.OnBackPackQuantitySelect(player, selectedItem);
+                
                 #endregion Inventory Events
 
                 #region Clothing Store Events
@@ -283,9 +284,10 @@ namespace Server.Extensions
 
                 #region DMV
 
-                if (serverTrigger == "DMVMainMenuSelect") DmvCommands.OnDmvMainMenuSelect(player, selectedItem);
-
-                if (serverTrigger == "DMV:Menu:OnNewPlateSelect") DmvCommands.OnNewPlateSelect(player, selectedItem, index);
+                if (serverTrigger == "DMVMainMenuSelect")
+                {
+                    DmvCommands.OnDmvMainMenuSelect(player, selectedItem);
+                }
 
                 #endregion DMV
 
@@ -312,8 +314,6 @@ namespace Server.Extensions
                     Vehicle.Commands.OnGarageVGetSelect(player, selectedItem, index);
 
                 if (serverTrigger == "vehicle:ConfirmScrap") Vehicle.Commands.OnConfirmVehicleScrap(player, selectedItem);
-
-                if (serverTrigger == "VehicleCommand:PlaceStolePlate") Vehicle.Commands.OnPlaceStolePlateSelect(player, selectedItem);
 
                 #endregion Vehicle Commands
 
@@ -480,7 +480,7 @@ namespace Server.Extensions
 
                 if (serverTrigger == "store:hair:OnFacialHairSelect") HairStore.OnFacialHairSelect(player, selectedItem, index);
 
-                if (serverTrigger == "HairStore:ColorSelection") HairStore.OnHairColorSelect(player, selectedItem);
+                if(serverTrigger == "HairStore:ColorSelection") HairStore.OnHairColorSelect(player, selectedItem);
 
                 #endregion Hair Store
 
@@ -510,7 +510,7 @@ namespace Server.Extensions
 
                 if (serverTrigger == "admin:Properties:PlayerProperties") AdminCommands.OnPlayerPropertySelect(player, selectedItem);
 
-                if (serverTrigger == "Property:ConfirmSellMortgageProperty") PropertyCommands.OnSelectMortgageSale(player, selectedItem);
+                if(serverTrigger == "Property:ConfirmSellMortgageProperty") PropertyCommands.OnSelectMortgageSale(player, selectedItem);
 
                 #endregion Property System
 
@@ -583,81 +583,80 @@ namespace Server.Extensions
 
                 if (serverTrigger == "backpack:OnItemQuantitySelect")
                     BackpackCommands.OnItemQuantitySelect(player, selectedItem);
-
+                
                 #endregion Backpack System
 
-                if (serverTrigger == "CharacterCommands:ShowIdSelect") CharacterCommands.OnShowIdSelect(player, selectedItem, index);
+                if(serverTrigger == "CharacterCommands:ShowIdSelect") CharacterCommands.OnShowIdSelect(player, selectedItem, index);
 
-                if (serverTrigger == "character:showInfoMenu") CharacterCommands.OnShowInfoMenu(player, selectedItem);
+                if(serverTrigger == "character:showInfoMenu") CharacterCommands.OnShowInfoMenu(player, selectedItem);
 
-                if (serverTrigger == "Makeup:MainMenuSelect") MakeupHandler.OnMainMenuSelect(player, selectedItem);
+                if(serverTrigger == "Makeup:MainMenuSelect") MakeupHandler.OnMainMenuSelect(player, selectedItem);
 
-                if (serverTrigger == "Makeup:OnSubMenuSelect") MakeupHandler.OnSubMenuSelect(player, selectedItem, index);
+                if(serverTrigger == "Makeup:OnSubMenuSelect") MakeupHandler.OnSubMenuSelect(player, selectedItem, index);
 
                 #region EUP Menu
 
-                if (serverTrigger == "EupMenu:Police:Male") EupMenu.OnMalePoliceSelect(player, selectedItem);
+                if(serverTrigger == "EupMenu:Police:Male") EupMenu.OnMalePoliceSelect(player, selectedItem);
 
-                if (serverTrigger == "EupMenu:Police:PropMale") EupMenu.OnMalePolicePropSelect(player, selectedItem);
+                if(serverTrigger == "EupMenu:Police:PropMale") EupMenu.OnMalePolicePropSelect(player, selectedItem);
 
-                if (serverTrigger == "EupMenu:Police:MaleRanks") EupMenu.OnPoliceMaleRankSelect(player, selectedItem);
+                if(serverTrigger == "EupMenu:Police:MaleRanks") EupMenu.OnPoliceMaleRankSelect(player, selectedItem);
 
-                if (serverTrigger == "EupMenu:Police:Female") EupMenu.OnFemalePoliceSelect(player, selectedItem);
+                if(serverTrigger == "EupMenu:Police:Female") EupMenu.OnFemalePoliceSelect(player, selectedItem);
 
-                if (serverTrigger == "EupMenu:Police:PropFemale") EupMenu.OnFemalePolicePropSelect(player, selectedItem);
+                if(serverTrigger == "EupMenu:Police:PropFemale") EupMenu.OnFemalePolicePropSelect(player, selectedItem);
 
-                #endregion EUP Menu
+                #endregion
 
                 #region Open World Storage
 
-                if (serverTrigger == "OpenInventory:StorageMainMenu") OpenInventoryCommands.OnOWStorageMainMenu(player, selectedItem);
-                if (serverTrigger == "OpenInventory:StorageTakeItem") OpenInventoryCommands.OnOWTakeItemSelect(player, selectedItem, index);
-                if (serverTrigger == "OpenInventory:StoreItem") OpenInventoryCommands.OnOWStoreItemSelect(player, selectedItem, index);
-
-                #endregion Open World Storage
+                if(serverTrigger == "OpenInventory:StorageMainMenu") OpenInventoryCommands.OnOWStorageMainMenu(player, selectedItem);
+                if(serverTrigger == "OpenInventory:StorageTakeItem") OpenInventoryCommands.OnOWTakeItemSelect(player, selectedItem, index);
+                if(serverTrigger == "OpenInventory:StoreItem") OpenInventoryCommands.OnOWStoreItemSelect(player, selectedItem, index);
+                #endregion
 
                 #region GPS System
 
-                if (serverTrigger == "CharacterCommands:AddGpsWaypoint") CharacterCommands.OnSelectGpsAddWayPoint(player, selectedItem, index);
-                if (serverTrigger == "CharacterCommands:AddGpsName") CharacterCommands.OnSelectGpsRename(player, selectedItem, index);
-                if (serverTrigger == "CharacterCommands:gps:gpsSelected") CharacterCommands.OnSelectGps(player, selectedItem, index);
-                if (serverTrigger == "CharacterCommands:gps:wayPointSelected") CharacterCommands.GpsWayPointSelect(player, selectedItem, index);
+                if(serverTrigger == "CharacterCommands:AddGpsWaypoint") CharacterCommands.OnSelectGpsAddWayPoint(player, selectedItem, index);
+                if(serverTrigger == "CharacterCommands:AddGpsName") CharacterCommands.OnSelectGpsRename(player, selectedItem, index);
+                if(serverTrigger == "CharacterCommands:gps:gpsSelected") CharacterCommands.OnSelectGps(player, selectedItem, index);
+                if(serverTrigger == "CharacterCommands:gps:wayPointSelected") CharacterCommands.GpsWayPointSelect(player, selectedItem, index);
                 if (serverTrigger == "CharacterCommands:gps:gpsSelectedRemoveWaypoint")
                     CharacterCommands.OnSelectGpsSelectedRemoveWaypoint(player, selectedItem, index);
                 if (serverTrigger == "CharacterCommands:gps:removeWayPointSelected")
                     CharacterCommands.GpsRemoveWayPointSelected(player, selectedItem, index);
 
-                #endregion GPS System
+                #endregion
 
                 #region Discord Intergration
 
-                if (serverTrigger == "DiscordMenu:MainMenu") DiscordCommands.OnDiscordMenuSelect(player, selectedItem);
+                if(serverTrigger == "DiscordMenu:MainMenu") DiscordCommands.OnDiscordMenuSelect(player, selectedItem);
 
-                #endregion Discord Intergration
+                #endregion
 
                 if (serverTrigger == "Inventory:OnGiveItemToPlayerSelect")
                     InventoryCommands.OnSelectItemGiveToPlayer(player, selectedItem, index);
-
-                if (serverTrigger == "Inventory:SelectedItemGiveToPlayerQuantity")
+                
+                if(serverTrigger == "Inventory:SelectedItemGiveToPlayerQuantity")
                     InventoryCommands.SelectedItemGiveToPlayerQuantitySelect(player, selectedItem);
 
                 #region Interior Mapping
 
-                if (serverTrigger == "BuyObject:SelectItem")
+                if(serverTrigger == "BuyObject:SelectItem")
                     PurchaseObjectHandler.OnBuyObjectSelectItem(player, selectedItem, index);
 
                 if (serverTrigger == "InteriorMapping:SelectObject")
                     PurchaseObjectHandler.OnInteriorMappingSelectObject(player, selectedItem, index);
-
-                if (serverTrigger == "InteriorMapping:ShowMoveObjectList")
+                
+                if(serverTrigger == "InteriorMapping:ShowMoveObjectList")
                     PurchaseObjectHandler.OnShowObjectMoveListSelected(player, selectedItem, index);
-
-                if (serverTrigger == "InteriorMapping:ShowPickupObjectList")
+                
+                if(serverTrigger == "InteriorMapping:ShowPickupObjectList")
                     PurchaseObjectHandler.OnItemPickupSelect(player, selectedItem, index);
 
-                #endregion Interior Mapping
-
-                if (serverTrigger == "WelcomePlayer:JobMenu") WelcomePlayer.OnJobMenuSelectItem(player, selectedItem);
+                #endregion
+                
+                if(serverTrigger == "WelcomePlayer:JobMenu") WelcomePlayer.OnJobMenuSelectItem(player, selectedItem);
             }
             catch (Exception e)
             {
@@ -678,8 +677,9 @@ namespace Server.Extensions
         {
             try
             {
-                #region Inventory
 
+                #region Inventory
+               
                 if (listTrigger == "InventoryMenuGiveItemToPlayerQuantityTrigger") InventoryCommands.OnGiveItemToPlayerQuantityChange(player, listText);
 
                 if (listTrigger == "InventoryMenuGiveItemToPlayerQuantityTrigger") InventoryCommands.OnGiveItemToPlayerQuantityChange(player, listText);
@@ -693,46 +693,48 @@ namespace Server.Extensions
 
                 if (listTrigger == "Inventory:SelectedItemGiveToPlayerQuantityList")
                     InventoryCommands.SelectedItemGiveToPlayerQuantityChange(player, menuItemText, listText);
+                
+                if(listTrigger == "backpack:ItemQuantityChange") BackpackCommands.ItemQuantityChange(player, menuItemText, listText);
+                
+                if(listTrigger == "Inventory:Backpack:QuantityChange") InventoryCommands.OnBackpackQuantityChange(player, listText);
 
-                if (listTrigger == "backpack:ItemQuantityChange") BackpackCommands.ItemQuantityChange(player, menuItemText, listText);
-
-                if (listTrigger == "Inventory:Backpack:QuantityChange") InventoryCommands.OnBackpackQuantityChange(player, listText);
-
-                #endregion Inventory
+                #endregion
 
                 #region Vehicle
-
+                
                 if (listTrigger == "vehicle:inventory:takeQuantityChange") VehicleInventory.InventoryMenuOnTakeQuantityChange(player, listText);
 
                 if (listTrigger == "vehicle:inventory:placeQuantityChange") VehicleInventory.InventoryMenuOnPlaceQuantityChange(player, listText);
 
-                #endregion Vehicle
+                #endregion
 
                 #region Mechanic Focus
 
                 if (listTrigger == "focus:mechanic:resprayListChange") FocusCommands.OnResprayListChange(player, menuItemText, listText);
 
-                #endregion Mechanic Focus
+                #endregion
 
                 #region Admin
-
+                
                 if (listTrigger == "admin:weapon:onWeaponQuantityChange") AdminCommands.OnAdminWeaponQuantityChange(player, listText);
 
-                #endregion Admin
+                #endregion
 
                 #region Weapon System
 
                 if (listTrigger == "WeaponManagementCombineAmmoListTrigger") WeaponCommands.EventWeaponManagementCombineAmmoListTrigger(player, listText);
 
-                #endregion Weapon System
+                #endregion
 
                 #region Hair & Makeup
 
-                if (listTrigger == "HairStore:OnHairColorListChange") HairStore.OnHairColorListChange(player, listText);
+                if(listTrigger == "HairStore:OnHairColorListChange") HairStore.OnHairColorListChange(player, listText);
 
-                if (listTrigger == "Makeup:OnSubMenuListChange") MakeupHandler.OnSubMenuListChange(player, menuItemText, listText);
+                if(listTrigger == "Makeup:OnSubMenuListChange") MakeupHandler.OnSubMenuListChange(player, menuItemText, listText);
 
-                #endregion Hair & Makeup
+
+                #endregion
+                
             }
             catch (Exception e)
             {
@@ -787,11 +789,11 @@ namespace Server.Extensions
 
                 if (changeTrigger == "focus:mechanic:OnWheelResprayChange") FocusCommands.OnWheelResprayChange(player, newIndex, itemText);
 
-                if (changeTrigger == "Makeup:OnSubMenuItemChange") MakeupHandler.OnSubMenuItemChange(player, itemText);
+                if(changeTrigger == "Makeup:OnSubMenuItemChange") MakeupHandler.OnSubMenuItemChange(player, itemText);
 
-                if (changeTrigger == "store:tattoo:TattooItemChange") TattooStore.OnTattooItemChange(player, newIndex, itemText);
-
-                if (changeTrigger == "BuyObject:ChangeItem") PurchaseObjectHandler.OnBuyObjectChangeItem(player, newIndex, itemText);
+                if(changeTrigger == "store:tattoo:TattooItemChange") TattooStore.OnTattooItemChange(player, newIndex, itemText);
+                
+                if(changeTrigger == "BuyObject:ChangeItem") PurchaseObjectHandler.OnBuyObjectChangeItem(player, newIndex, itemText);
             }
             catch (Exception e)
             {

@@ -227,16 +227,6 @@ namespace Server.Models
         /// Status of the Anchor
         /// </summary>
         public bool Anchor { get; set; }
-        
-        /// <summary>
-        /// Has the vehicle plate been stolen?
-        /// </summary>
-        public bool HasPlateBeenStolen { get; set; }
-        
-        /// <summary>
-        /// If not null, this plate has been taken
-        /// </summary>
-        public string StolenPlate { get; set; }
 
         /// <summary>
         /// Find vehicle

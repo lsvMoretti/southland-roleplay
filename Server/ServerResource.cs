@@ -354,6 +354,7 @@ namespace Server
                 Alt.OnClient<IPlayer, int>("ReturnVehicleClass", VehicleHandler.OnVehicleClassReturn);
                 Alt.OnClient<IPlayer, float>("trunkPos:VInventory", VehicleInventory.OnReturnTrunkPosition);
                 Alt.OnClient<IPlayer, int, bool>("IndicatorStateChange", VehicleHandler.OnIndicatorStateChange);
+
                 #endregion Vehicle System
 
                 Alt.OnClient<IPlayer, bool>("ChatStatusChange", (player, status) =>
