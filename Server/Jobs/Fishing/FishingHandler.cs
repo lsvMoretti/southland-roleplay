@@ -27,7 +27,7 @@ namespace Server.Jobs.Fishing
             }
 
             Console.WriteLine($"Loaded {fishingPoints.Count} Fishing Points");
-            
+
             Timer timer = new Timer(300000)
             {
                 AutoReset = true
@@ -62,8 +62,6 @@ namespace Server.Jobs.Fishing
                         double removeCount = Math.Round(fishingPoint.FishCount * 0.03, MidpointRounding.ToZero);
 
                         fishingPoint.FishCount -= (int)removeCount;
-
-                        Console.WriteLine($"Removed {(int)removeCount} fish from point {fishingPoint.Id}.");
                     }
                 }
                 fishContext.SaveChanges();
@@ -109,8 +107,6 @@ namespace Server.Jobs.Fishing
             using Context context = new Context();
 
             List<FishingPoint> fishingPoints = context.FishingPoints.ToList();
-
-            
 
             FishingPoint closestPoint = null;
             float lastDistance = distance;

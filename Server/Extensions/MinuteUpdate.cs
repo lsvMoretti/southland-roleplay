@@ -35,17 +35,13 @@ namespace Server.Extensions
             _tenSecondTimer.Start();
             _tenSecondTimer.Elapsed += tenSecondTimer_Elapsed;
 
-            _hourTimer = new Timer(3600000) {AutoReset =  true};
+            _hourTimer = new Timer(3600000) { AutoReset = true };
             _hourTimer.Elapsed += _hourTimer_Elapsed;
             _hourTimer.Start();
-            
-
-
         }
 
         private static void _hourTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-
             _hourTimer.Stop();
             List<Models.Property> mortgageProperties = Models.Property.FetchProperties().Where(x => x.MortgageValue > 0).ToList();
 
@@ -56,7 +52,7 @@ namespace Server.Extensions
             }
 
             DateTime timeNow = DateTime.Now;
-            
+
             using Context context = new Context();
 
             foreach (Models.Property mortgageProperty in mortgageProperties)
@@ -66,7 +62,7 @@ namespace Server.Extensions
                     // Gone past 2 month payment window
                     Models.Property property = context.Property.Find(mortgageProperty.Id);
 
-                    if(property == null) continue;
+                    if (property == null) continue;
 
                     property.Key = Utility.GenerateRandomString(8);
 
@@ -85,7 +81,7 @@ namespace Server.Extensions
                     ownerCharacter.Money += (float)depositAmount;
 
                     property.MortgageValue = 0;
-                    
+
                     Logging.AddToCharacterLog(ownerCharacter.Id, $"{property.Address} has been taken away from them. Reason: Failure to keep up with mortgage payments! Refunded: {depositAmount:C}.");
                 }
             }
@@ -100,10 +96,9 @@ namespace Server.Extensions
 
             SignalR.SendPlayerCount();
 
-
             System.Diagnostics.Process currentProcess = System.Diagnostics.Process.GetCurrentProcess();
 
-            if(currentProcess.WorkingSet64 > _memUsage)
+            if (currentProcess.WorkingSet64 > _memUsage)
             {
                 DiscordHandler.SendMessageToLogChannel($"Current Ram Usage: {(currentProcess.WorkingSet64 / 1000000000):D2} Gigabytes");
                 _memUsage = currentProcess.WorkingSet64;
@@ -131,7 +126,7 @@ namespace Server.Extensions
         private static void MinuteTimerOnElapsed(object sender, ElapsedEventArgs e)
         {
             _minuteTimer.Stop();
-            
+
 #if RELEASE
             CharacterHandler.CheckPlayerAfk();
 
@@ -141,7 +136,6 @@ namespace Server.Extensions
 
             foreach (IPlayer player in Alt.Server.GetPlayers())
             {
-
                 if (player.FetchCharacter() == null) continue;
 
                 if (player.GetClass().CreatorRoom) continue;
@@ -166,7 +160,6 @@ namespace Server.Extensions
                 {
                     playerCharacter.JailMinutes -= 1;
                     PlayerChatExtension.SendInfoNotification(player, $"You have {playerCharacter.JailMinutes} minutes remaining in jail.");
-                    
                 }
 
                 Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
@@ -223,14 +216,13 @@ namespace Server.Extensions
 
                 playerCharacter.TotalMinutes += 1;
             }
-            Console.WriteLine("Minute Update");
             //DiscordBot.UpdateDiscordPlayerCount(Alt.Server.GetPlayers().Count(x => x.FetchCharacter() != null));
             context.SaveChanges();
             _minuteTimer.Start();
 
             foreach (Models.Character character in context.Character.Where(x => x.InJail))
             {
-                if(Models.Account.FindAccountById(character.OwnerId).IsOnline) continue;
+                if (Models.Account.FindAccountById(character.OwnerId).IsOnline) continue;
 
                 if (character.JailMinutes > 120)
                 {
@@ -240,7 +232,5 @@ namespace Server.Extensions
 
             context.SaveChanges();
         }
-
-        
     }
 }
