@@ -31,10 +31,10 @@ namespace Server.Extensions
                 double z = playerRot.Yaw * (Math.PI / 180);
                 double x = playerRot.Pitch * (Math.PI / 180);
                 double num = Math.Abs(Math.Cos(x));
-            
+
                 Position forwardVector = new Position(Convert.ToSingle(-Math.Sin(z) * num), Convert.ToSingle(Math.Cos(z) * num), Convert.ToSingle(Math.Sin(x)));
                 Position scaledVector = new Position(forwardVector.X * distance, forwardVector.Y * distance, forwardVector.Z * distance);
-            
+
                 return new Position(position.X + scaledVector.X, position.Y + scaledVector.Y, position.Z + scaledVector.Z);
             }
             catch (Exception e)
@@ -42,9 +42,8 @@ namespace Server.Extensions
                 Console.WriteLine(e);
                 return Position.Zero;
             }
-            
         }
-        
+
         public static void SetPlayerNameTag(this IPlayer player, string name)
         {
             player.SetSyncedMetaData("playerNameTag", $"{name}");
@@ -501,7 +500,6 @@ namespace Server.Extensions
 
                                     if (currentWeaponItem != null)
                                     {
-
                                         WeaponInfo weaponInfo =
                                             JsonConvert.DeserializeObject<WeaponInfo>(currentWeaponItem.ItemValue);
 
@@ -571,7 +569,6 @@ namespace Server.Extensions
             playerCharacter.Money += (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         /// <summary>
@@ -592,7 +589,6 @@ namespace Server.Extensions
             playerCharacter.Money += (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         /// <summary>
@@ -613,7 +609,6 @@ namespace Server.Extensions
             playerCharacter.Money -= (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         /// <summary>
@@ -634,7 +629,6 @@ namespace Server.Extensions
             playerCharacter.Money -= (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         public static PlayerEntity GetClass(this IPlayer player)
@@ -773,7 +767,6 @@ namespace Server.Extensions
         {
             get
             {
-
                 if (_player.GetClass().AdminDuty)
                 {
                     return _player.GetClass().UcpName;
@@ -821,14 +814,13 @@ namespace Server.Extensions
                 }
 
                 using Context context = new Context();
-                Models.Character playerCharacter = context.Character.Find(_player.FetchCharacterId());
+                Models.Character playerCharacter = context.Character.Find(_player.GetClass().CharacterId);
 
                 if (playerCharacter == null) return;
 
                 playerCharacter.Name = value;
 
                 context.SaveChanges();
-                
             }
         }
 
@@ -915,8 +907,6 @@ namespace Server.Extensions
                 playerCharacter.Money = value;
 
                 context.SaveChanges();
-
-                
             }
         }
 
@@ -1028,7 +1018,6 @@ namespace Server.Extensions
 
                     if (string.IsNullOrEmpty(_player.FetchCharacter()?.Languages))
                     {
-
                         List<Language.Language> newLanguages = new List<Language.Language>
                         {
                             LanguageHandler.Languages.FirstOrDefault(x => x.Code == "en")
@@ -1045,7 +1034,6 @@ namespace Server.Extensions
                         _player.SetData("SpokenLanguages", newLanguages);
 
                         return newLanguages;
-
                     }
 
                     List<Language.Language> languages =
@@ -1053,7 +1041,6 @@ namespace Server.Extensions
                     _player.SetData("SpokenLanguages", languages);
 
                     return languages;
-
                 }
                 catch (Exception e)
                 {
@@ -1078,7 +1065,7 @@ namespace Server.Extensions
 
                 return hasCuffedData && cuffed;
             }
-            set 
+            set
             {
                 _player.SetData("IsCuffed", value);
 
@@ -1121,7 +1108,7 @@ namespace Server.Extensions
             {
                 bool hasUcpName = _player.GetSyncedMetaData("UcpName", out string ucpName);
 
-                if (!hasUcpName) return null;
+                if (!hasUcpName) return null!;
 
                 return ucpName;
             }

@@ -66,16 +66,16 @@ namespace Server.Apartments
 
         public static void UnloadApartmentComplex(ApartmentComplexes complex)
         {
-            KeyValuePair<int, Blip>? blipInfo = Blips.FirstOrDefault(x => x.Key == complex.Id);
-            
+            var blipInfo = Blips.FirstOrDefault(x => x.Key == complex.Id);
+
             blipInfo.Value?.Remove();
 
-            KeyValuePair<int, TextLabel>? textLabelInfo = TextLabels.FirstOrDefault(x => x.Key == complex.Id);
-            
+            var textLabelInfo = TextLabels.FirstOrDefault(x => x.Key == complex.Id);
+
             textLabelInfo.Value?.Remove();
 
-            KeyValuePair<int, Marker>? markerInfo = Markers.FirstOrDefault(x => x.Key == complex.Id);
-            
+            var markerInfo = Markers.FirstOrDefault(x => x.Key == complex.Id);
+
             markerInfo.Value?.Remove();
 
             Blips.Remove(complex.Id);
@@ -169,7 +169,6 @@ namespace Server.Apartments
             playerCharacter.InsideApartment = selectedApartment.Name;
 
             context.SaveChanges();
-            
 
             player.Position = interior.Position;
 
@@ -202,7 +201,6 @@ namespace Server.Apartments
             playerCharacter.InsideApartmentComplex = 0;
             playerCharacter.InsideApartment = null;
             context.SaveChanges();
-            
 
             player.Dimension = 0;
             player.Position = new Vector3(apartmentComplex.PosX, apartmentComplex.PosY, apartmentComplex.PosZ);
@@ -361,8 +359,6 @@ namespace Server.Apartments
             dbComplex.ApartmentList = JsonConvert.SerializeObject(dbApartments);
 
             context.SaveChanges();
-
-            
 
             string lockState = apartment.Locked ? "locked" : "unlocked";
 

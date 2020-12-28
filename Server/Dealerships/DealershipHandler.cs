@@ -194,18 +194,14 @@ namespace Server.Dealerships
                     IVehicle vehicle = Alt.Server.CreateVehicle(vehicleModel, vehiclePosition,
                         new DegreeRotation(0, 0, 270));
 
-
                     vehicle.Dimension = player.Dimension;
                     vehicle.EngineOn = false;
                     vehicle.LockState = VehicleLockState.Locked;
                     vehicle.NumberplateText = "PREVIEW";
-                    
+
                     previewVehicles.Add(player.GetPlayerId(), vehicle.Id);
                     return vehicle;
                 });
-
-
-
 
                 player.SetData("dealership:selectedPreviewVehicle", JsonConvert.SerializeObject(selectedDealershipVehicle));
 
@@ -389,7 +385,6 @@ namespace Server.Dealerships
 
                     voucherContext.SaveChanges();
 
-
                     PurchaseVehicle(player, selectedDealershipVehicle);
                 }
 
@@ -453,7 +448,7 @@ namespace Server.Dealerships
             }
         }
 
-        public static async void PurchaseVehicle(IPlayer player, DealershipVehicle dealershipVehicle)
+        public static void PurchaseVehicle(IPlayer player, DealershipVehicle dealershipVehicle)
         {
             try
             {
@@ -510,7 +505,6 @@ namespace Server.Dealerships
 
                 context.Vehicle.Add(newVehicle);
                 context.SaveChanges();
-
 
                 int newVehicleId = newVehicle.Id;
                 Inventory.Inventory inventory = player.FetchInventory();

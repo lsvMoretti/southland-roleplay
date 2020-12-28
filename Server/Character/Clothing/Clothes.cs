@@ -80,7 +80,7 @@ namespace Server.Character.Clothing
             return clothingItem.GetHashCode();
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ClothesJson other && other.clothingItem == this.clothingItem;
         }
@@ -243,8 +243,6 @@ namespace Server.Character.Clothing
             Console.WriteLine($"Loaded {FemaleTopToTorso.Count + MaleTopToTorso.Count} Torso items");
 
             LoadBannedClothingNames();
-
-
         }
 
         public static void LoadBannedClothingNames()
@@ -265,12 +263,10 @@ namespace Server.Character.Clothing
 
                     Console.WriteLine($"Loaded {bannedClothingNames.Count} Banned Clothing Names (Won't be added on switching)");
                     return;
-
                 }
 
                 File.WriteAllText("data/clothing/BannedClothingNames.json", JsonConvert.SerializeObject(ClothingCommand.BannedClothingNames, Formatting.Indented));
 
-                
                 Console.WriteLine($"Loaded {ClothingCommand.BannedClothingNames.Count} Banned Clothing Names (Won't be added on switching)");
             }
             catch (Exception e)
@@ -347,7 +343,6 @@ namespace Server.Character.Clothing
 
                     foreach (string clothingItem in clothingFiles)
                     {
-                        
                         Console.WriteLine($"Loading {clothingItem}");
 
                         string content = File.ReadAllText($"{clothingItem}");
@@ -474,7 +469,7 @@ namespace Server.Character.Clothing
                 context.SaveChanges();
 
                 LoadClothes(player, defaultClothesDatas, accessories);
-                
+
                 return;
             }
 
@@ -664,14 +659,14 @@ namespace Server.Character.Clothing
                 int torso = GetTorsoDataForTop(data.drawable, player.FetchCharacter().Sex == 0);
                 player.SetClothes((int)ClothesType.Torso, torso, 0);
 
-                KeyValuePair<int, Dictionary<int, int>>? oldTorsoData = clothesData.FirstOrDefault(i => i.Key == (int)ClothesType.Torso);
+                var oldTorsoData = clothesData.FirstOrDefault(i => i.Key == (int)ClothesType.Torso);
 
                 clothesData.Remove(oldTorsoData.Key);
 
                 clothesData.Add((int)ClothesType.Torso, new Dictionary<int, int> { { torso, 0 } });
             }
 
-            KeyValuePair<int, Dictionary<int, int>>? pair = clothesData.FirstOrDefault(i => i.Key == data.slot);
+            var pair = clothesData.FirstOrDefault(i => i.Key == data.slot);
 
             Dictionary<int, int> newValue = new Dictionary<int, int> { { data.drawable, data.texture } };
 
@@ -722,7 +717,7 @@ namespace Server.Character.Clothing
                 accessoryDatas.Add(data);
 
                 player.SetData("ACCESSORYDATA", JsonConvert.SerializeObject(accessoryDatas));
-                
+
                 if (!player.IsInVehicle)
                 {
                     player.Position = player.Position;
@@ -763,7 +758,6 @@ namespace Server.Character.Clothing
                 dbCharacter.AccessoryJson = JsonConvert.SerializeObject(accessory);
 
                 context.SaveChanges();
-                
             }
             catch (Exception e)
             {
@@ -794,7 +788,6 @@ namespace Server.Character.Clothing
 
             clothes.Remove(selectedClothes);
 
-            
             clothes.Add(clothesData);
 
             dbCharacter.ClothesJson = JsonConvert.SerializeObject(clothes);

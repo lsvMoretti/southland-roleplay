@@ -56,9 +56,10 @@ namespace Server.Extensions
                 {
                     entry.Value.Execute(player, parameters);
                 }
-                catch (Exception ex)
+                catch
                 {
                     PlayerChatExtension.SendErrorNotification(player, "An error occurred.");
+                    return;
                 }
             }
         }
@@ -66,13 +67,13 @@ namespace Server.Extensions
         private void GetCommandMethods()
         {
 #if RELEASE
-            
+
             using StreamWriter sw = new StreamWriter($"{Environment.CurrentDirectory}/commandOutput.txt");
-            
+
             sw.Flush();
 
 #endif
-            
+
             foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
             {
                 foreach (MethodInfo method in type.GetRuntimeMethods())
@@ -114,7 +115,6 @@ namespace Server.Extensions
                                  $"Description: {attribute.Description}, Admin: {attribute.AdminLevel.ToString()}, " +
                                  $"Alternative: {attribute.Alternatives}");
 #endif
-                    
 
                     _commands.Add(attribute.Command.ToLower(), new CommandRow(attribute, method, arguments));
                     Commands.Add(attribute.Command.ToLower(), new CommandRow(attribute, method, arguments));
@@ -122,11 +122,11 @@ namespace Server.Extensions
             }
 
 #if RELEASE
-            
+
             sw.Close();
 
 #endif
-            
+
             Console.WriteLine($"Loaded {_commands.Count} command(s).");
         }
     }

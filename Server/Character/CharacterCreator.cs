@@ -66,7 +66,7 @@ namespace Server.Character
             player.ShowHud(false);
 
             using Context context = new Context();
-            Models.Character playerCharacter = context.Character.Find(player.FetchCharacterId());
+            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
             if (playerCharacter == null)
             {
@@ -111,8 +111,6 @@ namespace Server.Character
                 property?.AddToBalance(SurgeonCost);
             }
 
-
-
             if (creatorReason == 1)
             {
                 bool previousTutorialCompleted = Models.Character
@@ -128,7 +126,6 @@ namespace Server.Character
                     playerCharacter.Dimension = 0;
                     context.SaveChanges();
 
-                    
                     CreatorRoom.LeaveCreatorRoom(player);
 
                     player.GetClass().CompletedTutorial = true;
@@ -145,7 +142,7 @@ namespace Server.Character
             Handler.StopPlayerAnimation(player);
 
             context.SaveChanges();
-            
+
             player.LoadCharacterCustomization();
         }
     }

@@ -183,7 +183,7 @@ namespace Server.Character.Tattoo
 
             foreach (TattooData tattooData in tattooList)
             {
-                KeyValuePair<TattooData, string>? selectedTattooData = TattooList.FirstOrDefault(s => s.Key.Name == tattooData.Name);
+                var selectedTattooData = TattooList.FirstOrDefault(s => s.Key.Name == tattooData.Name);
 
                 string collection = selectedTattooData.Value;
 

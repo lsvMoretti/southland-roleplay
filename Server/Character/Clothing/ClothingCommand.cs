@@ -195,7 +195,7 @@ namespace Server.Character.Clothing
 
                 if (newClothesData == null) return;
 
-                if (newClothesData.male && !player.IsMale())
+                if (newClothesData.male && !player.GetClass().IsMale)
                 {
                     player.SendErrorNotification($"Clothing item isn't for your gender.");
                     return;

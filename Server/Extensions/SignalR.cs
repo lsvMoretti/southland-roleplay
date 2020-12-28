@@ -24,7 +24,7 @@ namespace Server.Extensions
 
             hubConnection = new HubConnectionBuilder().WithUrl(url).Build();
 
-            await Connect(hubConnection);
+            Connect(hubConnection);
 
             hubConnection.Closed += HubConnectionOnClosed;
 
@@ -96,11 +96,11 @@ namespace Server.Extensions
 
             bool reconnected = false;
 
-            reconnected = await Connect(hubConnection);
+            reconnected = Connect(hubConnection);
 
             while (!reconnected)
             {
-                reconnected = await Connect(hubConnection);
+                reconnected = Connect(hubConnection);
             }
 
             if (reconnected)
@@ -111,7 +111,7 @@ namespace Server.Extensions
             }
         }
 
-        private static async Task<bool> Connect(HubConnection connection)
+        private static bool Connect(HubConnection connection)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace Server.Extensions
 
                 return hubConnected;
             }
-            catch (Exception e)
+            catch
             {
                 Console.WriteLine($"[SignalR] Unable to connect to hub. Retrying..");
                 return false;

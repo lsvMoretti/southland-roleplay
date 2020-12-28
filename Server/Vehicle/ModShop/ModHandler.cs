@@ -93,7 +93,7 @@ namespace Server.Vehicle.ModShop
             }
 
             player.SetData("AtModProperty", nearbyProperty.Id);
-            
+
             player.Emit("vehicleMod:FetchVehicleMods", JsonConvert.SerializeObject(new VehicleNumMods()));
         }
 
@@ -446,7 +446,6 @@ namespace Server.Vehicle.ModShop
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            
             double cpp = 10000;
 
             int price = DefaultPrice;
@@ -455,7 +454,7 @@ namespace Server.Vehicle.ModShop
             {
                 cpp = (double)player.Vehicle.FetchVehicleData().VehiclePrice;
             }
-            
+
             foreach (string modName in modNames)
             {
                 #region Engine Mods
@@ -477,7 +476,7 @@ namespace Server.Vehicle.ModShop
                     menuItems.Add(new NativeMenuItem(modName, $"{Convert.ToInt32(2 * 3 * (cpp * 0.0075) + (cpp * 0.0075)):C}"));
                 }
 
-                #endregion
+                #endregion Engine Mods
 
                 #region Brakes
 
@@ -491,10 +490,11 @@ namespace Server.Vehicle.ModShop
                 }
                 if (modName == "Race Brakes")
                 {
-                    menuItems.Add(new NativeMenuItem(modName, $"{Convert.ToInt32(2* 2 * (cpp * 0.0025) + (cpp * 0.0025)):C}"));
+                    menuItems.Add(new NativeMenuItem(modName, $"{Convert.ToInt32(2 * 2 * (cpp * 0.0025) + (cpp * 0.0025)):C}"));
                 }
 
-                #endregion
+                #endregion Brakes
+
                 else
                 {
                     menuItems.Add(new NativeMenuItem(modName));
@@ -744,7 +744,7 @@ namespace Server.Vehicle.ModShop
                 // Engine Upgrade
                 if (modList.ContainsKey(modSlot))
                 {
-                    KeyValuePair<int, int>? modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
+                    var modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
 
                     if (modType == 1 && modInfo.Value < 0)
                     {
@@ -787,7 +787,7 @@ namespace Server.Vehicle.ModShop
             {
                 if (modList.ContainsKey(modSlot))
                 {
-                    KeyValuePair<int, int>? modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
+                    var modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
 
                     if (modType == 1 && modInfo.Value < 0)
                     {
@@ -819,7 +819,7 @@ namespace Server.Vehicle.ModShop
             {
                 if (modList.ContainsKey(modSlot))
                 {
-                    KeyValuePair<int, int>? modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
+                    var modInfo = modList.FirstOrDefault(x => x.Key == modSlot);
 
                     if (modType == 1 && modInfo.Value < 0)
                     {
@@ -1002,7 +1002,7 @@ namespace Server.Vehicle.ModShop
             }
 
             bool adminMod = player.HasData("AdminModVehicle");
-            
+
             if (!adminMod && player.FetchCharacter().Money < price)
             {
                 player.SendErrorNotification("You don't have enough money for this.");
@@ -1048,7 +1048,7 @@ namespace Server.Vehicle.ModShop
             {
                 player.RemoveCash(price);
             }
-            
+
             player.DeleteData("AdminModVehicle");
 
             player.SendInfoNotification($"You've selected the new {modName} for your vehicle's {modTypeString}. This has cost you {price:C0}.");
@@ -1056,8 +1056,7 @@ namespace Server.Vehicle.ModShop
             player.SendInfoNotification($"Head to a mechanic to get this fitted.");
 
             Logging.AddToCharacterLog(player, $"has bought a new VMod for vehicle ID: {player.Vehicle.FetchVehicleData().Id}. Mod slot: {modTypeString}, Mod Name: {modName}, Index: {modSelectedIndex}.");
-            
-            
+
             bool hasPropertyData = player.GetData("AtModProperty", out int propertyId);
 
             if (hasPropertyData)
@@ -1088,9 +1087,9 @@ namespace Server.Vehicle.ModShop
             }
 
             Models.Character playerCharacter = player.FetchCharacter();
-            
+
             bool adminMod = player.HasData("AdminModVehicle");
-                
+
             if (!adminMod && playerCharacter.Money < DigitailRadioPrice)
             {
                 player.SendErrorNotification($"You don't have enough money for this. You need {DigitailRadioPrice:CO}");
@@ -1117,13 +1116,13 @@ namespace Server.Vehicle.ModShop
             {
                 player.RemoveCash(DigitailRadioPrice);
             }
-            
+
             player.DeleteData("AdminModVehicle");
 
             player.SendInfoNotification($"You've purchased a new digital radio for your vehicle. Head to a mechanic to get this fitted!");
 
             Logging.AddToCharacterLog(player, $"has bought a digital radio for their vehicle ID: {player.Vehicle.FetchVehicleData()}.");
-            
+
             bool hasPropertyData = player.GetData("AtModProperty", out int propertyId);
 
             if (hasPropertyData)
@@ -1307,7 +1306,7 @@ namespace Server.Vehicle.ModShop
             if (option == "Close" || option == "No") return;
 
             bool adminMod = player.HasData("AdminModVehicle");
-            
+
             if (!adminMod && player.FetchCharacter().Money < DefaultPrice)
             {
                 player.SendErrorNotification("You don't have enough money for this.");
@@ -1354,7 +1353,7 @@ namespace Server.Vehicle.ModShop
             {
                 player.RemoveCash(DefaultPrice);
             }
-            
+
             player.DeleteData("AdminModVehicle");
 
             player.SendInfoNotification($"You've selected the new {modName} for your vehicle's Front Wheels. This has cost you {DefaultPrice:C0}.");
@@ -1381,8 +1380,6 @@ namespace Server.Vehicle.ModShop
                 atProperty.Balance += modValuePercentage;
 
                 context.SaveChanges();
-                
-                
             }
         }
 

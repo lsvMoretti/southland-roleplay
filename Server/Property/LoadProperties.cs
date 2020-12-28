@@ -218,7 +218,7 @@ namespace Server.Property
 
             if (PropertyTextLabels.ContainsKey(property.Id))
             {
-                KeyValuePair<int, TextLabel>? oldTextLabel = PropertyTextLabels.FirstOrDefault(x => x.Key == property.Id);
+                var oldTextLabel = PropertyTextLabels.FirstOrDefault(x => x.Key == property.Id);
 
                 oldTextLabel.Value.Remove();
                 PropertyTextLabels.Remove(property.Id);
@@ -226,7 +226,7 @@ namespace Server.Property
 
             if (PropertyBlips.ContainsKey(property.Id))
             {
-                KeyValuePair<int, Blip>? oldBlipInfo = PropertyBlips.FirstOrDefault(x => x.Key == property.Id);
+                var oldBlipInfo = PropertyBlips.FirstOrDefault(x => x.Key == property.Id);
                 oldBlipInfo.Value.Remove();
                 PropertyBlips.Remove(property.Id);
             }
@@ -372,7 +372,7 @@ namespace Server.Property
 
             if (PropertyTextLabels.ContainsKey(property.Id))
             {
-                KeyValuePair<int, TextLabel>? oldTextLabel = PropertyTextLabels.FirstOrDefault(x => x.Key == property.Id);
+                var oldTextLabel = PropertyTextLabels.FirstOrDefault(x => x.Key == property.Id);
 
                 oldTextLabel.Value.Remove();
                 PropertyMarkers.Remove(property.Id);
@@ -380,7 +380,7 @@ namespace Server.Property
 
             if (PropertyBlips.ContainsKey(property.Id))
             {
-                KeyValuePair<int, Blip>? oldBlipInfo = PropertyBlips.FirstOrDefault(x => x.Key == property.Id);
+                var oldBlipInfo = PropertyBlips.FirstOrDefault(x => x.Key == property.Id);
                 oldBlipInfo.Value.Remove();
                 PropertyBlips.Remove(property.Id);
             }

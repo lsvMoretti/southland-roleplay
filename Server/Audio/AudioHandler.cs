@@ -148,7 +148,7 @@ namespace Server.Audio
 
             foreach (KeyValuePair<byte, int> occupantId in player.Vehicle.Occupants())
             {
-                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
+                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
 
                 targetPlayer?.SendInfoNotification($"Now playing: {selectedStation.StationName}");
                 targetPlayer?.PlayMusicFromUrl(selectedStation.StationUrl);

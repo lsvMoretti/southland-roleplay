@@ -43,7 +43,7 @@ namespace Server.Extensions
             Console.WriteLine("VehicleData not null");
             List<string> menuItems = new List<string>();
 
-            if (vehicleData.OwnerId == player.FetchCharacterId())
+            if (vehicleData.OwnerId == player.GetClass().CharacterId)
             {
                 if (vehicle.LockState == VehicleLockState.Locked)
                 {

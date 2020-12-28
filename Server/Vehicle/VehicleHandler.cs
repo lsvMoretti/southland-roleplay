@@ -85,7 +85,7 @@ namespace Server.Vehicle
                         vehicle.EngineOn = false;
                         if (vehicle.GetClass().Occupants.Any())
                         {
-                            KeyValuePair<byte, int>? driverInfo = vehicle.GetClass().Occupants.FirstOrDefault(x => x.Key == 1);
+                            var driverInfo = vehicle.GetClass().Occupants.FirstOrDefault(x => x.Key == 1);
 
                             IPlayer driver = Alt.Server.GetPlayers()
                                 .FirstOrDefault(x => x.GetPlayerId() == driverInfo.Value);

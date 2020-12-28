@@ -51,7 +51,7 @@ namespace Server.Bank
             }
         }
 
-        [Command("paymortgage", onlyOne:true, commandType: CommandType.Bank, description: "Used to pay off an existing mortgage")]
+        [Command("paymortgage", onlyOne: true, commandType: CommandType.Bank, description: "Used to pay off an existing mortgage")]
         public static void BankCommandPayMortgage(IPlayer player, string args = "")
         {
             if (!player.IsSpawned()) return;
@@ -91,7 +91,7 @@ namespace Server.Bank
                 return;
             }
 
-            Models.Property? mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
+            var mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
 
             if (mortgageProperty == null)
             {
@@ -114,7 +114,6 @@ namespace Server.Bank
                 return;
             }
 
-
             using Context context = new Context();
 
             Models.Property property = context.Property.Find(mortgageProperty.Id);
@@ -134,10 +133,9 @@ namespace Server.Bank
             player.SendInfoNotification($"You've paid {paymentAmount:C} from your mortgage. Remaining left to pay is {property.MortgageValue:C}. Next payment due by {property.LastMortgagePayment.AddMonths(2)}");
         }
 
-        [Command("mortgagevalue", commandType: CommandType.Bank, description:"Used to see remainder of mortgage to pay")]
+        [Command("mortgagevalue", commandType: CommandType.Bank, description: "Used to see remainder of mortgage to pay")]
         public static void BankCommandMortgageValue(IPlayer player)
         {
-
             if (!player.IsSpawned()) return;
 
             Models.Property? mortgageProperty = Models.Property.FetchCharacterProperties(player.FetchCharacter()).FirstOrDefault(x => x.MortgageValue > 0);
@@ -152,7 +150,6 @@ namespace Server.Bank
             double minAmount = mortgageProperty.MortgageValue * 0.01;
 
             player.SendInfoNotification($"You have {mortgageProperty.MortgageValue:C} left to pay. Your minimum payment of {minAmount:C} is due by {mortgageProperty.LastMortgagePayment.AddMonths(2)}.");
-
         }
 
         [Command("bank", commandType: CommandType.Bank, description: "Shows the bank menu when at a bank")]
@@ -280,7 +277,7 @@ namespace Server.Bank
             if (playerBankAccount == null)
             {
                 player.SendErrorNotification("An error occurred fetching your account data.");
-                
+
                 return;
             }
 
@@ -308,7 +305,7 @@ namespace Server.Bank
                 if (amount > player.FetchCharacter().Money)
                 {
                     player.SendErrorNotification("You don't have this much cash on you!");
-                    
+
                     return;
                 }
             }
@@ -320,7 +317,7 @@ namespace Server.Bank
                 if (bankAccount.Balance < amount)
                 {
                     player.SendErrorNotification("You don't have this much in your account!");
-                    
+
                     return;
                 }
             }
@@ -346,7 +343,6 @@ namespace Server.Bank
             playerBankAccount.TransactionHistoryJson = JsonConvert.SerializeObject(bankTransactions);
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have {stateText.Split(' ')[0]} {amount:C} {stateText.Split(' ')[1]} your Bank Account.");
         }
@@ -390,7 +386,6 @@ namespace Server.Bank
                 return;
             }
 
-            
             if (amount <= 0)
             {
                 player.SendErrorNotification("You're unable to do this.");
@@ -403,7 +398,6 @@ namespace Server.Bank
             BankAccount playerBankAccount =
                 context.BankAccount.FirstOrDefault(i => i.AccountNumber == playerAccountNumber);
 
-            
             if (playerBankAccount == null)
             {
                 player.SendErrorNotification("An error occurred fetching your account information.");
@@ -439,12 +433,10 @@ namespace Server.Bank
             List<BankTransaction> playerBankTransactions =
                 JsonConvert.DeserializeObject<List<BankTransaction>>(playerBankAccount.TransactionHistoryJson);
 
-            
             if (playerBankTransactions.Count > 50)
             {
                 playerBankTransactions.Remove(playerBankTransactions.FirstOrDefault());
             }
-
 
             playerBankTransactions.Add(playerBankTransaction);
 
@@ -472,8 +464,6 @@ namespace Server.Bank
             Logging.AddToBankLog(targetBankAccount, $"Has received {amount:C} by {player.GetClass().Name}, from Bank Account: {playerBankAccount.AccountNumber}, ID: {playerBankAccount.Id}");
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've sent {amount:C0} to Bank Account Number: {targetAccountNumber}.");
         }
@@ -533,14 +523,13 @@ namespace Server.Bank
             if (playerBankAccount == null)
             {
                 player.SendErrorNotification("Unable to find your bank account details!");
-                
+
                 return;
             }
 
             playerBankAccount.Disabled = true;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have disabled your bank account with Account Number: {accountNumber}.");
         }
@@ -613,7 +602,6 @@ namespace Server.Bank
             }
 
             context.SaveChanges();
-            
 
             if (newBankAccount.AccountType != BankAccountType.Savings)
             {
@@ -653,7 +641,6 @@ namespace Server.Bank
             playerCharacter.PaydayAccount = accountNumber;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You've set {accountNumber} as your active payday account.");
         }

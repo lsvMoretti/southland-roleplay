@@ -6677,11 +6677,11 @@ namespace Server.Admin
                 player.SendErrorNotification("This player isn't logged in!");
                 return;
             }
-            
+
             await using Context context = new Context();
 
             Models.Account target = context.Account.FirstOrDefault(x => x.Id == targetPlayer.GetClass().AccountId);
-            
+
             if (target == null)
             {
                 player.SendErrorNotification("This player isn't logged in!");

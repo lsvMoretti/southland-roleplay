@@ -102,7 +102,7 @@ namespace Server.Jobs.Fishing
             text.Add();
         }
 
-        public static FishingPoint FetchNearestPosition(Position position, float distance = 5f)
+        public static FishingPoint? FetchNearestPosition(Position position, float distance = 5f)
         {
             using Context context = new Context();
 

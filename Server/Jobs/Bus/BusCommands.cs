@@ -92,7 +92,7 @@ namespace Server.Jobs.Bus
                     return;
                 }
 
-                BusStop firstPoint = busStopList.FirstOrDefault();
+                BusStop firstPoint = busStopList.First();
 
                 Position vehicleSpawnPosition = new Position(firstPoint.PosX, firstPoint.PosY, firstPoint.PosZ);
 
@@ -151,7 +151,7 @@ namespace Server.Jobs.Bus
                 return;
             }
 
-            KeyValuePair<int, IVehicle>? keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
+            var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
             IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
 
@@ -168,9 +168,9 @@ namespace Server.Jobs.Bus
 
         public static void OnBusRouteFinish(IPlayer player)
         {
-            KeyValuePair<int, IVehicle>? keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
+            var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
+            IVehicle targetVehicle = Alt.Server.GetVehicles().First(x => x == keyValuePair.Value);
 
             targetVehicle?.Remove();
 

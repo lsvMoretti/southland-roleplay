@@ -50,7 +50,7 @@ namespace Server.Property
                     }
                 }
             }
-            
+
             _minuteTimer.Start();
         }
 
@@ -89,7 +89,7 @@ namespace Server.Property
         {
             if (!ActiveBusinessBlips.ContainsKey(property.Id)) return;
 
-            KeyValuePair<int, Blip>? activeBusiness = ActiveBusinessBlips.FirstOrDefault(x => x.Key == property.Id);
+            var activeBusiness = ActiveBusinessBlips.FirstOrDefault(x => x.Key == property.Id);
 
             activeBusiness.Value.Remove();
 
