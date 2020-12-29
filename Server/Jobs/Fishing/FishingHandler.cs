@@ -48,13 +48,10 @@ namespace Server.Jobs.Fishing
                         if (fishLeft > 5)
                         {
                             fishingPoint.FishCount += 5;
-
-                            Console.WriteLine($"Added {5} fish to point {fishingPoint.Id}.");
                         }
                         else
                         {
                             fishingPoint.FishCount += fishLeft;
-                            Console.WriteLine($"Added {fishLeft} fish to point {fishingPoint.Id}.");
                         }
                     }
                     else
