@@ -50,19 +50,24 @@ namespace Server.Vehicle
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
-            StolenPlate stolenPlate = new StolenPlate(vehicleData);
+            StolenPlate stolenPlate = new StolenPlate(vehicleData)
+            {
+                Plate = string.IsNullOrEmpty(vehicleData.StolenPlate) ? vehicleData.Plate : vehicleData.StolenPlate
+            };
 
-            string plate = string.IsNullOrEmpty(vehicleData.StolenPlate) ? vehicleData.Plate : vehicleData.StolenPlate;
-
-            stolenPlate.Plate = plate;
-
-            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {plate}", JsonConvert.SerializeObject(stolenPlate));
+            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {stolenPlate.Plate}", JsonConvert.SerializeObject(stolenPlate));
 
             using Context context = new Context();
 
-            Models.Vehicle vehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleData.Id);
+            Models.Vehicle vehicleDb = context.Vehicle.First(x => x.Id == vehicleData.Id);
+            Models.Vehicle plateVehicle = context.Vehicle.First(x => x.Plate == stolenPlate.Plate);
 
             if (vehicleDb == null) return;
+
+            if (plateVehicle != null && plateVehicle != vehicleDb)
+            {
+                stolenPlate.Model = plateVehicle.Model?.CapitalizeFirst();
+            }
 
             if (!playerInventory.AddItem(newPlateItem))
             {
@@ -74,7 +79,7 @@ namespace Server.Vehicle
 
             if (!string.IsNullOrEmpty(vehicleDb.StolenPlate))
             {
-                vehicleDb.StolenPlate = string.Empty;
+                vehicleDb.StolenPlate = null;
             }
 
             context.SaveChanges();
@@ -90,7 +95,7 @@ namespace Server.Vehicle
         {
             if (!player.IsSpawned()) return;
 
-            IVehicle nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
+            IVehicle? nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
 
             if (nearestVehicle == null || nearestVehicle.Dimension != player.Dimension)
             {
@@ -127,7 +132,7 @@ namespace Server.Vehicle
 
             player.SetData("PLACINGSTOLENPLATE", vehicleData.Id);
 
-            NativeUi.ShowNativeMenu(player, menu);
+            NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnPlaceStolePlateSelect(IPlayer player, string option)
@@ -175,9 +180,9 @@ namespace Server.Vehicle
 
             using Context context = new Context();
 
-            Models.Vehicle vehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleId);
+            Models.Vehicle nearVehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleId);
 
-            if (vehicleDb == null)
+            if (nearVehicleDb == null)
             {
                 player.SendErrorNotification("You must be near the vehicle!");
                 return;
@@ -191,14 +196,30 @@ namespace Server.Vehicle
                 return;
             }
 
+            StolenPlate oldPlate = new StolenPlate(nearVehicleDb)
+            {
+                Plate = string.IsNullOrEmpty(nearVehicleDb.StolenPlate) ? nearVehicleDb.Plate : nearVehicleDb.StolenPlate
+            };
+
+            Models.Vehicle plateVehicle = context.Vehicle.First(x => x.Plate == oldPlate.Plate);
+
+            if (plateVehicle != null && plateVehicle != nearVehicleDb)
+            {
+                oldPlate.Model = plateVehicle.Model?.CapitalizeFirst();
+            }
+
+            InventoryItem oldPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {oldPlate.Plate}", JsonConvert.SerializeObject(oldPlate));
+
+            playerInventory.AddItem(oldPlateItem);
+
             string plate = stolenPlate.Plate;
 
-            vehicleDb.StolenPlate = plate;
+            nearVehicleDb.StolenPlate = plate;
 
-            if (vehicleDb.Plate == plate)
+            if (nearVehicleDb.Plate == plate)
             {
-                vehicleDb.StolenPlate = string.Empty;
-                vehicleDb.HasPlateBeenStolen = false;
+                nearVehicleDb.StolenPlate = null;
+                nearVehicleDb.HasPlateBeenStolen = false;
             }
 
             context.SaveChanges();

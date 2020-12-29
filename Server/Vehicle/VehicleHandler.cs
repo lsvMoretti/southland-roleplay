@@ -414,7 +414,7 @@ namespace Server.Vehicle
             player.Emit("setWindowState", vehicle, window, open);
         }
 
-        public static IVehicle FetchNearestVehicle(IPlayer player, float radius = 5f)
+        public static IVehicle? FetchNearestVehicle(IPlayer player, float radius = 5f)
         {
             try
             {

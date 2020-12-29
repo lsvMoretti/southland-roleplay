@@ -58,7 +58,7 @@ namespace Server.Vehicle
 
             Console.WriteLine($"Loading Faction Vehicles");
 
-            using Context context = new Context();
+            await using Context context = new Context();
 
             List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId != 0).ToList();
 
@@ -125,6 +125,8 @@ namespace Server.Vehicle
         public static async Task<IVehicle> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
+
+            Console.WriteLine($"Loading Vehicle ID: {vehicleData.Id}");
 
             bool modelParse = int.TryParse(vehicleData.Model, out int vModelResult);
 
@@ -233,21 +235,20 @@ namespace Server.Vehicle
 
             vehicle.SetSyncedMetaData("VehicleAnchorStatus", vehicleData.Anchor);
 
-            using (Context context = new Context())
+            await using Context context = new Context();
+
+            Models.Vehicle vehicleDb = await context.Vehicle.FindAsync(vehicleData.Id);
+
+            if (vehicleDb == null) return null;
+
+            vehicleDb.Spawned = true;
+
+            if (!string.IsNullOrEmpty(vehicleDb.GarageId))
             {
-                Models.Vehicle vehicleDb = context.Vehicle.Find(vehicleData.Id);
-
-                if (vehicleDb == null) return null;
-
-                vehicleDb.Spawned = true;
-
-                if (!string.IsNullOrEmpty(vehicleDb.GarageId))
-                {
-                    vehicleDb.GarageId = string.Empty;
-                }
-
-                context.SaveChanges();
+                vehicleDb.GarageId = string.Empty;
             }
+
+            await context.SaveChangesAsync();
 
             return vehicle;
         }
@@ -255,6 +256,8 @@ namespace Server.Vehicle
         public static IVehicle LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
+
+            Console.WriteLine($"Loading Vehicle ID: {vehicleData.Id}");
 
             bool modelParse = int.TryParse(vehicleData.Model, out int vModelResult);
 
