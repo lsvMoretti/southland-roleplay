@@ -216,37 +216,31 @@ namespace Server
                         break;
 
                     case 800:
-                        //Clear
                         CurrentWeatherType = WeatherType.Clear;
                         Console.WriteLine("Clear");
                         break;
+
+                    case 801:
+                        CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds");
+                        break;
+
+                    case 802:
+                        CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds2");
+                        break;
+
+                    case 803:
+                        CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds3");
+                        break;
+
+                    case 804:
+                        CurrentWeatherType = WeatherType.Overcast;
+                        Console.WriteLine("Overcast 1");
+                        break;
                 }
 
-                if (currentWeatherType == 800)
-                {
-                    CurrentWeatherType = WeatherType.Clear;
-                    Console.WriteLine("Clear");
-                }
-                if (currentWeatherType == 801)
-                {
-                    CurrentWeatherType = WeatherType.Clouds;
-                    Console.WriteLine("Clouds");
-                }
-                if (currentWeatherType == 802)
-                {
-                    CurrentWeatherType = WeatherType.Clouds;
-                    Console.WriteLine("Clouds2");
-                }
-                if (currentWeatherType == 803)
-                {
-                    CurrentWeatherType = WeatherType.Clouds;
-                    Console.WriteLine("Clouds3");
-                }
-                if (currentWeatherType == 804)
-                {
-                    CurrentWeatherType = WeatherType.Overcast;
-                    Console.WriteLine("Overcast 1");
-                }
                 /*
                 if (currentWeatherType >= 800 || currentWeatherType <= 804)
                 {
