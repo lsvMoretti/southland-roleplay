@@ -149,26 +149,32 @@ namespace Server
 
                 OpenWeather currentWeather = JsonConvert.DeserializeObject<OpenWeather>(updatedJson);
 
-                int currentWeatherType = currentWeather.weather.FirstOrDefault().id;
+                int currentWeatherType = currentWeather.weather.First().id;
 
                 int firstDigit = (int)(currentWeatherType.ToString()[0]);
+
+                Console.WriteLine($"Current Weather: {currentWeatherType}");
 
                 if (currentWeatherType >= 200 && currentWeatherType < 300)
                 {
                     //Thunderstorm
                     CurrentWeatherType = WeatherType.Thunder;
+
+                    Console.WriteLine("Thunder");
                 }
 
                 if (currentWeatherType >= 300 && currentWeatherType < 400)
                 {
                     //Drizzle
                     CurrentWeatherType = WeatherType.Overcast;
+                    Console.WriteLine("Overcast");
                 }
 
                 if (currentWeatherType >= 500 && currentWeatherType < 600)
                 {
                     //Rain
                     CurrentWeatherType = WeatherType.Rain;
+                    Console.WriteLine("Rain");
                 }
 
                 if (currentWeatherType >= 600 && currentWeatherType < 700)
@@ -178,41 +184,42 @@ namespace Server
                     {
                         //Light Snow
                         CurrentWeatherType = WeatherType.Snowlight;
+                        Console.WriteLine("Snwolight");
                     }
                     else
                     {
                         CurrentWeatherType = WeatherType.Snow;
+                        Console.WriteLine("Snow");
                     }
                 }
 
-                if (currentWeatherType == 701)
+                switch (currentWeatherType)
                 {
-                    // Mist
-                    CurrentWeatherType = WeatherType.Smog;
-                }
-
-                if (currentWeatherType == 711)
-                {
+                    case 701:
                     //Smoke
-                    CurrentWeatherType = WeatherType.Smog;
-                }
+                    case 711:
+                        // Mist
+                        CurrentWeatherType = WeatherType.Smog;
+                        Console.WriteLine("Smog");
+                        break;
 
-                if (currentWeatherType == 721)
-                {
-                    //Haze
-                    CurrentWeatherType = WeatherType.Clouds;
-                }
+                    case 721:
+                        //Haze
+                        CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds");
+                        break;
 
-                if (currentWeatherType == 741)
-                {
-                    //Fog
-                    CurrentWeatherType = WeatherType.Foggy;
-                }
+                    case 741:
+                        //Fog
+                        CurrentWeatherType = WeatherType.Foggy;
+                        Console.WriteLine("Foggy");
+                        break;
 
-                if (currentWeatherType == 800)
-                {
-                    //Clear
-                    CurrentWeatherType = WeatherType.ExtraSunny;
+                    case 800:
+                        //Clear
+                        CurrentWeatherType = WeatherType.ExtraSunny;
+                        Console.WriteLine("ExtraSunny");
+                        break;
                 }
 
                 if (currentWeatherType >= 801 || currentWeatherType <= 804)
@@ -221,10 +228,12 @@ namespace Server
                     if (currentWeatherType >= 801 && currentWeatherType <= 802)
                     {
                         CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds");
                     }
                     else
                     {
                         CurrentWeatherType = WeatherType.Overcast;
+                        Console.WriteLine("Overcast");
                     }
                 }
 
