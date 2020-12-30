@@ -86,7 +86,7 @@ namespace Server.Character
                 player.SendInfoNotification($"Your session ID is: {player.GetPlayerId()}");
 
                 player.SetDateTime(1, 1, 1, 12, 0, 0);
-                player.SetWeather((uint)WeatherType.ExtraSunny);
+                player.SetWeather(WeatherType.ExtraSunny);
 
                 player.Dimension = (short)player.GetPlayerId();
                 player.SetSyncedMetaData("PlayerDimension", player.Dimension);
@@ -423,7 +423,7 @@ namespace Server.Character
                 TextLabelHandler.RemoveAllTextLabelsForPlayer(player);
                 BlipHandler.RemoveAllBlipsForPlayer(player);
 
-                player.SetWeather((uint)TimeWeather.CurrentWeatherType);
+                player.SetWeather(TimeWeather.CurrentWeatherType);
 
                 DateTime dateNow = DateTime.Now;
 

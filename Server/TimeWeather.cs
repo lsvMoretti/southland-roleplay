@@ -110,7 +110,7 @@ namespace Server
 
                 CurrentWeather = FetchCurrentWeather();
 
-                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.GetClass().Spawned).ToList())
                 {
                     if (player.GetClass().CreatorRoom) continue;
                     player.SetWeather((uint)CurrentWeatherType);
@@ -217,15 +217,21 @@ namespace Server
 
                     case 800:
                         //Clear
-                        CurrentWeatherType = WeatherType.ExtraSunny;
-                        Console.WriteLine("ExtraSunny");
+                        CurrentWeatherType = WeatherType.Clear;
+                        Console.WriteLine("Clear");
                         break;
                 }
 
-                if (currentWeatherType >= 801 || currentWeatherType <= 804)
+                if (currentWeatherType > 800 || currentWeatherType <= 804)
                 {
                     //Clouds
-                    if (currentWeatherType >= 801 && currentWeatherType <= 802)
+                    if (currentWeatherType == 801)
+                    {
+                        CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds");
+                    }
+
+                    if (currentWeatherType == 802)
                     {
                         CurrentWeatherType = WeatherType.Clouds;
                         Console.WriteLine("Clouds");
@@ -233,8 +239,14 @@ namespace Server
                     else
                     {
                         CurrentWeatherType = WeatherType.Overcast;
-                        Console.WriteLine("Overcast");
+                        Console.WriteLine("Overcast 1");
                     }
+                }
+
+                if (currentWeatherType == 800)
+                {
+                    CurrentWeatherType = WeatherType.Clear;
+                    Console.WriteLine("Clear");
                 }
 
                 DateTime currentTime = DateTime.Now;

@@ -69,7 +69,7 @@ namespace Server.Connection
 
                 player.AllowMouseContextMenu(false);
 
-                player.SetWeather((uint)TimeWeather.CurrentWeatherType);
+                player.SetWeather(TimeWeather.CurrentWeatherType);
 
                 DateTime dateNow = DateTime.Now;
 
