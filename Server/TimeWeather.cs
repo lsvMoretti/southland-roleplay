@@ -222,6 +222,32 @@ namespace Server
                         break;
                 }
 
+                if (currentWeatherType == 800)
+                {
+                    CurrentWeatherType = WeatherType.Clear;
+                    Console.WriteLine("Clear");
+                }
+                if (currentWeatherType == 801)
+                {
+                    CurrentWeatherType = WeatherType.Clouds;
+                    Console.WriteLine("Clouds");
+                }
+                if (currentWeatherType == 802)
+                {
+                    CurrentWeatherType = WeatherType.Clouds;
+                    Console.WriteLine("Clouds2");
+                }
+                if (currentWeatherType == 803)
+                {
+                    CurrentWeatherType = WeatherType.Clouds;
+                    Console.WriteLine("Clouds3");
+                }
+                if (currentWeatherType == 804)
+                {
+                    CurrentWeatherType = WeatherType.Overcast;
+                    Console.WriteLine("Overcast 1");
+                }
+                /*
                 if (currentWeatherType >= 800 || currentWeatherType <= 804)
                 {
                     if (currentWeatherType == 800)
@@ -246,7 +272,7 @@ namespace Server
                         CurrentWeatherType = WeatherType.Overcast;
                         Console.WriteLine("Overcast 1");
                     }
-                }
+                }*/
 
                 /*if (currentWeatherType == 800)
                 {
