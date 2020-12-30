@@ -73,11 +73,25 @@ namespace Server.Models
             return context.Doors.Find(id);
         }
 
-        public static Door FetchDoor(string model, Position position, int dimension)
+        public static Door? FetchDoor(string model, Position position, int dimension)
         {
             using Context context = new Context();
 
-            var door = context.Doors.FirstOrDefault(x => x.Model == model && x.Position() == position && x.Dimension == dimension);
+            //var door = context.Doors.First(x => x.Model == model && x.Position() == position && x.Dimension == dimension);
+
+            Door? door = null;
+
+            foreach (Door aDoor in context.Doors.ToList())
+            {
+                if (aDoor.Model != model) continue;
+
+                if (aDoor.Position() != position) continue;
+
+                if (aDoor.Dimension != dimension) continue;
+
+                door = aDoor;
+                break;
+            }
 
             return door;
         }
