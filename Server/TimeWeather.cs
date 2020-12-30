@@ -222,8 +222,13 @@ namespace Server
                         break;
                 }
 
-                if (currentWeatherType > 800 || currentWeatherType <= 804)
+                if (currentWeatherType >= 800 || currentWeatherType <= 804)
                 {
+                    if (currentWeatherType == 800)
+                    {
+                        CurrentWeatherType = WeatherType.Clear;
+                        Console.WriteLine("Clear");
+                    }
                     //Clouds
                     if (currentWeatherType == 801)
                     {
@@ -243,11 +248,11 @@ namespace Server
                     }
                 }
 
-                if (currentWeatherType == 800)
+                /*if (currentWeatherType == 800)
                 {
                     CurrentWeatherType = WeatherType.Clear;
-                    Console.WriteLine("Clear");
-                }
+                    Console.WriteLine("Clear1");
+                }*/
 
                 DateTime currentTime = DateTime.Now;
 
