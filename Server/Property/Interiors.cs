@@ -226,6 +226,7 @@ namespace Server.Property
                     AddInterior("ModShop Hayes", new Position(482.9214f, -1313.043f, 29.20045f), "");
                     AddInterior("Arena", new Position(2800.00f, -3800.00f, 100.00f), "xs_arena_interior");
                     AddInterior("Yacht Interior", new Position(-3191.682f, -217.7284f, 5.885169f), "");
+                    AddInterior("NewCharRoom", new Position(-240.75f, -1190.89f, -149.16f), "");
 
                     #endregion Default Interiors
 
@@ -259,7 +260,7 @@ namespace Server.Property
                 if (!Directory.Exists($"{altVDirectory}"))
                 {
                     Console.WriteLine($"Directory not found!");
-                    Console.WriteLine($"{Directory.GetCurrentDirectory()}");
+                    Console.WriteLine($"{altVDirectory}");
                     return;
                 }
 
