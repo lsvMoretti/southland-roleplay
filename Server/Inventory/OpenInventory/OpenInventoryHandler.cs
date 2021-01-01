@@ -83,9 +83,11 @@ namespace Server.Inventory.OpenInventory
                 }
 
                 context.Storages.Add(newStorage);
-                context.SaveChanges();
+
+                Console.WriteLine($"Storage ID: {storage.Id} has been queued to save");
             }
 
+            context.SaveChanges();
             Console.WriteLine($"Added {storageLocations.Count - context.Storages.Count()} new storages.");
         }
     }
