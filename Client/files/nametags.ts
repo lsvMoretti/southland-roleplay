@@ -4,7 +4,7 @@ import Screen from "./NativeUi/utils/Screen";
 
 let nameTagEnabled: boolean = true;
 let interval: number;
-let drawDistance: number = 100;
+let drawDistance: number = 20;
 
 export function ToggleNameTags(state: boolean) {
     nameTagEnabled = state;
@@ -20,7 +20,7 @@ function distance2d(vector1: alt.Vector3, vector2: alt.Vector3) {
 
 function drawAme(text: string, pos: native.Vector3, vector: native.Vector3, frameTime: number, scale: number, r: number, g: number, b: number, a: number, outline: boolean) {
     // pos.z already += 0.75
-    pos.z += 0.75;
+    pos.z += 0.5;
 
     native.setDrawOrigin(
         pos.x + vector.x * frameTime,
@@ -60,6 +60,7 @@ function drawNameTags() {
         if (player.scriptID === alt.Player.local.scriptID) continue;
 
         const name = player.getSyncedMeta("playerNameTag");
+        const playerId = player.getSyncedMeta("playerId");
 
         if (!name) continue;
 
@@ -69,7 +70,7 @@ function drawNameTags() {
         const stealthStatus = player.getSyncedMeta("StealthStatus");
 
         if (stealthStatus) {
-            drawDistance = 70;
+            drawDistance = 10;
         }
 
         if (dist > drawDistance) continue;
@@ -79,7 +80,7 @@ function drawNameTags() {
         pos.z += 0.75;
 
         const scale = 1 - (0.8 * dist) / drawDistance;
-        const fontSize = 0.6 * scale;
+        const fontSize = 0.4 * scale;
 
         const lineHeight = native.getTextScaleHeight(fontSize, 4);
         const entity = player.vehicle ? player.vehicle.scriptID : player.scriptID;
@@ -100,17 +101,15 @@ function drawNameTags() {
         native.setTextCentre(true);
         native.setTextColour(255, 255, 255, 255);
         native.setTextOutline();
-        native.addTextComponentSubstringPlayerName(isTyping ? `Typing..\n${name}` : `${name}`);
+        native.addTextComponentSubstringPlayerName(isTyping ? `Typing..\n${name} (${playerId})` : `${name} (${playerId})`);
         native.endTextCommandDisplayText(0, 0, 0);
 
         // aMe
         let ameActive: boolean = player.getSyncedMeta("ChatCommand:AmeActive");
 
-        let aMe: string;
-
         if (ameActive) {
-            aMe = player.getSyncedMeta("ChatCommand:Ame");
-            drawAme(aMe, pos, vector, frameTime, scale, 194, 162, 218, 175, true);
+            let aMe = player.getSyncedMeta("ChatCommand:Ame");
+            drawAme(aMe, pos, vector, frameTime, fontSize, 194, 162, 218, 175, true);
         }
 
         native.clearDrawOrigin();
