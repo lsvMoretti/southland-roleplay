@@ -16,7 +16,7 @@ namespace Server.Property
         public static List<Interiors> InteriorList = new List<Interiors>();
 
 #if RELEASE
-        private static string altVDirectory = "D:/servers/Paradigm-Dev/data";
+        private static string altVDirectory = $"{Directory.GetCurrentDirectory()}/data";
 #endif
 
 #if DEBUG
