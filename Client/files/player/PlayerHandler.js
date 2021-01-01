@@ -1,5 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+import * as nametag from "files/nametags";
 alt.onServer('Blindfolded', (blindfolded) => {
     if (blindfolded) {
         native.doScreenFadeOut(1000);
@@ -23,6 +24,7 @@ alt.onServer('toggleCursor', toggleCursorFunction);
 alt.onServer('LoadDLC', () => {
     native.onEnterSp();
     native.onEnterMp();
+    nametag.StartNameTagDraw();
 });
 function toggleCursorFunction(state) {
     alt.showCursor(state);

@@ -29,7 +29,7 @@ namespace Server.Developer
             if (!player.IsSpawned()) return;
             player.SetPosition(4895.28f, -5744.58f, 26.351f);
         }
-    
+
         [Command("save", onlyOne: true)]
         public static void Command_SavePos(IPlayer player, string sName = "")
         {
@@ -52,7 +52,7 @@ namespace Server.Developer
 
             File.AppendAllText("savepos.txt",
                 $"{player.Name}, {sName}: {playerPosition.X}f, {playerPosition.Y}f, {playerPosition.Z}f : YAW: {playerRotation.Yaw}f\n");
-           
+
             player.Emit("SendNotification", "info", "Position Saved");
         }
 
@@ -103,7 +103,7 @@ namespace Server.Developer
             if (!_traceStatus)
             {
                 player.SendInfoNotification("Enabled Tracing");
-                
+
                 AltTrace.Start("server");
                 _traceStatus = true;
                 return;
@@ -124,7 +124,6 @@ namespace Server.Developer
             }
 
             player.SendInfoNotification($"Your seat ID is: {player.Seat}.");
-
         }
 
         [Command("c", AdminLevel.Moderator, true)]
@@ -157,7 +156,6 @@ namespace Server.Developer
             player.SetClothes(slot, draw, text);
 
             player.SendInfoNotification($"Slot: {slot}, Draw: {draw}, Texture: {text}.");
-
         }
 
         [Command("ca", AdminLevel.Moderator, true)]
@@ -190,7 +188,6 @@ namespace Server.Developer
             player.SetAccessory(slot, draw, text);
 
             player.SendInfoNotification($"Slot: {slot}, Draw: {draw}, Texture: {text}.");
-
         }
 
         [Command("lipl", onlyOne: true, adminLevel: AdminLevel.Management)]
@@ -236,7 +233,6 @@ namespace Server.Developer
                     target.UnloadIpl("smboat_distantlights");
                     target.UnloadIpl("smboat_lod");
                     target.UnloadIpl("smboat_lodlights");
-
                 }
 
                 player.SendInfoNotification($"Yacht Unlocked!", 2000);
@@ -259,12 +255,9 @@ namespace Server.Developer
                 target.UnloadIpl("hei_yacht_heist_enginrm");
                 target.UnloadIpl("hei_yacht_heist_LODLights");
                 target.UnloadIpl("hei_yacht_heist_Lounge");
-
-
             }
 
             player.SendInfoNotification($"Yacht Locked!", 2000);
-
         }
     }
 }
