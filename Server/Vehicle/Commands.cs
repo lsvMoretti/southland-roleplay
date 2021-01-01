@@ -21,76 +21,139 @@ namespace Server.Vehicle
 {
     public class Commands
     {
-        [Command("takeplate", commandType: CommandType.Vehicle, description: "Used to remove a vehicles number plate")]
+        [Command("takeplate", commandType: CommandType.Vehicle, description: "Used to take a plate from a vehicle")]
         public static void VehicleCommandTakePlate(IPlayer player)
         {
-            if (!player.IsSpawned()) return;
-
-            IVehicle nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
-
-            if (nearestVehicle == null || nearestVehicle.Dimension != player.Dimension)
+            if (!player.GetClass().Spawned)
             {
-                player.SendErrorNotification("You must be near a vehicle!");
+                player.SendLoginError();
                 return;
             }
 
-            Models.Vehicle vehicleData = nearestVehicle.FetchVehicleData();
-
-            if (vehicleData == null || vehicleData.FactionId > 0)
+            if (player.IsInVehicle)
             {
-                player.SendErrorNotification("You can't do that on this vehicle!");
+                player.SendErrorMessage("You must not be in a vehicle!");
+                return;
+            }
+
+            IVehicle? nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
+
+            if (nearestVehicle is null || nearestVehicle.Dimension != player.Dimension)
+            {
+                player.SendErrorMessage("You must be near a vehicle.");
+                return;
+            }
+
+            Models.Vehicle? vehicleData = nearestVehicle.FetchVehicleData();
+
+            if (vehicleData is null)
+            {
+                player.SendErrorMessage("You can't do that on this vehicle!");
+                return;
+            }
+
+            if (vehicleData.FactionId > 0)
+            {
+                player.SendErrorMessage("You can't do that on this vehicle!");
                 return;
             }
 
             if (vehicleData.HasPlateBeenStolen)
             {
-                player.SendErrorNotification("Looks like the plate has been taken!");
+                player.SendErrorMessage("There is no plate to steal!");
                 return;
             }
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
-            StolenPlate stolenPlate = new StolenPlate(vehicleData)
+            if (!string.IsNullOrEmpty(vehicleData.StolenPlate))
             {
-                Plate = string.IsNullOrEmpty(vehicleData.StolenPlate) ? vehicleData.Plate : vehicleData.StolenPlate
-            };
+                // Vehicle has a stolen plate fitted
 
-            InventoryItem newPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {stolenPlate.Plate}", JsonConvert.SerializeObject(stolenPlate));
+                Models.Vehicle? stolenPlateVehicle = Models.Vehicle.FetchVehicle(vehicleData.StolenPlate);
 
-            using Context context = new Context();
+                if (stolenPlateVehicle is null)
+                {
+                    player.SendErrorMessage("An error occurred getting the vehicle information.");
+                    return;
+                }
 
-            Models.Vehicle vehicleDb = context.Vehicle.First(x => x.Id == vehicleData.Id);
-            Models.Vehicle plateVehicle = context.Vehicle.First(x => x.Plate == stolenPlate.Plate);
+                StolenPlate stolenPlate = new StolenPlate(stolenPlateVehicle);
 
-            if (vehicleDb == null) return;
+                InventoryItem stolenPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE",
+                    $"Plate: {stolenPlate.Plate}", JsonConvert.SerializeObject(stolenPlate));
 
-            if (plateVehicle != null && plateVehicle != vehicleDb)
-            {
-                stolenPlate.Model = plateVehicle.Model?.CapitalizeFirst();
+                using Context context = new Context();
+
+                Models.Vehicle stolenPlateVehicleData = context.Vehicle.First(x => x.Id == stolenPlateVehicle.Id);
+                Models.Vehicle nearVehicleData = context.Vehicle.First(x => x.Id == vehicleData.Id);
+
+                if (stolenPlateVehicleData is null)
+                {
+                    player.SendErrorMessage("An error occurred getting the vehicle information.");
+                    return;
+                }
+
+                if (!playerInventory.AddItem(stolenPlateItem))
+                {
+                    player.SendErrorNotification("There was an error adding the plate to your inventory.");
+                    return;
+                }
+
+                nearVehicleData.HasPlateBeenStolen = true;
+
+                if (!string.IsNullOrEmpty(nearVehicleData.StolenPlate))
+                {
+                    nearVehicleData.StolenPlate = null;
+                }
+
+                context.SaveChanges();
+
+                nearestVehicle.NumberplateText = "__";
+
+                player.SendEmoteMessage("reaches down and takes a plate from the vehicle.");
             }
-
-            if (!playerInventory.AddItem(newPlateItem))
+            else
             {
-                player.SendErrorNotification("There was an error adding the plate to your inventory.");
-                return;
+                // Vehicle doesn't have stolen plate
+
+                StolenPlate stolenPlate = new StolenPlate(vehicleData);
+
+                InventoryItem stolenPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE",
+                    $"Plate: {stolenPlate.Plate}", JsonConvert.SerializeObject(stolenPlate));
+
+                using Context context = new Context();
+
+                Models.Vehicle nearVehicleData = context.Vehicle.First(x => x.Id == vehicleData.Id);
+
+                if (nearVehicleData is null)
+                {
+                    player.SendErrorMessage("An error occurred getting the vehicle information.");
+                    return;
+                }
+
+                if (!playerInventory.AddItem(stolenPlateItem))
+                {
+                    player.SendErrorNotification("There was an error adding the plate to your inventory.");
+                    return;
+                }
+
+                nearVehicleData.HasPlateBeenStolen = true;
+
+                if (!string.IsNullOrEmpty(nearVehicleData.StolenPlate))
+                {
+                    nearVehicleData.StolenPlate = null;
+                }
+
+                context.SaveChanges();
+
+                nearestVehicle.NumberplateText = "__";
+
+                player.SendEmoteMessage("reaches down and takes a plate from the vehicle.");
             }
-
-            vehicleDb.HasPlateBeenStolen = true;
-
-            if (!string.IsNullOrEmpty(vehicleDb.StolenPlate))
-            {
-                vehicleDb.StolenPlate = null;
-            }
-
-            context.SaveChanges();
-
-            nearestVehicle.NumberplateText = "__";
-
-            player.SendEmoteMessage("reaches down and takes a plate from the vehicle.");
         }
 
-        [Command("placeplate", commandType: CommandType.Vehicle,
-            description: "Used to place a stolen or removed plate onto a vehicle")]
+        [Command("placeplate", commandType: CommandType.Vehicle, description: "Used to place a plate onto a vehicle")]
         public static void VehicleCommandPlacePlate(IPlayer player)
         {
             if (!player.IsSpawned()) return;
@@ -103,9 +166,9 @@ namespace Server.Vehicle
                 return;
             }
 
-            Models.Vehicle vehicleData = nearestVehicle.FetchVehicleData();
+            Models.Vehicle? vehicleData = nearestVehicle.FetchVehicleData();
 
-            if (vehicleData == null || vehicleData.FactionId > 0)
+            if (vehicleData is null || vehicleData.FactionId > 0)
             {
                 player.SendErrorNotification("You can't do that on this vehicle!");
                 return;
@@ -135,7 +198,7 @@ namespace Server.Vehicle
             NativeUi.ShowNativeMenu(player, menu, true);
         }
 
-        public static void OnPlaceStolePlateSelect(IPlayer player, string option)
+        public static void OnPlaceStolenPlateSelect(IPlayer player, string option)
         {
             if (option == "Close") return;
 
@@ -151,8 +214,8 @@ namespace Server.Vehicle
                 return;
             }
 
-            StolenPlate stolenPlate = null;
-            InventoryItem stolenItem = null;
+            StolenPlate? stolenPlate = null;
+            InventoryItem? stolenItem = null;
 
             foreach (InventoryItem inventoryItem in plateItems)
             {
@@ -164,15 +227,15 @@ namespace Server.Vehicle
                 break;
             }
 
-            if (stolenPlate == null || stolenItem == null)
+            if (stolenPlate is null || stolenItem is null)
             {
                 player.SendErrorNotification("Unable to find this plate in your inventory!");
                 return;
             }
 
-            IVehicle nearVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle? nearVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
-            if (nearVehicle == null || nearVehicle.Position.Distance(player.Position) > 5)
+            if (nearVehicle is null || nearVehicle.Position.Distance(player.Position) > 5)
             {
                 player.SendErrorNotification("You must be near the vehicle!");
                 return;
@@ -180,53 +243,106 @@ namespace Server.Vehicle
 
             using Context context = new Context();
 
-            Models.Vehicle nearVehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleId);
+            Models.Vehicle? nearVehicleDb = context.Vehicle.FirstOrDefault(x => x.Id == vehicleId);
 
-            if (nearVehicleDb == null)
+            if (nearVehicleDb is null)
             {
                 player.SendErrorNotification("You must be near the vehicle!");
                 return;
             }
 
-            bool tryRemove = playerInventory.RemoveItem(stolenItem);
-
-            if (!tryRemove)
+            if (!playerInventory.RemoveItem(stolenItem))
             {
                 player.SendErrorNotification("There was an error removing this plate from your inventory.");
                 return;
             }
 
-            StolenPlate oldPlate = new StolenPlate(nearVehicleDb)
+            if (!nearVehicleDb.HasPlateBeenStolen)
             {
-                Plate = string.IsNullOrEmpty(nearVehicleDb.StolenPlate) ? nearVehicleDb.Plate : nearVehicleDb.StolenPlate
-            };
+                if (!string.IsNullOrEmpty(nearVehicleDb.StolenPlate))
+                {
+                    // A stolen plate has been placed on the vehicle
 
-            Models.Vehicle plateVehicle = context.Vehicle.First(x => x.Plate == oldPlate.Plate);
+                    // Vehicle has a stolen plate fitted
 
-            if (plateVehicle != null && plateVehicle != nearVehicleDb)
-            {
-                oldPlate.Model = plateVehicle.Model?.CapitalizeFirst();
+                    Models.Vehicle? stolenPlateVehicle = Models.Vehicle.FetchVehicle(nearVehicleDb.StolenPlate);
+
+                    if (stolenPlateVehicle is null)
+                    {
+                        player.SendErrorMessage("An error occurred getting the vehicle information.");
+                        return;
+                    }
+
+                    StolenPlate oldPlate = new StolenPlate(stolenPlateVehicle);
+
+                    InventoryItem stolenPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE",
+                        $"Plate: {oldPlate.Plate}", JsonConvert.SerializeObject(oldPlate));
+
+                    Models.Vehicle stolenPlateVehicleData = context.Vehicle.First(x => x.Id == stolenPlateVehicle.Id);
+                    Models.Vehicle nearVehicleData = context.Vehicle.First(x => x.Id == nearVehicleDb.Id);
+
+                    if (stolenPlateVehicleData is null)
+                    {
+                        player.SendErrorMessage("An error occurred getting the vehicle information.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(stolenPlateItem))
+                    {
+                        player.SendErrorNotification("There was an error adding the plate to your inventory.");
+                        return;
+                    }
+
+                    nearVehicleData.HasPlateBeenStolen = true;
+
+                    nearVehicleDb.StolenPlate = stolenPlate.Plate;
+
+                    context.SaveChanges();
+
+                    nearVehicle.NumberplateText = stolenPlate.Plate;
+
+                    player.SendEmoteMessage("reaches down and changes a plate on the vehicle.");
+                }
+                else
+                {
+                    StolenPlate oldPlate = new StolenPlate(nearVehicleDb);
+
+                    InventoryItem stolenPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE",
+                        $"Plate: {stolenPlate.Plate}", JsonConvert.SerializeObject(oldPlate));
+
+                    Models.Vehicle nearVehicleData = context.Vehicle.First(x => x.Id == nearVehicleDb.Id);
+
+                    if (nearVehicleData is null)
+                    {
+                        player.SendErrorMessage("An error occurred getting the vehicle information.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(stolenPlateItem))
+                    {
+                        player.SendErrorNotification("There was an error adding the plate to your inventory.");
+                        return;
+                    }
+
+                    nearVehicleData.HasPlateBeenStolen = true;
+
+                    nearVehicleData.StolenPlate = stolenPlate.Plate;
+
+                    context.SaveChanges();
+
+                    nearVehicle.NumberplateText = stolenPlate.Plate;
+
+                    player.SendEmoteMessage("reaches down and changes a plate on the vehicle.");
+                }
             }
-
-            InventoryItem oldPlateItem = new InventoryItem("ITEM_VEHICLE_PLATE", $"Plate: {oldPlate.Plate}", JsonConvert.SerializeObject(oldPlate));
-
-            playerInventory.AddItem(oldPlateItem);
-
-            string plate = stolenPlate.Plate;
-
-            nearVehicleDb.StolenPlate = plate;
-
-            if (nearVehicleDb.Plate == plate)
+            else
             {
-                nearVehicleDb.StolenPlate = null;
-                nearVehicleDb.HasPlateBeenStolen = false;
+                nearVehicleDb.StolenPlate = stolenPlate.Plate;
+                context.SaveChanges();
+
+                nearVehicle.NumberplateText = stolenPlate.Plate;
+                player.SendEmoteMessage("reaches down and places a plate on the vehicle.");
             }
-
-            context.SaveChanges();
-
-            nearVehicle.NumberplateText = plate;
-
-            player.SendEmoteMessage("reaches down and places a vehicle plate onto their vehicle.");
         }
 
         [Command("vattributes", onlyOne: true, commandType: CommandType.Vehicle,

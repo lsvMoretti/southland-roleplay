@@ -37,14 +37,12 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="vehicle"></param>
         /// <returns></returns>
-        public static Models.Vehicle FetchVehicleData(this IVehicle vehicle)
+        public static Models.Vehicle? FetchVehicleData(this IVehicle vehicle)
         {
             vehicle.GetData("VEHICLEID", out int result);
             using Context context = new Context();
             return context.Vehicle.Find(result);
         }
-
-
 
         /// <summary>
         /// Set the vehicle’s distance in Meters

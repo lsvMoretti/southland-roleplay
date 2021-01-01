@@ -314,7 +314,7 @@ namespace Server.Extensions
 
                 if (serverTrigger == "vehicle:ConfirmScrap") Vehicle.Commands.OnConfirmVehicleScrap(player, selectedItem);
 
-                if (serverTrigger == "VehicleCommand:PlaceStolePlate") Vehicle.Commands.OnPlaceStolePlateSelect(player, selectedItem);
+                if (serverTrigger == "VehicleCommand:PlaceStolePlate") Vehicle.Commands.OnPlaceStolenPlateSelect(player, selectedItem);
 
                 #endregion Vehicle Commands
 

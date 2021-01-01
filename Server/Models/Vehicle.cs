@@ -262,7 +262,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="plate"></param>
         /// <returns></returns>
-        public static Models.Vehicle FetchVehicle(string? plate)
+        public static Models.Vehicle? FetchVehicle(string? plate)
         {
             using Context context = new Context();
             return context.Vehicle.FirstOrDefault(i => i.Plate == plate);
@@ -291,7 +291,7 @@ namespace Server.Models
 
             using (Context context = new Context())
             {
-                Vehicle veh = context.Vehicle.FirstOrDefault(i => i.Id == vehicle.FetchVehicleData().Id);
+                Vehicle? veh = context.Vehicle.FirstOrDefault(i => i.Id == vehicle.FetchVehicleData().Id);
 
                 if (veh == null) return;
 
