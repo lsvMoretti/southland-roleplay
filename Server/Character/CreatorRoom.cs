@@ -34,7 +34,7 @@ namespace Server.Character
     {
         public static readonly Position CreatorPosition = new Position(-222.34286f, -1199.1692f, -148.92383f);
 
-        public static readonly Rotation CreatorRotation = new DegreeRotation(0f, 0f, 87.874016f);
+        public static readonly Rotation CreatorRotation = new DegreeRotation(0f, 0f, 267.874016f);
 
         /// <summary>
         /// Storage of Player IDs. Key = ID, Value = In use

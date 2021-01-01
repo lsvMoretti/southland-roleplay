@@ -66,12 +66,12 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
         alt.log('Loading in Char 0');
         if (customCharacter.Gender == 0) {
             native.requestModel(1885233650);
-            ped = native.createPed(0, 1885233650, -241.72748, -1194.0396, -148.92383, 0, false, true);
+            ped = native.createPed(0, 1885233650, -241.72748, -1194.0396, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
             native.requestModel(-1667301416);
-            ped = native.createPed(0, -1667301416, -241.72748, -1194.0396, -148.92383, 0, false, true);
+            ped = native.createPed(0, -1667301416, -241.72748, -1194.0396, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
     }
@@ -79,12 +79,12 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
         alt.log('Loading in Char 1');
         if (customCharacter.Gender == 0) {
             native.requestModel(1885233650);
-            ped = native.createPed(0, 1885233650, -238.77362, -1194.2373, -148.92383, 0, false, true);
+            ped = native.createPed(0, 1885233650, -238.77362, -1194.2373, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
             native.requestModel(-1667301416);
-            ped = native.createPed(0, -1667301416, -238.77362, -1194.2373, -148.92383, 0, false, true);
+            ped = native.createPed(0, -1667301416, -238.77362, -1194.2373, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
     }
@@ -92,12 +92,12 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
         alt.log('Loading in Char 2');
         if (customCharacter.Gender == 0) {
             native.requestModel(1885233650);
-            ped = native.createPed(0, 1885233650, -235.26593, -1194.2902, -148.92383, 0, false, true);
+            ped = native.createPed(0, 1885233650, -235.26593, -1194.2902, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
             native.requestModel(-1667301416);
-            ped = native.createPed(0, -1667301416, -235.26593, -1194.2902, -148.92383, 0, false, true);
+            ped = native.createPed(0, -1667301416, -235.26593, -1194.2902, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
     }
@@ -105,12 +105,12 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
         alt.log('Loading in Char 3');
         if (customCharacter.Gender == 0) {
             native.requestModel(1885233650);
-            ped = native.createPed(0, 1885233650, -229.13406, -1194.3693, -148.92383, 0, false, true);
+            ped = native.createPed(0, 1885233650, -229.13406, -1194.3693, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
             native.requestModel(-1667301416);
-            ped = native.createPed(0, -1667301416, -229.13406, -1194.3693, -148.92383, 0, false, true);
+            ped = native.createPed(0, -1667301416, -229.13406, -1194.3693, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
     }
@@ -118,12 +118,12 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
         alt.log('Loading in Char 4');
         if (customCharacter.Gender == 0) {
             native.requestModel(1885233650);
-            ped = native.createPed(0, 1885233650, -226.16704, -1194.567, -148.92383, 0, false, true);
+            ped = native.createPed(0, 1885233650, -226.16704, -1194.567, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
             native.requestModel(-1667301416);
-            ped = native.createPed(0, -1667301416, -226.16704, -1194.567, -148.92383, 0, false, true);
+            ped = native.createPed(0, -1667301416, -226.16704, -1194.567, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         alt.log('Char4: ' + ped);
@@ -132,12 +132,12 @@ function LoadNPCPreview(pos: number, customCharacterJson: string, clothesJson: s
         alt.log('Loading in Char 5');
         if (customCharacter.Gender == 0) {
             native.requestModel(1885233650);
-            ped = native.createPed(0, 1885233650, -223.02856, -1194.8044, -148.92383, 0, false, true);
+            ped = native.createPed(0, 1885233650, -223.02856, -1194.8044, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
         else if (customCharacter.Gender == 1) {
             native.requestModel(-1667301416);
-            ped = native.createPed(0, -1667301416, -223.02856, -1194.8044, -148.92383, 0, false, true);
+            ped = native.createPed(0, -1667301416, -223.02856, -1194.8044, -147.92383, 0, false, true);
             pedArray.push(ped);
         }
     }
