@@ -15,7 +15,13 @@ namespace Server.Property
         /// </summary>
         public static List<Interiors> InteriorList = new List<Interiors>();
 
-        private static readonly string altVDirectory = "C:/Game Server/data";
+#if RELEASE
+        private static string altVDirectory = "D:/servers/Paradigm-Dev/data";
+#endif
+
+#if DEBUG
+        private static string altVDirectory = "D:/servers/Paradigm-Dev/data";
+#endif
 
         /// <summary>
         /// Loads all interiors (On start)
@@ -294,7 +300,7 @@ namespace Server.Property
         public Position Position { get; set; }
         public string Ipl { get; set; }
         public string Description { get; set; }
-        
+
         public bool? IsMapped { get; set; }
     }
 }

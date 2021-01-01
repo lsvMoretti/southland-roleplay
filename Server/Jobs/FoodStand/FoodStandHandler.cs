@@ -8,12 +8,20 @@ namespace Server.Jobs.FoodStand
     public class FoodStandHandler
     {
         public static List<FoodStandPosition> FoodStands = new List<FoodStandPosition>();
-        
+
         public static void FetchFoodStandPositions()
         {
             Console.WriteLine($"Fetching Food Stand Positions");
-            
-            string directory = "data/foodstands/";
+
+#if RELEASE
+
+            string directory = "D:/servers/Paradigm/data/foodstands";
+#endif
+
+#if DEBUG
+
+            string directory = "D:/servers/Paradigm-Dev/data/foodstands";
+#endif
 
             if (!Directory.Exists(directory))
             {
@@ -24,9 +32,9 @@ namespace Server.Jobs.FoodStand
             int foodStandCount = 0;
             int hotdogCount = 0;
             int burgerCount = 0;
-            
+
             FoodStands = new List<FoodStandPosition>();
-            
+
             foreach (string filePath in Directory.GetFiles(directory))
             {
                 string fileContents = File.ReadAllText(filePath);
@@ -34,16 +42,14 @@ namespace Server.Jobs.FoodStand
                 List<FoodStandPosition> foodStandPositions =
                     JsonConvert.DeserializeObject<List<FoodStandPosition>>(fileContents);
 
-                
                 foreach (FoodStandPosition foodStandPosition in foodStandPositions)
                 {
                     foodStandCount++;
-                    
+
                     if (foodStandPosition.Name == "prop_burgerstand_01")
                     {
                         burgerCount++;
                         foodStandPosition.IsBurgerStand = true;
-                        
                     }
 
                     if (foodStandPosition.Name == "prop_hotdogstand_01")
@@ -52,12 +58,11 @@ namespace Server.Jobs.FoodStand
                         foodStandPosition.IsHotDogStand = true;
                     }
                 }
-                
+
                 FoodStands.AddRange(foodStandPositions);
             }
-            
+
             Console.WriteLine($"Found {foodStandCount} food stands. {hotdogCount} hot dog stands and {burgerCount} burger stands");
-            
         }
 
         public static FoodStandPosition FetchNearestPosition(AltV.Net.Data.Position position, float distance = 5f)
