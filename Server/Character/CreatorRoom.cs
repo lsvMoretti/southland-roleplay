@@ -32,9 +32,9 @@ namespace Server.Character
 {
     public class CreatorRoom
     {
-        public static readonly Position CreatorPosition = new Position(198.63297f, -928.7077f, 30.678345f);
+        public static readonly Position CreatorPosition = new Position(-222.34286f, -1199.1692f, -148.92383f);
 
-        public static readonly Rotation CreatorRotation = new Rotation(0f, 0f, 90f);
+        public static readonly Rotation CreatorRotation = new DegreeRotation(0f, 0f, 87.874016f);
 
         /// <summary>
         /// Storage of Player IDs. Key = ID, Value = In use
@@ -45,15 +45,15 @@ namespace Server.Character
 
         private static readonly Position[] Positions =
         {
-            new Position(197.6044f, -922.8659f, 30.678345f ),
-            new Position(199.7011f, -924.0923f, 30.678345f),
-            new Position(202.36484f, -925.9912f, 30.678345f),
-            new Position(204.90988f, -927.82416f, 30.678345f),
-            new Position(207.67912f, -930.211f, 30.678345f),
-            new Position(210.1055f, -932.04395f, 30.678345f)
+            new Position(-241.72748f, -1194.0396f, -148.92383f),
+            new Position(-238.77362f, -1194.2373f, -148.92383f),
+            new Position(-235.26593f, -1194.2902f, -148.92383f),
+            new Position(-229.13406f, -1194.3693f, -148.92383f),
+            new Position(-226.16704f, -1194.567f, -148.92383f),
+            new Position(-223.02856f, -1194.8044f, -148.92383f)
         };
 
-        public static Position DoorPosition = new Position(196.28572f, -938.54504f, 30.678345f);
+        public static Position DoorPosition = new Position(-222.23737f, -1191.1516f, -148.92383f);
 
         public static void SendToCreatorRoom(IPlayer player)
         {
@@ -93,7 +93,7 @@ namespace Server.Character
 
                 player.Model = (uint)PedModel.MovAlien01;
 
-                player.SetPosition(new Position(198.63297f, -928.7077f, 30.678345f), new Rotation(0, 0, 270), 5000,
+                player.SetPosition(new Position(-245.06374f, -1190.888f, -148.92383f), new DegreeRotation(0, 0, -85.03937f), 5000,
                     true, true, unfreezeTime: 1000);
 
                 player.Rotation = new Rotation(0, 0, 270);

@@ -105,7 +105,7 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     creatorView.on('ParentSkinChange', onParentSkinChange);
 
-    creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -839.6431, -719.5154, -156.3, 0, 0, 87.2606, 20, true, 2);
+    creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -225.87692, -1199.0901, -148.92383, 0, 0, -90, 20, true, 2);
 
     native.displayRadar(false);
 
