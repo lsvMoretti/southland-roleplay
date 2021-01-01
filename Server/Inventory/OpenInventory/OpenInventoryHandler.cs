@@ -45,16 +45,16 @@ namespace Server.Inventory.OpenInventory
 
             using Context context = new Context();
 
-            List<Models.Storage> storages = context.Storages.ToList();
+            List<Models.Storage> storageList = context.Storages.ToList();
 
             int dumpsterCount = 0;
             int binCount = 0;
 
-            if (storages.Count >= storageLocations.Count) return;
+            if (storageList.Count >= storageLocations.Count) return;
 
             foreach (StorageLocation storageLocation in storageLocations)
             {
-                Storage storage = storages.FirstOrDefault(x =>
+                Storage? storage = storageList.First(x =>
                     Math.Abs(x.PosX - storageLocation.Position.X) < 1 && Math.Abs(x.PosY - storageLocation.Position.Y) < 1 &&
                     Math.Abs(x.PosZ - storageLocation.Position.Z) < 1);
 
@@ -67,10 +67,11 @@ namespace Server.Inventory.OpenInventory
                     PosZ = storageLocation.Position.Z,
                     RotX = storageLocation.Rotation.X,
                     RotY = storageLocation.Rotation.Y,
-                    RotZ = storageLocation.Rotation.Z
+                    RotZ = storageLocation.Rotation.Z,
+                    InventoryId = storageLocation.IsDumpster
+                        ? InventoryData.CreateDefaultInventory(15f, 10f).ID
+                        : InventoryData.CreateDefaultInventory(7f, 10f).ID
                 };
-
-                newStorage.InventoryId = storageLocation.IsDumpster ? InventoryData.CreateDefaultInventory(15f, 10f).ID : InventoryData.CreateDefaultInventory(7f, 10f).ID;
 
                 if (storageLocation.IsDumpster)
                 {
@@ -82,9 +83,8 @@ namespace Server.Inventory.OpenInventory
                 }
 
                 context.Storages.Add(newStorage);
+                context.SaveChanges();
             }
-
-            context.SaveChanges();
 
             Console.WriteLine($"Added {storageLocations.Count - context.Storages.Count()} new storages.");
         }
