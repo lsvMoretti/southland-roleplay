@@ -20,7 +20,7 @@ namespace Server.Property
 #endif
 
 #if DEBUG
-        private static string altVDirectory = "D:/servers/Paradigm-Dev/data";
+        private static string altVDirectory = $"{Directory.GetCurrentDirectory()}/data";
 #endif
 
         /// <summary>
@@ -30,6 +30,8 @@ namespace Server.Property
         {
             try
             {
+                Console.WriteLine($"Loading Interios from {altVDirectory}");
+
                 InteriorList = new List<Interiors>();
 
                 if (!File.Exists($"{altVDirectory}/interiors.json"))
