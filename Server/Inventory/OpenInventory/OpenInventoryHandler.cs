@@ -54,7 +54,7 @@ namespace Server.Inventory.OpenInventory
 
             foreach (StorageLocation storageLocation in storageLocations)
             {
-                Storage? storage = storageList.First(x =>
+                Storage? storage = storageList.FirstOrDefault(x =>
                     Math.Abs(x.PosX - storageLocation.Position.X) < 1 && Math.Abs(x.PosY - storageLocation.Position.Y) < 1 &&
                     Math.Abs(x.PosZ - storageLocation.Position.Z) < 1);
 
