@@ -42,6 +42,23 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("editor", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
+            description: "Loads the rockstar editor")]
+        public static void AdminCommandLoadEditor(IPlayer player)
+        {
+            if (player.HasData("RockstarEditor:Enabled"))
+            {
+                // If have data = in rockstar editor
+
+                player.DeleteData("RockstarEditor:Enabled");
+                player.Emit("RockstarEditor:Toggle", false);
+                return;
+            }
+
+            player.SetData("RockstarEditor:Enabled", true);
+            player.Emit("RockstarEditor:Toggle", true);
+        }
+
         [Command("tp", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
         public static void CommandTP(IPlayer player)
         {

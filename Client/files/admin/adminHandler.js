@@ -4,6 +4,21 @@ var vehicleListString = undefined;
 var adminDealershipView = undefined;
 var adminDealershipName = undefined;
 var editVehicleIndex = undefined;
+alt.onServer('RockstarEditor:Toggle', (toggle) => {
+    if (toggle) {
+        native.activateRockstarEditor();
+        native.setPlayerRockstarEditorDisabled(false);
+        let interval = alt.setInterval(() => {
+            if (native.isScreenFadedOut()) {
+                native.doScreenFadeIn(1000);
+                alt.clearInterval(interval);
+            }
+        }, 1000);
+    }
+    else {
+        native.setPlayerRockstarEditorDisabled(true);
+    }
+});
 alt.onServer('admin:showEditDealershipVehicles', showEditDealershipVehicles);
 function showEditDealershipVehicles(dealerName, vehicleListJson) {
     vehicleListString = vehicleListJson;

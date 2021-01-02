@@ -1,14 +1,29 @@
 ﻿import * as alt from 'alt-client';
 import * as native from 'natives';
 
-var vehicleListString:any = undefined;
-var adminDealershipView:alt.WebView = undefined;
-var adminDealershipName:string = undefined;
-var editVehicleIndex:number = undefined;
+var vehicleListString: any = undefined;
+var adminDealershipView: alt.WebView = undefined;
+var adminDealershipName: string = undefined;
+var editVehicleIndex: number = undefined;
+
+alt.onServer('RockstarEditor:Toggle', (toggle: boolean) => {
+    if (toggle) {
+        native.activateRockstarEditor();
+        native.setPlayerRockstarEditorDisabled(false);
+        let interval = alt.setInterval(() => {
+            if (native.isScreenFadedOut()) {
+                native.doScreenFadeIn(1000);
+                alt.clearInterval(interval);
+            }
+        }, 1000);
+    } else {
+        native.setPlayerRockstarEditorDisabled(true);
+    }
+});
 
 alt.onServer('admin:showEditDealershipVehicles', showEditDealershipVehicles);
 
-function showEditDealershipVehicles(dealerName:string, vehicleListJson:string) {
+function showEditDealershipVehicles(dealerName: string, vehicleListJson: string) {
     vehicleListString = vehicleListJson;
     adminDealershipName = dealerName;
 
@@ -34,12 +49,12 @@ function editPageLoaded() {
     adminDealershipView.emit('admin:dealership:editPageInfo', editVehicleIndex, vehicleListString);
 }
 
-function addNewDealershipVehicle(vehicleName:string, vehicleModel:string, vehiclePrice:string) {
+function addNewDealershipVehicle(vehicleName: string, vehicleModel: string, vehiclePrice: string) {
     alt.emitServer('admin:dealership:createNewDealershipVehicle', vehicleName, vehicleModel, vehiclePrice);
     closeDealershipVehiclePage();
 }
 
-function editSelectedDealershipVehicle(index:number) {
+function editSelectedDealershipVehicle(index: number) {
     editVehicleIndex = index;
 }
 
@@ -59,7 +74,7 @@ function closeDealershipVehiclePage() {
     }
 }
 
-function editDealershipVehicle(vehicleName:string, vehicleModel:string, vehiclePrice:string) {
+function editDealershipVehicle(vehicleName: string, vehicleModel: string, vehiclePrice: string) {
     alt.emitServer('admin:dealership:editDealershipVehicle', editVehicleIndex, vehicleName, vehicleModel, vehiclePrice);
     closeDealershipVehiclePage();
 }
@@ -69,18 +84,18 @@ function removeDealershipVehicle() {
     closeDealershipVehiclePage();
 }
 
-var factionView:alt.WebView = undefined;
-var factionJson:string = undefined;
-var factionSelected:any = undefined;
-var factionMembers:any = undefined;
-var factionMemberEditIndex:number = undefined;
+var factionView: alt.WebView = undefined;
+var factionJson: string = undefined;
+var factionSelected: any = undefined;
+var factionMembers: any = undefined;
+var factionMemberEditIndex: number = undefined;
 
 alt.onServer('loadFactionList', loadFactionList);
 alt.onServer('closeFactionPage', closeFactionView);
 alt.onServer('admin:faction:factionMembers', returnFactionMembers);
 alt.onServer('admin:faction:showCreatePage', showFactionCreate);
 
-function returnFactionMembers(json:string) {
+function returnFactionMembers(json: string) {
     factionMembers = json;
 
     factionView.destroy();
@@ -102,12 +117,12 @@ function returnFactionMembers(json:string) {
     factionView.on('closeFactionView', closeFactionView);
 
     factionView.on('admin:faction:removeMember',
-        (index:number) => {
+        (index: number) => {
             alt.emitServer('admin:faction:removeMemberFromFaction', index.toString());
         });
 
     factionView.on('admin:faction:adjustMemberRank',
-        (index:number) => {
+        (index: number) => {
             factionMemberEditIndex = index;
         });
 
@@ -120,12 +135,12 @@ function returnFactionMembers(json:string) {
     });
 
     factionView.on('admin:faction:setMemberRank',
-        (rankIndex:number) => {
+        (rankIndex: number) => {
             alt.emitServer('admin:faction:adjustMemberRank', factionMemberEditIndex.toString(), factionSelected.toString(), rankIndex.toString());
         });
 }
 
-function loadFactionList(json:string) {
+function loadFactionList(json: string) {
     if (factionView !== undefined) {
         closeFactionView();
     }
@@ -145,7 +160,7 @@ function loadFactionList(json:string) {
     factionView.on('closeFactionView', closeFactionView);
 
     factionView.on('factionSelected',
-        (index:number) => {
+        (index: number) => {
             factionSelected = index;
         });
 
@@ -178,7 +193,7 @@ function fetchFactionMembers() {
     alt.emitServer('admin:faction:fetchMembers', factionId.toString());
 }
 
-function factionAdjustRankPerm(perm: string, index:any) {
+function factionAdjustRankPerm(perm: string, index: any) {
     alt.emitServer('admin:faction:adjustRankPerm', perm.toString(), factionSelected.toString(), index.toString());
 }
 
@@ -233,31 +248,29 @@ function showFactionCreate() {
     factionView.on('closeFactionView', closeFactionView);
 
     factionView.on('admin:faction:create',
-        (factionName:any, factionType:any, factionSubType:any) => {
+        (factionName: any, factionType: any, factionSubType: any) => {
             alt.emitServer('admin:faction:createFaction', factionName.toString(), factionType.toString(), factionSubType.toString());
         });
 }
 
-var AdminMode:boolean = false;
+var AdminMode: boolean = false;
 
-alt.onServer('EnabledAdminDuty', (adminMode:boolean) => {
+alt.onServer('EnabledAdminDuty', (adminMode: boolean) => {
     AdminMode = adminMode;
 
     var scriptID = alt.Player.local.scriptID;
-    if(!adminMode){
+    if (!adminMode) {
         native.setEntityCanBeDamaged(scriptID, true);
         native.setEntityInvincible(scriptID, false);
     }
 });
 
 alt.everyTick(() => {
-
     var scriptID = alt.Player.local.scriptID;
 
-    if(AdminMode){
+    if (AdminMode) {
         native.setEntityCanBeDamaged(scriptID, false);
         native.setEntityInvincible(scriptID, true);
         native.setEntityHealth(scriptID, 200, 0);
     }
-
 });
