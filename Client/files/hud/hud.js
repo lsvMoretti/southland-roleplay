@@ -31,7 +31,7 @@ function SetHudData(health, money, heading, hour, minute, streetName, zoneName, 
 
     var directionText = document.getElementById("directionText");
 
-    directionText.innerText = degToCard(heading) + " " + streetName + ", " + zoneName;
+    directionText.innerText = "[" + degToCard(heading) + "] " + streetName + ", " + zoneName;
 
     var timeText = document.getElementById("timeText");
 
