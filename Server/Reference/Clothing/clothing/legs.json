@@ -17083,6 +17083,664 @@
     {
       "Key": {
         "slot": 4,
+        "drawable": 127,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Sports Track Pants",
+        "DisplayNameFemale": "Correctional Cargo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mustard Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cyan Heat Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cyan Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crimson Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue DS Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red DS Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow DS Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Stone Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snow Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoke Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 128,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lemon Sports Track Pants",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Large Cargos",
+        "DisplayNameFemale": "Correctional Cargo",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Gray Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Gray Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 129,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Large Cargos",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Large Cargos",
+        "DisplayNameFemale": "Blue Knee Pad Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Large Cargos",
+        "DisplayNameFemale": "Black Knee Pad Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Large Cargos",
+        "DisplayNameFemale": "Dark Gray Knee Pad Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Gray Large Cargos",
+        "DisplayNameFemale": "Beige Knee Pad Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Gray Large Cargos",
+        "DisplayNameFemale": "Cream Knee Pad Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Large Cargos",
+        "DisplayNameFemale": "Forest Green Knee Pad Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Large Cargos",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 130,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Large Cargos",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 131,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bigness Tie-dye Sports Pants",
+        "DisplayNameFemale": "Dark Gray Guarded Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 132,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Prolaps Basketball Shorts",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 132,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Panic Prolaps Basketball Shorts",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 132,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Exsorbeo 720 Sports Shorts",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
         "drawable": 17,
         "texture": 11,
         "male": false
@@ -21269,160 +21927,6 @@
     {
       "Key": {
         "slot": 4,
-        "drawable": 127,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "undefined",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 128,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Correctional Cargo",
-        "DisplayNameFemale": "Correctional Cargo",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 129,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Correctional Cargo",
-        "DisplayNameFemale": "Correctional Cargo",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Knee Pad Cargos",
-        "DisplayNameFemale": "Blue Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Knee Pad Cargos",
-        "DisplayNameFemale": "Black Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Dark Gray Knee Pad Cargos",
-        "DisplayNameFemale": "Dark Gray Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Beige Knee Pad Cargos",
-        "DisplayNameFemale": "Beige Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Cream Knee Pad Cargos",
-        "DisplayNameFemale": "Cream Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Forest Green Knee Pad Cargos",
-        "DisplayNameFemale": "Forest Green Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "undefined",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 130,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "undefined",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
         "drawable": 130,
         "texture": 8,
         "male": false
@@ -21584,20 +22088,6 @@
       "Value": {
         "DisplayNameMale": "Beige Camo Knee Pad Cargos",
         "DisplayNameFemale": "Beige Camo Knee Pad Cargos",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 4,
-        "drawable": 131,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Dark Gray Guarded Cargos",
-        "DisplayNameFemale": "Dark Gray Guarded Cargos",
         "TorsoData": 0,
         "Price": 5
       }
@@ -21864,6 +22354,1238 @@
       "Value": {
         "DisplayNameMale": "Beige Camo Guarded Cargos",
         "DisplayNameFemale": "Beige Camo Guarded Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Slacks",
+        "DisplayNameFemale": "Dark Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Slacks",
+        "DisplayNameFemale": "Gray Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Slacks",
+        "DisplayNameFemale": "Navy Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Slacks",
+        "DisplayNameFemale": "White Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Slacks",
+        "DisplayNameFemale": "Blue Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Slacks",
+        "DisplayNameFemale": "Purple Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cyan Slacks",
+        "DisplayNameFemale": "Cyan Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Patterned Slacks",
+        "DisplayNameFemale": "Patterned Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Olive Slacks",
+        "DisplayNameFemale": "Olive Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Slacks",
+        "DisplayNameFemale": "Yellow Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Slacks",
+        "DisplayNameFemale": "Red Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Slacks",
+        "DisplayNameFemale": "Pink Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Magenta Slacks",
+        "DisplayNameFemale": "Magenta Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Cream Stripe Slacks",
+        "DisplayNameFemale": "Black & Cream Stripe Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Red Slacks",
+        "DisplayNameFemale": "Dark Red Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & White Stripe Slacks",
+        "DisplayNameFemale": "Black & White Stripe Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Slacks",
+        "DisplayNameFemale": "Cream Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Slate Slacks",
+        "DisplayNameFemale": "Slate Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Powder Blue Slacks",
+        "DisplayNameFemale": "Powder Blue Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Slacks",
+        "DisplayNameFemale": "Ash Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Slacks",
+        "DisplayNameFemale": "Tan Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wine Slacks",
+        "DisplayNameFemale": "Wine Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Blue Slacks",
+        "DisplayNameFemale": "Dark Blue Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Midnight Slacks",
+        "DisplayNameFemale": "Midnight Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 133,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Slacks",
+        "DisplayNameFemale": "Green Slacks",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Sports Track Pants",
+        "DisplayNameFemale": "Cream Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Heat Sports Track Pants",
+        "DisplayNameFemale": "Gray Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mustard Heat Sports Track Pants",
+        "DisplayNameFemale": "Mustard Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Heat Sports Track Pants",
+        "DisplayNameFemale": "Purple Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Heat Sports Track Pants",
+        "DisplayNameFemale": "Orange Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Heat Sports Track Pants",
+        "DisplayNameFemale": "Pink Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Heat Sports Track Pants",
+        "DisplayNameFemale": "White Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cyan Heat Sports Track Pants",
+        "DisplayNameFemale": "Cyan Heat Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Sports Track Pants",
+        "DisplayNameFemale": "Stone Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Sports Track Pants",
+        "DisplayNameFemale": "Blue Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Sports Track Pants",
+        "DisplayNameFemale": "Ash Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cyan Sports Track Pants",
+        "DisplayNameFemale": "Cyan Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Sports Track Pants",
+        "DisplayNameFemale": "Black Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crimson Sports Track Pants",
+        "DisplayNameFemale": "Crimson Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Sports Track Pants",
+        "DisplayNameFemale": "Navy Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue DS Sports Track Pants",
+        "DisplayNameFemale": "Blue DS Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red DS Sports Track Pants",
+        "DisplayNameFemale": "Red DS Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow DS Sports Track Pants",
+        "DisplayNameFemale": "Yellow DS Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Stone Sports Track Pants",
+        "DisplayNameFemale": "Dark Stone Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Snow Sports Track Pants",
+        "DisplayNameFemale": "Snow Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Smoke Sports Track Pants",
+        "DisplayNameFemale": "Smoke Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 134,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lemon Sports Track Pants",
+        "DisplayNameFemale": "Lemon Sports Track Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Large Cargos",
+        "DisplayNameFemale": "Navy Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Large Cargos",
+        "DisplayNameFemale": "Black Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Large Cargos",
+        "DisplayNameFemale": "Khaki Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Gray Large Cargos",
+        "DisplayNameFemale": "Dark Gray Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Gray Large Cargos",
+        "DisplayNameFemale": "Light Gray Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Large Cargos",
+        "DisplayNameFemale": "Stone Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Large Cargos",
+        "DisplayNameFemale": "Ash Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 135,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Large Cargos",
+        "DisplayNameFemale": "Blue Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Large Cargos",
+        "DisplayNameFemale": "Navy Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Large Cargos",
+        "DisplayNameFemale": "Black Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Khaki Large Cargos",
+        "DisplayNameFemale": "Khaki Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Gray Large Cargos",
+        "DisplayNameFemale": "Dark Gray Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Gray Large Cargos",
+        "DisplayNameFemale": "Light Gray Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Large Cargos",
+        "DisplayNameFemale": "Stone Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Large Cargos",
+        "DisplayNameFemale": "Ash Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 136,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Large Cargos",
+        "DisplayNameFemale": "Blue Large Cargos",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Chino Shorts",
+        "DisplayNameFemale": "Black Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Plaid Chino Shorts",
+        "DisplayNameFemale": "Gray Plaid Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Gray Chino Shorts",
+        "DisplayNameFemale": "Dark Gray Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Chino Shorts",
+        "DisplayNameFemale": "Tan Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Chino Shorts",
+        "DisplayNameFemale": "Navy Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Chino Shorts",
+        "DisplayNameFemale": "Brown Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Plaid Chino Shorts",
+        "DisplayNameFemale": "Charcoal Plaid Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Chino Shorts",
+        "DisplayNameFemale": "Yellow Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Silver Plaid Chino Shorts",
+        "DisplayNameFemale": "Silver Plaid Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Baby Blue Chino Shorts",
+        "DisplayNameFemale": "Baby Blue Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Plaid Chino Shorts",
+        "DisplayNameFemale": "White Plaid Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Gray Chino Shorts",
+        "DisplayNameFemale": "Light Gray Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Plaid Chino Shorts",
+        "DisplayNameFemale": "Green Plaid Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Plaid Chino Shorts",
+        "DisplayNameFemale": "Brown Plaid Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Chino Shorts",
+        "DisplayNameFemale": "Red Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 137,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Olive Chino Shorts",
+        "DisplayNameFemale": "Olive Chino Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 138,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Bigness Tie-dye Sports Pants",
+        "DisplayNameFemale": "Bigness Tie-dye Sports Pants",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 139,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Broker Prolaps Basketball Shorts",
+        "DisplayNameFemale": "Broker Prolaps Basketball Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 139,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Panic Prolaps Basketball Shorts",
+        "DisplayNameFemale": "Panic Prolaps Basketball Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 139,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Exsorbeo 720 Sports Shorts",
+        "DisplayNameFemale": "Exsorbeo 720 Sports Shorts",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 139,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }

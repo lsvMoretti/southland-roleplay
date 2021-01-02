@@ -5805,7 +5805,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Fitted Suit Vest",
-        "DisplayNameFemale": "Hi-Vis Vest",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -5917,7 +5917,7 @@
       },
       "Value": {
         "DisplayNameMale": "Love Fist V Neck",
-        "DisplayNameFemale": "White Buttoned Shirt",
+        "DisplayNameFemale": "White Shirt",
         "TorsoData": 0,
         "Price": 5
       }
@@ -5931,7 +5931,7 @@
       },
       "Value": {
         "DisplayNameMale": "Blue Striped V Neck",
-        "DisplayNameFemale": "Silver Buttoned Shirt",
+        "DisplayNameFemale": "Silver Shirt",
         "TorsoData": 0,
         "Price": 5
       }
@@ -6798,7 +6798,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "Hi-Vis Vest",
+        "DisplayNameMale": "undefined",
         "DisplayNameFemale": "White Classic",
         "TorsoData": 0,
         "Price": 5
@@ -23291,7 +23291,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Black Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23305,7 +23305,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Charcoal Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23319,7 +23319,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Ash Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23333,7 +23333,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Ice Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23347,7 +23347,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Navy Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23361,7 +23361,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Chamois Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23375,7 +23375,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Sand Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23389,7 +23389,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Tan Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23403,7 +23403,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Salmon Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23417,7 +23417,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Moss Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23431,7 +23431,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Peach Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23445,7 +23445,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Brown Digital Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23459,7 +23459,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Fall Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23473,7 +23473,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "White Camo Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23487,7 +23487,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Peach Camo Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23501,7 +23501,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "Red Camo Plate Carrier",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -23866,6 +23866,2960 @@
       "Value": {
         "DisplayNameMale": "Black Reinforced Armor",
         "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 165,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 166,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 167,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 168,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 169,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Plate Carrier",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Plate Carrier",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Plate Carrier",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ice Plate Carrier",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Plate Carrier",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chamois Plate Carrier",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sand Plate Carrier",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plate Carrier",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Salmon Plate Carrier",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Plate Carrier",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Plate Carrier",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Plate Carrier",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Plate Carrier",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Camo Plate Carrier",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Camo Plate Carrier",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Camo Plate Carrier",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 170,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Fishing Vest",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Fishing Vest",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Fishing Vest",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Digital Fishing Vest",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Digital Fishing Vest",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desert Camo Fishing Vest",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Forest Camo Fishing Vest",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Splash Fishing Vest",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Fishing Vest",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Fishing Vest",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dirt Fishing Vest",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Fishing Vest",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Fishing Vest",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Fishing Vest",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Fishing Vest",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 171,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Fishing Vest",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Strapz Vest",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Strapz Vest",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Strapz Vest",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange & Green Strapz Vest",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lime Strapz Vest",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Neon Strapz Vest",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Strapz Vest",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Strapz Vest",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Strapz Vest",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Lime Strapz Vest",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Purple Strapz Vest",
+        "DisplayNameFemale": "Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Green Strapz Vest",
+        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Orange Strapz Vest",
+        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Blue Strapz Vest",
+        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange & Red Strapz Vest",
+        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray & Green Strapz Vest",
+        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple & Gray Strapz Vest",
+        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green & Gray Strapz Vest",
+        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue & Gray Strapz Vest",
+        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 172,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Color Block Strapz Vest",
+        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crewneck T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Lilac Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Mint Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Striped Manor T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 173,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 174,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Wild Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Zebra Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Zebra Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pink Santo Capra Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Santo Capra Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Yellow Santo Capra Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Snakeskin Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Moss Leopard Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Pale Leopard Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 175,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Magenta Leopard Loose Tank",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Wild Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Stripes Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Zebra Stripes Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Peach Spotted Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Brown Spotted Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Turquoise Botanical Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Botanical Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Neon Painted Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Leaves Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 176,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Multicolor Leaves Camisole",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Wild Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Blue Zebra Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Zebra Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Geometric Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Abstract Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Snakeskin Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Green Snakeskin Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Black Floral Bikini",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 177,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
         "TorsoData": 0,
         "Price": 5
       }
@@ -33898,502 +36852,12 @@
       "Key": {
         "slot": 8,
         "drawable": 170,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor Zigzag T-Shirt",
-        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor T-Shirt",
-        "DisplayNameFemale": "White Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Lilac Manor T-Shirt",
-        "DisplayNameFemale": "Lilac Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Mint Manor T-Shirt",
-        "DisplayNameFemale": "Mint Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Striped Manor T-Shirt",
-        "DisplayNameFemale": "Black Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Striped Manor T-Shirt",
-        "DisplayNameFemale": "White Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Purple Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Brand T-Shirt",
-        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 10,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs LS T-Shirt",
-        "DisplayNameFemale": "Blagueurs LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 11,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueres Stripes T-Shirt",
-        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 12,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Sports T-Shirt",
-        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 13,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Teal Blagueurs LS T-Shirt",
-        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 14,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "B & W Blagueuers LS T-Shirt",
-        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 15,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Salmon Santo Capra T-Shirt",
-        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 16,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Santo Capra T-Shirt",
-        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 17,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Yellow Santo Capra T-Shirt",
-        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 18,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Pink Santo Capra T-Shirt",
-        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
-        "texture": 19,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Red & Black Santo Capra T-Shirt",
-        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 170,
         "texture": 20,
         "male": false
       },
       "Value": {
         "DisplayNameMale": "Blue Striped Santo Capra T-Shirt",
         "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Crewneck T-Shirt",
-        "DisplayNameFemale": "Crewneck T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor Zigzag T-Shirt",
-        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor T-Shirt",
-        "DisplayNameFemale": "White Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Lilac Manor T-Shirt",
-        "DisplayNameFemale": "Lilac Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Mint Manor T-Shirt",
-        "DisplayNameFemale": "Mint Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Striped Manor T-Shirt",
-        "DisplayNameFemale": "Black Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Striped Manor T-Shirt",
-        "DisplayNameFemale": "White Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Purple Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Brand T-Shirt",
-        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 10,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs LS T-Shirt",
-        "DisplayNameFemale": "Blagueurs LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 11,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueres Stripes T-Shirt",
-        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 12,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Sports T-Shirt",
-        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 13,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Teal Blagueurs LS T-Shirt",
-        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 14,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "B & W Blagueuers LS T-Shirt",
-        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 171,
-        "texture": 15,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Salmon Santo Capra T-Shirt",
-        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
         "TorsoData": 0,
         "Price": 5
       }
@@ -34472,432 +36936,12 @@
       "Key": {
         "slot": 8,
         "drawable": 172,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Crewneck T-Shirt",
-        "DisplayNameFemale": "Crewneck T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor Zigzag T-Shirt",
-        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor T-Shirt",
-        "DisplayNameFemale": "White Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Lilac Manor T-Shirt",
-        "DisplayNameFemale": "Lilac Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Mint Manor T-Shirt",
-        "DisplayNameFemale": "Mint Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Striped Manor T-Shirt",
-        "DisplayNameFemale": "Black Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Striped Manor T-Shirt",
-        "DisplayNameFemale": "White Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Purple Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Brand T-Shirt",
-        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 10,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs LS T-Shirt",
-        "DisplayNameFemale": "Blagueurs LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 11,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueres Stripes T-Shirt",
-        "DisplayNameFemale": "Blagueres Stripes T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 12,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Sports T-Shirt",
-        "DisplayNameFemale": "Blagueurs Sports T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 13,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Teal Blagueurs LS T-Shirt",
-        "DisplayNameFemale": "Teal Blagueurs LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 14,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "B & W Blagueuers LS T-Shirt",
-        "DisplayNameFemale": "B & W Blagueuers LS T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 15,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Salmon Santo Capra T-Shirt",
-        "DisplayNameFemale": "Salmon Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 16,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Santo Capra T-Shirt",
-        "DisplayNameFemale": "Blue Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 17,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Yellow Santo Capra T-Shirt",
-        "DisplayNameFemale": "Yellow Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 18,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Pink Santo Capra T-Shirt",
-        "DisplayNameFemale": "Pink Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
-        "texture": 19,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Red & Black Santo Capra T-Shirt",
-        "DisplayNameFemale": "Red & Black Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 172,
         "texture": 20,
         "male": false
       },
       "Value": {
         "DisplayNameMale": "Blue Striped Santo Capra T-Shirt",
         "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Crewneck T-Shirt",
-        "DisplayNameFemale": "Crewneck T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor Zigzag T-Shirt",
-        "DisplayNameFemale": "White Manor Zigzag T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Manor T-Shirt",
-        "DisplayNameFemale": "White Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Lilac Manor T-Shirt",
-        "DisplayNameFemale": "Lilac Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Mint Manor T-Shirt",
-        "DisplayNameFemale": "Mint Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Striped Manor T-Shirt",
-        "DisplayNameFemale": "Black Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Striped Manor T-Shirt",
-        "DisplayNameFemale": "White Striped Manor T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Green Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Purple Globe Blagueurs T-Shirt",
-        "DisplayNameFemale": "Purple Globe Blagueurs T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 173,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blagueurs Brand T-Shirt",
-        "DisplayNameFemale": "Blagueurs Brand T-Shirt",
         "TorsoData": 0,
         "Price": 5
       }
@@ -35052,174 +37096,6 @@
       "Value": {
         "DisplayNameMale": "Blue Striped Santo Capra T-Shirt",
         "DisplayNameFemale": "Blue Striped Santo Capra T-Shirt",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 174,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "undefined",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 174,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "undefined",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Wild Loose Tank",
-        "DisplayNameFemale": "Wild Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Zebra Loose Tank",
-        "DisplayNameFemale": "Blue Zebra Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Zebra Loose Tank",
-        "DisplayNameFemale": "Zebra Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Pink Santo Capra Loose Tank",
-        "DisplayNameFemale": "Pink Santo Capra Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Santo Capra Loose Tank",
-        "DisplayNameFemale": "Blue Santo Capra Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Yellow Santo Capra Loose Tank",
-        "DisplayNameFemale": "Yellow Santo Capra Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Snakeskin Loose Tank",
-        "DisplayNameFemale": "Snakeskin Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Moss Leopard Loose Tank",
-        "DisplayNameFemale": "Moss Leopard Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Pale Leopard Loose Tank",
-        "DisplayNameFemale": "Pale Leopard Loose Tank",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 175,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Magenta Leopard Loose Tank",
-        "DisplayNameFemale": "Magenta Leopard Loose Tank",
         "TorsoData": 0,
         "Price": 5
       }
@@ -35256,146 +37132,6 @@
       "Key": {
         "slot": 8,
         "drawable": 176,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Wild Camisole",
-        "DisplayNameFemale": "Wild Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Stripes Camisole",
-        "DisplayNameFemale": "Blue Stripes Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Zebra Stripes Camisole",
-        "DisplayNameFemale": "Zebra Stripes Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Peach Spotted Camisole",
-        "DisplayNameFemale": "Peach Spotted Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Brown Spotted Camisole",
-        "DisplayNameFemale": "Brown Spotted Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Turquoise Botanical Camisole",
-        "DisplayNameFemale": "Turquoise Botanical Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Botanical Camisole",
-        "DisplayNameFemale": "Green Botanical Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Neon Painted Camisole",
-        "DisplayNameFemale": "Neon Painted Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Leaves Camisole",
-        "DisplayNameFemale": "Blue Leaves Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Multicolor Leaves Camisole",
-        "DisplayNameFemale": "Multicolor Leaves Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 176,
         "texture": 10,
         "male": false
       },
@@ -35416,118 +37152,6 @@
       "Value": {
         "DisplayNameMale": "White Botanical Camisole",
         "DisplayNameFemale": "White Botanical Camisole",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Wild Bikini",
-        "DisplayNameFemale": "Wild Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Zebra Bikini",
-        "DisplayNameFemale": "Blue Zebra Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Zebra Bikini",
-        "DisplayNameFemale": "Zebra Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Geometric Bikini",
-        "DisplayNameFemale": "Geometric Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Abstract Bikini",
-        "DisplayNameFemale": "Abstract Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Snakeskin Bikini",
-        "DisplayNameFemale": "White Snakeskin Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Snakeskin Bikini",
-        "DisplayNameFemale": "Green Snakeskin Bikini",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 8,
-        "drawable": 177,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Floral Bikini",
-        "DisplayNameFemale": "Black Floral Bikini",
         "TorsoData": 0,
         "Price": 5
       }
@@ -38902,6 +40526,3394 @@
       "Value": {
         "DisplayNameMale": "Black Reinforced Armor",
         "DisplayNameFemale": "Black Reinforced Armor",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 201,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 202,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 203,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 204,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 205,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 206,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "T-Shirt",
+        "DisplayNameFemale": "T-Shirt",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Plate Carrier",
+        "DisplayNameFemale": "Black Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Charcoal Plate Carrier",
+        "DisplayNameFemale": "Charcoal Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ash Plate Carrier",
+        "DisplayNameFemale": "Ash Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ice Plate Carrier",
+        "DisplayNameFemale": "Ice Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Navy Plate Carrier",
+        "DisplayNameFemale": "Navy Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chamois Plate Carrier",
+        "DisplayNameFemale": "Chamois Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sand Plate Carrier",
+        "DisplayNameFemale": "Sand Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Plate Carrier",
+        "DisplayNameFemale": "Tan Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Salmon Plate Carrier",
+        "DisplayNameFemale": "Salmon Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Plate Carrier",
+        "DisplayNameFemale": "Moss Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Plate Carrier",
+        "DisplayNameFemale": "Peach Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Plate Carrier",
+        "DisplayNameFemale": "Brown Digital Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Plate Carrier",
+        "DisplayNameFemale": "Fall Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Camo Plate Carrier",
+        "DisplayNameFemale": "White Camo Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Camo Plate Carrier",
+        "DisplayNameFemale": "Peach Camo Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Camo Plate Carrier",
+        "DisplayNameFemale": "Red Camo Plate Carrier",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 207,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Fishing Vest",
+        "DisplayNameFemale": "Beige Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Fishing Vest",
+        "DisplayNameFemale": "Gray Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Fishing Vest",
+        "DisplayNameFemale": "Stone Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Digital Fishing Vest",
+        "DisplayNameFemale": "Beige Digital Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Digital Fishing Vest",
+        "DisplayNameFemale": "Blue Digital Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desert Camo Fishing Vest",
+        "DisplayNameFemale": "Desert Camo Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Forest Camo Fishing Vest",
+        "DisplayNameFemale": "Forest Camo Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Splash Fishing Vest",
+        "DisplayNameFemale": "Green Splash Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Fishing Vest",
+        "DisplayNameFemale": "Black Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Fishing Vest",
+        "DisplayNameFemale": "White Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dirt Fishing Vest",
+        "DisplayNameFemale": "Dirt Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Fishing Vest",
+        "DisplayNameFemale": "Moss Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tan Fishing Vest",
+        "DisplayNameFemale": "Tan Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Fishing Vest",
+        "DisplayNameFemale": "Cream Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Fishing Vest",
+        "DisplayNameFemale": "Brown Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 208,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Fishing Vest",
+        "DisplayNameFemale": "Blue Fishing Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Strapz Vest",
+        "DisplayNameFemale": "White Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Strapz Vest",
+        "DisplayNameFemale": "Yellow Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple Strapz Vest",
+        "DisplayNameFemale": "Purple Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange & Green Strapz Vest",
+        "DisplayNameFemale": "Orange & Green Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lime Strapz Vest",
+        "DisplayNameFemale": "Lime Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Neon Strapz Vest",
+        "DisplayNameFemale": "Neon Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Strapz Vest",
+        "DisplayNameFemale": "Green Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Strapz Vest",
+        "DisplayNameFemale": "Orange Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Strapz Vest",
+        "DisplayNameFemale": "Blue Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Lime Strapz Vest",
+        "DisplayNameFemale": "Black & Lime Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Purple Strapz Vest",
+        "DisplayNameFemale": "Black & Purple Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Green Strapz Vest",
+        "DisplayNameFemale": "Black & Green Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Orange Strapz Vest",
+        "DisplayNameFemale": "Black & Orange Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Blue Strapz Vest",
+        "DisplayNameFemale": "Black & Blue Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange & Red Strapz Vest",
+        "DisplayNameFemale": "Orange & Red Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray & Green Strapz Vest",
+        "DisplayNameFemale": "Gray & Green Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple & Gray Strapz Vest",
+        "DisplayNameFemale": "Purple & Gray Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green & Gray Strapz Vest",
+        "DisplayNameFemale": "Green & Gray Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue & Gray Strapz Vest",
+        "DisplayNameFemale": "Blue & Gray Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 209,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Color Block Strapz Vest",
+        "DisplayNameFemale": "Color Block Strapz Vest",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 210,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 210,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 210,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 210,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 210,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 210,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 211,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 211,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 211,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 211,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 211,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 211,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 212,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 212,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 212,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 212,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 212,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 212,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 213,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 213,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 213,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 213,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 213,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 213,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 214,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 214,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 214,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 214,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 214,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 214,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 215,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 215,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 215,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 215,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 215,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 215,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }

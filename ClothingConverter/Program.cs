@@ -56,9 +56,9 @@ namespace ClothingConverter
 
         private static void StartClothingConversion(string fileValue)
         {
-            if (!Directory.Exists("C:/ConvertClothing/Clothes"))
+            if (!Directory.Exists($"{Directory.GetCurrentDirectory()}/Clothes"))
             {
-                Console.WriteLine($"Error: No directory found at: C:/ConvertClothing/Clothes");
+                Console.WriteLine($"Error: No directory found at: {Directory.GetCurrentDirectory()}/Clothes");
                 return;
             }
 
@@ -73,7 +73,7 @@ namespace ClothingConverter
 
             Clothes.ClothesJson newJson = new Clothes.ClothesJson();
 
-            string clothesCopy = "C:/ConvertClothing/Clothes";
+            string clothesCopy = $"{Directory.GetCurrentDirectory()}/Clothes";
 
             try
             {
@@ -101,7 +101,7 @@ namespace ClothingConverter
                                 foreach (var data2 in data.Value)
                                 {
                                     Console.WriteLine($"Female {fileValue}");
-                                    Clothes.clothesData key = new Clothes.clothesData(11, Convert.ToInt32(data.Key), Convert.ToInt32(data2.Key), false);
+                                    Clothes.clothesData key = new Clothes.clothesData(7, Convert.ToInt32(data.Key), Convert.ToInt32(data2.Key), false);
 
                                     string localName = data2.Value.Localized;
 
@@ -132,7 +132,7 @@ namespace ClothingConverter
                                         localName = "undefined";
                                     }
 
-                                    Clothes.clothesData key = new Clothes.clothesData(11, Convert.ToInt32(data.Key), Convert.ToInt32(data2.Key), false);
+                                    Clothes.clothesData key = new Clothes.clothesData(7, Convert.ToInt32(data.Key), Convert.ToInt32(data2.Key), false);
 
                                     Clothes.ClothesInfo cInfo = new Clothes.ClothesInfo(localName, "", 5, 0);
 
@@ -170,13 +170,19 @@ namespace ClothingConverter
 
                         var jsonOutput = JsonConvert.SerializeObject(newJson, settings);
 
+                        if (!Directory.Exists($"{clothesCopy}/output/props"))
+                        {
+                            Directory.CreateDirectory($"{clothesCopy}/output/props");
+                        }
+
                         File.WriteAllText($"{clothesCopy}/output/props/{fileValue}.json", jsonOutput);
                         Console.WriteLine($"Finished");
                     }
                 }
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e);
             }
 
             #endregion Copy Roots Clothing

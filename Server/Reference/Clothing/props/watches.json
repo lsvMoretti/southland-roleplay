@@ -1171,7 +1171,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Gauntlet (L)",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Blue Bangles (L)",
         "TorsoData": 0,
         "Price": 5
       }
@@ -1185,7 +1185,7 @@
       },
       "Value": {
         "DisplayNameMale": "Chocolate Gauntlet (L)",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Red Bangles (L)",
         "TorsoData": 0,
         "Price": 5
       }
@@ -1199,7 +1199,7 @@
       },
       "Value": {
         "DisplayNameMale": "Tan Gauntlet (L)",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Pink Bangles (L)",
         "TorsoData": 0,
         "Price": 5
       }
@@ -1213,7 +1213,7 @@
       },
       "Value": {
         "DisplayNameMale": "Ox Blood Gauntlet (L)",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Yellow Bangles (L)",
         "TorsoData": 0,
         "Price": 5
       }
@@ -2033,6 +2033,174 @@
     {
       "Key": {
         "slot": 6,
+        "drawable": 40,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red & Blue Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow & Orange Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green & Pink Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Rainbow Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sunset Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 40,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tropical Bangles (L)",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
         "drawable": 18,
         "texture": 3,
         "male": false
@@ -2628,6 +2796,118 @@
       "Value": {
         "DisplayNameMale": "Black SASS Bracelet",
         "DisplayNameFemale": "Black SASS Bracelet",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Bangles (L)",
+        "DisplayNameFemale": "Orange Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Bangles (L)",
+        "DisplayNameFemale": "Green Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red & Blue Bangles (L)",
+        "DisplayNameFemale": "Red & Blue Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow & Orange Bangles (L)",
+        "DisplayNameFemale": "Yellow & Orange Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green & Pink Bangles (L)",
+        "DisplayNameFemale": "Green & Pink Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Rainbow Bangles (L)",
+        "DisplayNameFemale": "Rainbow Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sunset Bangles (L)",
+        "DisplayNameFemale": "Sunset Bangles (L)",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 29,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tropical Bangles (L)",
+        "DisplayNameFemale": "Tropical Bangles (L)",
         "TorsoData": 0,
         "Price": 5
       }

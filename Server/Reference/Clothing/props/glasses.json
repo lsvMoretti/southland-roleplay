@@ -4245,6 +4245,678 @@
     {
       "Key": {
         "slot": 1,
+        "drawable": 30,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue & Pink Glow Shades",
+        "DisplayNameFemale": "Dot Fade Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Glow Shades",
+        "DisplayNameFemale": "Orange Fade Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Glow Shades",
+        "DisplayNameFemale": "Walnut Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Glow Shades",
+        "DisplayNameFemale": "Horizon Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Glow Shades",
+        "DisplayNameFemale": "Purple Vine Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Glow Shades",
+        "DisplayNameFemale": "Herringbone Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Glow Shades",
+        "DisplayNameFemale": "Gold Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue & Magenta Glow Shades",
+        "DisplayNameFemale": "Magenta Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Purple & Yellow Glow Shades",
+        "DisplayNameFemale": "Electric Blue Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue & Yellow Glow Shades",
+        "DisplayNameFemale": "Blue Argyle Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink & Yellow Glow Shades",
+        "DisplayNameFemale": "Black Rim Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 30,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red & Yellow Glow Shades",
+        "DisplayNameFemale": "White Rim Tint Aviators",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Midnight Tint Oversize Shades",
+        "DisplayNameFemale": "Black Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sunset Tint Oversize Shades",
+        "DisplayNameFemale": "Two Tone Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Tint Oversize Shades",
+        "DisplayNameFemale": "White Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tint Oversize Shades",
+        "DisplayNameFemale": "Red Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Tint Oversize Shades",
+        "DisplayNameFemale": "Aqua Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tint Oversize Shades",
+        "DisplayNameFemale": "Green Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Tint Oversize Shades",
+        "DisplayNameFemale": "Green Urban Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Tint Oversize Shades",
+        "DisplayNameFemale": "Pink Urban Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tint Oversize Shades",
+        "DisplayNameFemale": "Digital Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Tint Oversize Shades",
+        "DisplayNameFemale": "Splinter Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Lemon Tint Oversize Shades",
+        "DisplayNameFemale": "Zebra Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 31,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gold Rimmed Oversize Shades",
+        "DisplayNameFemale": "Houndstooth Deep Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Checked Round Shades",
+        "DisplayNameFemale": "Blue & Pink Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Checked Round Shades",
+        "DisplayNameFemale": "Red Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Checked Round Shades",
+        "DisplayNameFemale": "Orange Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Checked Round Shades",
+        "DisplayNameFemale": "Yellow Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Round Shades",
+        "DisplayNameFemale": "Green Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Round Shades",
+        "DisplayNameFemale": "Blue Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tinted Round Shades",
+        "DisplayNameFemale": "Pink Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tinted Round Shades",
+        "DisplayNameFemale": "Blue & Magenta Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Checked Round Shades",
+        "DisplayNameFemale": "Purple & Yellow Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Checked Round Shades",
+        "DisplayNameFemale": "Blue & Yellow Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Checked Round Shades",
+        "DisplayNameFemale": "Pink & Yellow Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 32,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tinted Round Shades",
+        "DisplayNameFemale": "Red & Yellow Glow Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Square Shades",
+        "DisplayNameFemale": "Midnight Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Square Shades",
+        "DisplayNameFemale": "Sunset Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Square Shades",
+        "DisplayNameFemale": "Black Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tortoiseshell Square Shades",
+        "DisplayNameFemale": "Blue Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Square Shades",
+        "DisplayNameFemale": "Gold Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Square Shades",
+        "DisplayNameFemale": "Green Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tinted Square Shades",
+        "DisplayNameFemale": "Orange Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tinted Square Shades",
+        "DisplayNameFemale": "Red Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Square Shades",
+        "DisplayNameFemale": "Pink Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Square Shades",
+        "DisplayNameFemale": "Yellow Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "All White Square Shades",
+        "DisplayNameFemale": "Lemon Tint Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 33,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mono Square Shades",
+        "DisplayNameFemale": "Gold Rimmed Oversize Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
         "drawable": 1,
         "texture": 8,
         "male": false
@@ -4861,342 +5533,6 @@
     {
       "Key": {
         "slot": 1,
-        "drawable": 30,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Dot Fade Aviators",
-        "DisplayNameFemale": "Dot Fade Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Orange Fade Tint Aviators",
-        "DisplayNameFemale": "Orange Fade Tint Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Walnut Aviators",
-        "DisplayNameFemale": "Walnut Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Horizon Aviators",
-        "DisplayNameFemale": "Horizon Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Purple Vine Aviators",
-        "DisplayNameFemale": "Purple Vine Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Herringbone Aviators",
-        "DisplayNameFemale": "Herringbone Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Gold Tint Aviators",
-        "DisplayNameFemale": "Gold Tint Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Magenta Tint Aviators",
-        "DisplayNameFemale": "Magenta Tint Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Electric Blue Tint Aviators",
-        "DisplayNameFemale": "Electric Blue Tint Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Argyle Aviators",
-        "DisplayNameFemale": "Blue Argyle Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 10,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Rim Tint Aviators",
-        "DisplayNameFemale": "Black Rim Tint Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 30,
-        "texture": 11,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Rim Tint Aviators",
-        "DisplayNameFemale": "White Rim Tint Aviators",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Black Deep Shades",
-        "DisplayNameFemale": "Black Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 1,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Two Tone Deep Shades",
-        "DisplayNameFemale": "Two Tone Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 2,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "White Deep Shades",
-        "DisplayNameFemale": "White Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 3,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Red Deep Shades",
-        "DisplayNameFemale": "Red Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 4,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Aqua Deep Shades",
-        "DisplayNameFemale": "Aqua Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 5,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Deep Shades",
-        "DisplayNameFemale": "Green Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 6,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Green Urban Deep Shades",
-        "DisplayNameFemale": "Green Urban Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 7,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Pink Urban Deep Shades",
-        "DisplayNameFemale": "Pink Urban Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 8,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Digital Deep Shades",
-        "DisplayNameFemale": "Digital Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 9,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Splinter Deep Shades",
-        "DisplayNameFemale": "Splinter Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 10,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Zebra Deep Shades",
-        "DisplayNameFemale": "Zebra Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
-        "drawable": 31,
-        "texture": 11,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Houndstooth Deep Shades",
-        "DisplayNameFemale": "Houndstooth Deep Shades",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 1,
         "drawable": 31,
         "texture": 12,
         "male": false
@@ -5302,6 +5638,342 @@
       "Value": {
         "DisplayNameMale": "White Fame or Shame Shades",
         "DisplayNameFemale": "White Fame or Shame Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Checked Round Shades",
+        "DisplayNameFemale": "White Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Checked Round Shades",
+        "DisplayNameFemale": "Pink Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Checked Round Shades",
+        "DisplayNameFemale": "Yellow Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Checked Round Shades",
+        "DisplayNameFemale": "Red Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Round Shades",
+        "DisplayNameFemale": "White Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Round Shades",
+        "DisplayNameFemale": "Black Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tinted Round Shades",
+        "DisplayNameFemale": "Pink Tinted Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tinted Round Shades",
+        "DisplayNameFemale": "Blue Tinted Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Checked Round Shades",
+        "DisplayNameFemale": "Green Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Checked Round Shades",
+        "DisplayNameFemale": "Blue Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Checked Round Shades",
+        "DisplayNameFemale": "Orange Checked Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 34,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Tinted Round Shades",
+        "DisplayNameFemale": "Green Tinted Round Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Square Shades",
+        "DisplayNameFemale": "Brown Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Square Shades",
+        "DisplayNameFemale": "Yellow Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Square Shades",
+        "DisplayNameFemale": "Black Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tortoiseshell Square Shades",
+        "DisplayNameFemale": "Tortoiseshell Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Square Shades",
+        "DisplayNameFemale": "Green Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Red Square Shades",
+        "DisplayNameFemale": "Red Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Tinted Square Shades",
+        "DisplayNameFemale": "Pink Tinted Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Tinted Square Shades",
+        "DisplayNameFemale": "Blue Tinted Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Square Shades",
+        "DisplayNameFemale": "White Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Square Shades",
+        "DisplayNameFemale": "Pink Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "All White Square Shades",
+        "DisplayNameFemale": "All White Square Shades",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 1,
+        "drawable": 35,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Mono Square Shades",
+        "DisplayNameFemale": "Mono Square Shades",
         "TorsoData": 0,
         "Price": 5
       }
