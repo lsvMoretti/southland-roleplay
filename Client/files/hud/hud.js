@@ -19,12 +19,9 @@ function FetchHudData() {
 }
 
 function SetHudData(health, money, heading, hour, minute, streetName, zoneName, meterPSec, fuelLevel, odoReading) {
-    var healthProgress = document.getElementById("healthBar");
-    healthProgress.value = health;
-
     var moneyText = document.getElementById("moneyText");
 
-    const formatter = new Intl.NumberFormat('en-US', {
+    var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
         minimumFractionDigits: 2
@@ -56,9 +53,8 @@ function SetHudData(health, money, heading, hour, minute, streetName, zoneName, 
             odoArea.classList.remove("hideme");
         }
         var mph = meterPSec * 2.236936;
-        var kph = meterPSec * 3.6;
 
-        speedo.innerText = Math.round(mph) + " MPH / " + Math.round(kph) + " KPH";
+        speedo.innerText = Math.round(mph) + " MPH";
 
         if (fuelLevel !== undefined) {
             var fuelBar = document.getElementById("fuelBar");

@@ -4,7 +4,9 @@
     font-family: 'Oswald-SemiBold';
     src: url('../data/fonts/Oswald-SemiBold.ttf');
     font-family: 'Oswald-Regular';
-    src: url('../data/fonts/Oswald-Regular.ttf')
+    src: url('../data/fonts/Oswald-Regular.ttf');
+    font-family: 'Pricedown';
+    src: url('../data/fonts/pricedown-bl.ttf');
 }
 
 #bodyDiv {
@@ -19,93 +21,62 @@
         */
     bottom: 4.2vh;
     right: 1vw;
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
     padding: 2px;
     margin: 2px;
 }
 
 #directionText {
     display: inline-block;
-    color: rgba(10, 134, 236, 1);
+    color: #f7f7f7;
     line-height: 20px;
     text-align: center;
     font-size: 18px;
     font: inherit;
-    font-family: Arial;
+    font-family: pricedown;
+    font-size: 30px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
     text-shadow: -0.1px -0.1px 0 #000, 0.1px -0.1px 0 #000, -0.1px 0.1px 0 #000, 0.1px 0.1px 0 #000;
-}
-
-#compassIcon {
-    width: 25px;
-    fill: rgba(10, 134, 236, 1);
 }
 
 #moneyArea {
     position: fixed;
     /*bottom: 116px;
     left: 310px;*/
-    bottom: 7.5vh;
+    top: 1vh;
     right: 1vw;
     fill: #4c963f;
     color: #4c963f;
     padding: 2px;
-    text-shadow: -0.1px -0.1px 0 #000, 0.1px -0.1px 0 #000, -0.1px 0.1px 0 #000, 0.1px 0.1px 0 #000;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0);
     border-radius: 5px;
     margin: 2px;
-}
-
-#moneyIcon {
-    width: 25px;
+    font-family: pricedown;
+    font-size: 44px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
 }
 
 #timeArea {
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
     position: fixed;
-    /*bottom: 149px;
+    /*bottom: 116px;
     left: 310px;*/
-    bottom: 10.7vh;
+    top: 5vh;
     right: 1vw;
-    fill: rgba(165, 129, 29, 1);
-    color: rgba(165, 129, 29, 1);
+    fill: #f7f7f7;
+    color: #f7f7f7;
     padding: 2px;
-    text-shadow: -0.1px -0.1px 0 #000, 0.1px -0.1px 0 #000, -0.1px 0.1px 0 #000, 0.1px 0.1px 0 #000;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 5px;
     margin: 2px;
+    font-family: pricedown;
+    font-size: 40px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
 }
 
 #clockIcon {
     width: 25px;
-}
-
-#healthArea {
-    position: fixed;
-    /*bottom: 84px;
-    left: 310px;*/
-    bottom: 13.9vh;
-    right: 1vw;
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 5px;
-    margin: 2px;
-    padding: 2px;
-}
-
-#healthBar {
-    border: none;
-    height: 15px;
-    background: rgba(0, 0, 0, 0.75);
-    border-radius: 3px;
-    padding: 2px;
-}
-
-    #healthBar::-webkit-progress-value {
-        background: #6fbc62;
-    }
-
-#healthIcon {
-    width: 25px;
-    fill: #6fbc62;
 }
 
 #armorArea {
@@ -143,8 +114,7 @@
 }
 
 #fuelArea {
-    
-    bottom: 17.2vh;
+    bottom: 10vh;
     right: 1vw;
     position: fixed;
     /*bottom: 116px;
@@ -177,26 +147,32 @@
     position: fixed;
     /*bottom: 149px;
     right: 20px;*/
-    bottom: 20.4vh;
+    bottom: 13.4vh;
     right: 1vw;
-    background: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
     padding: 2px;
     margin: 2px;
-    color: yellow;
+    font-family: pricedown;
+    color: #ffae00;
+    font-size: 25px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
 }
 
 #odo {
     position: fixed;
-    /*bottom: 180px;
+    /*bottom: 149px;
     right: 20px;*/
-    bottom: 23.3vh;
+    bottom: 16.4vh;
     right: 1vw;
-    background: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
     padding: 2px;
     margin: 2px;
-    color: #ff33cc;
+    font-family: pricedown;
+    color: #ff4800;
+    font-size: 25px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: black;
 }
 
 .noselect {
