@@ -16,7 +16,7 @@ var hairInfo: any = undefined;
 
 var localPlayer = alt.Player.local.scriptID;
 
-var orginalRotation = 270;
+var orginalRotation = 90;
 
 var featureNames = ["Nose Width", "Nose Bottom Height", "Nose Tip Length", "Nose Bridge Depth", "Nose Tip Height",
     "Nose Broken", "Brow Height", "Brow Depth", "Cheekbone Height", "Cheekbone Width", "Cheek Depth",

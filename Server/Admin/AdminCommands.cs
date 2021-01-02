@@ -655,9 +655,11 @@ namespace Server.Admin
 
         public static void FetchDealershipCamRotation(IPlayer player, int dealershipId, float camRot)
         {
+            Console.WriteLine($"Dealer ID: {dealershipId}");
+
             using Context context = new Context();
 
-            Dealership selectedDealership = context.Dealership.Find(dealershipId);
+            Dealership? selectedDealership = context.Dealership.FirstOrDefault(x => x.Id == dealershipId);
 
             if (selectedDealership == null)
             {
@@ -678,7 +680,7 @@ namespace Server.Admin
         [Command("dealerid", AdminLevel.Administrator, commandType: CommandType.Admin, description: "Dealership: Returns the nearby dealership id")]
         public static void AdminCommandDealershipId(IPlayer player)
         {
-            Dealership nearestDealership = Dealership.FetchDealerships()
+            Dealership? nearestDealership = Dealership.FetchDealerships()
                 .FirstOrDefault(x => new Position(x.PosX, x.PosY, x.PosZ).Distance(player.Position) <= 8f);
 
             if (nearestDealership == null)

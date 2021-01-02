@@ -234,6 +234,10 @@ div img {
     background: #0072ff;
 }
 
+.bg-grey {
+    background: #383636;
+}
+
 .male-color {
     background: lightskyblue;
 }

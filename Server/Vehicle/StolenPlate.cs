@@ -16,7 +16,7 @@ namespace Server.Vehicle
         {
             VehicleId = vehicleData.Id;
             Plate = vehicleData.Plate;
-            Model = vehicleData.Model?.CapitalizeFirst();
+            Model = vehicleData.Name?.CapitalizeFirst();
         }
     }
 }

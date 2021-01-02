@@ -330,6 +330,16 @@ namespace Server.Vehicle
 
                 nearVehicle.NumberplateText = stolenPlate.Plate;
 
+                if (stolenPlate.Plate == nearVehicleData.Plate)
+                {
+                    nearVehicleData.StolenPlate = null;
+                    nearVehicleData.HasPlateBeenStolen = false;
+                    nearVehicle.NumberplateText = nearVehicleData.Plate;
+                    context.SaveChanges();
+
+                    playerInventory.RemoveItem(stolenPlateItem);
+                }
+
                 player.SendEmoteMessage("reaches down and changes a plate on the vehicle.");
             }
         }
