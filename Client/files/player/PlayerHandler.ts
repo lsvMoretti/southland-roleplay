@@ -1,6 +1,7 @@
 ﻿import * as alt from 'alt-client';
 import * as native from 'natives';
 import * as nametag from "files/nametags";
+import * as vehicleHandler from 'files/vehicle/vehicleHandler';
 
 alt.onServer('Blindfolded', (blindfolded: boolean) => {
     if (blindfolded) {
@@ -37,6 +38,7 @@ alt.onServer('LoadDLC', () => {
     native.onEnterSp();
     native.onEnterMp();
     nametag.StartNameTagDraw();
+    vehicleHandler.startIntervals();
 });
 
 function toggleCursorFunction(state: boolean) {

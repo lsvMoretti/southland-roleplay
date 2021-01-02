@@ -284,52 +284,52 @@ alt.on('syncedMetaChange', (entity: alt.Entity, key: string, value: any) => {
 });
 
 alt.onServer('EjectFromVehicle', (vehicle: alt.Vehicle) => {
-    
     native.taskLeaveVehicle(alt.Player.local.scriptID, vehicle.scriptID, 16);
 });
 
-alt.onServer('SetIntoVehicle', (vehicle:alt.Vehicle, seat: number) => {
+alt.onServer('SetIntoVehicle', (vehicle: alt.Vehicle, seat: number) => {
+    alt.log('SetIntoVehicle: ' + vehicle.scriptID);
 
-
-	alt.log('SetIntoVehicle: ' + vehicle.scriptID);
-
-	native.taskEnterVehicle(alt.Player.local.scriptID, vehicle.scriptID, -1, seat, 2.0, 16, 0);
+    native.taskEnterVehicle(alt.Player.local.scriptID, vehicle.scriptID, -1, seat, 2.0, 16, 0);
 });
 
-alt.onServer('SetBombBayDoorState', (vehicle:alt.Vehicle, state:boolean) => {
-
-    if(!state){
+alt.onServer('SetBombBayDoorState', (vehicle: alt.Vehicle, state: boolean) => {
+    if (!state) {
         native.openBombBayDoors(vehicle.scriptID);
     }
-    else{
+    else {
         native.closeBombBayDoors(vehicle.scriptID);
     }
-
 });
 
-alt.onServer('SetVehicleExtra', (vehicle:alt.Vehicle, slot:number, state:boolean) => {
-
+alt.onServer('SetVehicleExtra', (vehicle: alt.Vehicle, slot: number, state: boolean) => {
     native.setVehicleExtra(vehicle.scriptID, slot, state);
-
 });
 
-alt.onServer('CleanVehicle', (vehicle:alt.Vehicle) => {
+alt.onServer('CleanVehicle', (vehicle: alt.Vehicle) => {
     native.setVehicleDirtLevel(vehicle.scriptID, 0);
 });
 
-alt.everyTick(() => {
+export function startIntervals() {
+    alt.setInterval(anchorInterval, 0);
+}
 
+function anchorInterval() {
     var vehicleList = alt.Vehicle.all;
 
-    if(vehicleList.length === 0) return; 
+    if (vehicleList.length === 0) return;
 
-    for(let vehicle of vehicleList){
-        if(native.getVehicleClass(vehicle.scriptID) != 14) continue;
-        
-        var anchorStatus:boolean = vehicle.getSyncedMeta("VehicleAnchorStatus");
+    for (let vehicle of vehicleList) {
+        if (!vehicle.valid) continue;
+        if (native.getVehicleClass(vehicle.scriptID) != 14) continue;
 
-        if(anchorStatus == undefined || anchorStatus == null) continue;
+        var anchorStatus: boolean = vehicle.getSyncedMeta("VehicleAnchorStatus");
+
+        if (anchorStatus == undefined || anchorStatus == null) continue;
 
         native.setBoatAnchor(vehicle.scriptID, anchorStatus);
     };
+}
+
+alt.everyTick(() => {
 });

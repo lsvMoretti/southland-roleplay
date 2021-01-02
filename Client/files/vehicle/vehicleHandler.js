@@ -242,11 +242,16 @@ alt.onServer('SetVehicleExtra', (vehicle, slot, state) => {
 alt.onServer('CleanVehicle', (vehicle) => {
     native.setVehicleDirtLevel(vehicle.scriptID, 0);
 });
-alt.everyTick(() => {
+export function startIntervals() {
+    alt.setInterval(anchorInterval, 0);
+}
+function anchorInterval() {
     var vehicleList = alt.Vehicle.all;
     if (vehicleList.length === 0)
         return;
     for (let vehicle of vehicleList) {
+        if (!vehicle.valid)
+            continue;
         if (native.getVehicleClass(vehicle.scriptID) != 14)
             continue;
         var anchorStatus = vehicle.getSyncedMeta("VehicleAnchorStatus");
@@ -255,4 +260,6 @@ alt.everyTick(() => {
         native.setBoatAnchor(vehicle.scriptID, anchorStatus);
     }
     ;
+}
+alt.everyTick(() => {
 });
