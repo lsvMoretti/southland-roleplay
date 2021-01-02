@@ -1,5 +1,29 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+alt.on('connectionComplete', () => {
+    loadBoboGarage();
+});
+function loadBoboGarage() {
+    const upperInteriorId = native.getInteriorAtCoords(941.0413, -972.561, 39.15457);
+    const upperIpl = "imp_impexp_interior_placement_interior_1_impexp_intwaremed_milo_";
+    native.requestIpl(upperIpl);
+    native.activateInteriorEntitySet(upperInteriorId, "urban_style_set");
+    native.activateInteriorEntitySet(upperInteriorId, "car_floor_hatch");
+    native.deactivateInteriorEntitySet(upperInteriorId, "door_blocker");
+    native.refreshInterior(upperInteriorId);
+    const lowerInteriorId = native.getInteriorAtCoords(935.3496, -965.217, 30.51093);
+    const lowerIpl = "imp_impexp_interior_placement_interior_3_impexp_int_02_milo_";
+    native.requestIpl(lowerIpl);
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_01");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_02");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_03");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_04");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_05");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_06");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_07");
+    native.activateInteriorEntitySet(lowerInteriorId, "pump_08");
+    native.refreshInterior(lowerInteriorId);
+}
 alt.onServer('loadAllIpls', () => {
     alt.requestIpl('ex_dt1_02_office_02b');
     let coordLoc = native.getInteriorAtCoords(-141.1987, -620.913, 168.8205);

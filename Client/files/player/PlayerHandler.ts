@@ -35,8 +35,8 @@ alt.onServer('toggleHud', toggleHud);
 alt.onServer('toggleCursor', toggleCursorFunction);
 
 alt.onServer('LoadDLC', () => {
-    native.onEnterSp();
-    native.onEnterMp();
+    //native.onEnterSp();
+    //native.onEnterMp();
     nametag.StartNameTagDraw();
     vehicleHandler.startIntervals();
 });
