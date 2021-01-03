@@ -80,7 +80,7 @@ namespace Server.Property
                 target.SendAdvertMessage(message);
             }
 
-            SignalR.SendDiscordMessage(704070210357035018, message);
+            SignalR.SendDiscordMessage(795084275090587748, message);
 
             return true;
         }

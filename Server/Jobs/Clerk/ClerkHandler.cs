@@ -54,8 +54,6 @@ namespace Server.Jobs.Clerk
                     property.ClerkActive = false;
                     context.SaveChanges();
                 }
-
-                
             }
         }
 
@@ -100,8 +98,6 @@ namespace Server.Jobs.Clerk
                         context.SaveChanges();
                         player.SendInfoNotification($"A 10% discount has been given to players.");
                     }
-
-                    
                 }
                 player.Emit("Clerk:SetGotoPosition", gotoPosition);
                 player.GetClass().HasClerkTask = true;
@@ -142,8 +138,6 @@ namespace Server.Jobs.Clerk
                     property.ClerkActive = false;
                     context.SaveChanges();
                 }
-
-                
             }
 
             player.GetClass().HasClerkTask = false;
@@ -167,7 +161,6 @@ namespace Server.Jobs.Clerk
             playerCharacter.PaydayAmount += 7;
 
             context.SaveChanges();
-            
         }
 
         public static void PublishClerkAdvert(Models.Clerk clerk)
@@ -212,7 +205,7 @@ namespace Server.Jobs.Clerk
                 target.SendAdvertMessage(ad);
             }
 
-            SignalR.SendDiscordMessage(704070210357035018, ad);
+            SignalR.SendDiscordMessage(795084275090587748, ad);
         }
     }
 }
