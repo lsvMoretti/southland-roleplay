@@ -174,7 +174,7 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static Models.Account FetchAccount(this IPlayer player)
+        public static Models.Account? FetchAccount(this IPlayer player)
         {
             player.GetData("USERACCOUNTID", out int accountId);
 
@@ -209,7 +209,7 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static Models.Character FetchCharacter(this IPlayer player)
+        public static Models.Character? FetchCharacter(this IPlayer player)
         {
             bool hasData = player.GetData("USERCHARACTERID", out int characterId);
             if (!hasData) return null;

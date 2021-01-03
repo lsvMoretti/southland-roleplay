@@ -161,7 +161,7 @@ namespace Server.Character
                         {
                             // Adds English as a default
 
-                            Language.Language language = LanguageHandler.Languages.FirstOrDefault();
+                            Language.Language language = LanguageHandler.Languages.First();
 
                             characterDb.Languages = JsonConvert.SerializeObject(new List<Language.Language>
                             {
@@ -171,7 +171,7 @@ namespace Server.Character
 
                         if (string.IsNullOrEmpty(characterDb.CurrentLanguage))
                         {
-                            Language.Language language = LanguageHandler.Languages.FirstOrDefault();
+                            Language.Language language = LanguageHandler.Languages.First();
 
                             characterDb.CurrentLanguage = JsonConvert.SerializeObject(language);
                         }
@@ -179,6 +179,11 @@ namespace Server.Character
                         if (string.IsNullOrEmpty(characterDb.LicensesHeld))
                         {
                             characterDb.LicensesHeld = JsonConvert.SerializeObject(new List<LicenseTypes>());
+                        }
+
+                        if (string.IsNullOrEmpty(characterDb.Outfits))
+                        {
+                            characterDb.Outfits = JsonConvert.SerializeObject(new List<Outfit>());
                         }
 
                         context.SaveChanges();

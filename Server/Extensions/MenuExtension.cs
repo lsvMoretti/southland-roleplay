@@ -68,6 +68,13 @@ namespace Server.Extensions
                     return;
                 }
 
+                #region Outfit System
+
+                if (serverTrigger == "OutfitSystem:OutfitMainMenu") OutfitCommands.OnOutfitMainMenuSelect(player, selectedItem);
+                if (serverTrigger == "OutfitSystem:SubItemSelect") OutfitCommands.OnOutfitSubMenuSelect(player, selectedItem);
+
+                #endregion Outfit System
+
                 #region Admin Events
 
                 if (serverTrigger == "AdminTeleportSelect")

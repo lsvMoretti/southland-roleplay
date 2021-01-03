@@ -328,6 +328,11 @@ namespace Server.Models
         public int BackpackId { get; set; }
 
         /// <summary>
+        /// List of player outfits
+        /// </summary>
+        public string? Outfits { get; set; }
+
+        /// <summary>
         /// Creates a Character
         /// </summary>
         /// <param name="character"></param>
