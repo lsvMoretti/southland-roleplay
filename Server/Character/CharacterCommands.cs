@@ -576,7 +576,7 @@ namespace Server.Character
             var sortedList = onlineAdmins.OrderByDescending(x => x.FetchAccount().AdminLevel)
                 .ThenByDescending(n => n.GetClass().UcpName);
 
-            player.SendAdminMessage("____[On Duty Admins]____");
+            player.SendChatMessage("[Online Admins]");
 
             foreach (var onlineAdmin in sortedList)
             {
