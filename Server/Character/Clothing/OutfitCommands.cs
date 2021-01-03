@@ -6,10 +6,7 @@ using Newtonsoft.Json;
 using Server.Chat;
 using Server.Commands;
 using Server.Extensions;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Server.Inventory;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Server.Character.Clothing
 {
@@ -39,7 +36,7 @@ namespace Server.Character.Clothing
             string? playerClothes = playerCharacter.ClothesJson;
             string? playerAccessories = playerCharacter.AccessoryJson;
 
-            List<Outfit>? playerOutfits = JsonSerializer.Deserialize<List<Outfit>>(playerCharacter.Outfits);
+            List<Outfit>? playerOutfits = JsonConvert.DeserializeObject<List<Outfit>>(playerCharacter.Outfits);
 
             using Context context = new Context();
 
@@ -48,7 +45,7 @@ namespace Server.Character.Clothing
             if (playerOutfits == null)
             {
                 playerOutfits = new List<Outfit>();
-                character.Outfits = JsonSerializer.Serialize(playerOutfits);
+                character.Outfits = JsonConvert.SerializeObject(playerOutfits);
                 context.SaveChangesAsync();
             }
 
@@ -62,7 +59,7 @@ namespace Server.Character.Clothing
 
             playerOutfits.Add(newOutfit);
 
-            character.Outfits = JsonSerializer.Serialize(playerOutfits);
+            character.Outfits = JsonConvert.SerializeObject(playerOutfits);
 
             context.SaveChanges();
 
@@ -84,7 +81,7 @@ namespace Server.Character.Clothing
                 return;
             }
 
-            List<Outfit>? playerOutfits = JsonSerializer.Deserialize<List<Outfit>>(playerCharacter.Outfits);
+            List<Outfit>? playerOutfits = JsonConvert.DeserializeObject<List<Outfit>>(playerCharacter.Outfits);
 
             if (playerOutfits == null || !playerOutfits.Any())
             {
@@ -116,7 +113,7 @@ namespace Server.Character.Clothing
                 return;
             }
 
-            List<Outfit>? playerOutfits = JsonSerializer.Deserialize<List<Outfit>>(playerCharacter.Outfits);
+            List<Outfit>? playerOutfits = JsonConvert.DeserializeObject<List<Outfit>>(playerCharacter.Outfits);
 
             if (playerOutfits == null || !playerOutfits.Any())
             {
@@ -159,7 +156,7 @@ namespace Server.Character.Clothing
                 return;
             }
 
-            List<Outfit>? playerOutfits = JsonSerializer.Deserialize<List<Outfit>>(playerCharacter.Outfits);
+            List<Outfit>? playerOutfits = JsonConvert.DeserializeObject<List<Outfit>>(playerCharacter.Outfits);
 
             if (playerOutfits == null || !playerOutfits.Any())
             {
@@ -182,7 +179,7 @@ namespace Server.Character.Clothing
 
                 Models.Character character = context.Character.First(x => x.Id == playerCharacter.Id);
 
-                character.Outfits = JsonSerializer.Serialize(playerOutfits);
+                character.Outfits = JsonConvert.SerializeObject(playerOutfits);
 
                 context.SaveChanges();
 
@@ -196,10 +193,10 @@ namespace Server.Character.Clothing
             {
                 Models.Character playerCharacter = player.FetchCharacter();
 
-                List<ClothesData>? outfitList = JsonSerializer.Deserialize<List<ClothesData>>(outfit.Clothes);
+                List<ClothesData>? outfitList = JsonConvert.DeserializeObject<List<ClothesData>>(outfit.Clothes);
 
                 List<ClothesData>? CurrentClothingList =
-                    JsonSerializer.Deserialize<List<ClothesData>>(playerCharacter.ClothesJson);
+                    JsonConvert.DeserializeObject<List<ClothesData>>(playerCharacter.ClothesJson);
 
                 if (outfitList is null)
                 {

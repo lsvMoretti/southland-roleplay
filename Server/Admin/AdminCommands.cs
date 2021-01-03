@@ -3842,7 +3842,7 @@ namespace Server.Admin
             context.SaveChanges();
         }
 
-        [Command("vehicle", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
+        [Command("vehicle", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
         public static void VehicleTest(IPlayer player, string model = "")
         {
             if (model == "")
