@@ -18,6 +18,7 @@ namespace Server.Character.Clothing
         public static List<string> BannedClothingNames = new List<string>
         {
             "undefined",
+            "no shoes",
             "null",
             "none",
             "love heart boxer shorts",

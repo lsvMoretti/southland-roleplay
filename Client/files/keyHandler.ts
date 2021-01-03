@@ -5,7 +5,7 @@ import * as chatHandler from 'files/chat';
 import * as sirenHandler from 'files/vehicle/sirenHandler';
 import * as cruiseControl from 'files/vehicle/cruiseControl';
 
-import {getEditObjectStatus, onKeyDownEvent} from "./objects/objectPreview";
+import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
 
 var IsSpawned = false;
 var IsChatOpen = false;
@@ -19,7 +19,7 @@ var cursorState = false;
 
 var nativeUiMenuOpen = false;
 
-export function SetNativeUiState(state:boolean){
+export function SetNativeUiState(state: boolean) {
     nativeUiMenuOpen = state;
 }
 
@@ -36,7 +36,7 @@ var sirenMute: boolean = false;
 
 alt.everyTick(() => {
     //Tab - INPUT_SELECT_WEAPON
-    /*
+
     native.disableControlAction(0, 37, true);
 
     // Weapon Switch
@@ -52,7 +52,7 @@ alt.everyTick(() => {
     native.disableControlAction(0, 164, true);
     native.disableControlAction(0, 165, true);
     native.disableControlAction(0, 261, true);
-    native.disableControlAction(0, 262, true);*/
+    native.disableControlAction(0, 262, true);
 
     // P Menu
     native.disableControlAction(0, 199, true);
@@ -64,18 +64,18 @@ alt.everyTick(() => {
 
 alt.on('keyup', (key) => {
     if (chatHandler.IsChatOpen() || nativeUiMenuOpen) return;
-    
-    if(getEditObjectStatus()){
+
+    if (getEditObjectStatus()) {
         return;
     }
 
-    if(key === 187){
+    if (key === 187) {
         // = key
         cruiseControl.OnCruiseControlPress();
         return;
     }
-    
-    if(key === 0x11){
+
+    if (key === 0x11) {
         leftCtrlDown = false;
     }
 
@@ -84,24 +84,23 @@ alt.on('keyup', (key) => {
     }
 
     if (key === 0x51) { // Q
+        var isDriver: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
+        var isFrontPass: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
 
-        var isDriver:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
-        var isFrontPass:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
-
-        if(native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18 &&  isDriver || isFrontPass){
+        if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18 && isDriver || isFrontPass) {
             sirenHandler.toggleSirenLightState();
         }
     }
 
-    if(key === 0x70){
-        if(!IsSpawned) return;
+    if (key === 0x70) {
+        if (!IsSpawned) return;
 
-        if(!cursorState){
+        if (!cursorState) {
             alt.showCursor(true);
             cursorState = true;
             return;
         }
-        
+
         alt.showCursor(false);
         cursorState = false;
     }
@@ -206,183 +205,178 @@ alt.on('keyup', (key) => {
         }
     }
 
-    if(key === 0xBE){
+    if (key === 0xBE) {
         // Period Key
-        if(alt.Player.local.vehicle != undefined){
+        if (alt.Player.local.vehicle != undefined) {
             // In Vehicle
-    
 
-            var isDriver:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
-            var isFrontPass:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
-    
-            if(native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18 &&  isDriver || isFrontPass){
+            var isDriver: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
+            var isFrontPass: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
+
+            if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18 && isDriver || isFrontPass) {
                 sirenHandler.nextSirenStage();
             }
-
         }
     }
 
-    
-    if(key === 0x4D){
+    if (key === 0x4D) {
         // M Key
-        if(alt.Player.local.vehicle != undefined){
+        if (alt.Player.local.vehicle != undefined) {
             // In Vehicle
-    
-            var isDriver:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
-            var isFrontPass:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
-    
-            if(native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18 &&  isDriver || isFrontPass){
+
+            var isDriver: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
+            var isFrontPass: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
+
+            if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18 && isDriver || isFrontPass) {
                 sirenHandler.previousSirenStage();
             }
         }
     }
 
-    if(alt.Player.local.vehicle != undefined){
+    if (alt.Player.local.vehicle != undefined) {
         // In Vehicle
 
-        if(leftCtrlDown){
+        if (leftCtrlDown) {
+            var pVeh: alt.Vehicle = alt.Player.local.vehicle;
+            var pVehId: number = pVeh.scriptID;
 
-            var pVeh:alt.Vehicle = alt.Player.local.vehicle;
-            var pVehId:number = pVeh.scriptID;
+            var isDriver: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
+            var isFrontPass: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
 
-            var isDriver:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
-            var isFrontPass:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
-
-            if(key === 0x31){
+            if (key === 0x31) {
                 // 1
-                if(native.isVehicleExtraTurnedOn(pVehId, 1)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 1)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 1, true);
                     alt.log('Extra1 True');
-                    
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 1, false);
                     alt.log('Extra1 False');
                 }
             }
-            if(key === 0x32){
+            if (key === 0x32) {
                 // 2
-                if(native.isVehicleExtraTurnedOn(pVehId, 2)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 2)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 2, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 2, false);
                 }
             }
-            if(key === 0x33){
+            if (key === 0x33) {
                 // 3
-                if(native.isVehicleExtraTurnedOn(pVehId, 3)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 3)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 3, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 3, false);
                 }
             }
-            if(key === 0x34){
+            if (key === 0x34) {
                 // 4
-                if(native.isVehicleExtraTurnedOn(pVehId, 4)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 4)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 4, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 4, false);
                 }
             }
-            if(key === 0x35){
+            if (key === 0x35) {
                 // 5
-                if(native.isVehicleExtraTurnedOn(pVehId, 5)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 5)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 5, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 5, false);
                 }
             }
-            if(key === 0x36){
+            if (key === 0x36) {
                 // 6
-                if(native.isVehicleExtraTurnedOn(pVehId, 6)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 6)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 6, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 6, false);
                 }
             }
-            if(key === 0x37){
+            if (key === 0x37) {
                 // 7
-                if(native.isVehicleExtraTurnedOn(pVehId, 7)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 7)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 7, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 7, false);
                 }
             }
-            if(key === 0x38){
+            if (key === 0x38) {
                 // 8
-                if(native.isVehicleExtraTurnedOn(pVehId, 8)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 8)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 8, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 8, false);
                 }
             }
-            if(key === 0x39){
+            if (key === 0x39) {
                 // 9
-                if(native.isVehicleExtraTurnedOn(pVehId, 9)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 9)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 9, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 9, false);
                 }
             }
-            if(key === 0x30){
+            if (key === 0x30) {
                 // 0
-                if(native.isVehicleExtraTurnedOn(pVehId, 10)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 10)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 10, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 10, false);
                 }
             }
-            if(key === 0x76){
+            if (key === 0x76) {
                 // F7
-                if(native.isVehicleExtraTurnedOn(pVehId, 11)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 11)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 11, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 11, false);
                 }
             }
-            if(key === 0x77){
+            if (key === 0x77) {
                 // F8
-                if(native.isVehicleExtraTurnedOn(pVehId, 12)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 12)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 12, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 12, false);
                 }
             }
-            if(key === 0x78){
+            if (key === 0x78) {
                 // F9
-                if(native.isVehicleExtraTurnedOn(pVehId, 13)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 13)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 13, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 13, false);
                 }
             }
-            if(key === 0x79){
+            if (key === 0x79) {
                 // F10
-                if(native.isVehicleExtraTurnedOn(pVehId, 14)){
+                if (native.isVehicleExtraTurnedOn(pVehId, 14)) {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 14, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:ToggleExtra", pVeh, 14, false);
                 }
             }
-            if(key === 0x7A){
+            if (key === 0x7A) {
                 // F11
-                if(native.areBombBayDoorsOpen(pVehId)){
+                if (native.areBombBayDoorsOpen(pVehId)) {
                     alt.emitServer("VehicleHandler:SetBombBayDoorState", pVeh, true);
                 }
-                else{
+                else {
                     alt.emitServer("VehicleHandler:SetBombBayDoorState", pVeh, false);
                 }
             }
@@ -391,19 +385,18 @@ alt.on('keyup', (key) => {
 });
 
 alt.on('keydown', (key) => {
-
-    if(getEditObjectStatus()){
+    if (getEditObjectStatus()) {
         onKeyDownEvent(key);
         return;
     }
-    
+
     if (key === 0x12) {
         // Left Alt
         alt.log('Left Alt Down');
         leftAltDown = true;
     }
 
-    if(key === 0x11){
+    if (key === 0x11) {
         leftCtrlDown = true;
     }
 });
@@ -415,47 +408,43 @@ alt.on('EnteredVehicle', () => {
 });
 
 alt.setInterval(() => {
+    if (!IsSpawned) return;
 
-    if(!IsSpawned) return;
-
-    if(native.isControlPressed(0, 48)){
+    if (native.isControlPressed(0, 48)) {
         // INPUT_HUD_SPECIAL
 
         native.setBigmapActive(true, false);
     }
-    if(native.isControlJustReleased(0, 48)){
-        
+    if (native.isControlJustReleased(0, 48)) {
         native.setBigmapActive(false, false);
     }
 
     // Vehicle
 
-    if(alt.Player.local.vehicle != undefined){
+    if (alt.Player.local.vehicle != undefined) {
         // In Vehicle
 
-        if(native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18){
+        if (native.getVehicleClass(alt.Player.local.vehicle.scriptID) == 18) {
             // Disable Horn - Enable Down Arrow
 
-            var isDriver:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
-            var isFrontPass:boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
-    
-            if(!nativeUiMenuOpen){
-                if(isDriver || isFrontPass){
-                
+            var isDriver: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
+            var isFrontPass: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
+
+            if (!nativeUiMenuOpen) {
+                if (isDriver || isFrontPass) {
                     native.disableControlAction(0, 173, true);
                     native.disableControlAction(0, 85, true);
                     native.disableControlAction(0, 80, true);
-    
-                    if(native.isDisabledControlJustPressed(0, 173)){
+
+                    if (native.isDisabledControlJustPressed(0, 173)) {
                         sirenHandler.toggleSirenState();
                     }
-                
-                    if(native.isDisabledControlJustPressed(0, 80)){
+
+                    if (native.isDisabledControlJustPressed(0, 80)) {
                         sirenHandler.blipSiren();
                     }
                 }
             }
-
         }
     }
 
@@ -583,38 +572,36 @@ function enterVehicleAsPassenger() {
     alt.log('Vehicle: ' + vehicle);
 
     // New Entry
-    
+
     let numberSeats = native.getVehicleModelNumberOfSeats(closestVehicle.model);
-    
+
     alt.log(`Number of seats: ${numberSeats}.`);
-    
-    let seatCount:number = 0;
-    
-    for (let i = 0; i < numberSeats; i++){
-        let seatFree:boolean = native.isVehicleSeatFree(vehicle, i, false);
-        
-        if(!seatFree){
+
+    let seatCount: number = 0;
+
+    for (let i = 0; i < numberSeats; i++) {
+        let seatFree: boolean = native.isVehicleSeatFree(vehicle, i, false);
+
+        if (!seatFree) {
             seatCount++;
         }
     }
-    
+
     alt.log(`Number of seats taken: ${seatCount}.`);
-    
-    if(seatCount == numberSeats) return;
-    
+
+    if (seatCount == numberSeats) return;
+
     //if (!native.isVehicleSeatFree(vehicle, 0, false) && !native.isVehicleSeatFree(vehicle, 1, false) && !native.isVehicleSeatFree(vehicle, 2, false)) return;
 
     if (native.getVehicleClass(vehicle) === 8 || native.getVehicleClass(vehicle) === 14 || native.getVehicleClass(vehicle) === 16) {
+        let inSeat: boolean = false;
 
-        let inSeat:boolean = false;
-        
-        for (let i = 0; i < numberSeats; i++){
-            
-            if(inSeat) return;
-            
-            let seatFree:boolean = native.isVehicleSeatFree(vehicle, i, false);
+        for (let i = 0; i < numberSeats; i++) {
+            if (inSeat) return;
 
-            if(seatFree){
+            let seatFree: boolean = native.isVehicleSeatFree(vehicle, i, false);
+
+            if (seatFree) {
                 native.taskEnterVehicle(alt.Player.local.scriptID, vehicle, 5000, i, 2, 1, 0);
                 return;
             }

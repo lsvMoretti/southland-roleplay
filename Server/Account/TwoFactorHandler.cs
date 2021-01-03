@@ -17,7 +17,7 @@ namespace Server.Account
 
             TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
 
-            var setupInfo = tfa.GenerateSetupCode("Los Santos V", playerAccount.Username, secretCode, false, 300);
+            var setupInfo = tfa.GenerateSetupCode("Southland Roleplay Game Server", playerAccount.Username, secretCode, false, 300);
 
             //string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
             string manualEntrySetupCode = setupInfo.ManualEntryKey;
@@ -72,7 +72,7 @@ namespace Server.Account
                 player.Emit("2FA:InvalidCode");
                 return;
             }
-            
+
             player.Emit("2FA:CloseInput");
             player.SendInfoNotification("Your 2FA code has been accepted!");
             player.FreezeCam(false);

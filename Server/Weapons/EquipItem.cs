@@ -33,7 +33,6 @@ namespace Server.Weapons
                 return;
             }
 
-
             using (Context context = new Context())
             {
                 var playerCharacter = context.Character.Find(player.FetchCharacterId());
@@ -54,7 +53,6 @@ namespace Server.Weapons
                     {
                         lastPersons.RemoveAt(0);
                     }
-
                 }
                 lastPersons.Add(playerCharacter.Name);
 
@@ -115,6 +113,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_MELEE_HAMMER")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.Hammer, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Hammer");
@@ -127,6 +126,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_PISTOL")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.Pistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Pistol");
@@ -137,6 +137,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_PISTOL_MK2")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.PistolMkII, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Pistol MK2");
@@ -147,6 +148,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_COMBATPISTOL")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.CombatPistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Combat Pistol");
@@ -157,6 +159,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_APPISTOL")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.APPistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Auto Pistol");
@@ -167,6 +170,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_PISTOL50")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.Pistol50, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Pistol 50");
@@ -177,6 +181,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_SNS")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.SNSPistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a SNS Pistol");
@@ -187,6 +192,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_SNS_MK2")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.SNSPistolMkII, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a SNS Pistol MK2");
@@ -197,6 +203,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_HEAVYPISTOL")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.HeavyPistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Heavy Pistol");
@@ -207,6 +214,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_VINTAGEPISTOL")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.VintagePistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Vintage Pistol");
@@ -217,6 +225,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_REVOLVER")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.HeavyRevolver, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Revolver");
@@ -227,6 +236,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_REVOLVER_MK2")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.HeavyRevolverMkII, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Revolver MK2");
@@ -237,6 +247,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_MICROSMG")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.MicroSMG, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Micro SMG");
@@ -277,6 +288,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_COMBATPDW")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.CombatPDW, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Combat PDW");
@@ -287,6 +299,7 @@ namespace Server.Weapons
 
             if (selectedInventoryItem.Id == "ITEM_WEAPON_MACHINEPISTOL")
             {
+                player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 0 : 2);
                 player.SetData("CURRENTWEAPON", selectedInventoryItem.ItemInfo.ID);
                 player.GiveWeapon(WeaponModel.MachinePistol, currentBulletCount, true);
                 player.SendEmoteMessage("has equipped a Machine Pistol");

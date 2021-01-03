@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Timers;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using Newtonsoft.Json;
@@ -561,8 +562,6 @@ namespace Server.Weapons
             playerCharacter.CurrentWeapon = JsonConvert.SerializeObject(currentWeapon);
 
             context.SaveChanges();
-
-            
         }
 
         [Command("unequip", commandType: CommandType.Character, description: "Unequips your current weapon")]
@@ -581,7 +580,6 @@ namespace Server.Weapons
                 player.CurrentWeapon = weaponHash;
             }
 
-            
             InventoryItem weaponItem =
                 JsonConvert.DeserializeObject<InventoryItem>(player.FetchCharacter().CurrentWeapon);
 
@@ -591,7 +589,6 @@ namespace Server.Weapons
 
             if (isDeathWeapon)
             {
-                
                 using Context unequipContext = new Context();
 
                 var pC = unequipContext.Character.Find(player.GetClass().CharacterId);
@@ -614,11 +611,9 @@ namespace Server.Weapons
                 return;
             }
 
-
-            if (player.CurrentWeapon == (uint) WeaponModel.Fist)
+            if (player.CurrentWeapon == (uint)WeaponModel.Fist)
             {
                 player.SendErrorNotification("You must have a weapon in hand!");
-
 
                 Logging.AddToCharacterLog(player, $"has tried to unequip a weapon. Last Weapon Ammo Count: {weaponInfo.AmmoCount}. Weapon: {weaponItem.CustomName}.");
                 return;
@@ -667,7 +662,7 @@ namespace Server.Weapons
                 {
                     bulletCount = lastAmmoCount;
                 }
-                
+
                 weaponInfo.AmmoCount = bulletCount;
 
                 weaponItem.ItemValue = JsonConvert.SerializeObject(weaponInfo);
@@ -708,134 +703,264 @@ namespace Server.Weapons
 
                 if (weaponItemId == "ITEM_WEAPON_MELEE_HAMMER")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.Hammer);
                     player.SendWeaponMessage("Hammer has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 #endregion Melee
 
                 if (weaponItemId == "ITEM_WEAPON_PISTOL")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.Pistol);
                     player.SendWeaponMessage("Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_PISTOL_MK2")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.PistolMkII);
                     player.SendWeaponMessage("Pistol MK2 has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_COMBATPISTOL")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.CombatPistol);
                     player.SendWeaponMessage("Combat Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_APPISTOL")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.APPistol);
                     player.SendWeaponMessage("AP Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_PISTOL50")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.Pistol50);
                     player.SendWeaponMessage("Pistol 50 has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SNS")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.SNSPistol);
                     player.SendWeaponMessage("SNS Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SNS_MK2")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.SNSPistolMkII);
                     player.SendWeaponMessage("SNS Pistol MK2 has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_HEAVYPISTOL")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.HeavyPistol);
                     player.SendWeaponMessage("Heavy Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_VINTAGEPISTOL")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.VintagePistol);
                     player.SendWeaponMessage("Vintage Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_REVOLVER")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.HeavyRevolver);
                     player.SendWeaponMessage("Revolver has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_REVOLVER_MK2")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.HeavyRevolverMkII);
                     player.SendWeaponMessage("Revolver MK2 has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_MICROSMG")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.MicroSMG);
                     player.SendWeaponMessage("Micro SMG has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SMG")
@@ -870,22 +995,42 @@ namespace Server.Weapons
 
                 if (weaponItemId == "ITEM_WEAPON_COMBATPDW")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.CombatPDW);
                     player.SendWeaponMessage("Combat PDW has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_MACHINEPISTOL")
                 {
+                    player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
                     player.DeleteData("CURRENTWEAPON");
                     player.DeleteData("CurrentWeaponHash");
                     Inventory.Inventory playerInventory = player.FetchInventory();
                     playerInventory.AddItem(weaponItem);
-                    player.RemoveWeapon(WeaponModel.MachinePistol);
                     player.SendWeaponMessage("Machine Pistol has been holstered.");
+                    Timer timer = new Timer(1700)
+                    {
+                        Enabled = true,
+                    };
+                    timer.Elapsed += (s, e) =>
+                    {
+                        timer.Stop();
+                        player.RemoveAllWeapons();
+                        timer.Dispose();
+                    };
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_MINISMG")
@@ -1161,7 +1306,6 @@ namespace Server.Weapons
                     player.RemoveWeapon(WeaponModel.Switchblade);
                 }
 
-
                 #region Police Weapons
 
                 if (weaponItemId == "ITEM_POLICE_WEAPON_STUNGUN")
@@ -1275,6 +1419,5 @@ namespace Server.Weapons
                 return;
             }
         }
-
     }
 }

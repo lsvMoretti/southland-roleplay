@@ -25,6 +25,20 @@ alt.onServer('setPlayerSpawned', (toggle) => {
 });
 var sirenMute = false;
 alt.everyTick(() => {
+    native.disableControlAction(0, 37, true);
+    native.disableControlAction(0, 99, true);
+    native.disableControlAction(0, 100, true);
+    native.disableControlAction(0, 157, true);
+    native.disableControlAction(0, 158, true);
+    native.disableControlAction(0, 159, true);
+    native.disableControlAction(0, 160, true);
+    native.disableControlAction(0, 161, true);
+    native.disableControlAction(0, 162, true);
+    native.disableControlAction(0, 163, true);
+    native.disableControlAction(0, 164, true);
+    native.disableControlAction(0, 165, true);
+    native.disableControlAction(0, 261, true);
+    native.disableControlAction(0, 262, true);
     native.disableControlAction(0, 199, true);
     native.disableControlAction(0, 212, true);
     native.disableControlAction(0, 213, true);

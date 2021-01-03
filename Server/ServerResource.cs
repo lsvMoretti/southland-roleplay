@@ -85,6 +85,7 @@ namespace Server
                 Alt.OnPlayerDead += DeathHandler.OnPlayerDeath;
                 Alt.OnWeaponDamage += DamageHandler.AltOnOnWeaponDamage;
                 Alt.OnPlayerDamage += DamageHandler.AltOnOnPlayerDamage;
+                Alt.OnPlayerWeaponChange += WeaponSwitch.AltOnOnPlayerWeaponChange;
 
                 CommandExtension.Init();
                 GameWorld.InitGameWorld();
