@@ -597,6 +597,11 @@ namespace Server.Character.Clothing
             return new InventoryItem(CLOTHES_ITEM_ID, GetClothesName((ClothesType)data.slot, data.drawable, data.texture, male), JsonConvert.SerializeObject(data), 1);
         }
 
+        public static InventoryItem ConvertAccessoryToInventoryItem(AccessoryData data, bool male)
+        {
+            return new InventoryItem(ACCESSORIES_ITEM_ID, GetAccessoryName((AccessoriesType)data.slot, data.drawable, data.texture, male), JsonConvert.SerializeObject(data), 1);
+        }
+
         public static InventoryItem ConvertAccessoryToInventoryItem(ClothesData data, bool male)
         {
             return new InventoryItem(ACCESSORIES_ITEM_ID, GetAccessoryName((AccessoriesType)data.slot, data.drawable, data.texture, male), JsonConvert.SerializeObject(data), 1);

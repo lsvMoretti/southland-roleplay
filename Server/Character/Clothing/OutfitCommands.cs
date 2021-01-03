@@ -193,12 +193,15 @@ namespace Server.Character.Clothing
             {
                 Models.Character playerCharacter = player.FetchCharacter();
 
-                List<ClothesData>? outfitList = JsonConvert.DeserializeObject<List<ClothesData>>(outfit.Clothes);
+                List<ClothesData>? outfitClothingList = JsonConvert.DeserializeObject<List<ClothesData>>(outfit.Clothes);
+                List<AccessoryData>? outfitAccessoryList = JsonConvert.DeserializeObject<List<AccessoryData>>(outfit.Accessories);
 
                 List<ClothesData>? CurrentClothingList =
                     JsonConvert.DeserializeObject<List<ClothesData>>(playerCharacter.ClothesJson);
+                List<AccessoryData>? CurrentAccessoryList =
+                    JsonConvert.DeserializeObject<List<AccessoryData>>(playerCharacter.AccessoryJson);
 
-                if (outfitList is null)
+                if (outfitClothingList is null || outfitAccessoryList is null)
                 {
                     player.SendErrorNotification("An error occurred.");
                     return;
@@ -206,26 +209,49 @@ namespace Server.Character.Clothing
 
                 Inventory.Inventory playerInventory = player.FetchInventory();
 
-                List<ClothesData> newClothingList = CurrentClothingList;
+                #region Clothing
 
-                foreach (ClothesData clothesData in outfitList)
+                List<InventoryItem> clothingItems = playerInventory.GetInventoryItems("ITEM_CLOTHES");
+
+                foreach (ClothesData clothesData in outfitClothingList)
                 {
                     Console.WriteLine($"Outfit Clothing Item Slot: {clothesData.slot}");
 
                     // Already has clothing item on
-                    if (CurrentClothingList.Contains(clothesData)) continue;
+                    if (CurrentClothingList.FirstOrDefault(x => x.slot == clothesData.slot && x.drawable == clothesData.drawable && x.texture == clothesData.texture) != null) continue;
 
-                    InventoryItem inventoryItem = Clothes.ConvertClothesToInventoryItem(clothesData, player.GetClass().IsMale);
+                    clothesData.male = player.GetClass().IsMale;
+
+                    InventoryItem? clothingItem = null;
+
+                    foreach (InventoryItem inventoryItem in clothingItems)
+                    {
+                        ClothesData itemData = JsonConvert.DeserializeObject<ClothesData>(inventoryItem.ItemValue);
+
+                        if (itemData.slot != clothesData.slot) continue;
+                        if (itemData.drawable != clothesData.drawable) continue;
+                        if (itemData.texture != clothesData.texture) continue;
+                        if (itemData.male != player.GetClass().IsMale) continue;
+
+                        clothingItem = inventoryItem;
+                        break;
+                    }
+
+                    if (clothingItem == null)
+                    {
+                        player.SendErrorNotification("Unable to find an item in your inventory.");
+                        return;
+                    }
 
                     // Player doesn't have item in inventory & not wearing
-                    if (!playerInventory.HasItem(inventoryItem))
+                    if (!playerInventory.HasItem(clothingItem))
                     {
                         player.SendErrorMessage($"You don't have a clothing item in your inventory!");
                         return;
                     }
 
                     // Remove item from inventory
-                    playerInventory.RemoveItem(inventoryItem);
+                    playerInventory.RemoveItem(clothingItem);
 
                     ClothesData? currentClothingData = CurrentClothingList.FirstOrDefault(x => x.slot == clothesData.slot);
 
@@ -235,14 +261,73 @@ namespace Server.Character.Clothing
                             Clothes.ConvertClothesToInventoryItem(currentClothingData, player.GetClass().IsMale);
 
                         playerInventory.AddItem(currentClothingItem);
-
-                        newClothingList.Remove(currentClothingData);
-                        newClothingList.Add(clothesData);
                     }
 
                     Clothes.SetClothes(player, clothesData);
                     Clothes.SaveClothes(player, clothesData);
                 }
+
+                #endregion Clothing
+
+                #region Accessories
+
+                List<InventoryItem> accessoryItems = playerInventory.GetInventoryItems("ITEM_CLOTHES_ACCESSORY");
+
+                foreach (AccessoryData accessoryData in outfitAccessoryList)
+                {
+                    Console.WriteLine($"Outfit Accessory Item Slot: {accessoryData.slot}");
+
+                    // Already has clothing item on
+                    if (CurrentAccessoryList.FirstOrDefault(x => x.slot == accessoryData.slot && x.drawable == accessoryData.drawable && x.texture == accessoryData.texture) != null) continue;
+
+                    accessoryData.male = player.GetClass().IsMale;
+
+                    InventoryItem? accessoryItem = null;
+
+                    foreach (InventoryItem inventoryItem in accessoryItems)
+                    {
+                        AccessoryData itemData = JsonConvert.DeserializeObject<AccessoryData>(inventoryItem.ItemValue);
+
+                        if (itemData.slot != accessoryData.slot) continue;
+                        if (itemData.drawable != accessoryData.drawable) continue;
+                        if (itemData.texture != accessoryData.texture) continue;
+                        if (itemData.male != player.GetClass().IsMale) continue;
+
+                        accessoryItem = inventoryItem;
+                        break;
+                    }
+
+                    if (accessoryItem == null)
+                    {
+                        player.SendErrorNotification("Unable to find an item in your inventory.");
+                        return;
+                    }
+
+                    // Player doesn't have item in inventory & not wearing
+                    if (!playerInventory.HasItem(accessoryItem))
+                    {
+                        player.SendErrorMessage($"You don't have a clothing item in your inventory!");
+                        return;
+                    }
+
+                    // Remove item from inventory
+                    playerInventory.RemoveItem(accessoryItem);
+
+                    AccessoryData? currentAccessoryData = CurrentAccessoryList.FirstOrDefault(x => x.slot == accessoryData.slot);
+
+                    if (currentAccessoryData != null)
+                    {
+                        InventoryItem currentClothingItem =
+                            Clothes.ConvertAccessoryToInventoryItem(currentAccessoryData, player.GetClass().IsMale);
+
+                        playerInventory.AddItem(currentClothingItem);
+                    }
+
+                    Clothes.SetAccessories(player, accessoryData);
+                    Clothes.SaveAccessories(player, accessoryData);
+                }
+
+                #endregion Accessories
             }
             catch (Exception e)
             {

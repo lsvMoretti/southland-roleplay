@@ -578,7 +578,7 @@ namespace Server.Character.Clothing
                         currentClothesData.male = true;
                     }
 
-                    var clothesItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
+                    var clothesItem = new AccessoryData(currentClothesData.slot, currentClothesData.drawable,
                         currentClothesData.texture, player.IsMale());
 
                     newItem = Clothes.ConvertAccessoryToInventoryItem(clothesItem, player.IsMale());
@@ -639,7 +639,7 @@ namespace Server.Character.Clothing
 
                 Inventory.Inventory playerInventory = player.FetchInventory();
 
-                var accessoryItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
+                var accessoryItem = new AccessoryData(currentClothesData.slot, currentClothesData.drawable,
                     currentClothesData.texture, player.IsMale());
 
                 bool added =
