@@ -137,6 +137,20 @@ namespace Server.Character
             player.SendInfoNotification($"You've changed your age to {age}.");
         }
 
+        [Command("stime", commandType: CommandType.Character, description: "Used to view the OOC server time")]
+        public static void CharacterCommandsServerTime(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            var info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
+
+            DateTimeOffset localServerTime = DateTimeOffset.Now;
+
+            DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
+
+            player.SendInfoMessage($"(Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
+        }
+
         [Command("time", commandType: CommandType.Character, description: "Used to view the time")]
         public static void CharacterCommandTime(IPlayer player)
         {
@@ -150,7 +164,7 @@ namespace Server.Character
 
             DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
 
-            player.SendInfoNotification($"Current Time: {serverSettings.Hour:D2}:{serverSettings.Minute:D2}\n((Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
+            player.SendInfoMessage($"Current Time: {serverSettings.Hour:D2}:{serverSettings.Minute:D2}\n((Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
         }
 
         [Command("charity", onlyOne: true, commandType: CommandType.Character, description: "Used to get rid of those dirty notes")]
