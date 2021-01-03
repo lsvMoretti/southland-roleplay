@@ -260,6 +260,9 @@ namespace Server.Character.Clothing
                         InventoryItem currentClothingItem =
                             Clothes.ConvertClothesToInventoryItem(currentClothingData, player.GetClass().IsMale);
 
+                        currentClothingItem.CustomName = Clothes.GetClothesName((ClothesType)currentClothingData.slot,
+                            currentClothingData.drawable, currentClothingData.texture, player.GetClass().IsMale);
+
                         playerInventory.AddItem(currentClothingItem);
                     }
 
@@ -319,6 +322,9 @@ namespace Server.Character.Clothing
                     {
                         InventoryItem currentClothingItem =
                             Clothes.ConvertAccessoryToInventoryItem(currentAccessoryData, player.GetClass().IsMale);
+
+                        currentClothingItem.CustomName = Clothes.GetAccessoryName((AccessoriesType)currentAccessoryData.slot,
+                            currentAccessoryData.drawable, currentAccessoryData.texture, player.GetClass().IsMale);
 
                         playerInventory.AddItem(currentClothingItem);
                     }
