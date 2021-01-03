@@ -263,7 +263,10 @@ namespace Server.Character.Clothing
                         currentClothingItem.CustomName = Clothes.GetClothesName((ClothesType)currentClothingData.slot,
                             currentClothingData.drawable, currentClothingData.texture, player.GetClass().IsMale);
 
-                        playerInventory.AddItem(currentClothingItem);
+                        if (!ClothingCommand.BannedClothingNames.Contains(currentClothingItem.CustomName.ToLower()))
+                        {
+                            playerInventory.AddItem(currentClothingItem);
+                        }
                     }
 
                     Clothes.SetClothes(player, clothesData);
@@ -326,7 +329,10 @@ namespace Server.Character.Clothing
                         currentClothingItem.CustomName = Clothes.GetAccessoryName((AccessoriesType)currentAccessoryData.slot,
                             currentAccessoryData.drawable, currentAccessoryData.texture, player.GetClass().IsMale);
 
-                        playerInventory.AddItem(currentClothingItem);
+                        if (!ClothingCommand.BannedClothingNames.Contains(currentClothingItem.CustomName.ToLower()))
+                        {
+                            playerInventory.AddItem(currentClothingItem);
+                        }
                     }
 
                     Clothes.SetAccessories(player, accessoryData);
