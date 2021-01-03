@@ -49,7 +49,7 @@ namespace Server.Character
                     DiscordHandler.SendMessageToLogChannel($"Character {player.GetClass().Name} (Character ID: {player.GetClass().CharacterId}) (Player ID: {player.GetPlayerId()}) has auto posted the following advert due to no admins in-game.\n{message}");
                     return true;
                 }
-                
+
                 foreach (IPlayer onlineAdmin in onlineAdmins)
                 {
                     onlineAdmin.SendAdminMessage($"Advert: [{message}] from {player.GetClass().Name}, /acceptad {player.GetClass().CharacterId}.");
@@ -80,7 +80,7 @@ namespace Server.Character
                 target.SendAdvertMessage(message);
             }
 
-            SignalR.SendDiscordMessage(704070210357035018, message);
+            SignalR.SendDiscordMessage(795084275090587748, message);
         }
 
         public static void DenyAdvert(int characterId)
@@ -117,13 +117,13 @@ namespace Server.Character
                 player.SendErrorNotification("You need to input a longer advert.");
                 return;
             }
-/*
-            if (player.Position.Distance(AdvertPosition) > 5)
-            {
-                player.SendErrorNotification("You're not in range of the advertisement building.");
-                return;
-            }
-*/
+            /*
+                        if (player.Position.Distance(AdvertPosition) > 5)
+                        {
+                            player.SendErrorNotification("You're not in range of the advertisement building.");
+                            return;
+                        }
+            */
             player.RemoveCash(_adPrice);
 
             AddAdvert(player, message);
