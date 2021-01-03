@@ -552,20 +552,35 @@ namespace Server.Character
                 return;
             }
 
-            var onlineAdmins = Alt.GetAllPlayers().Where(x => x.GetClass().AdminDuty)
-                .OrderByDescending(x => x.FetchAccount().AdminLevel).ThenByDescending(n => n.GetClass().UcpName);
+            var onlinePlayers = Alt.GetAllPlayers();
+
+            var onlineAdmins = new List<IPlayer>();
+
+            foreach (IPlayer onlinePlayer in onlinePlayers)
+            {
+                Models.Account? account = onlinePlayer.FetchAccount();
+
+                if (account is null) continue;
+
+                if (account.AdminLevel < AdminLevel.Moderator) continue;
+
+                onlineAdmins.Add(onlinePlayer);
+            }
 
             if (!onlineAdmins.Any())
             {
-                player.SendErrorMessage("No on-duty admins");
+                player.SendErrorMessage("No admins online");
                 return;
             }
 
+            var sortedList = onlineAdmins.OrderByDescending(x => x.FetchAccount().AdminLevel)
+                .ThenByDescending(n => n.GetClass().UcpName);
+
             player.SendAdminMessage("____[On Duty Admins]____");
 
-            foreach (var onlineAdmin in onlineAdmins)
+            foreach (var onlineAdmin in sortedList)
             {
-                player.SendAdminMessage(onlineAdmin.GetClass().UcpName);
+                player.SendAdminMessage(onlineAdmin.GetClass().AdminDuty ? $"(On Duty) {onlineAdmin.GetClass().UcpName}" : onlineAdmin.GetClass().UcpName);
             }
         }
 
