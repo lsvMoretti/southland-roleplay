@@ -51,7 +51,7 @@ namespace Server.Developer
             }
 
             File.AppendAllText("savepos.txt",
-                $"{player.Name}, {sName}: {playerPosition.X}f, {playerPosition.Y}f, {playerPosition.Z}f : YAW: {playerRotation.Yaw}f\n");
+                $"{player.GetClass().UcpName}, {sName}: {playerPosition.X}f, {playerPosition.Y}f, {playerPosition.Z}f : DegreeRotation Yaw: {playerRotation.Yaw}f\n");
 
             player.Emit("SendNotification", "info", "Position Saved");
         }
