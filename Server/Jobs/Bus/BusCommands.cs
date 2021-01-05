@@ -107,7 +107,7 @@ namespace Server.Jobs.Bus
                 player.SetData("BusJob:StopCount", busStopList.Count);
 
                 IVehicle busVehicle = Alt.CreateVehicle(VehicleModel.Bus, vehicleSpawnPosition,
-                    new DegreeRotation(0, 0, firstPoint.RotZ));
+                    new Rotation(0, 0, firstPoint.RotZ));
 
                 busVehicle.PrimaryColor = 6;
                 busVehicle.SecondaryColor = 6;
