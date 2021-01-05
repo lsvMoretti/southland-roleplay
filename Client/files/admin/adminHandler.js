@@ -4,6 +4,24 @@ var vehicleListString = undefined;
 var adminDealershipView = undefined;
 var adminDealershipName = undefined;
 var editVehicleIndex = undefined;
+alt.on('teleportToWaypoint', () => {
+    if (!native.isWaypointActive())
+        return alt.log('Waypoint not defined');
+    const z = 1000;
+    const { scriptID: player } = alt.Player.local;
+    const waypoint = native.getFirstBlipInfoId(8);
+    const coords = native.getBlipInfoIdCoord(waypoint);
+    native.freezeEntityPosition(player, true);
+    native.startPlayerTeleport(player, coords.x, coords.y, z, 0, true, true, true);
+    const interval = alt.setInterval(() => {
+        if (native.hasPlayerTeleportFinished(player)) {
+            const ground = native.getEntityHeightAboveGround(player);
+            native.startPlayerTeleport(player, coords.x, coords.y, z - ground, 0, true, true, true);
+            native.freezeEntityPosition(player, false);
+            alt.clearInterval(interval);
+        }
+    }, 100);
+});
 alt.onServer('RockstarEditor:Toggle', (toggle) => {
     if (toggle) {
         native.activateRockstarEditor();

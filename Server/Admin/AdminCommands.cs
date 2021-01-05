@@ -42,6 +42,13 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("twp", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
+            description: "Used to teleport to your map waypoint")]
+        public static void AdminCommandTPWaypoint(IPlayer player)
+        {
+            player.Emit("teleportToWaypoint");
+        }
+
         [Command("editor", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
             description: "Loads the rockstar editor")]
         public static void AdminCommandLoadEditor(IPlayer player)
