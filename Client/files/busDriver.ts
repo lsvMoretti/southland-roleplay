@@ -2,17 +2,17 @@
 import * as native from 'natives';
 import * as extensions from 'files/extensions';
 
-var busStops:any = undefined;
+var busStops: any = undefined;
 
-var currentMarker:any = undefined;
+var currentMarker: any = undefined;
 var currentBusStop = undefined;
 var busStopPos = undefined;
-var nextStopId:any = undefined;
+var nextStopId: any = undefined;
 
 alt.onServer('bus:startJob', startBusJob);
 alt.onServer('bus:endRoute', endBusRoute);
 
-function startBusJob(stopJson:string) {
+function startBusJob(stopJson: string) {
     busStops = JSON.parse(stopJson);
 
     nextStopId = 0;
@@ -35,15 +35,16 @@ alt.everyTick(() => {
 function updatePosition() {
     if (currentMarker === undefined) return;
 
+    const vehiclePos = alt.Player.local.vehicle.pos;
     let playerPos = alt.Player.local.pos;
 
-    let playerDist = extensions.Distance(playerPos, currentMarker.pos);
+    const vehicleDist = extensions.Distance(vehiclePos, currentMarker.pos);
 
-    if(alt.Player.local.vehicle == undefined) return;
+    if (alt.Player.local.vehicle == undefined) return;
 
-    if(alt.Player.local.vehicle.model != 0xD577C962) return;
+    if (alt.Player.local.vehicle.model != 0xD577C962) return;
 
-    if (playerDist < 5) {
+    if (vehicleDist < 5) {
         var currentId = nextStopId;
         nextStopId++;
         if (nextStopId === busStops.length) {
@@ -63,27 +64,27 @@ function endBusRoute() {
 }
 
 class BusMarker {
-    Type:number;
-    PosX:number;
-    PosY:number;
-    PosZ:number;
-    DirX:number;
-    DirY:number;
-    DirZ:number;
-    RotX:number;
-    RotY:number;
-    RotZ:number;
-    Scale:number;
-    ColorR:number;
-    ColorG:number;
-    ColorB:number;
-    ColorA:number;
-    Bob:boolean;
-    FaceCamera:boolean;
-    Rotate:boolean;
-    pos:alt.Vector3;
+    Type: number;
+    PosX: number;
+    PosY: number;
+    PosZ: number;
+    DirX: number;
+    DirY: number;
+    DirZ: number;
+    RotX: number;
+    RotY: number;
+    RotZ: number;
+    Scale: number;
+    ColorR: number;
+    ColorG: number;
+    ColorB: number;
+    ColorA: number;
+    Bob: boolean;
+    FaceCamera: boolean;
+    Rotate: boolean;
+    pos: alt.Vector3;
 
-    constructor(pos:number) {
+    constructor(pos: number) {
         this.Type = 1;
         this.PosX = busStops[pos].PosX;
         this.PosY = busStops[pos].PosY;

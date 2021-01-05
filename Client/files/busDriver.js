@@ -24,13 +24,14 @@ alt.everyTick(() => {
 function updatePosition() {
     if (currentMarker === undefined)
         return;
+    const vehiclePos = alt.Player.local.vehicle.pos;
     let playerPos = alt.Player.local.pos;
-    let playerDist = extensions.Distance(playerPos, currentMarker.pos);
+    const vehicleDist = extensions.Distance(vehiclePos, currentMarker.pos);
     if (alt.Player.local.vehicle == undefined)
         return;
     if (alt.Player.local.vehicle.model != 0xD577C962)
         return;
-    if (playerDist < 5) {
+    if (vehicleDist < 5) {
         var currentId = nextStopId;
         nextStopId++;
         if (nextStopId === busStops.length) {
