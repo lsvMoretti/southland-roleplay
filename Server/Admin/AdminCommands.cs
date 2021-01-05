@@ -5906,10 +5906,10 @@ namespace Server.Admin
             BusStop newStop = new BusStop
             {
                 Name = string.Join(' ', argSplit.Skip(1)),
-                PosX = player.Position.X,
-                PosY = player.Position.Y,
-                PosZ = player.Position.Z,
-                RotZ = player.Rotation.Yaw
+                PosX = player.Vehicle.Position.X,
+                PosY = player.Vehicle.Position.Y,
+                PosZ = player.Vehicle.Position.Z,
+                RotZ = player.Vehicle.Rotation.Yaw
             };
 
             using Context context = new Context();
