@@ -117,7 +117,9 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     native.freezeEntityPosition(localPlayer, true);
 
-    animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
+    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
+
+    //animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
 
     native.setEntityHeading(localPlayer, orginalRotation);
 
@@ -771,7 +773,9 @@ function finishCreation() {
 
     native.freezeEntityPosition(localPlayer, false);
 
-    animation.stopAnimation();
+    //animation.stopAnimation();
+
+    native.clearPedTasks(localPlayer);
 
     customCharacter.Parents = JSON.stringify(parentInfo);
     customCharacter.Features = JSON.stringify(features);

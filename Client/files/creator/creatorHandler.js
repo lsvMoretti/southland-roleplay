@@ -73,7 +73,7 @@ function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
     native.setCamActive(creatorCamera, true);
     native.renderScriptCams(true, false, 0, true, false, null);
     native.freezeEntityPosition(localPlayer, true);
-    animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
+    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
     native.setEntityHeading(localPlayer, orginalRotation);
     native.setPedCanPlayAmbientAnims(localPlayer, false);
     native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
@@ -582,7 +582,7 @@ function finishCreation() {
     alt.showCursor(false);
     native.displayRadar(true);
     native.freezeEntityPosition(localPlayer, false);
-    animation.stopAnimation();
+    native.clearPedTasks(localPlayer);
     customCharacter.Parents = JSON.stringify(parentInfo);
     customCharacter.Features = JSON.stringify(features);
     customCharacter.Appearance = JSON.stringify(appearanceItems);
