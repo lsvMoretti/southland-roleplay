@@ -37,7 +37,6 @@ alt.everyTick(() => {
 alt.on('connectionComplete', (hasMapChanged: any) => {
     native.requestModel(native.getHashKey('mp_m_freemode_01'));
     native.requestModel(native.getHashKey('mp_f_freemode_01'));
-    native.requestAnimDict("mp_creator_headik");
 });
 
 var currentGender = 0;
@@ -51,6 +50,8 @@ function setCreatorGender(gender: any) {
 }
 
 function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJson: any) {
+    native.requestAnimDict("mp_creator_headik");
+
     localPlayer = alt.Player.local.scriptID;
 
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
@@ -118,7 +119,7 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     native.freezeEntityPosition(localPlayer, true);
 
-    //native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
+    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
 
     //animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
 

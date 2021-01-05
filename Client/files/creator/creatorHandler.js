@@ -27,7 +27,6 @@ alt.everyTick(() => {
 alt.on('connectionComplete', (hasMapChanged) => {
     native.requestModel(native.getHashKey('mp_m_freemode_01'));
     native.requestModel(native.getHashKey('mp_f_freemode_01'));
-    native.requestAnimDict("mp_creator_headik");
 });
 var currentGender = 0;
 function setCreatorGender(gender) {
@@ -39,6 +38,7 @@ function setCreatorGender(gender) {
     ApplyCreatorOutfit();
 }
 function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
+    native.requestAnimDict("mp_creator_headik");
     localPlayer = alt.Player.local.scriptID;
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
     customCharacter = JSON.parse(customCharacterJson);
@@ -74,6 +74,7 @@ function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
     native.setCamActive(creatorCamera, true);
     native.renderScriptCams(true, false, 0, true, false, null);
     native.freezeEntityPosition(localPlayer, true);
+    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
     native.setEntityHeading(localPlayer, orginalRotation);
     native.setPedCanPlayAmbientAnims(localPlayer, false);
     native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
