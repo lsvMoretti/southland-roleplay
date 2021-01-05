@@ -26,6 +26,7 @@ namespace Server.Character
         {
             CharacterHandler.SaveCharacterPosition(player);
 
+            player.SetData("LastPos", player.Position);
             player.Position = CreatorRoom.CreatorPosition;
             player.Emit("loadCharacterCreator", JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()));
             player.Dimension = (short)player.GetPlayerId();
@@ -36,7 +37,9 @@ namespace Server.Character
             player.GetClass().CreatorRoom = true;
             player.GetClass().EditingCharacter = true;
 
-            Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.StopOnLastFrame, "amb@world_human_stand_guard@male@idle_a", "idle_a");
+            player.SetData("LastPos", player.Position);
+
+            //Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.StopOnLastFrame, "amb@world_human_stand_guard@male@idle_a", "idle_a");
         }
 
         /// <summary>
@@ -94,9 +97,13 @@ namespace Server.Character
 
             if (creatorReason == 0)
             {
+                player.GetData("LastPos", out Position position);
+
                 player.SendInfoNotification($"You have updated your character. This has cost you {SurgeonCost:C}.");
 
-                player.Position = new Position(playerCharacter.PosX, playerCharacter.PosY, playerCharacter.PosZ);
+                //player.Position = new Position(playerCharacter.PosX, playerCharacter.PosY, playerCharacter.PosZ);
+
+                player.Position = position;
 
                 player.Dimension = (short)playerCharacter.Dimension;
 
