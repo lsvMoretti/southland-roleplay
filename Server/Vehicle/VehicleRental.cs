@@ -29,17 +29,14 @@ namespace Server.Vehicle
         private static readonly Position DmvRentalSpawnPosition = new Position(-919.74066f, -313.80658f, 38.850586f);
         private static readonly DegreeRotation DmvRentalSpawnRotation = new DegreeRotation(0, 0, 66.248245f);
 
-        
         private static readonly Position PillboxRentalSpawnPosition = new Position(107.63077f, -1080.6461f, 28.673218f);
         private static readonly DegreeRotation PillboxRentalSpawnRotation = new DegreeRotation(0, 0, -19.695423f);
         private static readonly Position PillboxCommandPosition = new Position(100.37802f, -1073.3011f, 29.364136f);
-        
-        private static readonly Position MarinaSpawnPosition = new Position(-1624.02f, -1157.06f, -0.123047f);
-        private static readonly DegreeRotation MarinaSpawnRotation = new DegreeRotation(0,0,0.692635f);
-        private static readonly Position MarinaCommandPosition = new Position(-1612.18f, -114.02f, 1.67981f);
 
-        
-        
+        private static readonly Position MarinaSpawnPosition = new Position(-722.7033f, -1326.8704f, -0.08935547f);
+        private static readonly DegreeRotation MarinaSpawnRotation = new DegreeRotation(0, 0, -127.125f);
+        private static readonly Position MarinaCommandPosition = new Position(-712.6418f, -1298.7429f, 5.100342f);
+
         public static double DilettanteInitCost = 50;
         private static double _seaSharkInitCost = 70;
 
@@ -50,16 +47,16 @@ namespace Server.Vehicle
 
             TextLabel pillboxLabel = new TextLabel($"Vehicle Rental\n/rentvehicle\n{DilettanteInitCost:C}", PillboxCommandPosition, TextFont.FontChaletComprimeCologne, new LsvColor(Color.OrangeRed));
             pillboxLabel.Add();
-            
+
             TextLabel marinaLabel = new TextLabel($"Vehicle Rental\n/rentvehicle\n{_seaSharkInitCost:C}", MarinaCommandPosition, TextFont.FontChaletComprimeCologne, new LsvColor(Color.OrangeRed));
             marinaLabel.Add();
 
             Blip dmvBlip = new Blip("Vehicle Rental", DmvCommandPosition, 225, 7, 0.5f);
             dmvBlip.Add();
-            
+
             Blip pillboxBlip = new Blip("Vehicle Rental", PillboxCommandPosition, 225, 7, 0.5f);
             pillboxBlip.Add();
-            
+
             Blip marinaBlip = new Blip("Vehicle Rental", MarinaCommandPosition, 455, 7, 0.5f);
             marinaBlip.Add();
         }
@@ -97,25 +94,22 @@ namespace Server.Vehicle
 
             if (atPosition == 0)
             {
-                
                 player.SendErrorNotification("You must be at the DMV or Pillbox to rent a vehicle!");
                 return;
             }
-
 
             Position rentalSpawn = new Position();
             Rotation rentalRotation = new Rotation();
             VehicleModel vehicleModel = VehicleModel.Dilettante;
             double cost = DilettanteInitCost;
-            
+
             string rentalKeyCode = Utility.GenerateRandomString(8);
             InventoryItem rentalKey = null;
-            
 
             // 1 - DMV
             // 2 - Pillbox (Caesars Parking)
             // 3 - Marina
-            
+
             switch (atPosition)
             {
                 case 1:
@@ -125,6 +119,7 @@ namespace Server.Vehicle
                     cost = DilettanteInitCost;
                     rentalKey = new InventoryItem("ITEM_VEHICLE_KEY", "Dilettante Rental Key", rentalKeyCode);
                     break;
+
                 case 2:
                     rentalSpawn = PillboxRentalSpawnPosition;
                     rentalRotation = PillboxRentalSpawnRotation;
@@ -132,6 +127,7 @@ namespace Server.Vehicle
                     cost = DilettanteInitCost;
                     rentalKey = new InventoryItem("ITEM_VEHICLE_KEY", "Dilettante Rental Key", rentalKeyCode);
                     break;
+
                 case 3:
                     rentalSpawn = MarinaSpawnPosition;
                     rentalRotation = MarinaSpawnRotation;
@@ -146,7 +142,7 @@ namespace Server.Vehicle
                 player.SendNotification($"~r~You don't have enough. ~g~{cost:C}.");
                 return;
             }
-            
+
             bool vehicleSpotTaken = Alt.Server.GetVehicles().Any(x => x.Position.Distance(rentalSpawn) < 4);
 
             if (vehicleSpotTaken)
@@ -166,7 +162,7 @@ namespace Server.Vehicle
                 player.SendErrorNotification("Unable to generate a rental key!");
                 return;
             }
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             bool keyAdded = playerInventory.AddItem(rentalKey);
@@ -213,7 +209,6 @@ namespace Server.Vehicle
                 WelcomePlayer.OnRentVehicle(player);
                 return;
             }
-
         }
 
         [Command("unrentvehicle", commandType: CommandType.Vehicle, description: "Rental: Used to unrent a vehicle.")]
@@ -291,7 +286,6 @@ namespace Server.Vehicle
             character.RentVehicleKey = null;
 
             context.SaveChanges();
-            
         }
 
         public static void RefundVehicleRental()
@@ -327,7 +321,6 @@ namespace Server.Vehicle
             }
 
             context.SaveChanges();
-            
 
             Console.WriteLine($"Refunded {players.Count} characters");
         }
@@ -336,7 +329,6 @@ namespace Server.Vehicle
             description: "Rental: Used to find your current rental vehicle")]
         public static void RentalCommandFindRental(IPlayer player)
         {
-            
             bool tryGetValue = RentalVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle rentalVehicle);
 
             if (!tryGetValue || rentalVehicle == null)
@@ -348,7 +340,6 @@ namespace Server.Vehicle
             player.SendNotification($"~y~A waypoint has been set to the cars position.");
 
             player.SetWaypoint(rentalVehicle.Position);
-
         }
     }
 }

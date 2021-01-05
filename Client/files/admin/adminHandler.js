@@ -4,7 +4,7 @@ var vehicleListString = undefined;
 var adminDealershipView = undefined;
 var adminDealershipName = undefined;
 var editVehicleIndex = undefined;
-alt.on('teleportToWaypoint', () => {
+alt.onServer('teleportToWaypoint', () => {
     if (!native.isWaypointActive())
         return alt.log('Waypoint not defined');
     const z = 1000;

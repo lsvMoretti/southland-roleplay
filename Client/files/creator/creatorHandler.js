@@ -37,8 +37,8 @@ function setCreatorGender(gender) {
     creatorView.emit('currentGender', gender);
     ApplyCreatorOutfit();
 }
-function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
-    native.requestAnimDict("mp_creator_headik");
+function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson, name) {
+    native.requestAnimDict("mp_character_creation@customise@male_a");
     localPlayer = alt.Player.local.scriptID;
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
     customCharacter = JSON.parse(customCharacterJson);
@@ -74,7 +74,7 @@ function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
     native.setCamActive(creatorCamera, true);
     native.renderScriptCams(true, false, 0, true, false, null);
     native.freezeEntityPosition(localPlayer, true);
-    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
+    native.taskPlayAnim(localPlayer, "mp_character_creation@customise@male_a", "loop", 8, -8, -1, 0, 0, true, false, false);
     native.setEntityHeading(localPlayer, orginalRotation);
     native.setPedCanPlayAmbientAnims(localPlayer, false);
     native.setPedCanPlayAmbientBaseAnims(localPlayer, false);

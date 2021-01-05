@@ -49,8 +49,8 @@ function setCreatorGender(gender: any) {
     ApplyCreatorOutfit();
 }
 
-function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJson: any) {
-    native.requestAnimDict("mp_creator_headik");
+function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJson: any, name: string) {
+    native.requestAnimDict("mp_character_creation@customise@male_a");
 
     localPlayer = alt.Player.local.scriptID;
 
@@ -119,7 +119,7 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     native.freezeEntityPosition(localPlayer, true);
 
-    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
+    native.taskPlayAnim(localPlayer, "mp_character_creation@customise@male_a", "loop", 8, -8, -1, 0, 0, true, false, false);
 
     //animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
 

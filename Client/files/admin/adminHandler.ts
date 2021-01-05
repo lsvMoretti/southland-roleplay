@@ -6,7 +6,7 @@ var adminDealershipView: alt.WebView = undefined;
 var adminDealershipName: string = undefined;
 var editVehicleIndex: number = undefined;
 
-alt.on('teleportToWaypoint', () => {
+alt.onServer('teleportToWaypoint', () => {
     if (!native.isWaypointActive()) return alt.log('Waypoint not defined');
 
     const z = 1000;

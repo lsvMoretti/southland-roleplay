@@ -28,7 +28,7 @@ namespace Server.Character
 
             player.SetData("LastPos", player.Position);
             player.Position = CreatorRoom.CreatorPosition;
-            player.Emit("loadCharacterCreator", JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()));
+            player.Emit("loadCharacterCreator", JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), player.GetClass().Name);
             player.Dimension = (short)player.GetPlayerId();
             player.Rotation = CreatorRoom.CreatorRotation;
             player.HideChat(true);
