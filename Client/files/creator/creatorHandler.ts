@@ -30,6 +30,7 @@ alt.everyTick(() => {
     if (creatorCamera !== undefined) {
         native.disableAllControlActions(0);
         native.disableAllControlActions(1);
+        native.freezeEntityPosition(localPlayer, true);
     }
 });
 
@@ -117,7 +118,7 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     native.freezeEntityPosition(localPlayer, true);
 
-    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
+    //native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
 
     //animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
 

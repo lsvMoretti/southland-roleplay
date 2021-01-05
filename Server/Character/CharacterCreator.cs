@@ -103,7 +103,9 @@ namespace Server.Character
 
                 //player.Position = new Position(playerCharacter.PosX, playerCharacter.PosY, playerCharacter.PosZ);
 
-                player.Position = position;
+                //player.Position = position;
+
+                player.SetPosition(position, player.Rotation, loadWeapon: true);
 
                 player.Dimension = (short)playerCharacter.Dimension;
 

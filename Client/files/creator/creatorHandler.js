@@ -21,6 +21,7 @@ alt.everyTick(() => {
     if (creatorCamera !== undefined) {
         native.disableAllControlActions(0);
         native.disableAllControlActions(1);
+        native.freezeEntityPosition(localPlayer, true);
     }
 });
 alt.on('connectionComplete', (hasMapChanged) => {
@@ -73,7 +74,6 @@ function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
     native.setCamActive(creatorCamera, true);
     native.renderScriptCams(true, false, 0, true, false, null);
     native.freezeEntityPosition(localPlayer, true);
-    native.taskPlayAnim(localPlayer, "mp_creator_headik", "mp_head_ik_override", 8, 1, -1, 1, 0, false, false, false);
     native.setEntityHeading(localPlayer, orginalRotation);
     native.setPedCanPlayAmbientAnims(localPlayer, false);
     native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
