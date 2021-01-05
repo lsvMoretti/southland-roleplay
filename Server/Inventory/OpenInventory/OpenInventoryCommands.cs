@@ -3,6 +3,7 @@ using System.Linq;
 using AltV.Net.Elements.Entities;
 using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
+using Server.Backpack;
 using Server.Chat;
 using Server.Commands;
 using Server.Extensions;
@@ -243,6 +244,12 @@ namespace Server.Inventory.OpenInventory
             if (nearStorage == null)
             {
                 player.SendErrorNotification("Your not near a storage location.");
+                return;
+            }
+
+            if (selectedItem.Id == "ITEM_BACKPACK" || selectedItem.Id == "ITEM_DUFFELBAG")
+            {
+                BackpackHandler.StoreBackpackInStorage(player, selectedItem, nearStorage);
                 return;
             }
 
