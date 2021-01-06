@@ -27,13 +27,24 @@ var featureNames = ["Nose Width", "Nose Bottom Height", "Nose Tip Length", "Nose
 alt.onServer('loadCharacterCreator', loadCharacterCreator);
 alt.onServer('creatorSetGender', setCreatorGender);
 
+let tickInterval: number;
+
+function onTick() {
+    native.setPedCanPlayAmbientAnims(localPlayer, false);
+    native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
+    native.setPedCanPlayInjuredAnims(localPlayer, false);
+    native.setPedCanPlayGestureAnims(localPlayer, false);
+    native.setPedCanPlayVisemeAnims(localPlayer, false, false);
+    native.disableAllControlActions(0);
+    native.disableAllControlActions(1);
+    native.freezeEntityPosition(localPlayer, true);
+}
+/*
 alt.everyTick(() => {
     if (creatorCamera !== undefined) {
-        native.disableAllControlActions(0);
-        native.disableAllControlActions(1);
-        native.freezeEntityPosition(localPlayer, true);
     }
 });
+*/
 
 alt.on('connectionComplete', (hasMapChanged: any) => {
     native.requestModel(native.getHashKey('mp_m_freemode_01'));
@@ -108,6 +119,8 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -225.87692, -1199.0901, -148.92383, 0, 0, -90, 20, true, 2);
 
+    tickInterval = alt.setInterval(onTick, 0);
+
     native.displayRadar(false);
 
     native.pointCamAtPedBone(creatorCamera, localPlayer, 31086, 0, 0, 0, false);
@@ -123,12 +136,6 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
     //animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
 
     native.setEntityHeading(localPlayer, orginalRotation);
-
-    native.setPedCanPlayAmbientAnims(localPlayer, false);
-    native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
-    native.setPedCanPlayInjuredAnims(localPlayer, false);
-    native.setPedCanPlayGestureAnims(localPlayer, false);
-    native.setPedCanPlayVisemeAnims(localPlayer, false, false);
 
     startAnimation("amb@code_human_wander_texting@male@base", "static", -1, 1);
 
@@ -770,6 +777,7 @@ function finishCreation() {
         creatorCamera = undefined;
         native.setFollowPedCamViewMode(1);
         native.clearFocus();
+        alt.clearInterval(tickInterval);
     }
 
     alt.showCursor(false);
