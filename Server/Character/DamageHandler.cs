@@ -16,7 +16,7 @@ namespace Server.Character
     public class DamageHandler
     {
         private const string _weaponDamage = "WeaponDamageData";
-        
+
         public static Dictionary<int, TextLabel> BulletCasingLabels = new Dictionary<int, TextLabel>();
         public static Dictionary<int, BulletTextDraw> BulletCasings = new Dictionary<int, BulletTextDraw>();
 
@@ -29,19 +29,27 @@ namespace Server.Character
         public static bool AltOnOnWeaponDamage(IPlayer player, IEntity target, uint weapon, ushort damage,
             Position shotoffset, BodyPart bodypart)
         {
-            
-            
+            if (target.Type == BaseObjectType.Player)
+            {
+                IPlayer targetPlayer = (IPlayer)target;
+
+                if (targetPlayer.GetClass().AdminDuty)
+                {
+                    return false;
+                }
+            }
+
             bool hasDamageData = player.GetData(_weaponDamage, out string damageJson);
-            
+
             List<BodyDamage> bodyDamages = null;
-            
+
             if (!hasDamageData)
             {
                 bodyDamages = new List<BodyDamage>
                 {
                     new BodyDamage(bodypart, 1, damage)
                 };
-                
+
                 player.SetData(_weaponDamage, JsonConvert.SerializeObject(bodyDamages));
                 return true;
             }
@@ -51,7 +59,7 @@ namespace Server.Character
             BodyDamage bodyDamage = bodyDamages.FirstOrDefault(x => x.BodyPart == bodypart);
 
             BodyDamage newDamage = new BodyDamage(bodypart, 1, damage);
-            
+
             if (bodyDamage == null)
             {
                 bodyDamages.Add(newDamage);
@@ -63,7 +71,7 @@ namespace Server.Character
                 newDamage.DamageAmount = Convert.ToUInt16(bodyDamage.DamageAmount + damage);
                 bodyDamages.Add(newDamage);
             }
-            
+
             player.SetData(_weaponDamage, JsonConvert.SerializeObject(bodyDamages));
             return true;
         }
@@ -85,7 +93,7 @@ namespace Server.Character
                 }
 
                 List<BodyDamage> ownDamages = JsonConvert.DeserializeObject<List<BodyDamage>>(damageString);
-                
+
                 player.SendInfoMessage($"-- Your Damages -- ");
 
                 foreach (BodyDamage ownDamage in ownDamages)
@@ -119,7 +127,7 @@ namespace Server.Character
             }
 
             List<BodyDamage> targetBodyDamages = JsonConvert.DeserializeObject<List<BodyDamage>>(targetString);
-            
+
             player.SendInfoMessage($"-- Damages for {targetPlayer.GetClass().Name} --");
 
             foreach (BodyDamage targetBodyDamage in targetBodyDamages)

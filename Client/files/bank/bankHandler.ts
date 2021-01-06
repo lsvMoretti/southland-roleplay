@@ -1,13 +1,13 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
-var bankView:alt.WebView = undefined;
-var BankJson:any = undefined;
-var currentBankAccount:any = undefined;
+var bankView: alt.WebView = undefined;
+var BankJson: any = undefined;
+var currentBankAccount: any = undefined;
 
 alt.onServer('ShowBankMenu', ShowBankMenu);
 
-function ShowBankMenu(bankJson:string) {
+function ShowBankMenu(bankJson: string) {
     BankJson = bankJson
 
     if (bankView !== undefined) {
@@ -53,7 +53,7 @@ function setAsActive() {
     CloseBankView();
 }
 
-function RequestNewBankAccount(accountType:any) {
+function RequestNewBankAccount(accountType: any) {
     alt.emitServer('RequestNewBankAccount', accountType.toString());
     CloseBankView();
 }
@@ -74,21 +74,24 @@ function RequestNewBankCard() {
     CloseBankView();
 }
 
-function HandleBankTransfer(targetAccountNumber:any, amount:any) {
-    var currentAccount = JSON.parse(currentBankAccount);
+function HandleBankTransfer(targetAccountNumber: any, amount: any) {
+    const currentAccount = JSON.parse(currentBankAccount);
     alt.emitServer('BankTransfer', currentAccount.AccountNumber.toString(), targetAccountNumber.toString(), amount.toString());
     CloseBankView();
 }
 
-function HandleBankTransaction(state:any, amount:any) {
-    var currentAccount = JSON.parse(currentBankAccount);
+function HandleBankTransaction(state: any, amount: any) {
+    alt.log('TransactionHandle Event')
+    const currentAccount = JSON.parse(currentBankAccount);
+    alt.log('Data:' + currentAccount);
     // States: 0 = Deposit, 1 = Withdraw
     alt.emitServer('BankTransaction', currentAccount.AccountNumber.toString(), state.toString(), amount.toString());
+    alt.log('emit Event: ' + currentAccount.AccountNumber.toString() + '-' + state.toString() + '-' + amount.toString());
     CloseBankView();
 }
 
-var transactionState:any = undefined;
-function SetBankTransactionState(state:any) {
+var transactionState: any = undefined;
+function SetBankTransactionState(state: any) {
     transactionState = state;
 }
 
@@ -111,7 +114,7 @@ function CloseBankHomePage() {
     CloseBankView();
 }
 
-function ViewBankInfo(index:number) {
+function ViewBankInfo(index: number) {
     var BankAccounts = JSON.parse(BankJson);
 
     var BankAccount = BankAccounts[index];
@@ -128,11 +131,18 @@ function BankHomePageLoaded() {
 }
 
 function CloseBankView() {
+    alt.log('Close Bank View');
     if (bankView !== undefined) {
+        alt.log('Not Null');
         bankView.destroy();
+        alt.log('Destroy');
         bankView = undefined;
+        alt.log('bankView set undefined');
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
+        alt.log('Unfreeze');
         alt.showCursor(false);
+        alt.log('showCursor');
         alt.emitServer('bankViewClosed');
+        alt.log('bankViewClosed');
     }
 }

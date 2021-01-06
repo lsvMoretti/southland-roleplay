@@ -253,6 +253,8 @@ function transactionState(state) {
 
         var inputAmount = numberInput.value;
 
+        console.log('Input Amount: ' + inputAmount);
+
         alt.emit('HandleBankTransaction', state, inputAmount);
     };
 }

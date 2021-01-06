@@ -47,13 +47,16 @@ function RequestNewBankCard() {
     CloseBankView();
 }
 function HandleBankTransfer(targetAccountNumber, amount) {
-    var currentAccount = JSON.parse(currentBankAccount);
+    const currentAccount = JSON.parse(currentBankAccount);
     alt.emitServer('BankTransfer', currentAccount.AccountNumber.toString(), targetAccountNumber.toString(), amount.toString());
     CloseBankView();
 }
 function HandleBankTransaction(state, amount) {
-    var currentAccount = JSON.parse(currentBankAccount);
+    alt.log('TransactionHandle Event');
+    const currentAccount = JSON.parse(currentBankAccount);
+    alt.log('Data:' + currentAccount);
     alt.emitServer('BankTransaction', currentAccount.AccountNumber.toString(), state.toString(), amount.toString());
+    alt.log('emit Event: ' + currentAccount.AccountNumber.toString() + '-' + state.toString() + '-' + amount.toString());
     CloseBankView();
 }
 var transactionState = undefined;
@@ -89,11 +92,18 @@ function BankHomePageLoaded() {
     bankView.emit('LoadBankAccounts', BankJson);
 }
 function CloseBankView() {
+    alt.log('Close Bank View');
     if (bankView !== undefined) {
+        alt.log('Not Null');
         bankView.destroy();
+        alt.log('Destroy');
         bankView = undefined;
+        alt.log('bankView set undefined');
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
+        alt.log('Unfreeze');
         alt.showCursor(false);
+        alt.log('showCursor');
         alt.emitServer('bankViewClosed');
+        alt.log('bankViewClosed');
     }
 }
