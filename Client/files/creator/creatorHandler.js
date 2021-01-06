@@ -1,6 +1,7 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 import * as animation from "files/animation";
+var startAnimation = animation.startAnimation;
 var creatorView = undefined;
 var creatorCamera = undefined;
 var defaultCustomCharacter = undefined;
@@ -38,7 +39,6 @@ function setCreatorGender(gender) {
     ApplyCreatorOutfit();
 }
 function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson, name) {
-    native.requestAnimDict("mp_character_creation@customise@male_a");
     localPlayer = alt.Player.local.scriptID;
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
     customCharacter = JSON.parse(customCharacterJson);
@@ -74,11 +74,13 @@ function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson, n
     native.setCamActive(creatorCamera, true);
     native.renderScriptCams(true, false, 0, true, false, null);
     native.freezeEntityPosition(localPlayer, true);
-    native.taskPlayAnim(localPlayer, "mp_character_creation@customise@male_a", "loop", 8, -8, -1, 0, 0, true, false, false);
     native.setEntityHeading(localPlayer, orginalRotation);
     native.setPedCanPlayAmbientAnims(localPlayer, false);
     native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
     native.setPedCanPlayInjuredAnims(localPlayer, false);
+    native.setPedCanPlayGestureAnims(localPlayer, false);
+    native.setPedCanPlayVisemeAnims(localPlayer, false, false);
+    startAnimation("amb@code_human_wander_texting@male@base", "static", -1, 1);
     parentInfo = JSON.parse(customCharacter.Parents);
     features = JSON.parse(customCharacter.Features);
     appearanceItems = JSON.parse(customCharacter.Appearance);
