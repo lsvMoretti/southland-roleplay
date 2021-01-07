@@ -316,10 +316,13 @@ namespace Server.Vehicle
                     return;
                 }
 
-                if (!playerInventory.AddItem(stolenPlateItem))
+                if (!nearVehicleDb.HasPlateBeenStolen)
                 {
-                    player.SendErrorNotification("There was an error adding the plate to your inventory.");
-                    return;
+                    if (!playerInventory.AddItem(stolenPlateItem))
+                    {
+                        player.SendErrorNotification("There was an error adding the plate to your inventory.");
+                        return;
+                    }
                 }
 
                 nearVehicleData.HasPlateBeenStolen = true;
