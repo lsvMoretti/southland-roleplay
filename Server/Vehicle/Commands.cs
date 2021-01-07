@@ -66,6 +66,12 @@ namespace Server.Vehicle
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
+            if (!playerInventory.HasItem("ITEM_SCREWDRIVER"))
+            {
+                player.SendErrorNotification("You don't have the required tools.");
+                return;
+            }
+
             if (!string.IsNullOrEmpty(vehicleData.StolenPlate))
             {
                 // Vehicle has a stolen plate fitted
@@ -176,7 +182,15 @@ namespace Server.Vehicle
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            List<InventoryItem> plateItems = player.FetchInventory().GetInventoryItems("ITEM_VEHICLE_PLATE");
+            Inventory.Inventory playerInventory = player.FetchInventory();
+
+            if (!playerInventory.HasItem("ITEM_SCREWDRIVER"))
+            {
+                player.SendErrorNotification("You don't have the required tools.");
+                return;
+            }
+
+            List<InventoryItem> plateItems = playerInventory.GetInventoryItems("ITEM_VEHICLE_PLATE");
 
             if (!plateItems.Any())
             {

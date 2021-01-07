@@ -586,26 +586,170 @@
   },
 
   //Consumables (Alcohol Beverage)
-  {"ID":"ITEM_PISSWASSER_BEER","Name":"Piswasser Beer Bottle","Description":"A bottle of Piswasser.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_AM_BEER","Name":"AM Beer Bottle","Description":"A bottle of AM Beer.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_DUSCHE_GOLD_BEER","Name":"Dusche Gold Beer Bottle","Description":"A bottle of Dusche Gold.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_LOGGER_BEER","Name":"Logger Beer Bottle","Description":"A bottle of Logger.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_PATRIOT_BEER","Name":"Patriot Beer Bottle","Description":"A bottle of Patriot.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_CERVEZA_BEER","Name":"Cerveza Barracho","Description":"A bottle of Cerveza Barracho.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_BLARNEYS_STOUT_BEER","Name":"Blarneys Stout Beer Bottle","Description":"A bottle of Blarneys Stout.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_LOGGER_LIGHT_BEER","Name":"Logger Light Beer Bottle","Description":"A bottle of Logger Light.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
-  {"ID":"ITEM_JAKEYS_LAGER","Name":"Jakey's Lager Bottle","Description":"A bottle of Jakey's Lager.","Weight":0.522,"Capacity":0.355,"Price":3,"Stackable":true},
+  {
+    "ID": "ITEM_PISSWASSER_BEER",
+    "Name": "Piswasser Beer Bottle",
+    "Description": "A bottle of Piswasser.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_AM_BEER",
+    "Name": "AM Beer Bottle",
+    "Description": "A bottle of AM Beer.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DUSCHE_GOLD_BEER",
+    "Name": "Dusche Gold Beer Bottle",
+    "Description": "A bottle of Dusche Gold.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_LOGGER_BEER",
+    "Name": "Logger Beer Bottle",
+    "Description": "A bottle of Logger.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PATRIOT_BEER",
+    "Name": "Patriot Beer Bottle",
+    "Description": "A bottle of Patriot.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CERVEZA_BEER",
+    "Name": "Cerveza Barracho",
+    "Description": "A bottle of Cerveza Barracho.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_BLARNEYS_STOUT_BEER",
+    "Name": "Blarneys Stout Beer Bottle",
+    "Description": "A bottle of Blarneys Stout.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_LOGGER_LIGHT_BEER",
+    "Name": "Logger Light Beer Bottle",
+    "Description": "A bottle of Logger Light.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_JAKEYS_LAGER",
+    "Name": "Jakey's Lager Bottle",
+    "Description": "A bottle of Jakey's Lager.",
+    "Weight": 0.522,
+    "Capacity": 0.355,
+    "Price": 3,
+    "Stackable": true
+  },
 
   //Consumables (Alcohol Cases)
-  {"ID":"ITEM_PISSWASSER_CASE","Name":"Pi�wasser 12 Pack","Description":"12 bottles of Pi�wasser.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_AM_BEER_CASE","Name":"AM Beer 12 Pack","Description":"12 bottles of AM Beer.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_DUSCHE_GOLD_CASE","Name":"Dusche Gold 12 Pack","Description":"12 bottles of Dusche Gold.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_LOGGER_CASE","Name":"Logger Beer 12 Pack","Description":"12 bottles of Logger.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_PATRIOT_CASE","Name":"Patriot Beer 12 Pack","Description":"12 bottles of Patriot.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_CERVEZA_CASE","Name":"Cerveza Barracho 12 Pack","Description":"12 bottles of Cerveza Barracho.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_BLARNEYS_STOUT_CASE","Name":"Blarneys Stout 12 Pack","Description":"12 bottles of Blarneys Stout.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_LOGGER_LIGHT_CASE","Name":"Logger Light Beer 12 Pack","Description":"12 bottles of Logger Light.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
-  {"ID":"ITEM_JAKEYS_LAGER_CASE","Name":"Jakey's Lager 12 Pack","Description":"12 bottles of Jakey's Lager.","Weight":6.264,"Capacity":4.260,"Price":36,"Stackable":true},
+  {
+    "ID": "ITEM_PISSWASSER_CASE",
+    "Name": "Pi�wasser 12 Pack",
+    "Description": "12 bottles of Pi�wasser.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_AM_BEER_CASE",
+    "Name": "AM Beer 12 Pack",
+    "Description": "12 bottles of AM Beer.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DUSCHE_GOLD_CASE",
+    "Name": "Dusche Gold 12 Pack",
+    "Description": "12 bottles of Dusche Gold.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_LOGGER_CASE",
+    "Name": "Logger Beer 12 Pack",
+    "Description": "12 bottles of Logger.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_PATRIOT_CASE",
+    "Name": "Patriot Beer 12 Pack",
+    "Description": "12 bottles of Patriot.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_CERVEZA_CASE",
+    "Name": "Cerveza Barracho 12 Pack",
+    "Description": "12 bottles of Cerveza Barracho.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_BLARNEYS_STOUT_CASE",
+    "Name": "Blarneys Stout 12 Pack",
+    "Description": "12 bottles of Blarneys Stout.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_LOGGER_LIGHT_CASE",
+    "Name": "Logger Light Beer 12 Pack",
+    "Description": "12 bottles of Logger Light.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_JAKEYS_LAGER_CASE",
+    "Name": "Jakey's Lager 12 Pack",
+    "Description": "12 bottles of Jakey's Lager.",
+    "Weight": 6.264,
+    "Capacity": 4.260,
+    "Price": 36,
+    "Stackable": true
+  },
 
   //Smoking (Tabacco)
   {
@@ -1173,85 +1317,85 @@
     "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_GRENADE",
-	  "Name": "Grenade",
-	  "Description": "Grenade",
-	  "Weight": 0.3,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_GRENADE",
+    "Name": "Grenade",
+    "Description": "Grenade",
+    "Weight": 0.3,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_BZGAS",
-	  "Name": "Gas Grenade",
-	  "Description": "Gas Grenade",
-	  "Weight": 0.3,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_BZGAS",
+    "Name": "Gas Grenade",
+    "Description": "Gas Grenade",
+    "Weight": 0.3,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_MOLOTOV",
-	  "Name": "Molotov Cocktail",
-	  "Description": "A thing of beauty",
-	  "Weight": 0.6,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_MOLOTOV",
+    "Name": "Molotov Cocktail",
+    "Description": "A thing of beauty",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_PROXMINE",
-	  "Name": "Proximity Mine",
-	  "Description": "Goes boom",
-	  "Weight": 0.6,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_PROXMINE",
+    "Name": "Proximity Mine",
+    "Description": "Goes boom",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_BASEBALL",
-	  "Name": "Baseball",
-	  "Description": "Goes with a bat?",
-	  "Weight": 0.2,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_BASEBALL",
+    "Name": "Baseball",
+    "Description": "Goes with a bat?",
+    "Weight": 0.2,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_SMOKEGRENADE",
-	  "Name": "Smoke Grenade",
-	  "Description": "Reduces visibility",
-	  "Weight": 0.2,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_SMOKEGRENADE",
+    "Name": "Smoke Grenade",
+    "Description": "Reduces visibility",
+    "Weight": 0.2,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_KNIFE",
-	  "Name": "Knife",
-	  "Description": "It cuts",
-	  "Weight": 0.2,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_KNIFE",
+    "Name": "Knife",
+    "Description": "It cuts",
+    "Weight": 0.2,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_MACHETE",
-	  "Name": "Machete",
-	  "Description": "A big thing that cuts",
-	  "Weight": 0.2,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_MACHETE",
+    "Name": "Machete",
+    "Description": "A big thing that cuts",
+    "Weight": 0.2,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_WEAPON_SWITCHBLADE",
-	  "Name": "Switchblade",
-	  "Description": "A small thing that cuts",
-	  "Weight": 0.2,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_WEAPON_SWITCHBLADE",
+    "Name": "Switchblade",
+    "Description": "A small thing that cuts",
+    "Weight": 0.2,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
 
   // Police Duty Weapons
@@ -1292,22 +1436,22 @@
     "Stackable": false
   },
   {
-	  "ID": "ITEM_POLICE_WEAPON_SHOTGUN",
-	  "Name": "Shotgun",
-	  "Description": "A Police Issued Shotgun",
-	  "Weight": 0.6,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_POLICE_WEAPON_SHOTGUN",
+    "Name": "Shotgun",
+    "Description": "A Police Issued Shotgun",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_POLICE_WEAPON_AR",
-	  "Name": "Assault Rife",
-	  "Description": "A Police Issued AR",
-	  "Weight": 0.6,
-	  "Capacity": 0.1,
-	  "Price": 1,
-	  "Stackable": false
+    "ID": "ITEM_POLICE_WEAPON_AR",
+    "Name": "Assault Rife",
+    "Description": "A Police Issued AR",
+    "Weight": 0.6,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": false
   },
 
   // Fire Department Weapons & Items
@@ -1347,7 +1491,6 @@
     "Price": 1,
     "Stackable": false
   },
-
 
   //Resources (Natural)
   {
@@ -1427,7 +1570,7 @@
     "Stackable": false
   },
 
-  // Clothes 
+  // Clothes
   {
     "ID": "ITEM_CLOTHES",
     "Name": "Clothes Item",
@@ -1597,49 +1740,49 @@
     "Stackable": true
   },
   {
-	  "ID": "ITEM_MAKEUP",
-	  "Name": "Mary Poppins Makeup Bag",
-	  "Description": "A bag used to hold your makeup.",
-	  "Weight": 0.1,
-	  "Capacity": 0.1,
-	  "Price": 25,
-	  "Stackable": false
+    "ID": "ITEM_MAKEUP",
+    "Name": "Mary Poppins Makeup Bag",
+    "Description": "A bag used to hold your makeup.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_DEADFISH",
-	  "Name": "Dead Fish",
-	  "Description": "It smells.",
-	  "Weight": 0.1,
-	  "Capacity": 0.1,
-	  "Price": 25,
-	  "Stackable": false
+    "ID": "ITEM_DEADFISH",
+    "Name": "Dead Fish",
+    "Description": "It smells.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_USED_DIAPER",
-	  "Name": "Used Diaper",
-	  "Description": "It smells.",
-	  "Weight": 0.1,
-	  "Capacity": 0.1,
-	  "Price": 25,
-	  "Stackable": false
+    "ID": "ITEM_USED_DIAPER",
+    "Name": "Used Diaper",
+    "Description": "It smells.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_SOILED_UNDERWEAR",
-	  "Name": "Soiled Underwear",
-	  "Description": "Moretti's Underwear",
-	  "Weight": 0.1,
-	  "Capacity": 0.1,
-	  "Price": 25,
-	  "Stackable": false
+    "ID": "ITEM_SOILED_UNDERWEAR",
+    "Name": "Soiled Underwear",
+    "Description": "Moretti's Underwear",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
   },
   {
-	  "ID": "ITEM_ROTTING_CHEESE",
-	  "Name": "Rotting Cheese",
-	  "Description": "It smells.",
-	  "Weight": 0.1,
-	  "Capacity": 0.1,
-	  "Price": 25,
-	  "Stackable": false
+    "ID": "ITEM_ROTTING_CHEESE",
+    "Name": "Rotting Cheese",
+    "Description": "It smells.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
   },
   {
     "ID": "ITEM_BEEFY_BURGER",
@@ -1667,6 +1810,24 @@
     "Capacity": 0.1,
     "Price": 25,
     "Stackable": false
+  },
+  {
+    "ID": "ITEM_VEHICLE_PLATE",
+    "Name": "Vehicle Plate",
+    "Description": "A vehicle's number plate.",
+    "Weight": 0.5,
+    "Capacity": 0.1,
+    "Price": 25,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_SCREWDRIVER",
+    "Name": "Screwdriver",
+    "Description": "Useful for removing things.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 15,
+    "Stackable": false
   }
-  
+
 ]
