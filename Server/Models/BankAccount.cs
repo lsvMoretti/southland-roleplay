@@ -65,6 +65,16 @@ namespace Server.Models
         public bool Disabled { get; set; }
 
         /// <summary>
+        /// 3 failed pin attempts before blocking card
+        /// </summary>
+        public int PinAttempts { get; set; }
+
+        /// <summary>
+        /// Unable to withdraw from ATM if true
+        /// </summary>
+        public bool WithdrawalBlocked { get; set; }
+
+        /// <summary>
         /// Adds a BankAccount to the Database
         /// </summary>
         /// <param name="account"></param>
@@ -200,6 +210,8 @@ namespace Server.Models
 
             databaseAccount.CardNumber = cardNumber;
             databaseAccount.Pin = newPin;
+            databaseAccount.PinAttempts = 0;
+            databaseAccount.WithdrawalBlocked = false;
 
             context.SaveChanges();
 

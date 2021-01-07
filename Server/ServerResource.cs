@@ -193,6 +193,8 @@ namespace Server
 
                 Alt.OnClient<IPlayer, string>("SetBankAccountActive", BankHandler.SetBankAccountAsActive);
 
+                Alt.OnClient<IPlayer, string>("ATMSystem:IncorrectPin", AtmHandler.OnAtmPinIncorrect);
+
                 #endregion Atm System
 
                 #region Hud System

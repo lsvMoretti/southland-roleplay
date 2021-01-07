@@ -10,7 +10,7 @@ var atmObject = undefined;
 
 var atmLoaded = false;
 
-var atmView:alt.WebView = undefined;
+var atmView: alt.WebView = undefined;
 
 alt.onServer("atAtm", atAtm);
 
@@ -56,7 +56,7 @@ function loadAtmView() {
     native.taskStartScenarioInPlace(alt.Player.local.scriptID, "PROP_HUMAN_ATM", 0, true);
 }
 
-function AtmWithdrawal(balance:any) {
+function AtmWithdrawal(balance: any) {
     if (atmView === undefined) return;
 
     var selectedAccount = JSON.parse(selectedBankAccountJson);
@@ -66,8 +66,7 @@ function AtmWithdrawal(balance:any) {
         return;
     }
 
-    if(balance < 0){
-        
+    if (balance < 0) {
         atmView.emit("withdraw:errorMessage", "You can't go negative fool!");
         return;
     }
@@ -119,12 +118,12 @@ function NoBankCards() {
 
 alt.onServer('atm:loadCardData', LoadCardData);
 
-var playerCards:any = undefined;
-var cardAccounts:any = undefined;
-var selectedCard:any = undefined;
-var selectedBankAccountJson:string = undefined;
+var playerCards: any = undefined;
+var cardAccounts: any = undefined;
+var selectedCard: any = undefined;
+var selectedBankAccountJson: string = undefined;
 
-function LoadCardData(cards:any, bankAccounts:any) {
+function LoadCardData(cards: any, bankAccounts: any) {
     if (atmView === undefined) return;
 
     alt.log(cards);
@@ -135,13 +134,13 @@ function LoadCardData(cards:any, bankAccounts:any) {
     atmView.emit('SendCardData', cards);
 }
 
-var selectedCardJson:string = undefined;
+var selectedCardJson: string = undefined;
 
-function SelectedBankCard(cardJson:string) {
+function SelectedBankCard(cardJson: string) {
     selectedCardJson = cardJson;
 }
 
-function InputPin(pin:any) {
+function InputPin(pin: any) {
     var selectedBankCard = JSON.parse(selectedCardJson);
 
     var accNo = selectedBankCard.ItemValue;
@@ -175,19 +174,22 @@ function InputPin(pin:any) {
 
         alt.setTimeout(() => {
             atmView.emit('LoadWithdrawScreen');
-        }, 250);
+        },
+            250);
+    } else {
+        alt.emitServer('ATMSystem:IncorrectPin', SelectedBankAccount.AccountNumber.toString());
     }
 }
 
-var paymentReturnEvent:any = undefined;
-var paymentCards:any = undefined;
-var paymentBankAccounts:any = undefined;
+var paymentReturnEvent: any = undefined;
+var paymentCards: any = undefined;
+var paymentBankAccounts: any = undefined;
 
-var paymentView:alt.WebView = undefined;
+var paymentView: alt.WebView = undefined;
 
 alt.onServer('showPaymentScreen', showPaymentScreen);
 
-function showPaymentScreen(cards:any, bankAccount:any, returnEvent:any) {
+function showPaymentScreen(cards: any, bankAccount: any, returnEvent: any) {
     paymentReturnEvent = returnEvent;
     paymentCards = cards;
     paymentBankAccounts = bankAccount;
@@ -224,11 +226,11 @@ function closePaymentView() {
     alt.emitServer(paymentReturnEvent, 'close');
 }
 
-function selectedPaymentBankCard(selectedCard:any) {
+function selectedPaymentBankCard(selectedCard: any) {
     selectedCardJson = selectedCard;
 }
 
-function paymentPinInput(pin:any) {
+function paymentPinInput(pin: any) {
     alt.log(pin);
     var selectedBankCard = JSON.parse(selectedCardJson);
 

@@ -34,6 +34,7 @@ namespace Server.Bank
 
             foreach (BankAccount cardAccount in cardAccounts)
             {
+                if (cardAccount.WithdrawalBlocked) continue;
                 if (!cardAccount.Disabled)
                 {
                     allowedAccounts.Add(cardAccount);
@@ -91,19 +92,50 @@ namespace Server.Bank
 
             Context context = new Context();
 
-            BankAccount bankAccount = context.BankAccount.FirstOrDefault(i => i.AccountNumber == accountNumber);
+            BankAccount? bankAccount = context.BankAccount.FirstOrDefault(i => i.AccountNumber == accountNumber);
 
             if (bankAccount == null)
             {
                 player.SendErrorNotification("An error occurred fetching the bank account.");
-                
+
+                return;
+            }
+
+            List<BankTransaction> previousTransactions =
+                JsonConvert.DeserializeObject<List<BankTransaction>>(bankAccount.TransactionHistoryJson);
+
+            int recentCount = 0;
+
+            DateTime now = DateTime.Now;
+
+            DateTime lastDay = now.AddDays(-1);
+
+            foreach (BankTransaction previousTransaction in previousTransactions)
+            {
+                if (previousTransaction.TransactionType != BankTransactionType.Atm) continue;
+
+                int result = DateTime.Compare(previousTransaction.TransactionTime, lastDay);
+
+                if (result > 0)
+                {
+                    // Withdrawal has been within
+                    recentCount += 1;
+                }
+            }
+
+            Console.WriteLine($"Now: {now} - lastDay: {lastDay} - recentCount: {recentCount}");
+
+            if (recentCount >= 3)
+            {
+                // 3 transactions in last 24 hours
+                player.SendErrorNotification("This transaction couldn't be completed.");
                 return;
             }
 
             if (bankAccount.Balance < requestedAmount)
             {
                 player.SendErrorNotification("You don't have that much in your account!");
-                
+
                 return;
             }
 
@@ -112,7 +144,7 @@ namespace Server.Bank
             if (playerCharacter == null)
             {
                 player.SendPermissionError();
-                
+
                 return;
             }
 
@@ -142,9 +174,36 @@ namespace Server.Bank
 
             context.SaveChanges();
 
-            
-
             player.SendInfoNotification($"You have have withdrawn {requestedAmount:C0} from the bank.");
+        }
+
+        public static void OnAtmPinIncorrect(IPlayer player, string accountNumber)
+        {
+            bool tryParse = long.TryParse(accountNumber, out long accNumber);
+
+            if (!tryParse)
+            {
+                player.SendErrorNotification("An error occurred.");
+                return;
+            }
+
+            using Context context = new Context();
+
+            BankAccount? bankAccount = context.BankAccount.FirstOrDefault(x => x.AccountNumber == accNumber);
+
+            if (bankAccount is null)
+            {
+                player.SendErrorNotification("An error occurred.");
+                return;
+            }
+
+            bankAccount.PinAttempts += 1;
+            if (bankAccount.PinAttempts >= 3)
+            {
+                bankAccount.WithdrawalBlocked = true;
+            }
+
+            return;
         }
     }
 }
