@@ -674,6 +674,16 @@ namespace Server.Admin
                 return;
             }
 
+            bool tryParse = int.TryParse(dealershipId, out int dealership);
+
+            if (!tryParse)
+            {
+                player.SendErrorNotification("Dealership ID must be a number!");
+                return;
+            }
+
+            player.SetData("DealershipCamId", dealership);
+
             player.Emit("FetchDealershipCamRot", dealershipId);
         }
 
@@ -681,9 +691,11 @@ namespace Server.Admin
         {
             Console.WriteLine($"Dealer ID: {dealershipId}");
 
+            player.GetData("DealershipCamId", out int dealerId);
+
             using Context context = new Context();
 
-            Dealership? selectedDealership = context.Dealership.FirstOrDefault(x => x.Id == dealershipId);
+            Dealership? selectedDealership = context.Dealership.FirstOrDefault(x => x.Id == dealerId);
 
             if (selectedDealership == null)
             {
@@ -856,7 +868,13 @@ namespace Server.Admin
                 return;
             }
 
-            Position playerPos = player.Position;
+            if (!player.IsInVehicle)
+            {
+                player.SendErrorNotification("You must be in a vehicle");
+                return;
+            }
+
+            Position playerPos = player.Vehicle.Position;
 
             selectedDealership.VehPosX = playerPos.X;
             selectedDealership.VehPosY = playerPos.Y;
