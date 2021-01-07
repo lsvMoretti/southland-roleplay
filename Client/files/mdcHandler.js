@@ -24,8 +24,10 @@ function showMDC(name, rank, unit) {
     officerRank = rank;
     alt.log('Showing MDT for ' + name + rank);
     if (mdcWindow !== undefined) {
-        mdcWindow.destroy();
-        mdcWindow = undefined;
+        alt.setTimeout(() => {
+            mdcWindow.destroy();
+            mdcWindow = undefined;
+        }, 1000);
     }
     mdcWindow = new alt.WebView("http://resource/files/mdc/home.html", false);
     mdcWindow.on('closeMDC', closeMdc);
@@ -149,8 +151,10 @@ function mdcHomePageLoaded() {
 function closeMdc() {
     if (mdcWindow === undefined)
         return;
-    mdcWindow.destroy();
-    mdcWindow = undefined;
+    alt.setTimeout(() => {
+        mdcWindow.destroy();
+        mdcWindow = undefined;
+    }, 1000);
     alt.showCursor(false);
     alt.emitServer('mdcWindowClose');
 }

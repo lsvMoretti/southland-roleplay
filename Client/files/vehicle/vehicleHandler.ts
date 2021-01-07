@@ -99,8 +99,11 @@ function CloseCurrentPage() {
     if (currentView === undefined) return;
 
     alt.showCursor(false);
-    currentView.destroy();
-    currentView = undefined;
+    alt.setTimeout(() => {
+        currentView.destroy();
+        currentView = undefined;
+    },
+        1000);
 }
 
 var hasVoucher = false;
@@ -170,8 +173,11 @@ function ViewDealershipLoaded() {
 }
 
 function CloseDealershipView() {
-    currentView.destroy();
-    currentView = undefined;
+    alt.setTimeout(() => {
+        currentView.destroy();
+        currentView = undefined;
+    },
+        1000);
     alt.emitServer('dealership:pageclosed');
 }
 

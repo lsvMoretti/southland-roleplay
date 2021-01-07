@@ -1,15 +1,15 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
-var mdcWindow:any = undefined;
+var mdcWindow: any = undefined;
 
 var officerName = "";
 var officerRank = "";
 var officerUnit = "";
 var dutyStatus = false;
 
-var personResults:any = undefined;
-var vehicleResults:any = undefined;
+var personResults: any = undefined;
+var vehicleResults: any = undefined;
 
 alt.onServer('showMDC', showMDC);
 alt.onServer('closeMDC', closeMdc);
@@ -23,7 +23,7 @@ alt.onServer('MdcPersonProfileInformation', MdcPersonProfileInformation);
 alt.onServer('MdcVehicleSearchNoResult', mdcVehicleSearchNoResult);
 alt.onServer('mdc:vehicleSearchResult', vehicleSearchResult);
 
-function showMDC(name:string, rank:string, unit:string) {
+function showMDC(name: string, rank: string, unit: string) {
     alt.showCursor(true);
 
     if (unit !== undefined) {
@@ -37,8 +37,11 @@ function showMDC(name:string, rank:string, unit:string) {
 
     // Shows the MDC
     if (mdcWindow !== undefined) {
-        mdcWindow.destroy();
-        mdcWindow = undefined;
+        alt.setTimeout(() => {
+            mdcWindow.destroy();
+            mdcWindow = undefined;
+        },
+            1000);
     }
 
     mdcWindow = new alt.WebView("http://resource/files/mdc/home.html", false);
@@ -94,18 +97,18 @@ alt.everyTick(() => {
 });
 
 //#region MDC Persons Search Page
-var profileJson:string = null;
+var profileJson: string = null;
 
 function fetchProfileInformation() {
     mdcWindow.emit('loadPersonProfileInformation', profileJson);
 }
 
-function MdcPersonProfileInformation(json:string) {
+function MdcPersonProfileInformation(json: string) {
     profileJson = json;
     mdcWindow.emit('loadPersonProfilePage');
 }
 
-function MdcSearchResultProfileSelect(index:number) {
+function MdcSearchResultProfileSelect(index: number) {
     var selectedResult = personResults[index];
 
     if (selectedResult === null) {
@@ -118,13 +121,13 @@ function MdcSearchResultProfileSelect(index:number) {
     alt.emitServer('MdcSearchResultProfileSelected', index.toString());
 }
 
-function personSearchResult(json:string) {
+function personSearchResult(json: string) {
     personResults = JSON.parse(json);
 
     mdcWindow.emit('personSearchResult', json);
 }
 
-function mdcPersonSearch(name:string) {
+function mdcPersonSearch(name: string) {
     alt.emitServer('mdcPersonSearch', name.toString());
 }
 
@@ -132,7 +135,7 @@ function mdcPersonSearchNoResult() {
     mdcWindow.emit('mdcPersonSearchNoResult');
 }
 
-function MdcPersonSearchPropertySelected(propertyIndex:number) {
+function MdcPersonSearchPropertySelected(propertyIndex: number) {
     var profile = JSON.parse(profileJson);
 
     var selectedProperty = profile.OwnedProperties[propertyIndex];
@@ -146,7 +149,7 @@ function MdcPersonSearchPropertySelected(propertyIndex:number) {
 
 //#region MDC Vehicle Search
 
-function mdcVehicleSearch(plate:string) {
+function mdcVehicleSearch(plate: string) {
     alt.emitServer('mdc:vehicleSearch', plate.toString());
 }
 
@@ -154,15 +157,15 @@ function mdcVehicleSearchNoResult() {
     mdcWindow.emit('mdcVehicleSearchNoResult');
 }
 
-function vehicleSearchResult(json:string) {
+function vehicleSearchResult(json: string) {
     vehicleResults = JSON.parse(json);
 
     mdcWindow.emit('vehicleSearchResult', json);
 }
 
-var selectedVehicleResult:any = undefined;
+var selectedVehicleResult: any = undefined;
 
-function vehicleSearchResultSelect(index:number) {
+function vehicleSearchResultSelect(index: number) {
     selectedVehicleResult = vehicleResults[index];
 
     if (selectedVehicleResult === null) {
@@ -187,11 +190,11 @@ function fetch911Calls() {
 }
 
 // Send 911 Call list to page
-function send911Calls(json:string) {
+function send911Calls(json: string) {
     mdcWindow.emit("loadCalls", json);
 }
 
-function respond911(index:number){
+function respond911(index: number) {
     alt.emitServer('Responding911', index);
 }
 
@@ -211,7 +214,7 @@ function respondLast911() {
     alt.emitServer('respondLast911');
 }
 
-function setPatrolUnit(unit:string) {
+function setPatrolUnit(unit: string) {
     if (mdcWindow === undefined) return;
     //Set variable
     officerUnit = unit;
@@ -240,8 +243,10 @@ function mdcHomePageLoaded() {
 
 function closeMdc() {
     if (mdcWindow === undefined) return;
-    mdcWindow.destroy();
-    mdcWindow = undefined;
+    alt.setTimeout(() => {
+        mdcWindow.destroy();
+        mdcWindow = undefined;
+    }, 1000);
     alt.showCursor(false);
     alt.emitServer('mdcWindowClose');
 }

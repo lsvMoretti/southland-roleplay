@@ -78,8 +78,10 @@ function CloseCurrentPage() {
     if (currentView === undefined)
         return;
     alt.showCursor(false);
-    currentView.destroy();
-    currentView = undefined;
+    alt.setTimeout(() => {
+        currentView.destroy();
+        currentView = undefined;
+    }, 1000);
 }
 var hasVoucher = false;
 function ShowDealershipCars(json, voucher) {
@@ -133,8 +135,10 @@ function ViewDealershipLoaded() {
     currentView.emit('loadDealershipVehicleInfo', dealershipJson);
 }
 function CloseDealershipView() {
-    currentView.destroy();
-    currentView = undefined;
+    alt.setTimeout(() => {
+        currentView.destroy();
+        currentView = undefined;
+    }, 1000);
     alt.emitServer('dealership:pageclosed');
 }
 alt.onServer('setWindowState', (vehicle, window, state) => {

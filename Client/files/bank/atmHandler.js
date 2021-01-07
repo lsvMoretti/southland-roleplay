@@ -68,8 +68,10 @@ function AtmPageLoaded() {
 function CloseAtmPage() {
     if (atmView !== undefined) {
         alt.showCursor(false);
-        atmView.destroy();
-        atmView = undefined;
+        alt.setTimeout(() => {
+            atmView.destroy();
+            atmView = undefined;
+        }, 1100);
         alt.emitServer("atm:pageClosed");
         native.clearPedTasksImmediately(alt.Player.local.scriptID);
         alt.setInterval(() => {
@@ -162,8 +164,10 @@ function paymentHomeLoaded() {
 function closePaymentView() {
     alt.log('PaymentClosed');
     alt.showCursor(false);
-    paymentView.destroy();
-    paymentView = undefined;
+    alt.setTimeout(() => {
+        paymentView.destroy();
+        paymentView = undefined;
+    }, 1100);
     alt.emitServer(paymentReturnEvent, 'close');
 }
 function selectedPaymentBankCard(selectedCard) {

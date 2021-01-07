@@ -6,7 +6,7 @@ var hudWebView: alt.WebView = undefined;
 var localPlayer: any = undefined;
 
 alt.everyTick(() => {
-    if(native.isHudComponentActive(14)){
+    if (native.isHudComponentActive(14)) {
         // Rectile
         native.hideHudComponentThisFrame(14);
     }
@@ -111,6 +111,8 @@ function RecieveMoneyUpdate(hudJson: any) {
 function HideHud() {
     if (hudWebView === undefined) return;
 
-    hudWebView.destroy();
-    hudWebView = undefined;
+    alt.setTimeout(() => {
+        hudWebView.destroy();
+        hudWebView = undefined;
+    }, 1000);
 }

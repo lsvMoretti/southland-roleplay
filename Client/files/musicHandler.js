@@ -31,8 +31,10 @@ function SelectStopMusicStream() {
 }
 function CloseAudioControlPanel() {
     if (audioControlView !== undefined) {
-        audioControlView.destroy();
-        audioControlView = undefined;
+        alt.setTimeout(() => {
+            audioControlView.destroy();
+            audioControlView = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }
@@ -55,6 +57,8 @@ function radioPageLoaded() {
 }
 function stopMusic() {
     musicView.emit('StopPlayingMusic');
-    musicView.destroy();
-    musicView = undefined;
+    alt.setTimeout(() => {
+        musicView.destroy();
+        musicView = undefined;
+    }, 1000);
 }

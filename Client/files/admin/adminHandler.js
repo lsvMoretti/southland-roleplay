@@ -72,7 +72,9 @@ function closeDealershipVehiclePage() {
     alt.log('function Called');
     if (adminDealershipView !== undefined) {
         alt.log('not defined');
-        adminDealershipView.destroy();
+        alt.setTimeout(() => {
+            adminDealershipView.destroy();
+        }, 1100);
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
         alt.showCursor(false);
         adminDealershipView = undefined;
@@ -98,7 +100,9 @@ alt.onServer('admin:faction:factionMembers', returnFactionMembers);
 alt.onServer('admin:faction:showCreatePage', showFactionCreate);
 function returnFactionMembers(json) {
     factionMembers = json;
-    factionView.destroy();
+    alt.setTimeout(() => {
+        factionView.destroy();
+    }, 1000);
     factionView = undefined;
     factionView = new alt.WebView('http://resource/files/admin/factionMembers.html', false);
     factionView.focus();
@@ -179,7 +183,9 @@ function factionViewLoaded() {
 function closeFactionView() {
     if (factionView === undefined)
         return;
-    factionView.destroy();
+    alt.setTimeout(() => {
+        factionView.destroy();
+    }, 1000);
     factionView = undefined;
     alt.showCursor(false);
     alt.emitServer('factionViewClosed');

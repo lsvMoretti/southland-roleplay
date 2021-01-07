@@ -762,8 +762,10 @@ function ApplyCreatorOutfit() {
 
 function closeCharacterCreator() {
     if (creatorView !== undefined) {
-        creatorView.destroy();
-        creatorView = undefined;
+        alt.setTimeout(() => {
+            creatorView.destroy();
+            creatorView = undefined;
+        }, 1000);
     }
 }
 

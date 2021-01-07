@@ -76,6 +76,8 @@ function RecieveMoneyUpdate(hudJson) {
 function HideHud() {
     if (hudWebView === undefined)
         return;
-    hudWebView.destroy();
-    hudWebView = undefined;
+    alt.setTimeout(() => {
+        hudWebView.destroy();
+        hudWebView = undefined;
+    }, 1000);
 }

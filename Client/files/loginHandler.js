@@ -17,10 +17,12 @@ function showLogin() {
     disableMenu = true;
 }
 function closeLogin() {
-    loginView.emit("hideLoginScreen");
-    loginView.destroy();
-    loginView = null;
-    disableMenu = false;
+    alt.setTimeout(() => {
+        loginView.emit("hideLoginScreen");
+        loginView.destroy();
+        loginView = null;
+        disableMenu = false;
+    }, 1000);
 }
 alt.everyTick(() => {
     if (disableMenu) {

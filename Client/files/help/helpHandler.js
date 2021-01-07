@@ -81,8 +81,10 @@ function closeHelpMenu() {
         return;
     commandJson = undefined;
     currentOption = undefined;
-    helpWindow.destroy();
-    helpWindow = undefined;
+    alt.setTimeout(() => {
+        helpWindow.destroy();
+        helpWindow = undefined;
+    }, 1000);
     alt.showCursor(false);
     alt.emitServer('helpMenu:CloseHelpMenu');
 }

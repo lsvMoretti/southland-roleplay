@@ -11,15 +11,19 @@ function showTwoFactorSetup(manualCode) {
         tfaWebView.emit('TFA:SendData', manualCode);
     });
     tfaWebView.on('TFA:ClosePage', () => {
-        tfaWebView.destroy();
-        tfaWebView = undefined;
+        alt.setTimeout(() => {
+            tfaWebView.destroy();
+            tfaWebView = undefined;
+        }, 1000);
         manualEntryCode = undefined;
         alt.showCursor(false);
         alt.emitServer('TFA:ClosePage');
     });
     tfaWebView.on('TFA:Finish', () => {
-        tfaWebView.destroy();
-        tfaWebView = undefined;
+        alt.setTimeout(() => {
+            tfaWebView.destroy();
+            tfaWebView = undefined;
+        }, 1000);
         manualEntryCode = undefined;
         alt.showCursor(false);
         alt.emitServer('TFA:Complete');
@@ -45,8 +49,10 @@ function onInvalidCode() {
 }
 alt.onServer('2FA:CloseInput', onCloseInput);
 function onCloseInput() {
-    tfaWebView.destroy();
-    tfaWebView = undefined;
+    alt.setTimeout(() => {
+        tfaWebView.destroy();
+        tfaWebView = undefined;
+    }, 1000);
     alt.showCursor(false);
     alt.emitServer('TFA:ClosePage');
 }

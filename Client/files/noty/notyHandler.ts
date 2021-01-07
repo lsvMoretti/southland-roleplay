@@ -9,8 +9,10 @@ alt.onServer('connectionComplete', () => {
 
 function loadNotyPage() {
     if (notyPage !== undefined) {
-        notyPage.destroy();
-        notyPage = undefined;
+        alt.setTimeout(() => {
+            notyPage.destroy();
+            notyPage = undefined;
+        }, 1000);
     }
 
     notyPage = new alt.WebView("http://resource/files/noty/noty.html", false);

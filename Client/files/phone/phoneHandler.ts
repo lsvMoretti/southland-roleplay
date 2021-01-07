@@ -5,7 +5,7 @@ import * as native from 'natives';
 
 alt.onServer('phone:showCallNumber', showCallNumber);
 
-var callNumberView:alt.WebView = undefined;
+var callNumberView: alt.WebView = undefined;
 
 function showCallNumber() {
     if (callNumberView !== undefined) {
@@ -20,22 +20,24 @@ function showCallNumber() {
     callNumberView.on('phone:CallNumber', handleCallNumber);
 }
 
-function handleCallNumber(number:any) {
+function handleCallNumber(number: any) {
     alt.emitServer('phone:handleCallNumber', number);
     closeCallNumber();
 }
 
 function closeCallNumber() {
     if (callNumberView !== undefined) {
-        callNumberView.destroy();
-        callNumberView = undefined;
+        alt.setTimeout(() => {
+            callNumberView.destroy();
+            callNumberView = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }
 
 alt.onServer('phone:startAudioPhoneCall', startAudioPhoneCall);
 
-function startAudioPhoneCall(dialTone:any) {
+function startAudioPhoneCall(dialTone: any) {
     //dialTone 0 = player dialing
     //dialTone 1 = player receiving
 
@@ -53,7 +55,7 @@ function stopPhoneRinging() {
     native.stopPedRingtone(alt.Player.local.scriptID);
 }
 
-var smsPage:alt.WebView = undefined;
+var smsPage: alt.WebView = undefined;
 
 alt.onServer('phone:showSMSPage', showSMSPage);
 alt.onServer('phone:showSMSContact', showSMSContact);
@@ -71,7 +73,7 @@ function showSMSContact() {
     smsPage.on('phone:SmsContact', handleSmsContact);
 }
 
-function handleSmsContact(message:any) {
+function handleSmsContact(message: any) {
     alt.emitServer('phone:smsExistingContact', message);
     closeSmsPage();
 }
@@ -91,18 +93,21 @@ function showSMSPage() {
 
 function closeSmsPage() {
     if (smsPage !== undefined) {
-        smsPage.destroy();
-        smsPage = undefined;
+        alt.setTimeout(() => {
+            smsPage.destroy();
+            smsPage = undefined;
+        },
+            1000);
         alt.showCursor(false);
     }
 }
 
-function handleSmsNumber(number:any, message:any) {
+function handleSmsNumber(number: any, message: any) {
     alt.emitServer('phone:smsNewNumber', number, message);
     closeSmsPage();
 }
 
-var addContactPage:alt.WebView = undefined;
+var addContactPage: alt.WebView = undefined;
 
 alt.onServer('phone:showAddContactPage', showAddContactPage);
 
@@ -121,13 +126,15 @@ function showAddContactPage() {
 
 function closeAddContactPage() {
     if (addContactPage !== undefined) {
-        addContactPage.destroy();
-        addContactPage = undefined;
+        alt.setTimeout(() => {
+            addContactPage.destroy();
+            addContactPage = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }
 
-function handleAddContact(name:any, number:any) {
+function handleAddContact(name: any, number: any) {
     alt.emitServer('phone:handleAddContact', name, number);
     closeAddContactPage();
 }

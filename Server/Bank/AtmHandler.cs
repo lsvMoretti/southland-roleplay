@@ -203,6 +203,8 @@ namespace Server.Bank
                 bankAccount.WithdrawalBlocked = true;
             }
 
+            context.SaveChanges();
+
             return;
         }
     }

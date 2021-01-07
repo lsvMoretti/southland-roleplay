@@ -12,7 +12,7 @@ alt.onServer('helpMenu:ShowHelpMenu', showHelpMenu);
 
 alt.onServer('helpMenu:ReturnAnim', returnAnimList);
 
-function showHelpMenu(showAdmin: boolean, showLaw: boolean, showHelper:boolean) {
+function showHelpMenu(showAdmin: boolean, showLaw: boolean, showHelper: boolean) {
     if (helpWindow !== undefined) {
         closeHelpMenu();
     }
@@ -94,8 +94,11 @@ function closeHelpMenu() {
 
     commandJson = undefined;
     currentOption = undefined;
-    helpWindow.destroy();
-    helpWindow = undefined;
+    alt.setTimeout(() => {
+        helpWindow.destroy();
+        helpWindow = undefined;
+    },
+        1000);
     alt.showCursor(false);
     alt.emitServer('helpMenu:CloseHelpMenu');
 }
