@@ -6,6 +6,7 @@ import * as sirenHandler from 'files/vehicle/sirenHandler';
 import * as cruiseControl from 'files/vehicle/cruiseControl';
 
 import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
+import * as Animation from "files/animation";
 
 var IsSpawned = false;
 var IsChatOpen = false;
@@ -18,6 +19,8 @@ var onlinePlayerWindow: any;
 var cursorState = false;
 
 var nativeUiMenuOpen = false;
+
+let fingerPointKeyDown: boolean = false;
 
 export function SetNativeUiState(state: boolean) {
     nativeUiMenuOpen = state;
@@ -407,6 +410,13 @@ alt.on('EnteredVehicle', () => {
     crouchToggle = false;
 });
 
+function startFingerPointing() {
+    Animation.startAnimation('anim@mp_point', 'task_mp_pointing', -1, 1);
+}
+function stopFingerPointing() {
+    Animation.stopAnimation();
+}
+
 alt.setInterval(() => {
     if (!IsSpawned) return;
 
@@ -463,7 +473,6 @@ alt.setInterval(() => {
 
     // Left Ctrl - Crouch
     native.disableControlAction(0, 36, true);
-
     if (native.isDisabledControlJustReleased(0, 36)) {
         if (!native.hasClipSetLoaded('move_ped_crouched')) {
             native.requestClipSet('move_ped_crouched');
@@ -485,6 +494,19 @@ alt.setInterval(() => {
             alt.log('Crouching');
             native.setPedMovementClipset(scriptId, "move_ped_crouched", 1.0);
         }
+    }
+
+    if (native.isControlPressed(0, 29) &&
+        fingerPointKeyDown === false &&
+        native.isPedOnFoot(alt.Player.local.scriptID)) {
+        // Not in vehicle, not aiming & pressing B
+        fingerPointKeyDown = true;
+        startFingerPointing();
+    }
+
+    if (!native.isControlPressed(0, 29) && fingerPointKeyDown === true) {
+        fingerPointKeyDown = false;
+        stopFingerPointing();
     }
 }, 0);
 

@@ -206,9 +206,9 @@ namespace Server.Bank
         {
             if (player == null) return;
 
-            player.FreezeCam(false);
+            //player.FreezeCam(false);
 
-            player.FreezeInput(false);
+            //player.FreezeInput(false);
 
             bool accountNumberTry = long.TryParse(accountNumberString, out long accountNumber);
 
@@ -358,9 +358,9 @@ namespace Server.Bank
         {
             if (player == null) return;
 
-            player.FreezeCam(false);
+            //player.FreezeCam(false);
 
-            player.FreezeInput(false);
+            //player.FreezeInput(false);
 
             bool parsePlayerAccount = long.TryParse(playerAccountString, out long playerAccountNumber);
 
@@ -395,7 +395,7 @@ namespace Server.Bank
 
             using Context context = new Context();
 
-            BankAccount playerBankAccount =
+            BankAccount? playerBankAccount =
                 context.BankAccount.FirstOrDefault(i => i.AccountNumber == playerAccountNumber);
 
             if (playerBankAccount == null)
@@ -404,7 +404,7 @@ namespace Server.Bank
                 return;
             }
 
-            BankAccount targetBankAccount =
+            BankAccount? targetBankAccount =
                 context.BankAccount.FirstOrDefault(i => i.AccountNumber == targetAccountNumber);
 
             if (targetBankAccount == null)

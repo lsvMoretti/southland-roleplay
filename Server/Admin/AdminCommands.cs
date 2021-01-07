@@ -3239,7 +3239,7 @@ namespace Server.Admin
             player.SendStatsMessage($"Showing stats for {targetCharacter.Name}");
             player.SendStatsMessage($"Username: {targetPlayer.FetchAccount().Username}, Playtime: {targetCharacter.TotalHours}:{targetCharacter.TotalMinutes}");
             player.SendStatsMessage($"Account Id: {targetCharacter.OwnerId}, Character Id: {targetCharacter.Id}, Inventory Id: {targetCharacter.InventoryID}");
-            player.SendStatsMessage($"Cash: {targetCharacter.Money:C}, Dimension: {targetCharacter.Dimension}, Next Payday Earning: {targetCharacter.PaydayAmount:C}");
+            player.SendStatsMessage($"Cash: {targetCharacter.Money:C}, Dimension: {targetPlayer.Dimension}, Next Payday Earning: {targetCharacter.PaydayAmount:C}");
             player.SendStatsMessage($"Active Number: {targetCharacter.ActivePhoneNumber}, Payday Account: {targetCharacter.PaydayAccount}, Bank Accounts: {bankAccountCount}");
             if (activeFaction != null)
             {

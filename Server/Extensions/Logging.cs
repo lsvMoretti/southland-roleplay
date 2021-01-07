@@ -10,9 +10,9 @@ namespace Server.Extensions
 {
     public class Logging
     {
-        private static readonly string _characterDirectory = "C:/Logs/Characters/";
-        private static readonly string _adminDirectory = "C:/Logs/Admins/";
-        private static readonly string _bankDirectory = "C:/Logs/Banks/";
+        private static readonly string _characterDirectory = "D:/Logs/Characters/";
+        private static readonly string _adminDirectory = "D:/Logs/Admins/";
+        private static readonly string _bankDirectory = "D:/Logs/Banks/";
         private static bool _enableLogging = true;
 
         /// <summary>

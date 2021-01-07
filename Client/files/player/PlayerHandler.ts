@@ -55,14 +55,16 @@ export function GetHudState() {
 }
 
 alt.onServer('freezeCam', (state: boolean) => {
+    alt.log('Freeze Cam: ' + state);
     freezeCam = state;
 });
 
 alt.onServer('freezeInput', (state: boolean) => {
+    alt.log('Freeze Input: ' + state);
     freezeInput = state;
 })
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (hudEnabled === false) {
         //native.hideHudAndRadarThisFrame();
     }
@@ -72,7 +74,10 @@ alt.everyTick(() => {
     if (freezeCam) {
         native.disableAllControlActions(1);
     }
+},
+    0);
 
+alt.everyTick(() => {
     //native.setPedCanSwitchWeapon(alt.Player.local.scriptID, false);
 });
 

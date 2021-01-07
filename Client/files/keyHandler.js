@@ -4,6 +4,7 @@ import * as chatHandler from 'files/chat';
 import * as sirenHandler from 'files/vehicle/sirenHandler';
 import * as cruiseControl from 'files/vehicle/cruiseControl';
 import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
+import * as Animation from "files/animation";
 var IsSpawned = false;
 var IsChatOpen = false;
 var leftIndicator = false;
@@ -14,6 +15,7 @@ var leftCtrlDown = false;
 var onlinePlayerWindow;
 var cursorState = false;
 var nativeUiMenuOpen = false;
+let fingerPointKeyDown = false;
 export function SetNativeUiState(state) {
     nativeUiMenuOpen = state;
 }
@@ -311,6 +313,12 @@ var crouchToggle;
 alt.on('EnteredVehicle', () => {
     crouchToggle = false;
 });
+function startFingerPointing() {
+    Animation.startAnimation('anim@mp_point', 'task_mp_pointing', -1, 1);
+}
+function stopFingerPointing() {
+    Animation.stopAnimation();
+}
 alt.setInterval(() => {
     if (!IsSpawned)
         return;
@@ -369,6 +377,16 @@ alt.setInterval(() => {
             alt.log('Crouching');
             native.setPedMovementClipset(scriptId, "move_ped_crouched", 1.0);
         }
+    }
+    if (native.isControlPressed(0, 29) &&
+        fingerPointKeyDown === false &&
+        native.isPedOnFoot(alt.Player.local.scriptID)) {
+        fingerPointKeyDown = true;
+        startFingerPointing();
+    }
+    if (!native.isControlPressed(0, 29) && fingerPointKeyDown === true) {
+        fingerPointKeyDown = false;
+        stopFingerPointing();
     }
 }, 0);
 function enterVehicleAsDriver() {

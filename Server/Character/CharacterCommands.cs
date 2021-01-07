@@ -1223,7 +1223,7 @@ namespace Server.Character
             player.SendStatsMessage($"Showing stats for {playerCharacter.Name}");
             player.SendStatsMessage($"Username: {player.FetchAccount().Username}, Playtime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}");
             player.SendStatsMessage($"Account Id: {playerCharacter.OwnerId}, Character Id: {playerCharacter.Id}, Inventory Id: {playerCharacter.InventoryID}");
-            player.SendStatsMessage($"Cash: {playerCharacter.Money:C}, Dimension: {playerCharacter.Dimension}, Next Payday Earning: {playerCharacter.PaydayAmount:C}");
+            player.SendStatsMessage($"Cash: {playerCharacter.Money:C}, Dimension: {player.Dimension}, Next Payday Earning: {playerCharacter.PaydayAmount:C}");
             player.SendStatsMessage($"Active Number: {playerCharacter.ActivePhoneNumber}, Payday Account: {playerCharacter.PaydayAccount}, Bank Accounts: {bankAccountCount}");
             if (activeFaction != null)
             {

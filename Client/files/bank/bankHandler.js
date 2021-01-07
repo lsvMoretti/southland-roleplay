@@ -1,25 +1,40 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 var bankView = undefined;
-var BankJson = undefined;
-var currentBankAccount = undefined;
-alt.onServer('ShowBankMenu', ShowBankMenu);
-function ShowBankMenu(bankJson) {
-    BankJson = bankJson;
-    if (bankView !== undefined) {
-        CloseBankView();
+let BankJson = undefined;
+let currentBankAccount = undefined;
+alt.onServer('ShowBankMenu', showBankMenu);
+function closeBankView() {
+    try {
+        if (bankView != undefined) {
+            alt.setTimeout(() => {
+                bankView.destroy();
+                bankView = undefined;
+            }, 1100);
+        }
+        native.freezeEntityPosition(alt.Player.local.scriptID, false);
+        alt.showCursor(false);
+        alt.emitServer('bankViewClosed');
+        return;
     }
+    catch (e) {
+        alt.log(e);
+        return;
+    }
+}
+function showBankMenu(bankJson) {
+    BankJson = bankJson;
     bankView = new alt.WebView('http://resource/files/bank/bankHome.html', false);
     bankView.focus();
-    bankView.on('bankHomePageLoaded', BankHomePageLoaded);
-    bankView.on('ViewBankInfo', ViewBankInfo);
-    bankView.on('closeBankHomePage', CloseBankHomePage);
-    bankView.on('bankAccountPageLoaded', BankAccountPageLoaded);
-    bankView.on('requestTransactions', RequestTransactions);
-    bankView.on('BankTransactionState', SetBankTransactionState);
-    bankView.on('requestTransactionState', RequestTransactionState);
-    bankView.on('HandleBankTransaction', HandleBankTransaction);
-    bankView.on('HandleBankTransfer', HandleBankTransfer);
+    bankView.on('bankHomePageLoaded', bankHomePageLoaded);
+    bankView.on('ViewBankInfo', viewBankInfo);
+    bankView.on('closeBankHomePage', closeBankHomePage);
+    bankView.on('bankAccountPageLoaded', bankAccountPageLoaded);
+    bankView.on('requestTransactions', requestTransactions);
+    bankView.on('BankTransactionState', setBankTransactionState);
+    bankView.on('requestTransactionState', requestTransactionState);
+    bankView.on('HandleBankTransaction', handleBankTransaction);
+    bankView.on('HandleBankTransfer', handleBankTransfer);
     bankView.on('RequestNewBankCard', RequestNewBankCard);
     bankView.on('CloseBankAccount', CloseBankAccount);
     bankView.on('requestNewBankAccount', RequestNewBankAccount);
@@ -28,82 +43,66 @@ function ShowBankMenu(bankJson) {
     native.freezeEntityPosition(alt.Player.local.scriptID, true);
 }
 function setAsActive() {
-    var currentAccount = JSON.parse(currentBankAccount);
+    const currentAccount = JSON.parse(currentBankAccount);
     alt.emitServer('SetBankAccountActive', currentAccount.AccountNumber.toString());
-    CloseBankView();
+    closeBankView();
 }
 function RequestNewBankAccount(accountType) {
     alt.emitServer('RequestNewBankAccount', accountType.toString());
-    CloseBankView();
+    closeBankView();
 }
 function CloseBankAccount() {
-    var currentAccount = JSON.parse(currentBankAccount);
+    const currentAccount = JSON.parse(currentBankAccount);
     alt.emitServer('RequestBankAccountClosure', currentAccount.AccountNumber.toString());
-    CloseBankView();
+    closeBankView();
 }
 function RequestNewBankCard() {
-    var currentAccount = JSON.parse(currentBankAccount);
+    const currentAccount = JSON.parse(currentBankAccount);
     alt.emitServer('RequestNewBankCardPin', currentAccount.AccountNumber.toString());
-    CloseBankView();
+    closeBankView();
 }
-function HandleBankTransfer(targetAccountNumber, amount) {
+function handleBankTransfer(targetAccountNumber, amount) {
     const currentAccount = JSON.parse(currentBankAccount);
     alt.emitServer('BankTransfer', currentAccount.AccountNumber.toString(), targetAccountNumber.toString(), amount.toString());
-    CloseBankView();
+    closeBankView();
 }
-function HandleBankTransaction(state, amount) {
+function handleBankTransaction(state, amount) {
     alt.log('TransactionHandle Event');
     const currentAccount = JSON.parse(currentBankAccount);
     alt.log('Data:' + currentAccount);
     alt.emitServer('BankTransaction', currentAccount.AccountNumber.toString(), state.toString(), amount.toString());
     alt.log('emit Event: ' + currentAccount.AccountNumber.toString() + '-' + state.toString() + '-' + amount.toString());
-    CloseBankView();
+    closeBankView();
 }
-var transactionState = undefined;
-function SetBankTransactionState(state) {
+let transactionState = undefined;
+function setBankTransactionState(state) {
     transactionState = state;
 }
-function RequestTransactionState() {
+function requestTransactionState() {
     if (bankView === undefined)
         return;
     bankView.emit('TransactionState', transactionState);
 }
-function RequestTransactions() {
+function requestTransactions() {
     var currentAccount = JSON.parse(currentBankAccount);
     bankView.emit('transactionHistory', currentAccount.TransactionHistoryJson);
 }
-function BankAccountPageLoaded() {
+function bankAccountPageLoaded() {
     bankView.emit('currentBankData', currentBankAccount);
 }
-function CloseBankHomePage() {
-    CloseBankView();
+function closeBankHomePage() {
+    closeBankView();
 }
-function ViewBankInfo(index) {
+function viewBankInfo(index) {
     var BankAccounts = JSON.parse(BankJson);
     var BankAccount = BankAccounts[index];
     currentBankAccount = JSON.stringify(BankAccount);
     if (BankAccount == undefined) {
-        CloseBankView();
+        closeBankView();
         alt.showCursor(false);
         return;
     }
 }
-function BankHomePageLoaded() {
+function bankHomePageLoaded() {
     bankView.emit('LoadBankAccounts', BankJson);
-}
-function CloseBankView() {
-    alt.log('Close Bank View');
-    if (bankView !== undefined) {
-        alt.log('Not Null');
-        bankView.destroy();
-        alt.log('Destroy');
-        bankView = undefined;
-        alt.log('bankView set undefined');
-        native.freezeEntityPosition(alt.Player.local.scriptID, false);
-        alt.log('Unfreeze');
-        alt.showCursor(false);
-        alt.log('showCursor');
-        alt.emitServer('bankViewClosed');
-        alt.log('bankViewClosed');
-    }
 }

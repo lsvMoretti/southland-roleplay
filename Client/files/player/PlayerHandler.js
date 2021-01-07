@@ -37,12 +37,14 @@ export function GetHudState() {
     return hudEnabled;
 }
 alt.onServer('freezeCam', (state) => {
+    alt.log('Freeze Cam: ' + state);
     freezeCam = state;
 });
 alt.onServer('freezeInput', (state) => {
+    alt.log('Freeze Input: ' + state);
     freezeInput = state;
 });
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (hudEnabled === false) {
     }
     if (freezeInput) {
@@ -51,6 +53,8 @@ alt.everyTick(() => {
     if (freezeCam) {
         native.disableAllControlActions(1);
     }
+}, 0);
+alt.everyTick(() => {
 });
 alt.onServer('loadIpl', (iplString) => {
     native.requestIpl(iplString);
