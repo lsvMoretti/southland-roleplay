@@ -58,7 +58,7 @@ namespace Server.Vehicle
                 return;
             }
 
-            if (vehicleData.HasPlateBeenStolen)
+            if (vehicleData.HasPlateBeenStolen && string.IsNullOrEmpty(vehicleData.StolenPlate))
             {
                 player.SendErrorMessage("There is no plate to steal!");
                 return;
