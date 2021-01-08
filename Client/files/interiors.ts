@@ -152,10 +152,6 @@ alt.onServer('loadAllIpls', () => {
     native.requestIpl('jetstenativeurnel');
     native.requestIpl('Jetsteal_ipl_grp1');
     native.requestIpl('v_hospital');
-    native.removeIpl('RC12B_Default');
-    native.removeIpl('RC12B_Fixed');
-    native.requestIpl('RC12B_Destroyed');
-    native.requestIpl('RC12B_HospitalInterior');
     native.requestIpl('canyonriver01');
     native.requestIpl('canyonriver01_lod');
     native.requestIpl('cs3_05_water_grp1');
