@@ -3,6 +3,7 @@ import * as native from 'natives';
 import * as chatHandler from 'files/chat';
 import * as sirenHandler from 'files/vehicle/sirenHandler';
 import * as cruiseControl from 'files/vehicle/cruiseControl';
+import * as vehicleHandler from 'files/vehicle/vehicleHandler';
 import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
 import * as Animation from "files/animation";
 var IsSpawned = false;
@@ -46,7 +47,7 @@ alt.everyTick(() => {
     native.disableControlAction(0, 213, true);
 });
 alt.on('keyup', (key) => {
-    if (chatHandler.IsChatOpen() || nativeUiMenuOpen)
+    if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen())
         return;
     if (getEditObjectStatus()) {
         return;

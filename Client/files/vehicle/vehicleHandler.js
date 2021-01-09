@@ -2,20 +2,30 @@ import * as alt from 'alt-client';
 import * as native from 'natives';
 var vehicleScrambleWebView = undefined;
 var scrambleText = undefined;
-alt.onServer('VehicleScramble:LoadPage', (word, jumbleWord) => {
+let opened = false;
+export function IsScrambleOpen() {
+    return opened;
+}
+alt.onServer('VehicleScramble:LoadPage', (word, jumbleWord, time, attempts) => {
     if (vehicleScrambleWebView != undefined) {
         alt.setTimeout(() => {
             vehicleScrambleWebView.destroy();
         }, 1000);
     }
+    alt.showCursor(true);
     vehicleScrambleWebView = new alt.WebView('http://resource/files/vehicle/vehicleScramble.html');
+    vehicleScrambleWebView.focus();
+    opened = true;
     vehicleScrambleWebView.on('VehicleScrambleLoaded', () => {
-        vehicleScrambleWebView.emit('ReceiveInfo', word, jumbleWord);
+        vehicleScrambleWebView.emit('ReceiveInfo', word, jumbleWord, time, attempts);
     });
     vehicleScrambleWebView.on('vehicleScrambleClosePage', () => {
         alt.setTimeout(() => {
             vehicleScrambleWebView.destroy();
             vehicleScrambleWebView = undefined;
+            opened = false;
+            alt.showCursor(false);
+            alt.emitServer('VehicleScramble:PageClosed');
         }, 1000);
     });
     vehicleScrambleWebView.on('VehicleScramble:MaxAttemptsReached', () => {
@@ -30,6 +40,8 @@ alt.onServer('VehicleScramble:LoadPage', (word, jumbleWord) => {
 });
 alt.onServer('VehicleScramble:ClosePage', () => {
     if (vehicleScrambleWebView != undefined) {
+        alt.showCursor(false);
+        opened = false;
         alt.setTimeout(() => {
             vehicleScrambleWebView.destroy();
             vehicleScrambleWebView = undefined;

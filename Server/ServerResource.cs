@@ -368,6 +368,8 @@ namespace Server
 
                 Alt.OnClient<IPlayer>("VehicleScramble:CorrectWord", HotWire.OnCorrectWord);
 
+                Alt.OnClient<IPlayer>("VehicleScramble:PageClosed", HotWire.OnPageClosed);
+
                 #endregion Hotwire System
 
                 Alt.OnClient<IPlayer, bool>("ChatStatusChange", (player, status) =>

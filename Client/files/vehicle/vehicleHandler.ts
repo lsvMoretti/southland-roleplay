@@ -4,8 +4,13 @@ import * as keyHandler from "files/keyHandler";
 
 var vehicleScrambleWebView: alt.WebView = undefined;
 var scrambleText: string = undefined;
+let opened: boolean = false;
 
-alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string) => {
+export function IsScrambleOpen() {
+    return opened;
+}
+
+alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string, time: number, attempts: number) => {
     if (vehicleScrambleWebView != undefined) {
         alt.setTimeout(() => {
             vehicleScrambleWebView.destroy();
@@ -13,10 +18,14 @@ alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string) => {
             1000);
     }
 
+    alt.showCursor(true);
+
     vehicleScrambleWebView = new alt.WebView('http://resource/files/vehicle/vehicleScramble.html');
+    vehicleScrambleWebView.focus();
+    opened = true;
     vehicleScrambleWebView.on('VehicleScrambleLoaded',
         () => {
-            vehicleScrambleWebView.emit('ReceiveInfo', word, jumbleWord);
+            vehicleScrambleWebView.emit('ReceiveInfo', word, jumbleWord, time, attempts);
         });
 
     vehicleScrambleWebView.on('vehicleScrambleClosePage',
@@ -24,6 +33,9 @@ alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string) => {
             alt.setTimeout(() => {
                 vehicleScrambleWebView.destroy();
                 vehicleScrambleWebView = undefined;
+                opened = false;
+                alt.showCursor(false);
+                alt.emitServer('VehicleScramble:PageClosed');
             }, 1000);
         });
 
@@ -45,6 +57,8 @@ alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string) => {
 
 alt.onServer('VehicleScramble:ClosePage', () => {
     if (vehicleScrambleWebView != undefined) {
+        alt.showCursor(false);
+        opened = false;
         alt.setTimeout(() => {
             vehicleScrambleWebView.destroy();
             vehicleScrambleWebView = undefined;

@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <br>
                                     <br>
-                                    <button class="btn btn-success align-center" onclick="vehicleScrambleSubmit()">Submit</button>
+                                    <button class="btn btn-success align-center" onclick="vehicleScrambleSubmit()" type="button" onkeydown="return (event.keyCode!=13);">Submit</button>
                                 </div>
                             </form>
                             <br>
@@ -52,9 +52,8 @@
         </div>
     </div>
 
-    <script src="vehicleScramble.js"></script>
-
     <script src="../data/jquery-3.3.1.slim.min.js"></script>
     <script src="../data/popper.min.js"></script>
     <script src="../data/bootstrap.min.js"></script>
+    <script src="vehicleScramble.js"></script>
 </body>

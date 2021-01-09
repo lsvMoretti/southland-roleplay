@@ -1,4 +1,13 @@
-﻿if ('alt' in window) {
+﻿$(document).ready(function () {
+    $(window).keydown(function (event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+        }
+    });
+});
+
+if ('alt' in window) {
     alt.on('ReceiveInfo', ReceiveInfo);
 }
 
@@ -24,6 +33,7 @@ function vehicleScrambleSubmit() {
     var errorMessage = document.getElementById('errorMessage');
 
     if (textInput !== correctWord) {
+        textInput = "";
         failCount += 1;
         console.log(failCount);
         if (failCount > totalFailCount) {
@@ -43,7 +53,9 @@ function vehicleScrambleSubmit() {
     timeExpired();
 }
 
-function ReceiveInfo(word, scrambled) {
+function ReceiveInfo(word, scrambled, time, attempts) {
+    timeout = time;
+    totalFailCount = attempts;
     var mainMessage = document.getElementById('textInputLabel');
 
     mainMessage.innerText = "Descramble This Word: " + scrambled;
