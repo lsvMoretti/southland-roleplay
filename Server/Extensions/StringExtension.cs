@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Server.Extensions
 {
@@ -20,6 +22,16 @@ namespace Server.Extensions
             if (lastChar == ".") return str;
 
             return str + ".";
+        }
+
+        public static string Shuffle(this String str)
+        {
+            Random rand = new Random();
+
+            var list = new SortedList<int, char>();
+            foreach (var c in str)
+                list.Add(rand.Next(), c);
+            return new string(list.Values.ToArray());
         }
     }
 }

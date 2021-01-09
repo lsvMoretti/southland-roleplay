@@ -2,6 +2,57 @@ import * as alt from 'alt-client';
 import * as native from 'natives';
 import * as keyHandler from "files/keyHandler";
 
+var vehicleScrambleWebView: alt.WebView = undefined;
+var scrambleText: string = undefined;
+
+alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string) => {
+    if (vehicleScrambleWebView != undefined) {
+        alt.setTimeout(() => {
+            vehicleScrambleWebView.destroy();
+        },
+            1000);
+    }
+
+    vehicleScrambleWebView = new alt.WebView('http://resource/files/vehicle/vehicleScramble.html');
+    vehicleScrambleWebView.on('VehicleScrambleLoaded',
+        () => {
+            vehicleScrambleWebView.emit('ReceiveInfo', word, jumbleWord);
+        });
+
+    vehicleScrambleWebView.on('vehicleScrambleClosePage',
+        () => {
+            alt.setTimeout(() => {
+                vehicleScrambleWebView.destroy();
+                vehicleScrambleWebView = undefined;
+            }, 1000);
+        });
+
+    vehicleScrambleWebView.on('VehicleScramble:MaxAttemptsReached',
+        () => {
+            alt.emitServer('VehicleScramble:MaxAttemptsReached');
+        });
+
+    vehicleScrambleWebView.on('VehicleScramble:TimeExpired',
+        () => {
+            alt.emitServer('VehicleScramble:TimeExpired');
+        });
+
+    vehicleScrambleWebView.on('VehicleScramble:CorrectWord',
+        () => {
+            alt.emitServer('VehicleScramble:CorrectWord');
+        });
+});
+
+alt.onServer('VehicleScramble:ClosePage', () => {
+    if (vehicleScrambleWebView != undefined) {
+        alt.setTimeout(() => {
+            vehicleScrambleWebView.destroy();
+            vehicleScrambleWebView = undefined;
+        },
+            1000);
+    }
+});
+
 var currentView: alt.WebView = undefined;
 var dealershipJson: string = undefined;
 var vehicleScriptId: any = undefined;

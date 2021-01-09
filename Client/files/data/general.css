@@ -40,6 +40,10 @@ body, html {
     color: #FFF;
 }
 
+.text-yellow {
+    color: yellow;
+}
+
 .text-red {
     color: red;
 }

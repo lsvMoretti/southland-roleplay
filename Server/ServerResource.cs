@@ -360,6 +360,16 @@ namespace Server
 
                 #endregion Vehicle System
 
+                #region Hotwire System
+
+                Alt.OnClient<IPlayer>("VehicleScramble:MaxAttemptsReached", HotWire.OnMaxAttemptsReached);
+
+                Alt.OnClient<IPlayer>("VehicleScramble:TimeExpired", HotWire.OnTimeExpired);
+
+                Alt.OnClient<IPlayer>("VehicleScramble:CorrectWord", HotWire.OnCorrectWord);
+
+                #endregion Hotwire System
+
                 Alt.OnClient<IPlayer, bool>("ChatStatusChange", (player, status) =>
                 {
                     player.SetSyncedMetaData("TypeStatus", status);
@@ -657,6 +667,8 @@ namespace Server
             PurchaseObjectHandler.LoadBuyableObjects();
 
             WelcomePlayer.InitPed();
+
+            WordListHandler.LoadWords();
         }
     }
 }
