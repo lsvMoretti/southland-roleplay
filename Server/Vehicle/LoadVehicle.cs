@@ -26,8 +26,6 @@ namespace Server.Vehicle
 
                 foreach (Models.Vehicle vehicle in vehicles)
                 {
-                    Alt.Log($"Loading vehicle {vehicle.Id}");
-
                     vehicle.Spawned = false;
 
                     if (string.IsNullOrEmpty(vehicle.PartDamages))
@@ -42,8 +40,6 @@ namespace Server.Vehicle
                 }
 
                 context.SaveChanges();
-
-                Alt.Log("All vehicles loaded");
             }
             catch (Exception e)
             {
@@ -125,8 +121,6 @@ namespace Server.Vehicle
         public static async Task<IVehicle> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
-
-            Console.WriteLine($"Loading Vehicle ID: {vehicleData.Id}");
 
             bool modelParse = int.TryParse(vehicleData.Model, out int vModelResult);
 
@@ -256,8 +250,6 @@ namespace Server.Vehicle
         public static IVehicle LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
-
-            Console.WriteLine($"Loading Vehicle ID: {vehicleData.Id}");
 
             bool modelParse = int.TryParse(vehicleData.Model, out int vModelResult);
 
