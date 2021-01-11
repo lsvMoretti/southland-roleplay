@@ -103,7 +103,7 @@ namespace Server.Character
 
                 List<TextLabel> textLabels = new List<TextLabel>();
 
-                TextLabel doorLabel = new TextLabel($"Press 'F' to Leave", DoorPosition + new Position(0, 0, 0.75f),
+                TextLabel doorLabel = new TextLabel($"Press 'F' to Leave", DoorPosition,
                     TextFont.FontChaletComprimeCologne, new LsvColor(Color.DarkGray), 5f, player.Dimension);
 
                 TextLabelHandler.LoadTextLabelForPlayer(player, doorLabel);
