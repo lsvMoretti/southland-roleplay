@@ -610,7 +610,7 @@ namespace Server.Phone
                 return;
             }
 
-            Phones targetPhone = Phones.FetchPhone(number) ?? Phones.FetchPhone(JsonConvert.DeserializeObject<List<PhoneContact>>(phone.ContactList).FirstOrDefault(x => x.Name == number)?.PhoneNumber);
+            Phones? targetPhone = Phones.FetchPhone(number) ?? Phones.FetchPhone(JsonConvert.DeserializeObject<List<PhoneContact>>(phone.ContactList).FirstOrDefault(x => x.Name == number)?.PhoneNumber);
 
             if (targetPhone == null)
             {
@@ -618,7 +618,7 @@ namespace Server.Phone
                 return;
             }
 
-            IPlayer targetPlayer =
+            IPlayer? targetPlayer =
                 Alt.Server.GetPlayers().FirstOrDefault(x => x.FetchCharacter()?.Id == targetPhone.CharacterId);
 
             if (targetPlayer == null || !targetPhone.TurnedOn)
