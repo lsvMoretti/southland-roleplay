@@ -26,13 +26,10 @@ namespace SignalR
                 GameServerStartTime = DateTime.Now;
                 Console.WriteLine($"AltVServer is up!");
                 await Clients.Others.SendAsync("ServerRestart");
-
             }
 
             await Groups.AddToGroupAsync(Context.ConnectionId, userGroup);
             await Clients.Caller.SendAsync("AddedToUsergroup", userGroup);
-
-            
         }
 
         public async void FetchOnlinePlayerList()
@@ -91,7 +88,7 @@ namespace SignalR
         public bool RestartGameServer()
         {
             Console.WriteLine($"Restart Sever Request from SignalR");
-        
+
             Process serverProcess = Process.GetProcesses().FirstOrDefault(x => x.ProcessName.Contains("altv"));
 
             serverProcess?.Kill();
@@ -174,6 +171,10 @@ namespace SignalR
         {
             await Clients.Groups("Discord").SendAsync("SendReportReply", reportId, message);
         }
-        
+
+        public async void SendDiscordLinkedMessage(ulong userId)
+        {
+            await Clients.Groups("Discord").SendAsync("SendLinkedDiscordMessage", userId);
+        }
     }
 }
