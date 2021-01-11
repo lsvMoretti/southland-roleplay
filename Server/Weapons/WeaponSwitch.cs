@@ -15,8 +15,6 @@ namespace Server.Weapons
             WeaponModel oldWeaponModel = (WeaponModel)oldweapon;
             WeaponModel newWeaponModel = (WeaponModel)newweapon;
 
-            Console.WriteLine("Weapon switch event");
-
             if (newWeaponModel == WeaponModel.Fist)
             {
                 // Holstered
