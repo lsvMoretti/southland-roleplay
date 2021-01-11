@@ -48,7 +48,7 @@ namespace Server.Vehicle
             }
         }
 
-        public static async void LoadFactionVehicles()
+        public static async Task LoadFactionVehicles()
         {
             Stopwatch sw = Stopwatch.StartNew();
 
@@ -74,7 +74,7 @@ namespace Server.Vehicle
         /// <summary>
         ///  Loads all characters vehicles
         /// </summary>
-        public static async void LoadCharacterVehicles()
+        public static async Task LoadCharacterVehicles()
         {
             Console.WriteLine($"Loading Character Vehicles");
 

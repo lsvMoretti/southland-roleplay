@@ -587,10 +587,6 @@ namespace Server
 
             LoadVehicle.ResetAllVehiclesSpawnStatus();
 
-            LoadVehicle.LoadFactionVehicles();
-
-            LoadVehicle.LoadCharacterVehicles();
-
             //await MapHandler.LoadMaps();
 
             LoadProperties.LoadAllProperties();
@@ -671,6 +667,10 @@ namespace Server
             WelcomePlayer.InitPed();
 
             WordListHandler.LoadWords();
+
+            await LoadVehicle.LoadFactionVehicles();
+
+            await LoadVehicle.LoadCharacterVehicles();
         }
     }
 }
