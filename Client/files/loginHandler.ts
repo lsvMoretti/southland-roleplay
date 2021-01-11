@@ -13,7 +13,7 @@ function loginRequest(user: string, password: string) {
 }
 
 function showLogin() {
-    loginView = new alt.WebView("http://resource/files/login/login.html", false);
+    loginView = new alt.WebView("http://resource/files/login/loginNew.html", false);
     loginView.on('loginRequest', loginRequest);
     loginView.on('LoginScreenLoaded', () => {
         alt.emitServer('LoginScreenLoaded');

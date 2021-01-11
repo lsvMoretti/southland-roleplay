@@ -91,11 +91,11 @@ function closeDealershipVehiclePage() {
         alt.log('not defined');
         alt.setTimeout(() => {
             adminDealershipView.destroy();
+            adminDealershipView = undefined;
         },
             1100);
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
         alt.showCursor(false);
-        adminDealershipView = undefined;
         alt.emitServer('admin:dealership:callClosePage');
     }
 }
@@ -254,10 +254,9 @@ function closeFactionView() {
 
     alt.setTimeout(() => {
         factionView.destroy();
+        factionView = undefined;
     },
         1000);
-
-    factionView = undefined;
 
     alt.showCursor(false);
 
