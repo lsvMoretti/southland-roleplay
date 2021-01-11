@@ -65,7 +65,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static Faction FetchFaction(int id)
+        public static Faction? FetchFaction(int id)
         {
             using Context context = new Context();
 

@@ -24,11 +24,11 @@ namespace Server.Groups
     {
         private static List<DutyPosition> _dutyPositions = new List<DutyPosition>
         {
-            // Vespucci PD Car Park
-            new DutyPosition(new Position(454.37802f, -989.5121f, 30.678345f), DutyPositionType.Law),
+            // Breeze PD Locker Room
+            new DutyPosition(new Position(471.2835f, -987.3494f, 25.724487f), DutyPositionType.Law),
 
-            // El Burro FD
-            new DutyPosition(new Position(1191.854f, -1474.793f, 34.85953f), DutyPositionType.Medical )
+            // Davis FD
+            new DutyPosition(new Position(200.55824f, -1643.3671f, 29.802246f), DutyPositionType.Medical )
         };
 
         [Command("duty")]
@@ -50,7 +50,7 @@ namespace Server.Groups
                 return;
             }
 
-            DutyPosition nearestDutyPosition =
+            DutyPosition? nearestDutyPosition =
                 _dutyPositions.FirstOrDefault(x => x.Position.Distance(player.Position) <= 3f);
 
             if (nearestDutyPosition == null)
@@ -120,7 +120,7 @@ namespace Server.Groups
                 return;
             }
 
-            Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
+            Faction? activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
             if (activeFaction == null)
             {
