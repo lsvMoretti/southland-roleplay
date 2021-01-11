@@ -1229,6 +1229,12 @@ namespace Server.Admin
                     player.SendInfoNotification(
                         $"You've removed rank {selectedRank.Name} from faction {selectedFaction.Name}.");
                     break;
+
+                case "towVehicle":
+                    selectedRank.Tow = !selectedRank.Tow;
+                    player.SendInfoNotification(
+                        $"You've set rank {selectedRank.Name} add rank permission to {selectedRank.Tow} for faction {selectedFaction.Name}.");
+                    break;
             }
 
             contextFaction.RanksJson = JsonConvert.SerializeObject(factionRanks);
@@ -1631,7 +1637,8 @@ namespace Server.Admin
                     Name = "Rank1",
                     AddRanks = false,
                     Invite = false,
-                    Promote = false
+                    Promote = false,
+                    Tow = false
                 }
             };
 

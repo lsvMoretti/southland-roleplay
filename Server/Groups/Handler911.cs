@@ -101,7 +101,7 @@ namespace Server.Groups
                 embedBuilder.AddField("Number", newCall911.Number);
                 embedBuilder.AddField("Location", newCall911.Location);
 
-                //SignalR.SendDiscordEmbed(678625917018570799, embedBuilder);
+                SignalR.SendDiscordEmbed(798258593672462436, embedBuilder);
             }
         }
 
@@ -195,8 +195,7 @@ namespace Server.Groups
 
                 embedBuilder.AddField("Number", newCall911.Number);
                 embedBuilder.AddField("Location", newCall911.Location);
-
-                // SignalR.SendDiscordEmbed(678625917018570799, embedBuilder);
+                SignalR.SendDiscordEmbed(798258593672462436, embedBuilder);
             }
         }
 

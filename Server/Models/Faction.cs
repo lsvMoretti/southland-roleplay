@@ -111,6 +111,7 @@ namespace Server.Models
         public bool Invite { get; set; }
 
         public bool Promote { get; set; }
+        public bool Tow { get; set; }
     }
 
     public class Division

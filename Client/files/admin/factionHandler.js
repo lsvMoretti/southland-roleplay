@@ -117,6 +117,15 @@ function loadFactionRanks(rankJson) {
         };
         cell3.appendChild(addRankButton);
 
+        var towButton = document.createElement("BUTTON");
+        var towText = document.createTextNode("Tow");
+        towButton.appendChild(towText);
+        towButton.classList.add('btn', 'btn-danger');
+        towButton.onclick = function () {
+            rankTow(index);
+        };
+        cell4.appendChild(towButton);
+
         var deleteButton = document.createElement("BUTTON");
         var deleteText = document.createTextNode("Delete");
         deleteButton.appendChild(deleteText);
@@ -124,7 +133,7 @@ function loadFactionRanks(rankJson) {
         deleteButton.onclick = function () {
             rankDelete(index);
         };
-        cell4.appendChild(deleteButton);
+        cell5.appendChild(deleteButton);
     });
 }
 
@@ -138,6 +147,10 @@ function rankPromote(index) {
 
 function rankAddRank(index) {
     alt.emit('faction:adjustRankPerm', 'addRank', index);
+}
+
+function rankTow(index) {
+    alt.emit('faction:adjustRankPerm', 'towVehicle', index);
 }
 
 function rankDelete(index) {
