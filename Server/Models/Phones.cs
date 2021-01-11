@@ -64,12 +64,10 @@ namespace Server.Models
         /// </summary>
         /// <param name="PhoneNumber"></param>
         /// <returns></returns>
-        public static Phones FetchPhone(string PhoneNumber)
+        public static Phones? FetchPhone(string PhoneNumber)
         {
-            using (Context context = new Context())
-            {
-                return context.Phones.FirstOrDefault(pData => pData.PhoneNumber == PhoneNumber);
-            }
+            using Context context = new Context();
+            return context.Phones.FirstOrDefault(pData => pData.PhoneNumber == PhoneNumber);
         }
 
         /// <summary>

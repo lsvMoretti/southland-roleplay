@@ -127,7 +127,6 @@ namespace Server.Phone
                 dbPhone.TurnedOn = !dbPhone.TurnedOn;
                 bool newStatus = dbPhone.TurnedOn;
                 context.SaveChanges();
-                
 
                 string status = newStatus ? "turned on" : "turned off";
 
@@ -185,7 +184,6 @@ namespace Server.Phone
                 playerCharacter.ActivePhoneNumber = phoneNumber;
 
                 context.SaveChanges();
-                
 
                 player.SendInfoNotification($"You have set phone number {phoneNumber} as your active number!");
                 return;
@@ -277,7 +275,6 @@ namespace Server.Phone
                 return;
             }
 
-            
             if (option == "Remove Contact")
             {
                 using Context context = new Context();
@@ -287,7 +284,7 @@ namespace Server.Phone
                 List<PhoneContact> phoneContacts =
                     JsonConvert.DeserializeObject<List<PhoneContact>>(dbPhone.ContactList);
 
-                PhoneContact removeContact = phoneContacts.FirstOrDefault(x =>
+                PhoneContact removeContact = phoneContacts.First(x =>
                     x.Name == phoneContact.Name && x.PhoneNumber == phoneContact.PhoneNumber);
 
                 phoneContacts.Remove(removeContact);
@@ -295,7 +292,6 @@ namespace Server.Phone
                 dbPhone.ContactList = JsonConvert.SerializeObject(phoneContacts);
 
                 context.SaveChanges();
-                
 
                 player.SendInfoNotification($"You have successfully removed {phoneContact.Name} from your contact list.");
                 return;
@@ -323,7 +319,6 @@ namespace Server.Phone
                 player.ChatInput(false);
                 return;
             }
-
         }
 
         public static void HandleCallNumber(IPlayer player, string number)
@@ -347,9 +342,11 @@ namespace Server.Phone
                 case "911":
                     Handler911.Start911Call(player, phone);
                     return;
+
                 case "311":
                     Handler911.Start311Call(player, phone);
                     return;
+
                 case "5555":
                     CallHandler.StartTaxiCall(player, phone);
                     return;
@@ -394,8 +391,6 @@ namespace Server.Phone
 
             bool isCallingData = player.GetData("ISCALLINGSOMEONE", out bool isCalling);
 
-
-
             bool hasData = player.GetData("ONPHONEWITH", out int onPhoneWith);
 
             if (!hasData || onPhoneWith == 0)
@@ -406,19 +401,17 @@ namespace Server.Phone
                     player.SendErrorNotification("You're not on a phone call.");
                     return;
                 }
-
             }
 
             if (isCalling)
             {
                 player.GetData("ISCALLINGCHARACTER", out int targetCharacterId);
 
-                IPlayer targetCaller = Alt.Server.GetPlayers()
+                IPlayer? targetCaller = Alt.Server.GetPlayers()
                     .FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
 
                 if (targetCaller != null)
                 {
-                    
                     targetCaller.SendPhoneMessage("They've hung up.");
                     targetCaller.SendEmoteMessage("puts their phone away.");
                     //targetCaller.SetData("ONPHONEWITH", 0);
@@ -449,7 +442,7 @@ namespace Server.Phone
                 targetPlayer.SetData("ONPHONEWITH", 0);
                 targetPlayer.Emit("phone:stopPhoneRinging");
             }
-            
+
             player.SetData("ISCALLINGSOMEONE", false);
 
             player.Emit("phone:stopPhoneRinging");
@@ -479,7 +472,7 @@ namespace Server.Phone
                     return;
                 }
             }
-            
+
             bool has311CallData = player.GetData("311:onCall", out int on311Call);
             {
                 if (has311CallData)
@@ -536,28 +529,36 @@ namespace Server.Phone
                 return;
             }
 
-            Phones phone = Phones.FetchPhone(player.FetchCharacter().ActivePhoneNumber);
+            Phones? phone = Phones.FetchPhone(player.FetchCharacter().ActivePhoneNumber);
+
+            if (phone == null)
+            {
+                player.SendErrorNotification("Unable to find your phone.");
+                return;
+            }
 
             switch (args)
             {
                 case "911":
                     Handler911.Start911Call(player, phone);
                     return;
+
                 case "311":
                     Handler911.Start311Call(player, phone);
                     return;
+
                 case "5555":
                     CallHandler.StartTaxiCall(player, phone);
                     return;
             }
 
-            Phones targetPhone = Phones.FetchPhone(args);
+            Phones? targetPhone = Phones.FetchPhone(args);
 
             if (targetPhone == null)
             {
                 List<PhoneContact> contactList = JsonConvert.DeserializeObject<List<PhoneContact>>(phone.ContactList);
 
-                PhoneContact contact = contactList.FirstOrDefault(x => string.Equals(x.Name, args, StringComparison.CurrentCultureIgnoreCase));
+                PhoneContact contact = contactList.First(x => string.Equals(x.Name, args, StringComparison.CurrentCultureIgnoreCase));
 
                 if (contact == null)
                 {
@@ -601,7 +602,7 @@ namespace Server.Phone
 
             player.GetData("CURRENTPHONEINTERACTION", out string phoneNumber);
 
-            Phones phone = Phones.FetchPhone(phoneNumber) ?? Phones.FetchPhone(player.FetchCharacter().ActivePhoneNumber);
+            Phones? phone = Phones.FetchPhone(phoneNumber) ?? Phones.FetchPhone(player.FetchCharacter().ActivePhoneNumber);
 
             if (phone == null)
             {
@@ -632,7 +633,6 @@ namespace Server.Phone
             {
                 player.SendPhoneMessage("Phone is turned off.");
                 return;
-                
             }
 
             List<InventoryItem> phoneItems = targetInventory.GetInventory().Where(x => x.Id.Contains("PHONE")).ToList();
@@ -707,8 +707,6 @@ namespace Server.Phone
             targetPhoneDb.MessageHistory = JsonConvert.SerializeObject(targetPhoneMessages);
 
             context.SaveChanges();
-            
-
         }
 
         public static void HandleSmsContact(IPlayer player, string message)
@@ -776,7 +774,6 @@ namespace Server.Phone
                 PhoneNumber = number
             };
 
-
             Context context = new Context();
 
             Phones phoneDb = context.Phones.Find(phone.Id);
@@ -795,19 +792,17 @@ namespace Server.Phone
 
             context.SaveChanges();
 
-            
-
             player.SendPhoneMessage($"You've added {newContact.Name} under the number {newContact.PhoneNumber}.");
         }
 
         [Command("contacts", commandType: CommandType.Phone, description: "View your phone contacts")]
         public static void PhoneCommandContacts(IPlayer player)
         {
-            if(player?.FetchCharacter() == null)
+            if (player?.FetchCharacter() == null)
             {
                 player.SendLoginError();
                 return;
-            } 
+            }
 
             if (string.IsNullOrEmpty(player.FetchCharacter().ActivePhoneNumber))
             {

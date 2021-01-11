@@ -26,13 +26,13 @@ namespace Server.Phone
                 return;
             }
 
-            if(caller.FetchCharacter().InJail || caller.FetchAccount().InJail)
+            if (caller.FetchCharacter().InJail || caller.FetchAccount().InJail)
             {
                 caller.SendPermissionError();
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                 .FirstOrDefault(x => x.GetClass().CharacterId == targetPhone.CharacterId);
 
             if (targetPlayer == null || !targetPhone.TurnedOn)
@@ -47,7 +47,7 @@ namespace Server.Phone
                 return;
             }
 
-            Inventory.Inventory targetInventory = targetPlayer.FetchInventory();
+            Inventory.Inventory? targetInventory = targetPlayer.FetchInventory();
 
             if (targetInventory == null)
             {
@@ -72,7 +72,7 @@ namespace Server.Phone
                 caller.SendPhoneMessage("Phone is off.");
                 return;
             }
-            
+
             targetPlayer.GetData("PHONERINGING", out bool phoneRinging);
             targetPlayer.GetData("ONPHONEWITH", out int onPhoneWith);
 
@@ -95,7 +95,7 @@ namespace Server.Phone
                 JsonConvert.DeserializeObject<List<PhoneContact>>(targetPhone.ContactList);
 
             var contact = targetContacts.FirstOrDefault(x => x.PhoneNumber == callerPhone.PhoneNumber);
-            
+
             if (contact != null)
             {
                 targetPlayer.SendPhoneMessage($"Incoming call from {contact.Name}. On Number: {targetPhone.PhoneNumber}.");
@@ -105,7 +105,6 @@ namespace Server.Phone
                 targetPlayer.SendPhoneMessage($"Incoming Call from {callerPhone.PhoneNumber}. On Number: {targetPhone.PhoneNumber}.");
             }
 
-
             Timer messageTimer = new Timer(5);
             messageTimer.Start();
 
@@ -114,7 +113,6 @@ namespace Server.Phone
             messageTimer.AutoReset = true;
             messageTimer.Elapsed += (sender, args) =>
             {
-
                 messageTimer.Stop();
 
                 targetPlayer.GetData("PHONEANSWERED", out int answered);
@@ -147,7 +145,6 @@ namespace Server.Phone
                 if (answered == 3)
                 {
                     // Inital Caller has hung up
-
                 }
 
                 if (count == 0)
@@ -213,8 +210,6 @@ namespace Server.Phone
             targetPhoneDb.CallHistory = JsonConvert.SerializeObject(targetPhoneCalls);
 
             context.SaveChanges();
-
-            
         }
     }
 }
