@@ -109,6 +109,14 @@ namespace Server.Weapons
 
                             break;
 
+                        case "ITEM_WEAPON_APPISTOL":
+                            if (selectedWeaponItem.Id == "ITEM_WEAPON_AMMO_9MM")
+                            {
+                                correctAmmo = true;
+                            }
+
+                            break;
+
                         case "ITEM_WEAPON_COMBATPISTOL":
                             if (selectedWeaponItem.Id == "ITEM_WEAPON_AMMO_9MM")
                             {
