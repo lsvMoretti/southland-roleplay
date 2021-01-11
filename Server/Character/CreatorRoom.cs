@@ -198,7 +198,7 @@ namespace Server.Character
                                     Position position = Positions[0];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position - new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -209,7 +209,7 @@ namespace Server.Character
                                     Position position = Positions[1];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position - new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -220,7 +220,7 @@ namespace Server.Character
                                     Position position = Positions[2];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position - new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -231,7 +231,7 @@ namespace Server.Character
                                     Position position = Positions[3];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position - new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -242,7 +242,7 @@ namespace Server.Character
                                     Position position = Positions[4];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position - new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -253,7 +253,7 @@ namespace Server.Character
                                     Position position = Positions[5];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position - new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
