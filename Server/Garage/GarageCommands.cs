@@ -23,7 +23,7 @@ namespace Server.Garage
                 return;
             }
 
-            Models.Garage nearestGarage = null;
+            Models.Garage? nearestGarage = null;
 
             if (player.IsInVehicle)
             {
@@ -70,7 +70,12 @@ namespace Server.Garage
 
             Position interiorPosition = Models.Garage.FetchGarageInternalPosition(nearestGarage);
 
-            List<string> propList = JsonConvert.DeserializeObject<List<string>>(nearestGarage.PropJson);
+            List<string> propList = new List<string>();
+
+            if (!string.IsNullOrEmpty(nearestGarage.PropJson))
+            {
+                propList = JsonConvert.DeserializeObject<List<string>>(nearestGarage.PropJson);
+            }
 
             using Context context = new Context();
 
@@ -81,7 +86,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.Server.GetPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -104,7 +109,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.Server.GetPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -154,13 +159,11 @@ namespace Server.Garage
 
                     occupantDb.InsideGarage = nearestGarage.Id;
 
-
                     context.SaveChanges();
                 }
 
-
                 player.Dimension = nearestGarage.Id;
-                
+
                 var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
                 vehicleDb.Dimension = (uint)nearestGarage.Id;
@@ -173,7 +176,10 @@ namespace Server.Garage
                 player.Rotation = new Rotation(0, 0, nearestGarage.IntRotZ);
                 player.Dimension = nearestGarage.Id;
 
-                player.RequestIpl(nearestGarage.Ipl);
+                if (!string.IsNullOrEmpty(nearestGarage.Ipl))
+                {
+                    player.RequestIpl(nearestGarage.Ipl);
+                }
 
                 context.Character.Find(player.GetClass().CharacterId).InsideGarage = nearestGarage.Id;
 
@@ -195,8 +201,6 @@ namespace Server.Garage
                     }
                 }
             }
-
-            
         }
 
         [Command("gexit", commandType: CommandType.Property, description: "Garages: Used to exit garages")]
@@ -238,7 +242,12 @@ namespace Server.Garage
 
             Position externalPosition = Models.Garage.FetchGarageExteriorPosition(nearestGarage);
 
-            List<string> propList = JsonConvert.DeserializeObject<List<string>>(nearestGarage.PropJson);
+            List<string> propList = new List<string>();
+
+            if (!string.IsNullOrEmpty(nearestGarage.PropJson))
+            {
+                propList = JsonConvert.DeserializeObject<List<string>>(nearestGarage.PropJson);
+            }
 
             using Context context = new Context();
             if (player.IsInVehicle)
@@ -248,7 +257,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.Server.GetPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -271,7 +280,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.Server.GetPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -344,7 +353,6 @@ namespace Server.Garage
                     context.SaveChanges();
                 }
 
-                
                 var vehicleDb = context.Vehicle.Find(player.Vehicle.GetClass().Id);
 
                 vehicleDb.Dimension = (uint)nearestGarage.ExtDimension;
