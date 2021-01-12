@@ -194,10 +194,12 @@ namespace Server.Property.Stores
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
+                Console.WriteLine($"Index: {index}, Selected key drawable: {selectedItem.Key.drawable}");
+                Console.WriteLine($"Index+1: {index + 1}, Selected key drawable: {clothesList[index + 1].Key.drawable}");
+
                 foreach (var clothesInfo in Clothes.DictClothesInfo)
                 {
-                    if (clothesInfo.Key.slot != selectedItem.Key.slot) continue;
-                    if (clothesInfo.Key.drawable != selectedItem.Key.drawable) continue;
+                    if (clothesInfo.Key.slot != selectedItem.Key.slot && clothesInfo.Key.drawable != selectedItem.Key.drawable) continue;
 
                     if (player.IsMale())
                     {
@@ -209,6 +211,8 @@ namespace Server.Property.Stores
                         var item = new NativeMenuItem($"{clothesInfo.Value.DisplayNameMale}", $"~g~${clothesInfo.Value.Price}");
                         menuItems.Add(item);
                         updatedClothesList.Add(clothesInfo);
+
+                        Console.WriteLine($"Added: {clothesInfo.Value.DisplayNameMale}, Slot: {clothesInfo.Key.slot}, Drawable: {clothesInfo.Key.drawable}");
                     }
                     else
                     {
@@ -865,7 +869,6 @@ namespace Server.Property.Stores
                 //property?.AddToBalance(selectedItem.Value.Price);
 
                 //player.Position = player.Position;
-
             }
             catch (Exception e)
             {
