@@ -199,7 +199,8 @@ namespace Server.Property.Stores
 
                 foreach (var clothesInfo in Clothes.DictClothesInfo)
                 {
-                    if (clothesInfo.Key.slot != selectedItem.Key.slot && clothesInfo.Key.drawable != selectedItem.Key.drawable) continue;
+                    if (clothesInfo.Key.slot != selectedItem.Key.slot) continue;
+                    if (clothesInfo.Key.drawable != selectedItem.Key.drawable) continue;
 
                     if (player.IsMale())
                     {

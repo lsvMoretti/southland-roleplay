@@ -94,7 +94,7 @@ namespace Server.Character
                 player.Model = (uint)PedModel.MovAlien01;
 
                 player.SetPosition(new Position(-245.06374f, -1190.888f, -148.92383f), new DegreeRotation(0, 0, -85.03937f), 5000,
-                    true, true, unfreezeTime: 1000);
+                    true, true, unfreezeTime: 3000);
 
                 player.Rotation = new Rotation(0, 0, 270);
 
