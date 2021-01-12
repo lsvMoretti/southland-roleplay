@@ -23,8 +23,8 @@ function showLogin() {
 }
 
 function closeLogin() {
+    loginView.emit("hideLoginScreen");
     alt.setTimeout(() => {
-        loginView.emit("hideLoginScreen");
         loginView.destroy();
         loginView = null;
         disableMenu = false;

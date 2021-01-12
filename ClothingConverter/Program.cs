@@ -25,6 +25,8 @@ namespace ClothingConverter
         /// </summary>
         private static Dictionary<int, int> FemaleTopToTorso = new Dictionary<int, int>();
 
+        private static int slot;
+
         private static void Main(string[] args)
         {
             bool readyToExit = false;
@@ -38,6 +40,7 @@ namespace ClothingConverter
                 if (userInput.Contains("start"))
                 {
                     string[] fileArgs = userInput.Split(' ');
+                    slot = int.Parse(fileArgs[2]);
                     StartConversion(fileArgs[1]);
                 }
 
@@ -101,7 +104,11 @@ namespace ClothingConverter
                                 foreach (var data2 in data.Value)
                                 {
                                     Console.WriteLine($"Female {fileValue}");
-                                    Clothes.clothesData key = new Clothes.clothesData(7, Convert.ToInt32(data.Key), Convert.ToInt32(data2.Key), false);
+
+                                    int draw = int.Parse(data.Key);
+                                    int text = int.Parse(data2.Key);
+
+                                    Clothes.clothesData key = new Clothes.clothesData(slot, draw, text, false);
 
                                     string localName = data2.Value.Localized;
 
@@ -132,7 +139,10 @@ namespace ClothingConverter
                                         localName = "undefined";
                                     }
 
-                                    Clothes.clothesData key = new Clothes.clothesData(7, Convert.ToInt32(data.Key), Convert.ToInt32(data2.Key), false);
+                                    int draw = int.Parse(data.Key);
+                                    int text = int.Parse(data2.Key);
+
+                                    Clothes.clothesData key = new Clothes.clothesData(slot, draw, text, false);
 
                                     Clothes.ClothesInfo cInfo = new Clothes.ClothesInfo(localName, "", 5, 0);
 
@@ -148,21 +158,22 @@ namespace ClothingConverter
 
                     foreach (var femaleClothesInfo in femaleClothesData)
                     {
-                        var maleFound = clothesData.FirstOrDefault(x =>
+                        var maleFound = clothesData.Where(x =>
                             x.Key.drawable == femaleClothesInfo.Key.drawable &&
-                            x.Key.texture == femaleClothesInfo.Key.texture);
+                            x.Key.texture == femaleClothesInfo.Key.texture).ToList();
 
-                        if (maleFound.Equals(default(KeyValuePair<Clothes.clothesData, Clothes.ClothesInfo>)))
+                        if (!maleFound.Any())
                         {
                             // Not found male
                             Console.WriteLine("Male Not Found");
+                            femaleClothesInfo.Value.DisplayNameMale = "";
                             clothesData.Add(femaleClothesInfo.Key, femaleClothesInfo.Value);
                             continue;
                         }
 
                         // Male found
                         Console.WriteLine("Male Found");
-                        maleFound.Value.DisplayNameFemale = femaleClothesInfo.Value.DisplayNameFemale;
+                        maleFound.First().Value.DisplayNameFemale = femaleClothesInfo.Value.DisplayNameFemale;
                     }
                     if (clothesData.Any())
                     {
