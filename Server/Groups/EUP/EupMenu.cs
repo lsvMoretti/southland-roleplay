@@ -299,7 +299,7 @@ namespace Server.Groups.EUP
 
             if (option == "Chiefs Hat")
             {
-                player.SetAccessory(0, 150, 0);
+                player.SetAccessory(0, 155, 0);
                 return;
             }
 
