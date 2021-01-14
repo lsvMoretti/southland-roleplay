@@ -49,7 +49,7 @@ namespace Server.Admin
                 // Not on Helper Duty
                 if (!onlineHelper.HasSyncedMetaData(HelperCommands.HelperDutyData)) return;
                 
-                onlineHelper.SendHelperMessage($"Help Me ID {reportId} has been closed.");
+                onlineHelper.SendHelperMessage($"Help Me Id {reportId} has been closed.");
             }
         }
         
@@ -111,7 +111,7 @@ namespace Server.Admin
             
             foreach (IPlayer onlineAdmin in onlineAdmins)
             {
-                onlineAdmin.SendAdminMessage($"Report ID {reportId} has been closed.");
+                onlineAdmin.SendAdminMessage($"Report Id {reportId} has been closed.");
             }
         }
         

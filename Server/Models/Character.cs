@@ -10,13 +10,13 @@ namespace Server.Models
     public class Character
     {
         /// <summary>
-        /// Unique Character ID
+        /// Unique Character Id
         /// </summary>
         [Key]
         public int Id { get; set; }
 
         /// <summary>
-        /// Account ID of Owner
+        /// Account Id of Owner
         /// </summary>
         public int OwnerId { get; set; }
 
@@ -72,7 +72,7 @@ namespace Server.Models
         public int Age { get; set; }
 
         /// <summary>
-        /// Inventory ID
+        /// Inventory Id
         /// Default 0
         /// </summary>
         public int InventoryID { get; set; }
@@ -113,7 +113,7 @@ namespace Server.Models
         public string? FactionList { get; set; }
 
         /// <summary>
-        /// The current active faction ID
+        /// The current active faction Id
         /// Default 0
         /// </summary>
         public int ActiveFaction { get; set; }
@@ -336,7 +336,7 @@ namespace Server.Models
         /// Creates a Character
         /// </summary>
         /// <param name="character"></param>
-        /// <returns>character.Id (Unique ID)</returns>
+        /// <returns>character.Id (Unique Id)</returns>
         public static int CreateCharacter(Character character)
         {
             using Context context = new Context();
@@ -358,9 +358,9 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches Character by Character ID
+        /// Fetches Character by Character Id
         /// </summary>
-        /// <param name="id">Character ID</param>
+        /// <param name="id">Character Id</param>
         /// <returns>Character DB</returns>
         public static Character GetCharacter(int id)
         {

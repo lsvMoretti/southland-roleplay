@@ -13,7 +13,7 @@ namespace Server.Inventory
         public GameItem ItemInfo => item ??= GameWorld.GetGameItem(Id);
 
         /// <summary>
-        /// Unique ID of the Item
+        /// Unique Id of the Item
         /// </summary>
         public string Id { get; set; }
 

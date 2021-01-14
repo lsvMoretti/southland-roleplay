@@ -221,8 +221,8 @@ namespace Server.Chat
 
                 string message = string.Join(' ', split.Skip(1));
 
-                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (ID: {targetPlayer.GetPlayerId()}): {message}");
-                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (ID: {player.GetPlayerId()}): {message}");
+                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetPlayerId()}): {message}");
+                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (Id: {player.GetPlayerId()}): {message}");
                 targetPlayer.SetData("LastPmFrom", player.GetPlayerId());
 
                 Logging.AddToCharacterLog(player, $"Has sent a PM to {targetPlayer.GetClass().Name}: {message}");
@@ -263,8 +263,8 @@ namespace Server.Chat
                     return;
                 }
 
-                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (ID: {targetPlayer.GetPlayerId()}): {args}");
-                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (ID: {player.GetPlayerId()}): {args}");
+                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetPlayerId()}): {args}");
+                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (Id: {player.GetPlayerId()}): {args}");
 
                 Logging.AddToCharacterLog(player, $"Has sent a PM to {targetPlayer.GetClass().Name}: {args}");
             }

@@ -17,7 +17,7 @@ namespace Server.Character
     public class Advertisements
     {
         /// <summary>
-        /// List of Character ID's and Advert text
+        /// List of Character Id's and Advert text
         /// </summary>
         public static Dictionary<int, string> AdvertList = new Dictionary<int, string>();
 
@@ -46,7 +46,7 @@ namespace Server.Character
                 {
                     player.SendInfoNotification($"Your advert has been approved!");
                     PublishAdvert(player.GetClass().CharacterId);
-                    DiscordHandler.SendMessageToLogChannel($"Character {player.GetClass().Name} (Character ID: {player.GetClass().CharacterId}) (Player ID: {player.GetPlayerId()}) has auto posted the following advert due to no admins in-game.\n{message}");
+                    DiscordHandler.SendMessageToLogChannel($"Character {player.GetClass().Name} (Character Id: {player.GetClass().CharacterId}) (Player Id: {player.GetPlayerId()}) has auto posted the following advert due to no admins in-game.\n{message}");
                     return true;
                 }
 

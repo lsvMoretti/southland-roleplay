@@ -61,7 +61,7 @@ namespace Server.Models
         public string? ItemList { get; set; }
 
         /// <summary>
-        /// The Inventory ID of the Property
+        /// The Inventory Id of the Property
         /// </summary>
         public int InventoryId { get; set; }
 
@@ -71,7 +71,7 @@ namespace Server.Models
         public string? Ipl { get; set; }
 
         /// <summary>
-        /// The ID of the Blip
+        /// The Id of the Blip
         /// </summary>
         public int BlipId { get; set; }
 
@@ -91,7 +91,7 @@ namespace Server.Models
         public int Value { get; set; }
 
         /// <summary>
-        /// The owner’s character ID
+        /// The owner’s character Id
         /// </summary>
         public int OwnerId { get; set; }
 
@@ -203,7 +203,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches property by ID
+        /// Fetches property by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -285,7 +285,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetch the PropertyGarage from the ID
+        /// Fetch the PropertyGarage from the Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

@@ -514,7 +514,7 @@ namespace Server.Dealerships
                 float inventorySpace = 20;
                 float inventoryCapacity = 5;
 
-                int inventoryId = InventoryData.CreateDefaultInventory(inventorySpace, inventoryCapacity).ID;
+                int inventoryId = InventoryData.CreateDefaultInventory(inventorySpace, inventoryCapacity).Id;
 
                 var vehicleDb = context.Vehicle.Find(newVehicleId);
 

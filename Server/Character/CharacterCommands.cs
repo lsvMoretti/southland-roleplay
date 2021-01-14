@@ -649,7 +649,7 @@ namespace Server.Character
                 }
             }
 
-            player.SendAdminMessage($"You've submitted a report. Your report ID is {newReport.Id}. You can use /cr to cancel the report");
+            player.SendAdminMessage($"You've submitted a report. Your report Id is {newReport.Id}. You can use /cr to cancel the report");
         }
 
         [Command("cancelreport", commandType: CommandType.Character,
@@ -805,7 +805,7 @@ namespace Server.Character
                 }
             }
 
-            player.SendHelperMessage($"You've submitted a help me. Your help me ID is {newReport.Id}.");
+            player.SendHelperMessage($"You've submitted a help me. Your help me Id is {newReport.Id}.");
         }
 
         [Command("cancelhelp", commandType: CommandType.Character,
@@ -1306,7 +1306,7 @@ namespace Server.Character
         }
 
         [Command("id", onlyOne: true, commandType: CommandType.Character,
-            description: "Used to find the name or ID of a player")]
+            description: "Used to find the name or Id of a player")]
         public static void CharacterCommandId(IPlayer player, string args = "")
         {
             if (!player.IsSpawned())
@@ -1329,11 +1329,11 @@ namespace Server.Character
 
                 if (targetPlayer == null)
                 {
-                    player.SendNotification($"~r~Unable to find player by ID of {playerId}.");
+                    player.SendNotification($"~r~Unable to find player by Id of {playerId}.");
                     return;
                 }
 
-                player.SendInfoNotification($"Player Name: {targetPlayer.GetClass().Name} - ID: {playerId}.");
+                player.SendInfoNotification($"Player Name: {targetPlayer.GetClass().Name} - Id: {playerId}.");
                 return;
             }
 
@@ -1348,12 +1348,12 @@ namespace Server.Character
 
             foreach (IPlayer target in targetList)
             {
-                player.SendInfoNotification($"Player Name: {target.GetClass().Name} - ID: {target.GetPlayerId()}.");
+                player.SendInfoNotification($"Player Name: {target.GetClass().Name} - Id: {target.GetPlayerId()}.");
             }
         }
 
         [Command("showid", onlyOne: true, commandType: CommandType.Character,
-            description: "Other: Used to show ID to a player")]
+            description: "Other: Used to show Id to a player")]
         public static void CharacterCommandShowId(IPlayer player, string args = "")
         {
             if (!player.IsSpawned()) return;
@@ -1384,7 +1384,7 @@ namespace Server.Character
 
             if (!idItems.Any())
             {
-                player.SendNotification("~r~You don't have any ID items on you!");
+                player.SendNotification("~r~You don't have any Id items on you!");
                 return;
             }
 
@@ -1395,7 +1395,7 @@ namespace Server.Character
                 menuItems.Add(new NativeMenuItem(inventoryItem.CustomName, inventoryItem.ItemValue));
             }
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:ShowIdSelect", "ID's", "Select the ID you want to show", menuItems)
+            NativeMenu menu = new NativeMenu("CharacterCommands:ShowIdSelect", "Id's", "Select the Id you want to show", menuItems)
             {
                 PassIndex = true
             };
@@ -1433,7 +1433,7 @@ namespace Server.Character
 
             if (selectedItem.ItemValue == player.GetClass().Name)
             {
-                // Is their ID card
+                // Is their Id card
                 player.SendEmoteMessage($"shows their {selectedItem.CustomName} to {targetPlayer.GetClass().Name}.");
                 targetPlayer.SendNotification($"~y~Name: ~w~{selectedItem.ItemValue}\n~y~Age: ~w~{player.FetchCharacter().Age}.");
             }

@@ -76,7 +76,7 @@ namespace Server.Models
         public int LinkedGarage { get; set; }
 
         /// <summary>
-        /// Fetches Garage by ID
+        /// Fetches Garage by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -97,7 +97,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches Garage's External Position by ID
+        /// Fetches Garage's External Position by Id
         /// </summary>
         /// <param name="garage"></param>
         /// <returns></returns>
@@ -107,7 +107,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches Garage's Internal Position by ID
+        /// Fetches Garage's Internal Position by Id
         /// </summary>
         /// <param name="garage"></param>
         /// <returns></returns>

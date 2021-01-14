@@ -8,18 +8,18 @@ namespace Server.Models
     public class AdminRecord
     {
         /// <summary>
-        /// Unique ID of field
+        /// Unique Id of field
         /// </summary>
         [Key]
         public int Id { get; set; }
 
         /// <summary>
-        /// Account ID of player
+        /// Account Id of player
         /// </summary>
         public int AccountId { get; set; }
 
         /// <summary>
-        /// Character ID of player
+        /// Character Id of player
         /// </summary>
         public int CharacterId { get; set; }
 

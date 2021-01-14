@@ -37,7 +37,7 @@ namespace Server.Character
         public static readonly Rotation CreatorRotation = new DegreeRotation(0f, 0f, 267.874016f);
 
         /// <summary>
-        /// Storage of Player IDs. Key = ID, Value = In use
+        /// Storage of Player IDs. Key = Id, Value = In use
         /// </summary>
         public static Dictionary<int, bool> PlayerIds = new Dictionary<int, bool>();
 
@@ -83,7 +83,7 @@ namespace Server.Character
 
                 player.GetClass().CreatorRoom = true;
 
-                player.SendInfoNotification($"Your session ID is: {player.GetPlayerId()}");
+                player.SendInfoNotification($"Your session Id is: {player.GetPlayerId()}");
 
                 player.SetDateTime(1, 1, 1, 12, 0, 0);
                 player.SetWeather(WeatherType.ExtraSunny);
@@ -155,7 +155,7 @@ namespace Server.Character
                         {
                             InventoryData inv = InventoryData.CreateDefaultInventory(10, 5);
 
-                            characterDb.InventoryID = inv.ID;
+                            characterDb.InventoryID = inv.Id;
                         }
 
                         if (string.IsNullOrEmpty(characterDb.Languages))

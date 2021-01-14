@@ -11,7 +11,7 @@ namespace Server.Models
     public class Phones
     {
         /// <summary>
-        /// Unique ID for the Phone
+        /// Unique Id for the Phone
         /// </summary>
         [Key]
         public int Id { get; set; }
@@ -42,12 +42,12 @@ namespace Server.Models
         public string? ContactList { get; set; }
 
         /// <summary>
-        /// Current Character ID that the phone is on
+        /// Current Character Id that the phone is on
         /// </summary>
         public int CharacterId { get; set; }
 
         /// <summary>
-        /// Fetches the Phone Data by ID
+        /// Fetches the Phone Data by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

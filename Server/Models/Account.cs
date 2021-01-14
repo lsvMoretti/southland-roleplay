@@ -63,7 +63,7 @@ namespace Server.Models
         public DateTime UnBanTime { get; set; }
 
         /// <summary>
-        /// Last Character ID
+        /// Last Character Id
         /// </summary>
         public int LastCharacter { get; set; }
 

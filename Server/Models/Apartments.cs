@@ -59,7 +59,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches an Apartment Complex by ID
+        /// Fetches an Apartment Complex by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -114,7 +114,7 @@ namespace Server.Models
         public string? Name { get; set; }
 
         /// <summary>
-        /// Owner ID of the Apartment
+        /// Owner Id of the Apartment
         /// </summary>
         public int Owner { get; set; }
 
@@ -134,7 +134,7 @@ namespace Server.Models
         public string? InteriorName { get; set; }
 
         /// <summary>
-        /// Floor ID
+        /// Floor Id
         /// </summary>
         public int Floor { get; set; }
 

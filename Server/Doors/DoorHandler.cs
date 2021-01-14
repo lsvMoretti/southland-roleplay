@@ -40,7 +40,7 @@ namespace Server.Doors
 
             context.SaveChanges();
 
-            player.SendInfoNotification($"You've added a new door. Door ID: {door.Id}.");
+            player.SendInfoNotification($"You've added a new door. Door Id: {door.Id}.");
         }
 
         public static void UpdateDoorsForAllPlayers()

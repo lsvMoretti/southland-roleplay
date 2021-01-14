@@ -900,7 +900,7 @@ namespace Server.Groups
                 player.SendInfoNotification($"You've removed {characterName} from your faction.");
 
                 Logging.AddToCharacterLog(player,
-                    $"has removed {characterName} from the faction ID: {player.FetchCharacter().ActiveFaction}.");
+                    $"has removed {characterName} from the faction Id: {player.FetchCharacter().ActiveFaction}.");
             }
         }
     }

@@ -168,7 +168,7 @@ namespace Server.Bank
             bankAccount.Balance -= requestedAmount;
             playerCharacter.Money += requestedAmount;
 
-            Logging.AddToCharacterLog(player, $"Has withdrawn {requestedAmount:C} from the ATM. Bank Account: {bankAccount.AccountNumber}, ID: {bankAccount.Id}");
+            Logging.AddToCharacterLog(player, $"Has withdrawn {requestedAmount:C} from the ATM. Bank Account: {bankAccount.AccountNumber}, Id: {bankAccount.Id}");
 
             Logging.AddToBankLog(bankAccount, $"{player.GetClass().Name} has withdrawn {requestedAmount:C} from an ATM.");
 

@@ -96,7 +96,7 @@ namespace Server.Models
         public bool Spawned { get; set; }
 
         /// <summary>
-        /// Garage ID of parked vehicle
+        /// Garage Id of parked vehicle
         /// </summary>
         public string? GarageId { get; set; }
 
@@ -136,7 +136,7 @@ namespace Server.Models
         public float Odometer { get; set; }
 
         /// <summary>
-        /// Inventory ID for the vehicle
+        /// Inventory Id for the vehicle
         /// </summary>
         public int InventoryId { get; set; }
 

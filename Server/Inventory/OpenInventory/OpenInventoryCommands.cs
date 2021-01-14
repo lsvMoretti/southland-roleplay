@@ -281,7 +281,7 @@ namespace Server.Inventory.OpenInventory
             if (nearStorage == null) return;
 
             player.SendInfoNotification($"Amount in storage: {nearStorage.Balance:C}.");
-            Logging.AddToCharacterLog(player, $"has looked at the balance in storage container ID {nearStorage.Id}.");
+            Logging.AddToCharacterLog(player, $"has looked at the balance in storage container Id {nearStorage.Id}.");
         }
 
         [Command("sdeposit", onlyOne: true, commandType: CommandType.Inventory,
@@ -328,7 +328,7 @@ namespace Server.Inventory.OpenInventory
 
             player.SendInfoNotification($"You've stored {amount:C} into the storage container.");
 
-            Logging.AddToCharacterLog(player, $"has stored {amount:C} into the storage container ID {storage.Id}.");
+            Logging.AddToCharacterLog(player, $"has stored {amount:C} into the storage container Id {storage.Id}.");
         }
 
         [Command("swithdraw", onlyOne: true, commandType: CommandType.Inventory,
@@ -375,7 +375,7 @@ namespace Server.Inventory.OpenInventory
 
             player.SendInfoNotification($"You've taken {amount:C} from the storage container.");
 
-            Logging.AddToCharacterLog(player, $"has taken {amount:C} from the storage container ID {storage.Id}.");
+            Logging.AddToCharacterLog(player, $"has taken {amount:C} from the storage container Id {storage.Id}.");
         }
     }
 }

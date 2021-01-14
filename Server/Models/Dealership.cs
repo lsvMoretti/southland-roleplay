@@ -64,7 +64,7 @@ namespace Server.Models
         public float CamRotZ { get; set; }
 
         /// <summary>
-        /// Fetches Dealership by ID
+        /// Fetches Dealership by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Dealership</returns>

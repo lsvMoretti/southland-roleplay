@@ -38,7 +38,7 @@ namespace Server.Models
         /// Adds a faction to the DB
         /// </summary>
         /// <param name="faction"></param>
-        /// <returns>New faction ID</returns>
+        /// <returns>New faction Id</returns>
         public static int AddFaction(Faction faction)
         {
             using Context context = new Context();
@@ -61,7 +61,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches a Faction by ID
+        /// Fetches a Faction by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

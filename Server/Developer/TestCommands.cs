@@ -123,7 +123,7 @@ namespace Server.Developer
                 return;
             }
 
-            player.SendInfoNotification($"Your seat ID is: {player.Seat}.");
+            player.SendInfoNotification($"Your seat Id is: {player.Seat}.");
         }
 
         [Command("c", AdminLevel.Moderator, true)]

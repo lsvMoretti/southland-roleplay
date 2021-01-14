@@ -641,7 +641,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've set {nearestProperty.BusinessName} required products to {amount}.");
 
             Logging.AddToCharacterLog(player,
-                $"Has set required products for {nearestProperty.BusinessName} (ID: {nearestProperty.Id}) to {amount}.");
+                $"Has set required products for {nearestProperty.BusinessName} (Id: {nearestProperty.Id}) to {amount}.");
         }
 
         [Command("setproductprice", onlyOne: true, commandType: CommandType.Property,
@@ -695,7 +695,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've set {nearestProperty.BusinessName} product buy price to {amount:C}.");
 
             Logging.AddToCharacterLog(player,
-                $"Has set product buy price for {nearestProperty.BusinessName} (ID: {nearestProperty.Id}) to {amount:C}.");
+                $"Has set product buy price for {nearestProperty.BusinessName} (Id: {nearestProperty.Id}) to {amount:C}.");
         }
 
         [Command("pwithdraw", onlyOne: true, commandType: CommandType.Property,
@@ -757,7 +757,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've withdraw {amount:C} from your business.");
 
             Logging.AddToCharacterLog(player,
-                $"has withdrawn {amount:C} from the business {nearestProperty.BusinessName} ID: {nearestProperty.Id}.");
+                $"has withdrawn {amount:C} from the business {nearestProperty.BusinessName} Id: {nearestProperty.Id}.");
         }
 
         [Command("pdeposit", onlyOne: true, commandType: CommandType.Property,
@@ -818,7 +818,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've deposited {amount:C} into your business.");
 
             Logging.AddToCharacterLog(player,
-                $"has deposited {amount:C} into the business {nearestProperty.BusinessName} ID: {nearestProperty.Id}.");
+                $"has deposited {amount:C} into the business {nearestProperty.BusinessName} Id: {nearestProperty.Id}.");
         }
 
         [Command("mortgageproperty", commandType: CommandType.Property,
@@ -1392,10 +1392,10 @@ namespace Server.Property
             targetPlayer.SendInfoNotification($"You've received {property.Address} from {player.GetClass().Name}.");
 
             Logging.AddToCharacterLog(player,
-                $"has given {property.Address} (ID: {property.Id}) to {targetPlayer.GetClass().Name} (ID: {targetPlayer.GetClass().CharacterId}).");
+                $"has given {property.Address} (Id: {property.Id}) to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetClass().CharacterId}).");
 
             Logging.AddToCharacterLog(targetPlayer,
-                $"has received {property.Address} (ID: {property.Id}) from {player.GetClass().Name} (ID: {player.GetClass().CharacterId}).");
+                $"has received {property.Address} (Id: {property.Id}) from {player.GetClass().Name} (Id: {player.GetClass().CharacterId}).");
             LoadProperties.ReloadProperty(property);
         }
 
@@ -1574,7 +1574,7 @@ namespace Server.Property
             property.InvPosX = player.Position.X;
             property.InvPosY = player.Position.Y;
             property.InvPosZ = player.Position.Z;
-            property.InventoryId = newData.ID;
+            property.InventoryId = newData.Id;
 
             context.SaveChanges();
 

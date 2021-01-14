@@ -561,7 +561,7 @@ namespace Server
         {
             if (!AltEntitySync.TryGetEntity(dynamicObjectId, 2, out IEntity entity))
             {
-                Console.WriteLine($"[Prop-Stream] [GetProp] ERROR: Entity with ID { dynamicObjectId } couldn't be found.");
+                Console.WriteLine($"[Prop-Stream] [GetProp] ERROR: Entity with Id { dynamicObjectId } couldn't be found.");
                 return default;
             }
 

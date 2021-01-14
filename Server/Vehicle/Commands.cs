@@ -1883,7 +1883,7 @@ namespace Server.Vehicle
 
             foreach (Models.Vehicle storedVehicle in storedVehicles)
             {
-                menuItems.Add(new NativeMenuItem(storedVehicle.Name, $"ID: {storedVehicle.Id}"));
+                menuItems.Add(new NativeMenuItem(storedVehicle.Name, $"Id: {storedVehicle.Id}"));
             }
 
             NativeMenu menu = new NativeMenu("vehicle:cycle:GetCycleSelect", "Cycles", "Select a Cycle", menuItems)
@@ -2090,7 +2090,7 @@ namespace Server.Vehicle
             player.SendInfoNotification($"You've sold your {vehicleData.Name} for {vehicleValue:C}.");
 
             Logging.AddToCharacterLog(player,
-                $"has sold vehicle ID {vehicleData.Id}, Name: {vehicleData.Name} for {vehicleValue:C}.");
+                $"has sold vehicle Id {vehicleData.Id}, Name: {vehicleData.Name} for {vehicleValue:C}.");
         }
 
         [Command("vsetforsale", onlyOne: true, commandType: CommandType.Vehicle,

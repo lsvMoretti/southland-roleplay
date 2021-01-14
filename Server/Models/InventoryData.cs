@@ -9,7 +9,7 @@ namespace Server.Models
     public class InventoryData
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public string? Items { get; set; }
         public float InventorySpace { get; set; }
@@ -34,7 +34,7 @@ namespace Server.Models
         public static InventoryData? GetInventoryData(int id)
         {
             using Context context = new Context();
-            return context.Inventory.FirstOrDefault(i => i.ID == id);
+            return context.Inventory.FirstOrDefault(i => i.Id == id);
         }
     }
 }

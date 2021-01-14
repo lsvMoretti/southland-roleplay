@@ -55,7 +55,7 @@ namespace Server.Inventory
             try
             {
                 using Context context = new Context();
-                _items = new List<InventoryItem>(JsonConvert.DeserializeObject<List<InventoryItem>>(context.Inventory.Find(data.ID).Items).ToList());
+                _items = new List<InventoryItem>(JsonConvert.DeserializeObject<List<InventoryItem>>(context.Inventory.Find(data.Id).Items).ToList());
             }
             catch
             {
@@ -76,7 +76,7 @@ namespace Server.Inventory
         private void SaveInventory()
         {
             using Context context = new Context();
-            InventoryData invData = context.Inventory.Find(data.ID);
+            InventoryData invData = context.Inventory.Find(data.Id);
 
             invData.Items = JsonConvert.SerializeObject(_items);
 
@@ -206,7 +206,7 @@ namespace Server.Inventory
         }
 
         /// <summary>
-        /// Removes the first Item with the given ID
+        /// Removes the first Item with the given Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

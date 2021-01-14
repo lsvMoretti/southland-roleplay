@@ -327,13 +327,13 @@ namespace Server.Bank
             if (transactionType == BankTransactionType.Deposit)
             {
                 playerCharacter.Money -= (float)amount;
-                Logging.AddToCharacterLog(player, $"Has deposited {amount:C} to Bank Account Number: {bankAccount.AccountNumber}, ID: {bankAccount.Id}");
+                Logging.AddToCharacterLog(player, $"Has deposited {amount:C} to Bank Account Number: {bankAccount.AccountNumber}, Id: {bankAccount.Id}");
                 Logging.AddToBankLog(bankAccount, $"{amount:C} has been deposited by {playerCharacter.Name}.");
             }
             if (transactionType == BankTransactionType.Withdraw)
             {
                 playerCharacter.Money += (float)amount;
-                Logging.AddToCharacterLog(player, $"Has withdrawn {amount:C} from Bank Account Number: {bankAccount.AccountNumber}, ID: {bankAccount.Id}");
+                Logging.AddToCharacterLog(player, $"Has withdrawn {amount:C} from Bank Account Number: {bankAccount.AccountNumber}, Id: {bankAccount.Id}");
                 Logging.AddToBankLog(bankAccount, $"{amount:C} has been withdrawn by {playerCharacter.Name}.");
             }
 
@@ -457,11 +457,11 @@ namespace Server.Bank
             playerBankAccount.Balance -= amount;
             targetBankAccount.Balance += amount;
 
-            Logging.AddToCharacterLog(player, $"Has sent {amount:C} from Bank Account {playerBankAccount.AccountNumber}, ID: {playerBankAccount.Id} to Bank Account {targetBankAccount.AccountNumber}, ID: {targetBankAccount.Id}");
+            Logging.AddToCharacterLog(player, $"Has sent {amount:C} from Bank Account {playerBankAccount.AccountNumber}, Id: {playerBankAccount.Id} to Bank Account {targetBankAccount.AccountNumber}, Id: {targetBankAccount.Id}");
 
-            Logging.AddToBankLog(playerBankAccount, $"{player.GetClass().Name} has sent {amount:C} to Bank Account {targetBankAccount.AccountNumber}, ID: {targetBankAccount.Id}");
+            Logging.AddToBankLog(playerBankAccount, $"{player.GetClass().Name} has sent {amount:C} to Bank Account {targetBankAccount.AccountNumber}, Id: {targetBankAccount.Id}");
 
-            Logging.AddToBankLog(targetBankAccount, $"Has received {amount:C} by {player.GetClass().Name}, from Bank Account: {playerBankAccount.AccountNumber}, ID: {playerBankAccount.Id}");
+            Logging.AddToBankLog(targetBankAccount, $"Has received {amount:C} by {player.GetClass().Name}, from Bank Account: {playerBankAccount.AccountNumber}, Id: {playerBankAccount.Id}");
 
             context.SaveChanges();
 

@@ -82,10 +82,10 @@ namespace Server.Admin
             AdminHandler.HelpReports.Remove(helpReport);
             
             targetPlayer.SendInfoNotification(
-                $"Your help request ID {helpReport.Id} has been accepted. Please await for them to contact you.");
+                $"Your help request Id {helpReport.Id} has been accepted. Please await for them to contact you.");
 
-            player.SendInfoNotification($"You have accepted help request ID {helpReport.Id}. Message: {helpReport.Message}.");
-            player.SendInfoNotification($"Player ID: {targetPlayer.GetPlayerId()}");
+            player.SendInfoNotification($"You have accepted help request Id {helpReport.Id}. Message: {helpReport.Message}.");
+            player.SendInfoNotification($"Player Id: {targetPlayer.GetPlayerId()}");
 
             var onlineHelpers = Alt.Server.GetPlayers()
                 .Where(x => x.FetchAccount()?.Helper == true).ToList();
@@ -97,15 +97,15 @@ namespace Server.Admin
                     if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;
                     
                     onlineHelper.SendHelperMessage(
-                        $"Admin {player.FetchAccount().Username} has accepted report ID: {helpReport.Id}.");
+                        $"Admin {player.FetchAccount().Username} has accepted report Id: {helpReport.Id}.");
                 }
             }
             
             DiscordHandler.SendMessageToReportsChannel(
-                $"Helper {player.FetchAccount().Username} has accepted Help ID {helpReport.Id}");
+                $"Helper {player.FetchAccount().Username} has accepted Help Id {helpReport.Id}");
 
             Logging.AddToAdminLog(player,
-                $"has accepted helpme ID {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
+                $"has accepted helpme Id {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
 
         [Command("dh", onlyOne: true,  alternatives: "denyhelp", commandType: CommandType.Helper, description: "Declines a Help Me")]
@@ -149,9 +149,9 @@ namespace Server.Admin
             
             AdminHandler.HelpReports.Remove(helpReport);
             
-            targetPlayer.SendInfoNotification($"Your helpme request ID: {helpReport.Id} has been denied.");
+            targetPlayer.SendInfoNotification($"Your helpme request Id: {helpReport.Id} has been denied.");
 
-            player.SendInfoNotification($"You have declined report ID: {helpReport.Id}.");
+            player.SendInfoNotification($"You have declined report Id: {helpReport.Id}.");
 
             foreach (IPlayer onlineHelper in Alt.Server.GetPlayers()
                 .Where(x => x.FetchAccount()?.Helper == true))
@@ -160,14 +160,14 @@ namespace Server.Admin
                 if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;
                 
                 onlineHelper.SendHelperMessage(
-                    $"Helper {player.FetchAccount().Username} has denied help me request ID: {helpReport.Id}.");
+                    $"Helper {player.FetchAccount().Username} has denied help me request Id: {helpReport.Id}.");
             }
 
             DiscordHandler.SendMessageToReportsChannel(
-                $"Helper {player.FetchAccount().Username} has denied help request ID {helpReport.Id}");
+                $"Helper {player.FetchAccount().Username} has denied help request Id {helpReport.Id}");
 
             Logging.AddToAdminLog(player,
-                $"has denied helme ID {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
+                $"has denied helme Id {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
     }
 }

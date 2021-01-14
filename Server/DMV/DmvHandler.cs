@@ -22,7 +22,7 @@ namespace Server.DMV
         public static Position DmvPosition = new Position(-940.5114f, -279.0121f, 39.23505f);
 
         /// <summary>
-        /// DMV Checkpoints. Key - Point ID, Value - Point Position
+        /// DMV Checkpoints. Key - Point Id, Value - Point Position
         /// </summary>
         public static Dictionary<int, Position> DrivingCheckpoints = new Dictionary<int, Position>
         {

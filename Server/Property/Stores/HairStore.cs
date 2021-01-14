@@ -30,7 +30,7 @@ namespace Server.Property.Stores
         };
 
         /// <summary>
-        /// List of Male Hair ID's
+        /// List of Male Hair Id's
         /// </summary>
         private static int[] _maleHairIntList = new int[]
         {
@@ -56,7 +56,7 @@ namespace Server.Property.Stores
         };
 
         /// <summary>
-        /// List of Female Hair ID's
+        /// List of Female Hair Id's
         /// </summary>
         private static int[] _femaleHairIntList = new int[]
         {

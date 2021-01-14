@@ -50,7 +50,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Sets the Players ID
+        /// Sets the Players Id
         /// </summary>
         /// <param name="player"></param>
         /// <param name="id"></param>
@@ -61,7 +61,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Gets the Players ID
+        /// Gets the Players Id
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
@@ -146,7 +146,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Sets the users account ID
+        /// Sets the users account Id
         /// </summary>
         /// <param name="player"></param>
         /// <param name="accountId"></param>
@@ -157,7 +157,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Returns the users account ID
+        /// Returns the users account Id
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
@@ -182,7 +182,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Sets the users Character ID
+        /// Sets the users Character Id
         /// </summary>
         /// <param name="player"></param>
         /// <param name="characterId"></param>
@@ -192,7 +192,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Fetches the users current character ID
+        /// Fetches the users current character Id
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
@@ -825,7 +825,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// The Player ID
+        /// The Player Id
         /// </summary>
         public int PlayerId
         {

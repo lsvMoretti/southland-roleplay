@@ -709,13 +709,13 @@ namespace Server.Groups.Police
             {
                 targetLicenses.Remove(license);
                 player.SendInfoNotification($"You have removed a {licenseName} License from {targetCharacter.Name}.");
-                Logging.AddToCharacterLog(player, $"has removed {targetCharacter.Name} - ID: {targetCharacter.Id} license type: {licenseName}");
+                Logging.AddToCharacterLog(player, $"has removed {targetCharacter.Name} - Id: {targetCharacter.Id} license type: {licenseName}");
             }
             else
             {
                 targetLicenses.Add(license);
                 player.SendInfoNotification($"You have added a {licenseName} License to {targetCharacter.Name}.");
-                Logging.AddToCharacterLog(player, $"has given {targetCharacter.Name} - ID: {targetCharacter.Id} license type: {licenseName}");
+                Logging.AddToCharacterLog(player, $"has given {targetCharacter.Name} - Id: {targetCharacter.Id} license type: {licenseName}");
             }
 
             targetCharacterDb.LicensesHeld = JsonConvert.SerializeObject(targetLicenses);

@@ -306,7 +306,7 @@ namespace Server.Chat
 
                                 case MessageType.Ooc:
                                     // We send the message
-                                    target.SendChatMessage($"{oocMessageColor}(( {player.GetClass().Name} (ID:{player.GetPlayerId()}): {message} ))");
+                                    target.SendChatMessage($"{oocMessageColor}(( {player.GetClass().Name} (Id:{player.GetPlayerId()}): {message} ))");
 
                                     break;
 

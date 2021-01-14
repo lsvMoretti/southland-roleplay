@@ -22,7 +22,7 @@ namespace Server.Models
                 // Black rucksack
                 Backpack newBackpack = new Backpack
                 {
-                    InventoryId = InventoryData.CreateDefaultInventory(10, 8).ID,
+                    InventoryId = InventoryData.CreateDefaultInventory(10, 8).Id,
                     Drawable = drawable,
                     DropPosX = 0,
                     DropPosY = 0,
@@ -43,7 +43,7 @@ namespace Server.Models
                 // Back gym bag
                 Backpack newBackpack = new Backpack
                 {
-                    InventoryId = InventoryData.CreateDefaultInventory(14, 8).ID,
+                    InventoryId = InventoryData.CreateDefaultInventory(14, 8).Id,
                     Drawable = drawable,
                     DropPosX = 0,
                     DropPosY = 0,

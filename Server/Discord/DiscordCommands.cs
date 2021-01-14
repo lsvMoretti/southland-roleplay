@@ -107,7 +107,7 @@ namespace Server.Discord
         {
             if (string.IsNullOrEmpty(userId))
             {
-                player.SendErrorNotification("There was an error fetching your discord ID.");
+                player.SendErrorNotification("There was an error fetching your discord Id.");
                 return;
             }
             

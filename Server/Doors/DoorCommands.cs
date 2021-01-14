@@ -111,7 +111,7 @@ namespace Server.Doors
                 return;
             }
 
-            player.SendNotification($"Door ID: {nearestDoor.Id}.");
+            player.SendNotification($"Door Id: {nearestDoor.Id}.");
         }
     }
 }

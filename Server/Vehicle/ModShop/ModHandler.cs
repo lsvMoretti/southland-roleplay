@@ -1055,7 +1055,7 @@ namespace Server.Vehicle.ModShop
 
             player.SendInfoNotification($"Head to a mechanic to get this fitted.");
 
-            Logging.AddToCharacterLog(player, $"has bought a new VMod for vehicle ID: {player.Vehicle.FetchVehicleData().Id}. Mod slot: {modTypeString}, Mod Name: {modName}, Index: {modSelectedIndex}.");
+            Logging.AddToCharacterLog(player, $"has bought a new VMod for vehicle Id: {player.Vehicle.FetchVehicleData().Id}. Mod slot: {modTypeString}, Mod Name: {modName}, Index: {modSelectedIndex}.");
 
             bool hasPropertyData = player.GetData("AtModProperty", out int propertyId);
 
@@ -1121,7 +1121,7 @@ namespace Server.Vehicle.ModShop
 
             player.SendInfoNotification($"You've purchased a new digital radio for your vehicle. Head to a mechanic to get this fitted!");
 
-            Logging.AddToCharacterLog(player, $"has bought a digital radio for their vehicle ID: {player.Vehicle.FetchVehicleData()}.");
+            Logging.AddToCharacterLog(player, $"has bought a digital radio for their vehicle Id: {player.Vehicle.FetchVehicleData()}.");
 
             bool hasPropertyData = player.GetData("AtModProperty", out int propertyId);
 
@@ -1360,7 +1360,7 @@ namespace Server.Vehicle.ModShop
 
             player.SendInfoNotification($"Head to a mechanic to get this fitted.");
 
-            Logging.AddToCharacterLog(player, $"has bought a new VMod for vehicle ID: {player.Vehicle.FetchVehicleData().Id}. Mod slot: Front Wheels, Mod Name: {modName}, Index: {selectedWheelIndex}.");
+            Logging.AddToCharacterLog(player, $"has bought a new VMod for vehicle Id: {player.Vehicle.FetchVehicleData().Id}. Mod slot: Front Wheels, Mod Name: {modName}, Index: {selectedWheelIndex}.");
 
             bool hasPropertyData = player.GetData("AtModProperty", out int propertyId);
 

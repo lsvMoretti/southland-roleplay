@@ -58,7 +58,7 @@ namespace Server.Groups.EUP
             new EupProp("SWAT Helmet", EupPropType.Prop,0, new []{154, 0}),
             new EupProp("SWAT Helmet With Mic", EupPropType.Prop,0, new []{157, 0}),
             new EupProp("SWAT Vest", EupPropType.Clothing,9, new []{58, 0}),
-            new EupProp("LSPD Neck ID", EupPropType.Clothing,9, new []{60, 0}),
+            new EupProp("LSPD Neck Id", EupPropType.Clothing,9, new []{60, 0}),
             new EupProp("LSPD Belt Badge & Cuffs", EupPropType.Clothing,9, new []{61, 0}),
             new EupProp("LSPD Belt Badge", EupPropType.Clothing,5, new []{91, 0}),
             new EupProp("LSPD Neck Badge", EupPropType.Clothing,5, new []{92, 0}),

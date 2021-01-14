@@ -125,7 +125,7 @@ namespace Server.Vehicle
                 ? $"hot wires the {vehicleDb.Name}."
                 : $"turns the {vehicleDb.Name} engine off.");
 
-            Logging.AddToCharacterLog(player, $"Has hot wired vehicle ID {vehicleDb.Id}.");
+            Logging.AddToCharacterLog(player, $"Has hot wired vehicle Id {vehicleDb.Id}.");
         }
     }
 }

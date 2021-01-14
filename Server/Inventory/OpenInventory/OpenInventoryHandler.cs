@@ -69,8 +69,8 @@ namespace Server.Inventory.OpenInventory
                     RotY = storageLocation.Rotation.Y,
                     RotZ = storageLocation.Rotation.Z,
                     InventoryId = storageLocation.IsDumpster
-                        ? InventoryData.CreateDefaultInventory(15f, 10f).ID
-                        : InventoryData.CreateDefaultInventory(7f, 10f).ID
+                        ? InventoryData.CreateDefaultInventory(15f, 10f).Id
+                        : InventoryData.CreateDefaultInventory(7f, 10f).Id
                 };
 
                 if (storageLocation.IsDumpster)

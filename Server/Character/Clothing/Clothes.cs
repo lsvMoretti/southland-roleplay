@@ -179,7 +179,7 @@ namespace Server.Character.Clothing
                         {
                             foreach (KeyValuePair<string, BestTorso> torsoData in torsoInfo.Value)
                             {
-                                // Torso ID
+                                // Torso Id
                                 int key = Convert.ToInt32(torsoInfo.Key);
 
                                 if (MaleTopToTorso.ContainsKey(key)) continue;
@@ -204,7 +204,7 @@ namespace Server.Character.Clothing
                         {
                             foreach (KeyValuePair<string, BestTorso> torsoData in torsoInfo.Value)
                             {
-                                // Torso ID
+                                // Torso Id
                                 int key = Convert.ToInt32(torsoInfo.Key);
 
                                 if (FemaleTopToTorso.ContainsKey(key)) continue;
