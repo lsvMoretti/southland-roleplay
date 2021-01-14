@@ -30,7 +30,7 @@ namespace Server.Inventory
         /// <summary>
         /// Quantity of Items
         /// </summary>
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         [JsonIgnore]
         public List<string> QuantityListString
