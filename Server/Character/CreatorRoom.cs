@@ -628,10 +628,11 @@ namespace Server.Character
 
                             player.SetPosition(apartmentInterior.Position, Rotation.Zero);
                         }
-                        else
+
+                        if (playerCharacter.InsideProperty > 0)
                         {
-                            Models.Property insideProperty =
-                                Models.Property.FetchProperty((int)playerCharacter.Dimension);
+                            Models.Property? insideProperty =
+                                Models.Property.FetchProperty(playerCharacter.Dimension);
 
                             if (insideProperty == null)
                             {
@@ -639,7 +640,7 @@ namespace Server.Character
                                 return;
                             }
 
-                            Interiors propertyInterior =
+                            Interiors? propertyInterior =
                                 Interiors.InteriorList.FirstOrDefault(
                                     x => x.InteriorName == insideProperty.InteriorName);
 
@@ -665,6 +666,12 @@ namespace Server.Character
                                     player.LoadInteriorProp(prop);
                                 }
                             }
+                        }
+                        else
+                        {
+                            player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                switchOut: true);
+                            player.Dimension = playerCharacter.Dimension;
                         }
                     }
                     else
