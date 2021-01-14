@@ -55,9 +55,7 @@ namespace Server.Inventory
             try
             {
                 using Context context = new Context();
-                _items = new List<InventoryItem>(JsonConvert.DeserializeObject<List<InventoryItem>>(context.Inventory.Find(data.ID).invetoryItems).ToList());
-
-                
+                _items = new List<InventoryItem>(JsonConvert.DeserializeObject<List<InventoryItem>>(context.Inventory.Find(data.ID).Items).ToList());
             }
             catch
             {
@@ -80,11 +78,9 @@ namespace Server.Inventory
             using Context context = new Context();
             InventoryData invData = context.Inventory.Find(data.ID);
 
-            invData.invetoryItems = JsonConvert.SerializeObject(_items);
+            invData.Items = JsonConvert.SerializeObject(_items);
 
             context.SaveChanges();
-
-            
         }
 
         /// <summary>
@@ -94,7 +90,7 @@ namespace Server.Inventory
         /// <param name="item"></param>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public bool TransferItem(Inventory inventoryTarget, InventoryItem item, int quantity = 1)
+        public bool TransferItem(Inventory inventoryTarget, InventoryItem item, double quantity = 1)
         {
             // check if the target inventory has enough space
             if (inventoryTarget.MaximumWeight < inventoryTarget.CurrentWeight + item.GetTotalWeight(quantity))
@@ -214,7 +210,7 @@ namespace Server.Inventory
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public bool RemoveItem(string id, int quantity = 1)
+        public bool RemoveItem(string id, double quantity = 1)
         {
             InventoryItem itemToRemove = _items.FirstOrDefault(i => i.Id == id);
             return itemToRemove != null && RemoveItem(itemToRemove, quantity);
@@ -233,14 +229,14 @@ namespace Server.Inventory
             return RemoveItem(itemToRemove, 1);
         }
 
-        public bool RemoveItem(InventoryItem item, int quantity)
+        public bool RemoveItem(InventoryItem item, double quantity)
         {
             try
             {
                 if (HasItem(item) == false) return false;
                 // make sure we are not removing more than the quantity
 
-                int newQuantity = item.Quantity -= quantity;
+                double newQuantity = item.Quantity -= quantity;
 
                 if (newQuantity < 0) return false;
 

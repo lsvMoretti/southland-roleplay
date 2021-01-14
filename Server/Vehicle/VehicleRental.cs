@@ -309,7 +309,7 @@ namespace Server.Vehicle
                 if (playerInventoryData == null) continue;
 
                 List<InventoryItem> items =
-                    JsonConvert.DeserializeObject<List<InventoryItem>>(playerInventoryData.invetoryItems);
+                    JsonConvert.DeserializeObject<List<InventoryItem>>(playerInventoryData.Items);
 
                 InventoryItem oldKey = items.FirstOrDefault(x => x.ItemValue == keyValue);
 
@@ -317,7 +317,7 @@ namespace Server.Vehicle
 
                 items.Remove(oldKey);
 
-                playerInventoryData.invetoryItems = JsonConvert.SerializeObject(items);
+                playerInventoryData.Items = JsonConvert.SerializeObject(items);
             }
 
             context.SaveChanges();
