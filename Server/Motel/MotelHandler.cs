@@ -57,6 +57,7 @@ namespace Server.Motel
 
             Console.WriteLine($"Loaded {context.Motels.Count()} Motels.");
         }
+
         /// <summary>
         /// Loads an individual motel
         /// </summary>
@@ -89,7 +90,7 @@ namespace Server.Motel
             MotelObjects.Add(newMotelObject);
 
             Alt.EmitAllClients("Motel:OnMotelAdded", JsonConvert.SerializeObject(motel));
-           
+
             sw.Stop();
 
             Console.WriteLine($"Loaded {motel.Name}. This took {sw.Elapsed}.");
@@ -121,10 +122,10 @@ namespace Server.Motel
             InitMotels();
         }
 
-        public static MotelRoom FetchNearestMotelRoom(Position position, float distance = 5f)
+        public static MotelRoom? FetchNearestMotelRoom(Position position, float distance = 5f)
         {
             float lastDistance = distance;
-            MotelRoom lastRoom = null;
+            MotelRoom? lastRoom = null;
 
             using Context context = new Context();
 
@@ -184,17 +185,15 @@ namespace Server.Motel
 
                 if (insideRoom == null)
                 {
-                    
                     player.SendErrorNotification("You're not in near a motel room.");
                     return false;
                 }
-                
+
                 insideRoom.Locked = !insideRoom.Locked;
 
                 motel.RoomList = JsonConvert.SerializeObject(insideMotelRooms);
 
                 context.SaveChanges();
-                
 
                 string roomLockStatus = "unlocked";
 
@@ -204,7 +203,6 @@ namespace Server.Motel
                 }
 
                 player.SendInfoNotification($"You have {roomLockStatus} the door.");
-
 
                 return true;
             }
@@ -218,7 +216,6 @@ namespace Server.Motel
             motel.RoomList = JsonConvert.SerializeObject(motelRooms);
 
             context.SaveChanges();
-            
 
             string lockStatus = "unlocked";
 
@@ -241,7 +238,7 @@ namespace Server.Motel
             playerCharacter.InMotel = room.MotelId;
             playerCharacter.InMotelRoom = room.Id;
 
-            Interiors interior = Interiors.InteriorList.FirstOrDefault(x => x.InteriorName == "Motel");
+            Interiors? interior = Interiors.InteriorList.FirstOrDefault(x => x.InteriorName == "Motel");
 
             player.Position = interior.Position;
 
@@ -250,10 +247,9 @@ namespace Server.Motel
             newDimension *= 10000;
 
             player.Dimension = newDimension;
-            
+
             player.SetSyncedMetaData("PlayerDimension", player.Dimension);
             context.SaveChanges();
-            
         }
 
         public static void SetPlayerOutOfMotelRoom(IPlayer player)
@@ -270,7 +266,7 @@ namespace Server.Motel
                 return;
             }
 
-            MotelRoom inMotelRoom = JsonConvert.DeserializeObject<List<MotelRoom>>(inMotel.RoomList)
+            MotelRoom? inMotelRoom = JsonConvert.DeserializeObject<List<MotelRoom>>(inMotel.RoomList)
                 .FirstOrDefault(x => x.Id == playerCharacter.InMotelRoom);
 
             if (inMotelRoom == null)
@@ -283,13 +279,12 @@ namespace Server.Motel
 
             player.Position = exteriorPosition;
             player.Dimension = 0;
-            
+
             player.SetSyncedMetaData("PlayerDimension", player.Dimension);
             playerCharacter.InMotel = 0;
             playerCharacter.InMotelRoom = 0;
 
             context.SaveChanges();
-            
         }
     }
 

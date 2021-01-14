@@ -154,7 +154,7 @@ function closeMdc() {
     alt.setTimeout(() => {
         mdcWindow.destroy();
         mdcWindow = undefined;
+        alt.emitServer('mdcWindowClose');
     }, 1000);
     alt.showCursor(false);
-    alt.emitServer('mdcWindowClose');
 }

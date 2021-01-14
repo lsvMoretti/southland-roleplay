@@ -415,7 +415,7 @@ namespace Server.Property
                 return;
             }
 
-            MotelRoom nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
+            MotelRoom? nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
 
             if (nearRoom != null)
             {
