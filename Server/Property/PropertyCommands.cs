@@ -542,7 +542,7 @@ namespace Server.Property
 
             using Context context = new Context();
 
-            Models.Property insideProperty = Models.Property.FetchProperty(playerCharacter.InsideProperty);
+            Models.Property? insideProperty = Models.Property.FetchProperty(playerCharacter.InsideProperty);
 
             if (insideProperty == null) return;
 
@@ -569,7 +569,10 @@ namespace Server.Property
 
             DoorHandler.UpdateDoorsForPlayer(player);
 
-            player.UnloadIpl(insideProperty.Ipl);
+            if (!string.IsNullOrEmpty(insideProperty.Ipl))
+            {
+                player.UnloadIpl(insideProperty.Ipl);
+            }
 
             if (!string.IsNullOrEmpty(insideProperty.MusicStation))
             {

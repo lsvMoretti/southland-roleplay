@@ -207,7 +207,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static Property FetchProperty(int id)
+        public static Property? FetchProperty(int id)
         {
             using Context context = new Context();
             return context.Property.Find(id);
