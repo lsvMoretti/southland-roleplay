@@ -193,8 +193,6 @@ namespace Server.Connection
             {
                 player.ChatInput(false);
 
-                player.Emit("closeLogin");
-
                 using Context context = new Context();
                 Models.Account playerAccount = context.Account.FirstOrDefault(x => x.Username.ToLower() == user.ToLower());
 
@@ -204,7 +202,6 @@ namespace Server.Connection
 
                     if (playerAccount == null)
                     {
-                        player.Emit("showLogin");
                         player.SendErrorNotification("No account found by this user.");
                         return;
                     }
@@ -239,7 +236,6 @@ namespace Server.Connection
 
                 if (!BCrypt.Net.BCrypt.Verify(password, playerAccount.Password))
                 {
-                    player.Emit("showLogin");
                     player.SendErrorNotification("Incorrect Password!");
                     return;
                 }
@@ -261,6 +257,7 @@ namespace Server.Connection
                 {
                     player.SendErrorNotification("You don't have any accepted characters on your account.");
                     player.SendInfoNotification($"Visit the UCP: https://ucp.sol-rp.com to create some characters!");
+                    player.Emit("closeLogin");
                     return;
                 }
 
@@ -272,6 +269,7 @@ namespace Server.Connection
                     if (string.IsNullOrEmpty(playerAccount.HardwareIdHash) ||
                         string.IsNullOrEmpty(playerAccount.HardwareIdExHash))
                     {
+                        player.Emit("closeLogin");
                         player.SendErrorNotification("Two Factor is setup. Please input the code below.");
                         player.Emit("2FA:GetInput");
                         player.FreezeCam(true);
@@ -286,6 +284,7 @@ namespace Server.Connection
                         player.HardwareIdHash != hardwareId ||
                         player.HardwareIdExHash != hardwareIdEx)
                     {
+                        player.Emit("closeLogin");
                         player.SendErrorNotification("Two Factor is setup. Please input the code below.");
                         player.Emit("2FA:GetInput");
                         player.FreezeCam(true);
@@ -294,6 +293,7 @@ namespace Server.Connection
                     }
                 }
 
+                player.Emit("closeLogin");
                 CompleteLogin(player);
             }
             catch (Exception e)
