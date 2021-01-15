@@ -417,6 +417,7 @@ namespace Server.Vehicle
 
             vehicle.PrimaryColorRgb = new Rgba(color1[0], color1[1], color1[2], 255);
             vehicle.SecondaryColorRgb = new Rgba(color2[0], color2[1], color2[2], 255);
+            vehicle.PearlColor = 0;
 
             vehicle.Livery = (byte)vehicleData.Livery;
 
