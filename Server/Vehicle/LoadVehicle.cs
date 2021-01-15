@@ -168,7 +168,7 @@ namespace Server.Vehicle
             if (vehicleData.FactionId != 0)
             {
                 vehicle.LockState = VehicleLockState.Locked;
-                vehicle.GetClass().FuelLevel = 100;
+                vehicleData.FuelLevel = 100;
             }
 
             if (!ignoreDamage)
