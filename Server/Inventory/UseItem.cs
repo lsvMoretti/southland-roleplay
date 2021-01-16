@@ -481,44 +481,61 @@ namespace Server.Inventory
 
             if (item.ItemInfo.ID == "ITEM_DRUG_WEED")
             {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+                /*
                 playerInventory.RemoveItem(item, 1);
                 UseDrug.UseWeedItem(player);
-                return;
+                return;*/
             }
 
             if (item.ItemInfo.ID == "ITEM_DRUG_COCAINE")
             {
+                player.SendErrorNotification("Please use /drugs.");
+                return;/*
                 playerInventory.RemoveItem(item, 1);
                 UseDrug.UseCocaineItem(player);
-                return;
+                return;*/
             }
 
             if (item.ItemInfo.ID == "ITEM_DRUG_METH")
             {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+                /*
                 playerInventory.RemoveItem(item, 1);
                 UseDrug.UseMethItem(player);
-                return;
+                return;*/
             }
 
             if (item.ItemInfo.ID == "ITEM_DRUG_HEROIN")
             {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+                /*
                 playerInventory.RemoveItem(item, 1);
                 UseDrug.UseHeroinItem(player);
-                return;
+                return;*/
             }
 
             if (item.ItemInfo.ID == "ITEM_DRUG_MUSHROOM")
             {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+                /*
                 playerInventory.RemoveItem(item, 1);
                 UseDrug.UseMushroomItem(player);
-                return;
+                return;*/
             }
 
             if (item.ItemInfo.ID == "ITEM_DRUG_ECSTASY")
             {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+                /*
                 playerInventory.RemoveItem(item, 1);
                 UseDrug.UseEcstasyItem(player);
-                return;
+                return;*/
             }
 
             if (item.ItemInfo.ID == "ITEM_BEEFY_BURGER")
@@ -527,14 +544,14 @@ namespace Server.Inventory
                 player.SendEmoteMessage($"eats a messy Beefy Bills Burger.");
                 return;
             }
-            
+
             if (item.ItemInfo.ID == "ITEM_HOTDOG")
             {
                 playerInventory.RemoveItem(item);
                 player.SendEmoteMessage($"eats a Hotdog that's been covered in sauce.");
                 return;
             }
-            
+
             player.SendErrorNotification("An error occurred. #ER29");
             return;
         }

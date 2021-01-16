@@ -1663,6 +1663,24 @@
     "Price": 5,
     "Stackable": true
   },
+  {
+    "ID": "ITEM_DRUG_ZIPLOCK_BAG_SMALL",
+    "Name": "Small Zip-lock Bag",
+    "Description": "Used to keep things air tight.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 1,
+    "Stackable": true
+  },
+  {
+    "ID": "ITEM_DRUG_ZIPLOCK_BAG_LARGE",
+    "Name": "Large Zip-lock Bag",
+    "Description": "Used to keep bigger things air tight.",
+    "Weight": 0.15,
+    "Capacity": 0.15,
+    "Price": 1.5,
+    "Stackable": true
+  },
 
   // Police Ticket
   {

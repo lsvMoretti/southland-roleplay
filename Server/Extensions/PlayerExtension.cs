@@ -319,7 +319,7 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static Inventory.Inventory FetchInventory(this IPlayer player)
+        public static Inventory.Inventory? FetchInventory(this IPlayer player)
         {
             return player.FetchCharacter() == null ? null : new Inventory.Inventory(InventoryData.GetInventoryData(player.FetchCharacter().InventoryID));
         }

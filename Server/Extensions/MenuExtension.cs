@@ -666,6 +666,18 @@ namespace Server.Extensions
                 #endregion Interior Mapping
 
                 if (serverTrigger == "WelcomePlayer:JobMenu") WelcomePlayer.OnJobMenuSelectItem(player, selectedItem);
+
+                #region Drug System Revamp
+
+                if (serverTrigger == "DrugSystem:DrugsMainMenuSelect") Drug.Commands.OnDrugMainMenuSelect(player, selectedItem, index);
+
+                if (serverTrigger == "DrugSystem:SubMenuDrugSelected") Drug.Commands.SubMenuDrugSelected(player, selectedItem);
+
+                if (serverTrigger == "DrugSystem:CombineDrugWithBag") Drug.Commands.OnCombineDrugWithDrugBag(player, selectedItem, index);
+
+                if (serverTrigger == "DrugSystem:SelectedCombineDrugToBagQuantity") Drug.Commands.OnSelectedCombineDrugToBag(player, selectedItem);
+
+                #endregion Drug System Revamp
             }
             catch (Exception e)
             {
@@ -741,6 +753,12 @@ namespace Server.Extensions
                 if (listTrigger == "Makeup:OnSubMenuListChange") MakeupHandler.OnSubMenuListChange(player, menuItemText, listText);
 
                 #endregion Hair & Makeup
+
+                #region Drug System
+
+                if (listTrigger == "DrugSystem:OnCombineDrugToBagListChange") Drug.Commands.OnCombineDrugToBagQuantityChange(player, menuItemText, listText);
+
+                #endregion Drug System
             }
             catch (Exception e)
             {
