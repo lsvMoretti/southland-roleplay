@@ -18,6 +18,7 @@ using Server.Character.Clothing;
 using Server.Chat;
 using Server.Commands;
 using Server.Doors;
+using Server.Drug;
 using Server.Extensions;
 using Server.Inventory;
 using Server.Models;
@@ -207,6 +208,25 @@ namespace Server.Property
             {
                 double reduction = price * 0.1;
                 price -= reduction;
+            }
+
+            if (selectedItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" || selectedItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
+            {
+                player.RemoveCash(price);
+
+                DrugBag newDrugBag = new DrugBag(DrugType.Empty, 0);
+
+                bool drugBagAdded =
+                    playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name, JsonConvert.SerializeObject(newDrugBag)));
+
+                if (!drugBagAdded)
+                {
+                    player.SendErrorNotification($"Your inventory is full");
+                    return;
+                }
+
+                player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
+                return;
             }
 
             if (selectedItem.ID == "ITEM_BACKPACK" || selectedItem.ID == "ITEM_DUFFELBAG")
