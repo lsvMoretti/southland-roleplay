@@ -277,8 +277,6 @@ namespace Server.Drug
 
             quantity = Math.Round(quantity, 2);
 
-            Console.WriteLine($"Quantity: {quantity}");
-
             if (quantity > drugBag.DrugQuantity)
             {
                 player.SendErrorMessage("You don't have this many drugs in your bag!");
@@ -286,8 +284,6 @@ namespace Server.Drug
             }
 
             string newDrugItemId = "";
-
-            Console.WriteLine($"Drug Type: {drugBag.DrugType}");
 
             switch (drugBag.DrugType)
             {
@@ -325,8 +321,6 @@ namespace Server.Drug
             {
                 drugBag.DrugType = DrugType.Empty;
             }
-
-            Console.WriteLine(newDrugItemId);
 
             InventoryItem newDrugItem = new InventoryItem(newDrugItemId, GameWorld.GetGameItem(newDrugItemId).Name, "", quantity);
 
@@ -659,11 +653,28 @@ namespace Server.Drug
             selectedQuantity = Math.Round(selectedQuantity, 2);
             selectedDrugItem.Quantity = Math.Round(selectedDrugItem.Quantity, 2);
 
-            Console.WriteLine($"SDI Q: {selectedDrugItem.Quantity}, Quantity: {selectedQuantity}");
-
             if (selectedDrugItem.Quantity < selectedQuantity)
             {
                 player.SendErrorNotification("Looks like you tried adding more than you have!");
+                return;
+            }
+
+            DrugBagType drugBagType = selectedBagItem.Id switch
+            {
+                "ITEM_DRUG_ZIPLOCK_BAG_SMALL" => DrugBagType.ZipLockSmall,
+                "ITEM_DRUG_ZIPLOCK_BAG_LARGE" => DrugBagType.ZipLockLarge,
+                _ => DrugBagType.ZipLockSmall,
+            };
+
+            double maxWeight = drugBagType switch
+            {
+                DrugBagType.ZipLockSmall => DrugBag.SmallBagLimit,
+                DrugBagType.ZipLockLarge => DrugBag.LargeBagLimit
+            };
+
+            if ((drugBag.DrugQuantity += selectedQuantity) > maxWeight)
+            {
+                player.SendErrorNotification($"You can't store more than {maxWeight}g's in this bag!");
                 return;
             }
 
@@ -678,7 +689,6 @@ namespace Server.Drug
             playerInventory.RemoveItem(selectedBagItem);
 
             drugBag.DrugType = drugType;
-            drugBag.DrugQuantity += selectedQuantity;
 
             InventoryItem newBagItem = new InventoryItem(selectedBagItem.Id, selectedBagItem.CustomName, JsonConvert.SerializeObject(drugBag));
 
