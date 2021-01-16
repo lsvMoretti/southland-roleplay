@@ -3128,9 +3128,9 @@ namespace Server.Admin
                 return;
             }
 
-            bool tryQuantityParse = int.TryParse(split[1], out int quantity);
+            bool tryQuantityParse = double.TryParse(split[1], out double quantity);
 
-            if (!tryQuantityParse || quantity < 1)
+            if (!tryQuantityParse || quantity == 0)
             {
                 player.SendErrorNotification("Invalid Quantity.");
                 return;
@@ -3167,7 +3167,7 @@ namespace Server.Admin
 
             player.GetData("admin:drugs:GiveTo", out int targetPlayerId);
 
-            player.GetData("admin:drugs:Quantity", out int quantity);
+            player.GetData("admin:drugs:Quantity", out double quantity);
 
             GameItem selectedGameItem = GameWorld.GameItems.FirstOrDefault(x => x.Name == option);
 

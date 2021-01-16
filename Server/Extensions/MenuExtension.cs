@@ -677,6 +677,10 @@ namespace Server.Extensions
 
                 if (serverTrigger == "DrugSystem:SelectedCombineDrugToBagQuantity") Drug.Commands.OnSelectedCombineDrugToBag(player, selectedItem);
 
+                if (serverTrigger == "DrugSystem:InteractWithBag") Drug.Commands.OnInteractWithDrugBag(player, selectedItem);
+
+                if (serverTrigger == "DrugSystem:RemoveDrugQuantityFromBag") Drug.Commands.OnRemoveDrugFromBagQuantitySelect(player, selectedItem);
+
                 #endregion Drug System Revamp
             }
             catch (Exception e)
@@ -757,6 +761,7 @@ namespace Server.Extensions
                 #region Drug System
 
                 if (listTrigger == "DrugSystem:OnCombineDrugToBagListChange") Drug.Commands.OnCombineDrugToBagQuantityChange(player, menuItemText, listText);
+                if (listTrigger == "DrugSystem:OnRemoveDrugFromBagQuantityChange") Drug.Commands.OnRemoveDrugFromBagQuantityChange(player, menuItemText, listText);
 
                 #endregion Drug System
             }

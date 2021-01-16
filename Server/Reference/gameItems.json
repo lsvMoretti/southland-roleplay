@@ -1670,7 +1670,7 @@
     "Weight": 0.1,
     "Capacity": 0.1,
     "Price": 1,
-    "Stackable": true
+    "Stackable": false
   },
   {
     "ID": "ITEM_DRUG_ZIPLOCK_BAG_LARGE",
@@ -1679,7 +1679,7 @@
     "Weight": 0.15,
     "Capacity": 0.15,
     "Price": 2,
-    "Stackable": true
+    "Stackable": false
   },
 
   // Police Ticket

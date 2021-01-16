@@ -43,12 +43,25 @@ namespace Server.Drug
                 if (drugItem.Id == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" || drugItem.Id == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
                 {
                     DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(drugItem.ItemValue);
-                    NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"");
+                    DrugBagType drugBagType = drugItem.Id switch
+                    {
+                        "ITEM_DRUG_ZIPLOCK_BAG_SMALL" => DrugBagType.ZipLockSmall,
+                        "ITEM_DRUG_ZIPLOCK_BAG_LARGE" => DrugBagType.ZipLockLarge,
+                        _ => DrugBagType.ZipLockSmall,
+                    };
+
+                    double maxWeight = drugBagType switch
+                    {
+                        DrugBagType.ZipLockSmall => DrugBag.SmallBagLimit,
+                        DrugBagType.ZipLockLarge => DrugBag.LargeBagLimit
+                    };
+
+                    NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"{drugBag.DrugQuantity:0.0}/{maxWeight:0.0} of {drugBag.DrugType.AsString(EnumFormat.Description)}");
                     menuItems.Add(menuItem);
                 }
                 else
                 {
-                    NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"Quantity: {drugItem.Quantity:#.#}");
+                    NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"Quantity: {drugItem.Quantity:0.0}");
                     menuItems.Add(menuItem);
                 }
             }
@@ -87,7 +100,7 @@ namespace Server.Drug
 
             if (selectedDrugItem.Id.Contains("BAG"))
             {
-                // TODO: Process this
+                OnSelectItemBagMainMenu(player, selectedDrugItem);
                 return;
             }
 
@@ -109,6 +122,230 @@ namespace Server.Drug
             NativeMenu menu = new NativeMenu("DrugSystem:SubMenuDrugSelected", "Drugs", "Select an item", menuItems);
 
             NativeUi.ShowNativeMenu(player, menu, true);
+        }
+
+        public static void OnSelectItemBagMainMenu(IPlayer player, InventoryItem item)
+        {
+            DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(item.ItemValue);
+
+            if (drugBag.DrugType == DrugType.Empty)
+            {
+                player.SendInfoNotification("This bag is empty.");
+                return;
+            }
+
+            List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
+
+            if (drugBag.DrugQuantity > 0)
+            {
+                menuItems.Add(new NativeMenuItem("Use Drug", "Uses 0.1 of this drug"));
+                menuItems.Add(new NativeMenuItem("Take Out of Bag", "Takes a quantity from the bag"));
+            }
+            else
+            {
+                player.SendInfoNotification("This bag is empty.");
+                return;
+            }
+
+            NativeMenu menu = new NativeMenu("DrugSystem:InteractWithBag", "Bag", "Select an option", menuItems);
+
+            NativeUi.ShowNativeMenu(player, menu, true);
+        }
+
+        public static void OnInteractWithDrugBag(IPlayer player, string selectedOption)
+        {
+            if (selectedOption == "Close") return;
+
+            Inventory.Inventory? playerInventory = player.FetchInventory();
+
+            if (playerInventory == null)
+            {
+                player.SendErrorNotification("An error occurred fetching your inventory.");
+                return;
+            }
+
+            List<InventoryItem> drugItems = playerInventory.GetInventory().Where(x => x.Id.Contains("DRUG")).ToList();
+
+            bool hasData = player.GetData("DrugSystem:SelectedDrug", out int selectedIndex);
+
+            if (!hasData)
+            {
+                player.SendErrorMessage("An error occurred");
+                return;
+            }
+
+            InventoryItem selectedDrugItem = drugItems[selectedIndex];
+
+            DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(selectedDrugItem.ItemValue);
+
+            if (selectedOption == "Take Out of Bag")
+            {
+                List<string> values = new List<string>();
+
+                // Quantity
+                for (double i = 0.1; i < drugBag.DrugQuantity; i += 0.1)
+                {
+                    values.Add($"{Math.Round(i, 1)}");
+                }
+
+                List<NativeListItem> listItems = new List<NativeListItem>
+                {
+                    new NativeListItem("Quantity: ", values)
+                };
+
+                NativeMenu menu = new NativeMenu("DrugSystem:RemoveDrugQuantityFromBag", "Bag", "Select a quantity to remove")
+                {
+                    ListTrigger = "DrugSystem:OnRemoveDrugFromBagQuantityChange",
+                    ListMenuItems = listItems
+                };
+
+                NativeUi.ShowNativeMenu(player, menu, true);
+
+                player.SetData("DrugSystem:RemoveQuantityFromBag", 0.1);
+                return;
+            }
+
+            drugBag.DrugQuantity -= 1;
+            if (drugBag.DrugQuantity == 0)
+            {
+                drugBag.DrugType = DrugType.Empty;
+            }
+
+            playerInventory.RemoveItem(selectedDrugItem);
+
+            selectedDrugItem.ItemValue = JsonConvert.SerializeObject(drugBag);
+
+            playerInventory.AddItem(selectedDrugItem);
+
+            switch (drugBag.DrugType)
+            {
+                case DrugType.Mushroom:
+                    UseDrug.UseMushroomItem(player);
+                    break;
+
+                case DrugType.Weed:
+                    UseDrug.UseWeedItem(player);
+                    break;
+
+                case DrugType.Heroin:
+                    UseDrug.UseHeroinItem(player);
+                    break;
+
+                case DrugType.Meth:
+                    UseDrug.UseMethItem(player);
+                    break;
+
+                case DrugType.Cocaine:
+                    UseDrug.UseCocaineItem(player);
+                    break;
+
+                case DrugType.Ecstasy:
+                    UseDrug.UseEcstasyItem(player);
+                    break;
+            }
+
+            player.SendEmoteMessage($"reaches into a Zip-Lock bag and uses some {drugBag.DrugType.AsString(EnumFormat.Description)}");
+        }
+
+        public static void OnRemoveDrugFromBagQuantitySelect(IPlayer player, string selectedOption)
+        {
+            if (selectedOption == "Close") return;
+
+            player.GetData("DrugSystem:RemoveQuantityFromBag", out double quantity);
+
+            Inventory.Inventory? playerInventory = player.FetchInventory();
+
+            if (playerInventory == null)
+            {
+                player.SendErrorNotification("An error occurred fetching your inventory.");
+                return;
+            }
+
+            List<InventoryItem> drugItems = playerInventory.GetInventory().Where(x => x.Id.Contains("DRUG")).ToList();
+
+            bool hasData = player.GetData("DrugSystem:SelectedDrug", out int selectedIndex);
+
+            if (!hasData)
+            {
+                player.SendErrorMessage("An error occurred");
+                return;
+            }
+
+            InventoryItem selectedDrugItem = drugItems[selectedIndex];
+
+            DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(selectedDrugItem.ItemValue);
+
+            if (quantity > drugBag.DrugQuantity)
+            {
+                player.SendErrorMessage("You don't have this many drugs in your bag!");
+                return;
+            }
+
+            drugBag.DrugQuantity -= quantity;
+
+            if (drugBag.DrugQuantity == 0)
+            {
+                drugBag.DrugType = DrugType.Empty;
+            }
+
+            string newDrugItemId = "";
+
+            switch (drugBag.DrugType)
+            {
+                case DrugType.Empty:
+                    break;
+
+                case DrugType.Mushroom:
+                    newDrugItemId = "ITEM_DRUG_MUSHROOM";
+                    break;
+
+                case DrugType.Weed:
+                    newDrugItemId = "ITEM_DRUG_WEED";
+                    break;
+
+                case DrugType.Heroin:
+                    newDrugItemId = "ITEM_DRUG_HEROIN";
+                    break;
+
+                case DrugType.Meth:
+                    newDrugItemId = "ITEM_DRUG_METH";
+                    break;
+
+                case DrugType.Cocaine:
+                    newDrugItemId = "ITEM_DRUG_COCAINE";
+                    break;
+
+                case DrugType.Ecstasy:
+                    newDrugItemId = "ITEM_DRUG_ECSTASY";
+                    break;
+            }
+
+            InventoryItem newDrugItem = new InventoryItem(newDrugItemId, GameWorld.GetGameItem(newDrugItemId).Name, "", quantity);
+
+            if (!playerInventory.AddItem(newDrugItem))
+            {
+                player.SendErrorNotification("Unable to put this drug across. You got space?");
+                return;
+            }
+
+            playerInventory.RemoveItem(selectedDrugItem);
+
+            selectedDrugItem.ItemValue = JsonConvert.SerializeObject(drugBag);
+
+            playerInventory.AddItem(selectedDrugItem);
+
+            player.SendEmoteMessage($"reaches into a Zip-Lock bag and takes out some {newDrugItem.GetName(false)}.");
+        }
+
+        public static void OnRemoveDrugFromBagQuantityChange(IPlayer player, string menuText, string listText)
+        {
+            if (menuText == "Close") return;
+
+            bool tryParse = Double.TryParse(listText, out double newQuantity);
+
+            if (!tryParse) return;
+
+            player.SetData("DrugSystem:RemoveQuantityFromBag", newQuantity);
         }
 
         public static void SubMenuDrugSelected(IPlayer player, string selectedOption)
@@ -193,7 +430,7 @@ namespace Server.Drug
                         DrugBagType.ZipLockLarge => DrugBag.LargeBagLimit
                     };
 
-                    bagMenuItems.Add(new NativeMenuItem(bagItem.GetName(false), $"{drugBag.DrugQuantity:#.#}/{maxWeight:#.#} of {drugName}"));
+                    bagMenuItems.Add(new NativeMenuItem(bagItem.GetName(false), $"{drugBag.DrugQuantity:0.0} / {maxWeight:0.0} of {drugName}"));
                 }
 
                 if (!bagMenuItems.Any())
@@ -333,10 +570,9 @@ namespace Server.Drug
             List<string> values = new List<string>();
 
             // Quantity
-            for (double i = 0.0; i < drugBag.DrugQuantity; i += 0.1)
+            for (double i = 0.1; i < selectedDrugItem.Quantity; i += 0.1)
             {
-                Console.WriteLine(i);
-                values.Add($"{i}");
+                values.Add($"{Math.Round(i, 1)}");
             }
 
             List<NativeListItem> listItems = new List<NativeListItem>
@@ -436,6 +672,8 @@ namespace Server.Drug
             playerInventory.AddItem(selectedBagItem);
 
             player.SendInfoMessage($"You've added {selectedQuantity} of {drugType.AsString(EnumFormat.Description)} to the bag!");
+
+            player.SendEmoteMessage($"reaches into the Zip-Lock bag and places some {selectedDrugItem.GetName(false)} into it.");
         }
 
         public static void OnCombineDrugToBagQuantityChange(IPlayer player, string menuText, string listText)
