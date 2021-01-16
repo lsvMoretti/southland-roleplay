@@ -183,9 +183,9 @@ namespace Server.Drug
                 List<string> values = new List<string>();
 
                 // Quantity
-                for (double i = 0.1; i < drugBag.DrugQuantity; i += 0.1)
+                for (double i = 0.1; i <= Math.Round(drugBag.DrugQuantity, 2); i += 0.1)
                 {
-                    values.Add($"{Math.Round(i, 1)}");
+                    values.Add($"{Math.Round(i, 2)}");
                 }
 
                 List<NativeListItem> listItems = new List<NativeListItem>
@@ -275,20 +275,19 @@ namespace Server.Drug
 
             DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(selectedDrugItem.ItemValue);
 
+            quantity = Math.Round(quantity, 2);
+
+            Console.WriteLine($"Quantity: {quantity}");
+
             if (quantity > drugBag.DrugQuantity)
             {
                 player.SendErrorMessage("You don't have this many drugs in your bag!");
                 return;
             }
 
-            drugBag.DrugQuantity -= quantity;
-
-            if (drugBag.DrugQuantity == 0)
-            {
-                drugBag.DrugType = DrugType.Empty;
-            }
-
             string newDrugItemId = "";
+
+            Console.WriteLine($"Drug Type: {drugBag.DrugType}");
 
             switch (drugBag.DrugType)
             {
@@ -320,6 +319,15 @@ namespace Server.Drug
                     break;
             }
 
+            drugBag.DrugQuantity = Math.Round(drugBag.DrugQuantity -= quantity, 2);
+
+            if (drugBag.DrugQuantity <= 0)
+            {
+                drugBag.DrugType = DrugType.Empty;
+            }
+
+            Console.WriteLine(newDrugItemId);
+
             InventoryItem newDrugItem = new InventoryItem(newDrugItemId, GameWorld.GetGameItem(newDrugItemId).Name, "", quantity);
 
             if (!playerInventory.AddItem(newDrugItem))
@@ -330,11 +338,11 @@ namespace Server.Drug
 
             playerInventory.RemoveItem(selectedDrugItem);
 
-            selectedDrugItem.ItemValue = JsonConvert.SerializeObject(drugBag);
+            InventoryItem newDrugBag = new InventoryItem(selectedDrugItem.Id, selectedDrugItem.CustomName, JsonConvert.SerializeObject(drugBag));
 
-            playerInventory.AddItem(selectedDrugItem);
+            playerInventory.AddItem(newDrugBag);
 
-            player.SendEmoteMessage($"reaches into a Zip-Lock bag and takes out some {newDrugItem.GetName(false)}.");
+            player.SendEmoteMessage($"reaches into a ziploc bag and takes out some {newDrugItem.GetName(false)}.");
         }
 
         public static void OnRemoveDrugFromBagQuantityChange(IPlayer player, string menuText, string listText)
@@ -570,9 +578,9 @@ namespace Server.Drug
             List<string> values = new List<string>();
 
             // Quantity
-            for (double i = 0.1; i < selectedDrugItem.Quantity; i += 0.1)
+            for (double i = 0.1; i <= Math.Round(selectedDrugItem.Quantity, 2); i += 0.1)
             {
-                values.Add($"{Math.Round(i, 1)}");
+                values.Add($"{Math.Round(i, 2)}");
             }
 
             List<NativeListItem> listItems = new List<NativeListItem>
@@ -648,6 +656,11 @@ namespace Server.Drug
 
             player.GetData("DrugSystem:CombineDrugToBagQuantity", out double selectedQuantity);
 
+            selectedQuantity = Math.Round(selectedQuantity, 2);
+            selectedDrugItem.Quantity = Math.Round(selectedDrugItem.Quantity, 2);
+
+            Console.WriteLine($"SDI Q: {selectedDrugItem.Quantity}, Quantity: {selectedQuantity}");
+
             if (selectedDrugItem.Quantity < selectedQuantity)
             {
                 player.SendErrorNotification("Looks like you tried adding more than you have!");
@@ -667,13 +680,13 @@ namespace Server.Drug
             drugBag.DrugType = drugType;
             drugBag.DrugQuantity += selectedQuantity;
 
-            selectedBagItem.ItemValue = JsonConvert.SerializeObject(drugBag);
+            InventoryItem newBagItem = new InventoryItem(selectedBagItem.Id, selectedBagItem.CustomName, JsonConvert.SerializeObject(drugBag));
 
-            playerInventory.AddItem(selectedBagItem);
+            playerInventory.AddItem(newBagItem);
 
             player.SendInfoMessage($"You've added {selectedQuantity} of {drugType.AsString(EnumFormat.Description)} to the bag!");
 
-            player.SendEmoteMessage($"reaches into the Zip-Lock bag and places some {selectedDrugItem.GetName(false)} into it.");
+            player.SendEmoteMessage($"reaches into the Ziploc bag and places some {selectedDrugItem.GetName(false)} into it.");
         }
 
         public static void OnCombineDrugToBagQuantityChange(IPlayer player, string menuText, string listText)

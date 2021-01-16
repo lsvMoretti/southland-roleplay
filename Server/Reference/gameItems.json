@@ -1665,7 +1665,7 @@
   },
   {
     "ID": "ITEM_DRUG_ZIPLOCK_BAG_SMALL",
-    "Name": "Small Zip-lock Bag",
+    "Name": "Small Ziploc Bag",
     "Description": "Used to keep things air tight.",
     "Weight": 0.1,
     "Capacity": 0.1,
@@ -1674,7 +1674,7 @@
   },
   {
     "ID": "ITEM_DRUG_ZIPLOCK_BAG_LARGE",
-    "Name": "Large Zip-lock Bag",
+    "Name": "Large Ziploc Bag",
     "Description": "Used to keep bigger things air tight.",
     "Weight": 0.15,
     "Capacity": 0.15,

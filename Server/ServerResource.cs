@@ -63,7 +63,7 @@ namespace Server
 {
     public class ServerResource : AsyncResource
     {
-        public override void OnStart()
+        public override async void OnStart()
         {
             try
             {
@@ -96,7 +96,7 @@ namespace Server
                 */
                 SignalR.StartConnection();
 
-                ServerLoaded();
+                await ServerLoaded();
                 Console.WriteLine($"Server Loaded");
 
                 #region Dev Callbacks
@@ -579,7 +579,7 @@ namespace Server
             Console.WriteLine($"Saved {playerSaveCount} players & {vehicleCount} vehicles.");
         }
 
-        public async void ServerLoaded()
+        public async Task ServerLoaded()
         {
             Developer.OnStart.OnStartEvent();
 

@@ -169,6 +169,7 @@ namespace Server.Inventory
                     {
                         NativeMenuItem menuItem = new NativeMenuItem(item.CustomName, $"{item.ItemInfo.Description} - x{item.Quantity:0.0}");
                         itemList.Add(menuItem);
+                        continue;
                     }
 
                     if (item.Quantity > 1)
