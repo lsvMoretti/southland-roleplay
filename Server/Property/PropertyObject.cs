@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using AltV.Net.Data;
+using EntityStreamer;
 using Newtonsoft.Json;
 
 namespace Server.Property
@@ -20,7 +21,6 @@ namespace Server.Property
 
         public LoadPropertyObject()
         {
-            
         }
 
         public LoadPropertyObject(int propertyId, Prop dynamicObject)

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 
-namespace Server
+namespace EntityStreamer
 {
     public enum TextureVariation
     {
@@ -212,28 +212,6 @@ namespace Server
             }
         }
 
-        /// <summary>
-        /// Set or get the current object's model.
-        /// </summary>
-        public uint? ModelHash
-        {
-            get
-            {
-                if (!TryGetData("modelHash", out uint modelHash))
-                    return null;
-
-                return modelHash;
-            }
-            set
-            {
-                // No data changed
-                if (ModelHash == value)
-                    return;
-
-                SetData("modelHash", value);
-            }
-        }
-        
         /// <summary>
         /// Set or get LOD Distance of the object.
         /// </summary>
@@ -516,29 +494,6 @@ namespace Server
             AltEntitySync.AddEntity(obj);
             return obj;
         }
-        
-        public static Prop Create(
-            uint model, Vector3 position, Vector3 rotation, int dimension = 0, bool? isDynamic = null,
-            bool? placeObjectOnGroundProperly = false, bool? frozen = null, uint? lodDistance = null,
-            Rgb lightColor = null, bool? onFire = null, TextureVariation? textureVariation = null, bool? visible = null,
-            uint streamRange = 520)
-        {
-            Prop obj = new Prop(position, dimension, streamRange, 2)
-            {
-                ModelHash = model,
-                Dynamic = isDynamic ?? null,
-                Freeze = frozen ?? null,
-                LodDistance = lodDistance ?? null,
-                LightColor = lightColor ?? null,
-                OnFire = onFire ?? null,
-                TextureVariation = textureVariation ?? null,
-                Visible = visible ?? null,
-                PositionInitial = position,
-            };
-            Prop.PropList.Add(obj);
-            AltEntitySync.AddEntity(obj);
-            return obj;
-        }
 
         public static bool Delete(ulong dynamicObjectId)
         {
@@ -561,7 +516,7 @@ namespace Server
         {
             if (!AltEntitySync.TryGetEntity(dynamicObjectId, 2, out IEntity entity))
             {
-                Console.WriteLine($"[Prop-Stream] [GetProp] ERROR: Entity with Id { dynamicObjectId } couldn't be found.");
+                Console.WriteLine($"[Prop-Stream] [GetProp] ERROR: Entity with ID { dynamicObjectId } couldn't be found.");
                 return default;
             }
 

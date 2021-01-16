@@ -67,11 +67,29 @@ namespace Server
         {
             try
             {
-                AltEntitySync.Init(1, 100, (threadId) => false,
+                AltEntitySync.Init(5, 200, (threadId) => true,
                     (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
-                    (entity, threadCount) => (entity.Id % threadCount),
-                    (entityId, entityType, threadCount) => (entityId % threadCount),
-                    (threadId) => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 300),
+                    (entity, threadCount) => entity.Type,
+                    (entityId, entityType, threadCount) => entityType,
+                    (threadId) =>
+                    {
+                        return threadId switch
+                        {
+                            //MARKER
+                            0 => new LimitedGrid3(50_000, 50_000, 75, 10_000, 10_000, 64),
+                            //TEXT
+                            1 => new LimitedGrid3(50_000, 50_000, 75, 10_000, 10_000, 32),
+                            //PROP
+                            2 => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 1500),
+                            //HELP TEXT
+                            3 => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 1),
+                            //BLIP
+                            4 => new EntityStreamer.GlobalEntity(),
+                            //BLIP DYNAMIQUE
+                            5 => new LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 200),
+                            _ => new LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 115),
+                        };
+                    },
                     new IdProvider());
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;

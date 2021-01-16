@@ -6,6 +6,7 @@ using System.Numerics;
 using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Newtonsoft.Json;
 using Server.Extensions;
 using Server.Extensions.Blip;
@@ -14,6 +15,7 @@ using Server.Extensions.TextLabel;
 using Server.Map;
 using Server.Models;
 using Blip = Server.Objects.Blip;
+using Marker = Server.Extensions.Marker.Marker;
 
 namespace Server.Property
 {

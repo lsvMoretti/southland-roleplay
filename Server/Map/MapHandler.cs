@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Threading.Tasks;
+using EntityStreamer;
 using Microsoft.EntityFrameworkCore.Internal;
 using Newtonsoft.Json;
 
@@ -27,10 +28,10 @@ namespace Server.Map
                         loadedObject.Destroy();
                     }
                 }
-                
+
                 LoadedMaps = new List<Map>();
             }
-            
+
             string directory = "data/maps/";
 
             if (!Directory.Exists(directory))
@@ -40,24 +41,24 @@ namespace Server.Map
             }
 
             int objectCount = 0;
-            
+
             foreach (string file in Directory.GetFiles(directory))
             {
                 if (!file.EndsWith(".json")) continue;
 
                 Console.WriteLine($"Opening {file}.");
-                
+
                 string fileContents = File.ReadAllText(file);
 
                 Map newMap = JsonConvert.DeserializeObject<Map>(fileContents);
-                
+
                 Console.WriteLine($"Found map: {newMap.MapName}. IsInterior: {newMap.IsInterior}. Objects: {newMap.MapObjects.Count}");
 
                 if (!newMap.IsInterior)
                 {
                     foreach (MapObject mapObject in newMap.MapObjects)
                     {
-                        Prop newObject = PropStreamer.Create(mapObject.Model, mapObject.Position, mapObject.Rotation,
+                        Prop newObject = PropStreamer.Create(mapObject.Model.ToString(), mapObject.Position, mapObject.Rotation,
                             mapObject.Dimension, mapObject.Dynamic, false, mapObject.Frozen, mapObject.LodDistance,
                             mapObject.LightColor, mapObject.OnFire, mapObject.TextureVariation, mapObject.Visible,
                             mapObject.StreamRange);
@@ -68,9 +69,8 @@ namespace Server.Map
                 LoadedMaps.Add(newMap);
                 Console.WriteLine($"Loaded map: {newMap.MapName}.");
             }
-            
+
             Console.WriteLine($"Loaded {LoadedMaps.Count} maps with {objectCount} total objects.");
-            
         }
 
         public static void LoadMapForProperty(Models.Property property)
@@ -90,24 +90,21 @@ namespace Server.Map
                     loadedObject.Destroy();
                     map.LoadedObjects.Remove(loadedObject);
                 }
-                
             }
-            
-            
+
             int dimension = property.Id;
             int objectCount = 0;
-            
+
             foreach (MapObject mapObject in map.MapObjects)
-            {   
-                
-                Prop newObject = PropStreamer.Create(mapObject.Model, mapObject.Position, mapObject.Rotation,
+            {
+                Prop newObject = PropStreamer.Create(mapObject.Model.ToString(), mapObject.Position, mapObject.Rotation,
                     mapObject.Dimension, mapObject.Dynamic, false, mapObject.Frozen, mapObject.LodDistance,
                     mapObject.LightColor, mapObject.OnFire, mapObject.TextureVariation, mapObject.Visible,
                     mapObject.StreamRange);
                 map.LoadedObjects.Add(newObject);
                 objectCount++;
             }
-            
+
             Console.WriteLine($"Loaded {objectCount} objects for {property.Address}.");
         }
 
@@ -128,7 +125,6 @@ namespace Server.Map
                     loadedObject.Destroy();
                     map.LoadedObjects.Remove(loadedObject);
                 }
-                
             }
         }
 
@@ -138,20 +134,18 @@ namespace Server.Map
 
             List<Models.Property> properties =
                 context.Property.Where(x => !string.IsNullOrEmpty(x.InteriorName)).ToList();
-            
+
             foreach (Models.Property property in properties)
             {
                 UnloadMapForProperty(property);
             }
-            
+
             await LoadMaps();
 
             foreach (Models.Property property in properties)
             {
                 LoadMapForProperty(property);
             }
-            
-            
         }
     }
 
@@ -161,13 +155,13 @@ namespace Server.Map
         public Vector3 Position { get; set; }
         public Vector3 Rotation { get; set; }
         public int Dimension { get; set; }
-        public bool? Dynamic  { get; set; }
+        public bool? Dynamic { get; set; }
         public bool? Frozen { get; set; }
-        public uint?  LodDistance { get; set; }
+        public uint? LodDistance { get; set; }
         public Rgb LightColor { get; set; }
         public bool? OnFire { get; set; }
         public TextureVariation? TextureVariation { get; set; }
-        public bool? Visible  { get; set; }
+        public bool? Visible { get; set; }
         public uint StreamRange { get; set; }
     }
 }

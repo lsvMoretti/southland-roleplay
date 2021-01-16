@@ -774,7 +774,7 @@ namespace Server.Drug
                     return;
                 }
 
-                InventoryItem weedItem = new InventoryItem("ITEM_DRUG_WEED", "Marijuana", "GROWN", 112);
+                InventoryItem weedItem = new InventoryItem("ITEM_DRUG_WEED", "Marijuana", "GROWN", 56.7);
 
                 bool itemAdded = playerInventory.AddItem(weedItem);
 

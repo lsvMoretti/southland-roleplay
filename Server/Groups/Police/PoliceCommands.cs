@@ -6,6 +6,7 @@ using System.Numerics;
 using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Newtonsoft.Json;
 using Server.Chat;
 using Server.Commands;

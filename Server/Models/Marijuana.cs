@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
 using AltV.Net.Data;
+using EntityStreamer;
 using Server.Drug;
 using Server.Extensions.TextLabel;
 
@@ -13,6 +14,7 @@ namespace Server.Models
     {
         [Key]
         public int Id { get; set; }
+
         public float PosX { get; set; }
         public float PosY { get; set; }
         public float PosZ { get; set; }
@@ -21,8 +23,10 @@ namespace Server.Models
         public DateTime PlantTime { get; set; }
         public bool Boosted { get; set; }
         public bool Test { get; set; }
-        
-        public Marijuana(){}
+
+        public Marijuana()
+        {
+        }
 
         public static Marijuana PlantMarijuana(Position position, int dimension)
         {
@@ -37,16 +41,15 @@ namespace Server.Models
                 Boosted = false,
                 Test = false
             };
-            
+
             using Context context = new Context();
 
             context.Marijuana.Add(newMarijuana);
             context.SaveChanges();
-            
+
             GrowingHandler.LoadMarijuana(newMarijuana);
 
             return newMarijuana;
-
         }
 
         public static Position Position(Marijuana marijuana)
@@ -56,7 +59,6 @@ namespace Server.Models
 
         public static Marijuana FetchNearest(Position position, int dimension, float range = 3f)
         {
-            
             using Context context = new Context();
 
             Marijuana marijuana = null;
@@ -83,7 +85,7 @@ namespace Server.Models
         public static void RemoveMarijuana(Marijuana marijuana)
         {
             using Context context = new Context();
-            
+
             bool hasLabel = GrowingHandler.MarijuanaLabels.TryGetValue(marijuana.Id, out TextLabel label);
 
             if (hasLabel)
@@ -99,27 +101,30 @@ namespace Server.Models
                 dynamicObject.Destroy();
                 GrowingHandler.MarijuanaObjects.Remove(marijuana.Id);
             }
-            
 
             context.Marijuana.Remove(marijuana);
 
             context.SaveChanges();
-            
         }
-        
     }
+
     public enum MarijuanaStatus
     {
         [Description("Seed")]
         Seed,
+
         [Description("Seedling")]
         Seedling,
+
         [Description("Vegetative")]
         Vegetative,
+
         [Description("Flowering")]
         Flowering,
+
         [Description("Harvest")]
         Harvest,
+
         [Description("Withered")]
         Withered
     }
