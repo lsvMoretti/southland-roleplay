@@ -315,7 +315,7 @@ namespace Server.Drug
             // Quantity
             for (double i = 0.0; i < drugBag.DrugQuantity; i += 0.1)
             {
-                values.Add($"{i:#}");
+                values.Add($"{i}");
             }
 
             listItems.Add(new NativeListItem("Quantity", values));

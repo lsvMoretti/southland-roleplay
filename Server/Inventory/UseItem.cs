@@ -538,6 +538,18 @@ namespace Server.Inventory
                 return;*/
             }
 
+            if (item.ItemInfo.ID == "ITEM_DRUG_ZIPLOCK_BAG_SMALL")
+            {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+            }
+
+            if (item.ItemInfo.ID == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
+            {
+                player.SendErrorNotification("Please use /drugs.");
+                return;
+            }
+
             if (item.ItemInfo.ID == "ITEM_BEEFY_BURGER")
             {
                 playerInventory.RemoveItem(item);
