@@ -40,8 +40,17 @@ namespace Server.Drug
 
             foreach (InventoryItem drugItem in drugItems)
             {
-                NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"Quantity: {drugItem.Quantity}");
-                menuItems.Add(menuItem);
+                if (drugItem.Id == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" || drugItem.Id == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
+                {
+                    DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(drugItem.ItemValue);
+                    NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"");
+                    menuItems.Add(menuItem);
+                }
+                else
+                {
+                    NativeMenuItem menuItem = new NativeMenuItem(drugItem.ItemInfo.Name, $"Quantity: {drugItem.Quantity:#.#}");
+                    menuItems.Add(menuItem);
+                }
             }
 
             NativeMenu menu = new NativeMenu("DrugSystem:DrugsMainMenuSelect", "Drugs", "Select an item", menuItems)
@@ -171,7 +180,20 @@ namespace Server.Drug
 
                     string? drugName = drugBag.DrugType.AsString(EnumFormat.Description);
 
-                    bagMenuItems.Add(new NativeMenuItem(bagItem.GetName(false), $"{drugBag.DrugQuantity} of {drugName}"));
+                    DrugBagType drugBagType = bagItem.Id switch
+                    {
+                        "ITEM_DRUG_ZIPLOCK_BAG_SMALL" => DrugBagType.ZipLockSmall,
+                        "ITEM_DRUG_ZIPLOCK_BAG_LARGE" => DrugBagType.ZipLockLarge,
+                        _ => DrugBagType.ZipLockSmall,
+                    };
+
+                    double maxWeight = drugBagType switch
+                    {
+                        DrugBagType.ZipLockSmall => DrugBag.SmallBagLimit,
+                        DrugBagType.ZipLockLarge => DrugBag.LargeBagLimit
+                    };
+
+                    bagMenuItems.Add(new NativeMenuItem(bagItem.GetName(false), $"{drugBag.DrugQuantity:#.#}/{maxWeight:#.#} of {drugName}"));
                 }
 
                 if (!bagMenuItems.Any())
@@ -308,17 +330,19 @@ namespace Server.Drug
                 return;
             }
 
-            List<NativeListItem> listItems = new List<NativeListItem>();
-
             List<string> values = new List<string>();
 
             // Quantity
             for (double i = 0.0; i < drugBag.DrugQuantity; i += 0.1)
             {
+                Console.WriteLine(i);
                 values.Add($"{i}");
             }
 
-            listItems.Add(new NativeListItem("Quantity", values));
+            List<NativeListItem> listItems = new List<NativeListItem>
+            {
+                new NativeListItem("Quantity: ", values)
+            };
 
             NativeMenu menu = new NativeMenu("DrugSystem:SelectedCombineDrugToBagQuantity", "Combine", "Select a Quantity to combine")
             {
