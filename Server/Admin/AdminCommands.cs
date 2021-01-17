@@ -6731,7 +6731,7 @@ namespace Server.Admin
 
             await using Context context = new Context();
 
-            Models.Account target = context.Account.FirstOrDefault(x => x.Id == targetPlayer.GetClass().AccountId);
+            Models.Account? target = context.Account.FirstOrDefault(x => x.Id == targetPlayer.GetClass().AccountId);
 
             if (target == null)
             {

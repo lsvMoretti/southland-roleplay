@@ -7,7 +7,7 @@ var manualEntryCode: string = undefined;
 
 alt.onServer('TFA:ShowWindow', showTwoFactorSetup);
 
-function showTwoFactorSetup(manualCode: string) {
+function showTwoFactorSetup(manualCode: string, qrUri: string) {
     manualEntryCode = manualCode;
 
     tfaWebView = new alt.WebView('http://resource/files/authenticate/twoFactorSetup.html', false);
@@ -16,7 +16,7 @@ function showTwoFactorSetup(manualCode: string) {
     alt.showCursor(true);
 
     tfaWebView.on('TFA:PageLoaded', () => {
-        tfaWebView.emit('TFA:SendData', manualCode);
+        tfaWebView.emit('TFA:SendData', manualCode, qrUri);
     });
 
     tfaWebView.on('TFA:ClosePage', () => {

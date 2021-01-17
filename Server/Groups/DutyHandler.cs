@@ -170,6 +170,7 @@ namespace Server.Groups
 
                 player.SendInfoNotification($"You've gone off duty.");
                 Logging.AddToCharacterLog(player, "Has gone off duty.");
+                player.Position = player.Position;
             }
 
             if (option == "Go On Duty")

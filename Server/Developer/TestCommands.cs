@@ -23,13 +23,6 @@ namespace Server.Developer
 {
     public class TestCommands
     {
-        [Command("cayo", AdminLevel.Moderator)]
-        public static void Command_GotoCayo(IPlayer player)
-        {
-            if (!player.IsSpawned()) return;
-            player.SetPosition(4895.28f, -5744.58f, 26.351f);
-        }
-
         [Command("save", onlyOne: true)]
         public static void Command_SavePos(IPlayer player, string sName = "")
         {
@@ -200,64 +193,6 @@ namespace Server.Developer
         public static void DevUnloadIpl(IPlayer player, string args = "")
         {
             player.UnloadIpl(args);
-        }
-
-        private static bool _yachtLocked = true;
-
-        [Command("yacht")]
-        public static void CommandYacht(IPlayer player)
-        {
-            if (player?.FetchCharacter() == null) return;
-
-            Faction activeFaction = Faction.FetchFaction(player.FetchCharacter().ActiveFaction);
-
-            if (activeFaction == null) return;
-
-            if (!activeFaction.Name.Contains("Syndicate")) return;
-
-            if (_yachtLocked)
-            {
-                _yachtLocked = false;
-                foreach (IPlayer target in Alt.Server.GetPlayers())
-                {
-                    target.RequestIpl("hei_yacht_heist");
-                    target.RequestIpl("hei_yacht_heist_Bar");
-                    target.RequestIpl("hei_yacht_heist_Bedrm");
-                    target.RequestIpl("hei_yacht_heist_Bridge");
-                    target.RequestIpl("hei_yacht_heist_DistantLights");
-                    target.RequestIpl("hei_yacht_heist_enginrm");
-                    target.RequestIpl("hei_yacht_heist_LODLights");
-                    target.RequestIpl("hei_yacht_heist_Lounge");
-
-                    target.UnloadIpl("smboat");
-                    target.UnloadIpl("smboat_distantlights");
-                    target.UnloadIpl("smboat_lod");
-                    target.UnloadIpl("smboat_lodlights");
-                }
-
-                player.SendInfoNotification($"Yacht Unlocked!", 2000);
-                return;
-            }
-
-            _yachtLocked = true;
-            foreach (IPlayer target in Alt.Server.GetPlayers())
-            {
-                target.RequestIpl("smboat");
-                target.RequestIpl("smboat_distantlights");
-                target.RequestIpl("smboat_lod");
-                target.RequestIpl("smboat_lodlights");
-
-                target.UnloadIpl("hei_yacht_heist");
-                target.UnloadIpl("hei_yacht_heist_Bar");
-                target.UnloadIpl("hei_yacht_heist_Bedrm");
-                target.UnloadIpl("hei_yacht_heist_Bridge");
-                target.UnloadIpl("hei_yacht_heist_DistantLights");
-                target.UnloadIpl("hei_yacht_heist_enginrm");
-                target.UnloadIpl("hei_yacht_heist_LODLights");
-                target.UnloadIpl("hei_yacht_heist_Lounge");
-            }
-
-            player.SendInfoNotification($"Yacht Locked!", 2000);
         }
     }
 }
