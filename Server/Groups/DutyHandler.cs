@@ -25,7 +25,7 @@ namespace Server.Groups
         private static List<DutyPosition> _dutyPositions = new List<DutyPosition>
         {
             // Breeze PD Locker Room
-            new DutyPosition(new Position(471.2835f, -987.3494f, 25.724487f), DutyPositionType.Law),
+            new DutyPosition(new Position(459.17804f, -998.03076f, 30.914307f), DutyPositionType.Law),
 
             // Davis FD
             new DutyPosition(new Position(200.55824f, -1643.3671f, 29.802246f), DutyPositionType.Medical )
@@ -42,7 +42,7 @@ namespace Server.Groups
                 return;
             }
 
-            Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
+            Faction? activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
             if (activeFaction == null)
             {
