@@ -32,13 +32,13 @@ function radioControlPageLoaded() {
 }
 
 function SelectedMusicStream(stationName: string) {
-    CloseAudioControlPanel();
     alt.emitServer('PlayerSelectedMusicStream', stationName);
+    CloseAudioControlPanel();
 }
 
 function SelectStopMusicStream() {
-    CloseAudioControlPanel();
     alt.emitServer('StopSelectedMusicStream');
+    CloseAudioControlPanel();
 }
 
 function CloseAudioControlPanel() {

@@ -22,12 +22,12 @@ function radioControlPageLoaded() {
     audioControlView.emit('loadStationTable', stationJson);
 }
 function SelectedMusicStream(stationName) {
-    CloseAudioControlPanel();
     alt.emitServer('PlayerSelectedMusicStream', stationName);
+    CloseAudioControlPanel();
 }
 function SelectStopMusicStream() {
-    CloseAudioControlPanel();
     alt.emitServer('StopSelectedMusicStream');
+    CloseAudioControlPanel();
 }
 function CloseAudioControlPanel() {
     if (audioControlView !== undefined) {
