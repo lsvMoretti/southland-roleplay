@@ -15,9 +15,9 @@ namespace Server.Groups.Police
 {
     public class PoliceHandler
     {
-        public static Position ArrestPosition = new Position(459.7846f, -989.11646f, 24.898926f);
-        public static Position JailLocation = new Position(1586.135f, 2557.978f, 45.5649f);
-        public static Position UnJailPosition = new Position(428.822f, -981.9429f, 30.69519f);
+        public static Position ArrestPosition = new Position(473.86813f, -1007.55164f, 26.263794f);
+        public static Position JailLocation = new Position(485.69672f, -1005.6923f, 26.263794f);
+        public static Position UnJailPosition = new Position(431.68353f, -980.25494f, 30.69519f);
         public static Position ImpoundPosition = new Position(408.3956f, -1638.3561f, 29.279907f);
 
         public static Dictionary<Position, int> JailCells = new Dictionary<Position, int>
