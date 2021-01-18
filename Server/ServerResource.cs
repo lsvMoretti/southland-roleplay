@@ -686,6 +686,8 @@ namespace Server
 
             WordListHandler.LoadWords();
 
+            DoorHandler.SetPoliceDoorsLocked();
+
             await LoadVehicle.LoadFactionVehicles();
 
             await LoadVehicle.LoadCharacterVehicles();

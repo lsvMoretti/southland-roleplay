@@ -14,6 +14,23 @@ namespace Server.Doors
 {
     public class DoorHandler
     {
+        public static void SetPoliceDoorsLocked()
+        {
+            using Context context = new Context();
+
+            List<Door> doorList = context.Doors.ToList();
+
+            foreach (Door door in doorList)
+            {
+                if (door.FactionId == 1)
+                {
+                    door.Locked = true;
+                }
+            }
+
+            context.SaveChanges();
+        }
+
         public static void OnReturnClosestDoor(IPlayer player, string entityModel, float posX, float posY, float posZ)
         {
             Position entityPosition = new Position(posX, posY, posZ);
