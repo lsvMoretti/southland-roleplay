@@ -15,15 +15,17 @@ namespace Server.Groups.EUP
 
         public static List<EupOutfit> MalePoliceOutfits = new List<EupOutfit>
         {
-            new EupOutfit("Class A - Long", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{380, 0}),
-            new EupOutfit("Class A Traffic - Long", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{380, 1}),
-            new EupOutfit("Class C - Short", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{373, 0}),
-            new EupOutfit("Class C - Long", new []{1, 0}, new []{35, 0}, new []{25, 0},  new []{375, 0}),
-            new EupOutfit("Traffic - Short", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{373, 1}),
-            new EupOutfit("Traffic - Long", new []{1, 0}, new []{35, 0}, new []{25, 0},  new []{375, 1}),
-            new EupOutfit("Police Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{374, 0}),
-            new EupOutfit("Traffic Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{374, 1}),
-            new EupOutfit("SWAT", new []{1, 0}, new []{130, 0}, new []{25, 0},  new []{369, 0}),
+            new EupOutfit("Class A - Long", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{370, 0}),
+            new EupOutfit("Class A Traffic - Long", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{370, 1}),
+            new EupOutfit("Class C - Short", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{375, 0}),
+            new EupOutfit("Class C - Long", new []{1, 0}, new []{35, 0}, new []{25, 0},  new []{377, 0}),
+            new EupOutfit("Traffic - Short", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{375, 1}),
+            new EupOutfit("Traffic - Long", new []{1, 0}, new []{35, 0}, new []{25, 0},  new []{377, 1}),
+            new EupOutfit("Police Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{376, 0}),
+            new EupOutfit("Traffic Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{376, 1}),
+            new EupOutfit("SWAT", new []{1, 0}, new []{130, 0}, new []{25, 0},  new []{371, 0}),
+            new EupOutfit("Police Tee", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{369, 0}),
+            new EupOutfit("SWAT Tee", new []{1, 0}, new []{130, 0}, new []{25, 0},  new []{369, 1}),
         };
 
         public static List<EupProp> MalePoliceProps = new List<EupProp>
