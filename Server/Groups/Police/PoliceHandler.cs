@@ -22,13 +22,11 @@ namespace Server.Groups.Police
 
         public static Dictionary<Position, int> JailCells = new Dictionary<Position, int>
         {
-            {new Position(458.76923f, -1001.45935f, 24.898926f), 0 },
-            {new Position(459.12527f, -997.75385f, 24.898926f), 0 },
-            {new Position(459.77142f, -994.2857f, 24.898926f), 0 },
-            {new Position(467.81537f, -994.04834f, 24.898926f), 0 },
-            {new Position(472.1011f, -994.6022f, 24.898926f), 0 },
-            {new Position(476.96704f, -994.5626f, 24.898926f), 0  },
-            {new Position(480.65933f, -994.7209f, 24.898926f), 0  }
+            {new Position(477.77142f, -1014.54065f, 26.263794f), 0 },
+            {new Position(480.80438f, -1014.1451f, 26.263794f), 0 },
+            {new Position(484.27252f, -1014.0132f, 26.263794f), 0 },
+            {new Position(486.67252f, -1013.9868f, 26.263794f), 0 },
+            {new Position(485.69672f, -1005.6923f, 26.263794f), 0 },
         };
 
         /// <summary>
@@ -74,8 +72,6 @@ namespace Server.Groups.Police
                 }
             }
 
-            
-
             return true;
         }
 
@@ -112,11 +108,10 @@ namespace Server.Groups.Police
                 // Shotgun
                 WeaponInfo shotgunInfo = new WeaponInfo(50, true, "LSPD");
                 inventoryItems.Add(new InventoryItem("ITEM_POLICE_WEAPON_SHOTGUN", "Shotgun", shotgunInfo.ToString()));
-                
+
                 bool success = playerInventory.AddItem(inventoryItems);
 
                 if (!success) return false;
-
             }
 
             if (type == 2)
@@ -124,14 +119,11 @@ namespace Server.Groups.Police
                 // AR
                 WeaponInfo arInfo = new WeaponInfo(200, true, "LSPD");
                 inventoryItems.Add(new InventoryItem("ITEM_POLICE_WEAPON_AR", "Assault Rife", arInfo.ToString()));
-                
+
                 bool success = playerInventory.AddItem(inventoryItems);
 
                 if (!success) return false;
-
             }
-
-
 
             return true;
         }
