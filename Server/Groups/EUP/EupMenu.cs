@@ -15,6 +15,8 @@ namespace Server.Groups.EUP
 
         public static List<EupOutfit> MalePoliceOutfits = new List<EupOutfit>
         {
+            new EupOutfit("Class A - Long", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{380, 0}),
+            new EupOutfit("Class A Traffic - Long", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{380, 1}),
             new EupOutfit("Class C - Short", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{373, 0}),
             new EupOutfit("Class C - Long", new []{1, 0}, new []{35, 0}, new []{25, 0},  new []{375, 0}),
             new EupOutfit("Traffic - Short", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{373, 1}),
