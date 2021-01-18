@@ -23,6 +23,14 @@ namespace Server.Developer
 {
     public class TestCommands
     {
+        [Command("hash", AdminLevel.HeadAdmin, onlyOne: true)]
+        public static void CommandHash(IPlayer player, string hash = "")
+        {
+            if (player.GetClass().AccountId != 1) return;
+
+            Console.WriteLine($"Hashed: {hash} to {Alt.Hash(hash)}");
+        }
+
         [Command("save", onlyOne: true)]
         public static void Command_SavePos(IPlayer player, string sName = "")
         {
