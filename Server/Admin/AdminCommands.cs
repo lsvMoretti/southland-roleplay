@@ -2008,6 +2008,13 @@ namespace Server.Admin
 
             player.Emit("FixVehicle", playerVehicle);
 
+            byte count = playerVehicle.WheelsCount;
+
+            for (byte i = 0; i <= count; i++)
+            {
+                playerVehicle.SetWheelBurst(i, false);
+            }
+
             player.SendInfoNotification($"You've repaired the vehicle.");
 
             Logging.AddToAdminLog(player, $"has fixed vehicle id {playerVehicle.GetClass().Id}");

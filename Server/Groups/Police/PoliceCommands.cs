@@ -57,7 +57,7 @@ namespace Server.Groups.Police
 
                 Vector3 playerRot = new Vector3(rotation.Pitch, rotation.Roll, rotation.Yaw);
 
-                forwardPos.Z -= 1.1f;
+                forwardPos.Z -= 1.0f;
 
                 Prop prop = PropStreamer.Create("p_stinger_04", forwardPos, playerRot, player.Dimension, frozen: true);
 
