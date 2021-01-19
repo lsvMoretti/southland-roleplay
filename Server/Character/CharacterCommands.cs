@@ -437,7 +437,7 @@ namespace Server.Character
 
             bool isLaw = player.IsLeo(true);
 
-            bool isHelper = player.FetchAccount().Helper;
+            bool isHelper = player.FetchAccount().Tester;
 
             player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw, isHelper);
         }
@@ -799,7 +799,7 @@ namespace Server.Character
 
                     if (playerAccount == null) continue;
 
-                    if (!playerAccount.Helper) continue;
+                    if (!playerAccount.Tester) continue;
 
                     onlinePlayer.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
                 }

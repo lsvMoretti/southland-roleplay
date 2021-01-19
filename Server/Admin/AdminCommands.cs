@@ -6712,8 +6712,8 @@ namespace Server.Admin
             context.SaveChanges();
         }
 
-        [Command("makehelper", AdminLevel.Management, true, commandType: CommandType.Admin,
-            description: "Used to promote or demote a helper")]
+        [Command("maketester", AdminLevel.Management, true, commandType: CommandType.Admin,
+            description: "Used to promote or demote a tester")]
         public static async void AdminCommandMakeHelper(IPlayer player, string args = "")
         {
             if (string.IsNullOrWhiteSpace(args))
@@ -6746,15 +6746,15 @@ namespace Server.Admin
                 return;
             }
 
-            target.Helper = !target.Helper;
+            target.Tester = !target.Tester;
             await context.SaveChangesAsync();
 
             string message =
-                $"You have {(target.Helper ? "promoted" : "demoted")} {target.Username} {(target.Helper ? "to" : "from")} helper!";
+                $"You have {(target.Tester ? "promoted" : "demoted")} {target.Username} {(target.Tester ? "to" : "from")} Tester!";
             player.SendInfoNotification(message);
 
             string playerMessage =
-                $"You have been {(target.Helper ? "promoted" : "demoted")} {(target.Helper ? "to" : "from")} helper by {player.GetClass().UcpName}";
+                $"You have been {(target.Tester ? "promoted" : "demoted")} {(target.Tester ? "to" : "from")} Tester by {player.GetClass().UcpName}";
             targetPlayer.SendInfoMessage(playerMessage);
         }
     }

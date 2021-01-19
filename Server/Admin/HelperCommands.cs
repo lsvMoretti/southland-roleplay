@@ -13,12 +13,12 @@ namespace Server.Admin
     {
         public static string HelperDutyData = "HELPERONDUTY";
 
-        [Command("hduty", commandType: CommandType.Helper, description: "Toggles on / off duty status for helpers")]
+        [Command("tduty", commandType: CommandType.Helper, description: "Toggles on / off duty status for testers")]
         public static void HelperDutyCommand(IPlayer player)
         {
             if (!player.GetClass().Spawned) return;
 
-            if (!player.FetchAccount().Helper)
+            if (!player.FetchAccount().Tester)
             {
                 player.SendPermissionError();
                 return;
@@ -34,18 +34,26 @@ namespace Server.Admin
                 player.GetClass().Name = player.GetClass().UcpName;
                 return;
             }
-            
+
             player.DeleteSyncedMetaData(HelperDutyData);
             player.GetClass().Name = player.FetchCharacter().Name;
             player.SendInfoNotification("You've gone off Helper Duty!");
         }
-        
+
         [Command("ah", onlyOne: true, alternatives: "accepthelp", commandType: CommandType.Helper, description: "Accepts a Help Request!")]
         public static void AcceptHelpCommand(IPlayer player, string idString = "")
         {
             if (idString == "")
             {
                 player.SendSyntaxMessage("/ah [reportId]");
+                return;
+            }
+
+            bool hasDutyData = player.GetSyncedMetaData(HelperDutyData, out bool onDuty);
+
+            if (!hasDutyData || !onDuty)
+            {
+                player.SendErrorNotification("Your not on duty!");
                 return;
             }
 
@@ -80,7 +88,7 @@ namespace Server.Admin
             }
 
             AdminHandler.HelpReports.Remove(helpReport);
-            
+
             targetPlayer.SendInfoNotification(
                 $"Your help request Id {helpReport.Id} has been accepted. Please await for them to contact you.");
 
@@ -88,32 +96,40 @@ namespace Server.Admin
             player.SendInfoNotification($"Player Id: {targetPlayer.GetPlayerId()}");
 
             var onlineHelpers = Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.Helper == true).ToList();
+                .Where(x => x.FetchAccount()?.Tester == true).ToList();
 
             if (onlineHelpers.Any())
             {
                 foreach (IPlayer onlineHelper in onlineHelpers)
                 {
                     if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;
-                    
+
                     onlineHelper.SendHelperMessage(
-                        $"Admin {player.FetchAccount().Username} has accepted report Id: {helpReport.Id}.");
+                        $"Tester {player.FetchAccount().Username} has accepted report Id: {helpReport.Id}.");
                 }
             }
-            
+
             DiscordHandler.SendMessageToReportsChannel(
-                $"Helper {player.FetchAccount().Username} has accepted Help Id {helpReport.Id}");
+                $"Tester {player.FetchAccount().Username} has accepted Help Id {helpReport.Id}");
 
             Logging.AddToAdminLog(player,
                 $"has accepted helpme Id {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
 
-        [Command("dh", onlyOne: true,  alternatives: "denyhelp", commandType: CommandType.Helper, description: "Declines a Help Me")]
+        [Command("dh", onlyOne: true, alternatives: "denyhelp", commandType: CommandType.Helper, description: "Declines a Help Me")]
         public static void HelpCommandDeclineReport(IPlayer player, string idString = "")
         {
             if (idString == "")
             {
                 player.SendSyntaxMessage("/dr [reportId]");
+                return;
+            }
+
+            bool hasDutyData = player.GetSyncedMetaData(HelperDutyData, out bool onDuty);
+
+            if (!hasDutyData || !onDuty)
+            {
+                player.SendErrorNotification("Your not on duty!");
                 return;
             }
 
@@ -146,28 +162,27 @@ namespace Server.Admin
                 player.SendErrorNotification("You can not decline your own requests!");
                 return;
             }
-            
+
             AdminHandler.HelpReports.Remove(helpReport);
-            
+
             targetPlayer.SendInfoNotification($"Your helpme request Id: {helpReport.Id} has been denied.");
 
             player.SendInfoNotification($"You have declined report Id: {helpReport.Id}.");
 
             foreach (IPlayer onlineHelper in Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.Helper == true))
+                .Where(x => x.FetchAccount()?.Tester == true))
             {
-
                 if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;
-                
+
                 onlineHelper.SendHelperMessage(
-                    $"Helper {player.FetchAccount().Username} has denied help me request Id: {helpReport.Id}.");
+                    $"Tester {player.FetchAccount().Username} has denied help me request Id: {helpReport.Id}.");
             }
 
             DiscordHandler.SendMessageToReportsChannel(
-                $"Helper {player.FetchAccount().Username} has denied help request Id {helpReport.Id}");
+                $"Tester {player.FetchAccount().Username} has denied help request Id {helpReport.Id}");
 
             Logging.AddToAdminLog(player,
-                $"has denied helme Id {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
+                $"has denied helpme Id {helpReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
     }
 }
