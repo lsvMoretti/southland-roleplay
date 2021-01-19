@@ -22,6 +22,8 @@ namespace Server.Character
 
         public static int BulletId = 1;
 
+        public static Dictionary<int, List<BodyDamage>> DamageDictionary = new Dictionary<int, List<BodyDamage>>();
+
         public static void AltOnOnPlayerDamage(IPlayer player, IEntity attacker, uint weapon, ushort damage)
         {
         }
@@ -29,6 +31,8 @@ namespace Server.Character
         public static bool AltOnOnWeaponDamage(IPlayer player, IEntity target, uint weapon, ushort damage,
             Position shotoffset, BodyPart bodypart)
         {
+            Console.WriteLine($"Shot in the {bodypart}");
+
             if (target.Type == BaseObjectType.Player)
             {
                 IPlayer targetPlayer = (IPlayer)target;
@@ -37,42 +41,47 @@ namespace Server.Character
                 {
                     return false;
                 }
-            }
 
-            bool hasDamageData = player.GetData(_weaponDamage, out string damageJson);
+                int characterId = targetPlayer.GetClass().CharacterId;
 
-            List<BodyDamage> bodyDamages = null;
+                BodyDamage newDamage = new BodyDamage(bodypart, 1, damage);
 
-            if (!hasDamageData)
-            {
-                bodyDamages = new List<BodyDamage>
+                bool hasWeaponDamages =
+                    DamageDictionary.TryGetValue(characterId, out List<BodyDamage>? weaponDamage);
+
+                if (!hasWeaponDamages || weaponDamage == null)
                 {
-                    new BodyDamage(bodypart, 1, damage)
-                };
+                    List<BodyDamage> newDamageList = new List<BodyDamage> { newDamage };
 
-                player.SetData(_weaponDamage, JsonConvert.SerializeObject(bodyDamages));
+                    DamageDictionary.Add(characterId, newDamageList);
+
+                    return true;
+                }
+
+                BodyDamage? currentDamage = weaponDamage.FirstOrDefault(x => x.BodyPart == bodypart);
+
+                if (currentDamage == null)
+                {
+                    DamageDictionary.Remove(characterId);
+                    weaponDamage.Add(newDamage);
+                    DamageDictionary.Add(characterId, weaponDamage);
+                    return true;
+                }
+
+                BodyDamage bodyDamage = currentDamage;
+
+                weaponDamage.Remove(currentDamage);
+
+                bodyDamage.Count += 1;
+                bodyDamage.DamageAmount += damage;
+
+                DamageDictionary.Remove(characterId);
+                weaponDamage.Add(bodyDamage);
+                DamageDictionary.Add(characterId, weaponDamage);
+
                 return true;
             }
 
-            bodyDamages = JsonConvert.DeserializeObject<List<BodyDamage>>(damageJson);
-
-            BodyDamage bodyDamage = bodyDamages.FirstOrDefault(x => x.BodyPart == bodypart);
-
-            BodyDamage newDamage = new BodyDamage(bodypart, 1, damage);
-
-            if (bodyDamage == null)
-            {
-                bodyDamages.Add(newDamage);
-            }
-            else
-            {
-                bodyDamages.Remove(bodyDamage);
-                newDamage.Count = bodyDamage.Count + 1;
-                newDamage.DamageAmount = Convert.ToUInt16(bodyDamage.DamageAmount + damage);
-                bodyDamages.Add(newDamage);
-            }
-
-            player.SetData(_weaponDamage, JsonConvert.SerializeObject(bodyDamages));
             return true;
         }
 
@@ -84,27 +93,54 @@ namespace Server.Character
 
             if (args == "")
             {
-                bool hasOwnDamageData = player.GetData(_weaponDamage, out string damageString);
+                int characterId = player.GetClass().CharacterId;
 
-                if (!hasOwnDamageData)
+                bool hasOwnDamageData = DamageDictionary.TryGetValue(characterId, out List<BodyDamage>? ownDamages);
+
+                if (!hasOwnDamageData || ownDamages == null)
                 {
                     player.SendErrorNotification("You don't have any damages recorded!");
                     return;
                 }
 
-                List<BodyDamage> ownDamages = JsonConvert.DeserializeObject<List<BodyDamage>>(damageString);
-
                 player.SendInfoMessage($"-- Your Damages -- ");
 
                 foreach (BodyDamage ownDamage in ownDamages)
                 {
-                    player.SendInfoMessage($"Location: {ownDamage.BodyPart.ToString()}, Total Damage: {ownDamage.DamageAmount}, Damage Count: {ownDamage.Count}.");
+                    string bodyPart = ownDamage.BodyPart switch
+                    {
+                        BodyPart.Pelvis => "Pelvis",
+                        BodyPart.LeftHip => "Left Hip",
+                        BodyPart.LeftLeg => "Left Leg",
+                        BodyPart.LeftFoot => "Left Foot",
+                        BodyPart.RightHip => "Right Hip",
+                        BodyPart.RightLeg => "Right Leg",
+                        BodyPart.RightFoot => "Right Foot",
+                        BodyPart.LowerTorso => "Lower Torso",
+                        BodyPart.UpperTorso => "Upper Torso",
+                        BodyPart.Chest => "Chest",
+                        BodyPart.UnderNeck => "Under Neck",
+                        BodyPart.LeftShoulder => "Left Shoulder",
+                        BodyPart.LeftUpperArm => "Left Upper Arm",
+                        BodyPart.LeftElbow => "Left Elbow",
+                        BodyPart.LeftWrist => "Left Wrist",
+                        BodyPart.RightShoulder => "Right Shoulder",
+                        BodyPart.RightUpperArm => "Right Upper Arm",
+                        BodyPart.RightElbow => "Right Elbow",
+                        BodyPart.RightWrist => "Right Wrist",
+                        BodyPart.Neck => "Neck",
+                        BodyPart.Head => "Head",
+                        BodyPart.Unknown => "Unknown",
+                        _ => "Unknown"
+                    };
+
+                    player.SendInfoMessage($"Location: {bodyPart}, Total Damage: {ownDamage.DamageAmount}, Damage Count: {ownDamage.Count}.");
                 }
 
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null || !targetPlayer.IsSpawned())
             {
@@ -118,21 +154,46 @@ namespace Server.Character
                 return;
             }
 
-            bool targetHasDamageData = targetPlayer.GetData(_weaponDamage, out string targetString);
+            bool targetHasDamageData = DamageDictionary.TryGetValue(targetPlayer.GetClass().CharacterId, out List<BodyDamage>? targetBodyDamages);
 
-            if (!targetHasDamageData)
+            if (!targetHasDamageData || targetBodyDamages == null)
             {
                 player.SendErrorNotification("They have no damages recorded!");
                 return;
             }
 
-            List<BodyDamage> targetBodyDamages = JsonConvert.DeserializeObject<List<BodyDamage>>(targetString);
-
             player.SendInfoMessage($"-- Damages for {targetPlayer.GetClass().Name} --");
 
             foreach (BodyDamage targetBodyDamage in targetBodyDamages)
             {
-                player.SendInfoMessage($"Location: {targetBodyDamage.BodyPart.ToString()}, Total Damage: {targetBodyDamage.DamageAmount}, Damage Count: {targetBodyDamage.Count}.");
+                string bodyPart = targetBodyDamage.BodyPart switch
+                {
+                    BodyPart.Pelvis => "Pelvis",
+                    BodyPart.LeftHip => "Left Hip",
+                    BodyPart.LeftLeg => "Left Leg",
+                    BodyPart.LeftFoot => "Left Foot",
+                    BodyPart.RightHip => "Right Hip",
+                    BodyPart.RightLeg => "Right Leg",
+                    BodyPart.RightFoot => "Right Foot",
+                    BodyPart.LowerTorso => "Lower Torso",
+                    BodyPart.UpperTorso => "Upper Torso",
+                    BodyPart.Chest => "Chest",
+                    BodyPart.UnderNeck => "Under Neck",
+                    BodyPart.LeftShoulder => "Left Shoulder",
+                    BodyPart.LeftUpperArm => "Left Upper Arm",
+                    BodyPart.LeftElbow => "Left Elbow",
+                    BodyPart.LeftWrist => "Left Wrist",
+                    BodyPart.RightShoulder => "Right Shoulder",
+                    BodyPart.RightUpperArm => "Right Upper Arm",
+                    BodyPart.RightElbow => "Right Elbow",
+                    BodyPart.RightWrist => "Right Wrist",
+                    BodyPart.Neck => "Neck",
+                    BodyPart.Head => "Head",
+                    BodyPart.Unknown => "Unknown",
+                    _ => "Unknown"
+                };
+
+                player.SendInfoMessage($"Location: {bodyPart}, Total Damage: {targetBodyDamage.DamageAmount}, Damage Count: {targetBodyDamage.Count}.");
             }
         }
     }

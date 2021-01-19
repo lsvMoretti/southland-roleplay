@@ -127,8 +127,6 @@ namespace Server.Character
                 playerCharacter.CurrentWeapon = string.Empty;
 
                 context.SaveChanges();
-
-                
             }
 
             DeadBody newBody = new DeadBody(player);
@@ -204,8 +202,13 @@ namespace Server.Character
 
             targetPlayer.SetData("REVIVED", true);
 
+            if (DamageHandler.DamageDictionary.ContainsKey(targetPlayer.GetClass().CharacterId))
+            {
+                DamageHandler.DamageDictionary.Remove(targetPlayer.GetClass().CharacterId);
+            }
+
             targetPlayer.SetPosition(targetPlayer.Position, targetPlayer.Rotation, 1, true, true, loadWeapon: true);
-            
+
             Alt.EmitAllClients("clearBlood", targetPlayer);
         }
 
@@ -240,7 +243,6 @@ namespace Server.Character
                         player.SetData("DeathWeapon", true);
 
                         WeaponCommands.CommandUnEquip(player);
-
                     }
                 }
 
