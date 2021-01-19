@@ -14,7 +14,7 @@ namespace Server.Jobs.Taxi
 {
     public class TaxiCommands
     {
-        [Command("taxiduty", alternatives: "tduty", commandType: CommandType.Job, description: "Taxi: Sets yourself on Taxi Duty")]
+        [Command("taxiduty", commandType: CommandType.Job, description: "Taxi: Sets yourself on Taxi Duty")]
         public static void TaxiCommandDuty(IPlayer player)
         {
             if (!player.IsSpawned()) return;
