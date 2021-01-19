@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Timers;
 using AltV.Net;
 using AltV.Net.Data;
@@ -210,6 +211,95 @@ namespace Server.Character
             targetPlayer.SetPosition(targetPlayer.Position, targetPlayer.Rotation, 1, true, true, loadWeapon: true);
 
             Alt.EmitAllClients("clearBlood", targetPlayer);
+        }
+
+        [Command("helpup", onlyOne: true, commandType: CommandType.Character,
+            description: "Used to pickup someone during a brawl")]
+        public static void CommandHelpUp(IPlayer player, string args = "")
+        {
+            if (!player.GetClass().Spawned) return;
+
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendSyntaxMessage("/helpup [NameOrId]");
+                return;
+            }
+
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
+
+            if (targetPlayer == null || !targetPlayer.GetClass().Spawned)
+            {
+                player.SendErrorNotification("Unable to find this player.");
+                return;
+            }
+
+            if (player == targetPlayer)
+            {
+                player.SendErrorNotification("You can't do this.");
+                return;
+            }
+
+            if (player.Position.Distance(targetPlayer.Position) > 5 || targetPlayer.Dimension != player.Dimension)
+            {
+                player.SendErrorNotification("Your not near the player.");
+                return;
+            }
+
+            if (player.GetClass().Downed)
+            {
+                player.SendErrorNotification("Your downed.");
+                return;
+            }
+
+            bool hasRevivedData = targetPlayer.GetData("REVIVED", out bool revived);
+
+            if (hasRevivedData && revived || !targetPlayer.GetClass().Downed)
+            {
+                player.SendErrorNotification("Target not downed.");
+                return;
+            }
+
+            bool hasDamageData = DamageHandler.DamageDictionary.TryGetValue(targetPlayer.GetClass().CharacterId,
+                out List<BodyDamage> bodyDamages);
+
+            if (!hasDamageData || bodyDamages == null)
+            {
+                player.SendErrorNotification("No damage data for this player.");
+                return;
+            }
+
+            int meeleCount = 0;
+
+            foreach (BodyDamage bodyDamage in bodyDamages)
+            {
+                if (!DamageHandler.MeeleWeapons.Contains((WeaponModel)bodyDamage.Weapon)) continue;
+                meeleCount++;
+            }
+
+            if (meeleCount != bodyDamages.Count)
+            {
+                player.SendErrorNotification("Looks like it's more than Meele's here!");
+                return;
+            }
+
+            targetPlayer.FreezePlayer(false);
+            targetPlayer.FreezeCam(false);
+            targetPlayer.FreezeInput(false);
+
+            targetPlayer.GetClass().Downed = false;
+
+            targetPlayer.SetData("REVIVED", true);
+
+            if (DamageHandler.DamageDictionary.ContainsKey(targetPlayer.GetClass().CharacterId))
+            {
+                DamageHandler.DamageDictionary.Remove(targetPlayer.GetClass().CharacterId);
+            }
+
+            targetPlayer.SetPosition(targetPlayer.Position, targetPlayer.Rotation, 1, true, true, loadWeapon: true);
+
+            Alt.EmitAllClients("clearBlood", targetPlayer);
+
+            player.SendEmoteMessage($"reaches down and grabs {targetPlayer.GetClass().Name} and helps them up.");
         }
 
         public static void OnDeathReturnAmmo(IPlayer player, int ammoCount)
