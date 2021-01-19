@@ -34,8 +34,8 @@ namespace Server.Chat
             }
 
             bool tryParse = int.TryParse(args, out int fontSize);
-            
-            if(!tryParse)
+
+            if (!tryParse)
             {
                 player.SendSyntaxMessage("/fontsize [-3 to 3]");
                 return;
@@ -47,10 +47,10 @@ namespace Server.Chat
                 return;
             }
             player.Emit("Chat:ChangeFontSize", fontSize);
-            
+
             player.SendInfoNotification($"You've changed your font size to {fontSize}");
         }
-        
+
         [Command("ame", onlyOne: true, commandType: CommandType.Chat, description: "An above head emote command")]
         public static void CommandAMe(IPlayer player, string args = "")
         {
@@ -124,8 +124,6 @@ namespace Server.Chat
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Do);
         }
 
-        
-
         [Command("dlow", onlyOne: true, commandType: CommandType.Chat, description: "A Low emote command")]
         public static void CommandDoLow(IPlayer player, string args = "")
         {
@@ -178,7 +176,6 @@ namespace Server.Chat
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Whisper, 5f);
         }
 
-        
         [Command("low", onlyOne: true, commandType: CommandType.Chat, description: "Low Talking command")]
         public static void CommandLow(IPlayer player, string args = "")
         {
@@ -345,7 +342,7 @@ namespace Server.Chat
 
                 if (adminAccount == null) continue;
 
-                if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue; 
+                if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
 
                 admin.SendAdminChatMessage($"{username} says: {message}");
             }
@@ -358,9 +355,8 @@ namespace Server.Chat
 
             embedBuilder.AddField("Message", message);
             embedBuilder.AddField("Admin", username);
-            
+
             DiscordHandler.SendEmbedToIgAdminChannel(embedBuilder);
         }
-
     }
 }

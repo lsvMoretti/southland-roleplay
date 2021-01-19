@@ -884,12 +884,12 @@ namespace Server.Extensions
         {
             get
             {
-                bool hasData = _player.GetData("ISDOWNED", out bool isDowned);
+                bool hasData = _player.GetSyncedMetaData("ISDOWNED", out bool isDowned);
                 if (!hasData) return false;
 
                 return isDowned;
             }
-            set => _player.SetData("ISDOWNED", value);
+            set => _player.SetSyncedMetaData("ISDOWNED", value);
         }
 
         public float Cash

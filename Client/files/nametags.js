@@ -54,6 +54,7 @@ function drawNameTags() {
         if (dist > drawDistance)
             continue;
         const isTyping = player.getSyncedMeta("TypeStatus");
+        const isDown = player.getSyncedMeta("ISDOWNED");
         const pos = { ...native.getPedBoneCoords(player.scriptID, 12844, 0, 0, 0) };
         pos.z += 0.5;
         const scale = 1 - (0.8 * dist) / drawDistance;
@@ -70,7 +71,12 @@ function drawNameTags() {
         native.setTextCentre(true);
         native.setTextColour(255, 255, 255, 255);
         native.setTextOutline();
-        native.addTextComponentSubstringPlayerName(isTyping ? `Typing..\n${name} (${playerId})` : `${name} (${playerId})`);
+        if (isDown) {
+            native.addTextComponentSubstringPlayerName(`Downed\n${name} (${playerId})`);
+        }
+        else {
+            native.addTextComponentSubstringPlayerName(isTyping ? `Typing..\n${name} (${playerId})` : `${name} (${playerId})`);
+        }
         native.endTextCommandDisplayText(0, 0, 0);
         let ameActive = player.getSyncedMeta("ChatCommand:AmeActive");
         if (ameActive) {
