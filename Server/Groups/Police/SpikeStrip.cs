@@ -16,6 +16,8 @@ namespace Server.Groups.Police
 
         public IColShape ColShape { get; }
 
+        public Rotation Rotation { get; }
+
         public SpikeStrip()
         {
         }
@@ -28,6 +30,7 @@ namespace Server.Groups.Police
             Dimension = player.Dimension;
             Object = prop;
             ColShape = colShape;
+            Rotation = player.Rotation;
         }
     }
 }

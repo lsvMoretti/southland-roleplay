@@ -53,13 +53,15 @@ namespace Server.Groups.Police
                     return;
                 }
 
-                forwardPos.Z -= 1f;
+                DegreeRotation rotation = player.Rotation;
 
-                Vector3 playerRot = player.Rotation;
+                Vector3 playerRot = new Vector3(rotation.Pitch, rotation.Roll, rotation.Yaw);
+
+                forwardPos.Z -= 1f;
 
                 Prop prop = PropStreamer.Create("xs_prop_arena_spikes_02a", forwardPos, playerRot, player.Dimension, frozen: true);
 
-                prop.SetRotation(player.Rotation);
+                prop.SetRotation(playerRot);
 
                 IColShape colShape = Alt.CreateColShapeCylinder(forwardPos, 3f, 3f);
 
@@ -154,8 +156,9 @@ namespace Server.Groups.Police
                 count++;
                 spikeStrip.ColShape.Remove();
                 spikeStrip.Object.Delete();
-                _spikeStrips.Remove(spikeStrip);
             }
+
+            _spikeStrips = new List<SpikeStrip>();
 
             player.SendInfoNotification($"You've removed {count}/{totalCount} spike strips!");
             Logging.AddToCharacterLog(player, $"has removed {count}/{totalCount} spike strips!");
