@@ -59,7 +59,7 @@ namespace Server.Groups.Police
 
                 forwardPos.Z -= 1.1f;
 
-                Prop prop = PropStreamer.Create("xs_prop_arena_spikes_02a", forwardPos, playerRot, player.Dimension, frozen: true);
+                Prop prop = PropStreamer.Create("xs_prop_arena_spikes_01a", forwardPos, playerRot, player.Dimension, frozen: true);
 
                 prop.SetRotation(playerRot);
 
