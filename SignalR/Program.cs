@@ -18,10 +18,9 @@ namespace SignalR
             CreateWebHostBuilder(args).Build().Run();
         }
 
-
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-            .UseUrls("http://176.9.66.40:2000/");
+            .UseUrls("http://149.202.88.222:2000/");
     }
 }
