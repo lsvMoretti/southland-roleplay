@@ -980,7 +980,7 @@ namespace Server.Extensions
             set => _player.SetData("IsSitting", value);
         }
 
-        public Language.Language SpokenLanguage
+        public Language.Language? SpokenLanguage
         {
             get
             {
@@ -990,7 +990,7 @@ namespace Server.Extensions
                     return spokenLanguage;
                 }
 
-                string spokenString = _player.FetchCharacter().CurrentLanguage;
+                string spokenString = _player.FetchCharacter()?.CurrentLanguage;
 
                 spokenLanguage = !string.IsNullOrEmpty(spokenString) ? JsonConvert.DeserializeObject<Language.Language>(_player.FetchCharacter().CurrentLanguage) : LanguageHandler.Languages.FirstOrDefault(x => x.Code == "en");
 

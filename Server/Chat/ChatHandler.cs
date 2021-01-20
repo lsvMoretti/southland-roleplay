@@ -130,17 +130,17 @@ namespace Server.Chat
             }
             */
 
-            Language.Language playerLanguage = player.GetClass().SpokenLanguage;
+            Language.Language? playerLanguage = player.GetClass().SpokenLanguage;
 
-            string translatedText = null;
+            string? translatedText = null;
 
-            if (playerLanguage.Code != "en")
+            if (playerLanguage?.Code != "en")
             {
                 try
                 {
                     Translations translation = await LanguageHandler.FetchTranslation(playerLanguage, message);
 
-                    translatedText = translation.translations.FirstOrDefault()?.text;
+                    translatedText = translation.translations.FirstOrDefault().text;
                     if (translatedText == null)
                     {
                         player.SendErrorNotification("An error occurred translating.");
