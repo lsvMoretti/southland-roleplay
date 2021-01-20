@@ -63,15 +63,33 @@ namespace Server
 {
     public class ServerResource : AsyncResource
     {
-        public override void OnStart()
+        public override async void OnStart()
         {
             try
             {
-                AltEntitySync.Init(1, 100, (threadId) => false,
+                AltEntitySync.Init(5, 200, (threadId) => true,
                     (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
-                    (entity, threadCount) => (entity.Id % threadCount),
-                    (entityId, entityType, threadCount) => (entityId % threadCount),
-                    (threadId) => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 300),
+                    (entity, threadCount) => entity.Type,
+                    (entityId, entityType, threadCount) => entityType,
+                    (threadId) =>
+                    {
+                        return threadId switch
+                        {
+                            //MARKER
+                            0 => new LimitedGrid3(50_000, 50_000, 75, 10_000, 10_000, 64),
+                            //TEXT
+                            1 => new LimitedGrid3(50_000, 50_000, 75, 10_000, 10_000, 32),
+                            //PROP
+                            2 => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 1500),
+                            //HELP TEXT
+                            3 => new LimitedGrid3(50_000, 50_000, 100, 10_000, 10_000, 1),
+                            //BLIP
+                            4 => new EntityStreamer.GlobalEntity(),
+                            //BLIP DYNAMIQUE
+                            5 => new LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 200),
+                            _ => new LimitedGrid3(50_000, 50_000, 175, 10_000, 10_000, 115),
+                        };
+                    },
                     new IdProvider());
 
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
@@ -85,17 +103,14 @@ namespace Server
                 Alt.OnPlayerDead += DeathHandler.OnPlayerDeath;
                 Alt.OnWeaponDamage += DamageHandler.AltOnOnWeaponDamage;
                 Alt.OnPlayerDamage += DamageHandler.AltOnOnPlayerDamage;
+                Alt.OnPlayerWeaponChange += WeaponSwitch.AltOnOnPlayerWeaponChange;
 
                 CommandExtension.Init();
                 GameWorld.InitGameWorld();
-                /*
-#if RELEASE
-                SignalR.StartConnection();
-#endif
-                */
+
                 SignalR.StartConnection();
 
-                ServerLoaded();
+                await ServerLoaded();
                 Console.WriteLine($"Server Loaded");
 
                 #region Dev Callbacks
@@ -191,6 +206,8 @@ namespace Server
                 Alt.OnClient<IPlayer, string, string>("AtmWithdrawFunds", AtmHandler.AtmWithdrawFunds);
 
                 Alt.OnClient<IPlayer, string>("SetBankAccountActive", BankHandler.SetBankAccountAsActive);
+
+                Alt.OnClient<IPlayer, string>("ATMSystem:IncorrectPin", AtmHandler.OnAtmPinIncorrect);
 
                 #endregion Atm System
 
@@ -356,6 +373,18 @@ namespace Server
                 Alt.OnClient<IPlayer, int, bool>("IndicatorStateChange", VehicleHandler.OnIndicatorStateChange);
 
                 #endregion Vehicle System
+
+                #region Hotwire System
+
+                Alt.OnClient<IPlayer>("VehicleScramble:MaxAttemptsReached", HotWire.OnMaxAttemptsReached);
+
+                Alt.OnClient<IPlayer>("VehicleScramble:TimeExpired", HotWire.OnTimeExpired);
+
+                Alt.OnClient<IPlayer>("VehicleScramble:CorrectWord", HotWire.OnCorrectWord);
+
+                Alt.OnClient<IPlayer>("VehicleScramble:PageClosed", HotWire.OnPageClosed);
+
+                #endregion Hotwire System
 
                 Alt.OnClient<IPlayer, bool>("ChatStatusChange", (player, status) =>
                 {
@@ -564,17 +593,13 @@ namespace Server
             Console.WriteLine($"Saved {playerSaveCount} players & {vehicleCount} vehicles.");
         }
 
-        public async void ServerLoaded()
+        public async Task ServerLoaded()
         {
             Developer.OnStart.OnStartEvent();
 
             AccountHandler.InitAccountSystem();
 
             LoadVehicle.ResetAllVehiclesSpawnStatus();
-
-            LoadVehicle.LoadFactionVehicles();
-
-            LoadVehicle.LoadCharacterVehicles();
 
             //await MapHandler.LoadMaps();
 
@@ -654,6 +679,14 @@ namespace Server
             PurchaseObjectHandler.LoadBuyableObjects();
 
             WelcomePlayer.InitPed();
+
+            WordListHandler.LoadWords();
+
+            DoorHandler.SetPoliceDoorsLocked();
+
+            await LoadVehicle.LoadFactionVehicles();
+
+            await LoadVehicle.LoadCharacterVehicles();
         }
     }
 }

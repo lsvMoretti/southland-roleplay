@@ -10,17 +10,15 @@ namespace Server.Models
         [Key]
         public int Id { get; set; }
 
-        public string IpAddress { get; set; }
+        public string? IpAddress { get; set; }
 
-        public string SocialClubId { get; set; }
+        public string? SocialClubId { get; set; }
 
-        public string HardwareIdHash { get; set; }
+        public string? HardwareIdHash { get; set; }
 
-        public string HardwareIdExHash { get; set; }
+        public string? HardwareIdExHash { get; set; }
 
-
-
-        public Bans(string ipAddress, string socialClubId, string hardwareIdHash, string hardwareIdExHash)
+        public Bans(string? ipAddress, string? socialClubId, string? hardwareIdHash, string? hardwareIdExHash)
         {
             IpAddress = ipAddress;
             SocialClubId = socialClubId;
@@ -34,11 +32,11 @@ namespace Server.Models
 
             Bans ban = context.Bans.FirstOrDefault(x => x.IpAddress == player.Ip);
 
-            if (ban != null)return true;
+            if (ban != null) return true;
 
             ban = context.Bans.FirstOrDefault(x => x.SocialClubId == player.SocialClubId.ToString());
 
-            if (ban != null)return true;
+            if (ban != null) return true;
 
             ban = context.Bans.FirstOrDefault(x => x.HardwareIdHash == player.HardwareIdHash.ToString());
 
@@ -46,7 +44,7 @@ namespace Server.Models
 
             ban = context.Bans.FirstOrDefault(x => x.HardwareIdExHash == player.HardwareIdExHash.ToString());
 
-            if (ban != null)  return true;
+            if (ban != null) return true;
 
             return false;
         }

@@ -110,7 +110,7 @@ namespace Server
 
                 CurrentWeather = FetchCurrentWeather();
 
-                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.GetClass().Spawned).ToList())
                 {
                     if (player.GetClass().CreatorRoom) continue;
                     player.SetWeather((uint)CurrentWeatherType);
@@ -149,7 +149,7 @@ namespace Server
 
                 OpenWeather currentWeather = JsonConvert.DeserializeObject<OpenWeather>(updatedJson);
 
-                int currentWeatherType = currentWeather.weather.FirstOrDefault().id;
+                int currentWeatherType = currentWeather.weather.First().id;
 
                 int firstDigit = (int)(currentWeatherType.ToString()[0]);
 
@@ -185,48 +185,78 @@ namespace Server
                     }
                 }
 
-                if (currentWeatherType == 701)
+                switch (currentWeatherType)
                 {
-                    // Mist
-                    CurrentWeatherType = WeatherType.Smog;
-                }
-
-                if (currentWeatherType == 711)
-                {
+                    case 701:
                     //Smoke
-                    CurrentWeatherType = WeatherType.Smog;
+                    case 711:
+                        // Mist
+                        CurrentWeatherType = WeatherType.Smog;
+                        break;
+
+                    case 721:
+                        //Haze
+                        CurrentWeatherType = WeatherType.Clouds;
+                        break;
+
+                    case 741:
+                        //Fog
+                        CurrentWeatherType = WeatherType.Foggy;
+                        break;
+
+                    case 800:
+                        CurrentWeatherType = WeatherType.Clear;
+                        break;
+
+                    case 801:
+                        CurrentWeatherType = WeatherType.Clouds;
+                        break;
+
+                    case 802:
+                        CurrentWeatherType = WeatherType.Clouds;
+                        break;
+
+                    case 803:
+                        CurrentWeatherType = WeatherType.Clouds;
+                        break;
+
+                    case 804:
+                        CurrentWeatherType = WeatherType.Overcast;
+                        break;
                 }
 
-                if (currentWeatherType == 721)
+                /*
+                if (currentWeatherType >= 800 || currentWeatherType <= 804)
                 {
-                    //Haze
-                    CurrentWeatherType = WeatherType.Clouds;
-                }
-
-                if (currentWeatherType == 741)
-                {
-                    //Fog
-                    CurrentWeatherType = WeatherType.Foggy;
-                }
-
-                if (currentWeatherType == 800)
-                {
-                    //Clear
-                    CurrentWeatherType = WeatherType.Clear;
-                }
-
-                if (currentWeatherType >= 801 || currentWeatherType <= 804)
-                {
+                    if (currentWeatherType == 800)
+                    {
+                        CurrentWeatherType = WeatherType.Clear;
+                        Console.WriteLine("Clear");
+                    }
                     //Clouds
-                    if (currentWeatherType >= 801 && currentWeatherType <= 802)
+                    if (currentWeatherType == 801)
                     {
                         CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds");
+                    }
+
+                    if (currentWeatherType == 802)
+                    {
+                        CurrentWeatherType = WeatherType.Clouds;
+                        Console.WriteLine("Clouds");
                     }
                     else
                     {
                         CurrentWeatherType = WeatherType.Overcast;
+                        Console.WriteLine("Overcast 1");
                     }
-                }
+                }*/
+
+                /*if (currentWeatherType == 800)
+                {
+                    CurrentWeatherType = WeatherType.Clear;
+                    Console.WriteLine("Clear1");
+                }*/
 
                 DateTime currentTime = DateTime.Now;
 

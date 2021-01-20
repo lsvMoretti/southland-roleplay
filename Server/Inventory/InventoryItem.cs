@@ -13,7 +13,7 @@ namespace Server.Inventory
         public GameItem ItemInfo => item ??= GameWorld.GetGameItem(Id);
 
         /// <summary>
-        /// Unique ID of the Item
+        /// Unique Id of the Item
         /// </summary>
         public string Id { get; set; }
 
@@ -30,7 +30,7 @@ namespace Server.Inventory
         /// <summary>
         /// Quantity of Items
         /// </summary>
-        public int Quantity { get; set; }
+        public double Quantity { get; set; }
 
         [JsonIgnore]
         public List<string> QuantityListString
@@ -48,7 +48,7 @@ namespace Server.Inventory
             }
         }
 
-        public InventoryItem(string id, string customName, string itemValue = null, int quantity = 1)
+        public InventoryItem(string id, string customName, string itemValue = null, double quantity = 1)
         {
             Id = id;
             CustomName = customName;
@@ -56,7 +56,7 @@ namespace Server.Inventory
             Quantity = quantity;
         }
 
-        public float GetTotalWeight(int quantity = 1) => (float)Math.Round(ItemInfo.Weight * quantity, 2);
+        public float GetTotalWeight(double quantity = 1) => (float)Math.Round(ItemInfo.Weight * quantity, 2);
 
         //public float GetTotalCapacity
         //{

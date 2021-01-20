@@ -7,6 +7,7 @@ using System.Numerics;
 using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Newtonsoft.Json;
 using Server.Chat;
 using Server.Commands;
@@ -23,7 +24,6 @@ namespace Server.Objects
 
         public static void LoadBuyableObjects()
         {
-            
             Console.WriteLine($"Loading Buyable Objects");
 
             string filePath = "data/buyableobjects.json";
@@ -31,34 +31,36 @@ namespace Server.Objects
             if (!File.Exists(filePath))
             {
                 Console.WriteLine($"Unable to find {filePath}");
-                
+
                 BuyableObjects = new List<PurchaseObject>
                 {
                     new PurchaseObject("Drink Tray 1", "apa_mp_h_acc_drink_tray_02", 5.00)
                 };
-                
+
                 File.WriteAllText(filePath, JsonConvert.SerializeObject(BuyableObjects, Formatting.Indented));
-                
+
                 Console.WriteLine($"New file created at {filePath}.");
-                
+
                 return;
             }
-            
+
             BuyableObjects = new List<PurchaseObject>();
 
             string fileContents = File.ReadAllText(filePath);
 
             BuyableObjects = JsonConvert.DeserializeObject<List<PurchaseObject>>(fileContents);
-            
+
             Console.WriteLine($"Loaded {BuyableObjects.Count} Buyable Objects");
         }
 
+        /*
         [Command("buyobject", commandType: CommandType.Property,
-            description: "Interior Mapping: Used to buy an object")]
+            description: "Interior Mapping: Used to buy an object")]*/
+
         public static void BuyObjectCommand(IPlayer player)
         {
             if (!player.IsSpawned()) return;
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             foreach (PurchaseObject purchaseObject in BuyableObjects)
@@ -71,13 +73,11 @@ namespace Server.Objects
                 PassIndex = true,
                 ItemChangeTrigger = "BuyObject:ChangeItem"
             };
-            
-            
-            
+
             player.SetData("ObjectPreview:OldDimension", player.Dimension);
             player.SetData("ObjectPreview:OldPosition", player.Position);
             player.SetData("ObjectPreview:ObjectIndex", 0);
-            
+
             player.Dimension = player.GetPlayerId();
             player.Emit("StartObjectPreview", JsonConvert.SerializeObject(BuyableObjects));
             NativeUi.ShowNativeMenu(player, menu, true);
@@ -87,10 +87,10 @@ namespace Server.Objects
         {
             player.GetData("ObjectPreview:OldDimension", out int oldDimension);
             player.GetData("ObjectPreview:OldPosition", out Position oldPosition);
-            
+
             player.Dimension = oldDimension;
             player.Position = oldPosition;
-            
+
             if (option == "Close")
             {
                 player.Emit("ObjectPreview:Close");
@@ -104,9 +104,9 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, "Unable to find this object.");
                 return;
             }
-            
+
             NotificationExtension.SendInfoNotification(player, $"You've selected {selectedObject.Name}.");
-            
+
             player.Emit("ObjectPreview:Close");
 
             Inventory.Inventory playerInventory = player.FetchInventory();
@@ -122,7 +122,7 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, $"You don't have enough. {selectedObject.Cost:C}.");
                 return;
             }
-            
+
             InventoryItem newItem = new InventoryItem("ITEM_PLACEABLEOBJECT", selectedObject.Name, selectedObject.ObjectName);
 
             bool itemAdded = playerInventory.AddItem(newItem);
@@ -132,16 +132,16 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, "Not enough space!");
                 return;
             }
-            
+
             player.RemoveCash(selectedObject.Cost);
-            
+
             NotificationExtension.SendInfoNotification(player, $"You've bought {selectedObject.Name} for {selectedObject.Cost:C}.");
         }
 
         public static void OnBuyObjectChangeItem(IPlayer player, int newIndex, string itemText)
         {
             if (itemText == "Close") return;
-            
+
             player.Emit("ObjectPreview:ChangeIndex", newIndex);
             player.SetData("ObjectPreview:ObjectIndex", newIndex);
         }
@@ -151,7 +151,7 @@ namespace Server.Objects
         public static void ObjectCommandPlaceObject(IPlayer player)
         {
             if (!player.IsSpawned()) return;
-            
+
             Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 30f);
 
             if (nearbyProperty == null)
@@ -186,28 +186,28 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, "You don't have any objects you can place.");
                 return;
             }
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             foreach (InventoryItem placeableObject in placeableObjects)
             {
                 menuItems.Add(new NativeMenuItem(placeableObject.CustomName));
             }
-            
+
             NativeMenu menu = new NativeMenu("InteriorMapping:SelectObject", "Objects", "Select an object to place", menuItems)
             {
                 PassIndex = true
             };
-            
+
             NativeUi.ShowNativeMenu(player, menu, true);
-            
+
             player.SetData("InteriorMapping:EditProperty", nearbyProperty.Id);
         }
 
         public static void OnInteriorMappingSelectObject(IPlayer player, string option, int index)
         {
             if (option == "Close") return;
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             if (playerInventory == null)
@@ -215,7 +215,7 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, "Unable to find your inventory.");
                 return;
             }
-            
+
             List<InventoryItem> placeableObjects = playerInventory.GetInventoryItems("ITEM_PLACEABLEOBJECT");
 
             if (!placeableObjects.Any())
@@ -231,11 +231,11 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, "Unable to fetch this object.");
                 return;
             }
-            
+
             player.SetData("InteriorMapping:SelectedItemIndex", index);
-            
+
             player.Emit("InteriorMapping:StartPlacement", selectedItem.ItemValue);
-            
+
             player.SendInfoMessage($"Arrows to move about, left control & right control to move. Tab to change between rotation and position.");
             player.SendInfoMessage($"F1 to cancel, F2 to save.");
         }
@@ -244,7 +244,7 @@ namespace Server.Objects
         {
             player.GetData("InteriorMapping:EditProperty", out int propertyId);
             player.GetData("InteriorMapping:SelectedItemIndex", out int itemIndex);
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             if (playerInventory == null)
@@ -252,7 +252,7 @@ namespace Server.Objects
                 NotificationExtension.SendErrorNotification(player, "Unable to find your inventory.");
                 return;
             }
-            
+
             List<InventoryItem> placeableObjects = playerInventory.GetInventoryItems("ITEM_PLACEABLEOBJECT");
 
             if (!placeableObjects.Any())
@@ -287,7 +287,7 @@ namespace Server.Objects
             }
             else
             {
-                propertyObjects = 
+                propertyObjects =
                     JsonConvert.DeserializeObject<List<PropertyObject>>(property.PropertyObjects);
             }
 
@@ -299,7 +299,7 @@ namespace Server.Objects
                 Position = position,
                 Rotation = rotation
             };
-            
+
             bool removeItem = playerInventory.RemoveItem(selectedItem);
 
             if (!removeItem)
@@ -307,7 +307,7 @@ namespace Server.Objects
                 player.SendErrorNotification("Unable to remove this item from your inventory.");
                 return;
             }
-            
+
             propertyObjects.Add(newObject);
 
             string json = JsonConvert.SerializeObject(propertyObjects, new JsonSerializerSettings
@@ -318,8 +318,8 @@ namespace Server.Objects
             property.PropertyObjects = json;
             context.SaveChanges();
 
-            LoadProperties.LoadPropertyObject(property, newObject);       
-            
+            LoadProperties.LoadPropertyObject(property, newObject);
+
             player.SendInfoNotification($"You've placed down a {selectedItem.CustomName}.");
         }
 
@@ -328,7 +328,7 @@ namespace Server.Objects
         public static void OnMoveObjectCommand(IPlayer player)
         {
             if (!player.IsSpawned()) return;
-            
+
             Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 30f);
 
             if (nearbyProperty == null)
@@ -353,7 +353,7 @@ namespace Server.Objects
                 player.SendErrorNotification("There are no objects here.");
                 return;
             }
-            
+
             List<PropertyObject> propertyObjects =
                 JsonConvert.DeserializeObject<List<PropertyObject>>(nearbyProperty.PropertyObjects);
 
@@ -362,7 +362,7 @@ namespace Server.Objects
                 player.SendErrorNotification("There are no objects.");
                 return;
             }
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             foreach (PropertyObject propertyObject in propertyObjects)
@@ -370,20 +370,19 @@ namespace Server.Objects
                 if (propertyObject.Dimension != player.Dimension) continue;
                 menuItems.Add(new NativeMenuItem(propertyObject.Name));
             }
-            
+
             NativeMenu menu = new NativeMenu("InteriorMapping:ShowMoveObjectList", "Objects", "Select an object to move", menuItems)
             {
                 PassIndex = true
             };
-            
+
             NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnShowObjectMoveListSelected(IPlayer player, string option, int index)
         {
             if (option == "Close") return;
-            
-            
+
             Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 30f);
 
             if (nearbyProperty == null)
@@ -396,7 +395,7 @@ namespace Server.Objects
                     return;
                 }
             }
-            
+
             List<PropertyObject> propertyObjects =
                 JsonConvert.DeserializeObject<List<PropertyObject>>(nearbyProperty.PropertyObjects);
 
@@ -430,15 +429,14 @@ namespace Server.Objects
 
             player.SendInfoMessage($"Arrows to move about, left control & right control to move. Tab to change between rotation and position.");
             player.SendInfoMessage($"F1 to cancel, F2 to save.");
-            
+
             player.SetData("InteriorMapping:CurrentlyMoving", propertyObjects.IndexOf(selectedObject));
         }
 
         public static void OnFinishMovingObject(IPlayer player, Vector3 newPosition, Vector3 newRotation)
         {
             player.GetData("InteriorMapping:CurrentlyMoving", out int currentIndex);
-            
-            
+
             Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 30f);
 
             if (nearbyProperty == null)
@@ -451,7 +449,7 @@ namespace Server.Objects
                     return;
                 }
             }
-            
+
             using Context context = new Context();
 
             Models.Property property = context.Property.Find(nearbyProperty.Id);
@@ -462,7 +460,6 @@ namespace Server.Objects
                 LoadProperties.LoadPropertyObjects(nearbyProperty);
                 return;
             }
-
 
             List<PropertyObject> propertyObjects =
                 JsonConvert.DeserializeObject<List<PropertyObject>>(property.PropertyObjects);
@@ -496,9 +493,9 @@ namespace Server.Objects
             PropStreamer.Delete(selectedPropertyObject.DynamicObject);
 
             LoadProperties.LoadedPropertyObjects.Remove(selectedPropertyObject);
-            
+
             propertyObjects.Remove(selectedObject);
-            
+
             PropertyObject newObject = new PropertyObject
             {
                 Name = selectedObject.Name,
@@ -507,7 +504,7 @@ namespace Server.Objects
                 Rotation = newRotation,
                 Dimension = selectedObject.Dimension
             };
-            
+
             propertyObjects.Add(newObject);
 
             property.PropertyObjects = JsonConvert.SerializeObject(propertyObjects);
@@ -515,7 +512,7 @@ namespace Server.Objects
             context.SaveChanges();
 
             LoadProperties.LoadPropertyObject(property, newObject);
-            
+
             player.SendInfoNotification($"You've moved {newObject.Name}.");
         }
 
@@ -524,7 +521,7 @@ namespace Server.Objects
         public static void PickUpObjectCommand(IPlayer player)
         {
             if (!player.IsSpawned()) return;
-            
+
             Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 30f);
 
             if (nearbyProperty == null)
@@ -549,7 +546,7 @@ namespace Server.Objects
                 player.SendErrorNotification("There are no objects here.");
                 return;
             }
-            
+
             List<PropertyObject> propertyObjects =
                 JsonConvert.DeserializeObject<List<PropertyObject>>(nearbyProperty.PropertyObjects);
 
@@ -558,7 +555,7 @@ namespace Server.Objects
                 player.SendErrorNotification("There are no objects.");
                 return;
             }
-            
+
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
             foreach (PropertyObject propertyObject in propertyObjects)
@@ -566,20 +563,19 @@ namespace Server.Objects
                 if (propertyObject.Dimension != player.Dimension) continue;
                 menuItems.Add(new NativeMenuItem(propertyObject.Name));
             }
-            
+
             NativeMenu menu = new NativeMenu("InteriorMapping:ShowPickupObjectList", "Objects", "Select an object to pickup", menuItems)
             {
                 PassIndex = true
             };
-            
+
             NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnItemPickupSelect(IPlayer player, string option, int index)
         {
-            
             if (!player.IsSpawned()) return;
-            
+
             Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 30f);
 
             if (nearbyProperty == null)
@@ -604,7 +600,7 @@ namespace Server.Objects
                 player.SendErrorNotification("There are no objects here.");
                 return;
             }
-            
+
             List<PropertyObject> propertyObjects =
                 JsonConvert.DeserializeObject<List<PropertyObject>>(nearbyProperty.PropertyObjects);
 
@@ -624,31 +620,29 @@ namespace Server.Objects
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
-            bool itemAdded = playerInventory.AddItem(new InventoryItem("ITEM_PLACEABLEOBJECT", selectedObject.Name,selectedObject.ObjectName));
+            bool itemAdded = playerInventory.AddItem(new InventoryItem("ITEM_PLACEABLEOBJECT", selectedObject.Name, selectedObject.ObjectName));
 
             if (!itemAdded)
             {
                 player.SendErrorNotification("Unable to add the item to your inventory.");
                 return;
             }
-            
+
             propertyObjects.Remove(selectedObject);
-            
-            using Context  context = new Context();
+
+            using Context context = new Context();
 
             Models.Property property = context.Property.Find(nearbyProperty.Id);
 
             property.PropertyObjects = JsonConvert.SerializeObject(propertyObjects);
 
             context.SaveChanges();
-            
+
             LoadProperties.LoadPropertyObjects(property);
-            
+
             player.SendInfoNotification($"You've picked up {selectedObject.Name} and been placed into your inventory.");
-            
+
             Logging.AddToCharacterLog(player, $"has picked up {selectedObject.Name} from {property.Address}.");
-            
-            
         }
     }
 }

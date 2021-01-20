@@ -4,6 +4,39 @@ var vehicleListString = undefined;
 var adminDealershipView = undefined;
 var adminDealershipName = undefined;
 var editVehicleIndex = undefined;
+alt.onServer('teleportToWaypoint', () => {
+    if (!native.isWaypointActive())
+        return alt.log('Waypoint not defined');
+    const z = 1000;
+    const { scriptID: player } = alt.Player.local;
+    const waypoint = native.getFirstBlipInfoId(8);
+    const coords = native.getBlipInfoIdCoord(waypoint);
+    native.freezeEntityPosition(player, true);
+    native.startPlayerTeleport(player, coords.x, coords.y, z, 0, true, true, true);
+    const interval = alt.setInterval(() => {
+        if (native.hasPlayerTeleportFinished(player)) {
+            const ground = native.getEntityHeightAboveGround(player);
+            native.startPlayerTeleport(player, coords.x, coords.y, z - ground, 0, true, true, true);
+            native.freezeEntityPosition(player, false);
+            alt.clearInterval(interval);
+        }
+    }, 100);
+});
+alt.onServer('RockstarEditor:Toggle', (toggle) => {
+    if (toggle) {
+        native.activateRockstarEditor();
+        native.setPlayerRockstarEditorDisabled(false);
+        let interval = alt.setInterval(() => {
+            if (native.isScreenFadedOut()) {
+                native.doScreenFadeIn(1000);
+                alt.clearInterval(interval);
+            }
+        }, 1000);
+    }
+    else {
+        native.setPlayerRockstarEditorDisabled(true);
+    }
+});
 alt.onServer('admin:showEditDealershipVehicles', showEditDealershipVehicles);
 function showEditDealershipVehicles(dealerName, vehicleListJson) {
     vehicleListString = vehicleListJson;
@@ -39,10 +72,12 @@ function closeDealershipVehiclePage() {
     alt.log('function Called');
     if (adminDealershipView !== undefined) {
         alt.log('not defined');
-        adminDealershipView.destroy();
+        alt.setTimeout(() => {
+            adminDealershipView.destroy();
+            adminDealershipView = undefined;
+        }, 1100);
         native.freezeEntityPosition(alt.Player.local.scriptID, false);
         alt.showCursor(false);
-        adminDealershipView = undefined;
         alt.emitServer('admin:dealership:callClosePage');
     }
 }
@@ -65,7 +100,9 @@ alt.onServer('admin:faction:factionMembers', returnFactionMembers);
 alt.onServer('admin:faction:showCreatePage', showFactionCreate);
 function returnFactionMembers(json) {
     factionMembers = json;
-    factionView.destroy();
+    alt.setTimeout(() => {
+        factionView.destroy();
+    }, 1000);
     factionView = undefined;
     factionView = new alt.WebView('http://resource/files/admin/factionMembers.html', false);
     factionView.focus();
@@ -146,8 +183,10 @@ function factionViewLoaded() {
 function closeFactionView() {
     if (factionView === undefined)
         return;
-    factionView.destroy();
-    factionView = undefined;
+    alt.setTimeout(() => {
+        factionView.destroy();
+        factionView = undefined;
+    }, 1000);
     alt.showCursor(false);
     alt.emitServer('factionViewClosed');
 }

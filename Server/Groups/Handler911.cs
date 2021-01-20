@@ -81,7 +81,7 @@ namespace Server.Groups
                             emergencyFaction = true;
                         }
                     }
-                
+
                     if (!emergencyFaction) continue;
 
                     targetPlayer.SendChatMessage($"{ChatHandler.ColorRadioMessage}________[911]________{ChatHandler.ColorWhite}");
@@ -101,11 +101,11 @@ namespace Server.Groups
                 embedBuilder.AddField("Number", newCall911.Number);
                 embedBuilder.AddField("Location", newCall911.Location);
 
-                SignalR.SendDiscordEmbed(678625917018570799, embedBuilder);
+                SignalR.SendDiscordEmbed(798258593672462436, embedBuilder);
             }
         }
 
-        #endregion
+        #endregion 911
 
         #region 311
 
@@ -150,7 +150,6 @@ namespace Server.Groups
 
                 foreach (IPlayer targetPlayer in players)
                 {
-
                     List<PlayerFaction> playerFactions =
                         JsonConvert.DeserializeObject<List<PlayerFaction>>(targetPlayer.FetchCharacter().FactionList);
 
@@ -177,7 +176,7 @@ namespace Server.Groups
                             callAccess = true;
                         }
                     }
-                
+
                     if (!callAccess) continue;
 
                     targetPlayer.SendChatMessage($"{ChatHandler.ColorRadioMessage}________[311]________{ChatHandler.ColorWhite}");
@@ -196,11 +195,10 @@ namespace Server.Groups
 
                 embedBuilder.AddField("Number", newCall911.Number);
                 embedBuilder.AddField("Location", newCall911.Location);
-
-                SignalR.SendDiscordEmbed(678625917018570799, embedBuilder);
+                SignalR.SendDiscordEmbed(798258593672462436, embedBuilder);
             }
         }
 
-        #endregion
+        #endregion 311
     }
 }

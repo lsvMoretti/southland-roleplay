@@ -1,5 +1,6 @@
 ﻿using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Server.Extensions;
 
 namespace Server.Groups.Police
@@ -10,16 +11,17 @@ namespace Server.Groups.Police
         public int PlayerId { get; }
         public Position Position { get; }
         public int Dimension { get; }
-        
-        public Prop Object { get; } 
-        
+
+        public Prop Object { get; }
+
         public IColShape ColShape { get; }
+
+        public Rotation Rotation { get; }
 
         public SpikeStrip()
         {
-            
         }
-        
+
         public SpikeStrip(IPlayer player, Position position, Prop prop, IColShape colShape)
         {
             Character = player.FetchCharacter();
@@ -28,7 +30,7 @@ namespace Server.Groups.Police
             Dimension = player.Dimension;
             Object = prop;
             ColShape = colShape;
+            Rotation = player.Rotation;
         }
-        
     }
 }

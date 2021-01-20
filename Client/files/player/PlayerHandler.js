@@ -1,5 +1,15 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+import * as nametag from "files/nametags";
+import * as vehicleHandler from 'files/vehicle/vehicleHandler';
+alt.onServer('Blindfolded', (blindfolded) => {
+    if (blindfolded) {
+        native.doScreenFadeOut(1000);
+    }
+    else {
+        native.doScreenFadeIn(1000);
+    }
+});
 alt.onServer('freezePlayer', freezePlayer);
 alt.onServer('OnTimeUpdate', () => {
     alt.setMsPerGameMinute(30000);
@@ -13,8 +23,8 @@ var freezeInput = false;
 alt.onServer('toggleHud', toggleHud);
 alt.onServer('toggleCursor', toggleCursorFunction);
 alt.onServer('LoadDLC', () => {
-    native.onEnterSp();
-    native.onEnterMp();
+    nametag.StartNameTagDraw();
+    vehicleHandler.startIntervals();
 });
 function toggleCursorFunction(state) {
     alt.showCursor(state);
@@ -27,12 +37,14 @@ export function GetHudState() {
     return hudEnabled;
 }
 alt.onServer('freezeCam', (state) => {
+    alt.log('Freeze Cam: ' + state);
     freezeCam = state;
 });
 alt.onServer('freezeInput', (state) => {
+    alt.log('Freeze Input: ' + state);
     freezeInput = state;
 });
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (hudEnabled === false) {
     }
     if (freezeInput) {
@@ -41,6 +53,8 @@ alt.everyTick(() => {
     if (freezeCam) {
         native.disableAllControlActions(1);
     }
+}, 0);
+alt.everyTick(() => {
 });
 alt.onServer('loadIpl', (iplString) => {
     native.requestIpl(iplString);

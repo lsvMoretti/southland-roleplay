@@ -9,9 +9,9 @@ namespace Server.Models
     public class InventoryData
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
-        public string invetoryItems { get; set; }
+        public string? Items { get; set; }
         public float InventorySpace { get; set; }
         public float InventoryCapacity { get; set; }
 
@@ -19,24 +19,22 @@ namespace Server.Models
         {
             InventoryData newInv = new InventoryData
             {
-                invetoryItems = JsonConvert.SerializeObject(new List<InventoryItem>()),
+                Items = JsonConvert.SerializeObject(new List<InventoryItem>()),
                 InventorySpace = space,
                 InventoryCapacity = capacity
             };
 
-            using (Context context = new Context())
-            {
-                context.Inventory.Add(newInv);
-                context.SaveChanges();
-            }
+            using Context context = new Context();
+            context.Inventory.Add(newInv);
+            context.SaveChanges();
 
             return newInv;
         }
 
-        public static InventoryData GetInventoryData(int id)
+        public static InventoryData? GetInventoryData(int id)
         {
             using Context context = new Context();
-            return context.Inventory.FirstOrDefault(i => i.ID == id);
+            return context.Inventory.FirstOrDefault(i => i.Id == id);
         }
     }
 }

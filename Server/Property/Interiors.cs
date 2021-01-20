@@ -15,7 +15,13 @@ namespace Server.Property
         /// </summary>
         public static List<Interiors> InteriorList = new List<Interiors>();
 
-        private static readonly string altVDirectory = "C:/Game Server/data";
+#if RELEASE
+        private static string altVDirectory = $"{Directory.GetCurrentDirectory()}/data";
+#endif
+
+#if DEBUG
+        private static string altVDirectory = $"{Directory.GetCurrentDirectory()}/data";
+#endif
 
         /// <summary>
         /// Loads all interiors (On start)
@@ -24,6 +30,8 @@ namespace Server.Property
         {
             try
             {
+                Console.WriteLine($"Loading Interios from {altVDirectory}");
+
                 InteriorList = new List<Interiors>();
 
                 if (!File.Exists($"{altVDirectory}/interiors.json"))
@@ -220,6 +228,7 @@ namespace Server.Property
                     AddInterior("ModShop Hayes", new Position(482.9214f, -1313.043f, 29.20045f), "");
                     AddInterior("Arena", new Position(2800.00f, -3800.00f, 100.00f), "xs_arena_interior");
                     AddInterior("Yacht Interior", new Position(-3191.682f, -217.7284f, 5.885169f), "");
+                    AddInterior("NewCharRoom", new Position(-240.75f, -1190.89f, -149.16f), "");
 
                     #endregion Default Interiors
 
@@ -253,7 +262,7 @@ namespace Server.Property
                 if (!Directory.Exists($"{altVDirectory}"))
                 {
                     Console.WriteLine($"Directory not found!");
-                    Console.WriteLine($"{Directory.GetCurrentDirectory()}");
+                    Console.WriteLine($"{altVDirectory}");
                     return;
                 }
 
@@ -294,7 +303,7 @@ namespace Server.Property
         public Position Position { get; set; }
         public string Ipl { get; set; }
         public string Description { get; set; }
-        
+
         public bool? IsMapped { get; set; }
     }
 }

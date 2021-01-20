@@ -3,7 +3,9 @@ import * as native from 'natives';
 import * as chatHandler from 'files/chat';
 import * as sirenHandler from 'files/vehicle/sirenHandler';
 import * as cruiseControl from 'files/vehicle/cruiseControl';
+import * as vehicleHandler from 'files/vehicle/vehicleHandler';
 import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
+import * as Animation from "files/animation";
 var IsSpawned = false;
 var IsChatOpen = false;
 var leftIndicator = false;
@@ -14,6 +16,7 @@ var leftCtrlDown = false;
 var onlinePlayerWindow;
 var cursorState = false;
 var nativeUiMenuOpen = false;
+let fingerPointKeyDown = false;
 export function SetNativeUiState(state) {
     nativeUiMenuOpen = state;
 }
@@ -25,12 +28,26 @@ alt.onServer('setPlayerSpawned', (toggle) => {
 });
 var sirenMute = false;
 alt.everyTick(() => {
+    native.disableControlAction(0, 37, true);
+    native.disableControlAction(0, 99, true);
+    native.disableControlAction(0, 100, true);
+    native.disableControlAction(0, 157, true);
+    native.disableControlAction(0, 158, true);
+    native.disableControlAction(0, 159, true);
+    native.disableControlAction(0, 160, true);
+    native.disableControlAction(0, 161, true);
+    native.disableControlAction(0, 162, true);
+    native.disableControlAction(0, 163, true);
+    native.disableControlAction(0, 164, true);
+    native.disableControlAction(0, 165, true);
+    native.disableControlAction(0, 261, true);
+    native.disableControlAction(0, 262, true);
     native.disableControlAction(0, 199, true);
     native.disableControlAction(0, 212, true);
     native.disableControlAction(0, 213, true);
 });
 alt.on('keyup', (key) => {
-    if (chatHandler.IsChatOpen() || nativeUiMenuOpen)
+    if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen())
         return;
     if (getEditObjectStatus()) {
         return;
@@ -297,6 +314,12 @@ var crouchToggle;
 alt.on('EnteredVehicle', () => {
     crouchToggle = false;
 });
+function startFingerPointing() {
+    Animation.startAnimation('anim@mp_point', 'task_mp_pointing', -1, 1);
+}
+function stopFingerPointing() {
+    Animation.stopAnimation();
+}
 alt.setInterval(() => {
     if (!IsSpawned)
         return;
@@ -355,6 +378,16 @@ alt.setInterval(() => {
             alt.log('Crouching');
             native.setPedMovementClipset(scriptId, "move_ped_crouched", 1.0);
         }
+    }
+    if (native.isControlPressed(0, 29) &&
+        fingerPointKeyDown === false &&
+        native.isPedOnFoot(alt.Player.local.scriptID)) {
+        fingerPointKeyDown = true;
+        startFingerPointing();
+    }
+    if (!native.isControlPressed(0, 29) && fingerPointKeyDown === true) {
+        fingerPointKeyDown = false;
+        stopFingerPointing();
     }
 }, 0);
 function enterVehicleAsDriver() {

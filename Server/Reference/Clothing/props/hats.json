@@ -3061,7 +3061,7 @@
       },
       "Value": {
         "DisplayNameMale": "Pisswasser Beer Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -3144,8 +3144,8 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
-        "DisplayNameFemale": "",
+        "DisplayNameMale": "Flight Helmet",
+        "DisplayNameFemale": "Black Bulletproof",
         "TorsoData": 0,
         "Price": 5
       }
@@ -3158,7 +3158,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Black Bulletproof",
         "DisplayNameFemale": "Classic Tree",
         "TorsoData": 0,
         "Price": 5
@@ -3172,7 +3172,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Gray Bulletproof",
         "DisplayNameFemale": "Purple Tree",
         "TorsoData": 0,
         "Price": 5
@@ -3186,7 +3186,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Charcoal Bulletproof",
         "DisplayNameFemale": "Holly Tree",
         "TorsoData": 0,
         "Price": 5
@@ -3200,7 +3200,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Tan Bulletproof",
         "DisplayNameFemale": "Red Stripy Tree",
         "TorsoData": 0,
         "Price": 5
@@ -3214,7 +3214,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Forest Bulletproof",
         "DisplayNameFemale": "Green Stripy Tree",
         "TorsoData": 0,
         "Price": 5
@@ -3691,7 +3691,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Black Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -3704,7 +3704,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Black Flight Helmet",
         "DisplayNameFemale": "Glossy Black Off-road",
         "TorsoData": 0,
         "Price": 5
@@ -11405,7 +11405,7 @@
       },
       "Value": {
         "DisplayNameMale": "Red Hawk & Little Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Orange Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11419,7 +11419,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Hawk & Little Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Green Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11433,7 +11433,7 @@
       },
       "Value": {
         "DisplayNameMale": "White Shrewsbury Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Brown Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11447,7 +11447,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Shrewsbury Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "White Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11517,7 +11517,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Ammu-Nation Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Lime & Black Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11531,7 +11531,7 @@
       },
       "Value": {
         "DisplayNameMale": "Red Ammu-Nation Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "51st Squad Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11545,7 +11545,7 @@
       },
       "Value": {
         "DisplayNameMale": "Warstock Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Orange & Black Flight Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11558,7 +11558,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Orange Flight Helmet",
         "DisplayNameFemale": "Woodland Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11572,7 +11572,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Green Flight Helmet",
         "DisplayNameFemale": "Dark Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11586,7 +11586,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Brown Flight Helmet",
         "DisplayNameFemale": "Light Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11600,7 +11600,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "White Flight Helmet",
         "DisplayNameFemale": "Flecktarn Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11670,7 +11670,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Lime & Black Flight Helmet",
         "DisplayNameFemale": "Aqua Camo Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11684,7 +11684,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "51st Squad Flight Helmet",
         "DisplayNameFemale": "Splinter Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11698,7 +11698,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Orange & Black Flight Helmet",
         "DisplayNameFemale": "Red Star Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11712,7 +11712,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Zeus Flight Helmet",
         "DisplayNameFemale": "Brown Digital Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11726,7 +11726,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Green & Yellow Flight Helmet",
         "DisplayNameFemale": "MP Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11740,7 +11740,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Blue & Orange Flight Helmet",
         "DisplayNameFemale": "Zebra Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11754,7 +11754,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "DFA Flight Helmet",
         "DisplayNameFemale": "Leopard Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11768,7 +11768,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Snake Killers Flight Helmet",
         "DisplayNameFemale": "Tiger Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11782,8 +11782,8 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
-        "DisplayNameFemale": "",
+        "DisplayNameMale": "Mind Over Matter Flight Helmet",
+        "DisplayNameFemale": "Police Combat Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -11796,7 +11796,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Red & White Flight Helmet",
         "DisplayNameFemale": "Flames Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11810,7 +11810,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Other Side Flight Helmet",
         "DisplayNameFemale": "Stars & Stripes Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11824,7 +11824,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "STFU Flight Helmet",
         "DisplayNameFemale": "Patriot Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11838,7 +11838,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Patriot Flight Helmet",
         "DisplayNameFemale": "Green Stars Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11852,7 +11852,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Zebra Flight Helmet",
         "DisplayNameFemale": "Peace Combat Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -11866,7 +11866,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Tiger Flight Helmet",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -11880,7 +11880,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Leopard Flight Helmet",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -11894,7 +11894,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Shark Mouth Flight Helmet",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -11908,7 +11908,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Yellow & Black Flight Helmet",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -12567,7 +12567,7 @@
       },
       "Value": {
         "DisplayNameMale": "White & Gold Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Black Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12581,7 +12581,7 @@
       },
       "Value": {
         "DisplayNameMale": "White & Blue Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Moss Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12595,7 +12595,7 @@
       },
       "Value": {
         "DisplayNameMale": "Gray Leopard Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Brown Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12609,7 +12609,7 @@
       },
       "Value": {
         "DisplayNameMale": "Navy Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "White Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12679,7 +12679,7 @@
       },
       "Value": {
         "DisplayNameMale": "Chocolate Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Leopard Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12693,7 +12693,7 @@
       },
       "Value": {
         "DisplayNameMale": "Red Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Brown Digital Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12707,7 +12707,7 @@
       },
       "Value": {
         "DisplayNameMale": "Red & Navy Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Tiger Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12721,7 +12721,7 @@
       },
       "Value": {
         "DisplayNameMale": "Red Camo Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Pink Pattern Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12735,7 +12735,7 @@
       },
       "Value": {
         "DisplayNameMale": "Brushstroke Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Peach Digital Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12749,7 +12749,7 @@
       },
       "Value": {
         "DisplayNameMale": "Moss Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Fall Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12763,7 +12763,7 @@
       },
       "Value": {
         "DisplayNameMale": "Brown Digital Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Dark Woodland Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12777,7 +12777,7 @@
       },
       "Value": {
         "DisplayNameMale": "Beige Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Crosshatch Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12791,7 +12791,7 @@
       },
       "Value": {
         "DisplayNameMale": "White Camo Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Green Pattern Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12805,7 +12805,7 @@
       },
       "Value": {
         "DisplayNameMale": "Gray Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Gray Woodland Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12819,7 +12819,7 @@
       },
       "Value": {
         "DisplayNameMale": "Zebra Garrison Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Aqua Camo Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12833,7 +12833,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Splinter Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12847,7 +12847,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Contrast Camo Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12861,7 +12861,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Cobble Full Face",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12875,7 +12875,1463 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Brushstroke Full Face",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Full Face",
+        "DisplayNameFemale": "Black Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Full Face",
+        "DisplayNameFemale": "Moss Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Full Face",
+        "DisplayNameFemale": "Brown Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Full Face",
+        "DisplayNameFemale": "White Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Full Face",
+        "DisplayNameFemale": "Leopard Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Full Face",
+        "DisplayNameFemale": "Brown Digital Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tiger Full Face",
+        "DisplayNameFemale": "Tiger Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Full Face",
+        "DisplayNameFemale": "Pink Pattern Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Digital Full Face",
+        "DisplayNameFemale": "Peach Digital Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Full Face",
+        "DisplayNameFemale": "Fall Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Woodland Full Face",
+        "DisplayNameFemale": "Dark Woodland Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Full Face",
+        "DisplayNameFemale": "Crosshatch Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Pattern Full Face",
+        "DisplayNameFemale": "Green Pattern Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Full Face",
+        "DisplayNameFemale": "Gray Woodland Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Full Face",
+        "DisplayNameFemale": "Aqua Camo Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Full Face",
+        "DisplayNameFemale": "Splinter Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Full Face",
+        "DisplayNameFemale": "Contrast Camo Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cobble Full Face",
+        "DisplayNameFemale": "Cobble Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Full Face",
+        "DisplayNameFemale": "Brushstroke Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flecktarn Full Face",
+        "DisplayNameFemale": "Flecktarn Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Red Full Face",
+        "DisplayNameFemale": "Black & Red Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 115,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Full Face",
+        "DisplayNameFemale": "Zebra Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Dual Lens",
+        "DisplayNameFemale": "Black Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Dual Lens",
+        "DisplayNameFemale": "Moss Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Dual Lens",
+        "DisplayNameFemale": "Brown Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Dual Lens",
+        "DisplayNameFemale": "White Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Dual Lens",
+        "DisplayNameFemale": "Leopard Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Dual Lens",
+        "DisplayNameFemale": "Brown Digital Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tiger Dual Lens",
+        "DisplayNameFemale": "Tiger Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Dual Lens",
+        "DisplayNameFemale": "Pink Pattern Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Digital Dual Lens",
+        "DisplayNameFemale": "Peach Digital Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Dual Lens",
+        "DisplayNameFemale": "Fall Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Woodland Dual Lens",
+        "DisplayNameFemale": "Dark Woodland Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Dual Lens",
+        "DisplayNameFemale": "Crosshatch Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Pattern Dual Lens",
+        "DisplayNameFemale": "Green Pattern Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Dual Lens",
+        "DisplayNameFemale": "Gray Woodland Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Dual Lens",
+        "DisplayNameFemale": "Aqua Camo Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Dual Lens",
+        "DisplayNameFemale": "Splinter Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Dual Lens",
+        "DisplayNameFemale": "Contrast Camo Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cobble Dual Lens",
+        "DisplayNameFemale": "Cobble Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Dual Lens",
+        "DisplayNameFemale": "Brushstroke Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flecktarn Dual Lens",
+        "DisplayNameFemale": "Flecktarn Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Red Dual Lens",
+        "DisplayNameFemale": "Black & Red Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 116,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Dual Lens",
+        "DisplayNameFemale": "Zebra Dual Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Dual Lens",
+        "DisplayNameFemale": "Black Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Dual Lens",
+        "DisplayNameFemale": "Moss Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Dual Lens",
+        "DisplayNameFemale": "Brown Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Dual Lens",
+        "DisplayNameFemale": "White Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Dual Lens",
+        "DisplayNameFemale": "Leopard Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Dual Lens",
+        "DisplayNameFemale": "Brown Digital Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tiger Dual Lens",
+        "DisplayNameFemale": "Tiger Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Dual Lens",
+        "DisplayNameFemale": "Pink Pattern Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Digital Dual Lens",
+        "DisplayNameFemale": "Peach Digital Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Dual Lens",
+        "DisplayNameFemale": "Fall Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Woodland Dual Lens",
+        "DisplayNameFemale": "Dark Woodland Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Dual Lens",
+        "DisplayNameFemale": "Crosshatch Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Pattern Dual Lens",
+        "DisplayNameFemale": "Green Pattern Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Dual Lens",
+        "DisplayNameFemale": "Gray Woodland Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Dual Lens",
+        "DisplayNameFemale": "Aqua Camo Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Dual Lens",
+        "DisplayNameFemale": "Splinter Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Dual Lens",
+        "DisplayNameFemale": "Contrast Camo Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cobble Dual Lens",
+        "DisplayNameFemale": "Cobble Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Dual Lens",
+        "DisplayNameFemale": "Brushstroke Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flecktarn Dual Lens",
+        "DisplayNameFemale": "Flecktarn Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Red Dual Lens",
+        "DisplayNameFemale": "Black & Red Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 117,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Dual Lens",
+        "DisplayNameFemale": "Zebra Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Quad Lens",
+        "DisplayNameFemale": "Black Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Quad Lens",
+        "DisplayNameFemale": "Moss Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Quad Lens",
+        "DisplayNameFemale": "Brown Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Quad Lens",
+        "DisplayNameFemale": "White Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Quad Lens",
+        "DisplayNameFemale": "Leopard Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Quad Lens",
+        "DisplayNameFemale": "Brown Digital Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tiger Quad Lens",
+        "DisplayNameFemale": "Tiger Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Quad Lens",
+        "DisplayNameFemale": "Pink Pattern Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Digital Quad Lens",
+        "DisplayNameFemale": "Peach Digital Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Quad Lens",
+        "DisplayNameFemale": "Fall Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Woodland Quad Lens",
+        "DisplayNameFemale": "Dark Woodland Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Quad Lens",
+        "DisplayNameFemale": "Crosshatch Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Pattern Quad Lens",
+        "DisplayNameFemale": "Green Pattern Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Quad Lens",
+        "DisplayNameFemale": "Gray Woodland Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Quad Lens",
+        "DisplayNameFemale": "Aqua Camo Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Quad Lens",
+        "DisplayNameFemale": "Splinter Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Quad Lens",
+        "DisplayNameFemale": "Contrast Camo Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cobble Quad Lens",
+        "DisplayNameFemale": "Cobble Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Quad Lens",
+        "DisplayNameFemale": "Brushstroke Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flecktarn Quad Lens",
+        "DisplayNameFemale": "Flecktarn Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Red Quad Lens",
+        "DisplayNameFemale": "Black & Red Quad Lens",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 118,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Quad Lens",
+        "DisplayNameFemale": "Zebra Quad Lens",
         "TorsoData": 0,
         "Price": 5
       }
@@ -12888,7 +14344,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Black Quad Lens",
         "DisplayNameFemale": "Black Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -12902,7 +14358,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Moss Quad Lens",
         "DisplayNameFemale": "Charcoal Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -12916,7 +14372,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Brown Quad Lens",
         "DisplayNameFemale": "Ash Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -12930,7 +14386,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "White Quad Lens",
         "DisplayNameFemale": "White Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13000,7 +14456,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Leopard Quad Lens",
         "DisplayNameFemale": "Light Woodland Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13014,7 +14470,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Brown Digital Quad Lens",
         "DisplayNameFemale": "Gray Woodland Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13028,7 +14484,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Tiger Quad Lens",
         "DisplayNameFemale": "Aqua Camo Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13042,7 +14498,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Pink Pattern Quad Lens",
         "DisplayNameFemale": "Tiger Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13056,7 +14512,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Peach Digital Quad Lens",
         "DisplayNameFemale": "Tricolore Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13070,7 +14526,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Fall Quad Lens",
         "DisplayNameFemale": "Blue Striped Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13084,7 +14540,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Dark Woodland Quad Lens",
         "DisplayNameFemale": "Rasta Trio Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13098,7 +14554,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Crosshatch Quad Lens",
         "DisplayNameFemale": "Brown Striped Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13112,7 +14568,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Green Pattern Quad Lens",
         "DisplayNameFemale": "Stars & Stripes Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13126,7 +14582,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Gray Woodland Quad Lens",
         "DisplayNameFemale": "Rasta Stripes Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13140,7 +14596,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Aqua Camo Quad Lens",
         "DisplayNameFemale": "Black & Yellow Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13154,7 +14610,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Splinter Quad Lens",
         "DisplayNameFemale": "Blue & Yellow Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13168,7 +14624,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Contrast Camo Quad Lens",
         "DisplayNameFemale": "Green Houndstooth Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13182,7 +14638,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Cobble Quad Lens",
         "DisplayNameFemale": "Beige Houndstooth Low Beanie",
         "TorsoData": 0,
         "Price": 5
@@ -13196,7 +14652,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Brushstroke Quad Lens",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -13210,7 +14666,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Flecktarn Quad Lens",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -13224,7 +14680,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Black & Red Quad Lens",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -13238,7 +14694,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Zebra Quad Lens",
         "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
@@ -13631,7 +15087,7 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Black Riot",
         "TorsoData": 0,
         "Price": 5
       }
@@ -13645,7 +15101,1267 @@
       },
       "Value": {
         "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "White Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Riot",
+        "DisplayNameFemale": "Black Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Riot",
+        "DisplayNameFemale": "White Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Riot",
+        "DisplayNameFemale": "Gray Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Riot",
+        "DisplayNameFemale": "Moss Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Riot",
+        "DisplayNameFemale": "Brown Digital Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Digital Riot",
+        "DisplayNameFemale": "Gray Digital Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Riot",
+        "DisplayNameFemale": "Crosshatch Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Digital Riot",
+        "DisplayNameFemale": "Blue Digital Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Riot",
+        "DisplayNameFemale": "Fall Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Riot",
+        "DisplayNameFemale": "Aqua Camo Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Riot",
+        "DisplayNameFemale": "Splinter Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Riot",
+        "DisplayNameFemale": "Gray Woodland Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Riot",
+        "DisplayNameFemale": "Brushstroke Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Digital Riot",
+        "DisplayNameFemale": "Moss Digital Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "MP Riot",
+        "DisplayNameFemale": "MP Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "LSPD Riot",
+        "DisplayNameFemale": "LSPD Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 123,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Riot",
+        "DisplayNameFemale": "Black Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Riot",
+        "DisplayNameFemale": "Cream Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Riot",
+        "DisplayNameFemale": "Stone Gray Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Riot",
+        "DisplayNameFemale": "Brown Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Riot",
+        "DisplayNameFemale": "Ox Blood Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Digital Riot",
+        "DisplayNameFemale": "Blue Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Riot",
+        "DisplayNameFemale": "Brown Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Digital Riot",
+        "DisplayNameFemale": "Gray Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Riot",
+        "DisplayNameFemale": "Contrast Camo Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Riot",
+        "DisplayNameFemale": "Blue Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Riot",
+        "DisplayNameFemale": "Fall Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Riot",
+        "DisplayNameFemale": "Aqua Camo Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Riot",
+        "DisplayNameFemale": "Light Woodland Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Digital Riot",
+        "DisplayNameFemale": "Splinter Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "MP Riot",
+        "DisplayNameFemale": "Gray Woodland Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "LSPD Riot",
+        "DisplayNameFemale": "Moss Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Crosshatch Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "No Master Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Police Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 124,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Shielded Riot",
+        "DisplayNameFemale": "Black Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Shielded Riot",
+        "DisplayNameFemale": "Cream Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Gray Shielded Riot",
+        "DisplayNameFemale": "Stone Gray Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Shielded Riot",
+        "DisplayNameFemale": "Brown Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Shielded Riot",
+        "DisplayNameFemale": "Ox Blood Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Shielded Riot",
+        "DisplayNameFemale": "Blue Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Shielded Riot",
+        "DisplayNameFemale": "Brown Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Digital Shielded Riot",
+        "DisplayNameFemale": "Gray Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Shielded Riot",
+        "DisplayNameFemale": "Contrast Camo Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Digital Shielded Riot",
+        "DisplayNameFemale": "Blue Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Shielded Riot",
+        "DisplayNameFemale": "Fall Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Shielded Riot",
+        "DisplayNameFemale": "Aqua Camo Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Woodland Shielded Riot",
+        "DisplayNameFemale": "Light Woodland Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Shielded Riot",
+        "DisplayNameFemale": "Splinter Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Shielded Riot",
+        "DisplayNameFemale": "Gray Woodland Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Digital Shielded Riot",
+        "DisplayNameFemale": "Moss Digital Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Shielded Riot",
+        "DisplayNameFemale": "Crosshatch Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "No Master Shielded Riot",
+        "DisplayNameFemale": "No Master Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Police Shielded Riot",
+        "DisplayNameFemale": "Police Shielded Riot",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 125,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Shielded Riot",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cream Shielded Riot",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Gray Shielded Riot",
         "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Ox Blood Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Digital Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Blue Digital Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Light Woodland Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Digital Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "No Master Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Police Shielded Riot",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 126,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 127,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 127,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 128,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 128,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
         "TorsoData": 0,
         "Price": 5
       }
@@ -15017,7 +17733,7 @@
       },
       "Value": {
         "DisplayNameMale": "White The Diamond Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Yellow Firefighter",
         "TorsoData": 0,
         "Price": 5
       }
@@ -15031,7 +17747,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black The Diamond Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Orange Firefighter",
         "TorsoData": 0,
         "Price": 5
       }
@@ -15045,7 +17761,7 @@
       },
       "Value": {
         "DisplayNameMale": "White LS Diamond Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "White Firefighter",
         "TorsoData": 0,
         "Price": 5
       }
@@ -15347,12 +18063,54 @@
     {
       "Key": {
         "slot": 0,
+        "drawable": 137,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Yellow Firefighter",
+        "DisplayNameFemale": "Yellow Firefighter & Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 137,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Orange Firefighter",
+        "DisplayNameFemale": "Orange Firefighter & Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 137,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Firefighter",
+        "DisplayNameFemale": "White Firefighter & Goggles",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
         "drawable": 138,
         "texture": 0,
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Yellow Firefighter & Goggles",
         "DisplayNameFemale": "Bugstars Forwards Cap",
         "TorsoData": 0,
         "Price": 5
@@ -15366,7 +18124,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Orange Firefighter & Goggles",
         "DisplayNameFemale": "Prison Authority Forwards Cap",
         "TorsoData": 0,
         "Price": 5
@@ -15380,7 +18138,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "W",
+        "DisplayNameMale": "White Firefighter & Goggles",
         "DisplayNameFemale": "Yung Ancestor Forwards Cap",
         "TorsoData": 0,
         "Price": 5
@@ -15857,7 +18615,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Backwards Cap",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Gruppe Sechs Helmet",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16220,7 +18978,7 @@
         "male": false
       },
       "Value": {
-        "DisplayNameMale": "",
+        "DisplayNameMale": "Gruppe Sechs Helmet",
         "DisplayNameFemale": "Yellow Construction Helmet",
         "TorsoData": 0,
         "Price": 5
@@ -16291,7 +19049,7 @@
       },
       "Value": {
         "DisplayNameMale": "Black Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Black Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16305,7 +19063,7 @@
       },
       "Value": {
         "DisplayNameMale": "Dark Gray Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Sage Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16319,7 +19077,7 @@
       },
       "Value": {
         "DisplayNameMale": "Dusty Violet Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Beige Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16333,7 +19091,7 @@
       },
       "Value": {
         "DisplayNameMale": "Light Gray Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Stone Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16347,7 +19105,7 @@
       },
       "Value": {
         "DisplayNameMale": "Sage Green Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "White Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16361,7 +19119,7 @@
       },
       "Value": {
         "DisplayNameMale": "Dusty Pink Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Beige Digital Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16375,7 +19133,7 @@
       },
       "Value": {
         "DisplayNameMale": "Red Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Green Digital Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16389,7 +19147,7 @@
       },
       "Value": {
         "DisplayNameMale": "Terracotta Undertaker Hat",
-        "DisplayNameFemale": "",
+        "DisplayNameFemale": "Desert Digital Scope Night Vision",
         "TorsoData": 0,
         "Price": 5
       }
@@ -16478,7 +19236,833 @@
         "Price": 5
       }
     },
-    /*{
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Scope Night Vision",
+        "DisplayNameFemale": "Black Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sage Scope Night Vision",
+        "DisplayNameFemale": "Sage Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Scope Night Vision",
+        "DisplayNameFemale": "Beige Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Scope Night Vision",
+        "DisplayNameFemale": "Stone Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Scope Night Vision",
+        "DisplayNameFemale": "White Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Digital Scope Night Vision",
+        "DisplayNameFemale": "Beige Digital Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Digital Scope Night Vision",
+        "DisplayNameFemale": "Green Digital Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 147,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desert Digital Scope Night Vision",
+        "DisplayNameFemale": "Desert Digital Scope Night Vision",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Scope Night Vision",
+        "DisplayNameFemale": "Captain Peaked Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sage Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Stone Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Beige Digital Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Digital Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 148,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desert Digital Scope Night Vision",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Captain Peaked Cap",
+        "DisplayNameFemale": "Black Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black Advanced",
+        "DisplayNameFemale": "Enus Yeti Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Advanced",
+        "DisplayNameFemale": "720 Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Advanced",
+        "DisplayNameFemale": "Exsorbeo 720 Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Advanced",
+        "DisplayNameFemale": "Güffy Double Logo Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Rockstar Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Civilist White Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Civilist Black Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "Civilist Orange Forwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tiger Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Digital Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Woodland Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Pattern Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cobble Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flecktarn Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Red Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 150,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Advanced",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enus Yeti Forwards Cap",
+        "DisplayNameFemale": "Enus Yeti Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "720 Forwards Cap",
+        "DisplayNameFemale": "720 Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Exsorbeo 720 Forwards Cap",
+        "DisplayNameFemale": "Exsorbeo 720 Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Güffy Double Logo Forwards Cap",
+        "DisplayNameFemale": "Güffy Double Logo Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Rockstar Forwards Cap",
+        "DisplayNameFemale": "Rockstar Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Civilist White Forwards Cap",
+        "DisplayNameFemale": "Civilist White Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Civilist Black Forwards Cap",
+        "DisplayNameFemale": "Civilist Black Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 151,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Civilist Orange Forwards Cap",
+        "DisplayNameFemale": "Civilist Orange Backwards Cap",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Enus Yeti Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "720 Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Exsorbeo 720 Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Güffy Double Logo Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Rockstar Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Civilist White Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Civilist Black Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 152,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Civilist Orange Backwards Cap",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
       "Key": {
         "slot": 0,
         "drawable": 20,
@@ -20495,6 +24079,356 @@
         "TorsoData": 0,
         "Price": 5
       }
-    }*/
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Moss Advanced",
+        "DisplayNameFemale": "Moss Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Advanced",
+        "DisplayNameFemale": "Brown Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "White Advanced",
+        "DisplayNameFemale": "White Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "undefined",
+        "DisplayNameFemale": "undefined",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Leopard Advanced",
+        "DisplayNameFemale": "Leopard Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brown Digital Advanced",
+        "DisplayNameFemale": "Brown Digital Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Tiger Advanced",
+        "DisplayNameFemale": "Tiger Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Pink Pattern Advanced",
+        "DisplayNameFemale": "Pink Pattern Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Peach Digital Advanced",
+        "DisplayNameFemale": "Peach Digital Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Fall Advanced",
+        "DisplayNameFemale": "Fall Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dark Woodland Advanced",
+        "DisplayNameFemale": "Dark Woodland Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crosshatch Advanced",
+        "DisplayNameFemale": "Crosshatch Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Green Pattern Advanced",
+        "DisplayNameFemale": "Green Pattern Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Gray Woodland Advanced",
+        "DisplayNameFemale": "Gray Woodland Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Aqua Camo Advanced",
+        "DisplayNameFemale": "Aqua Camo Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Splinter Advanced",
+        "DisplayNameFemale": "Splinter Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Contrast Camo Advanced",
+        "DisplayNameFemale": "Contrast Camo Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cobble Advanced",
+        "DisplayNameFemale": "Cobble Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Brushstroke Advanced",
+        "DisplayNameFemale": "Brushstroke Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Flecktarn Advanced",
+        "DisplayNameFemale": "Flecktarn Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Black & Red Advanced",
+        "DisplayNameFemale": "Black & Red Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 0,
+        "drawable": 149,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Zebra Advanced",
+        "DisplayNameFemale": "Zebra Advanced",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    }
   ]
 }

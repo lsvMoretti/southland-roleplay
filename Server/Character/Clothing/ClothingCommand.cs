@@ -18,6 +18,7 @@ namespace Server.Character.Clothing
         public static List<string> BannedClothingNames = new List<string>
         {
             "undefined",
+            "no shoes",
             "null",
             "none",
             "love heart boxer shorts",
@@ -195,7 +196,7 @@ namespace Server.Character.Clothing
 
                 if (newClothesData == null) return;
 
-                if (newClothesData.male && !player.IsMale())
+                if (newClothesData.male && !player.GetClass().IsMale)
                 {
                     player.SendErrorNotification($"Clothing item isn't for your gender.");
                     return;
@@ -578,7 +579,7 @@ namespace Server.Character.Clothing
                         currentClothesData.male = true;
                     }
 
-                    var clothesItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
+                    var clothesItem = new AccessoryData(currentClothesData.slot, currentClothesData.drawable,
                         currentClothesData.texture, player.IsMale());
 
                     newItem = Clothes.ConvertAccessoryToInventoryItem(clothesItem, player.IsMale());
@@ -639,7 +640,7 @@ namespace Server.Character.Clothing
 
                 Inventory.Inventory playerInventory = player.FetchInventory();
 
-                var accessoryItem = new ClothesData(currentClothesData.slot, currentClothesData.drawable,
+                var accessoryItem = new AccessoryData(currentClothesData.slot, currentClothesData.drawable,
                     currentClothesData.texture, player.IsMale());
 
                 bool added =

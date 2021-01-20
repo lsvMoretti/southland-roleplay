@@ -133,7 +133,7 @@ namespace Server.Jobs.Delivery
                 return;
             }
 
-            int productCount = 0;
+            double productCount = 0;
 
             foreach (InventoryItem inventoryItem in productList)
             {
@@ -311,7 +311,7 @@ namespace Server.Jobs.Delivery
                 return;
             }
 
-            bool amountParse = int.TryParse(args, out int amount);
+            bool amountParse = double.TryParse(args, out double amount);
 
             if (!amountParse)
             {
@@ -343,7 +343,7 @@ namespace Server.Jobs.Delivery
 
             List<InventoryItem> productItems = playerInventory.GetInventoryItems("ITEM_WAREHOUSEPRODUCT");
 
-            int productCount = 0;
+            double productCount = 0;
 
             foreach (InventoryItem inventoryItem in productItems)
             {
@@ -375,17 +375,17 @@ namespace Server.Jobs.Delivery
 
                 double totalCost = 0.0;
 
-                int count = 0;
+                double count = 0;
 
                 List<InventoryItem> RemoveItems = new List<InventoryItem>();
-                List<int> RemoveCount = new List<int>();
+                List<double> RemoveCount = new List<double>();
 
                 foreach (var inventoryItem in productItems)
                 {
                     if (count >= amount) break;
 
                     // Amount of products required
-                    int productsRequired = amount -= count;
+                    double productsRequired = amount -= count;
 
                     if (inventoryItem.Quantity >= productsRequired)
                     {
@@ -448,7 +448,7 @@ namespace Server.Jobs.Delivery
 
                 Models.Property propertyDb = context.Property.Find(nearestProperty.Id);
 
-                propertyDb.Products += amount;
+                propertyDb.Products += (int)amount;
 
                 context.SaveChanges();
 
@@ -456,7 +456,7 @@ namespace Server.Jobs.Delivery
 
                 player.AddCash(earnings);
 
-                player.SendInfoNotification($"You have sold {amount} items to {nearestProperty.BusinessName} for {earnings:C}.");
+                player.SendInfoNotification($"You have sold {(int)amount} items to {nearestProperty.BusinessName} for {earnings:C}.");
 
                 return;
             }
@@ -479,15 +479,15 @@ namespace Server.Jobs.Delivery
 
             Models.Property property = ownedContext.Property.Find(nearestProperty.Id);
 
-            property.RequiredProducts -= amount;
+            property.RequiredProducts -= (int)amount;
 
-            property.Products += amount;
+            property.Products += (int)amount;
 
             double totalCash = property.ProductBuyPrice * amount;
 
             ownedContext.SaveChanges();
 
-            player.SendInfoNotification($"You've sold {amount:## 'products'} to {nearestProperty.BusinessName} for a total of {totalCash:C}");
+            player.SendInfoNotification($"You've sold {(int)amount:## 'products'} to {nearestProperty.BusinessName} for a total of {totalCash:C}");
 
             player.AddCash(totalCash);
         }

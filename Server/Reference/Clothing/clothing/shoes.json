@@ -14213,6 +14213,34 @@
     {
       "Key": {
         "slot": 6,
+        "drawable": 96,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Heavy Uniform Boots",
+        "DisplayNameFemale": "Blue Retro Sneakers",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 97,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Heavy Uniform Boots",
+        "DisplayNameFemale": "Blue Retro Sneakers",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
         "drawable": 18,
         "texture": 2,
         "male": false
@@ -17700,20 +17728,6 @@
       "Key": {
         "slot": 6,
         "drawable": 96,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Retro Sneakers",
-        "DisplayNameFemale": "Blue Retro Sneakers",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 6,
-        "drawable": 96,
         "texture": 1,
         "male": false
       },
@@ -17902,20 +17916,6 @@
       "Value": {
         "DisplayNameMale": "White Pattern Retro Sneakers",
         "DisplayNameFemale": "White Pattern Retro Sneakers",
-        "TorsoData": 0,
-        "Price": 5
-      }
-    },
-    {
-      "Key": {
-        "slot": 6,
-        "drawable": 97,
-        "texture": 0,
-        "male": false
-      },
-      "Value": {
-        "DisplayNameMale": "Blue Retro Sneakers",
-        "DisplayNameFemale": "Blue Retro Sneakers",
         "TorsoData": 0,
         "Price": 5
       }
@@ -18238,6 +18238,34 @@
       "Value": {
         "DisplayNameMale": "Dog With Cone Slip-Ons",
         "DisplayNameFemale": "Dog With Cone Slip-Ons",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 100,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Heavy Uniform Boots",
+        "DisplayNameFemale": "Heavy Uniform Boots",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 6,
+        "drawable": 101,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Heavy Uniform Boots",
+        "DisplayNameFemale": "Heavy Uniform Boots",
         "TorsoData": 0,
         "Price": 5
       }

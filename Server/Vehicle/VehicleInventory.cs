@@ -334,7 +334,7 @@ namespace Server.Vehicle
             player.SendEmoteMessage("takes an item from the vehicle trunk.");
 
             Logging.AddToCharacterLog(player, $"has taken {selectedItem.CustomName} (Quantity: {selectedItem.Quantity}) (Item: {selectedItem.ItemInfo.Name}) " +
-                                              $"from vehicle ID's {nearbyVehicle.FetchVehicleData().Id} (Inv: {nearbyVehicle.FetchVehicleData().InventoryId})'s trunk");
+                                              $"from vehicle Id's {nearbyVehicle.FetchVehicleData().Id} (Inv: {nearbyVehicle.FetchVehicleData().InventoryId})'s trunk");
         }
 
         public static void InventoryMenuOnTakeQuantityChange(IPlayer player, string quantityString)
@@ -503,7 +503,7 @@ namespace Server.Vehicle
             player.SendInfoNotification($"You've placed {selectedItem.CustomName} into the vehicle trunk.");
 
             Logging.AddToCharacterLog(player, $"has placed {selectedItem.CustomName} (Quantity: {selectedItem.Quantity}) (Item: {selectedItem.ItemInfo.Name}) " +
-                                              $"into vehicle ID's {nearbyVehicle.FetchVehicleData().Id} (Inv: {nearbyVehicle.FetchVehicleData().InventoryId})'s trunk");
+                                              $"into vehicle Id's {nearbyVehicle.FetchVehicleData().Id} (Inv: {nearbyVehicle.FetchVehicleData().InventoryId})'s trunk");
         }
 
         public static void InventoryMenuOnPlaceQuantityChange(IPlayer player, string quantityString)

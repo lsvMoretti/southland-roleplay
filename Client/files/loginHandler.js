@@ -8,7 +8,7 @@ function loginRequest(user, password) {
     alt.emitServer('recieveLoginRequest', user, password);
 }
 function showLogin() {
-    loginView = new alt.WebView("http://resource/files/login/login.html", false);
+    loginView = new alt.WebView("http://resource/files/login/loginNew.html", false);
     loginView.on('loginRequest', loginRequest);
     loginView.on('LoginScreenLoaded', () => {
         alt.emitServer('LoginScreenLoaded');
@@ -18,9 +18,11 @@ function showLogin() {
 }
 function closeLogin() {
     loginView.emit("hideLoginScreen");
-    loginView.destroy();
-    loginView = null;
-    disableMenu = false;
+    alt.setTimeout(() => {
+        loginView.destroy();
+        loginView = null;
+        disableMenu = false;
+    }, 1000);
 }
 alt.everyTick(() => {
     if (disableMenu) {

@@ -10,7 +10,7 @@ namespace Server.Models
         [Key]
         public int Id { get; set; }
 
-        public string Text { get; set; }
+        public string? Text { get; set; }
 
         public float PosX { get; set; }
         public float PosY { get; set; }
@@ -19,6 +19,7 @@ namespace Server.Models
         public int CharacterId { get; set; }
 
         public int Dimension { get; set; }
+
         public Scene(int characterId, Position position, string text, int dimension)
         {
             Text = text;
@@ -32,7 +33,6 @@ namespace Server.Models
 
         public Scene()
         {
-
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using EntityStreamer;
 using Newtonsoft.Json;
 
 namespace Server.Map
@@ -9,7 +10,7 @@ namespace Server.Map
         public bool IsInterior { get; set; }
         public string Interior { get; set; }
         public List<MapObject> MapObjects { get; set; }
-        
+
         [JsonIgnore]
         public List<Prop> LoadedObjects { get; set; }
 

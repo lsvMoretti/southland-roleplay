@@ -10,23 +10,23 @@ namespace Server.Models
     public class BusRoute
     {
         /// <summary>
-        /// Bus Route ID
+        /// Bus Route Id
         /// </summary>
         [Key]
         public int Id { get; set; }
 
-        public string RouteName { get; set; }
+        public string? RouteName { get; set; }
 
         /// <summary>
         /// List of BusStop that are JSON'd
         /// </summary>
-        public string BusStops { get; set; }
+        public string? BusStops { get; set; }
 
         /// <summary>
         /// Adds a Bus Route to the Database
         /// </summary>
         /// <param name="busRoute"></param>
-        /// <returns>-1 - Route already exists by Name, otherwise returns new route ID</returns>
+        /// <returns>-1 - Route already exists by Name, otherwise returns new route Id</returns>
         public static int AddBusRoute(BusRoute busRoute)
         {
             using Context context = new Context();
@@ -44,13 +44,12 @@ namespace Server.Models
 
             context.BusRoutes.Add(busRoute);
             context.SaveChanges();
-            
 
             return busRoute.Id;
         }
 
         /// <summary>
-        /// Fetches Bus Route by ID
+        /// Fetches Bus Route by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns>NULL if not found - BusRoute if found</returns>
@@ -72,7 +71,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetch Bus Stops by Route ID
+        /// Fetch Bus Stops by Route Id
         /// </summary>
         /// <param name="routeId"></param>
         /// <returns>List of Bus Stops</returns>

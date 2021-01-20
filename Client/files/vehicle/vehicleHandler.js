@@ -1,5 +1,53 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
+var vehicleScrambleWebView = undefined;
+var scrambleText = undefined;
+let opened = false;
+export function IsScrambleOpen() {
+    return opened;
+}
+alt.onServer('VehicleScramble:LoadPage', (word, jumbleWord, time, attempts) => {
+    if (vehicleScrambleWebView != undefined) {
+        alt.setTimeout(() => {
+            vehicleScrambleWebView.destroy();
+        }, 1000);
+    }
+    alt.showCursor(true);
+    vehicleScrambleWebView = new alt.WebView('http://resource/files/vehicle/vehicleScramble.html');
+    vehicleScrambleWebView.focus();
+    opened = true;
+    vehicleScrambleWebView.on('VehicleScrambleLoaded', () => {
+        vehicleScrambleWebView.emit('ReceiveInfo', word, jumbleWord, time, attempts);
+    });
+    vehicleScrambleWebView.on('vehicleScrambleClosePage', () => {
+        alt.setTimeout(() => {
+            vehicleScrambleWebView.destroy();
+            vehicleScrambleWebView = undefined;
+            opened = false;
+            alt.showCursor(false);
+            alt.emitServer('VehicleScramble:PageClosed');
+        }, 1000);
+    });
+    vehicleScrambleWebView.on('VehicleScramble:MaxAttemptsReached', () => {
+        alt.emitServer('VehicleScramble:MaxAttemptsReached');
+    });
+    vehicleScrambleWebView.on('VehicleScramble:TimeExpired', () => {
+        alt.emitServer('VehicleScramble:TimeExpired');
+    });
+    vehicleScrambleWebView.on('VehicleScramble:CorrectWord', () => {
+        alt.emitServer('VehicleScramble:CorrectWord');
+    });
+});
+alt.onServer('VehicleScramble:ClosePage', () => {
+    if (vehicleScrambleWebView != undefined) {
+        alt.showCursor(false);
+        opened = false;
+        alt.setTimeout(() => {
+            vehicleScrambleWebView.destroy();
+            vehicleScrambleWebView = undefined;
+        }, 1000);
+    }
+});
 var currentView = undefined;
 var dealershipJson = undefined;
 var vehicleScriptId = undefined;
@@ -78,8 +126,10 @@ function CloseCurrentPage() {
     if (currentView === undefined)
         return;
     alt.showCursor(false);
-    currentView.destroy();
-    currentView = undefined;
+    alt.setTimeout(() => {
+        currentView.destroy();
+        currentView = undefined;
+    }, 1000);
 }
 var hasVoucher = false;
 function ShowDealershipCars(json, voucher) {
@@ -133,8 +183,10 @@ function ViewDealershipLoaded() {
     currentView.emit('loadDealershipVehicleInfo', dealershipJson);
 }
 function CloseDealershipView() {
-    currentView.destroy();
-    currentView = undefined;
+    alt.setTimeout(() => {
+        currentView.destroy();
+        currentView = undefined;
+    }, 1000);
     alt.emitServer('dealership:pageclosed');
 }
 alt.onServer('setWindowState', (vehicle, window, state) => {
@@ -242,11 +294,16 @@ alt.onServer('SetVehicleExtra', (vehicle, slot, state) => {
 alt.onServer('CleanVehicle', (vehicle) => {
     native.setVehicleDirtLevel(vehicle.scriptID, 0);
 });
-alt.everyTick(() => {
+export function startIntervals() {
+    alt.setInterval(anchorInterval, 0);
+}
+function anchorInterval() {
     var vehicleList = alt.Vehicle.all;
     if (vehicleList.length === 0)
         return;
     for (let vehicle of vehicleList) {
+        if (!vehicle.valid)
+            continue;
         if (native.getVehicleClass(vehicle.scriptID) != 14)
             continue;
         var anchorStatus = vehicle.getSyncedMeta("VehicleAnchorStatus");
@@ -255,4 +312,6 @@ alt.everyTick(() => {
         native.setBoatAnchor(vehicle.scriptID, anchorStatus);
     }
     ;
+}
+alt.everyTick(() => {
 });

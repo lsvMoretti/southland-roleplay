@@ -1,14 +1,13 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
-var tfaWebView:alt.WebView = undefined;
+var tfaWebView: alt.WebView = undefined;
 
-var manualEntryCode:string = undefined;
+var manualEntryCode: string = undefined;
 
 alt.onServer('TFA:ShowWindow', showTwoFactorSetup);
 
-function showTwoFactorSetup(manualCode:string){
-
+function showTwoFactorSetup(manualCode: string, qrUri: string) {
     manualEntryCode = manualCode;
 
     tfaWebView = new alt.WebView('http://resource/files/authenticate/twoFactorSetup.html', false);
@@ -17,23 +16,24 @@ function showTwoFactorSetup(manualCode:string){
     alt.showCursor(true);
 
     tfaWebView.on('TFA:PageLoaded', () => {
-
-        tfaWebView.emit('TFA:SendData', manualCode);
+        tfaWebView.emit('TFA:SendData', manualCode, qrUri);
     });
 
     tfaWebView.on('TFA:ClosePage', () => {
-
-        tfaWebView.destroy();
-        tfaWebView = undefined;
+        alt.setTimeout(() => {
+            tfaWebView.destroy();
+            tfaWebView = undefined;
+        }, 1000);
         manualEntryCode = undefined;
         alt.showCursor(false);
         alt.emitServer('TFA:ClosePage');
     });
 
     tfaWebView.on('TFA:Finish', () => {
-        
-        tfaWebView.destroy();
-        tfaWebView = undefined;
+        alt.setTimeout(() => {
+            tfaWebView.destroy();
+            tfaWebView = undefined;
+        }, 1000);
         manualEntryCode = undefined;
         alt.showCursor(false);
         alt.emitServer('TFA:Complete');
@@ -42,8 +42,7 @@ function showTwoFactorSetup(manualCode:string){
 
 alt.onServer('2FA:GetInput', showGetInput);
 
-function showGetInput(){
-
+function showGetInput() {
     tfaWebView = new alt.WebView('http://resource/files/authenticate/twoFactorInput.html', false);
 
     tfaWebView.focus();
@@ -53,26 +52,26 @@ function showGetInput(){
         alt.emitServer('TFA:CloseInputPage');
     });
 
-    tfaWebView.on('TFA:SendCodeInput', (input:string) => {
+    tfaWebView.on('TFA:SendCodeInput', (input: string) => {
         alt.emitServer('TFA:SendCodeInput', input.toString());
     });
-
 }
 
 alt.onServer('2FA:InvalidCode', onInvalidCode);
 
-function onInvalidCode(){
-    if(tfaWebView !== undefined){
+function onInvalidCode() {
+    if (tfaWebView !== undefined) {
         tfaWebView.emit("InvalidCode");
     }
 }
 
 alt.onServer('2FA:CloseInput', onCloseInput);
 
-function onCloseInput(){
-    
-    tfaWebView.destroy();
-    tfaWebView = undefined;
+function onCloseInput() {
+    alt.setTimeout(() => {
+        tfaWebView.destroy();
+        tfaWebView = undefined;
+    }, 1000);
     alt.showCursor(false);
     alt.emitServer('TFA:ClosePage');
 }

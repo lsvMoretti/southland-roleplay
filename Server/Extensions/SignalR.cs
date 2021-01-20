@@ -20,11 +20,11 @@ namespace Server.Extensions
 
         public static async void StartConnection()
         {
-            string url = @"http://176.9.66.40:2000/signalr";
+            string url = @"http://149.202.88.222:2000/signalr";
 
             hubConnection = new HubConnectionBuilder().WithUrl(url).Build();
 
-            await Connect(hubConnection);
+            Connect(hubConnection);
 
             hubConnection.Closed += HubConnectionOnClosed;
 
@@ -96,11 +96,11 @@ namespace Server.Extensions
 
             bool reconnected = false;
 
-            reconnected = await Connect(hubConnection);
+            reconnected = Connect(hubConnection);
 
             while (!reconnected)
             {
-                reconnected = await Connect(hubConnection);
+                reconnected = Connect(hubConnection);
             }
 
             if (reconnected)
@@ -111,7 +111,7 @@ namespace Server.Extensions
             }
         }
 
-        private static async Task<bool> Connect(HubConnection connection)
+        private static bool Connect(HubConnection connection)
         {
             try
             {
@@ -129,7 +129,7 @@ namespace Server.Extensions
 
                 return hubConnected;
             }
-            catch (Exception e)
+            catch
             {
                 Console.WriteLine($"[SignalR] Unable to connect to hub. Retrying..");
                 return false;
@@ -142,73 +142,52 @@ namespace Server.Extensions
         /// <param name="message"></param>
         public void SendMessageToACP(string message)
         {
-#if RELEASE
             hubConnection.InvokeAsync("SendMessageToACP", message);
-#endif
         }
 
         public static void SendDiscordMessage(ulong channelId, string message)
         {
-#if RELEASE
             hubConnection.InvokeAsync("SendDiscordMessage", channelId.ToString(), message);
-#endif
         }
 
         public static void SendDiscordEmbed(ulong channelId, DiscordEmbed embed)
         {
-#if RELEASE
             hubConnection.InvokeAsync("SendDiscordEmbed", channelId.ToString(), JsonConvert.SerializeObject(embed));
-#endif
         }
 
         public static void SendPlayerCount()
         {
-#if RELEASE
             hubConnection.InvokeAsync("ReceivePlayerCount", Alt.Server.GetPlayers().Count());
-#endif
         }
 
         public static void SendUserLogin(Models.Account playerAccount)
         {
-#if RELEASE
             hubConnection.InvokeAsync("OnUserLogin", playerAccount.Id, playerAccount.Username);
-#endif
         }
 
         public static void SendUserLogout(Models.Account playerAccount)
         {
-#if RELEASE
-
             hubConnection.InvokeAsync("OnUserLogout", playerAccount.Id, playerAccount.Username);
-#endif
         }
 
         public static void SendDiscordUserMessage(string userId, string message)
         {
-#if RELEASE
             hubConnection.InvokeAsync("SendDiscordUserMessage", userId, message);
-#endif
         }
 
         public static void AddReport(AdminReportObject report)
         {
-#if RELEASE
             hubConnection.InvokeAsync("SendGameReport", JsonConvert.SerializeObject(report));
-#endif
         }
 
         public static void RemoveReport(AdminReportObject report)
         {
-#if RELEASE
             hubConnection.InvokeAsync("RemoveGameReport", JsonConvert.SerializeObject(report));
-#endif
         }
 
         public static void SendReportMessage(int reportId, string message)
         {
-#if RELEASE
             hubConnection.InvokeAsync("SendDiscordReportMessage", reportId, message);
-#endif
         }
     }
 }

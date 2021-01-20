@@ -42,7 +42,7 @@ namespace Server.Extensions
 
         public static void Execute(IPlayer player, string commandName, string[] parameters = null)
         {
-            var allMethods = _instance._commands.Where(t => t.Key.CompareTo(commandName) == 0);
+            IEnumerable<KeyValuePair<string, CommandRow>> allMethods = _instance._commands.Where(t => t.Key.CompareTo(commandName) == 0);
 
             if (!allMethods.Any(x => x.Key == commandName))
             {
@@ -50,15 +50,16 @@ namespace Server.Extensions
                 return;
             }
 
-            foreach (var entry in allMethods)
+            foreach (KeyValuePair<string, CommandRow> entry in allMethods)
             {
                 try
                 {
                     entry.Value.Execute(player, parameters);
                 }
-                catch (Exception ex)
+                catch
                 {
                     PlayerChatExtension.SendErrorNotification(player, "An error occurred.");
+                    return;
                 }
             }
         }
@@ -66,21 +67,21 @@ namespace Server.Extensions
         private void GetCommandMethods()
         {
 #if RELEASE
-            
+
             using StreamWriter sw = new StreamWriter($"{Environment.CurrentDirectory}/commandOutput.txt");
-            
+
             sw.Flush();
 
 #endif
-            
-            foreach (var type in Assembly.GetExecutingAssembly().GetTypes())
+
+            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
             {
-                foreach (var method in type.GetRuntimeMethods())
+                foreach (MethodInfo method in type.GetRuntimeMethods())
                 {
-                    var attribute = method.GetCustomAttribute<CommandAttribute>();
+                    CommandAttribute? attribute = method.GetCustomAttribute<CommandAttribute>();
                     if (attribute == null) continue;
 
-                    var arguments = method.GetParameters();
+                    ParameterInfo[] arguments = method.GetParameters();
                     if (arguments.Length == 0 || arguments[0].ParameterType != typeof(IPlayer))
                     {
                         Console.WriteLine($"Command /{attribute.Command} [{type.Namespace}.{type.Name}.{method.Name}] Incorrect argument. (IPlayer).");
@@ -114,7 +115,6 @@ namespace Server.Extensions
                                  $"Description: {attribute.Description}, Admin: {attribute.AdminLevel.ToString()}, " +
                                  $"Alternative: {attribute.Alternatives}");
 #endif
-                    
 
                     _commands.Add(attribute.Command.ToLower(), new CommandRow(attribute, method, arguments));
                     Commands.Add(attribute.Command.ToLower(), new CommandRow(attribute, method, arguments));
@@ -122,11 +122,11 @@ namespace Server.Extensions
             }
 
 #if RELEASE
-            
+
             sw.Close();
 
 #endif
-            
+
             Console.WriteLine($"Loaded {_commands.Count} command(s).");
         }
     }

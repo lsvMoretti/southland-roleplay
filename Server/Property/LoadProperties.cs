@@ -6,6 +6,7 @@ using System.Numerics;
 using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Newtonsoft.Json;
 using Server.Extensions;
 using Server.Extensions.Blip;
@@ -14,6 +15,7 @@ using Server.Extensions.TextLabel;
 using Server.Map;
 using Server.Models;
 using Blip = Server.Objects.Blip;
+using Marker = Server.Extensions.Marker.Marker;
 
 namespace Server.Property
 {
@@ -34,14 +36,13 @@ namespace Server.Property
                 Console.WriteLine($"Loading Properties");
 
                 Interiors.LoadInteriors();
-                
+
                 List<Models.Property> properties = Models.Property.FetchProperties();
 
                 foreach (Models.Property property in properties)
                 {
                     LoadProperty(property);
                 }
-
 
                 Console.WriteLine($"Loaded {properties.Count} Properties");
                 Console.WriteLine($"Loaded {LoadedPropertyObjects.Count} Property Objects");
@@ -124,7 +125,6 @@ namespace Server.Property
             {
                 if (property.OwnerId == 0 && property.Value > 1)
                 {
-                    
                     TextLabel propertyTextLabel = new TextLabel($"{property.Address}\nFor Sale: {property.Value:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
                     propertyTextLabel.Add();
 
@@ -132,7 +132,6 @@ namespace Server.Property
                 }
                 else
                 {
-                    
                     TextLabel propertyTextLabel = new TextLabel(property.Address, propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
                     propertyTextLabel.Add();
 
@@ -183,14 +182,13 @@ namespace Server.Property
 
                     PropertyBlips.Add(property.Id, propertyBlip);
                 }
-
             }
 
             if (!string.IsNullOrEmpty(property.InteriorName))
             {
                 MapHandler.LoadMapForProperty(property);
             }
-            
+
             if (string.IsNullOrEmpty(property.PropertyObjects))
             {
                 using Context context = new Context();
@@ -203,10 +201,9 @@ namespace Server.Property
                     context.SaveChanges();
                 }
             }
-                
+
             LoadPropertyObjects(property);
         }
-
 
         public static void ReloadProperty(Models.Property property)
         {
@@ -394,21 +391,20 @@ namespace Server.Property
             {
                 MapHandler.UnloadMapForProperty(property);
             }
-            
+
             UnloadPropertyObjects(property);
         }
-        
-        
+
         public static async void LoadPropertyObjects(Models.Property property)
         {
             List<PropertyObject> propertyObjects = null;
-            
+
             if (string.IsNullOrEmpty(property.PropertyObjects))
             {
                 Console.WriteLine($"Property {property.Id} has null property objects.");
-                
+
                 using Context context = new Context();
-                
+
                 propertyObjects = new List<PropertyObject>();
 
                 Models.Property dbProperty = await context.Property.FindAsync(property.Id);
@@ -431,7 +427,7 @@ namespace Server.Property
             if (propertyObjects == null)
             {
                 using Context context = new Context();
-                
+
                 propertyObjects = new List<PropertyObject>();
 
                 Models.Property dbProperty = await context.Property.FindAsync(property.Id);
@@ -444,9 +440,8 @@ namespace Server.Property
                 });
 
                 await context.SaveChangesAsync();
-
             }
-            
+
             if (!propertyObjects.Any()) return;
 
             foreach (LoadPropertyObject loadedPropertyObject in LoadedPropertyObjects.Where(x => x.PropertyId == property.Id).ToList())
@@ -454,7 +449,7 @@ namespace Server.Property
                 PropStreamer.Delete(loadedPropertyObject.DynamicObject);
                 LoadedPropertyObjects.Remove(loadedPropertyObject);
             }
-            
+
             foreach (PropertyObject propertyObject in propertyObjects)
             {
                 LoadPropertyObject(property, propertyObject);
@@ -472,15 +467,13 @@ namespace Server.Property
 
         public static async void LoadPropertyObject(Models.Property property, PropertyObject propertyObject)
         {
-
-            
             uint objectHash = Alt.Hash(propertyObject.ObjectName);
 
             Prop dynamicProp = PropStreamer.Create(propertyObject.ObjectName, propertyObject.Position, propertyObject.Rotation,
                 propertyObject.Dimension);
-            
+
             LoadedPropertyObjects.Add(new LoadPropertyObject(property.Id, dynamicProp));
-            
+
             Console.WriteLine($"Loaded {propertyObject.Name} into {property.Address}");
         }
     }

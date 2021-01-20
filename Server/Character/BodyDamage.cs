@@ -1,4 +1,5 @@
-﻿using AltV.Net.Data;
+﻿using System;
+using AltV.Net.Data;
 
 namespace Server.Character
 {
@@ -7,17 +8,20 @@ namespace Server.Character
         public BodyPart BodyPart { get; }
         public int Count { get; set; }
         public ushort DamageAmount { get; set; }
+        public uint Weapon { get; set; }
 
         public BodyDamage()
         {
-            
         }
 
-        public BodyDamage(BodyPart bodyPart, int count, ushort damageAmount)
+        public BodyDamage(BodyPart bodyPart, int count, ushort damageAmount, uint weapon)
         {
+            Console.WriteLine($"new BodyDamage: {bodyPart}");
             BodyPart = bodyPart;
+            Console.WriteLine($"Body Part set: {BodyPart}");
             Count = count;
             DamageAmount = damageAmount;
+            Weapon = weapon;
         }
     }
 }

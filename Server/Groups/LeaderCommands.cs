@@ -122,7 +122,7 @@ namespace Server.Groups
             List<PlayerFaction> playerFactions =
                 JsonConvert.DeserializeObject<List<PlayerFaction>>(player.FetchCharacter().FactionList);
 
-            PlayerFaction playerFaction = playerFactions.FirstOrDefault(x => x.Id == activeFaction.Id);
+            PlayerFaction? playerFaction = playerFactions.FirstOrDefault(x => x.Id == activeFaction.Id);
 
             if (playerFaction == null)
             {
@@ -130,12 +130,24 @@ namespace Server.Groups
                 return;
             }
 
+            Rank? playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
+                .FirstOrDefault(x => x.Id == playerFaction.RankId);
+
+            if (playerRank == null)
+            {
+                player.SendPermissionError();
+                return;
+            }
+
             bool canFTow = playerFaction.Leader;
 
             if (!canFTow)
             {
-                player.SendPermissionError();
-                return;
+                if (!playerRank.Tow)
+                {
+                    player.SendPermissionError();
+                    return;
+                }
             }
 
             using Context context = new Context();
@@ -627,6 +639,7 @@ namespace Server.Groups
                 new NativeMenuItem("Toggle Invite"),
                 new NativeMenuItem("Toggle Promote"),
                 new NativeMenuItem("Toggle Rank Edits"),
+                new NativeMenuItem("Toggle FTow"),
                 new NativeMenuItem("Delete Rank")
             };
 
@@ -683,6 +696,16 @@ namespace Server.Groups
                     $"You've set the add/remove rank permission for rank {selectedRank.Name} to {selectedRank.AddRanks}.");
                 Logging.AddToCharacterLog(player,
                     $"has set rank {selectedRank.Name} AddRanks permission to: {selectedRank.AddRanks} for faction {factionDb.Name}.");
+            }
+
+            if (option == "Toggle FTow")
+            {
+                selectedRank.Tow = !selectedRank.Tow;
+
+                player.SendInfoNotification(
+                    $"You've set the add/remove ftow permission for rank {selectedRank.Name} to {selectedRank.Tow}.");
+                Logging.AddToCharacterLog(player,
+                    $"has set rank {selectedRank.Name} ftow permission to: {selectedRank.Tow} for faction {factionDb.Name}.");
             }
 
             if (option == "Delete Rank")
@@ -877,7 +900,7 @@ namespace Server.Groups
                 player.SendInfoNotification($"You've removed {characterName} from your faction.");
 
                 Logging.AddToCharacterLog(player,
-                    $"has removed {characterName} from the faction ID: {player.FetchCharacter().ActiveFaction}.");
+                    $"has removed {characterName} from the faction Id: {player.FetchCharacter().ActiveFaction}.");
             }
         }
     }

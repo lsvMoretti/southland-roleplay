@@ -6,6 +6,7 @@ using System.Numerics;
 using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Newtonsoft.Json;
 using Server.Chat;
 using Server.Commands;
@@ -46,30 +47,31 @@ namespace Server.Groups.Police
 
                 Position forwardPos = player.PositionInFront(1);
 
-                
                 if (forwardPos == Position.Zero)
                 {
                     player.SendErrorNotification("Unable to fetch forward position.");
                     return;
                 }
 
-                forwardPos.Z -= 1f;
+                DegreeRotation rotation = player.Rotation;
 
-                Vector3 playerRot = player.Rotation;
-                
-                Prop prop = PropStreamer.Create("xs_prop_arena_spikes_02a", forwardPos, playerRot, player.Dimension, frozen: true);
+                Vector3 playerRot = new Vector3(rotation.Pitch, rotation.Roll, rotation.Yaw);
 
-                prop.SetRotation(player.Rotation);
-                
+                forwardPos.Z -= 1.0f;
+
+                Prop prop = PropStreamer.Create("p_stinger_04", forwardPos, playerRot, player.Dimension, frozen: true);
+
+                prop.SetRotation(playerRot);
+
                 IColShape colShape = Alt.CreateColShapeCylinder(forwardPos, 3f, 3f);
 
                 colShape.Dimension = player.Dimension;
                 colShape.SetData("SpikeStrip", true);
-            
-                SpikeStrip newStrip = new SpikeStrip(player, forwardPos, prop, colShape );
-            
+
+                SpikeStrip newStrip = new SpikeStrip(player, forwardPos, prop, colShape);
+
                 _spikeStrips.Add(newStrip);
-            
+
                 player.SendInfoNotification($"You've placed down a spike strip.");
                 Logging.AddToCharacterLog(player, $"has placed down a spike strip.");
             }
@@ -78,13 +80,11 @@ namespace Server.Groups.Police
                 Console.WriteLine(e);
                 return;
             }
-
         }
 
         [Command("pickupstrip", commandType: CommandType.Law, description: "Used to clear a spike strip.")]
         public static void PickupSpikeStrip(IPlayer player)
         {
-
             try
             {
                 if (!player.IsLeo(true))
@@ -118,12 +118,12 @@ namespace Server.Groups.Police
                     player.SendErrorNotification("Your not near a spike strip!");
                     return;
                 }
-            
+
                 nearestStrip.ColShape.Remove();
                 nearestStrip.Object.Delete();
 
                 _spikeStrips.Remove(nearestStrip);
-            
+
                 player.SendInfoNotification($"You've removed the nearest spike strip!");
             }
             catch (Exception e)
@@ -150,20 +150,20 @@ namespace Server.Groups.Police
 
             int totalCount = _spikeStrips.Count;
             int count = 0;
-            
+
             foreach (SpikeStrip spikeStrip in _spikeStrips)
             {
                 count++;
                 spikeStrip.ColShape.Remove();
                 spikeStrip.Object.Delete();
-                _spikeStrips.Remove(spikeStrip);
             }
-            
+
+            _spikeStrips = new List<SpikeStrip>();
+
             player.SendInfoNotification($"You've removed {count}/{totalCount} spike strips!");
             Logging.AddToCharacterLog(player, $"has removed {count}/{totalCount} spike strips!");
-            
         }
-        
+
         [Command("mdt", commandType: CommandType.Law, description: "MDT: Shows the Mobile Data Terminal")]
         public static void CommandMobileDataTerminal(IPlayer player)
         {
@@ -310,7 +310,6 @@ namespace Server.Groups.Police
 
             if (targetCharacter == null)
             {
-                
                 player.SendErrorNotification("Unable to fetch target data.");
                 return;
             }
@@ -332,7 +331,6 @@ namespace Server.Groups.Police
             targetCharacter.InJail = true;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have jailed {targetCharacter.Name} for {arrestTime} minutes.");
             targetPlayer.SendInfoNotification($"You have been arrested by {player.GetClass().Name} for {arrestTime} minutes.");
@@ -383,14 +381,12 @@ namespace Server.Groups.Police
 
             if (targetCharacter == null)
             {
-                
                 player.SendErrorNotification("Unable to fetch target data.");
                 return;
             }
 
             if (!targetCharacter.InJail)
             {
-                
                 player.SendErrorNotification("This player is not in jail.");
                 return;
             }
@@ -417,7 +413,6 @@ namespace Server.Groups.Police
             targetCharacter.InJail = false;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have released {targetCharacter.Name} from jail!");
             targetPlayer.SendInfoNotification($"You have been released from jail.");
@@ -495,7 +490,6 @@ namespace Server.Groups.Police
 
             context.Tickets.Add(newTicket);
             context.SaveChanges();
-            
 
             InventoryItem ticketItem = new InventoryItem("ITEM_POLICE_TICKET", "Ticket", JsonConvert.SerializeObject(newTicket));
 
@@ -563,8 +557,6 @@ namespace Server.Groups.Police
 
             context.SaveChanges();
 
-            
-
             Logging.AddToCharacterLog(player, $"has impounded vehicle id {vehicleData.Id}.");
 
             player.SendInfoNotification($"You have impounded {vehicleData.Name}, plate: {vehicleData.Plate}.");
@@ -612,7 +604,6 @@ namespace Server.Groups.Police
             vehicleData.Impounded = false;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have un-impounded {vehicleData.Name}, plate: {vehicleData.Plate} from the impound lot.");
 
@@ -722,19 +713,18 @@ namespace Server.Groups.Police
             {
                 targetLicenses.Remove(license);
                 player.SendInfoNotification($"You have removed a {licenseName} License from {targetCharacter.Name}.");
-                Logging.AddToCharacterLog(player, $"has removed {targetCharacter.Name} - ID: {targetCharacter.Id} license type: {licenseName}");
+                Logging.AddToCharacterLog(player, $"has removed {targetCharacter.Name} - Id: {targetCharacter.Id} license type: {licenseName}");
             }
             else
             {
                 targetLicenses.Add(license);
                 player.SendInfoNotification($"You have added a {licenseName} License to {targetCharacter.Name}.");
-                Logging.AddToCharacterLog(player, $"has given {targetCharacter.Name} - ID: {targetCharacter.Id} license type: {licenseName}");
+                Logging.AddToCharacterLog(player, $"has given {targetCharacter.Name} - Id: {targetCharacter.Id} license type: {licenseName}");
             }
 
             targetCharacterDb.LicensesHeld = JsonConvert.SerializeObject(targetLicenses);
 
             context.SaveChanges();
-            
         }
 
         [Command("m", onlyOne: true, alternatives: "megaphone", commandType: CommandType.Law,
@@ -770,7 +760,6 @@ namespace Server.Groups.Police
             }
         }
 
-
         [Command("inspectweapon", commandType: CommandType.Law,
             description: "Investigate: Used to show weapon information")]
         public static void LawCommandInspectWeapon(IPlayer player)
@@ -785,9 +774,7 @@ namespace Server.Groups.Police
             {
                 player.SendNotification("~r~You must be holding a weapon.");
                 return;
-                
-            }   
-            
+            }
 
             InventoryItem currentWeaponItem = JsonConvert.DeserializeObject<InventoryItem>(player.FetchCharacter().CurrentWeapon);
 
@@ -805,7 +792,6 @@ namespace Server.Groups.Police
                 ? weaponInfo.SerialNumber
                 : "Unregistered";
 
-
             string registeredOwner = weaponInfo.Legal ? weaponInfo.Purchaser : "Unregistered";
 
             player.SendWeaponMessage($"Serial Number: {registeredSerial} - Registered Owner: {registeredOwner}");
@@ -815,17 +801,21 @@ namespace Server.Groups.Police
                 return;
             }
 
-
             foreach (string dnaName in weaponInfo.LastPerson)
             {
                 player.SendWeaponMessage($"DNA Match found for {dnaName}");
             }
-
         }
 
         [Command("cuff", onlyOne: true, commandType: CommandType.Law, description: "Used to cuff/uncuff someone")]
         public static void LawCommandCuff(IPlayer player, string args = "")
         {
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendSyntaxMessage("/cuff [IdOrName]");
+                return;
+            }
+
             if (!player.IsLeo(true))
             {
                 player.SendPermissionError();
@@ -833,6 +823,8 @@ namespace Server.Groups.Police
             }
 
             IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+
+            if (player == targetPlayer) return;
 
             if (targetPlayer?.FetchCharacter() == null)
             {

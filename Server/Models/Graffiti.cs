@@ -17,7 +17,7 @@ namespace Server.Models
         public float PosX { get; set; }
         public float PosY { get; set; }
         public float PosZ { get; set; }
-        public string Text { get; set; }
+        public string? Text { get; set; }
         public GraffitiColor Color { get; set; }
 
         public static Graffiti CreateGraffiti(IPlayer player, string text, GraffitiColor color, Position position)
@@ -47,8 +47,6 @@ namespace Server.Models
 
             context.SaveChanges();
 
-            
-
             return newGraffiti;
         }
 
@@ -59,8 +57,6 @@ namespace Server.Models
             context.Graffiti.Remove(graffiti);
 
             context.SaveChanges();
-
-            
         }
 
         public static List<Graffiti> FetchGraffitis()

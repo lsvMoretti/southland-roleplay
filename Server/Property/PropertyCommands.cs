@@ -18,6 +18,7 @@ using Server.Character.Clothing;
 using Server.Chat;
 using Server.Commands;
 using Server.Doors;
+using Server.Drug;
 using Server.Extensions;
 using Server.Inventory;
 using Server.Models;
@@ -207,6 +208,25 @@ namespace Server.Property
             {
                 double reduction = price * 0.1;
                 price -= reduction;
+            }
+
+            if (selectedItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" || selectedItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
+            {
+                player.RemoveCash(price);
+
+                DrugBag newDrugBag = new DrugBag(DrugType.Empty, 0);
+
+                bool drugBagAdded =
+                    playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name, JsonConvert.SerializeObject(newDrugBag)));
+
+                if (!drugBagAdded)
+                {
+                    player.SendErrorNotification($"Your inventory is full");
+                    return;
+                }
+
+                player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
+                return;
             }
 
             if (selectedItem.ID == "ITEM_BACKPACK" || selectedItem.ID == "ITEM_DUFFELBAG")
@@ -415,7 +435,7 @@ namespace Server.Property
                 return;
             }
 
-            MotelRoom nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
+            MotelRoom? nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
 
             if (nearRoom != null)
             {
@@ -542,7 +562,7 @@ namespace Server.Property
 
             using Context context = new Context();
 
-            Models.Property insideProperty = Models.Property.FetchProperty(playerCharacter.InsideProperty);
+            Models.Property? insideProperty = Models.Property.FetchProperty(playerCharacter.InsideProperty);
 
             if (insideProperty == null) return;
 
@@ -569,7 +589,10 @@ namespace Server.Property
 
             DoorHandler.UpdateDoorsForPlayer(player);
 
-            player.UnloadIpl(insideProperty.Ipl);
+            if (!string.IsNullOrEmpty(insideProperty.Ipl))
+            {
+                player.UnloadIpl(insideProperty.Ipl);
+            }
 
             if (!string.IsNullOrEmpty(insideProperty.MusicStation))
             {
@@ -638,7 +661,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've set {nearestProperty.BusinessName} required products to {amount}.");
 
             Logging.AddToCharacterLog(player,
-                $"Has set required products for {nearestProperty.BusinessName} (ID: {nearestProperty.Id}) to {amount}.");
+                $"Has set required products for {nearestProperty.BusinessName} (Id: {nearestProperty.Id}) to {amount}.");
         }
 
         [Command("setproductprice", onlyOne: true, commandType: CommandType.Property,
@@ -692,7 +715,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've set {nearestProperty.BusinessName} product buy price to {amount:C}.");
 
             Logging.AddToCharacterLog(player,
-                $"Has set product buy price for {nearestProperty.BusinessName} (ID: {nearestProperty.Id}) to {amount:C}.");
+                $"Has set product buy price for {nearestProperty.BusinessName} (Id: {nearestProperty.Id}) to {amount:C}.");
         }
 
         [Command("pwithdraw", onlyOne: true, commandType: CommandType.Property,
@@ -754,7 +777,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've withdraw {amount:C} from your business.");
 
             Logging.AddToCharacterLog(player,
-                $"has withdrawn {amount:C} from the business {nearestProperty.BusinessName} ID: {nearestProperty.Id}.");
+                $"has withdrawn {amount:C} from the business {nearestProperty.BusinessName} Id: {nearestProperty.Id}.");
         }
 
         [Command("pdeposit", onlyOne: true, commandType: CommandType.Property,
@@ -815,7 +838,7 @@ namespace Server.Property
             player.SendInfoNotification($"You've deposited {amount:C} into your business.");
 
             Logging.AddToCharacterLog(player,
-                $"has deposited {amount:C} into the business {nearestProperty.BusinessName} ID: {nearestProperty.Id}.");
+                $"has deposited {amount:C} into the business {nearestProperty.BusinessName} Id: {nearestProperty.Id}.");
         }
 
         [Command("mortgageproperty", commandType: CommandType.Property,
@@ -1389,10 +1412,10 @@ namespace Server.Property
             targetPlayer.SendInfoNotification($"You've received {property.Address} from {player.GetClass().Name}.");
 
             Logging.AddToCharacterLog(player,
-                $"has given {property.Address} (ID: {property.Id}) to {targetPlayer.GetClass().Name} (ID: {targetPlayer.GetClass().CharacterId}).");
+                $"has given {property.Address} (Id: {property.Id}) to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetClass().CharacterId}).");
 
             Logging.AddToCharacterLog(targetPlayer,
-                $"has received {property.Address} (ID: {property.Id}) from {player.GetClass().Name} (ID: {player.GetClass().CharacterId}).");
+                $"has received {property.Address} (Id: {property.Id}) from {player.GetClass().Name} (Id: {player.GetClass().CharacterId}).");
             LoadProperties.ReloadProperty(property);
         }
 
@@ -1571,7 +1594,7 @@ namespace Server.Property
             property.InvPosX = player.Position.X;
             property.InvPosY = player.Position.Y;
             property.InvPosZ = player.Position.Z;
-            property.InventoryId = newData.ID;
+            property.InventoryId = newData.Id;
 
             context.SaveChanges();
 

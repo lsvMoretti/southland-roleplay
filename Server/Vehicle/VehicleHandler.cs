@@ -352,6 +352,15 @@ namespace Server.Vehicle
 
         public static void AltOnOnPlayerLeaveVehicle(IVehicle vehicle, IPlayer player, byte seat)
         {
+            if (player.HasData("Hotwire:Vehicle"))
+            {
+                player.DeleteSyncedMetaData("Hotwire:Decrypted");
+                player.DeleteSyncedMetaData("Hotwire:Shuffled");
+                player.DeleteData("Hotwire:Vehicle");
+                player.Emit("VehicleScramble:ClosePage");
+                player.SendErrorNotification("You've left the vehicle whilst hot wiring.");
+            }
+
             Dictionary<byte, int> occupants = vehicle.Occupants();
 
             if (occupants.ContainsKey(seat))
@@ -414,7 +423,7 @@ namespace Server.Vehicle
             player.Emit("setWindowState", vehicle, window, open);
         }
 
-        public static IVehicle FetchNearestVehicle(IPlayer player, float radius = 5f)
+        public static IVehicle? FetchNearestVehicle(IPlayer player, float radius = 5f)
         {
             try
             {

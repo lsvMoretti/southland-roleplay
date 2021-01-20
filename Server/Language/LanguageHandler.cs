@@ -6,12 +6,15 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
+using System.Text;
+using System.Threading.Tasks;
 using AltV.Net.Data;
+using Newtonsoft.Json;
 using Server.Extensions;
 using Server.Extensions.Blip;
 using Server.Extensions.TextLabel;
 using Server.Objects;
-using Yandex.Translator;
 
 namespace Server.Language
 {
@@ -24,12 +27,11 @@ namespace Server.Language
         public static void InitLanguages()
         {
             Languages.Add(new Language("English", "en"));
-            Languages.Add(new Language("Belarusian", "be"));
             Languages.Add(new Language("Dutch", "nl"));
             Languages.Add(new Language("Danish", "da"));
             Languages.Add(new Language("Italian", "it"));
             Languages.Add(new Language("Spanish", "es"));
-            Languages.Add(new Language("Chinese", "zh"));
+            Languages.Add(new Language("Chinese", "zh-Hans"));
             Languages.Add(new Language("German", "de"));
             Languages.Add(new Language("Russian", "ru"));
             Languages.Add(new Language("French", "fr"));
@@ -48,20 +50,47 @@ namespace Server.Language
             positionLabel.Add();
         }
 
-        public static ITranslation FetchTranslation(Language toLanguage, string text)
+        public static async Task<Translations> FetchTranslation(Language toLanguage, string textToTranslate)
         {
             try
             {
-                string apiKey = Release.Default.YandexApi;
+                string COGNITIVE_SERVICES_KEY = Release.Default.TranslationKeyOne;
 
-                IYandexTranslator translator = Yandex.Translator.Yandex.Translator(api =>
+                string COGNITIVE_SERVICES_REGION = "northeurope";
+
+                string TEXT_TRANSLATION_API_ENDPOINT = "https://api.cognitive.microsofttranslator.com/";
+
+                string route = $"/translate?api-version=3.0&from=en&to={toLanguage.Code}";
+
+                object[] body = new object[] { new { Text = textToTranslate } };
+
+                var requestBody = JsonConvert.SerializeObject(body);
+
+                using (var client = new HttpClient())
+                using (var request = new HttpRequestMessage())
                 {
-                    api.ApiKey(apiKey).Format(ApiDataFormat.Json);
-                });
+                    // Build the request.
+                    request.Method = HttpMethod.Post;
+                    request.RequestUri = new Uri(TEXT_TRANSLATION_API_ENDPOINT + route);
+                    request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
+                    request.Headers.Add("Ocp-Apim-Subscription-Key", COGNITIVE_SERVICES_KEY);
+                    request.Headers.Add("Ocp-Apim-Subscription-Region", COGNITIVE_SERVICES_REGION);
 
-                ITranslation translation = translator.Translate(toLanguage.Code, text);
+                    // Send the request and get response.
+                    HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
+                    Console.WriteLine($"Translation as String: {await response.Content.ReadAsStringAsync()}");
+                    string result = await response.Content.ReadAsStringAsync();
+                    string trim = result.Trim('[', ']');
+                    Console.WriteLine($"After Trim: {trim}");
+                    Translations translation =
+                        JsonConvert.DeserializeObject<Translations>(trim);
 
-                return translation;
+                ;
+                    Console.WriteLine(
+                        $"Result: {translation.translations.FirstOrDefault()?.text}");
+
+                    return translation;
+                }
             }
             catch (Exception e)
             {

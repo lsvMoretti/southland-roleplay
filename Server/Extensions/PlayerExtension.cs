@@ -9,6 +9,7 @@ using System.Timers;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using Newtonsoft.Json;
+using Server.Admin;
 using Server.Character;
 using Server.Chat;
 using Server.Inventory;
@@ -30,10 +31,10 @@ namespace Server.Extensions
                 double z = playerRot.Yaw * (Math.PI / 180);
                 double x = playerRot.Pitch * (Math.PI / 180);
                 double num = Math.Abs(Math.Cos(x));
-            
+
                 Position forwardVector = new Position(Convert.ToSingle(-Math.Sin(z) * num), Convert.ToSingle(Math.Cos(z) * num), Convert.ToSingle(Math.Sin(x)));
                 Position scaledVector = new Position(forwardVector.X * distance, forwardVector.Y * distance, forwardVector.Z * distance);
-            
+
                 return new Position(position.X + scaledVector.X, position.Y + scaledVector.Y, position.Z + scaledVector.Z);
             }
             catch (Exception e)
@@ -41,16 +42,15 @@ namespace Server.Extensions
                 Console.WriteLine(e);
                 return Position.Zero;
             }
-            
         }
-        
+
         public static void SetPlayerNameTag(this IPlayer player, string name)
         {
             player.SetSyncedMetaData("playerNameTag", $"{name}");
         }
 
         /// <summary>
-        /// Sets the Players ID
+        /// Sets the Players Id
         /// </summary>
         /// <param name="player"></param>
         /// <param name="id"></param>
@@ -61,7 +61,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Gets the Players ID
+        /// Gets the Players Id
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
@@ -146,7 +146,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Sets the users account ID
+        /// Sets the users account Id
         /// </summary>
         /// <param name="player"></param>
         /// <param name="accountId"></param>
@@ -157,7 +157,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Returns the users account ID
+        /// Returns the users account Id
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
@@ -174,7 +174,7 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static Models.Account FetchAccount(this IPlayer player)
+        public static Models.Account? FetchAccount(this IPlayer player)
         {
             player.GetData("USERACCOUNTID", out int accountId);
 
@@ -182,7 +182,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Sets the users Character ID
+        /// Sets the users Character Id
         /// </summary>
         /// <param name="player"></param>
         /// <param name="characterId"></param>
@@ -192,7 +192,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Fetches the users current character ID
+        /// Fetches the users current character Id
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
@@ -209,7 +209,7 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static Models.Character FetchCharacter(this IPlayer player)
+        public static Models.Character? FetchCharacter(this IPlayer player)
         {
             bool hasData = player.GetData("USERCHARACTERID", out int characterId);
             if (!hasData) return null;
@@ -319,7 +319,7 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="player"></param>
         /// <returns></returns>
-        public static Inventory.Inventory FetchInventory(this IPlayer player)
+        public static Inventory.Inventory? FetchInventory(this IPlayer player)
         {
             return player.FetchCharacter() == null ? null : new Inventory.Inventory(InventoryData.GetInventoryData(player.FetchCharacter().InventoryID));
         }
@@ -500,7 +500,6 @@ namespace Server.Extensions
 
                                     if (currentWeaponItem != null)
                                     {
-
                                         WeaponInfo weaponInfo =
                                             JsonConvert.DeserializeObject<WeaponInfo>(currentWeaponItem.ItemValue);
 
@@ -570,7 +569,6 @@ namespace Server.Extensions
             playerCharacter.Money += (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         /// <summary>
@@ -591,7 +589,6 @@ namespace Server.Extensions
             playerCharacter.Money += (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         /// <summary>
@@ -612,7 +609,6 @@ namespace Server.Extensions
             playerCharacter.Money -= (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         /// <summary>
@@ -633,7 +629,6 @@ namespace Server.Extensions
             playerCharacter.Money -= (float)rounded;
 
             context.SaveChanges();
-            
         }
 
         public static PlayerEntity GetClass(this IPlayer player)
@@ -772,8 +767,12 @@ namespace Server.Extensions
         {
             get
             {
-
                 if (_player.GetClass().AdminDuty)
+                {
+                    return _player.GetClass().UcpName;
+                }
+
+                if (_player.HasSyncedMetaData(HelperCommands.HelperDutyData))
                 {
                     return _player.GetClass().UcpName;
                 }
@@ -815,19 +814,18 @@ namespace Server.Extensions
                 }
 
                 using Context context = new Context();
-                Models.Character playerCharacter = context.Character.Find(_player.FetchCharacterId());
+                Models.Character playerCharacter = context.Character.Find(_player.GetClass().CharacterId);
 
                 if (playerCharacter == null) return;
 
                 playerCharacter.Name = value;
 
                 context.SaveChanges();
-                
             }
         }
 
         /// <summary>
-        /// The Player ID
+        /// The Player Id
         /// </summary>
         public int PlayerId
         {
@@ -886,12 +884,12 @@ namespace Server.Extensions
         {
             get
             {
-                bool hasData = _player.GetData("ISDOWNED", out bool isDowned);
+                bool hasData = _player.GetSyncedMetaData("ISDOWNED", out bool isDowned);
                 if (!hasData) return false;
 
                 return isDowned;
             }
-            set => _player.SetData("ISDOWNED", value);
+            set => _player.SetSyncedMetaData("ISDOWNED", value);
         }
 
         public float Cash
@@ -909,8 +907,6 @@ namespace Server.Extensions
                 playerCharacter.Money = value;
 
                 context.SaveChanges();
-
-                
             }
         }
 
@@ -984,7 +980,7 @@ namespace Server.Extensions
             set => _player.SetData("IsSitting", value);
         }
 
-        public Language.Language SpokenLanguage
+        public Language.Language? SpokenLanguage
         {
             get
             {
@@ -994,7 +990,7 @@ namespace Server.Extensions
                     return spokenLanguage;
                 }
 
-                string spokenString = _player.FetchCharacter().CurrentLanguage;
+                string spokenString = _player.FetchCharacter()?.CurrentLanguage;
 
                 spokenLanguage = !string.IsNullOrEmpty(spokenString) ? JsonConvert.DeserializeObject<Language.Language>(_player.FetchCharacter().CurrentLanguage) : LanguageHandler.Languages.FirstOrDefault(x => x.Code == "en");
 
@@ -1022,7 +1018,6 @@ namespace Server.Extensions
 
                     if (string.IsNullOrEmpty(_player.FetchCharacter()?.Languages))
                     {
-
                         List<Language.Language> newLanguages = new List<Language.Language>
                         {
                             LanguageHandler.Languages.FirstOrDefault(x => x.Code == "en")
@@ -1039,7 +1034,6 @@ namespace Server.Extensions
                         _player.SetData("SpokenLanguages", newLanguages);
 
                         return newLanguages;
-
                     }
 
                     List<Language.Language> languages =
@@ -1047,7 +1041,6 @@ namespace Server.Extensions
                     _player.SetData("SpokenLanguages", languages);
 
                     return languages;
-
                 }
                 catch (Exception e)
                 {
@@ -1072,7 +1065,7 @@ namespace Server.Extensions
 
                 return hasCuffedData && cuffed;
             }
-            set 
+            set
             {
                 _player.SetData("IsCuffed", value);
 
@@ -1115,7 +1108,7 @@ namespace Server.Extensions
             {
                 bool hasUcpName = _player.GetSyncedMetaData("UcpName", out string ucpName);
 
-                if (!hasUcpName) return null;
+                if (!hasUcpName) return null!;
 
                 return ucpName;
             }

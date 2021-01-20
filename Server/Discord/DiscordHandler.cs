@@ -10,9 +10,9 @@ namespace Server.Discord
 {
     public class DiscordHandler
     {
-        private static readonly ulong DiscordLogChannelId = 704002752417890324;
-        private static readonly ulong DiscordIgAdminChatChannelId = 704002753185447946;
-        private static readonly ulong DiscordIgReportsId = 704022963610976256;
+        private static readonly ulong DiscordLogChannelId = 795062350398881832;
+        private static readonly ulong DiscordIgAdminChatChannelId = 787791455950471218;
+        private static readonly ulong DiscordIgReportsId = 795086774149447721;
         private static readonly ulong DiscordDepartmentId = 685633206246178860;
 
         /// <summary>
@@ -24,7 +24,6 @@ namespace Server.Discord
             SignalR.SendDiscordMessage(DiscordLogChannelId, message);
         }
 
-        
         public static void SendMessageToIgAdminChannel(string message)
         {
             SignalR.SendDiscordMessage(DiscordIgAdminChatChannelId, message);
@@ -34,7 +33,7 @@ namespace Server.Discord
         {
             SignalR.SendDiscordEmbed(DiscordIgAdminChatChannelId, embed);
         }
-        
+
         public static void SendMessageToReportsChannel(string message)
         {
             SignalR.SendDiscordMessage(DiscordIgReportsId, message);
@@ -47,7 +46,7 @@ namespace Server.Discord
 
         public static void SendMessageToDepartmentalChannel(string message)
         {
-            SignalR.SendDiscordMessage(DiscordDepartmentId, message);
+            //SignalR.SendDiscordMessage(DiscordDepartmentId, message);
         }
 
         public static void SendMessageToUser(string userId, string message)
@@ -65,7 +64,7 @@ namespace Server.Discord
 
                 if (adminAccount == null) continue;
 
-                if (adminAccount.AdminLevel < AdminLevel.Support && !adminAccount.Developer) continue; 
+                if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
 
                 admin.SendDiscordAdminChatMessage($"{username} says: {message}");
             }

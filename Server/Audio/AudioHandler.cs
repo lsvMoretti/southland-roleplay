@@ -19,7 +19,13 @@ namespace Server.Audio
         /// </summary>
         public static List<RadioStation> StationList = new List<RadioStation>();
 
-        private static readonly string altVDirectory = "C:/Game Server/data";
+#if DEBUG
+        private static readonly string altVDirectory = "D:/servers/Southland-Dev/data";
+
+#endif
+#if RELEASE
+        private static readonly string altVDirectory = "C:/Servers/Southland/data";
+#endif
 
         /// <summary>
         /// Load Radio Stations

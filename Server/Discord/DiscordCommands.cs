@@ -60,7 +60,7 @@ namespace Server.Discord
 
             if (option.Contains("Link Discord"))
             {
-                player.Emit("DiscordLink:FetchUserId");
+                player.SendInfoNotification($"Head over to the UCP to complete this.");
                 return;
             }
 
@@ -98,19 +98,18 @@ namespace Server.Discord
                 playerAccount.AutoLogin = false;
                 player.SendInfoNotification($"You've disabled Auto Login.");
             }
-            
-            context.SaveChanges();
 
+            context.SaveChanges();
         }
 
         public static void OnReturnDiscordLinkUserId(IPlayer player, string userId)
         {
             if (string.IsNullOrEmpty(userId))
             {
-                player.SendErrorNotification("There was an error fetching your discord ID.");
+                player.SendErrorNotification("There was an error fetching your discord Id.");
                 return;
             }
-            
+
             using Context context = new Context();
 
             Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
@@ -149,9 +148,9 @@ namespace Server.Discord
                 player.SendErrorNotification("You need to use /discord first!");
                 return;
             }
-            
+
             using Context context = new Context();
-            
+
             Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
 
             if (playerAccount == null)

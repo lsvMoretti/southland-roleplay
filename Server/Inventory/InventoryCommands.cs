@@ -6,11 +6,13 @@ using System.Linq;
 using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
+using EnumsNET;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Server.Backpack;
 using Server.Chat;
 using Server.Commands;
+using Server.Drug;
 using Server.Extensions;
 using Server.Models;
 using Server.Weapons;
@@ -140,6 +142,34 @@ namespace Server.Inventory
                             itemList.Add(menuItem);
                             continue;
                         }
+                    }
+
+                    if (item.Id == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" || item.Id == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
+                    {
+                        DrugBag drugBag = JsonConvert.DeserializeObject<DrugBag>(item.ItemValue);
+                        DrugBagType drugBagType = item.Id switch
+                        {
+                            "ITEM_DRUG_ZIPLOCK_BAG_SMALL" => DrugBagType.ZipLockSmall,
+                            "ITEM_DRUG_ZIPLOCK_BAG_LARGE" => DrugBagType.ZipLockLarge,
+                            _ => DrugBagType.ZipLockSmall,
+                        };
+
+                        double maxWeight = drugBagType switch
+                        {
+                            DrugBagType.ZipLockSmall => DrugBag.SmallBagLimit,
+                            DrugBagType.ZipLockLarge => DrugBag.LargeBagLimit
+                        };
+
+                        NativeMenuItem menuItem = new NativeMenuItem(item.GetName(false), $"{drugBag.DrugQuantity:0.0}/{maxWeight:0.0} of {drugBag.DrugType.AsString(EnumFormat.Description)}");
+                        itemList.Add(menuItem);
+                        continue;
+                    }
+
+                    if (item.Id.Contains("DRUG"))
+                    {
+                        NativeMenuItem menuItem = new NativeMenuItem(item.CustomName, $"{item.ItemInfo.Description} - x{item.Quantity:0.0}");
+                        itemList.Add(menuItem);
+                        continue;
                     }
 
                     if (item.Quantity > 1)

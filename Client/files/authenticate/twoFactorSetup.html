@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -16,6 +16,9 @@
                 <br>
                 <h3 class="text-white text-center">Two Factor Authentication Setup</h3>
                 <br>
+                <p class="text-white text-center">Below is a QR code for the setup on your 2FA app:</p>
+                <img id="qrDiv" />
+                <br>
                 <p class="text-white text-center">Below is a manual entry code for the setup on your 2FA app:</p>
                 <p id="codeDiv" class="text-white text-center">CodeHere</p>
                 <br>
@@ -30,26 +33,30 @@
         <script src="../data/bootstrap.min.js"></script>
 
         <script>
-            function pageLoaded(){
+            function pageLoaded() {
                 console.log('2FA Page Loaded');
                 alt.emit('TFA:PageLoaded');
             }
 
-            function closePage(){
+            function closePage() {
                 alt.emit('TFA:ClosePage');
             }
 
-            function finish(){
-                alt.emit('TFA:Finish')
+            function finish() {
+                alt.emit('TFA:Finish');
             }
 
             if ('alt' in window) {
-                alt.on('TFA:SendData', (manualCode) => {
+                alt.on('TFA:SendData', (manualCode, qrUri) => {
 
                     var codeDiv = document.getElementById('codeDiv');
                     codeDiv.innerText = manualCode;
+
+                    var qrDiv = document.getElementById('qrDiv');
+                    qrDiv.src = qrUri;
                 });
             }
         </script>
+    </div>
 </body>
 </html>

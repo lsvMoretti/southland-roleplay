@@ -17,8 +17,10 @@ function handleCallNumber(number) {
 }
 function closeCallNumber() {
     if (callNumberView !== undefined) {
-        callNumberView.destroy();
-        callNumberView = undefined;
+        alt.setTimeout(() => {
+            callNumberView.destroy();
+            callNumberView = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }
@@ -62,8 +64,10 @@ function showSMSPage() {
 }
 function closeSmsPage() {
     if (smsPage !== undefined) {
-        smsPage.destroy();
-        smsPage = undefined;
+        alt.setTimeout(() => {
+            smsPage.destroy();
+            smsPage = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }
@@ -84,8 +88,10 @@ function showAddContactPage() {
 }
 function closeAddContactPage() {
     if (addContactPage !== undefined) {
-        addContactPage.destroy();
-        addContactPage = undefined;
+        alt.setTimeout(() => {
+            addContactPage.destroy();
+            addContactPage = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }

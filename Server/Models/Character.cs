@@ -10,20 +10,20 @@ namespace Server.Models
     public class Character
     {
         /// <summary>
-        /// Unique Character ID
+        /// Unique Character Id
         /// </summary>
         [Key]
         public int Id { get; set; }
 
         /// <summary>
-        /// Account ID of Owner
+        /// Account Id of Owner
         /// </summary>
         public int OwnerId { get; set; }
 
         /// <summary>
         /// Character Name
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// PosX (From Vector3)
@@ -72,7 +72,7 @@ namespace Server.Models
         public int Age { get; set; }
 
         /// <summary>
-        /// Inventory ID
+        /// Inventory Id
         /// Default 0
         /// </summary>
         public int InventoryID { get; set; }
@@ -107,13 +107,13 @@ namespace Server.Models
         public int PaydayAmount { get; set; }
 
         /// <summary>
-        /// String'd list of PlayerFaction
+        /// string?'d list of PlayerFaction
         /// Default []
         /// </summary>
-        public string FactionList { get; set; }
+        public string? FactionList { get; set; }
 
         /// <summary>
-        /// The current active faction ID
+        /// The current active faction Id
         /// Default 0
         /// </summary>
         public int ActiveFaction { get; set; }
@@ -122,14 +122,14 @@ namespace Server.Models
         /// Json of Clothes ( List<clothesData>() )
         /// Default []
         /// </summary>
-        public string ClothesJson { get; set; }
+        public string? ClothesJson { get; set; }
 
         /// <summary>
         /// Json of Accessories (List<accessoryData>() )
         /// Default []
         /// </summary>
         [DefaultValue("[]")]
-        public string AccessoryJson { get; set; }
+        public string? AccessoryJson { get; set; }
 
         /// <summary>
         /// The choice of the player's lifestyle
@@ -165,13 +165,13 @@ namespace Server.Models
         /// JSON of Tattoo's
         /// Default []
         /// </summary>
-        public string TattooJson { get; set; }
+        public string? TattooJson { get; set; }
 
         /// <summary>
         /// List of LicenseTypes enum
         /// Default []
         /// </summary>
-        public string LicensesHeld { get; set; }
+        public string? LicensesHeld { get; set; }
 
         public int InsideProperty { get; set; }
 
@@ -183,27 +183,27 @@ namespace Server.Models
 
         /// <summary>
         /// What Apartment Name they're inside of
-        /// Default null or empty string
+        /// Default null or empty string?
         /// </summary>
-        public string InsideApartment { get; set; }
+        public string? InsideApartment { get; set; }
 
         /// <summary>
         /// The Active Phone Number for a Character
         /// Default null or empty
         /// </summary>
-        public string ActivePhoneNumber { get; set; }
+        public string? ActivePhoneNumber { get; set; }
 
         /// <summary>
         /// List of Jobs (Jobs enum)
         /// Default []
         /// </summary>
-        public string JobList { get; set; }
+        public string? JobList { get; set; }
 
         /// <summary>
         /// The Bio of the Character from Creation
         /// Bio entered from Character Creation
         /// </summary>
-        public string Bio { get; set; }
+        public string? Bio { get; set; }
 
         /// <summary>
         /// Has the Bio been past the Discord Approval
@@ -221,7 +221,7 @@ namespace Server.Models
         /// Json of List<FocusTypes>
         /// Default []
         /// </summary>
-        public string FocusJson { get; set; }
+        public string? FocusJson { get; set; }
 
         /// <summary>
         /// Sets if player is in garage
@@ -245,13 +245,13 @@ namespace Server.Models
         /// Character Description
         /// Default empty
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// Custom Character
         /// Default []
         /// </summary>
-        public string CustomCharacter { get; set; }
+        public string? CustomCharacter { get; set; }
 
         /// <summary>
         /// Start stage of the character.
@@ -264,7 +264,7 @@ namespace Server.Models
         /// <summary>
         /// Current Weapon Hash
         /// </summary>
-        public string CurrentWeapon { get; set; }
+        public string? CurrentWeapon { get; set; }
 
         /// <summary>
         /// Graffiti Clean Count in Hour
@@ -305,12 +305,12 @@ namespace Server.Models
         /// <summary>
         /// Current rent vehicle key
         /// </summary>
-        public string RentVehicleKey { get; set; }
+        public string? RentVehicleKey { get; set; }
 
         /// <summary>
         /// List of Languages
         /// </summary>
-        public string Languages { get; set; }
+        public string? Languages { get; set; }
 
         /// <summary>
         /// The max amount of Languages a player can learn
@@ -320,7 +320,7 @@ namespace Server.Models
         /// <summary>
         /// Current Language
         /// </summary>
-        public string CurrentLanguage { get; set; }
+        public string? CurrentLanguage { get; set; }
 
         /// <summary>
         /// Current Backpack Id
@@ -328,16 +328,21 @@ namespace Server.Models
         public int BackpackId { get; set; }
 
         /// <summary>
+        /// List of player outfits
+        /// </summary>
+        public string? Outfits { get; set; }
+
+        /// <summary>
         /// Creates a Character
         /// </summary>
         /// <param name="character"></param>
-        /// <returns>character.Id (Unique ID)</returns>
+        /// <returns>character.Id (Unique Id)</returns>
         public static int CreateCharacter(Character character)
         {
             using Context context = new Context();
             context.Character.Add(character);
             context.SaveChanges();
-            
+
             return character.Id;
         }
 
@@ -346,16 +351,16 @@ namespace Server.Models
         /// </summary>
         /// <param name="name"></param>
         /// <returns>Character DB</returns>
-        public static Character GetCharacter(string name)
+        public static Character GetCharacter(string? name)
         {
             using Context context = new Context();
             return context.Character.FirstOrDefault(i => i.Name == name);
         }
 
         /// <summary>
-        /// Fetches Character by Character ID
+        /// Fetches Character by Character Id
         /// </summary>
-        /// <param name="id">Character ID</param>
+        /// <param name="id">Character Id</param>
         /// <returns>Character DB</returns>
         public static Character GetCharacter(int id)
         {
@@ -368,13 +373,13 @@ namespace Server.Models
         /// Fetches list of Character Names by Account
         /// </summary>
         /// <param name="account">Account DB</param>
-        /// <returns>List of Character Names (string List)</returns>
-        public static List<string> FetchCharacterNames(Account account)
+        /// <returns>List of Character Names (string? List)</returns>
+        public static List<string?> FetchCharacterNames(Account account)
         {
             using Context context = new Context();
             List<Character> characters = context.Character.Where(i => i.OwnerId == account.Id).ToList();
-            
-            List<string> characterList = new List<string>();
+
+            List<string?> characterList = new List<string?>();
             foreach (Character character in characters)
             {
                 characterList.Add(character.Name);

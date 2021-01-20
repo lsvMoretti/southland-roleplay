@@ -11,7 +11,7 @@ namespace Server.Extensions
     {
         private static readonly Random _random = new Random();
 
-        public static IPlayer FindPlayerByNameOrId(string nameorid)
+        public static IPlayer? FindPlayerByNameOrId(string nameorid)
         {
             try
             {

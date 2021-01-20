@@ -14,7 +14,7 @@ namespace Server.Jobs.Taxi
 {
     public class TaxiCommands
     {
-        [Command("taxiduty", alternatives: "tduty", commandType: CommandType.Job, description: "Taxi: Sets yourself on Taxi Duty")]
+        [Command("taxiduty", commandType: CommandType.Job, description: "Taxi: Sets yourself on Taxi Duty")]
         public static void TaxiCommandDuty(IPlayer player)
         {
             if (!player.IsSpawned()) return;
@@ -187,7 +187,7 @@ namespace Server.Jobs.Taxi
 
             player.SetWaypoint(selectedCall.Position);
 
-            Logging.AddToCharacterLog(player, $"has accepted Taxi Call ID: {selectedCall.Id} for player {targetPlayer.GetClass().Name}.");
+            Logging.AddToCharacterLog(player, $"has accepted Taxi Call Id: {selectedCall.Id} for player {targetPlayer.GetClass().Name}.");
         }
 
         [Command("startfare", onlyOne: true, commandType: CommandType.Job, description: "Taxi: Starts a fare for a player")]

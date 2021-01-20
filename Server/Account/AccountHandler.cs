@@ -11,17 +11,12 @@ namespace Server.Account
 
             List<Models.Account> userAccounts = context.Account.ToList();
 
-            foreach (Models.Account userAccount in userAccounts)
+            foreach (var userAccount in userAccounts.Where(userAccount => userAccount.IsOnline))
             {
-                if (userAccount.IsOnline)
-                {
-                    userAccount.IsOnline = false;
-                }
+                userAccount.IsOnline = false;
             }
 
             context.SaveChanges();
-
-            
         }
     }
 }

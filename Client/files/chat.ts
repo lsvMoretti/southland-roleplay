@@ -10,7 +10,37 @@ let hidden = false;
 
 let input = true;
 
+let localStorage = alt.LocalStorage.get();
+
+let fontSize: number = localStorage.get("Chat:FontSize");
+let timeStamp: boolean = localStorage.get("Chat:TimestampToggle");
+
+if (fontSize == null) {
+    fontSize = 0;
+    localStorage.set("Chat:FontSize", fontSize);
+    localStorage.save();
+}
+
+if (timeStamp == null) {
+    timeStamp = false;
+    localStorage.set("Chat:TimestampToggle", timeStamp);
+    localStorage.save();
+}
+
+alt.onServer("Chat:ChangeFontSize", (newFontSize: number) => {
+    fontSize = newFontSize;
+    localStorage.set("Chat:FontSize", fontSize);
+    localStorage.save();
+    if (view != null) {
+        view.emit("changeFontSize", fontSize);
+    }
+});
+
 alt.onServer('chat:EnableTimestamp', (toggle: boolean) => {
+    timeStamp = toggle;
+    localStorage.set("Chat:TimestampToggle", toggle);
+    localStorage.save();
+
     view.emit('TimeStampToggle', toggle);
 });
 
@@ -20,12 +50,11 @@ function addMessage(name: string, text: string) {
     if (name) {
         view.emit('addMessage', name, text);
     } else {
-        
-        if(!text.includes('fish')){
-            let newDate:Date = new Date();
-            alt.log(newDate.getUTCDate()+'/'+newDate.getUTCMonth()+'/'+newDate.getUTCFullYear()+' '+newDate.getUTCHours()+':'+newDate.getUTCMinutes()+':'+newDate.getUTCSeconds()+' - '+text);
+        if (!text.includes('fish')) {
+            let newDate: Date = new Date();
+            alt.log(newDate.getUTCDate() + '/' + newDate.getUTCMonth() + '/' + newDate.getUTCFullYear() + ' ' + newDate.getUTCHours() + ':' + newDate.getUTCMinutes() + ':' + newDate.getUTCSeconds() + ' - ' + text);
         }
-        
+
         view.emit('addString', text);
     }
 }
@@ -37,6 +66,8 @@ view.on('chatloaded',
         }
 
         loaded = true;
+        view.emit("changeFontSize", fontSize);
+        view.emit("Chat:TimestampToggle", timeStamp);
     });
 
 view.on('chatmessage',
@@ -113,7 +144,6 @@ alt.on('keyup', (key) => {
         view.emit('hideChat', hidden);
         alt.emit('hideChat', hidden);
         nameTags.ToggleNameTags(!hidden);
-
     }
 })
 

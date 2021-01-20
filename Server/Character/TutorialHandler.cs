@@ -19,13 +19,13 @@ namespace Server.Character
     {
         private static Timer _timer = null;
 
-        public static readonly Position LegionBankPosition = new Position(156.98901f, -1018.03516f, 29.380981f);
+        public static readonly Position LegionBankPosition = new Position(155.4989f, -1021.3714f, 34.380981f);
 
         private static Position _currentPosition;
         private static Position _newPosition;
 
-        private static DegreeRotation _currentRotation;
-        private static DegreeRotation _newRotation;
+        private static Rotation _currentRotation;
+        private static Rotation _newRotation;
 
         private static readonly int _duration = 5000;
 
@@ -45,8 +45,6 @@ namespace Server.Character
 
         private static void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
-
-
             List<IPlayer> players = Alt.Server.GetPlayers().ToList();
 
             if (!players.Any()) return;
@@ -104,12 +102,12 @@ namespace Server.Character
                 }
                 if (tutorialStage == 4)
                 {
-                    player.SendNotification("We also have many jobs, including Bus Driver, Taxi Driver");
+                    player.SendNotification("We also have many jobs, including Bus Driver, Taxi Driver, Fishing & Many More!");
                     player.SetData("tutorial:Stage", 5);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(928.7209f, -135.45494f, 75.75171f);
-                    Rotation newRotation = new Rotation(0, 0, 149.68f);
+                    Position newPosition = new Position(946.39124f, -153.25714f, 74.53845f);
+                    Rotation newRotation = new Rotation(0, 0, 104.88189f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -132,8 +130,8 @@ namespace Server.Character
                     player.SetData("tutorial:Stage", 7);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(403.14725f, -645.45496f, 28.487915f);
-                    Rotation newRotation = new Rotation(0, 0, -91);
+                    Position newPosition = new Position(405.04614f, -650.7165f, 33.487915f);
+                    Rotation newRotation = new Rotation(0, 0, -76.53543f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -156,8 +154,8 @@ namespace Server.Character
                     player.SetData("tutorial:Stage", 9);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(-77.063736f, -1124.2417f, 27.724487f);
-                    Rotation newRotation = new Rotation(0, 0, -48.188f);
+                    Position newPosition = new Position(-44.887913f, -1099.1736f, 27.415405f);
+                    Rotation newRotation = new Rotation(0, 0, -110.551186f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -180,8 +178,8 @@ namespace Server.Character
                     player.SetData("tutorial:Stage", 11);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(-914.0176f, -265.91208f, 40.569214f);
-                    Rotation newRotation = new Rotation(0, 0, 113);
+                    Position newPosition = new Position(-921.6f, -269.14285f, 45.451294f);
+                    Rotation newRotation = new Rotation(0, 0, 110.551186f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -204,8 +202,8 @@ namespace Server.Character
                     player.SetData("tutorial:Stage", 13);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(-1099.5692f, -762.38245f, 19.237305f);
-                    Rotation newRotation = new Rotation(0, 0, -169);
+                    Position newPosition = new Position(421.35825f, -971.8681f, 33.38025f);
+                    Rotation newRotation = new Rotation(0, 0, -130.3937f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -217,7 +215,7 @@ namespace Server.Character
                 }
                 if (tutorialStage == 13)
                 {
-                    player.SendNotification("This is the Vespucci PD. Home of the LS-PD!.");
+                    player.SendNotification("This is the Mission Row PD. Home of the LS-PD!.");
                     player.SetData("tutorial:Stage", 14);
                     player.SetData("tutorial:time", 1);
                     continue;
@@ -228,8 +226,8 @@ namespace Server.Character
                     player.SetData("tutorial:Stage", 15);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(1199.7891f, -1439.0637f, 35.227783f);
-                    Rotation newRotation = new Rotation(0, 0, 179);
+                    Position newPosition = new Position(227.31429f, -1622.8748f, 29.279907f);
+                    Rotation newRotation = new Rotation(0, 0, 138.89763f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -241,7 +239,7 @@ namespace Server.Character
                 }
                 if (tutorialStage == 15)
                 {
-                    player.SendNotification("This is the El Burro FD. Home of the LS-FD!.");
+                    player.SendNotification("This is the Davis FD. Home of the LS-FD!.");
                     player.SetData("tutorial:Stage", 16);
                     player.SetData("tutorial:time", 1);
                     continue;
@@ -252,8 +250,8 @@ namespace Server.Character
                     player.SetData("tutorial:Stage", 17);
                     player.SetData("tutorial:time", 1);
 
-                    Position newPosition = new Position(400.57584f, -805.1868f, 29.128174f);
-                    Rotation newRotation = new Rotation(0, 0, -92);
+                    Position newPosition = new Position(27.837364f, -1356.4879f, 29.17871f);
+                    Rotation newRotation = new Rotation(0, 0, -5.669291f);
 
                     player.SetData("tutorial:lastCamPos", newPosition);
 
@@ -295,8 +293,6 @@ namespace Server.Character
 
                     context.SaveChanges();
 
-                    
-
                     CameraExtension.DeleteCamera(player);
 
                     CreatorRoom.LeaveCreatorRoom(player);
@@ -328,7 +324,7 @@ namespace Server.Character
             _newPosition = LegionBankPosition;
 
             _currentRotation = player.Rotation;
-            _newRotation = new Rotation(0, 0, 157.28f);
+            _newRotation = new Rotation(0, 0, 155.9055f);
 
             CameraExtension.InterpolateCamera(player, _currentPosition, _currentRotation, 100, _newPosition, _newRotation, 100, _duration);
 

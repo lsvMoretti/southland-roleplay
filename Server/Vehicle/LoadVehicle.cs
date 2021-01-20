@@ -22,7 +22,7 @@ namespace Server.Vehicle
             try
             {
                 using Context context = new Context();
-                List<Models.Vehicle> vehicles = context.Vehicle.Where(x => x.Spawned).ToList();
+                var vehicles = context.Vehicle.Where(x => x.Spawned).ToList();
 
                 foreach (Models.Vehicle vehicle in vehicles)
                 {
@@ -44,17 +44,17 @@ namespace Server.Vehicle
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
+                return;
             }
         }
 
-        public static async void LoadFactionVehicles()
+        public static async Task LoadFactionVehicles()
         {
             Stopwatch sw = Stopwatch.StartNew();
 
             Console.WriteLine($"Loading Faction Vehicles");
 
-            using Context context = new Context();
+            await using Context context = new Context();
 
             List<Models.Vehicle> factionVehicles = context.Vehicle.Where(x => x.FactionId != 0).ToList();
 
@@ -74,7 +74,7 @@ namespace Server.Vehicle
         /// <summary>
         ///  Loads all characters vehicles
         /// </summary>
-        public static async void LoadCharacterVehicles()
+        public static async Task LoadCharacterVehicles()
         {
             Console.WriteLine($"Loading Character Vehicles");
 
@@ -139,7 +139,12 @@ namespace Server.Vehicle
 
             vehicle.ManualEngineControl = true;
 
-            vehicle.NumberplateText = vehicleData.Plate;
+            vehicle.NumberplateText = !vehicleData.HasPlateBeenStolen ? vehicleData.Plate : "__";
+
+            if (!string.IsNullOrWhiteSpace(vehicleData.StolenPlate))
+            {
+                vehicle.NumberplateText = vehicleData.StolenPlate;
+            }
 
             if (vehicleData.FactionId == 0)
             {
@@ -163,7 +168,7 @@ namespace Server.Vehicle
             if (vehicleData.FactionId != 0)
             {
                 vehicle.LockState = VehicleLockState.Locked;
-                vehicle.GetClass().FuelLevel = 100;
+                vehicleData.FuelLevel = 100;
             }
 
             if (!ignoreDamage)
@@ -224,21 +229,20 @@ namespace Server.Vehicle
 
             vehicle.SetSyncedMetaData("VehicleAnchorStatus", vehicleData.Anchor);
 
-            using (Context context = new Context())
+            await using Context context = new Context();
+
+            Models.Vehicle vehicleDb = await context.Vehicle.FindAsync(vehicleData.Id);
+
+            if (vehicleDb == null) return null;
+
+            vehicleDb.Spawned = true;
+
+            if (!string.IsNullOrEmpty(vehicleDb.GarageId))
             {
-                Models.Vehicle vehicleDb = context.Vehicle.Find(vehicleData.Id);
-
-                if (vehicleDb == null) return null;
-
-                vehicleDb.Spawned = true;
-
-                if (!string.IsNullOrEmpty(vehicleDb.GarageId))
-                {
-                    vehicleDb.GarageId = string.Empty;
-                }
-
-                context.SaveChanges();
+                vehicleDb.GarageId = string.Empty;
             }
+
+            await context.SaveChangesAsync();
 
             return vehicle;
         }
@@ -266,7 +270,12 @@ namespace Server.Vehicle
 
             vehicle.ManualEngineControl = true;
 
-            vehicle.NumberplateText = vehicleData.Plate;
+            vehicle.NumberplateText = !vehicleData.HasPlateBeenStolen ? vehicleData.Plate : "__";
+
+            if (!string.IsNullOrWhiteSpace(vehicleData.StolenPlate))
+            {
+                vehicle.NumberplateText = vehicleData.StolenPlate;
+            }
 
             if (vehicleData.FactionId == 0)
             {
@@ -408,6 +417,7 @@ namespace Server.Vehicle
 
             vehicle.PrimaryColorRgb = new Rgba(color1[0], color1[1], color1[2], 255);
             vehicle.SecondaryColorRgb = new Rgba(color2[0], color2[1], color2[2], 255);
+            vehicle.PearlColor = 0;
 
             vehicle.Livery = (byte)vehicleData.Livery;
 

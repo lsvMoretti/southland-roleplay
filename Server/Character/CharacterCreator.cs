@@ -26,8 +26,9 @@ namespace Server.Character
         {
             CharacterHandler.SaveCharacterPosition(player);
 
+            player.SetData("LastPos", player.Position);
             player.Position = CreatorRoom.CreatorPosition;
-            player.Emit("loadCharacterCreator", JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()));
+            player.Emit("loadCharacterCreator", JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), player.GetClass().Name);
             player.Dimension = (short)player.GetPlayerId();
             player.Rotation = CreatorRoom.CreatorRotation;
             player.HideChat(true);
@@ -36,7 +37,9 @@ namespace Server.Character
             player.GetClass().CreatorRoom = true;
             player.GetClass().EditingCharacter = true;
 
-            Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.StopOnLastFrame, "amb@world_human_stand_guard@male@idle_a", "idle_a");
+            player.SetData("LastPos", player.Position);
+
+            //Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.StopOnLastFrame, "amb@world_human_stand_guard@male@idle_a", "idle_a");
         }
 
         /// <summary>
@@ -66,7 +69,7 @@ namespace Server.Character
             player.ShowHud(false);
 
             using Context context = new Context();
-            Models.Character playerCharacter = context.Character.Find(player.FetchCharacterId());
+            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
             if (playerCharacter == null)
             {
@@ -94,9 +97,15 @@ namespace Server.Character
 
             if (creatorReason == 0)
             {
+                player.GetData("LastPos", out Position position);
+
                 player.SendInfoNotification($"You have updated your character. This has cost you {SurgeonCost:C}.");
 
-                player.Position = new Position(playerCharacter.PosX, playerCharacter.PosY, playerCharacter.PosZ);
+                //player.Position = new Position(playerCharacter.PosX, playerCharacter.PosY, playerCharacter.PosZ);
+
+                //player.Position = position;
+
+                player.SetPosition(position, player.Rotation, switchOut: true, loadWeapon: true);
 
                 player.Dimension = (short)playerCharacter.Dimension;
 
@@ -110,8 +119,6 @@ namespace Server.Character
 
                 property?.AddToBalance(SurgeonCost);
             }
-
-
 
             if (creatorReason == 1)
             {
@@ -128,7 +135,6 @@ namespace Server.Character
                     playerCharacter.Dimension = 0;
                     context.SaveChanges();
 
-                    
                     CreatorRoom.LeaveCreatorRoom(player);
 
                     player.GetClass().CompletedTutorial = true;
@@ -145,7 +151,7 @@ namespace Server.Character
             Handler.StopPlayerAnimation(player);
 
             context.SaveChanges();
-            
+
             player.LoadCharacterCustomization();
         }
     }

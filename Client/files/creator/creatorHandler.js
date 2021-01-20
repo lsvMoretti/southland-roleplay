@@ -1,6 +1,7 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 import * as animation from "files/animation";
+var startAnimation = animation.startAnimation;
 var creatorView = undefined;
 var creatorCamera = undefined;
 var defaultCustomCharacter = undefined;
@@ -10,23 +11,27 @@ var features = undefined;
 var appearanceItems = undefined;
 var hairInfo = undefined;
 var localPlayer = alt.Player.local.scriptID;
-var orginalRotation = 270;
+var orginalRotation = 90;
 var featureNames = ["Nose Width", "Nose Bottom Height", "Nose Tip Length", "Nose Bridge Depth", "Nose Tip Height",
     "Nose Broken", "Brow Height", "Brow Depth", "Cheekbone Height", "Cheekbone Width", "Cheek Depth",
     "Eye Size", "Lip Thickness", "Jaw Width", "Jaw Shape", "Chin Height", "Chin Depth", "Chin Width",
     "Chin Indent", "Neck Width"];
 alt.onServer('loadCharacterCreator', loadCharacterCreator);
 alt.onServer('creatorSetGender', setCreatorGender);
-alt.everyTick(() => {
-    if (creatorCamera !== undefined) {
-        native.disableAllControlActions(0);
-        native.disableAllControlActions(1);
-    }
-});
+let tickInterval;
+function onTick() {
+    native.setPedCanPlayAmbientAnims(localPlayer, false);
+    native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
+    native.setPedCanPlayInjuredAnims(localPlayer, false);
+    native.setPedCanPlayGestureAnims(localPlayer, false);
+    native.setPedCanPlayVisemeAnims(localPlayer, false, false);
+    native.disableAllControlActions(0);
+    native.disableAllControlActions(1);
+    native.freezeEntityPosition(localPlayer, true);
+}
 alt.on('connectionComplete', (hasMapChanged) => {
     native.requestModel(native.getHashKey('mp_m_freemode_01'));
     native.requestModel(native.getHashKey('mp_f_freemode_01'));
-    native.requestAnimDict("mp_creator_headik");
 });
 var currentGender = 0;
 function setCreatorGender(gender) {
@@ -37,7 +42,7 @@ function setCreatorGender(gender) {
     creatorView.emit('currentGender', gender);
     ApplyCreatorOutfit();
 }
-function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
+function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson, name) {
     localPlayer = alt.Player.local.scriptID;
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
     customCharacter = JSON.parse(customCharacterJson);
@@ -67,17 +72,15 @@ function loadCharacterCreator(customCharacterJson, defaultCustomCharacterJson) {
     creatorView.on('creator:finishCreation', finishCreation);
     creatorView.on('creator:zoomchange', zoomChange);
     creatorView.on('ParentSkinChange', onParentSkinChange);
-    creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -839.6431, -719.5154, -156.3, 0, 0, 87.2606, 20, true, 2);
+    creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -225.87692, -1199.0901, -148.92383, 0, 0, -90, 20, true, 2);
+    tickInterval = alt.setInterval(onTick, 0);
     native.displayRadar(false);
     native.pointCamAtPedBone(creatorCamera, localPlayer, 31086, 0, 0, 0, false);
     native.setCamActive(creatorCamera, true);
     native.renderScriptCams(true, false, 0, true, false, null);
     native.freezeEntityPosition(localPlayer, true);
-    animation.startAnimation("mp_creator_headik", "mp_head_ik_override", -1, 1);
     native.setEntityHeading(localPlayer, orginalRotation);
-    native.setPedCanPlayAmbientAnims(localPlayer, false);
-    native.setPedCanPlayAmbientBaseAnims(localPlayer, false);
-    native.setPedCanPlayInjuredAnims(localPlayer, false);
+    startAnimation("amb@code_human_wander_texting@male@base", "static", -1, 1);
     parentInfo = JSON.parse(customCharacter.Parents);
     features = JSON.parse(customCharacter.Features);
     appearanceItems = JSON.parse(customCharacter.Appearance);
@@ -565,8 +568,10 @@ function ApplyCreatorOutfit() {
 }
 function closeCharacterCreator() {
     if (creatorView !== undefined) {
-        creatorView.destroy();
-        creatorView = undefined;
+        alt.setTimeout(() => {
+            creatorView.destroy();
+            creatorView = undefined;
+        }, 1000);
     }
 }
 function finishCreation() {
@@ -578,11 +583,12 @@ function finishCreation() {
         creatorCamera = undefined;
         native.setFollowPedCamViewMode(1);
         native.clearFocus();
+        alt.clearInterval(tickInterval);
     }
     alt.showCursor(false);
     native.displayRadar(true);
     native.freezeEntityPosition(localPlayer, false);
-    animation.stopAnimation();
+    native.clearPedTasks(localPlayer);
     customCharacter.Parents = JSON.stringify(parentInfo);
     customCharacter.Features = JSON.stringify(features);
     customCharacter.Appearance = JSON.stringify(appearanceItems);

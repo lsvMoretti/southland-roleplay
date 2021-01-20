@@ -6,7 +6,6 @@ using AltV.Net.Elements.Entities;
 using Newtonsoft.Json;
 using Server.Extensions;
 using Server.Language;
-using Yandex.Translator;
 
 namespace Server.Chat
 {
@@ -101,41 +100,24 @@ namespace Server.Chat
             return color;
         }
 
-        public static void SendMessageToNearbyPlayers(IPlayer player, string message, MessageType type, float range = 10,
+        public static async void SendMessageToNearbyPlayers(IPlayer player, string message, MessageType type, float range = 10,
             bool excludePlayer = false)
         {
             string secondMessage = string.Empty;
 
-            switch (type)
+            range = type switch
             {
-                case MessageType.Talk:
-                    range = 7.5f;
-                    break;
-                case MessageType.Shout:
-                    range = 28f;
-                    break;
-                case MessageType.Whisper:
-                    range = 0.8f;
-                    break;
-                case MessageType.Me:
-                    range = 8f;
-                    break;
-                case MessageType.Do:
-                    range = 8f;
-                    break;
-                case MessageType.Ooc:
-                    range = 5.5f;
-                    break;
-                case MessageType.My:
-                    range = 8f;
-                    break;
-                case MessageType.Low:
-                    range = 3f;
-                    break;
-                case MessageType.DoLow:
-                    range = 3f;
-                    break;
-            }
+                MessageType.Talk => 7.5f,
+                MessageType.Shout => 28f,
+                MessageType.Whisper => 0.8f,
+                MessageType.Me => 8f,
+                MessageType.Do => 8f,
+                MessageType.Ooc => 5.5f,
+                MessageType.My => 8f,
+                MessageType.Low => 3f,
+                MessageType.DoLow => 3f,
+                _ => range
+            };
 
             float distanceGap = range / ChatRanges;
 
@@ -148,16 +130,27 @@ namespace Server.Chat
             }
             */
 
-            Language.Language playerLanguage = player.GetClass().SpokenLanguage;
+            Language.Language? playerLanguage = player.GetClass().SpokenLanguage;
 
-            ITranslation translatedText = null;
+            string? translatedText = null;
 
-            if (playerLanguage.Code != "en")
+            if (playerLanguage?.Code != "en")
             {
-                translatedText = LanguageHandler.FetchTranslation(playerLanguage, message);
-                if (translatedText == null)
+                try
+                {
+                    Translations translation = await LanguageHandler.FetchTranslation(playerLanguage, message);
+
+                    translatedText = translation.translations.FirstOrDefault().text;
+                    if (translatedText == null)
+                    {
+                        player.SendErrorNotification("An error occurred translating.");
+                        return;
+                    }
+                }
+                catch (Exception e)
                 {
                     player.SendErrorNotification("An error occurred translating.");
+                    Console.WriteLine(e);
                     return;
                 }
             }
@@ -197,8 +190,7 @@ namespace Server.Chat
 
             foreach (IPlayer target in Alt.Server.GetPlayers())
             {
-                if(!target.IsSpawned()) continue;
-                
+                if (!target.IsSpawned()) continue;
 
                 List<Language.Language> targetLanguages = target.GetClass().SpokenLanguages;
 
@@ -270,7 +262,6 @@ namespace Server.Chat
 
                                     break;
 
-                                    
                                 case MessageType.Low:
                                     // We send the message
 
@@ -295,7 +286,6 @@ namespace Server.Chat
 
                                     break;
 
-                                
                                 case MessageType.My:
                                     // We send the message
                                     target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name}'s {message}");
@@ -316,7 +306,7 @@ namespace Server.Chat
 
                                 case MessageType.Ooc:
                                     // We send the message
-                                    target.SendChatMessage($"{oocMessageColor}(( {player.GetClass().Name} (ID:{player.GetPlayerId()}): {message} ))");
+                                    target.SendChatMessage($"{oocMessageColor}(( {player.GetClass().Name} (Id:{player.GetPlayerId()}): {message} ))");
 
                                     break;
 

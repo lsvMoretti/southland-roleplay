@@ -1,8 +1,9 @@
 ﻿using System;
+using System.IO;
 using AltV.Net.Elements.Entities;
-using Google.Authenticator;
 using Microsoft.AspNetCore.Connections;
 using Server.Extensions;
+using TwoFactorAuthNet;
 using ConnectionHandler = Server.Connection.ConnectionHandler;
 
 namespace Server.Account
@@ -13,18 +14,15 @@ namespace Server.Account
         {
             Models.Account playerAccount = player.FetchAccount();
 
-            var secretCode = Utility.GenerateRandomString(12);
+            TwoFactorAuth tfa = new TwoFactorAuth("Southland Roleplay Game Server");
 
-            TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+            var secretCode = tfa.CreateSecret(160);
 
-            var setupInfo = tfa.GenerateSetupCode("Los Santos V", playerAccount.Username, secretCode, false, 300);
-
-            //string qrCodeImageUrl = setupInfo.QrCodeSetupImageUrl;
-            string manualEntrySetupCode = setupInfo.ManualEntryKey;
+            string qrCodeImageUrl = tfa.GetQrCodeImageAsDataUri("Southland Roleplay Game Server", secretCode);
 
             player.SetData("TFA:secretCode", secretCode);
 
-            player.Emit("TFA:ShowWindow", manualEntrySetupCode);
+            player.Emit("TFA:ShowWindow", secretCode, qrCodeImageUrl);
             player.FreezeCam(true);
             player.FreezeInput(true);
         }
@@ -63,16 +61,16 @@ namespace Server.Account
         {
             Models.Account playerAccount = player.FetchAccount();
 
-            TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
+            TwoFactorAuth tfa = new TwoFactorAuth("Southland Roleplay Game Server");
 
-            bool valid = tfa.ValidateTwoFactorPIN(playerAccount.TwoFactorUserCode, input);
+            bool valid = tfa.VerifyCode(playerAccount.TwoFactorUserCode, input);
             if (!valid)
             {
                 player.SendErrorNotification("The code was not accepted!");
                 player.Emit("2FA:InvalidCode");
                 return;
             }
-            
+
             player.Emit("2FA:CloseInput");
             player.SendInfoNotification("Your 2FA code has been accepted!");
             player.FreezeCam(false);

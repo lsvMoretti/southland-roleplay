@@ -27,7 +27,7 @@ namespace Server.Jobs.Fishing
             }
 
             Console.WriteLine($"Loaded {fishingPoints.Count} Fishing Points");
-            
+
             Timer timer = new Timer(300000)
             {
                 AutoReset = true
@@ -48,13 +48,10 @@ namespace Server.Jobs.Fishing
                         if (fishLeft > 5)
                         {
                             fishingPoint.FishCount += 5;
-
-                            Console.WriteLine($"Added {5} fish to point {fishingPoint.Id}.");
                         }
                         else
                         {
                             fishingPoint.FishCount += fishLeft;
-                            Console.WriteLine($"Added {fishLeft} fish to point {fishingPoint.Id}.");
                         }
                     }
                     else
@@ -62,8 +59,6 @@ namespace Server.Jobs.Fishing
                         double removeCount = Math.Round(fishingPoint.FishCount * 0.03, MidpointRounding.ToZero);
 
                         fishingPoint.FishCount -= (int)removeCount;
-
-                        Console.WriteLine($"Removed {(int)removeCount} fish from point {fishingPoint.Id}.");
                     }
                 }
                 fishContext.SaveChanges();
@@ -104,13 +99,11 @@ namespace Server.Jobs.Fishing
             text.Add();
         }
 
-        public static FishingPoint FetchNearestPosition(Position position, float distance = 5f)
+        public static FishingPoint? FetchNearestPosition(Position position, float distance = 5f)
         {
             using Context context = new Context();
 
             List<FishingPoint> fishingPoints = context.FishingPoints.ToList();
-
-            
 
             FishingPoint closestPoint = null;
             float lastDistance = distance;

@@ -29,6 +29,77 @@ namespace Server.Character
 {
     public class CharacterCommands
     {
+        [Command("blindfold", onlyOne: true, commandType: CommandType.Character,
+            description: "Used to blindfold others")]
+        public static void CharacterCommandBlindfold(IPlayer player, string args = "")
+        {
+            if (!player.IsSpawned()) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/blindfold [NameOrId]");
+                return;
+            }
+
+            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+
+            if (targetPlayer == null || !targetPlayer.IsSpawned())
+            {
+                player.SendErrorNotification("Unable to find this player.");
+                return;
+            }
+
+            if (player.Position.Distance(targetPlayer.Position) > 3f || player.Dimension != targetPlayer.Dimension)
+            {
+                player.SendErrorNotification("You're not near this player!");
+                return;
+            }
+
+            if (player == targetPlayer)
+            {
+                // Blindfolding self
+                bool blindfoldedByOther = player.HasData("BlindfoldedByOthers");
+
+                if (blindfoldedByOther)
+                {
+                    player.SendErrorNotification("You can't do this!");
+                    return;
+                }
+
+                bool blindfolded = player.HasData("Blindfolded");
+
+                if (!blindfolded)
+                {
+                    targetPlayer.Emit("Blindfolded", true);
+                    targetPlayer.SetData("Blindfolded", true);
+                }
+                else
+                {
+                    targetPlayer.Emit("Blindfolded", false);
+                    targetPlayer.DeleteData("Blindfolded");
+                }
+
+                return;
+            }
+
+            bool targetBlindfolded = targetPlayer.HasData("Blindfolded");
+
+            if (!targetBlindfolded)
+            {
+                // Not blindfolded
+                targetPlayer.Emit("Blindfolded", true);
+                player.SendEmoteMessage($"ties a blindfold around {targetPlayer.GetClass().Name}'s eyes.");
+                targetPlayer.SetData("Blindfolded", true);
+                targetPlayer.SetData("BlindfoldedByOthers", true);
+                return;
+            }
+            targetPlayer.Emit("Blindfolded", false);
+            player.SendEmoteMessage($"unties the blindfold from around {targetPlayer.GetClass().Name}'s eyes.");
+            targetPlayer.DeleteData("Blindfolded");
+            targetPlayer.DeleteData("BlindfoldedByOthers");
+            return;
+        }
+
         [Command("setage", onlyOne: true, commandType: CommandType.Character, description: "Used to set your age")]
         public static void CharacterCommandSetAge(IPlayer player, string args)
         {
@@ -66,6 +137,20 @@ namespace Server.Character
             player.SendInfoNotification($"You've changed your age to {age}.");
         }
 
+        [Command("stime", commandType: CommandType.Character, description: "Used to view the OOC server time")]
+        public static void CharacterCommandsServerTime(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            var info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
+
+            DateTimeOffset localServerTime = DateTimeOffset.Now;
+
+            DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
+
+            player.SendInfoMessage($"(Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
+        }
+
         [Command("time", commandType: CommandType.Character, description: "Used to view the time")]
         public static void CharacterCommandTime(IPlayer player)
         {
@@ -79,10 +164,10 @@ namespace Server.Character
 
             DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
 
-            player.SendInfoNotification($"Current Time: {serverSettings.Hour:D2}:{serverSettings.Minute:D2}\n((Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
+            player.SendInfoMessage($"Current Time: {serverSettings.Hour:D2}:{serverSettings.Minute:D2}\n((Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
         }
 
-        [Command("charity", onlyOne: true,commandType: CommandType.Character, description:"Used to get rid of those dirty notes")]
+        [Command("charity", onlyOne: true, commandType: CommandType.Character, description: "Used to get rid of those dirty notes")]
         public static void CharacterCommandCharity(IPlayer player, string args = "")
         {
             if (!player.IsSpawned()) return;
@@ -214,7 +299,6 @@ namespace Server.Character
             ticketDb.Paid = true;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have paid your ticket {ticket.Reason}. Amount: {ticket.Amount:C}.");
 
@@ -249,7 +333,6 @@ namespace Server.Character
 
             if (playerCharacter == null)
             {
-                
                 player.SendPermissionError();
                 return;
             }
@@ -259,21 +342,21 @@ namespace Server.Character
             if (!tryParse)
             {
                 player.SendSyntaxMessage("/walkstyle [0-42]");
-                
+
                 return;
             }
 
             if (walkId < 0 || walkId > 42)
             {
                 player.SendSyntaxMessage("/walkstyle [0-42]");
-                
+
                 return;
             }
 
             if (playerCharacter.WalkStyle == walkId)
             {
                 player.SendInfoNotification($"You have already set this walk style.");
-                
+
                 return;
             }
 
@@ -282,7 +365,6 @@ namespace Server.Character
             player.GetClass().WalkStyle = walkId;
 
             context.SaveChanges();
-            
 
             var walkName = walkId switch
             {
@@ -355,7 +437,9 @@ namespace Server.Character
 
             bool isLaw = player.IsLeo(true);
 
-            player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw);
+            bool isHelper = player.FetchAccount().Tester;
+
+            player.Emit("helpMenu:ShowHelpMenu", isAdmin, isLaw, isHelper);
         }
 
         [Command("onduty", commandType: CommandType.Character, description: "Shows a list of on duty law and medical staff")]
@@ -471,6 +555,49 @@ namespace Server.Character
             }
         }
 
+        #region Report System
+
+        [Command("admins", commandType: CommandType.Character, description: "See on duty admins!")]
+        public static void CommandViewAdmins(IPlayer player)
+        {
+            if (player.FetchCharacter() == null)
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            var onlinePlayers = Alt.GetAllPlayers();
+
+            var onlineAdmins = new List<IPlayer>();
+
+            foreach (IPlayer onlinePlayer in onlinePlayers)
+            {
+                Models.Account? account = onlinePlayer.FetchAccount();
+
+                if (account is null) continue;
+
+                if (account.AdminLevel < AdminLevel.Moderator) continue;
+
+                onlineAdmins.Add(onlinePlayer);
+            }
+
+            if (!onlineAdmins.Any())
+            {
+                player.SendErrorMessage("No admins online");
+                return;
+            }
+
+            var sortedList = onlineAdmins.OrderByDescending(x => x.FetchAccount().AdminLevel)
+                .ThenByDescending(n => n.GetClass().UcpName);
+
+            player.SendChatMessage("[Online Admins]");
+
+            foreach (var onlineAdmin in sortedList)
+            {
+                player.SendAdminMessage(onlineAdmin.GetClass().AdminDuty ? $"(On Duty) {onlineAdmin.GetClass().UcpName}" : onlineAdmin.GetClass().UcpName);
+            }
+        }
+
         [Command("report", onlyOne: true, commandType: CommandType.Character, description: "Report a situation to the admin team")]
         public static void CommandReport(IPlayer player, string message = "")
         {
@@ -495,7 +622,6 @@ namespace Server.Character
             int reportCount =
                 AdminHandler.AdminReports.Count(x => x.Player.GetClass().AccountId == player.GetClass().AccountId);
 
-            
             if (reportCount >= 1)
             {
                 player.SendErrorNotification("You can only have one report open at a time.");
@@ -517,16 +643,16 @@ namespace Server.Character
 
                     if (adminAccount == null) continue;
 
-                    if (adminAccount.AdminLevel < AdminLevel.Support && !adminAccount.Developer) continue;
+                    if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
 
                     onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
                 }
             }
-            
-            player.SendAdminMessage($"You've submitted a report. Your report ID is {newReport.Id}.");
+
+            player.SendAdminMessage($"You've submitted a report. Your report Id is {newReport.Id}. You can use /cr to cancel the report");
         }
 
-        [Command("cancelreport", commandType: CommandType.Character, 
+        [Command("cancelreport", commandType: CommandType.Character,
             description: "Used to cancel your active", alternatives: "cr")]
         public static void CommandCancelReport(IPlayer player)
         {
@@ -540,19 +666,19 @@ namespace Server.Character
                 return;
             }
 
-            AdminReportObject adminReportObject = AdminHandler.AdminReportObjects.FirstOrDefault
+            AdminReportObject? adminReportObject = AdminHandler.AdminReportObjects.FirstOrDefault
                 (x => x.Id == adminReport.Id);
 
             if (adminReportObject != null)
             {
                 SignalR.RemoveReport(adminReportObject);
             }
-            
+
             AdminHandler.CloseReport(adminReport.Id);
-            
+
             player.SendInfoNotification($"You've closed your admin report.");
         }
-        
+
         [Command("reportr", onlyOne: true, commandType: CommandType.Character,
             description: "Used to reply to a report")]
         public static void CommandReportReply(IPlayer player, string args = "")
@@ -592,14 +718,162 @@ namespace Server.Character
                 player.SendErrorNotification("You didn't create this report!");
                 return;
             }
-            
+
             string message = string.Join(' ', argSplit.Skip(1));
-            
+
             player.SendAdminMessage($"Report Reply: {message}.");
-            
+
             SignalR.SendReportMessage(reportId, message);
         }
-        
+
+        #endregion Report System
+
+        #region Help Me System
+
+        [Command("helpers", commandType: CommandType.Character, description: "See onduty helpers!")]
+        public static void CommandViewHelpers(IPlayer player)
+        {
+            if (player.FetchCharacter() == null)
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            var onlineHelpers = Alt.GetAllPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
+
+            if (!onlineHelpers.Any())
+            {
+                player.SendErrorMessage("No on-duty helpers");
+                return;
+            }
+
+            player.SendHelperMessage("____[On Duty Helpers]____");
+
+            foreach (var onlineHelper in onlineHelpers)
+            {
+                player.SendHelperMessage(onlineHelper.GetClass().UcpName);
+            }
+        }
+
+        [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Helper!")]
+        public static void CommandHelpMe(IPlayer player, string message = "")
+        {
+            if (player.FetchCharacter() == null)
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            if (message == "")
+            {
+                player.SendSyntaxMessage($"/helpme [Message]");
+                return;
+            }
+
+            if (message.Length < 5)
+            {
+                player.SendErrorNotification("Message length must be greater than five!");
+                return;
+            }
+
+            int helpCount =
+                AdminHandler.HelpReports.Count(x => x.Player.GetClass().AccountId == player.GetClass().AccountId);
+
+            if (helpCount >= 1)
+            {
+                player.SendErrorNotification("You can only have one helpme open at a time.");
+                return;
+            }
+
+            HelpReport newReport = AdminHandler.AddHelpReport(player, message);
+
+            player.SendInfoNotification($"You've created a new helpme id {newReport.Id}. Please await for further assistance.");
+
+            List<IPlayer> onlinePlayers = Alt.Server.GetPlayers().ToList();
+
+            if (onlinePlayers.Any())
+            {
+                foreach (IPlayer onlinePlayer in onlinePlayers)
+                {
+                    Models.Account playerAccount = onlinePlayer?.FetchAccount();
+
+                    if (playerAccount == null) continue;
+
+                    if (!playerAccount.Tester) continue;
+
+                    onlinePlayer.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
+                }
+            }
+
+            player.SendHelperMessage($"You've submitted a help me. Your help me Id is {newReport.Id}.");
+        }
+
+        [Command("cancelhelp", commandType: CommandType.Character,
+            description: "Used to cancel your active helpme", alternatives: "ch")]
+        public static void CommandCancelHelp(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
+
+            if (helpReport == null)
+            {
+                player.SendErrorNotification("You don't have an admin report outstanding.");
+                return;
+            }
+
+            AdminHandler.CloseHelpReport(helpReport.Id);
+
+            player.SendInfoNotification($"You've closed your help request.");
+        }
+
+        [Command("helpr", onlyOne: true, commandType: CommandType.Character,
+            description: "Used to reply to a helpme")]
+        public static void CommandHelpReply(IPlayer player, string args = "")
+        {
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/helpr [HelpId] [Message]");
+                return;
+            }
+
+            string[] argSplit = args.Split(" ");
+
+            if (argSplit.Length < 2)
+            {
+                player.SendSyntaxMessage("/helpr [HelpId] [Message]");
+                return;
+            }
+
+            bool idParse = int.TryParse(argSplit[0], out int reportId);
+
+            if (!idParse)
+            {
+                player.SendSyntaxMessage("/helpr [HelpId] [Message]");
+                return;
+            }
+
+            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == reportId);
+
+            if (helpReport == null)
+            {
+                player.SendErrorNotification("Request not found!");
+                return;
+            }
+
+            if (helpReport.Player != player)
+            {
+                player.SendErrorNotification("You didn't create this report!");
+                return;
+            }
+
+            string message = string.Join(' ', argSplit.Skip(1));
+
+            player.SendAdminMessage($"Help Reply: {message}.");
+        }
+
+        #endregion Help Me System
+
         [Command("describe", onlyOne: true, alternatives: "description", commandType: CommandType.Character, description: "Sets your description for players to look at")]
         public static void CommandSetDescription(IPlayer player, string args = "")
         {
@@ -634,8 +908,6 @@ namespace Server.Character
             playerCharacter.Description = args;
 
             context.SaveChanges();
-
-            
 
             player.SendInfoNotification($"You've set your description to: {args}");
         }
@@ -798,7 +1070,7 @@ namespace Server.Character
 
             playerCharacter.Dimension = player.Dimension;
 
-            context.SaveChanges(); 
+            context.SaveChanges();
 
             CreatorRoom.SendToCreatorRoom(player);
         }
@@ -806,7 +1078,6 @@ namespace Server.Character
         [Command("info", commandType: CommandType.Character, description: "Shows some info from your character")]
         public static void CommandInfo(IPlayer player)
         {
-            
             if (!player.IsSpawned())
             {
                 player.SendLoginError();
@@ -820,7 +1091,6 @@ namespace Server.Character
                 player.SendLoginError();
                 return;
             }
-
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>
             {
@@ -836,7 +1106,7 @@ namespace Server.Character
 
         public static void OnShowInfoMenu(IPlayer player, string option)
         {
-            if(option == "Close") return;
+            if (option == "Close") return;
 
             if (option == "Bank Details")
             {
@@ -869,7 +1139,6 @@ namespace Server.Character
                 foreach (Models.Property property in properties)
                 {
                     player.SendInfoNotification($"Address: {property.Address} - Value: {property.Value:C}");
-
                 }
 
                 return;
@@ -881,8 +1150,6 @@ namespace Server.Character
 
                 List<Phones> phones = context.Phones.Where(x => x.CharacterId == player.GetClass().CharacterId)
                     .ToList();
-
-                
 
                 if (!phones.Any())
                 {
@@ -899,8 +1166,6 @@ namespace Server.Character
 
                 return;
             }
-
-
         }
 
         [Command("stats", commandType: CommandType.Character, description: "Show your stats")]
@@ -958,7 +1223,7 @@ namespace Server.Character
             player.SendStatsMessage($"Showing stats for {playerCharacter.Name}");
             player.SendStatsMessage($"Username: {player.FetchAccount().Username}, Playtime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}");
             player.SendStatsMessage($"Account Id: {playerCharacter.OwnerId}, Character Id: {playerCharacter.Id}, Inventory Id: {playerCharacter.InventoryID}");
-            player.SendStatsMessage($"Cash: {playerCharacter.Money:C}, Dimension: {playerCharacter.Dimension}, Next Payday Earning: {playerCharacter.PaydayAmount:C}");
+            player.SendStatsMessage($"Cash: {playerCharacter.Money:C}, Dimension: {player.Dimension}, Next Payday Earning: {playerCharacter.PaydayAmount:C}");
             player.SendStatsMessage($"Active Number: {playerCharacter.ActivePhoneNumber}, Payday Account: {playerCharacter.PaydayAccount}, Bank Accounts: {bankAccountCount}");
             if (activeFaction != null)
             {
@@ -999,7 +1264,7 @@ namespace Server.Character
                 player.SendErrorNotification("An error occurred.");
                 return;
             }
-            CultureInfo cultureInfo   = Thread.CurrentThread.CurrentCulture;
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
             TextInfo textInfo = cultureInfo.TextInfo;
             string weatherDesc = textInfo.ToTitleCase(currentWeather.weather.First().description);
             double temperatureDegC = Math.Round(currentWeather.main.temp);
@@ -1041,7 +1306,7 @@ namespace Server.Character
         }
 
         [Command("id", onlyOne: true, commandType: CommandType.Character,
-            description: "Used to find the name or ID of a player")]
+            description: "Used to find the name or Id of a player")]
         public static void CharacterCommandId(IPlayer player, string args = "")
         {
             if (!player.IsSpawned())
@@ -1064,11 +1329,11 @@ namespace Server.Character
 
                 if (targetPlayer == null)
                 {
-                    player.SendNotification($"~r~Unable to find player by ID of {playerId}.");
+                    player.SendNotification($"~r~Unable to find player by Id of {playerId}.");
                     return;
                 }
 
-                player.SendInfoNotification($"Player Name: {targetPlayer.GetClass().Name} - ID: {playerId}.");
+                player.SendInfoNotification($"Player Name: {targetPlayer.GetClass().Name} - Id: {playerId}.");
                 return;
             }
 
@@ -1083,17 +1348,15 @@ namespace Server.Character
 
             foreach (IPlayer target in targetList)
             {
-                player.SendInfoNotification($"Player Name: {target.GetClass().Name} - ID: {target.GetPlayerId()}.");
+                player.SendInfoNotification($"Player Name: {target.GetClass().Name} - Id: {target.GetPlayerId()}.");
             }
-
         }
 
-
         [Command("showid", onlyOne: true, commandType: CommandType.Character,
-            description: "Other: Used to show ID to a player")]
+            description: "Other: Used to show Id to a player")]
         public static void CharacterCommandShowId(IPlayer player, string args = "")
         {
-            if(!player.IsSpawned()) return;
+            if (!player.IsSpawned()) return;
 
             if (args == "")
             {
@@ -1121,7 +1384,7 @@ namespace Server.Character
 
             if (!idItems.Any())
             {
-                player.SendNotification("~r~You don't have any ID items on you!");
+                player.SendNotification("~r~You don't have any Id items on you!");
                 return;
             }
 
@@ -1132,7 +1395,7 @@ namespace Server.Character
                 menuItems.Add(new NativeMenuItem(inventoryItem.CustomName, inventoryItem.ItemValue));
             }
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:ShowIdSelect", "ID's", "Select the ID you want to show", menuItems)
+            NativeMenu menu = new NativeMenu("CharacterCommands:ShowIdSelect", "Id's", "Select the Id you want to show", menuItems)
             {
                 PassIndex = true
             };
@@ -1148,7 +1411,6 @@ namespace Server.Character
 
             player.GetData("ShowingIdTo", out int targetPlayerId);
 
-            
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> idItems = playerInventory.GetInventoryItems("ITEM_DRIVING_LICENSE");
@@ -1169,10 +1431,9 @@ namespace Server.Character
                 return;
             }
 
-
             if (selectedItem.ItemValue == player.GetClass().Name)
             {
-                // Is their ID card
+                // Is their Id card
                 player.SendEmoteMessage($"shows their {selectedItem.CustomName} to {targetPlayer.GetClass().Name}.");
                 targetPlayer.SendNotification($"~y~Name: ~w~{selectedItem.ItemValue}\n~y~Age: ~w~{player.FetchCharacter().Age}.");
             }
@@ -1186,11 +1447,9 @@ namespace Server.Character
                 }
                 else
                 {
-                    
                     targetPlayer.SendNotification($"~y~Name: ~w~{selectedItem.ItemValue}\n~y~Age: ~w~{selectedCharacter.Age}.");
                 }
             }
-
         }
 
         [Command("makeup", commandType: CommandType.Character,
@@ -1248,9 +1507,7 @@ namespace Server.Character
 
             playerCharacter.Dimension = player.Dimension;
 
-
             context.SaveChanges();
-            
 
             Logging.AddToCharacterLog(player, $"has logged out.");
 
@@ -1303,7 +1560,7 @@ namespace Server.Character
 
             player.SetData("AddWayPointName", args);
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:AddGpsWaypoint", "GPS", "Select a GPS to add to", menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("CharacterCommands:AddGpsWaypoint", "GPS", "Select a GPS to add to", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
         }
@@ -1315,7 +1572,7 @@ namespace Server.Character
                 player.DeleteData("AddWayPointName");
                 return;
             }
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> gpsItems = playerInventory.GetInventoryItems("ITEM_GPS");
@@ -1336,16 +1593,15 @@ namespace Server.Character
 
             if (!string.IsNullOrEmpty(selectedGpsItem.ItemValue))
             {
-                
                 gps = JsonConvert.DeserializeObject<Gps>(selectedGpsItem.ItemValue);
 
                 gps.WayPoints.Add(new GpsWayPoint(wayPointName, player.Position));
             }
             else
             {
-                gps = new Gps {WayPoints = new List<GpsWayPoint> {new GpsWayPoint(wayPointName, player.Position)}};
+                gps = new Gps { WayPoints = new List<GpsWayPoint> { new GpsWayPoint(wayPointName, player.Position) } };
             }
-            
+
             InventoryItem newGps = new InventoryItem("ITEM_GPS", "GPS", JsonConvert.SerializeObject(gps));
 
             playerInventory.AddItem(newGps);
@@ -1355,11 +1611,10 @@ namespace Server.Character
                 player.SendInfoNotification($"You've added the waypoint: {wayPointName} to your GPS.");
                 return;
             }
-            
+
             player.SendInfoNotification($"You've added the waypoint: {wayPointName} to your GPS: {gps.Name}.");
         }
 
-        
         [Command("renamegps", onlyOne: true, commandType: CommandType.Character,
             description: "Used to rename a GPS")]
         public static void CharacterCommandRenameGps(IPlayer player, string args = "")
@@ -1406,7 +1661,7 @@ namespace Server.Character
 
             player.SetData("AddGpsName", args);
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:AddGpsName", "GPS", "Select a GPS to name", menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("CharacterCommands:AddGpsName", "GPS", "Select a GPS to name", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
         }
@@ -1418,7 +1673,7 @@ namespace Server.Character
                 player.DeleteData("AddGpsName");
                 return;
             }
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> gpsItems = playerInventory.GetInventoryItems("ITEM_GPS");
@@ -1439,19 +1694,16 @@ namespace Server.Character
 
             if (!string.IsNullOrEmpty(selectedGpsItem.ItemValue))
             {
-                
                 gps = JsonConvert.DeserializeObject<Gps>(selectedGpsItem.ItemValue);
 
                 gps.Name = gpsName;
-
-
             }
             else
             {
                 gps = new Gps
                 {
                     Name = gpsName,
-                    WayPoints =  new List<GpsWayPoint>()
+                    WayPoints = new List<GpsWayPoint>()
                 };
             }
 
@@ -1466,11 +1718,10 @@ namespace Server.Character
                 player.SendInfoNotification($"You've removed the name from your GPS.");
                 return;
             }
-            
+
             player.SendInfoNotification($"You've renamed your GPS to {gpsName}.");
         }
 
-        
         [Command("gps", commandType: CommandType.Character,
             description: "Uses a GPS")]
         public static void CharacterCommandGps(IPlayer player)
@@ -1502,14 +1753,14 @@ namespace Server.Character
                 }
             }
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:gps:gpsSelected", "GPS", "Select a GPS", menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("CharacterCommands:gps:gpsSelected", "GPS", "Select a GPS", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnSelectGps(IPlayer player, string option, int index)
         {
-            if (option == "Close")return;
+            if (option == "Close") return;
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
@@ -1546,10 +1797,9 @@ namespace Server.Character
 
             player.SetData("SelectedGPS", index);
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:gps:wayPointSelected", gps.Name, "Select a way point",menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("CharacterCommands:gps:wayPointSelected", gps.Name, "Select a way point", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
-
         }
 
         public static void GpsWayPointSelect(IPlayer player, string option, int index)
@@ -1561,8 +1811,7 @@ namespace Server.Character
             }
 
             player.GetData("SelectedGPS", out int gpsIndex);
-            
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> gpsItems = playerInventory.GetInventoryItems("ITEM_GPS");
@@ -1584,11 +1833,8 @@ namespace Server.Character
 
             player.SendInfoNotification($"Way point set to: {selectedWayPoint.Name}.");
             player.DeleteData("SelectedGPS");
-
         }
 
-        
-        
         [Command("removewaypoint", commandType: CommandType.Character,
             description: "Removes a GPS waypoint")]
         public static void CharacterCommandRemoveGpsWaypoint(IPlayer player)
@@ -1620,14 +1866,14 @@ namespace Server.Character
                 }
             }
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:gps:gpsSelectedRemoveWaypoint", "GPS", "Select a GPS", menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("CharacterCommands:gps:gpsSelectedRemoveWaypoint", "GPS", "Select a GPS", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnSelectGpsSelectedRemoveWaypoint(IPlayer player, string option, int index)
         {
-            if (option == "Close")return;
+            if (option == "Close") return;
 
             Inventory.Inventory playerInventory = player.FetchInventory();
 
@@ -1664,10 +1910,9 @@ namespace Server.Character
 
             player.SetData("SelectedGPS", index);
 
-            NativeMenu menu = new NativeMenu("CharacterCommands:gps:removeWayPointSelected", gps.Name, "Select a way point",menuItems){PassIndex = true};
+            NativeMenu menu = new NativeMenu("CharacterCommands:gps:removeWayPointSelected", gps.Name, "Select a way point", menuItems) { PassIndex = true };
 
             NativeUi.ShowNativeMenu(player, menu, true);
-
         }
 
         public static void GpsRemoveWayPointSelected(IPlayer player, string option, int index)
@@ -1679,8 +1924,7 @@ namespace Server.Character
             }
 
             player.GetData("SelectedGPS", out int gpsIndex);
-            
-            
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> gpsItems = playerInventory.GetInventoryItems("ITEM_GPS");
@@ -1702,7 +1946,7 @@ namespace Server.Character
             gps.WayPoints.Remove(selectedWayPoint);
 
             selectedGpsItem.ItemValue = JsonConvert.SerializeObject(gps);
-            
+
             InventoryItem newGps = new InventoryItem("ITEM_GPS", "GPS", JsonConvert.SerializeObject(gps));
 
             playerInventory.AddItem(newGps);
@@ -1746,9 +1990,9 @@ namespace Server.Character
                 player.SendErrorNotification("Your not in range of the player.");
                 return;
             }
-            
+
             targetPlayer.SetData("FriskedBy", player.GetPlayerId());
-            
+
             player.SendInfoNotification($"You've tried to frisk {targetPlayer.GetClass().Name}.");
             targetPlayer.SendInfoNotification($"{player.GetClass().Name} has tried to frisk you. Use /acceptfrisk {player.GetPlayerId()} to accept");
         }
@@ -1776,7 +2020,7 @@ namespace Server.Character
                 player.SendSyntaxMessage("/acceptfrisk [Id]");
                 return;
             }
-            
+
             IPlayer friskingPlayer = Alt.Server.GetPlayers().FirstOrDefault(i => i.GetPlayerId() == friskId);
 
             if (friskingPlayer == null || !friskingPlayer.IsSpawned())
@@ -1784,7 +2028,7 @@ namespace Server.Character
                 player.SendErrorNotification("Unable to find a target player.");
                 return;
             }
-            
+
             float distance = player.Position.Distance(friskingPlayer.Position);
 
             if (distance > 3)
@@ -1800,9 +2044,9 @@ namespace Server.Character
                 player.SendErrorNotification("An error occurred fetching your inventory.");
                 return;
             }
-            
+
             InventoryCommands.ShowInventoryToPlayer(friskingPlayer, playerInventory, false, player.FetchCharacter().InventoryID);
-            
+
             player.SendInfoNotification($"You've been frisked by {friskingPlayer.GetClass().Name}.");
         }
     }

@@ -92,7 +92,7 @@ namespace Server.Jobs.Bus
                     return;
                 }
 
-                BusStop firstPoint = busStopList.FirstOrDefault();
+                BusStop firstPoint = busStopList.First();
 
                 Position vehicleSpawnPosition = new Position(firstPoint.PosX, firstPoint.PosY, firstPoint.PosZ);
 
@@ -107,7 +107,7 @@ namespace Server.Jobs.Bus
                 player.SetData("BusJob:StopCount", busStopList.Count);
 
                 IVehicle busVehicle = Alt.CreateVehicle(VehicleModel.Bus, vehicleSpawnPosition,
-                    new DegreeRotation(0, 0, firstPoint.RotZ));
+                    new Rotation(0, 0, firstPoint.RotZ));
 
                 busVehicle.PrimaryColor = 6;
                 busVehicle.SecondaryColor = 6;
@@ -170,7 +170,7 @@ namespace Server.Jobs.Bus
         {
             var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
+            IVehicle targetVehicle = Alt.Server.GetVehicles().First(x => x == keyValuePair.Value);
 
             targetVehicle?.Remove();
 

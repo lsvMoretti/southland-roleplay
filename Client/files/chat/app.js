@@ -243,5 +243,38 @@ if ('alt' in window) {
     alt.on('hideChat', hideChat);
     alt.on('TimeStampToggle', (toggle) => {
         timeStamp = toggle;
-    })
+    });
+    alt.on('changeFontSize', (fontSize) => {
+        let chatBox = document.getElementById('chatboxDiv');
+        
+        if(fontSize === -3)
+        {
+            chatBox.style.fontSize = "0.5em";
+        }
+        if(fontSize === -2)
+        {
+            chatBox.style.fontSize = "0.6em";
+        }
+        if(fontSize === -1)
+        {
+            chatBox.style.fontSize = "0.7em";
+        }
+        if(fontSize === 0)
+        {
+            chatBox.style.fontSize = "0.8em";
+        }
+        if(fontSize === 1)
+        {
+            chatBox.style.fontSize = "0.9em";
+        }
+        if(fontSize === 2)
+        {
+            chatBox.style.fontSize = "1.0em";
+        }
+        if(fontSize === 3)
+        {
+            chatBox.style.fontSize = "1.1em";
+        }
+
+    });
 }

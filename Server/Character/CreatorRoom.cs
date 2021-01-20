@@ -32,12 +32,12 @@ namespace Server.Character
 {
     public class CreatorRoom
     {
-        public static readonly Position CreatorPosition = new Position(198.63297f, -928.7077f, 30.678345f);
+        public static readonly Position CreatorPosition = new Position(-222.34286f, -1199.1692f, -148.92383f);
 
-        public static readonly Rotation CreatorRotation = new Rotation(0f, 0f, 90f);
+        public static readonly Rotation CreatorRotation = new DegreeRotation(0f, 0f, 267.874016f);
 
         /// <summary>
-        /// Storage of Player IDs. Key = ID, Value = In use
+        /// Storage of Player IDs. Key = Id, Value = In use
         /// </summary>
         public static Dictionary<int, bool> PlayerIds = new Dictionary<int, bool>();
 
@@ -45,15 +45,15 @@ namespace Server.Character
 
         private static readonly Position[] Positions =
         {
-            new Position(197.6044f, -922.8659f, 30.678345f ),
-            new Position(199.7011f, -924.0923f, 30.678345f),
-            new Position(202.36484f, -925.9912f, 30.678345f),
-            new Position(204.90988f, -927.82416f, 30.678345f),
-            new Position(207.67912f, -930.211f, 30.678345f),
-            new Position(210.1055f, -932.04395f, 30.678345f)
+            new Position(-241.72748f, -1194.0396f, -148.92383f),
+            new Position(-238.77362f, -1194.2373f, -148.92383f),
+            new Position(-235.26593f, -1194.2902f, -148.92383f),
+            new Position(-229.13406f, -1194.3693f, -148.92383f),
+            new Position(-226.16704f, -1194.567f, -148.92383f),
+            new Position(-223.02856f, -1194.8044f, -148.92383f)
         };
 
-        public static Position DoorPosition = new Position(196.28572f, -938.54504f, 30.678345f);
+        public static Position DoorPosition = new Position(-222.23737f, -1191.1516f, -148.92383f);
 
         public static void SendToCreatorRoom(IPlayer player)
         {
@@ -83,18 +83,18 @@ namespace Server.Character
 
                 player.GetClass().CreatorRoom = true;
 
-                player.SendInfoNotification($"Your session ID is: {player.GetPlayerId()}");
+                player.SendInfoNotification($"Your session Id is: {player.GetPlayerId()}");
 
                 player.SetDateTime(1, 1, 1, 12, 0, 0);
-                player.SetWeather((uint)WeatherType.ExtraSunny);
+                player.SetWeather(WeatherType.ExtraSunny);
 
                 player.Dimension = (short)player.GetPlayerId();
                 player.SetSyncedMetaData("PlayerDimension", player.Dimension);
 
                 player.Model = (uint)PedModel.MovAlien01;
 
-                player.SetPosition(new Position(198.63297f, -928.7077f, 30.678345f), new Rotation(0, 0, 270), 5000,
-                    true, true, unfreezeTime: 1000);
+                player.SetPosition(new Position(-245.06374f, -1190.888f, -148.92383f), new DegreeRotation(0, 0, -85.03937f), 5000,
+                    true, true, unfreezeTime: 3000);
 
                 player.Rotation = new Rotation(0, 0, 270);
 
@@ -103,8 +103,9 @@ namespace Server.Character
 
                 List<TextLabel> textLabels = new List<TextLabel>();
 
-                TextLabel doorLabel = new TextLabel($"Press 'F' to Leave", DoorPosition + new Position(0, 0, 0.75f),
-                    TextFont.FontChaletComprimeCologne, new LsvColor(Color.DarkGray));
+                TextLabel doorLabel = new TextLabel($"Press 'F' to Leave", DoorPosition,
+                    TextFont.FontChaletComprimeCologne, new LsvColor(Color.DarkGray), 5f, player.Dimension);
+
                 TextLabelHandler.LoadTextLabelForPlayer(player, doorLabel);
                 textLabels.Add(doorLabel);
 
@@ -154,14 +155,14 @@ namespace Server.Character
                         {
                             InventoryData inv = InventoryData.CreateDefaultInventory(10, 5);
 
-                            characterDb.InventoryID = inv.ID;
+                            characterDb.InventoryID = inv.Id;
                         }
 
                         if (string.IsNullOrEmpty(characterDb.Languages))
                         {
                             // Adds English as a default
 
-                            Language.Language language = LanguageHandler.Languages.FirstOrDefault();
+                            Language.Language language = LanguageHandler.Languages.First();
 
                             characterDb.Languages = JsonConvert.SerializeObject(new List<Language.Language>
                             {
@@ -171,7 +172,7 @@ namespace Server.Character
 
                         if (string.IsNullOrEmpty(characterDb.CurrentLanguage))
                         {
-                            Language.Language language = LanguageHandler.Languages.FirstOrDefault();
+                            Language.Language language = LanguageHandler.Languages.First();
 
                             characterDb.CurrentLanguage = JsonConvert.SerializeObject(language);
                         }
@@ -179,6 +180,11 @@ namespace Server.Character
                         if (string.IsNullOrEmpty(characterDb.LicensesHeld))
                         {
                             characterDb.LicensesHeld = JsonConvert.SerializeObject(new List<LicenseTypes>());
+                        }
+
+                        if (string.IsNullOrEmpty(characterDb.Outfits))
+                        {
+                            characterDb.Outfits = JsonConvert.SerializeObject(new List<Outfit>());
                         }
 
                         context.SaveChanges();
@@ -192,7 +198,7 @@ namespace Server.Character
                                     Position position = Positions[0];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position + new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -203,7 +209,7 @@ namespace Server.Character
                                     Position position = Positions[1];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position + new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -214,7 +220,7 @@ namespace Server.Character
                                     Position position = Positions[2];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position + new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -225,7 +231,7 @@ namespace Server.Character
                                     Position position = Positions[3];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position + new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -236,7 +242,7 @@ namespace Server.Character
                                     Position position = Positions[4];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position + new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -247,7 +253,7 @@ namespace Server.Character
                                     Position position = Positions[5];
                                     TextLabel characterLabel = new TextLabel(
                                         $"{playerCharacter.Name}\nPlaytime: {playerCharacter.TotalHours}:{playerCharacter.TotalMinutes}\nPress 'F' to Play",
-                                        position + new Position(0, 0, 1.5f), TextFont.FontChaletComprimeCologne,
+                                        position, TextFont.FontChaletComprimeCologne,
                                         new LsvColor(Color.BurlyWood), dimension: player.Dimension);
                                     TextLabelHandler.LoadTextLabelForPlayer(player, characterLabel);
                                     textLabels.Add(characterLabel);
@@ -423,7 +429,7 @@ namespace Server.Character
                 TextLabelHandler.RemoveAllTextLabelsForPlayer(player);
                 BlipHandler.RemoveAllBlipsForPlayer(player);
 
-                player.SetWeather((uint)TimeWeather.CurrentWeatherType);
+                player.SetWeather(TimeWeather.CurrentWeatherType);
 
                 DateTime dateNow = DateTime.Now;
 
@@ -622,10 +628,11 @@ namespace Server.Character
 
                             player.SetPosition(apartmentInterior.Position, Rotation.Zero);
                         }
-                        else
+
+                        if (playerCharacter.InsideProperty > 0)
                         {
-                            Models.Property insideProperty =
-                                Models.Property.FetchProperty((int)playerCharacter.Dimension);
+                            Models.Property? insideProperty =
+                                Models.Property.FetchProperty(playerCharacter.Dimension);
 
                             if (insideProperty == null)
                             {
@@ -633,7 +640,7 @@ namespace Server.Character
                                 return;
                             }
 
-                            Interiors propertyInterior =
+                            Interiors? propertyInterior =
                                 Interiors.InteriorList.FirstOrDefault(
                                     x => x.InteriorName == insideProperty.InteriorName);
 
@@ -659,6 +666,12 @@ namespace Server.Character
                                     player.LoadInteriorProp(prop);
                                 }
                             }
+                        }
+                        else
+                        {
+                            player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                switchOut: true);
+                            player.Dimension = playerCharacter.Dimension;
                         }
                     }
                     else

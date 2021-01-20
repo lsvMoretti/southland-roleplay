@@ -102,6 +102,11 @@ function viewBankInfo(index) {
     window.location.href = "http://resource/files/bank/bankAccount.html";
 }
 
+function CloseTransactionInput() {
+    var bodyClass = document.getElementById("bodyClass").classList.add("hideme");
+    alt.emit('closeBankHomePage');
+}
+
 function CloseBankHome() {
     alt.emit('closeBankHomePage');
 }
@@ -252,6 +257,8 @@ function transactionState(state) {
         var numberInput = document.getElementById('numberInput');
 
         var inputAmount = numberInput.value;
+
+        console.log('Input Amount: ' + inputAmount);
 
         alt.emit('HandleBankTransaction', state, inputAmount);
     };

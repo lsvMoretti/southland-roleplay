@@ -1,15 +1,15 @@
 import * as alt from 'alt-client';
 
-var musicView:alt.WebView = undefined;
-var currentUrl:string = undefined;
-var audioControlView:alt.WebView = undefined;
-var stationJson:string = undefined;
+var musicView: alt.WebView = undefined;
+var currentUrl: string = undefined;
+var audioControlView: alt.WebView = undefined;
+var stationJson: string = undefined;
 
 alt.onServer('showAudioControl', showAudioControl);
 alt.onServer('PlayMusicUrl', playMusicFromUrl);
 alt.onServer('StopMusic', stopMusic);
 
-function showAudioControl(json:string) {
+function showAudioControl(json: string) {
     CloseAudioControlPanel();
 
     stationJson = json;
@@ -31,25 +31,27 @@ function radioControlPageLoaded() {
     audioControlView.emit('loadStationTable', stationJson);
 }
 
-function SelectedMusicStream(stationName:string) {
-    CloseAudioControlPanel();
+function SelectedMusicStream(stationName: string) {
     alt.emitServer('PlayerSelectedMusicStream', stationName);
+    CloseAudioControlPanel();
 }
 
 function SelectStopMusicStream() {
-    CloseAudioControlPanel();
     alt.emitServer('StopSelectedMusicStream');
+    CloseAudioControlPanel();
 }
 
 function CloseAudioControlPanel() {
     if (audioControlView !== undefined) {
-        audioControlView.destroy();
-        audioControlView = undefined;
+        alt.setTimeout(() => {
+            audioControlView.destroy();
+            audioControlView = undefined;
+        }, 1000);
         alt.showCursor(false);
     }
 }
 
-function playMusicFromUrl(url:string) {
+function playMusicFromUrl(url: string) {
     alt.log('Loading Webview');
     currentUrl = url;
     if (musicView !== undefined) {
@@ -70,6 +72,9 @@ function radioPageLoaded() {
 
 function stopMusic() {
     musicView.emit('StopPlayingMusic');
-    musicView.destroy();
-    musicView = undefined;
+    alt.setTimeout(() => {
+        musicView.destroy();
+        musicView = undefined;
+    },
+        1000);
 }

@@ -12,7 +12,7 @@ namespace Server.Models
         /// <summary>
         /// The name of the Faction
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// The factions main type
@@ -27,18 +27,18 @@ namespace Server.Models
         /// <summary>
         /// Ranks saved into JSON
         /// </summary>
-        public string RanksJson { get; set; }
+        public string? RanksJson { get; set; }
 
         /// <summary>
         /// Divisions saved into JSON
         /// </summary>
-        public string DivisionJson { get; set; }
+        public string? DivisionJson { get; set; }
 
         /// <summary>
         /// Adds a faction to the DB
         /// </summary>
         /// <param name="faction"></param>
-        /// <returns>New faction ID</returns>
+        /// <returns>New faction Id</returns>
         public static int AddFaction(Faction faction)
         {
             using Context context = new Context();
@@ -61,11 +61,11 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches a Faction by ID
+        /// Fetches a Faction by Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static Faction FetchFaction(int id)
+        public static Faction? FetchFaction(int id)
         {
             using Context context = new Context();
 
@@ -111,6 +111,7 @@ namespace Server.Models
         public bool Invite { get; set; }
 
         public bool Promote { get; set; }
+        public bool Tow { get; set; }
     }
 
     public class Division

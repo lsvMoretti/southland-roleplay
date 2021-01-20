@@ -25,13 +25,12 @@ namespace Server.Groups
                 }
                 else
                 {
-                    
-                    List<PlayerFaction> playerFactions =
+                    List<PlayerFaction>? playerFactions =
                         JsonConvert.DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList);
 
-                    if(playerFactions == null) continue;
+                    if (playerFactions == null) continue;
 
-                    PlayerFaction playerFaction = playerFactions.FirstOrDefault(x => x.Id == factionId);
+                    PlayerFaction? playerFaction = playerFactions.FirstOrDefault(x => x.Id == factionId);
 
                     if (playerFaction == null) continue;
 
@@ -41,14 +40,11 @@ namespace Server.Groups
 
                     context.SaveChanges();
                 }
-
             }
 
             context.Faction.Remove(selectedFaction);
 
             context.SaveChanges();
-
-            
 
             return true;
         }

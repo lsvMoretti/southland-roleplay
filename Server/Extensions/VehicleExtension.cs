@@ -11,7 +11,7 @@ namespace Server.Extensions
     public static class VehicleExtension
     {
         /// <summary>
-        /// Sets the vehicle database ID
+        /// Sets the vehicle database Id
         /// </summary>
         /// <param name="vehicle"></param>
         /// <param name="Id"></param>
@@ -21,7 +21,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// Returns the vehicle's database ID
+        /// Returns the vehicle's database Id
         /// </summary>
         /// <param name="vehicle"></param>
         /// <returns></returns>
@@ -37,14 +37,12 @@ namespace Server.Extensions
         /// </summary>
         /// <param name="vehicle"></param>
         /// <returns></returns>
-        public static Models.Vehicle FetchVehicleData(this IVehicle vehicle)
+        public static Models.Vehicle? FetchVehicleData(this IVehicle vehicle)
         {
             vehicle.GetData("VEHICLEID", out int result);
             using Context context = new Context();
             return context.Vehicle.Find(result);
         }
-
-
 
         /// <summary>
         /// Set the vehicle’s distance in Meters
@@ -203,7 +201,7 @@ namespace Server.Extensions
         }
 
         /// <summary>
-        /// The vehicle Database ID
+        /// The vehicle Database Id
         /// </summary>
         public int Id
         {

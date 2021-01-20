@@ -40,8 +40,22 @@ body, html {
     color: #FFF;
 }
 
+.text-yellow {
+    color: yellow;
+}
+
 .text-red {
     color: red;
+}
+#loginMessage{
+    color: #efc21f;
+    font-size: 15px;
+    font-style: oblique;
+}
+#loginTerms{
+    color: #efc21f;
+    font-size: 10px;
+    font-style: oblique;
 }
 
 .buttonspace {
@@ -232,6 +246,10 @@ div img {
 
 .bg-blue {
     background: #0072ff;
+}
+
+.bg-grey {
+    background: #383636;
 }
 
 .male-color {

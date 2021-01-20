@@ -153,6 +153,11 @@ namespace Server.Chat
         {
             player.Emit("chatmessage", null, $"{ChatHandler.ColorAdminInfo} [ADMIN] {ChatHandler.ColorWhite}{message} ");
         }
+        
+        public static void SendHelperMessage(this IPlayer player, string message)
+        {
+            player.Emit("chatmessage", null, $"{ChatHandler.ColorAdminInfo} [HELPER] {ChatHandler.ColorWhite}{message} ");
+        }
 
         public static void SendAdminBroadcastMessage(this IPlayer player, string message)
         {

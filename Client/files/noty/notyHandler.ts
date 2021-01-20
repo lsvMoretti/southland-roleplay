@@ -1,18 +1,18 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
-var notyPage:alt.WebView = undefined;
+var notyPage: alt.WebView = undefined;
 
 alt.onServer('connectionComplete', () => {
-
-   loadNotyPage();
+    loadNotyPage();
 });
 
-function loadNotyPage(){
-
-    if(notyPage !== undefined){
-        notyPage.destroy();
-        notyPage = undefined;
+function loadNotyPage() {
+    if (notyPage !== undefined) {
+        alt.setTimeout(() => {
+            notyPage.destroy();
+            notyPage = undefined;
+        }, 1000);
     }
 
     notyPage = new alt.WebView("http://resource/files/noty/noty.html", false);
@@ -20,11 +20,9 @@ function loadNotyPage(){
 
 alt.onServer('SendNotification', SendNotification);
 
-export function SendNotification(message:string, time:number, type:string, layout:string)
-{
-    if(notyPage === undefined){
+export function SendNotification(message: string, time: number, type: string, layout: string) {
+    if (notyPage === undefined) {
         loadNotyPage();
     }
-
     notyPage.emit('displayNotification', message, time, type, layout);
 }

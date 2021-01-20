@@ -16,6 +16,41 @@ namespace Server.Chat
 {
     public class ChatCommands
     {
+        [Command("fontsize", onlyOne: true, commandType: CommandType.Chat, description: "Used to set your font style")]
+        public static void CommandFontSize(IPlayer player, string args = "")
+        {
+            if (player?.FetchCharacter() == null) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+
+            if (args.Length < 1)
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+
+            bool tryParse = int.TryParse(args, out int fontSize);
+
+            if (!tryParse)
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+
+            if (fontSize < -3 || fontSize > 3)
+            {
+                player.SendSyntaxMessage("/fontsize [-3 to 3]");
+                return;
+            }
+            player.Emit("Chat:ChangeFontSize", fontSize);
+
+            player.SendInfoNotification($"You've changed your font size to {fontSize}");
+        }
+
         [Command("ame", onlyOne: true, commandType: CommandType.Chat, description: "An above head emote command")]
         public static void CommandAMe(IPlayer player, string args = "")
         {
@@ -33,7 +68,7 @@ namespace Server.Chat
                 return;
             }
 
-            player.SetSyncedMetaData("ChatCommand:Ame", args);
+            player.SetSyncedMetaData("ChatCommand:Ame", $"{player.GetClass().Name} {args}");
             player.SetSyncedMetaData("ChatCommand:AmeActive", true);
 
             Timer newTimer = new Timer(5000) { AutoReset = false, Enabled = true };
@@ -89,8 +124,6 @@ namespace Server.Chat
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Do);
         }
 
-        
-
         [Command("dlow", onlyOne: true, commandType: CommandType.Chat, description: "A Low emote command")]
         public static void CommandDoLow(IPlayer player, string args = "")
         {
@@ -143,7 +176,6 @@ namespace Server.Chat
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Whisper, 5f);
         }
 
-        
         [Command("low", onlyOne: true, commandType: CommandType.Chat, description: "Low Talking command")]
         public static void CommandLow(IPlayer player, string args = "")
         {
@@ -186,8 +218,8 @@ namespace Server.Chat
 
                 string message = string.Join(' ', split.Skip(1));
 
-                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (ID: {targetPlayer.GetPlayerId()}): {message}");
-                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (ID: {player.GetPlayerId()}): {message}");
+                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetPlayerId()}): {message}");
+                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (Id: {player.GetPlayerId()}): {message}");
                 targetPlayer.SetData("LastPmFrom", player.GetPlayerId());
 
                 Logging.AddToCharacterLog(player, $"Has sent a PM to {targetPlayer.GetClass().Name}: {message}");
@@ -228,8 +260,8 @@ namespace Server.Chat
                     return;
                 }
 
-                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (ID: {targetPlayer.GetPlayerId()}): {args}");
-                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (ID: {player.GetPlayerId()}): {args}");
+                player.SendPrivateMessage($"Sent to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetPlayerId()}): {args}");
+                targetPlayer.SendPrivateMessage($" From {player.GetClass().Name} (Id: {player.GetPlayerId()}): {args}");
 
                 Logging.AddToCharacterLog(player, $"Has sent a PM to {targetPlayer.GetClass().Name}: {args}");
             }
@@ -291,7 +323,7 @@ namespace Server.Chat
             }
         }
 
-        [Command("a", AdminLevel.Support, true, commandType: CommandType.Admin, description: "Admin Chat")]
+        [Command("a", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Admin Chat")]
         public static void CommandAdminChat(IPlayer player, string message = "")
         {
             if (message == "" || message.Length < 2)
@@ -310,7 +342,7 @@ namespace Server.Chat
 
                 if (adminAccount == null) continue;
 
-                if (adminAccount.AdminLevel < AdminLevel.Support && !adminAccount.Developer) continue; 
+                if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
 
                 admin.SendAdminChatMessage($"{username} says: {message}");
             }
@@ -323,9 +355,8 @@ namespace Server.Chat
 
             embedBuilder.AddField("Message", message);
             embedBuilder.AddField("Admin", username);
-            
+
             DiscordHandler.SendEmbedToIgAdminChannel(embedBuilder);
         }
-
     }
 }

@@ -14,13 +14,13 @@ namespace Server.Models
     public class BankAccount
     {
         /// <summary>
-        /// Unique Account ID
+        /// Unique Account Id
         /// </summary>
         [Key]
         public int Id { get; set; }
 
         /// <summary>
-        /// Character ID of Bank Account Creator
+        /// Character Id of Bank Account Creator
         /// </summary>
         public int OwnerId { get; set; }
 
@@ -50,9 +50,9 @@ namespace Server.Models
         public float Balance { get; set; }
 
         /// <summary>
-        /// A history of Transactions, saved as JSON string from *BankTransaction*
+        /// A history of Transactions, saved as JSON string? from *BankTransaction*
         /// </summary>
-        public string TransactionHistoryJson { get; set; }
+        public string? TransactionHistoryJson { get; set; }
 
         /// <summary>
         /// The amount of Credit the account can have
@@ -63,6 +63,16 @@ namespace Server.Models
         /// Account is Disabled?
         /// </summary>
         public bool Disabled { get; set; }
+
+        /// <summary>
+        /// 3 failed pin attempts before blocking card
+        /// </summary>
+        public int PinAttempts { get; set; }
+
+        /// <summary>
+        /// Unable to withdraw from ATM if true
+        /// </summary>
+        public bool WithdrawalBlocked { get; set; }
 
         /// <summary>
         /// Adds a BankAccount to the Database
@@ -99,7 +109,7 @@ namespace Server.Models
         }
 
         /// <summary>
-        /// Fetches a List of BankAccount's by Character ID
+        /// Fetches a List of BankAccount's by Character Id
         /// </summary>
         /// <param name="character"></param>
         /// <returns></returns>
@@ -200,6 +210,8 @@ namespace Server.Models
 
             databaseAccount.CardNumber = cardNumber;
             databaseAccount.Pin = newPin;
+            databaseAccount.PinAttempts = 0;
+            databaseAccount.WithdrawalBlocked = false;
 
             context.SaveChanges();
 
@@ -207,7 +219,7 @@ namespace Server.Models
 
             player.SendInfoNotification($"You have a new Bank Card. Number: {cardNumber}. PIN: {newPin}.");
 
-            Logging.AddToCharacterLog(player, $"Has requested a new Bank Card: {cardNumber} and PIN {newPin} for Bank Account {bankAccount.AccountNumber}, ID: {bankAccount.Id}");
+            Logging.AddToCharacterLog(player, $"Has requested a new Bank Card: {cardNumber} and PIN {newPin} for Bank Account {bankAccount.AccountNumber}, Id: {bankAccount.Id}");
 
             Logging.AddToBankLog(bankAccount, $"Has been set a new Bank Card: {cardNumber} and PIN {newPin} by {player.GetClass().Name}");
 
@@ -232,13 +244,13 @@ namespace Server.Models
         public BankTransactionType TransactionType { get; set; }
 
         /// <summary>
-        /// The character ID that sent the money
+        /// The character Id that sent the money
         /// Used for Deposit and Transfers
         /// </summary>
         public int SenderId { get; set; }
 
         /// <summary>
-        /// The character ID that received the money.
+        /// The character Id that received the money.
         /// Used with ATM, Withdraw
         /// </summary>
         public int ReceiverId { get; set; }

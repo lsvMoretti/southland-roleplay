@@ -199,7 +199,7 @@ namespace Server.Property.Stores
                     if (clothesInfo.Key.slot != selectedItem.Key.slot) continue;
                     if (clothesInfo.Key.drawable != selectedItem.Key.drawable) continue;
 
-                    if (player.IsMale())
+                    if (player.GetClass().IsMale)
                     {
                         if (clothesInfo.Value.DisplayNameMale.Contains("undefined") || string.IsNullOrEmpty(clothesInfo.Value.DisplayNameMale))
                         {
@@ -865,7 +865,6 @@ namespace Server.Property.Stores
                 //property?.AddToBalance(selectedItem.Value.Price);
 
                 //player.Position = player.Position;
-
             }
             catch (Exception e)
             {

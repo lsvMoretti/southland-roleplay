@@ -1,5 +1,16 @@
 ﻿import * as alt from 'alt-client';
 import * as native from 'natives';
+import * as nametag from "files/nametags";
+import * as vehicleHandler from 'files/vehicle/vehicleHandler';
+
+alt.onServer('Blindfolded', (blindfolded: boolean) => {
+    if (blindfolded) {
+        native.doScreenFadeOut(1000);
+    }
+    else {
+        native.doScreenFadeIn(1000);
+    }
+});
 
 alt.onServer('freezePlayer', freezePlayer);
 
@@ -24,8 +35,10 @@ alt.onServer('toggleHud', toggleHud);
 alt.onServer('toggleCursor', toggleCursorFunction);
 
 alt.onServer('LoadDLC', () => {
-    native.onEnterSp();
-    native.onEnterMp();
+    //native.onEnterSp();
+    //native.onEnterMp();
+    nametag.StartNameTagDraw();
+    vehicleHandler.startIntervals();
 });
 
 function toggleCursorFunction(state: boolean) {
@@ -42,14 +55,16 @@ export function GetHudState() {
 }
 
 alt.onServer('freezeCam', (state: boolean) => {
+    alt.log('Freeze Cam: ' + state);
     freezeCam = state;
 });
 
 alt.onServer('freezeInput', (state: boolean) => {
+    alt.log('Freeze Input: ' + state);
     freezeInput = state;
 })
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (hudEnabled === false) {
         //native.hideHudAndRadarThisFrame();
     }
@@ -59,7 +74,10 @@ alt.everyTick(() => {
     if (freezeCam) {
         native.disableAllControlActions(1);
     }
+},
+    0);
 
+alt.everyTick(() => {
     //native.setPedCanSwitchWeapon(alt.Player.local.scriptID, false);
 });
 
@@ -168,7 +186,7 @@ function switchOutPlayer(timeout: number) {
 
 alt.onServer('clearBlood', clearBlood);
 
-function clearBlood(entity:alt.Player) {
+function clearBlood(entity: alt.Player) {
     native.resetPedVisibleDamage(alt.Player.local.scriptID);
     native.clearPedBloodDamage(alt.Player.local.scriptID);
 }
@@ -203,7 +221,6 @@ alt.onServer('ToggleSpectate', (state: boolean, player: alt.Entity) => {
 
         alt.setTimeout(() => {
             specPlayer = player;
-
 
             native.freezeEntityPosition(alt.Player.local.scriptID, true);
 
@@ -478,7 +495,7 @@ alt.onServer('SetWalkStyle', (style: number) => {
 
 // Text Label Updates
 
-export var playerDimension:number = 0;
+export var playerDimension: number = 0;
 
 alt.setInterval(() => {
     alt.emitServer('FetchPlayerDimension');
@@ -489,13 +506,12 @@ alt.onServer('SendPlayerDimension', (dimension: number) => {
 });
 
 alt.onServer('SetCuffState', (state: Boolean) => {
-    
     var scriptId = alt.Player.local.scriptID;
     var dict = "mp_arresting";
     var name = "idle";
     var flag = 49;
-    var duration = -1;    
-    
+    var duration = -1;
+
     if (state) {
         native.setEnableHandcuffs(scriptId, true);
         if (native.hasAnimDictLoaded(dict)) {
@@ -514,9 +530,9 @@ alt.onServer('SetCuffState', (state: Boolean) => {
             );
             return;
         }
-    
+
         let result = loadAnimation(dict);
-    
+
         result.then(() => {
             native.taskPlayAnim(
                 scriptId,
@@ -532,15 +548,11 @@ alt.onServer('SetCuffState', (state: Boolean) => {
                 false
             );
         });
-	} else {
-		native.setEnableHandcuffs(scriptId, false);
+    } else {
+        native.setEnableHandcuffs(scriptId, false);
         native.uncuffPed(scriptId);
         native.clearPedTasks(scriptId);
     }
-        
-        
-
-    
 });
 
 function loadAnimation(dict: string) {
@@ -566,5 +578,5 @@ function loadAnimation(dict: string) {
 }
 
 alt.onServer('SendPlayerLogout', () => {
-	native.restartGame();
+    native.restartGame();
 });

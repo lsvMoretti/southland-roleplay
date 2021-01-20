@@ -1,0 +1,32 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "No Tie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 0,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "No Tie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+]
+}

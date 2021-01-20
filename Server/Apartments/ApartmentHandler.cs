@@ -67,15 +67,15 @@ namespace Server.Apartments
         public static void UnloadApartmentComplex(ApartmentComplexes complex)
         {
             var blipInfo = Blips.FirstOrDefault(x => x.Key == complex.Id);
-            
+
             blipInfo.Value?.Remove();
 
             var textLabelInfo = TextLabels.FirstOrDefault(x => x.Key == complex.Id);
-            
+
             textLabelInfo.Value?.Remove();
 
             var markerInfo = Markers.FirstOrDefault(x => x.Key == complex.Id);
-            
+
             markerInfo.Value?.Remove();
 
             Blips.Remove(complex.Id);
@@ -101,7 +101,7 @@ namespace Server.Apartments
                 return;
             }
 
-            var apartmentsOrdered = apartments.OrderBy(x => x.Floor);
+            IOrderedEnumerable<Apartment> apartmentsOrdered = apartments.OrderBy(x => x.Floor);
 
             foreach (Apartment apartment in apartmentsOrdered)
             {
@@ -169,7 +169,6 @@ namespace Server.Apartments
             playerCharacter.InsideApartment = selectedApartment.Name;
 
             context.SaveChanges();
-            
 
             player.Position = interior.Position;
 
@@ -191,18 +190,17 @@ namespace Server.Apartments
         {
             using Context context = new Context();
 
-            var playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+            Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
-            var apartmentComplex = context.ApartmentComplexes.Find(playerCharacter.InsideApartmentComplex);
+            ApartmentComplexes apartmentComplex = context.ApartmentComplexes.Find(playerCharacter.InsideApartmentComplex);
 
-            var apartment = JsonConvert.DeserializeObject<List<Apartment>>(apartmentComplex.ApartmentList)
+            Apartment? apartment = JsonConvert.DeserializeObject<List<Apartment>>(apartmentComplex.ApartmentList)
                 .FirstOrDefault(x => x.Name == playerCharacter.InsideApartment);
 
             playerCharacter.Dimension = 0;
             playerCharacter.InsideApartmentComplex = 0;
             playerCharacter.InsideApartment = null;
             context.SaveChanges();
-            
 
             player.Dimension = 0;
             player.Position = new Vector3(apartmentComplex.PosX, apartmentComplex.PosY, apartmentComplex.PosZ);
@@ -212,7 +210,7 @@ namespace Server.Apartments
 
             if (propList.Any())
             {
-                foreach (var prop in propList)
+                foreach (string prop in propList)
                 {
                     player.UnloadInteriorProp(prop);
                 }
@@ -295,9 +293,9 @@ namespace Server.Apartments
 
             List<Apartment> accessApartments = new List<Apartment>();
 
-            foreach (var apartment in apartments)
+            foreach (Apartment apartment in apartments)
             {
-                foreach (var inventoryItem in keyList)
+                foreach (InventoryItem inventoryItem in keyList)
                 {
                     if (apartment.KeyCode == inventoryItem.ItemValue)
                     {
@@ -315,7 +313,7 @@ namespace Server.Apartments
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (var accessApartment in accessApartments)
+            foreach (Apartment accessApartment in accessApartments)
             {
                 menuItems.Add(new NativeMenuItem(accessApartment.Name));
             }
@@ -361,8 +359,6 @@ namespace Server.Apartments
             dbComplex.ApartmentList = JsonConvert.SerializeObject(dbApartments);
 
             context.SaveChanges();
-
-            
 
             string lockState = apartment.Locked ? "locked" : "unlocked";
 

@@ -80,7 +80,7 @@ namespace Server.Character.Clothing
             return clothingItem.GetHashCode();
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ClothesJson other && other.clothingItem == this.clothingItem;
         }
@@ -179,7 +179,7 @@ namespace Server.Character.Clothing
                         {
                             foreach (KeyValuePair<string, BestTorso> torsoData in torsoInfo.Value)
                             {
-                                // Torso ID
+                                // Torso Id
                                 int key = Convert.ToInt32(torsoInfo.Key);
 
                                 if (MaleTopToTorso.ContainsKey(key)) continue;
@@ -204,7 +204,7 @@ namespace Server.Character.Clothing
                         {
                             foreach (KeyValuePair<string, BestTorso> torsoData in torsoInfo.Value)
                             {
-                                // Torso ID
+                                // Torso Id
                                 int key = Convert.ToInt32(torsoInfo.Key);
 
                                 if (FemaleTopToTorso.ContainsKey(key)) continue;
@@ -243,8 +243,6 @@ namespace Server.Character.Clothing
             Console.WriteLine($"Loaded {FemaleTopToTorso.Count + MaleTopToTorso.Count} Torso items");
 
             LoadBannedClothingNames();
-
-
         }
 
         public static void LoadBannedClothingNames()
@@ -265,12 +263,10 @@ namespace Server.Character.Clothing
 
                     Console.WriteLine($"Loaded {bannedClothingNames.Count} Banned Clothing Names (Won't be added on switching)");
                     return;
-
                 }
 
                 File.WriteAllText("data/clothing/BannedClothingNames.json", JsonConvert.SerializeObject(ClothingCommand.BannedClothingNames, Formatting.Indented));
 
-                
                 Console.WriteLine($"Loaded {ClothingCommand.BannedClothingNames.Count} Banned Clothing Names (Won't be added on switching)");
             }
             catch (Exception e)
@@ -347,7 +343,6 @@ namespace Server.Character.Clothing
 
                     foreach (string clothingItem in clothingFiles)
                     {
-                        
                         Console.WriteLine($"Loading {clothingItem}");
 
                         string content = File.ReadAllText($"{clothingItem}");
@@ -474,7 +469,7 @@ namespace Server.Character.Clothing
                 context.SaveChanges();
 
                 LoadClothes(player, defaultClothesDatas, accessories);
-                
+
                 return;
             }
 
@@ -602,6 +597,11 @@ namespace Server.Character.Clothing
             return new InventoryItem(CLOTHES_ITEM_ID, GetClothesName((ClothesType)data.slot, data.drawable, data.texture, male), JsonConvert.SerializeObject(data), 1);
         }
 
+        public static InventoryItem ConvertAccessoryToInventoryItem(AccessoryData data, bool male)
+        {
+            return new InventoryItem(ACCESSORIES_ITEM_ID, GetAccessoryName((AccessoriesType)data.slot, data.drawable, data.texture, male), JsonConvert.SerializeObject(data), 1);
+        }
+
         public static InventoryItem ConvertAccessoryToInventoryItem(ClothesData data, bool male)
         {
             return new InventoryItem(ACCESSORIES_ITEM_ID, GetAccessoryName((AccessoriesType)data.slot, data.drawable, data.texture, male), JsonConvert.SerializeObject(data), 1);
@@ -722,7 +722,7 @@ namespace Server.Character.Clothing
                 accessoryDatas.Add(data);
 
                 player.SetData("ACCESSORYDATA", JsonConvert.SerializeObject(accessoryDatas));
-                
+
                 if (!player.IsInVehicle)
                 {
                     player.Position = player.Position;
@@ -763,7 +763,6 @@ namespace Server.Character.Clothing
                 dbCharacter.AccessoryJson = JsonConvert.SerializeObject(accessory);
 
                 context.SaveChanges();
-                
             }
             catch (Exception e)
             {
@@ -794,7 +793,6 @@ namespace Server.Character.Clothing
 
             clothes.Remove(selectedClothes);
 
-            
             clothes.Add(clothesData);
 
             dbCharacter.ClothesJson = JsonConvert.SerializeObject(clothes);
