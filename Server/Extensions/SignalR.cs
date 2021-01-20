@@ -20,7 +20,7 @@ namespace Server.Extensions
 
         public static async void StartConnection()
         {
-            string url = @"http://176.9.66.40:2000/signalr";
+            string url = @"http://149.202.88.222:2000/signalr";
 
             hubConnection = new HubConnectionBuilder().WithUrl(url).Build();
 

@@ -153,28 +153,22 @@ namespace Server
 
                 int firstDigit = (int)(currentWeatherType.ToString()[0]);
 
-                Console.WriteLine($"Current Weather: {currentWeatherType}");
-
                 if (currentWeatherType >= 200 && currentWeatherType < 300)
                 {
                     //Thunderstorm
                     CurrentWeatherType = WeatherType.Thunder;
-
-                    Console.WriteLine("Thunder");
                 }
 
                 if (currentWeatherType >= 300 && currentWeatherType < 400)
                 {
                     //Drizzle
                     CurrentWeatherType = WeatherType.Overcast;
-                    Console.WriteLine("Overcast");
                 }
 
                 if (currentWeatherType >= 500 && currentWeatherType < 600)
                 {
                     //Rain
                     CurrentWeatherType = WeatherType.Rain;
-                    Console.WriteLine("Rain");
                 }
 
                 if (currentWeatherType >= 600 && currentWeatherType < 700)
@@ -184,12 +178,10 @@ namespace Server
                     {
                         //Light Snow
                         CurrentWeatherType = WeatherType.Snowlight;
-                        Console.WriteLine("Snwolight");
                     }
                     else
                     {
                         CurrentWeatherType = WeatherType.Snow;
-                        Console.WriteLine("Snow");
                     }
                 }
 
@@ -200,44 +192,36 @@ namespace Server
                     case 711:
                         // Mist
                         CurrentWeatherType = WeatherType.Smog;
-                        Console.WriteLine("Smog");
                         break;
 
                     case 721:
                         //Haze
                         CurrentWeatherType = WeatherType.Clouds;
-                        Console.WriteLine("Clouds");
                         break;
 
                     case 741:
                         //Fog
                         CurrentWeatherType = WeatherType.Foggy;
-                        Console.WriteLine("Foggy");
                         break;
 
                     case 800:
                         CurrentWeatherType = WeatherType.Clear;
-                        Console.WriteLine("Clear");
                         break;
 
                     case 801:
                         CurrentWeatherType = WeatherType.Clouds;
-                        Console.WriteLine("Clouds");
                         break;
 
                     case 802:
                         CurrentWeatherType = WeatherType.Clouds;
-                        Console.WriteLine("Clouds2");
                         break;
 
                     case 803:
                         CurrentWeatherType = WeatherType.Clouds;
-                        Console.WriteLine("Clouds3");
                         break;
 
                     case 804:
                         CurrentWeatherType = WeatherType.Overcast;
-                        Console.WriteLine("Overcast 1");
                         break;
                 }
 

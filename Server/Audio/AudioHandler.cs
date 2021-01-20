@@ -20,11 +20,11 @@ namespace Server.Audio
         public static List<RadioStation> StationList = new List<RadioStation>();
 
 #if DEBUG
-        private static readonly string altVDirectory = "D:/servers/Paradigm-Dev/data";
+        private static readonly string altVDirectory = "D:/servers/Southland-Dev/data";
 
 #endif
 #if RELEASE
-        private static readonly string altVDirectory = "D:/servers/Paradigm/data";
+        private static readonly string altVDirectory = "C:/Servers/Southland/data";
 #endif
 
         /// <summary>

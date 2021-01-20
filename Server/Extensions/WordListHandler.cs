@@ -12,13 +12,13 @@ namespace Server.Extensions
         {
             Console.WriteLine("Loading Word List");
 
-            if (!File.Exists(@"D:\servers\Paradigm-Dev\data\words_alpha.txt"))
+            if (!File.Exists(@"C:\Servers\Southland\data\words_alpha.txt"))
             {
                 Console.WriteLine("No word list found!");
                 return;
             }
 
-            WordList = File.ReadAllLines(@"D:\servers\Paradigm-Dev\data\words_alpha.txt");
+            WordList = File.ReadAllLines(@"C:\Servers\Southland\data\words_alpha.txt");
 
             Console.WriteLine($"Loaded {WordList.Length} words!");
         }

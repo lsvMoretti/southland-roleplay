@@ -107,11 +107,7 @@ namespace Server
 
                 CommandExtension.Init();
                 GameWorld.InitGameWorld();
-                /*
-#if RELEASE
-                SignalR.StartConnection();
-#endif
-                */
+
                 SignalR.StartConnection();
 
                 await ServerLoaded();

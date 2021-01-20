@@ -15,12 +15,12 @@ namespace Server.Jobs.FoodStand
 
 #if RELEASE
 
-            string directory = "D:/servers/Paradigm/data/foodstands";
+            string directory = "C:/Servers/Southland/data/foodstands";
 #endif
 
 #if DEBUG
 
-            string directory = "D:/servers/Paradigm-Dev/data/foodstands";
+            string directory = "D:/servers/Southland-Dev/data/foodstands";
 #endif
 
             if (!Directory.Exists(directory))
