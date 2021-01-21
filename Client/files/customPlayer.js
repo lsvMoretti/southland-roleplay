@@ -140,13 +140,15 @@ function setCustomCharacter(ped, customCharacterJson, clothesJson, accessoryJson
     var features = JSON.parse(customCharacter.Features);
     var apperanceInfo = JSON.parse(customCharacter.Appearance);
     var hairInfo = JSON.parse(customCharacter.Hair);
-    if (parentData.MotherSkin == null) {
+    if (parentData.MotherSkin === null) {
         parentData.MotherSkin = parentData.Mother;
     }
-    if (parentData.FatherSkin == null) {
+    if (parentData.FatherSkin === null) {
         parentData.FatherSkin = parentData.Father;
     }
-    native.setPedHeadBlendData(ped, parentData.Mother, parentData.Father, 0, parentData.MotherSkin, parentData.FatherSkin, 0, parentData.Similarity, parentData.SkinSimilarity, 0, false);
+    alt.log('MotherSkin: ' + parentData.MotherSkin);
+    alt.log('FatherSkin: ' + parentData.FatherSkin);
+    native.setPedHeadBlendData(ped, parentData.Mother, parentData.Father, 0, parentData.MotherSkin, parentData.FatherSkin, 0, parentData.Similarity, parentData.Similarity, 0, false);
     for (let index = 0; index < apperanceInfo.length; index++) {
         const element = apperanceInfo[index];
         if (element.Value == -1) {

@@ -217,13 +217,14 @@ var parentOneSkin = 0;
 var parentTwoSkin = 0;
 
 function onParentSkinChange(parent: any, newParentSkin: any) {
+    alt.log('Parent Change: ' + parent + ", " + newParentSkin);
     if (parent == 1) {
         parentOneSkin = newParentSkin;
-        parentInfo.MotherSkin = newParentSkin;
+        parentInfo.MotherSkin = Number(newParentSkin);
     }
     if (parent == 2) {
         parentTwoSkin = newParentSkin;
-        parentInfo.FatherSkin = newParentSkin;
+        parentInfo.FatherSkin = Number(newParentSkin);
     }
 
     PedHeadBlendUpdate();
@@ -247,6 +248,8 @@ function PedHeadBlendUpdate() {
     alt.log('Parent Two: ' + parentTwo);
     alt.log('Similarity: ' + parentMix);
     alt.log('Skin Mix: ' + skinMix);
+    alt.log('Parent One Skin: ' + parentOneSkin);
+    alt.log('Parent Two Skin: ' + parentTwoSkin);
 
     localPlayer = alt.Player.local.scriptID;
     native.setPedHeadBlendData(localPlayer, parentOne, parentTwo, 0, parentOneSkin, parentTwoSkin, 0, parentMix, skinMix, 0, false);
@@ -799,6 +802,8 @@ function finishCreation() {
     customCharacter.Appearance = JSON.stringify(appearanceItems);
     customCharacter.Hair = JSON.stringify(hairInfo);
     customCharacter.Gender = currentGender;
+
+    alt.log('Parents: ' + customCharacter.Parents);
 
     alt.log('Character Feature: ' + customCharacter.features);
 
