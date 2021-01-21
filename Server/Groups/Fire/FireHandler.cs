@@ -47,6 +47,7 @@ namespace Server.Groups.Fire
             }
 
             player.DeleteData("CurrentWeaponHash");
+            player.DeleteData("CURRENTWEAPON");
 
             return true;
         }

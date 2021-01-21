@@ -72,6 +72,7 @@ namespace Server.Groups.Police
             }
 
             player.DeleteData("CurrentWeaponHash");
+            player.DeleteData("CURRENTWEAPON");
             return true;
         }
 

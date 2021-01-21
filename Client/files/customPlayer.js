@@ -3,6 +3,8 @@ import * as native from 'natives';
 alt.onServer('setPlayerClothes', setPlayerClothes);
 alt.onServer('setPlayerAccessory', setPlayerAccessory);
 alt.onServer('loadCustomPlayer', loadCustomPlayer);
+native.requestModel(1885233650);
+native.requestModel(-1667301416);
 alt.onServer('previewFacialHair', (index) => {
     native.setPedHeadOverlay(alt.Player.local.scriptID, 1, index, 1);
 });
