@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import { SendNotification } from "files/noty/notyHandler";
+import { SendNotification } from "../noty/notyHandler";
 export let cruiseControlStatus = false;
 let vehicleVelocity = null;
 export function OnCruiseControlPress() {

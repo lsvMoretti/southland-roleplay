@@ -1,35 +1,27 @@
 {
-  "compilerOptions": {
-    "lib": [ "es5", "es6", "esnext" ],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "target": "esnext",
+    "compilerOptions": {
+        "typeRoots":  ["./node_modules/@types", "./node_modules/@altv"],
+        "removeComments": true,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitReturns": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "ESNext",
+        "target": "ESNext",
+        "outDir": "./files",
+        "rootDir": "./src",
+        "allowSyntheticDefaultImports": true,
+    },
+    "include": [
+        "./src/**/*.ts"
+      ],
+      "exclude": [
+        "alt",
+        "natives"
+      ],
 
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "removeComments": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "preserveConstEnums": true,
-
-    "noImplicitAny": true,
-    "sourceMap": false,
-
-    "rootDir": "./",
-    "outDir": "./",
-
-    "baseUrl": "./",
-    "paths": {
-      "natives": [ "node_modules/@altv/native-types" ],
-      "alt-client": [ "node_modules/@altv/types" ]
-    }
-  },
-  "compileOnSave": true,
-  "include": [
-    "./**/*.ts"
-  ],
-  "exclude": [
-    "alt",
-    "natives"
-  ]
 }

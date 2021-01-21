@@ -1,0 +1,347 @@
+* {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background {
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(40, 40, 40, 0);
+}
+
+.text-white {
+    color: #FFF;
+}
+
+.text-yellow {
+    color: yellow;
+}
+
+.text-red {
+    color: red;
+}
+#loginMessage{
+    color: #efc21f;
+    font-size: 15px;
+    font-style: oblique;
+}
+#loginTerms{
+    color: #efc21f;
+    font-size: 10px;
+    font-style: oblique;
+}
+
+.buttonspace {
+    margin: 4px 4px 0 1px;
+    padding: 7px 1px 7px 0;
+}
+
+.pinvalue {
+    margin: 30px;
+    background-color: #6e747a;
+}
+
+.center-div {
+    margin: 0 auto;
+    width: 100px;
+}
+
+.background-lighter {
+    background-color: #6e747a;
+}
+
+.txtbox {
+    display: block;
+    float: left;
+    height: 32px;
+    width: 100px;
+}
+
+.btncls {
+    display: block;
+    float: left;
+    height: 40px;
+    margin: -1px -2px -2px;
+    width: 41px;
+}
+
+.hideme {
+    display: none;
+    visibility: hidden;
+}
+
+.center {
+    display: table;
+    margin: 0 auto;
+}
+
+.topright {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 5px 5px;
+    z-index: 999;
+}
+
+.bankAccountTextAlign {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 55px;
+}
+
+div span,
+div img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+​
+#table-wrapper {
+    position: relative;
+}
+
+#table-scroll {
+    height: 300px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+#table-scroll-help {
+    height: 300px;
+    overflow: auto;
+    margin-top: 20px;
+    width: 750px;
+}
+
+#table-scroll-lg {
+    height: 500px;
+    overflow: auto;
+    margin-top: 20px;
+}
+
+#table-wrapper table {
+    width: 100%;
+}
+
+    #table-wrapper table * {
+        background: lightgray;
+        color: black;
+    }
+
+    #table-wrapper table thead th .text {
+        position: absolute;
+        top: -20px;
+        z-index: 2;
+        height: 20px;
+        width: 35%;
+        border: 1px solid red;
+    }
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible:focus {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #0072ff;
+        border-color: black;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #0072ff;
+        border-color: black;
+        cursor: pointer;
+    }
+
+.bg-blue {
+    background: #0072ff;
+}
+
+.bg-grey {
+    background: #383636;
+}
+
+.male-color {
+    background: lightskyblue;
+}
+
+.female-color {
+    background: hotpink;
+}
+
+.bg-transparent {
+    background: transparent;
+}
+
+.btn-border {
+    border-style: solid !important;
+    border: black;
+    border-color: black;
+    border-width: 1px;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+.align-center {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        /* Fade in tooltip */
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+        /* Tooltip arrow */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+    }
+
+.bg-75 {
+    opacity: 0.75;
+}
+
+#dealershipMainDiv {
+    display: block;
+    margin-top: 60px;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+#dealerName {
+    display: block;
+    padding: 5px;
+}

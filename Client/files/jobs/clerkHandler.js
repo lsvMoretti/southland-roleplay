@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from "natives";
-import * as extensions from "files/extensions";
+import * as extensions from "../extensions";
 alt.onServer('Clerk:StartJob', startClerkJob);
 alt.onServer('Clerk:StopJob', stopClerkJob);
 alt.onServer('Clerk:SetGotoPosition', setClerkPosition);

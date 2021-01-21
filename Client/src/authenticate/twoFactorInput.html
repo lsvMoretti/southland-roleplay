@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="background center" id="bodyClass">
+    <div class="container-fluid col-md-8">
+        <div class="row rounded bg-dark centered">
+            <div class="topright">
+                <img width="20px" src="../data/close.png" style="cursor: pointer" onclick="closePage()">
+            </div>
+            <div class="col-md-12">
+                <br>
+                <h3 class="text-white text-center">Two Factor Authentication</h3>
+                <br>
+                <p class="text-white text-center">Enter the code below from your 2FA App:</p>
+                <br>
+                <input class="center text-center" type="number" id="codeInput">
+                <br>
+                <div class="center">
+                    <button class="btn btn-success" onclick="finish()">Finish</button>
+                </div>
+                <br>
+            </div>
+        </div>
+        <script src="../data/jquery-3.3.1.slim.min.js"></script>
+        <script src="../data/popper.min.js"></script>
+        <script src="../data/bootstrap.min.js"></script>
+
+        <script>
+
+            function closePage(){
+                alt.emit('TFA:CloseInputPage');
+            }
+
+            function finish(){
+                var input = document.getElementById('codeInput').value;
+                console.log('Input: '+input);
+                alt.emit('TFA:SendCodeInput', input.toString());
+            }
+
+            if ('alt' in window) {
+                alt.on('InvalidCode', () => {
+                    
+                    var input = document.getElementById('codeInput');
+
+                    input.innerText = undefined;
+                })
+            }
+        </script>
+</body>
+</html>

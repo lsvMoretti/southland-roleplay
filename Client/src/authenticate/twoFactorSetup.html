@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="background center" id="bodyClass" onload="pageLoaded()">
+    <div class="container-fluid col-md-8">
+        <div class="row rounded bg-dark centered">
+            <div class="topright">
+                <img width="20px" src="../data/close.png" style="cursor: pointer" onclick="closePage()">
+            </div>
+            <div class="col-md-12">
+                <br>
+                <h3 class="text-white text-center">Two Factor Authentication Setup</h3>
+                <br>
+                <p class="text-white text-center">Below is a QR code for the setup on your 2FA app:</p>
+                <img id="qrDiv" />
+                <br>
+                <p class="text-white text-center">Below is a manual entry code for the setup on your 2FA app:</p>
+                <p id="codeDiv" class="text-white text-center">CodeHere</p>
+                <br>
+                <div class="center">
+                    <button class="btn btn-success" onclick="finish()">Finish</button>
+                </div>
+                <br>
+            </div>
+        </div>
+        <script src="../data/jquery-3.3.1.slim.min.js"></script>
+        <script src="../data/popper.min.js"></script>
+        <script src="../data/bootstrap.min.js"></script>
+
+        <script>
+            function pageLoaded() {
+                console.log('2FA Page Loaded');
+                alt.emit('TFA:PageLoaded');
+            }
+
+            function closePage() {
+                alt.emit('TFA:ClosePage');
+            }
+
+            function finish() {
+                alt.emit('TFA:Finish');
+            }
+
+            if ('alt' in window) {
+                alt.on('TFA:SendData', (manualCode, qrUri) => {
+
+                    var codeDiv = document.getElementById('codeDiv');
+                    codeDiv.innerText = manualCode;
+
+                    var qrDiv = document.getElementById('qrDiv');
+                    qrDiv.src = qrUri;
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body onload="editDealershipVehicleLoaded()" class="bg-transparent">
+    <div class="col-md-3 rounded bg-dark" id="dealershipMainDiv">
+
+        <div class="topright">
+            <img width="20px" src="../data/close.png" style="cursor: pointer" onclick="CloseAdminDealership()">
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <h4 class="text-white center">Dealership Vehicles</h4>
+                <div class="col-md-12">
+                    <div class="row">
+                        <p class="text-white center">Remove Vehicle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row">
+                <div class="center">
+                    <br />
+                    <input type="text" id="vehicleName" placeholder="Vehicle Name" required="required" />
+                    <br />
+                    <br />
+                    <input type="text" id="vehicleModel" placeholder="Vehicle Model" required="required" />
+                    <br />
+                    <br />
+                    <input type="number" id="vehiclePrice" placeholder="Vehicle Price" min="0" required="required" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="center">
+                    <br />
+                    <button class="btn btn-success buttonspace" onclick="editDealershipVehicle()">Edit Vehicle</button>
+                    <button class="btn btn-danger buttonspace" onclick="removeDealershipVehicle()">Remove Vehicle</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dealershipVehicle.js"></script>
+    <script src="../data/jquery-3.3.1.slim.min.js"></script>
+    <script src="../data/popper.min.js"></script>
+    <script src="../data/bootstrap.min.js"></script>
+</body>
+</html>

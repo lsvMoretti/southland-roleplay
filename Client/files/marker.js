@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import * as extensions from 'files/extensions';
+import * as extensions from './extensions';
 var markerJsonArray = new Array();
 var markerArray = new Array();
 alt.onServer('createMarker', createNewMarker);

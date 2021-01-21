@@ -1,7 +1,7 @@
 import * as alt from 'alt-client';
-import * as keyHandler from 'files/keyHandler';
-import * as sirenHandler from 'files/vehicle/newSirenHandler';
-import * as NativeUi from 'files/NativeUi/NativeUi';
+import * as keyHandler from './keyHandler';
+import * as sirenHandler from './vehicle/newSirenHandler';
+import * as NativeUi from './NativeUi/NativeUi';
 var ui = null;
 alt.onServer('CreateNativeMenu', CreateNativeMenu);
 function CreateNativeMenu(nativeJson) {

@@ -19,6 +19,12 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
+            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            {
+                player.SendErrorNotification("You don't have the Taxi Job!");
+                return;
+            }
+
             bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
                 .Contains(Models.Jobs.TaxiDriver);
 
@@ -66,6 +72,12 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
+            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            {
+                player.SendErrorNotification("You don't have the Taxi Job!");
+                return;
+            }
+
             bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
                 .Contains(Models.Jobs.TaxiDriver);
 
@@ -110,6 +122,12 @@ namespace Server.Jobs.Taxi
         public static void TaxiCommandTaxiCalls(IPlayer player)
         {
             if (!player.IsSpawned()) return;
+
+            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            {
+                player.SendErrorNotification("You don't have the Taxi Job!");
+                return;
+            }
 
             bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
                 .Contains(Models.Jobs.TaxiDriver);
@@ -198,6 +216,12 @@ namespace Server.Jobs.Taxi
             if (args == "")
             {
                 player.SendSyntaxMessage("/startfare [IdOrName]");
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            {
+                player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
             }
 
@@ -316,6 +340,11 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
+            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            {
+                player.SendErrorNotification("You don't have the Taxi Job!");
+                return;
+            }
             bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
                 .Contains(Models.Jobs.TaxiDriver);
 

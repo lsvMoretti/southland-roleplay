@@ -1,6 +1,8 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import * as extensions from 'files/extensions';
+import './extensions';
+import './player/PlayerHandler';
+import * as extensions from './extensions';
 var textLabelJsonArray = new Array();
 var textLabelArray = new Array();
 alt.onServer('createTextLabel', createTextLabel);

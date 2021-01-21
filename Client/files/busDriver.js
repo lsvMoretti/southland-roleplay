@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import * as extensions from 'files/extensions';
+import * as extensions from './extensions';
 var busStops = undefined;
 var currentMarker = undefined;
 var currentBusStop = undefined;

@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+    *:focus {
+        outline: 0;
+    }
+
+body {
+    font-family: 'Segoe UI', 'Segoe UI Symbol', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    font-size: 8px;
+    overflow: hidden;
+}
+
+.shblock {
+    width: 70vw;
+    height: 70vh;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(255, 255, 255, 0) 70%);
+    position: absolute;
+    top: -35vh;
+    left: -35vw;
+    transition: all .2s;
+    opacity: .5;
+    z-index: -1;
+}
+
+    .shblock.active {
+        opacity: .9;
+    }
+
+.chatbox {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 450px;
+    height: 250px;
+    padding: 10px;
+    opacity: .8;
+    transition: all .5s;
+    font-weight: bolder;
+    font-size: 0.8em;
+}
+
+.chatbox.active {
+    opacity: 2;
+    border-radius: 5px;
+}
+
+.chatbox p {
+    color: #fff;
+    line-height: 18px;
+    padding: 0px 0px;
+    margin: 0px;
+    text-shadow: -1px -1px 0 rgba(0,0,0,1), 1px -1px 0 rgba(0,0,0,1), -1px 1px 0 rgba(0,0,0,1), 1px 1px 0 rgba(0,0,0,1);
+    
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    /*word-break: break-all;*/
+    word-break: normal;
+    display: inline-block;
+
+}
+
+.chatbox p b {
+    font-weight: 500;
+}
+.msglist {
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.msglist::-webkit-scrollbar { 
+    display: none; 
+    width: 0px;
+}
+
+
+.overflowed {
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 100%);
+}
+
+.msginput {
+    display: none;
+    width: 100%;
+}
+
+    .msginput input {
+        background: rgba(0, 0, 0, .5);
+        border: 0;
+        padding: 10px;
+        width: 430px;
+        margin-left: 5px;
+        margin-top: 10px;
+        color: #fff;
+        font-family: inherit;
+        font-size: 1em;
+    }
+
+        .msginput input::selection {
+            background-color: #fff;
+            color: #000;
+        }
+
+.msgsubmit {
+    font-size: 20px;
+    width: 65px;
+    height: 41px;
+    position: relative;
+    top: 5px;
+    right: 4px;
+    border: 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    transition: all .3s;
+}
+
+    .msgsubmit::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 70%;
+        margin-top: -1px;
+        margin-left: -0.5px;
+        background: rgba(255,255,255,.6);
+        transition: all .3s;
+    }
+
+    .msgsubmit:hover {
+        background: rgba(0,0,0,.55);
+    }
+
+@media screen and (max-width: 2560px) {
+    body {
+        font-size: 20px;
+    }
+
+    .chatbox {
+        width: 600px;
+        height: 400px;
+    }
+
+    .msginput input {
+        width: 580px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    body {
+        font-size: 16px;
+    }
+
+    .chatbox {
+        width: 400px;
+        height: 300px;
+    }
+
+    .msginput input {
+        width: 380px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        font-size: 14px;
+    }
+
+    .chatbox {
+        width: 400px;
+        height: 300px;
+    }
+
+    .msginput input {
+        width: 380px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .chatbox {
+        width: 350px;
+        height: 200px;
+    }
+
+        .chatbox p {
+            line-height: 16px;
+        }
+
+    .msginput input {
+        width: 330px;
+        height: 15px;
+        margin-top: 10px;
+    }
+}

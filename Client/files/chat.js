@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as game from 'natives';
-import * as nameTags from '../files/nametags';
+import * as nameTags from './nametags';
 let buffer = [];
 let loaded = false;
 let opened = false;

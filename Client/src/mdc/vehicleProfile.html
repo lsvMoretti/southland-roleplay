@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="background center" id="bodyClass" onload="vehicleProfileLoaded()">
+
+    <div class="container-fluid">
+        <div class="row rounded bg-dark vertical-center">
+            <div class="col-md-12">
+                <br>
+                <h3 class="text-center text-white">
+                    Los Santos Police Department
+                </h3>
+                <h5 class="text-center text-white">
+                    Mobile Data Terminal
+                </h5><img class="center" src="pdlogo.png">
+                <br><br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <br>
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link buttonspace bg-primary text-white" href="home.html" onclick="homeClick()">Home</a>
+                            </li>
+                            <li id="911MenuItem" class="nav-item">
+                                <a class="nav-link buttonspace  bg-light text-dark" href="911calls.html" onclick="callClick()">911 Calls</a>
+                            </li>
+                            <li id="personSearchMenuItem" class="nav-item">
+                                <a class="nav-link buttonspace bg-light text-dark" href="personSearch.html" onclick="personsClick()">Persons Search</a>
+                            </li>
+                            <li id="vehicleSearchMenuItem" class="nav-item">
+                                <a class="nav-link buttonspace bg-light text-dark" href="vehicleSearch.html" onclick="vehicleClick()">Vehicle Search</a>
+                            </li>
+                            <li id="activeBoloMenuItem" class="nav-item">
+                                <a class="nav-link buttonspace bg-light text-dark" onclick="boloClick()">Active BOLOs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link buttonspace bg-danger text-white" onclick="closeClick()">Close</a>
+                            </li>
+                        </ul>
+                        <br>
+                    </div>
+                    <!-- Content Area -->
+                    <div class="col-md-9 background-white">
+                        <br>
+                        <div id="nameDiv" class="row">
+                            <div class="col-md-6">
+                                <p id="plateInput" class="text-white">Plate: </p>
+                                <p id="ownerInput" class="text-white">Owner: </p>
+                                <p id="modelInput" class="text-white">Model: </p>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script src="mdc.js"></script>
+    <script src="../data/jquery-3.3.1.slim.min.js"></script>
+    <script src="../data/popper.min.js"></script>
+    <script src="../data/bootstrap.min.js"></script>
+</body>
+</html>

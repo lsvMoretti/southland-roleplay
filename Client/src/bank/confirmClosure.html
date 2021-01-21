@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="bg-transparent centered">
+
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <img src="fleecalogo.png" width="10%" class="center">
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4 rounded bg-dark">
+                            <div class="topright">
+                                <img width="20px" src="../data/close.png" style="cursor: pointer" onclick="CloseBankHome()">
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="center">
+                                        <br>
+                                        <h4 class="text-white">Are you sure you want to close the account?</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="center">
+
+                                        <br>
+                                        <button type="button" class="btn buttonspace btn-success rounded" onclick="requestCloseAccount()">Confirm Account Closure</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="center">
+                                        <button type="button" class="btn buttonspace btn-danger rounded" onclick="CloseBankHome()">Cancel</button>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="bank.js"></script>
+
+    <script src="../data/jquery-3.3.1.slim.min.js"></script>
+    <script src="../data/popper.min.js"></script>
+    <script src="../data/bootstrap.min.js"></script>
+</body>

@@ -1,11 +1,11 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import * as chatHandler from 'files/chat';
-import * as sirenHandler from 'files/vehicle/sirenHandler';
-import * as cruiseControl from 'files/vehicle/cruiseControl';
-import * as vehicleHandler from 'files/vehicle/vehicleHandler';
+import * as chatHandler from './chat';
+import * as sirenHandler from './vehicle/sirenHandler';
+import * as cruiseControl from './vehicle/cruiseControl';
+import * as vehicleHandler from './vehicle/vehicleHandler';
 import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
-import * as Animation from "files/animation";
+import * as Animation from "./animation";
 var IsSpawned = false;
 var IsChatOpen = false;
 var leftIndicator = false;

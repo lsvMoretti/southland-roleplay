@@ -134,8 +134,10 @@ function LoadNPCPreview(pos, customCharacterJson, clothesJson, accessoryJson, to
 }
 function setCustomCharacter(ped, customCharacterJson, clothesJson, accessoryJson) {
     var customCharacter = JSON.parse(customCharacterJson);
-    if (customCharacter === null || customCharacter === undefined)
+    if (customCharacter === null || customCharacter === undefined) {
+        alt.log('Custom Char null');
         return;
+    }
     var parentData = JSON.parse(customCharacter.Parents);
     var features = JSON.parse(customCharacter.Features);
     var apperanceInfo = JSON.parse(customCharacter.Appearance);
@@ -148,7 +150,8 @@ function setCustomCharacter(ped, customCharacterJson, clothesJson, accessoryJson
     }
     alt.log('MotherSkin: ' + parentData.MotherSkin);
     alt.log('FatherSkin: ' + parentData.FatherSkin);
-    native.setPedHeadBlendData(ped, parentData.Mother, parentData.Father, 0, parentData.MotherSkin, parentData.FatherSkin, 0, parentData.Similarity, parentData.Similarity, 0, false);
+    alt.log('SkinSimilarity: ' + parentData.SkinSimilarity);
+    native.setPedHeadBlendData(ped, parentData.Mother, parentData.Father, 0, parentData.MotherSkin, parentData.FatherSkin, 0, parentData.Similarity, parentData.SkinSimilarity, 0, false);
     for (let index = 0; index < apperanceInfo.length; index++) {
         const element = apperanceInfo[index];
         if (element.Value == -1) {

@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../data/general.css">
+    <link rel="stylesheet" href="../data/bootstrap.min.css">
+</head>
+<body class="background centered" onload="helpTableLoaded()">
+    <div class="container-fluid centered">
+        <div class="row rounded bg-dark">
+            <div class="col-lg-12">
+                <br>
+                <h3 class="text-center text-white" id="heading">
+                    Help Menu
+                </h3>
+                <br />
+                <br />
+                <div id="resultTable" class="center">
+                    <br>
+                    <div id="table-wrapper">
+                        <div id="table-scroll-help">
+                            <table id="ResultTable">
+                                <thead>
+                                    <tr>
+                                        <th>Command</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+                <div class="center-div">
+                    <button class="btn btn-danger rounded" onclick="CloseHelpMenu()">Close</button>
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <script src="helpMenu.js"></script>
+    <script src="../data/jquery-3.3.1.slim.min.js"></script>
+    <script src="../data/popper.min.js"></script>
+    <script src="../data/bootstrap.min.js"></script>
+</body>
+</html>

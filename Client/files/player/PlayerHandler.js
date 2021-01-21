@@ -1,7 +1,7 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import * as nametag from "files/nametags";
-import * as vehicleHandler from 'files/vehicle/vehicleHandler';
+import * as nametag from "../nametags";
+import * as vehicleHandler from '../vehicle/vehicleHandler';
 alt.onServer('Blindfolded', (blindfolded) => {
     if (blindfolded) {
         native.doScreenFadeOut(1000);

@@ -1,6 +1,6 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
-import * as animation from "files/animation";
+import * as animation from "../animation";
 var startAnimation = animation.startAnimation;
 var creatorView = undefined;
 var creatorCamera = undefined;
@@ -139,12 +139,12 @@ function onParentChange(parent, faceId) {
 var parentOneSkin = 0;
 var parentTwoSkin = 0;
 function onParentSkinChange(parent, newParentSkin) {
-    alt.log('Parent Change: ' + parent + ", " + newParentSkin);
-    if (parent == 1) {
+    alt.log('Parent Skin Change: ' + parent + ", " + newParentSkin);
+    if (parent === 1) {
         parentOneSkin = newParentSkin;
         parentInfo.MotherSkin = Number(newParentSkin);
     }
-    if (parent == 2) {
+    if (parent === 2) {
         parentTwoSkin = newParentSkin;
         parentInfo.FatherSkin = Number(newParentSkin);
     }
@@ -341,6 +341,7 @@ function FetchMaleHairTattooData(hairId) {
     if (hairId === 73) {
         return ["mpgunrunning_overlays", "MP_Gunrunning_Hair_M_001_M"];
     }
+    return ["mpbeach_overlays", "FM_Hair_Fuzz"];
 }
 function FetchFemaleHairTattooData(hairId) {
     if (hairId === 0) {
@@ -466,6 +467,7 @@ function FetchFemaleHairTattooData(hairId) {
     if (hairId === 73) {
         return ["mpgunrunning_overlays", "MP_Gunrunning_Hair_F_001_F"];
     }
+    return ["mpbeach_overlays", "FM_Hair_Fuzz"];
 }
 function onEyebrowColorChange(newColor) {
     localPlayer = alt.Player.local.scriptID;
