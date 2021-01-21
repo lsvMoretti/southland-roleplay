@@ -55,6 +55,7 @@ function drawNameTags() {
             continue;
         const isTyping = player.getSyncedMeta("TypeStatus");
         const isDown = player.getSyncedMeta("ISDOWNED");
+        const isKnockedDown = player.getSyncedMeta("KnockedDown");
         const pos = { ...native.getPedBoneCoords(player.scriptID, 12844, 0, 0, 0) };
         pos.z += 0.5;
         const scale = 1 - (0.8 * dist) / drawDistance;
@@ -71,7 +72,10 @@ function drawNameTags() {
         native.setTextCentre(true);
         native.setTextColour(255, 255, 255, 255);
         native.setTextOutline();
-        if (isDown) {
+        if (isKnockedDown) {
+            native.addTextComponentSubstringPlayerName(`~r~Knocked Out\n~w~${name} (${playerId})`);
+        }
+        else if (isDown) {
             native.addTextComponentSubstringPlayerName(`~r~Downed\n~w~${name} (${playerId})`);
         }
         else {

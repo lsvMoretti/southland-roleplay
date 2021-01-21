@@ -48,6 +48,28 @@ namespace Server.Character
 
             player.SendInfoNotification($"You've been downed.");
 
+            bool hasDamageData = DamageHandler.DamageDictionary.TryGetValue(player.GetClass().CharacterId,
+                out List<BodyDamage> bodyDamages);
+
+            if (!hasDamageData || bodyDamages == null)
+            {
+                player.SendErrorNotification("No damage data for this player.");
+                return;
+            }
+
+            int meeleCount = 0;
+
+            foreach (BodyDamage bodyDamage in bodyDamages)
+            {
+                if (!DamageHandler.MeeleWeapons.Contains((WeaponModel)bodyDamage.Weapon)) continue;
+                meeleCount++;
+            }
+
+            if (meeleCount == bodyDamages.Count)
+            {
+                player.SetSyncedMetaData("KnockedDown", true);
+            }
+
             if (killer != null && killer != player)
             {
                 if (killer.Type == BaseObjectType.Player)
@@ -139,6 +161,7 @@ namespace Server.Character
             DeadBodyHandler.LoadDeadBodyForAll(newBody);
 
             player.GetClass().Downed = false;
+            player.DeleteSyncedMetaData("KnockedDown");
             player.SetData("CANRESPAWN", false);
             player.SetData("REVIVED", true);
             player.DeleteData("WeaponDamageData");
@@ -200,6 +223,7 @@ namespace Server.Character
             targetPlayer.FreezeInput(false);
 
             targetPlayer.GetClass().Downed = false;
+            player.DeleteSyncedMetaData("KnockedDown");
 
             targetPlayer.SetData("REVIVED", true);
 
@@ -287,6 +311,7 @@ namespace Server.Character
             targetPlayer.FreezeInput(false);
 
             targetPlayer.GetClass().Downed = false;
+            player.DeleteSyncedMetaData("KnockedDown");
 
             targetPlayer.SetData("REVIVED", true);
 
