@@ -66,12 +66,12 @@ namespace Server.Groups.Police
                 {
                     playerCharacter.CurrentWeapon = string.Empty;
                     player.RemoveAllWeapons();
-                    player.SetData("CurrentWeaponHash", 0);
                     player.DeleteData("CurrentWeaponHash");
                     context.SaveChanges();
                 }
             }
 
+            player.DeleteData("CurrentWeaponHash");
             return true;
         }
 

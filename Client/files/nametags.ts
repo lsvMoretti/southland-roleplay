@@ -103,7 +103,7 @@ function drawNameTags() {
         native.setTextColour(255, 255, 255, 255);
         native.setTextOutline();
         if (isDown) {
-            native.addTextComponentSubstringPlayerName(`Downed\n${name} (${playerId})`);
+            native.addTextComponentSubstringPlayerName(`~r~Downed\n~w~${name} (${playerId})`);
         } else {
             native.addTextComponentSubstringPlayerName(isTyping ? `Typing..\n${name} (${playerId})` : `${name} (${playerId})`);
         }

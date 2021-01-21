@@ -41,14 +41,12 @@ namespace Server.Groups.Fire
                 if (currentWeapon.Id.Contains("ITEM_FIRE_WEAPON"))
                 {
                     playerCharacter.CurrentWeapon = string.Empty;
-                    player.SetData("CurrentWeaponHash", 0);
-                    player.DeleteData("CurrentWeaponHash");
                     player.RemoveAllWeapons();
                     context.SaveChanges();
                 }
             }
 
-            
+            player.DeleteData("CurrentWeaponHash");
 
             return true;
         }
