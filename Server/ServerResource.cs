@@ -67,6 +67,8 @@ namespace Server
         {
             try
             {
+                Console.SetOut(new Writer());
+
                 AltEntitySync.Init(5, 200, (threadId) => true,
                     (threadCount, repository) => new ServerEventNetworkLayer(threadCount, repository),
                     (entity, threadCount) => entity.Type,
@@ -530,7 +532,7 @@ namespace Server
         {
             Exception e = (Exception)args.ExceptionObject;
 
-            Console.WriteLine(e);
+            Alt.Log(e.ToString());
             return;
         }
 

@@ -19,7 +19,7 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
-            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            if (string.IsNullOrEmpty(player.FetchCharacter().JobList))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
@@ -72,7 +72,7 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
-            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            if (string.IsNullOrEmpty(player.FetchCharacter().JobList))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
@@ -123,7 +123,7 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
-            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            if (string.IsNullOrEmpty(player.FetchCharacter().JobList))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
