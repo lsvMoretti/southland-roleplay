@@ -10,18 +10,13 @@ namespace Server.Objects
     {
         public string Name { get; set; }
         public int Id { get; set; }
+        public uint Ping { get; set; }
 
         public OnlinePlayer(IPlayer player, int id = -1)
         {
             Name = player.GetClass().Name;
-            if (id == -1)
-            {
-                Id = player.GetPlayerId();
-            }
-            else
-            {
-                Id = id;
-            }
+            Id = id == -1 ? player.GetPlayerId() : id;
+            Ping = player.Ping;
         }
 
         /// <summary>
@@ -36,12 +31,10 @@ namespace Server.Objects
             {
                 if (player.GetClass().AdminDuty)
                 {
-
                     onlinePlayers.Add(new OnlinePlayer(player, 0));
                 }
                 else
                 {
-                    
                     onlinePlayers.Add(new OnlinePlayer(player));
                 }
             }
