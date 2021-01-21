@@ -223,7 +223,7 @@ namespace Server.Character
             targetPlayer.FreezeInput(false);
 
             targetPlayer.GetClass().Downed = false;
-            player.DeleteSyncedMetaData("KnockedDown");
+            targetPlayer.DeleteSyncedMetaData("KnockedDown");
 
             targetPlayer.SetData("REVIVED", true);
 
@@ -311,7 +311,7 @@ namespace Server.Character
             targetPlayer.FreezeInput(false);
 
             targetPlayer.GetClass().Downed = false;
-            player.DeleteSyncedMetaData("KnockedDown");
+            targetPlayer.DeleteSyncedMetaData("KnockedDown");
 
             targetPlayer.SetData("REVIVED", true);
 
