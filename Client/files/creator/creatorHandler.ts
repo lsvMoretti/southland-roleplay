@@ -219,9 +219,11 @@ var parentTwoSkin = 0;
 function onParentSkinChange(parent: any, newParentSkin: any) {
     if (parent == 1) {
         parentOneSkin = newParentSkin;
+        parentInfo.MotherSkin = newParentSkin;
     }
     if (parent == 2) {
         parentTwoSkin = newParentSkin;
+        parentInfo.FatherSkin = newParentSkin;
     }
 
     PedHeadBlendUpdate();

@@ -71,7 +71,9 @@ namespace Server.Character
                 Father = 0,
                 Mother = 0,
                 Similarity = 0.5f,
-                SkinSimilarity = 0.5f
+                SkinSimilarity = 0.5f,
+                MotherSkin = 0,
+                FatherSkin = 0
             };
 
             HairInfo hairInfo = new HairInfo
@@ -151,6 +153,8 @@ namespace Server.Character
 
         public float Similarity { get; set; }
 
+        public int MotherSkin { get; set; }
+        public int FatherSkin { get; set; }
         public float SkinSimilarity { get; set; }
     }
 
