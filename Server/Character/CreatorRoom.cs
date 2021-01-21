@@ -326,8 +326,7 @@ namespace Server.Character
                 player.SendErrorNotification("You're not near a character.");
                 return;
             }
-
-            List<Models.Character> playerCharacters = Models.Character.FetchCharacters(player.FetchAccount());
+            List<Models.Character> playerCharacters = Models.Character.FetchCharacters(player.FetchAccount()).Where(x => x.BioStatus == 2).ToList();
 
             if (playerCharacters.ElementAtOrDefault(nearestCharacter) == null)
             {
