@@ -44,6 +44,8 @@ namespace Server.Animation
                 return false;
             }
 
+            if (player.GetClass().Cuffed) return false;
+
             if (player.IsInAnimation())
             {
                 //player.SendErrorMessage("You're in an animation already. Use /stopanim");

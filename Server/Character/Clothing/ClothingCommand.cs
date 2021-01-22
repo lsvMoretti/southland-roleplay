@@ -238,9 +238,7 @@ namespace Server.Character.Clothing
                 }
 #endif
 
-                playerInventory.RemoveItem(playerInventory.GetInventory()
-                    .FirstOrDefault(s => s.CustomName == selectedItem.CustomName));
-
+                playerInventory.RemoveItem(selectedItem.Id, selectedItem.ItemValue);
                 Clothes.SetClothes(player, newClothesData);
                 Clothes.SaveClothes(player, newClothesData);
 
@@ -592,8 +590,7 @@ namespace Server.Character.Clothing
                         return;
                     }
 
-                    playerInventory.RemoveItem(playerInventory.GetInventory()
-                        .FirstOrDefault(s => s.CustomName == selectedItem.CustomName));
+                    playerInventory.RemoveItem(newItem.Id, newItem.ItemValue);
 
                     var newAccessory = new AccessoryData(newClothesData.slot, newClothesData.drawable,
                         newClothesData.texture, player.IsMale());
@@ -643,13 +640,18 @@ namespace Server.Character.Clothing
                 var accessoryItem = new AccessoryData(currentClothesData.slot, currentClothesData.drawable,
                     currentClothesData.texture, player.IsMale());
 
-                bool added =
-                    playerInventory.AddItem(Clothes.ConvertAccessoryToInventoryItem(accessoryItem, player.IsMale()));
+                InventoryItem newAccessoryItem = Clothes.ConvertAccessoryToInventoryItem(accessoryItem, player.IsMale());
 
-                if (!added)
+                if (!playerInventory.HasItem(newAccessoryItem.Id, newAccessoryItem.ItemValue))
                 {
-                    player.SendErrorNotification("No space to take this off.");
-                    return;
+                    bool added =
+                        playerInventory.AddItem(newAccessoryItem);
+
+                    if (!added)
+                    {
+                        player.SendErrorNotification("No space to take this off.");
+                        return;
+                    }
                 }
 
                 playerClothesDatas.Remove(currentClothesData);

@@ -55,6 +55,17 @@ namespace Server.Character
                     return false;
                 }
 
+                bool isFist = (WeaponModel)weapon == WeaponModel.Fist;
+
+                if (isFist)
+                {
+                    Random rnd = new Random();
+
+                    int rndDamage = rnd.Next(5, 11);
+
+                    damage = (ushort)rndDamage;
+                }
+
                 int characterId = targetPlayer.GetClass().CharacterId;
 
                 BodyDamage newDamage = new BodyDamage(bodypart, 1, damage, weapon);
@@ -68,6 +79,13 @@ namespace Server.Character
 
                     DamageDictionary.Add(characterId, newDamageList);
 
+                    if (isFist)
+                    {
+                        targetPlayer.Health -= damage;
+                        return false;
+                    }
+                    if (targetPlayer.Health <= 0) DeathHandler.OnPlayerDeath(targetPlayer, player, weapon);
+
                     return true;
                 }
 
@@ -78,6 +96,14 @@ namespace Server.Character
                     DamageDictionary.Remove(characterId);
                     weaponDamage.Add(newDamage);
                     DamageDictionary.Add(characterId, weaponDamage);
+
+                    if (isFist)
+                    {
+                        targetPlayer.Health -= damage;
+                        return false;
+                    }
+                    if (targetPlayer.Health <= 0) DeathHandler.OnPlayerDeath(targetPlayer, player, weapon);
+
                     return true;
                 }
 
@@ -91,6 +117,13 @@ namespace Server.Character
                 DamageDictionary.Remove(characterId);
                 weaponDamage.Add(bodyDamage);
                 DamageDictionary.Add(characterId, weaponDamage);
+
+                if (isFist)
+                {
+                    targetPlayer.Health -= damage;
+                    return false;
+                }
+                if (targetPlayer.Health <= 0) DeathHandler.OnPlayerDeath(targetPlayer, player, weapon);
 
                 return true;
             }

@@ -492,14 +492,7 @@ namespace Server.Dealerships
                     IsStored = false
                 };
 
-                if (dealershipVehicle.VehModel != 0)
-                {
-                    newVehicle.Model = dealershipVehicle.VehModel.ToString();
-                }
-                else
-                {
-                    newVehicle.Model = dealershipVehicle.NewVehModel;
-                }
+                newVehicle.Model = dealershipVehicle.VehModel != 0 ? dealershipVehicle.VehModel.ToString() : dealershipVehicle.NewVehModel;
 
                 Context context = new Context();
 
@@ -522,8 +515,10 @@ namespace Server.Dealerships
 
                 context.SaveChanges();
 
-                Vehicle.Commands.SpawnVehicleById(newVehicleId,
+                IVehicle newIVehicle = Vehicle.Commands.SpawnVehicleById(newVehicleId,
                     new Position(newVehicle.PosX, newVehicle.PosY, newVehicle.PosZ));
+
+                newIVehicle.LockState = VehicleLockState.Unlocked;
 
                 player.SendInfoNotification($"Your new {dealershipVehicle.VehName} is ready for you!");
             }

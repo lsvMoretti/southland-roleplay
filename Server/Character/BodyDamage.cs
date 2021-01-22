@@ -16,9 +16,7 @@ namespace Server.Character
 
         public BodyDamage(BodyPart bodyPart, int count, ushort damageAmount, uint weapon)
         {
-            Console.WriteLine($"new BodyDamage: {bodyPart}");
             BodyPart = bodyPart;
-            Console.WriteLine($"Body Part set: {BodyPart}");
             Count = count;
             DamageAmount = damageAmount;
             Weapon = weapon;

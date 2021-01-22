@@ -16,7 +16,7 @@ var rightIndicator = false;
 var handBrake = false;
 var leftAltDown = false;
 var leftCtrlDown = false;
-var onlinePlayerWindow: any;
+var onlinePlayerWindow: alt.WebView;
 var cursorState = false;
 
 var nativeUiMenuOpen = false;
@@ -39,9 +39,26 @@ alt.onServer('setPlayerSpawned', (toggle: boolean) => {
 var sirenMute: boolean = false;
 
 alt.everyTick(() => {
+
+    let isCuffed:boolean = alt.Player.local.getSyncedMeta('IsCuffed');
+
+    if(isCuffed){
+        native.disableControlAction(0, 21, true);
+        native.disableControlAction(0, 22, true);
+        native.disableControlAction(0, 23, true);
+        native.disableControlAction(0, 24, true);
+        native.disableControlAction(0, 140, true);
+        native.disableControlAction(0, 141, true);
+        native.disableControlAction(0, 142, true);
+    }
+
     //Tab - INPUT_SELECT_WEAPON
 
     native.disableControlAction(0, 37, true);
+
+    if(native.isDisabledControlJustReleased(0, 37)){
+        alt.emitServer('WeaponChange:TabReleased');
+    }
 
     // Weapon Switch
     native.disableControlAction(0, 99, true);
@@ -96,7 +113,8 @@ alt.on('keyup', (key) => {
         }
     }
 
-    if (key === 0x70) {
+    /*if (key === 0x70) {
+        // F1 Key
         if (!IsSpawned) return;
 
         if (!cursorState) {
@@ -107,7 +125,7 @@ alt.on('keyup', (key) => {
 
         alt.showCursor(false);
         cursorState = false;
-    }
+    }*/
 
     if (key === 0x71) {
         // F2
@@ -121,6 +139,7 @@ alt.on('keyup', (key) => {
         } else {
             alt.showCursor(true);
             onlinePlayerWindow = new alt.WebView("http://resource/files/html/onlinePlayers.html", false);
+            onlinePlayerWindow.focus();
             onlinePlayerWindow.on('requestOnlinePlayerList', requestOnlinePlayers);
             onlinePlayerWindow.on('ClosePlayerList', ClosePlayerList);
         }

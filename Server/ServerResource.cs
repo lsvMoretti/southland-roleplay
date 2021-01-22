@@ -433,6 +433,7 @@ namespace Server
                 {
                     player.SetData("weaponEvent:CurrentAmmo", ammo);
                 });
+                Alt.OnClient<IPlayer>("WeaponChange:TabReleased", WeaponSwitch.OnWeaponKeyBindReleased);
 
                 #endregion Weapon System
 

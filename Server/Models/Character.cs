@@ -332,6 +332,8 @@ namespace Server.Models
         /// </summary>
         public string? Outfits { get; set; }
 
+        public string? ActiveWeapon { get; set; }
+
         /// <summary>
         /// Creates a Character
         /// </summary>

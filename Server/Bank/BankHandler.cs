@@ -192,6 +192,7 @@ namespace Server.Bank
         {
             player.FreezeCam(true);
             player.FreezeInput(true);
+            player.ChatInput(false);
             player.Emit("ShowBankMenu", JsonConvert.SerializeObject(BankAccount.FindCharacterBankAccounts(player.FetchCharacter()).Where(x => !x.Disabled)));
         }
 
@@ -478,6 +479,7 @@ namespace Server.Bank
 
             player.FreezeCam(false);
             player.FreezeInput(false);
+            player.ChatInput(true);
         }
 
         /// <summary>

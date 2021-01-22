@@ -29,7 +29,7 @@ namespace Server.Groups
             }
 
             player.SendInfoMessage("____[Online Faction Members]____");
-            
+
             await using Context context = new Context();
 
             List<Faction> factions = await context.Faction.ToListAsync();
@@ -37,7 +37,7 @@ namespace Server.Groups
             foreach (Faction faction in factions)
             {
                 int factionCount = 0;
-                
+
                 foreach (IPlayer client in Alt.Server.GetPlayers())
                 {
                     if (!client.IsSpawned()) continue;
@@ -55,11 +55,11 @@ namespace Server.Groups
                 }
 
                 if (factionCount == 0) continue;
-                
+
                 player.SendInfoMessage($"{faction.Name} - {factionCount} Members Online.");
             }
         }
-    
+
         [Command("faction", commandType: CommandType.Faction, description: "Allows you to manage your personal factions.")]
         public static void FactionCommandFaction(IPlayer player)
         {
@@ -229,7 +229,7 @@ namespace Server.Groups
                 target.SendRadioMessage($"{rank} {playerName} says: {args}");
             }
 
-            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk);
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk, excludePlayer: true);
 
             sw.Stop();
         }
@@ -328,7 +328,7 @@ namespace Server.Groups
                 target.SendRadioMessage($"[Departmental - {factionName}] {rank} {playerCharacter.Name} says: {args}");
             }
 
-            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk);
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk, excludePlayer: true);
             DiscordHandler.SendMessageToDepartmentalChannel($"[{factionName}] {rank} {playerCharacter.Name} says: {args}");
         }
     }
