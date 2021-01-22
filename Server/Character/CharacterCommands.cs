@@ -566,7 +566,7 @@ namespace Server.Character
                 return;
             }
 
-            var onlinePlayers = Alt.GetAllPlayers();
+            var onlinePlayers = Alt.Server.GetPlayers();
 
             var onlineAdmins = new List<IPlayer>();
 
@@ -739,7 +739,7 @@ namespace Server.Character
                 return;
             }
 
-            var onlineHelpers = Alt.GetAllPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
+            var onlineHelpers = Alt.Server.GetPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
 
             if (!onlineHelpers.Any())
             {
