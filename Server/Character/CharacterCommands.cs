@@ -1378,6 +1378,12 @@ namespace Server.Character
                 return;
             }
 
+            if (player.Position.Distance(targetPlayer.Position) > 3)
+            {
+                player.SendErrorNotification("You're not in range.");
+                return;
+            }
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             List<InventoryItem> idItems = playerInventory.GetInventoryItems("ITEM_DRIVING_LICENSE");
