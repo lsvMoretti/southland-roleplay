@@ -61,7 +61,7 @@ namespace Server.Character
                 {
                     Random rnd = new Random();
 
-                    int rndDamage = rnd.Next(5, 16);
+                    int rndDamage = rnd.Next(5, 11);
 
                     damage = (ushort)rndDamage;
                 }
