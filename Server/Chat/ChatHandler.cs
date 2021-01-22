@@ -112,7 +112,7 @@ namespace Server.Chat
                 MessageType.Whisper => 0.8f,
                 MessageType.Me => 8f,
                 MessageType.Do => 8f,
-                MessageType.Ooc => 5.5f,
+                MessageType.Ooc => 7.5f,
                 MessageType.My => 8f,
                 MessageType.Low => 3f,
                 MessageType.DoLow => 3f,
