@@ -1739,12 +1739,18 @@ namespace Server.Property
 
             Models.Property insideProperty = Models.Property.FetchProperty(currentPropertyId);
 
-            Inventory.Inventory propertyInventory = Models.Property.FetchInventory(insideProperty);
+            Inventory.Inventory? propertyInventory = Models.Property.FetchInventory(insideProperty);
 
             if (propertyInventory == null)
             {
                 player.SendErrorNotification("An error occurred.");
                 player.DeleteData("InsidePropertyInventory");
+                return;
+            }
+
+            if (selectedInventoryItem.Id.Contains("POLICE_WEAPON"))
+            {
+                player.SendErrorNotification("You can't store police weapons here!");
                 return;
             }
 

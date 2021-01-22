@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using Server.Chat;
 using Server.Commands;
 using Server.Extensions;
+using Server.Groups;
+using Server.Groups.Police;
 using Server.Inventory;
 
 namespace Server.Vehicle
@@ -49,7 +51,7 @@ namespace Server.Vehicle
             try
             {
                 IVehicle nearbyVehicle = VehicleHandler.FetchNearestVehicle(player);
-                
+
                 if (nearbyVehicle?.FetchVehicleData() == null)
                 {
                     player.SendErrorNotification("You are not nearby a vehicle.");
@@ -162,7 +164,7 @@ namespace Server.Vehicle
                             }
                         }
                     }
-                    
+
                     menuItems.Add(new NativeMenuItem(inventoryItem.CustomName, inventoryItem.ItemInfo.Description));
                 }
 
@@ -200,7 +202,7 @@ namespace Server.Vehicle
                     {
                         if (backPackCount >= 2) continue;
                     }
-                    
+
                     if (inventoryItem.Id.Contains("WEAPON") && !inventoryItem.Id.Contains("AMMO"))
                     {
                         WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(inventoryItem.ItemValue);
@@ -215,7 +217,7 @@ namespace Server.Vehicle
                             }
                         }
                     }
-                    
+
                     menuItems.Add(new NativeMenuItem(inventoryItem.CustomName, inventoryItem.ItemInfo.Description));
                 }
 
@@ -253,6 +255,12 @@ namespace Server.Vehicle
             if (selectedItem == null)
             {
                 player.SendErrorNotification("This item isn't in the trunk.");
+                return;
+            }
+
+            if (selectedItem.Id.Contains("POLICE_WEAPON") && !player.IsLeo(true))
+            {
+                player.SendErrorNotification("You can't do that!");
                 return;
             }
 
@@ -302,7 +310,7 @@ namespace Server.Vehicle
                 playerCharacter.BackpackId = backPackId;
 
                 context.SaveChanges();
-                
+
                 player.LoadCharacterCustomization();
             }
 
@@ -433,6 +441,12 @@ namespace Server.Vehicle
                 return;
             }
 
+            if (selectedItem.Id.Contains("POLICE_WEAPON") && !player.IsLeo(true))
+            {
+                player.SendErrorNotification("You can't do that!");
+                return;
+            }
+
             if (selectedItem.Quantity > 1)
             {
                 player.SetData("Vehicle:Inventory:PlaceIndex", index);
@@ -479,7 +493,6 @@ namespace Server.Vehicle
                 playerCharacter.BackpackId = 0;
 
                 context.SaveChanges();
-                
 
                 player.LoadCharacterCustomization();
             }

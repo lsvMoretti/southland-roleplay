@@ -231,6 +231,12 @@ namespace Server.Inventory.OpenInventory
                 return;
             }
 
+            if (selectedItem.Id.Contains("POLICE_WEAPON"))
+            {
+                player.SendErrorNotification("You can't place a weapon here!");
+                return;
+            }
+
             bool hasNearData = player.GetData("NearOWStorage", out int storageId);
 
             if (!hasNearData)
