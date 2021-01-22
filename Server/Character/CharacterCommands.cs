@@ -1321,11 +1321,23 @@ namespace Server.Character
                 return;
             }
 
+            List<IPlayer> playerList = Alt.Server.GetPlayers().ToList();
+
             bool tryParse = int.TryParse(args, out int playerId);
 
             if (tryParse)
             {
-                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().PlayerId == playerId);
+                IPlayer? targetPlayer = null;
+
+                foreach (IPlayer p in playerList)
+                {
+                    if (!p.IsSpawned()) continue;
+
+                    if (p.GetClass().PlayerId != playerId) continue;
+
+                    targetPlayer = p;
+                    break;
+                }
 
                 if (targetPlayer == null)
                 {
@@ -1337,8 +1349,16 @@ namespace Server.Character
                 return;
             }
 
-            List<IPlayer> targetList = Alt.Server.GetPlayers()
-                .Where(x => x.GetClass().Name.ToLower().Contains(args.ToLower())).ToList();
+            List<IPlayer> targetList = new List<IPlayer>();
+
+            foreach (IPlayer p in playerList)
+            {
+                if (!p.IsSpawned()) continue;
+
+                if (!p.GetClass().Name.ToLower().Contains(args.ToLower())) continue;
+
+                targetList.Add(p);
+            }
 
             if (!targetList.Any())
             {
