@@ -46,10 +46,6 @@ alt.everyTick(() => {
         native.disableControlAction(0, 21, true);
         native.disableControlAction(0, 22, true);
         native.disableControlAction(0, 23, true);
-    }else{
-        native.disableControlAction(0, 21, false);
-        native.disableControlAction(0, 22, false);
-        native.disableControlAction(0, 23, false);
     }
 
     //Tab - INPUT_SELECT_WEAPON
