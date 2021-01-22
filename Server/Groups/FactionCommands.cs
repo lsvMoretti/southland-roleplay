@@ -327,6 +327,8 @@ namespace Server.Groups
 
                 if (!canReceive) continue;
 
+                if (target == player) continue;
+
                 target.SendRadioMessage($"[Departmental - {factionName}] {rank} {playerCharacter.Name} says: {args}");
             }
 
