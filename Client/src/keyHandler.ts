@@ -39,6 +39,19 @@ alt.onServer('setPlayerSpawned', (toggle: boolean) => {
 var sirenMute: boolean = false;
 
 alt.everyTick(() => {
+
+    let isCuffed:boolean = alt.Player.local.getSyncedMeta('IsCuffed');
+
+    if(isCuffed){
+        native.disableControlAction(0, 21, true);
+        native.disableControlAction(0, 22, true);
+        native.disableControlAction(0, 23, true);
+    }else{
+        native.disableControlAction(0, 21, false);
+        native.disableControlAction(0, 22, false);
+        native.disableControlAction(0, 23, false);
+    }
+
     //Tab - INPUT_SELECT_WEAPON
 
     native.disableControlAction(0, 37, true);

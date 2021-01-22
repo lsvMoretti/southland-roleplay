@@ -1061,13 +1061,13 @@ namespace Server.Extensions
         {
             get
             {
-                bool hasCuffedData = _player.GetData("IsCuffed", out bool cuffed);
+                bool hasCuffedData = _player.GetSyncedMetaData("IsCuffed", out bool cuffed);
 
                 return hasCuffedData && cuffed;
             }
             set
             {
-                _player.SetData("IsCuffed", value);
+                _player.SetSyncedMetaData("IsCuffed", value);
 
                 _player.Emit("SetCuffState", value);
             }
