@@ -79,9 +79,14 @@ namespace Server.Character
 
                     DamageDictionary.Add(characterId, newDamageList);
 
-                    targetPlayer.Health -= damage;
+                    if (isFist)
+                    {
+                        targetPlayer.Health -= damage;
+                        return false;
+                    }
+                    if (targetPlayer.Health <= 0) DeathHandler.OnPlayerDeath(targetPlayer, player, weapon);
 
-                    return !isFist;
+                    return true;
                 }
 
                 BodyDamage? currentDamage = weaponDamage.FirstOrDefault(x => x.BodyPart == bodypart && x.Weapon == weapon);
@@ -92,9 +97,14 @@ namespace Server.Character
                     weaponDamage.Add(newDamage);
                     DamageDictionary.Add(characterId, weaponDamage);
 
-                    targetPlayer.Health -= damage;
+                    if (isFist)
+                    {
+                        targetPlayer.Health -= damage;
+                        return false;
+                    }
+                    if (targetPlayer.Health <= 0) DeathHandler.OnPlayerDeath(targetPlayer, player, weapon);
 
-                    return !isFist;
+                    return true;
                 }
 
                 BodyDamage bodyDamage = currentDamage;
@@ -108,9 +118,14 @@ namespace Server.Character
                 weaponDamage.Add(bodyDamage);
                 DamageDictionary.Add(characterId, weaponDamage);
 
-                targetPlayer.Health -= damage;
+                if (isFist)
+                {
+                    targetPlayer.Health -= damage;
+                    return false;
+                }
+                if (targetPlayer.Health <= 0) DeathHandler.OnPlayerDeath(targetPlayer, player, weapon);
 
-                return !isFist;
+                return true;
             }
 
             return true;

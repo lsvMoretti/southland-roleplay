@@ -226,12 +226,10 @@ namespace Server.Groups
                 // Not on duty
                 if (!targetCharacter.FactionDuty) continue;
 
-                if (target == player) continue;
-
                 target.SendRadioMessage($"{rank} {playerName} says: {args}");
             }
 
-            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk);
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk, excludePlayer: true);
 
             sw.Stop();
         }
@@ -327,12 +325,10 @@ namespace Server.Groups
 
                 if (!canReceive) continue;
 
-                if (target == player) continue;
-
                 target.SendRadioMessage($"[Departmental - {factionName}] {rank} {playerCharacter.Name} says: {args}");
             }
 
-            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk);
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk, excludePlayer: true);
             DiscordHandler.SendMessageToDepartmentalChannel($"[{factionName}] {rank} {playerCharacter.Name} says: {args}");
         }
     }
