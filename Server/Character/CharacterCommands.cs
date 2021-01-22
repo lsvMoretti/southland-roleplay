@@ -1325,7 +1325,7 @@ namespace Server.Character
 
             if (tryParse)
             {
-                IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == playerId);
+                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().PlayerId == playerId);
 
                 if (targetPlayer == null)
                 {
@@ -1333,7 +1333,7 @@ namespace Server.Character
                     return;
                 }
 
-                player.SendInfoNotification($"Player Name: {targetPlayer.GetClass().Name} - Id: {playerId}.");
+                player.SendInfoMessage($"Player Name: {targetPlayer.GetClass().Name} - Id: {targetPlayer.GetClass().PlayerId}.");
                 return;
             }
 
@@ -1348,7 +1348,7 @@ namespace Server.Character
 
             foreach (IPlayer target in targetList)
             {
-                player.SendInfoNotification($"Player Name: {target.GetClass().Name} - Id: {target.GetPlayerId()}.");
+                player.SendInfoMessage($"Player Name: {target.GetClass().Name} - Id: {target.GetClass().PlayerId}.");
             }
         }
 
