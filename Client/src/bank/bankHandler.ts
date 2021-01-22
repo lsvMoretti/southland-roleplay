@@ -1,11 +1,12 @@
 import * as alt from 'alt-client';
 import * as native from 'natives';
 
-var bankView: any = undefined;
+var bankView: alt.WebView = undefined;
 let BankJson: any = undefined;
 let currentBankAccount: any = undefined;
 
 alt.onServer('ShowBankMenu', showBankMenu);
+
 
 function closeBankView() {
     try {
