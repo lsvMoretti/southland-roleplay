@@ -96,7 +96,8 @@ alt.on('keyup', (key) => {
         }
     }
 
-    if (key === 0x70) {
+    /*if (key === 0x70) {
+        // F1 Key
         if (!IsSpawned) return;
 
         if (!cursorState) {
@@ -107,7 +108,7 @@ alt.on('keyup', (key) => {
 
         alt.showCursor(false);
         cursorState = false;
-    }
+    }*/
 
     if (key === 0x71) {
         // F2
