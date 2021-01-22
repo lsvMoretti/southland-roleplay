@@ -91,21 +91,21 @@ namespace Server.Extensions
             }
         }
 
-        public static void AddToCharacterLog(IPlayer player, string logMessage)
+        public static async void AddToCharacterLog(IPlayer player, string logMessage)
         {
             try
             {
                 if (_enableLogging)
                 {
-                    Models.Character playerCharacter = player.FetchCharacter();
+                    Models.Character? playerCharacter = player.FetchCharacter();
 
                     if (playerCharacter == null) return;
 
                     StreamWriter sw = File.AppendText($"{_characterDirectory}{playerCharacter.Name}.txt");
 
-                    sw.WriteLine($"[{DateTime.Now}] - {logMessage}");
+                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
 
-                    sw.Dispose();
+                    await sw.DisposeAsync();
                 }
             }
             catch (Exception e)
@@ -114,21 +114,21 @@ namespace Server.Extensions
             }
         }
 
-        public static void AddToCharacterLog(int characterId, string logMessage)
+        public static async void AddToCharacterLog(int characterId, string logMessage)
         {
             try
             {
                 if (_enableLogging)
                 {
-                    Models.Character playerCharacter = Models.Character.GetCharacter(characterId);
+                    Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
 
                     if (playerCharacter == null) return;
 
                     StreamWriter sw = File.AppendText($"{_characterDirectory}{playerCharacter.Name}.txt");
 
-                    sw.WriteLine($"[{DateTime.Now}] - {logMessage}");
+                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
 
-                    sw.Dispose();
+                    await sw.DisposeAsync();
                 }
             }
             catch (Exception e)
@@ -137,21 +137,21 @@ namespace Server.Extensions
             }
         }
 
-        public static void AddToAdminLog(IPlayer player, string logMessage)
+        public static async void AddToAdminLog(IPlayer player, string logMessage)
         {
             try
             {
                 if (_enableLogging)
                 {
-                    Models.Account playerAccount = player.FetchAccount();
+                    Models.Account? playerAccount = player.FetchAccount();
 
                     if (playerAccount == null) return;
 
                     StreamWriter sw = File.AppendText($"{_adminDirectory}{playerAccount.Username}.txt");
 
-                    sw.WriteLine($"[{DateTime.Now}] - {logMessage}");
+                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
 
-                    sw.Dispose();
+                    await sw.DisposeAsync();
                 }
             }
             catch (Exception e)
@@ -160,7 +160,7 @@ namespace Server.Extensions
             }
         }
 
-        public static void AddToBankLog(BankAccount bankAccount, string logMessage)
+        public static async void AddToBankLog(BankAccount? bankAccount, string logMessage)
         {
             try
             {
@@ -170,8 +170,8 @@ namespace Server.Extensions
 
                     StreamWriter sw = File.AppendText($"{_bankDirectory}{bankAccount.AccountNumber}.txt");
 
-                    sw.WriteLine($"[{DateTime.Now}] - {logMessage}");
-                    sw.Dispose();
+                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                    await sw.DisposeAsync();
                 }
             }
             catch (Exception e)
