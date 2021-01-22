@@ -9,8 +9,8 @@ namespace Server.Inventory
     {
         public int AmmoCount { get; set; }
         public bool Legal { get; set; }
-        public string SerialNumber { get; set; }
-        public string Purchaser { get; set; }
+        public string? SerialNumber { get; set; }
+        public string? Purchaser { get; set; }
 
         public List<string> LastPerson { get; set; }
 

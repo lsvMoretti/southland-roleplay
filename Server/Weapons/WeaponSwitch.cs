@@ -46,7 +46,21 @@ namespace Server.Weapons
             InventoryItem activeWeaponInventoryItem =
                 JsonConvert.DeserializeObject<InventoryItem>(playerCharacter.ActiveWeapon);
 
-            if (!playerInventory.HasItem(activeWeaponInventoryItem))
+            bool hasItem = false;
+
+            WeaponInfo activeWeaponInfo =
+                JsonConvert.DeserializeObject<WeaponInfo>(activeWeaponInventoryItem.ItemValue);
+
+            foreach (InventoryItem inventoryItem in playerInventory.GetInventoryItems(activeWeaponInventoryItem.Id))
+            {
+                WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(inventoryItem.ItemValue);
+
+                if (weaponInfo.AmmoCount != activeWeaponInfo.AmmoCount) continue;
+
+                hasItem = true;
+            }
+
+            if (!hasItem)
             {
                 player.SendErrorNotification("An error occurred getting your weapon. Do you have it?");
                 return;

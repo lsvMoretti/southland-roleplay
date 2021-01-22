@@ -97,6 +97,11 @@ namespace Server.Weapons
             List<InventoryItem> weaponItems =
                 JsonConvert.DeserializeObject<List<InventoryItem>>(itemString);
 
+            if (!string.IsNullOrEmpty(player.FetchCharacter()?.ActiveWeapon))
+            {
+                index--;
+            }
+
             InventoryItem selectedWeaponItem = weaponItems[index];
 
             player.DeleteData("WeaponItemMenu");
