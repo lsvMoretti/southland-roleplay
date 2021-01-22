@@ -109,7 +109,7 @@ function drawNameTags() {
         else if (isDown) {
             native.addTextComponentSubstringPlayerName(`~r~Downed\n~w~${name} (${playerId})`);
         } else {
-            native.addTextComponentSubstringPlayerName(isTyping ? `Typing..\n${name} (${playerId})` : `${name} (${playerId})`);
+            native.addTextComponentSubstringPlayerName(isTyping ? `Typing...\n${name} (${playerId})` : `${name} (${playerId})`);
         }
         native.endTextCommandDisplayText(0, 0, 0);
 
