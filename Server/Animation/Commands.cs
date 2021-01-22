@@ -19,6 +19,16 @@ namespace Server.Animation
             Handler.StopPlayerAnimation(player);
         }
 
+        [Command("surrender", commandType: CommandType.Anim, description: "/surrender")]
+        public static void AnimCommandSurrender(IPlayer player)
+        {
+            bool canAnim = Handler.CanAnim(player, true);
+
+            if (!canAnim) return;
+
+            player.Emit("Animation:Surrender");
+        }
+
         [Command("hide", onlyOne: true, commandType: CommandType.Anim, description: "/hide [1-13]")]
         public static void AnimCommandHide(IPlayer player, string numberString = "")
         {

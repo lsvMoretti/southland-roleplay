@@ -16,7 +16,7 @@ var rightIndicator = false;
 var handBrake = false;
 var leftAltDown = false;
 var leftCtrlDown = false;
-var onlinePlayerWindow: any;
+var onlinePlayerWindow: alt.WebView;
 var cursorState = false;
 
 var nativeUiMenuOpen = false;
@@ -46,6 +46,10 @@ alt.everyTick(() => {
         native.disableControlAction(0, 21, true);
         native.disableControlAction(0, 22, true);
         native.disableControlAction(0, 23, true);
+        native.disableControlAction(0, 24, true);
+        native.disableControlAction(0, 140, true);
+        native.disableControlAction(0, 141, true);
+        native.disableControlAction(0, 142, true);
     }
 
     //Tab - INPUT_SELECT_WEAPON
@@ -135,6 +139,7 @@ alt.on('keyup', (key) => {
         } else {
             alt.showCursor(true);
             onlinePlayerWindow = new alt.WebView("http://resource/files/html/onlinePlayers.html", false);
+            onlinePlayerWindow.focus();
             onlinePlayerWindow.on('requestOnlinePlayerList', requestOnlinePlayers);
             onlinePlayerWindow.on('ClosePlayerList', ClosePlayerList);
         }

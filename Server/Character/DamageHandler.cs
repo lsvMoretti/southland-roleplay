@@ -55,6 +55,17 @@ namespace Server.Character
                     return false;
                 }
 
+                bool isFist = (WeaponModel)weapon == WeaponModel.Fist;
+
+                if (isFist)
+                {
+                    Random rnd = new Random();
+
+                    int rndDamage = rnd.Next(5, 16);
+
+                    damage = (ushort)rndDamage;
+                }
+
                 int characterId = targetPlayer.GetClass().CharacterId;
 
                 BodyDamage newDamage = new BodyDamage(bodypart, 1, damage, weapon);
@@ -68,7 +79,9 @@ namespace Server.Character
 
                     DamageDictionary.Add(characterId, newDamageList);
 
-                    return true;
+                    targetPlayer.Health -= damage;
+
+                    return !isFist;
                 }
 
                 BodyDamage? currentDamage = weaponDamage.FirstOrDefault(x => x.BodyPart == bodypart && x.Weapon == weapon);
@@ -78,7 +91,10 @@ namespace Server.Character
                     DamageDictionary.Remove(characterId);
                     weaponDamage.Add(newDamage);
                     DamageDictionary.Add(characterId, weaponDamage);
-                    return true;
+
+                    targetPlayer.Health -= damage;
+
+                    return !isFist;
                 }
 
                 BodyDamage bodyDamage = currentDamage;
@@ -92,7 +108,9 @@ namespace Server.Character
                 weaponDamage.Add(bodyDamage);
                 DamageDictionary.Add(characterId, weaponDamage);
 
-                return true;
+                targetPlayer.Health -= damage;
+
+                return !isFist;
             }
 
             return true;
