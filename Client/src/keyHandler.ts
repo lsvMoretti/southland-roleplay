@@ -52,6 +52,10 @@ alt.everyTick(() => {
 
     native.disableControlAction(0, 37, true);
 
+    if(native.isDisabledControlJustReleased(0, 37)){
+        alt.emitServer('WeaponChange:TabReleased');
+    }
+
     // Weapon Switch
     native.disableControlAction(0, 99, true);
     native.disableControlAction(0, 100, true);

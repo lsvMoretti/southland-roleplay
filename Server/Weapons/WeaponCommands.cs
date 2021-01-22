@@ -37,6 +37,11 @@ namespace Server.Weapons
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
+            if (!string.IsNullOrEmpty(player.FetchCharacter()?.ActiveWeapon))
+            {
+                menuItems.Add(new NativeMenuItem("Clear Active Weapon"));
+            }
+
             foreach (var weaponItem in weaponItems)
             {
                 if (weaponItem.Quantity > 1)
@@ -63,6 +68,23 @@ namespace Server.Weapons
         public static void EventWeaponManagementMainMenu(IPlayer player, string option, int index)
         {
             if (option == "Close") return;
+
+            if (option == "Clear Active Weapon")
+            {
+                using Context context = new Context();
+
+                Models.Character? playerCharacter =
+                    context.Character.FirstOrDefault(x => x.Id == player.GetClass().CharacterId);
+
+                if (playerCharacter == null) return;
+
+                playerCharacter.ActiveWeapon = string.Empty;
+
+                context.SaveChanges();
+
+                player.SendInfoNotification("Your active weapon has been removed.");
+                return;
+            }
 
             bool hasWeaponItemMenuData = player.GetData("WeaponItemMenu", out string itemString);
 
@@ -402,7 +424,7 @@ namespace Server.Weapons
             else
             {
                 menuItems.Add(new NativeMenuItem("Equip Weapon"));
-                // menuItems.Add(new NativeMenuItem("Unload Ammo"));
+                menuItems.Add(new NativeMenuItem("Set Active Weapon"));
             }
 
             NativeMenu menu = new NativeMenu("WeaponMenuWeaponManagement", "Weapons", "Weapon & Ammo Management", menuItems);
@@ -465,6 +487,35 @@ namespace Server.Weapons
             if (option == "Equip Weapon")
             {
                 EquipItem.EquipItemAttribute(player, selectedWeaponItem);
+                return;
+            }
+
+            if (option == "Set Active Weapon")
+            {
+                bool hasCurrentWeaponData = player.GetData("CURRENTWEAPON", out string currentWeapon);
+
+                if (hasCurrentWeaponData && !string.IsNullOrEmpty(currentWeapon))
+                {
+                    player.SendErrorNotification("Please /unequip your current weapon.");
+                    return;
+                }
+
+                using Context context = new Context();
+
+                Models.Character? playerCharacter =
+                    context.Character.FirstOrDefault(x => x.Id == player.GetClass().CharacterId);
+
+                if (playerCharacter == null)
+                {
+                    player.SendErrorNotification("Unable to find your character.");
+                    return;
+                }
+
+                playerCharacter.ActiveWeapon = selectedWeaponData;
+
+                player.SendInfoNotification($"You've set your {selectedWeaponItem.CustomName} as your active weapon!");
+
+                context.SaveChanges();
                 return;
             }
         }
@@ -674,6 +725,18 @@ namespace Server.Weapons
                 weaponInfo.AmmoCount = bulletCount;
 
                 weaponItem.ItemValue = JsonConvert.SerializeObject(weaponInfo);
+
+                Models.Character? playerCharacter = player.FetchCharacter();
+
+                if (!string.IsNullOrEmpty(playerCharacter?.ActiveWeapon))
+                {
+                    using Context context = new Context();
+                    Models.Character? character = context.Character.FirstOrDefault(x => x.Id == playerCharacter.Id);
+                    if (character == null) return;
+
+                    character.ActiveWeapon = JsonConvert.SerializeObject(weaponItem);
+                    context.SaveChanges();
+                }
 
                 player.DeleteData("UnEquipWeapon");
 

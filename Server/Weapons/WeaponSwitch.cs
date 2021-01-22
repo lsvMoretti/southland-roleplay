@@ -4,12 +4,57 @@ using System.Timers;
 using AltV.Net;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
+using Newtonsoft.Json;
 using Server.Extensions;
+using Server.Inventory;
 
 namespace Server.Weapons
 {
     public class WeaponSwitch
     {
+        public static void OnWeaponKeyBindReleased(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            if (player.GetClass().Cuffed) return;
+
+            Models.Character? playerCharacter = player.FetchCharacter();
+
+            if (playerCharacter == null) return;
+
+            if (string.IsNullOrEmpty(playerCharacter.ActiveWeapon)) return;
+
+            bool hasCurrentWeaponData = player.GetData("CURRENTWEAPON", out string currentWeapon);
+
+            if (hasCurrentWeaponData && !string.IsNullOrEmpty(currentWeapon))
+            {
+                // Has Weapon Equipped
+                WeaponCommands.CommandUnEquip(player);
+                return;
+            }
+
+            // Weapon not equipped
+
+            Inventory.Inventory? playerInventory = player.FetchInventory();
+
+            if (playerInventory == null)
+            {
+                player.SendErrorNotification("An error occurred fetching your inventory.");
+                return;
+            }
+
+            InventoryItem activeWeaponInventoryItem =
+                JsonConvert.DeserializeObject<InventoryItem>(playerCharacter.ActiveWeapon);
+
+            if (!playerInventory.HasItem(activeWeaponInventoryItem))
+            {
+                player.SendErrorNotification("An error occurred getting your weapon. Do you have it?");
+                return;
+            }
+
+            EquipItem.EquipItemAttribute(player, activeWeaponInventoryItem);
+        }
+
         public static bool AltOnOnPlayerWeaponChange(IPlayer player, uint oldweapon, uint newweapon)
         {
             WeaponModel oldWeaponModel = (WeaponModel)oldweapon;
