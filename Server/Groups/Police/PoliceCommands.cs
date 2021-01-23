@@ -619,13 +619,13 @@ namespace Server.Groups.Police
                 return;
             }
 
-            Models.Character playerCharacter = player.FetchCharacter();
+            Models.Character? playerCharacter = player.FetchCharacter();
 
-            PlayerFaction activePlayerFaction = JsonConvert
+            PlayerFaction? activePlayerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == playerCharacter.ActiveFaction);
 
-            if (activePlayerFaction == null || !activePlayerFaction.Leader)
+            if (activePlayerFaction == null)
             {
                 player.SendPermissionError();
                 return;
@@ -658,7 +658,7 @@ namespace Server.Groups.Police
 
             string nameorid = string.Join(' ', splitString.Skip(1));
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
 
             if (targetPlayer == null)
             {
@@ -666,11 +666,17 @@ namespace Server.Groups.Police
                 return;
             }
 
-            Models.Character targetCharacter = targetPlayer.FetchCharacter();
+            Models.Character? targetCharacter = targetPlayer.FetchCharacter();
 
             if (targetCharacter == null)
             {
                 player.SendErrorNotification("Target not found!");
+                return;
+            }
+
+            if (player == targetPlayer)
+            {
+                player.SendErrorNotification("You can't do this!");
                 return;
             }
 
