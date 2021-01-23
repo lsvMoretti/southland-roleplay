@@ -576,7 +576,7 @@ namespace Server.Character
 
                 if (account is null) continue;
 
-                if (account.AdminLevel < AdminLevel.Moderator) continue;
+                if (account.AdminLevel < AdminLevel.Tester) continue;
 
                 onlineAdmins.Add(onlinePlayer);
             }
@@ -643,7 +643,7 @@ namespace Server.Character
 
                     if (adminAccount == null) continue;
 
-                    if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
+                    if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
                     onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
                 }

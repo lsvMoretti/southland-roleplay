@@ -76,7 +76,7 @@ namespace Server.Developer
             player.SendInfoNotification($"Distance to {targetPlayer.GetClass().Name} (PID: {targetPlayer.GetPlayerId()}) is {player.Position.Distance(targetPlayer.Position)}.");
         }
 
-        [Command("anim", AdminLevel.Moderator, true)]
+        [Command("anim", AdminLevel.Tester, true)]
         public static void AnimTest(IPlayer player, string args = "")
         {
             if (args == "")
@@ -127,7 +127,7 @@ namespace Server.Developer
             player.SendInfoNotification($"Your seat Id is: {player.Seat}.");
         }
 
-        [Command("c", AdminLevel.Moderator, true)]
+        [Command("c", AdminLevel.Tester, true)]
         public static void DevClothesCommand(IPlayer player, string args = "")
         {
             if (args == "")
@@ -159,7 +159,7 @@ namespace Server.Developer
             player.SendInfoNotification($"Slot: {slot}, Draw: {draw}, Texture: {text}.");
         }
 
-        [Command("ca", AdminLevel.Moderator, true)]
+        [Command("ca", AdminLevel.Tester, true)]
         public static void DevAccessoriesCommand(IPlayer player, string args = "")
         {
             if (args == "")

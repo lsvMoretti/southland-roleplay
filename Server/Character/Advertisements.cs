@@ -40,7 +40,7 @@ namespace Server.Character
                 AdvertList.Add(player.GetClass().CharacterId, message);
 
                 List<IPlayer> onlineAdmins =
-                    Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator).ToList();
+                    Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
 
                 if (!onlineAdmins.Any())
                 {

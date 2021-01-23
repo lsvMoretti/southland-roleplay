@@ -64,7 +64,7 @@ namespace Server.Discord
 
                 if (adminAccount == null) continue;
 
-                if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
+                if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
                 admin.SendDiscordAdminChatMessage($"{username} says: {message}");
             }

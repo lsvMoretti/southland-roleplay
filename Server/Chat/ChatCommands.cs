@@ -361,7 +361,7 @@ namespace Server.Chat
             }
         }
 
-        [Command("a", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Admin Chat")]
+        [Command("a", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Admin Chat")]
         public static void CommandAdminChat(IPlayer player, string message = "")
         {
             if (message == "" || message.Length < 2)
@@ -380,7 +380,7 @@ namespace Server.Chat
 
                 if (adminAccount == null) continue;
 
-                if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
+                if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
                 admin.SendAdminChatMessage($"{username} says: {message}");
             }

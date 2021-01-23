@@ -66,7 +66,7 @@ namespace Server.Admin
             player.Emit("RockstarEditor:Toggle", true);
         }
 
-        [Command("tp", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
+        [Command("tp", AdminLevel.Tester, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
         public static void CommandTP(IPlayer player)
         {
             Models.Account playerAccount = player.FetchAccount();
@@ -141,7 +141,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has created a new teleport at their position with the name: {args}.");
         }
 
-        [Command("sendto", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("sendto", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "TP: TP a player to a location")]
         public static void AdminCommandSendTo(IPlayer player, string args = "")
         {
@@ -214,7 +214,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've sent {targetPlayer.GetClass().Name} to {selectedTeleport.Name}.");
         }
 
-        [Command("ajail", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("ajail", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "AJail: Used to Admin Jail someone")]
         public static void AdminCommandJail(IPlayer player, string args = "")
         {
@@ -288,7 +288,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has admin jailed {targetAccount.Username} for {time:##'Minutes'}.");
         }
 
-        [Command("pveh", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Character: Shows a list of player vehicles")]
+        [Command("pveh", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Character: Shows a list of player vehicles")]
         public static void CommandPlayerVehicles(IPlayer player, string nameorid = "")
         {
             if (nameorid == "")
@@ -376,7 +376,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Spawned and Teleported {selectedDbVehicle.Name} to you.");
         }
 
-        [Command("agetcar", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Vehicle: TP a vehicle by Id")]
+        [Command("agetcar", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Vehicle: TP a vehicle by Id")]
         public static void AdminCommandGetCar(IPlayer player, string vehicleId = "")
         {
             if (vehicleId == "")
@@ -421,7 +421,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have spawned vehicle Id: {vid} and teleported it to you.");
         }
 
-        [Command("goto", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Player: TP to another player")]
+        [Command("goto", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: TP to another player")]
         public static void AdminCommandGoto(IPlayer player, string idorname = "")
         {
             if (idorname == "")
@@ -463,7 +463,7 @@ namespace Server.Admin
                 $"You have teleported to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetPlayerId()})");
         }
 
-        [Command("bring", AdminLevel.Moderator, true, "gethere", commandType: CommandType.Admin, description: "Player: Brings another player to you")]
+        [Command("bring", AdminLevel.Tester, true, "gethere", commandType: CommandType.Admin, description: "Player: Brings another player to you")]
         public static void AdminCommandBring(IPlayer player, string nameorid = "")
         {
             if (nameorid == "")
@@ -513,7 +513,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has broadcasted: {message}");
         }
 
-        [Command("freeze", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Player: Freezes a player")]
+        [Command("freeze", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: Freezes a player")]
         public static void AdminCommandFreezePlayer(IPlayer player, string idorname = "")
         {
             if (idorname == "")
@@ -556,7 +556,7 @@ namespace Server.Admin
             Logging.AddToCharacterLog(targetPlayer, $"has been frozen by {adminName}.");
         }
 
-        [Command("mute", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Chat: Mutes a player")]
+        [Command("mute", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Chat: Mutes a player")]
         public static void AdminCommandMute(IPlayer player, string idorname = "")
         {
             if (idorname == "")
@@ -596,7 +596,7 @@ namespace Server.Admin
             Logging.AddToCharacterLog(targetPlayer, $"has been un-muted by {adminName}.");
         }
 
-        [Command("arefuel", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Vehicle: Admin refuels a vehicle")]
+        [Command("arefuel", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Vehicle: Admin refuels a vehicle")]
         public static void AdminCommandRefuel(IPlayer player, string fuelLevel = "")
         {
             if (fuelLevel == "")
@@ -636,7 +636,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've refueled this vehicle to {fuelResult}%");
         }
 
-        [Command("mark", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Marks a point to return to with /gotomark")]
+        [Command("mark", AdminLevel.Tester, commandType: CommandType.Admin, description: "Other: Marks a point to return to with /gotomark")]
         public static void AdminCommandMarkPosition(IPlayer player)
         {
             player.SendInfoNotification($"You have marked this position. You can use /gotomark.");
@@ -644,7 +644,7 @@ namespace Server.Admin
             player.SetData("admin:markedDimension", player.Dimension);
         }
 
-        [Command("gotomark", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Other: Used with /mark to return to a position")]
+        [Command("gotomark", AdminLevel.Tester, commandType: CommandType.Admin, description: "Other: Used with /mark to return to a position")]
         public static void AdminCommandGotoMark(IPlayer player)
         {
             bool hasMarkData = player.GetData("admin:markedPosition", out Position position);
@@ -1717,7 +1717,7 @@ namespace Server.Admin
 
         #region Admin Reports
 
-        [Command("ar", AdminLevel.Moderator, true, "acceptreport", commandType: CommandType.Admin, description: "Report: Accepts a report")]
+        [Command("ar", AdminLevel.Tester, true, "acceptreport", commandType: CommandType.Admin, description: "Report: Accepts a report")]
         public static void AdminCommandAcceptReport(IPlayer player, string idString = "")
         {
             if (idString == "")
@@ -1768,7 +1768,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Player TP Id: {targetPlayer.GetPlayerId()}");
 
             var onlineAdmins = Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator).ToList();
+                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
 
             if (onlineAdmins.Any())
             {
@@ -1788,7 +1788,7 @@ namespace Server.Admin
                 $"has accepted report Id {adminReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
 
-        [Command("dr", AdminLevel.Moderator, true, "denyreport", commandType: CommandType.Admin, description: "Report: Denies a report")]
+        [Command("dr", AdminLevel.Tester, true, "denyreport", commandType: CommandType.Admin, description: "Report: Denies a report")]
         public static void AdminCommandDenyReport(IPlayer player, string idString = "")
         {
             if (idString == "")
@@ -1836,7 +1836,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have declined report Id: {adminReport.Id}.");
 
             foreach (IPlayer onlineAdmin in Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator))
+                .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester))
             {
                 onlineAdmin.SendAdminMessage(
                     $"Admin {player.FetchAccount().Username} has denied report Id: {adminReport.Id}.");
@@ -1855,7 +1855,7 @@ namespace Server.Admin
 
         #region Kick Command
 
-        [Command("kick", AdminLevel.Moderator, onlyOne: true, commandType: CommandType.Admin, description: "Player: Kicks a player")]
+        [Command("kick", AdminLevel.Tester, onlyOne: true, commandType: CommandType.Admin, description: "Player: Kicks a player")]
         public static void AdminCommandKick(IPlayer player, string args = "")
         {
             if (args == "")
@@ -1915,7 +1915,7 @@ namespace Server.Admin
 
         #region Ban Command
 
-        [Command("ban", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Player: Bans a player for specified days")]
+        [Command("ban", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: Bans a player for specified days")]
         public static void AdminCommandBan(IPlayer player, string args = "")
         {
             if (args == "")
@@ -1995,7 +1995,7 @@ namespace Server.Admin
 
         #region AFix Vehicle
 
-        [Command("afix", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Vehicle: Fixes a vehicle")]
+        [Command("afix", AdminLevel.Tester, commandType: CommandType.Admin, description: "Vehicle: Fixes a vehicle")]
         public static void AdminCommandAFix(IPlayer player)
         {
             if (!player.IsInVehicle)
@@ -2256,7 +2256,7 @@ namespace Server.Admin
                 $"Admin {username} has removed vehicle Id {vehicleData.Id} from the server.");
         }
 
-        [Command("createproperty", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Property: Creates a Property")]
+        [Command("createproperty", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Property: Creates a Property")]
         public static void AdminCommandCreateProperty(IPlayer player, string args = "")
         {
             if (args == "" || args.Length < 1)
@@ -2801,7 +2801,7 @@ namespace Server.Admin
             }
         }
 
-        [Command("setprice", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("setprice", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "Property: Used to set property prices")]
         public static void AdminCommandSetPrice(IPlayer player, string args = "")
         {
@@ -3208,7 +3208,7 @@ namespace Server.Admin
             Logging.AddToCharacterLog(targetPlayer, $"has been given {selectedGameItem.Name} x {quantity} by {adminName}.");
         }
 
-        [Command("astats", AdminLevel.Moderator, onlyOne: true, commandType: CommandType.Admin, description: "Player: View a players stats")]
+        [Command("astats", AdminLevel.Tester, onlyOne: true, commandType: CommandType.Admin, description: "Player: View a players stats")]
         public static void AdminCommandAStats(IPlayer player, string nameorid = "")
         {
             if (nameorid == "")
@@ -3630,7 +3630,7 @@ namespace Server.Admin
 
         #endregion Delivery Job
 
-        [Command("gotograffiti", AdminLevel.Moderator, true, "", CommandType.Admin,
+        [Command("gotograffiti", AdminLevel.Tester, true, "", CommandType.Admin,
             "Graffiti: Teleport to a Graffiti Position /gotograffiti [Id]")]
         public static void AdminCommandGotoGraffiti(IPlayer player, string args = "")
         {
@@ -3664,7 +3664,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Teleported you to Graffiti Id: {graffiti.Id}.");
         }
 
-        [Command("graffitilist", AdminLevel.Moderator, commandType: CommandType.Admin,
+        [Command("graffitilist", AdminLevel.Tester, commandType: CommandType.Admin,
             description: "Graffiti: Display a list of Graffiti's")]
         public static void AdminCommandShowGraffitiList(IPlayer player)
         {
@@ -3881,7 +3881,7 @@ namespace Server.Admin
             context.SaveChanges();
         }
 
-        [Command("vehicle", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
+        [Command("vehicle", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
         public static void VehicleTest(IPlayer player, string model = "")
         {
             if (model == "")
@@ -3901,7 +3901,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Spawned a vehicle with the id of {temporaryVehicle.GetClass().Id}.");
         }
 
-        [Command("gotovehicle", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("gotovehicle", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "Vehicle: Used to teleport to vehicles.")]
         public static void AdminCommandGotoVehicle(IPlayer player, string args = "")
         {
@@ -3935,7 +3935,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has teleported to vehicle id {id}.");
         }
 
-        [Command("bringvehicle", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("bringvehicle", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "Vehicle: Used to bring vehicles to you.")]
         public static void AdminCommandBringVehicle(IPlayer player, string args = "")
         {
@@ -3969,7 +3969,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has teleported vehicle id {id} to them.");
         }
 
-        [Command("acceptad", AdminLevel.Moderator, onlyOne: true, commandType: CommandType.Admin,
+        [Command("acceptad", AdminLevel.Tester, onlyOne: true, commandType: CommandType.Admin,
             description: "Advertisement: Used to accept adverts")]
         public static void AdminCommandAcceptAdvert(IPlayer player, string args = "")
         {
@@ -3998,7 +3998,7 @@ namespace Server.Admin
             string username = player.FetchAccount().Username;
 
             List<IPlayer> onlineAdmins =
-                Alt.Server.GetPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Moderator).ToList();
+                Alt.Server.GetPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Tester).ToList();
 
             foreach (IPlayer onlineAdmin in onlineAdmins)
             {
@@ -4006,7 +4006,7 @@ namespace Server.Admin
             }
         }
 
-        [Command("denyad", AdminLevel.Moderator, onlyOne: true, commandType: CommandType.Admin,
+        [Command("denyad", AdminLevel.Tester, onlyOne: true, commandType: CommandType.Admin,
             description: "Advertisement: Used to deny adverts")]
         public static void AdminCommandDenyAdvert(IPlayer player, string args = "")
         {
@@ -4035,7 +4035,7 @@ namespace Server.Admin
             string username = player.FetchAccount().Username;
 
             List<IPlayer> onlineAdmins =
-                Alt.Server.GetPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Moderator).ToList();
+                Alt.Server.GetPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Tester).ToList();
 
             foreach (IPlayer onlineAdmin in onlineAdmins)
             {
@@ -4043,7 +4043,7 @@ namespace Server.Admin
             }
         }
 
-        [Command("playerproperties", AdminLevel.Moderator, onlyOne: true, commandType: CommandType.Admin,
+        [Command("playerproperties", AdminLevel.Tester, onlyOne: true, commandType: CommandType.Admin,
             description: "Properties: Used to teleport to a players property")]
         public static void AdminCommandPlayerProperties(IPlayer player, string args = "")
         {
@@ -4168,7 +4168,7 @@ namespace Server.Admin
             Models.Graffiti.DeleteGraffiti(nearestGraffiti);
         }
 
-        [Command("pid", AdminLevel.Moderator, commandType: CommandType.Admin,
+        [Command("pid", AdminLevel.Tester, commandType: CommandType.Admin,
             description: "Property: Used to fetch property id")]
         public static void AdminCommandFetchPropertyId(IPlayer player)
         {
@@ -4183,7 +4183,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Property Id: {nearestProperty.Id}.");
         }
 
-        [Command("spectate", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Player: Used to spectate other players")]
+        [Command("spectate", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: Used to spectate other players")]
         public static void SpectateTest(IPlayer player, string args = "")
         {
             if (args == "")
@@ -4330,7 +4330,7 @@ namespace Server.Admin
             FishingHandler.LoadFishingPoint(newPoint);
         }
 
-        [Command("gotoproperty", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Property: Used to teleport to a property")]
+        [Command("gotoproperty", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Property: Used to teleport to a property")]
         public static void AdminCommandGotoProperty(IPlayer player, string args = "")
         {
             if (args == "")
@@ -4889,7 +4889,7 @@ namespace Server.Admin
             player.Position = player.Position - new Position(0, 0, 1);
         }
 
-        [Command("whois", AdminLevel.Moderator, true, description: "Used to see who is behind a mask")]
+        [Command("whois", AdminLevel.Tester, true, description: "Used to see who is behind a mask")]
         public static void AdminCommandWhoIs(IPlayer player, string maskId = "")
         {
             if (maskId == "")
@@ -4923,7 +4923,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has searched for mask Id {maskId}. Result: {targetPlayer.FetchCharacter().Name}");
         }
 
-        [Command("fetchrental", AdminLevel.Moderator, true, commandType: CommandType.Admin, description: "Rental: Used to fetch a players rental car")]
+        [Command("fetchrental", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Rental: Used to fetch a players rental car")]
         public static void AdminCommandFetchRental(IPlayer player, string args = "")
         {
             if (args == "")
@@ -5013,7 +5013,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've given {money:C} to {targetPlayer.GetClass().Name}.");
         }
 
-        [Command("ping", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("ping", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "Used to view another players ping")]
         public static void AdminCommandViewPing(IPlayer player, string args = "")
         {
@@ -5079,7 +5079,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've set the mileage to {args} miles.");
         }
 
-        [Command("manage", AdminLevel.Moderator, true, commandType: CommandType.Admin,
+        [Command("manage", AdminLevel.Tester, true, commandType: CommandType.Admin,
             description: "Other: Used to do shit to a player")]
         public static void AdminCommandManagePlayer(IPlayer player, string args = "")
         {
@@ -6028,7 +6028,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has added a new garage to {property.Address}.");
         }
 
-        [Command("gotoint", AdminLevel.Moderator, commandType: CommandType.Admin,
+        [Command("gotoint", AdminLevel.Tester, commandType: CommandType.Admin,
             description: "TP: Used to go to an interior")]
         public static void AdminCommandGotoInterior(IPlayer player)
         {
@@ -6322,7 +6322,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Door set to your dimension of {player.Dimension}.");
         }
 
-        [Command("aduty", AdminLevel.Moderator, commandType: CommandType.Admin,
+        [Command("aduty", AdminLevel.Tester, commandType: CommandType.Admin,
             description: "Used to go on admin duty")]
         public static void AdminCommandAdminDuty(IPlayer player)
         {
@@ -6568,7 +6568,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Reloaded buyable objects.");
         }
 
-        [Command("vstats", AdminLevel.Moderator, commandType: CommandType.Admin, description: "Used to view vehicle stats")]
+        [Command("vstats", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to view vehicle stats")]
         public static void AdminVehicleStatsCommand(IPlayer player)
         {
             IVehicle vehicle = player.Vehicle ?? VehicleHandler.FetchNearestVehicle(player);
