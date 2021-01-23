@@ -755,7 +755,7 @@ namespace Server.Character
             }
         }
 
-        [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Helper!")]
+        [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Tester!")]
         public static void CommandHelpMe(IPlayer player, string message = "")
         {
             if (player.FetchCharacter() == null)
@@ -795,7 +795,7 @@ namespace Server.Character
             {
                 foreach (IPlayer onlinePlayer in onlinePlayers)
                 {
-                    Models.Account playerAccount = onlinePlayer?.FetchAccount();
+                    Models.Account? playerAccount = onlinePlayer?.FetchAccount();
 
                     if (playerAccount == null) continue;
 
@@ -814,7 +814,7 @@ namespace Server.Character
         {
             if (!player.IsSpawned()) return;
 
-            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
+            HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
 
             if (helpReport == null)
             {
@@ -853,7 +853,7 @@ namespace Server.Character
                 return;
             }
 
-            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == reportId);
+            HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == reportId);
 
             if (helpReport == null)
             {
