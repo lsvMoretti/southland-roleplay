@@ -163,7 +163,7 @@ namespace Server.Chat
         }
 
         [Command("dolong", onlyOne: true, commandType: CommandType.Chat, description: "A Low emote command")]
-        public static void CommandDoLow(IPlayer player, string args = "")
+        public static void CommandDoLong(IPlayer player, string args = "")
         {
             if (player?.FetchCharacter() == null) return;
             if (args == "")
