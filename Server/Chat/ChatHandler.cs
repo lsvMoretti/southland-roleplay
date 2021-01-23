@@ -107,15 +107,18 @@ namespace Server.Chat
 
             range = type switch
             {
-                MessageType.Talk => 7.5f,
+                MessageType.Talk => 8f,
                 MessageType.Shout => 28f,
                 MessageType.Whisper => 0.8f,
                 MessageType.Me => 8f,
                 MessageType.Do => 8f,
-                MessageType.Ooc => 7.5f,
+                MessageType.Ooc => 8f,
                 MessageType.My => 8f,
                 MessageType.Low => 3f,
                 MessageType.DoLow => 3f,
+                MessageType.MeLow => 3f,
+                MessageType.MeLong => 28f,
+                MessageType.DoLong => 28f,
                 _ => range
             };
 
@@ -286,6 +289,18 @@ namespace Server.Chat
 
                                     break;
 
+                                case MessageType.MeLong:
+                                    // We send the message
+                                    target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name} {message}");
+
+                                    break;
+
+                                case MessageType.MeLow:
+                                    // We send the message
+                                    target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name} {message}");
+
+                                    break;
+
                                 case MessageType.My:
                                     // We send the message
                                     target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name}'s {message}");
@@ -299,6 +314,12 @@ namespace Server.Chat
                                     break;
 
                                 case MessageType.DoLow:
+                                    // We send the message
+                                    target.SendChatMessage($"* {ColorChatMe}{message} (( {player.GetClass().Name} ))");
+
+                                    break;
+
+                                case MessageType.DoLong:
                                     // We send the message
                                     target.SendChatMessage($"* {ColorChatMe}{message} (( {player.GetClass().Name} ))");
 

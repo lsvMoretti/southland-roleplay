@@ -99,6 +99,32 @@ namespace Server.Chat
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Me);
         }
 
+        [Command("melow", onlyOne: true, commandType: CommandType.Chat, description: "An emote command")]
+        public static void CommandMeLow(IPlayer player, string args = "")
+        {
+            if (player?.FetchCharacter() == null) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/melow [Emote]");
+                return;
+            }
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.MeLow);
+        }
+
+        [Command("melong", onlyOne: true, commandType: CommandType.Chat, description: "An emote command")]
+        public static void CommandMeHigh(IPlayer player, string args = "")
+        {
+            if (player?.FetchCharacter() == null) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/melong [Emote]");
+                return;
+            }
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.MeLong);
+        }
+
         [Command("my", onlyOne: true, commandType: CommandType.Chat, description: "An emote command")]
         public static void CommandMy(IPlayer player, string args = "")
         {
@@ -124,16 +150,28 @@ namespace Server.Chat
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Do);
         }
 
-        [Command("dlow", onlyOne: true, commandType: CommandType.Chat, description: "A Low emote command")]
+        [Command("dolow", onlyOne: true, commandType: CommandType.Chat, description: "A Low emote command")]
         public static void CommandDoLow(IPlayer player, string args = "")
         {
             if (player?.FetchCharacter() == null) return;
             if (args == "")
             {
-                player.SendSyntaxMessage("/dlow [emote]");
+                player.SendSyntaxMessage("/dolow [emote]");
                 return;
             }
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.DoLow);
+        }
+
+        [Command("dolong", onlyOne: true, commandType: CommandType.Chat, description: "A Low emote command")]
+        public static void CommandDoLow(IPlayer player, string args = "")
+        {
+            if (player?.FetchCharacter() == null) return;
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/dolong [emote]");
+                return;
+            }
+            ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.DoLong);
         }
 
         [Command("b", onlyOne: true, commandType: CommandType.Chat, description: "Local OOC Chat")]
