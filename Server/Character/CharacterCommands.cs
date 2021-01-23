@@ -1212,7 +1212,7 @@ namespace Server.Character
 
             int bankAccountCount = BankAccount.FindCharacterBankAccounts(playerCharacter).Count;
 
-            Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
+            Faction? activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
             List<AdminRecord> playerAdminRecords = AdminRecord.FetchAdminRecords(playerCharacter.OwnerId);
             int banCount = playerAdminRecords.Count(x => x.RecordType == AdminRecordType.Ban);
@@ -1227,11 +1227,11 @@ namespace Server.Character
             player.SendStatsMessage($"Active Number: {playerCharacter.ActivePhoneNumber}, Payday Account: {playerCharacter.PaydayAccount}, Bank Accounts: {bankAccountCount}");
             if (activeFaction != null)
             {
-                PlayerFaction activePlayerFaction = JsonConvert
+                PlayerFaction? activePlayerFaction = JsonConvert
                     .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                     .FirstOrDefault(x => x.Id == playerCharacter.ActiveFaction);
 
-                Rank playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
+                Rank? playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
                     .FirstOrDefault(x => x.Id == activePlayerFaction?.RankId);
 
                 player.SendStatsMessage($"Active Faction: {activeFaction.Name}, Rank: {playerRank?.Name}");
