@@ -13,33 +13,6 @@ namespace Server.Admin
     {
         public static string HelperDutyData = "HELPERONDUTY";
 
-        [Command("tduty", commandType: CommandType.Helper, description: "Toggles on / off duty status for testers")]
-        public static void HelperDutyCommand(IPlayer player)
-        {
-            if (!player.GetClass().Spawned) return;
-
-            if (!player.FetchAccount().Tester)
-            {
-                player.SendPermissionError();
-                return;
-            }
-
-            bool hasData = player.HasSyncedMetaData(HelperDutyData);
-
-            if (!hasData)
-            {
-                // Not on duty
-                player.SetSyncedMetaData(HelperDutyData, true);
-                player.SendInfoNotification("You've gone on Helper Duty!");
-                player.GetClass().Name = player.GetClass().UcpName;
-                return;
-            }
-
-            player.DeleteSyncedMetaData(HelperDutyData);
-            player.GetClass().Name = player.FetchCharacter().Name;
-            player.SendInfoNotification("You've gone off Helper Duty!");
-        }
-
         [Command("ah", onlyOne: true, alternatives: "accepthelp", commandType: CommandType.Helper, description: "Accepts a Help Request!")]
         public static void AcceptHelpCommand(IPlayer player, string idString = "")
         {
@@ -49,9 +22,7 @@ namespace Server.Admin
                 return;
             }
 
-            bool hasDutyData = player.GetSyncedMetaData(HelperDutyData, out bool onDuty);
-
-            if (!hasDutyData || !onDuty)
+            if (!player.GetClass().AdminDuty || !player.FetchAccount().Tester)
             {
                 player.SendErrorNotification("Your not on duty!");
                 return;
@@ -125,9 +96,7 @@ namespace Server.Admin
                 return;
             }
 
-            bool hasDutyData = player.GetSyncedMetaData(HelperDutyData, out bool onDuty);
-
-            if (!hasDutyData || !onDuty)
+            if (!player.GetClass().AdminDuty || !player.FetchAccount().Tester)
             {
                 player.SendErrorNotification("Your not on duty!");
                 return;
