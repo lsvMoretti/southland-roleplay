@@ -576,7 +576,7 @@ namespace Server.Character
 
                 if (account is null) continue;
 
-                if (account.AdminLevel < AdminLevel.Tester) continue;
+                if (account.AdminLevel < AdminLevel.Administrator) continue;
 
                 onlineAdmins.Add(onlinePlayer);
             }
@@ -730,7 +730,7 @@ namespace Server.Character
 
         #region Help Me System
 
-        [Command("helpers", commandType: CommandType.Character, description: "See onduty helpers!")]
+        [Command("testers", commandType: CommandType.Character, description: "See onduty testers!")]
         public static void CommandViewHelpers(IPlayer player)
         {
             if (player.FetchCharacter() == null)
@@ -739,15 +739,15 @@ namespace Server.Character
                 return;
             }
 
-            var onlineHelpers = Alt.Server.GetPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
+            var onlineHelpers = Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel == AdminLevel.Tester);
 
             if (!onlineHelpers.Any())
             {
-                player.SendErrorMessage("No on-duty helpers");
+                player.SendErrorMessage("No on-duty testers");
                 return;
             }
 
-            player.SendHelperMessage("____[On Duty Helpers]____");
+            player.SendHelperMessage("____[On Duty Testers]____");
 
             foreach (var onlineHelper in onlineHelpers)
             {
