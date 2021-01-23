@@ -22,10 +22,10 @@ namespace Server.Extensions
         public static void InitLogging()
         {
             try
-            {
+            {/*
 #if DEBUG
                 _enableLogging = false;
-#endif
+#endif*/
                 if (_enableLogging)
                 {
                     if (!Directory.Exists(_characterDirectory))
