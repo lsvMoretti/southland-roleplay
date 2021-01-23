@@ -104,7 +104,7 @@ alt.on('keyup', (key) => {
         alt.emitServer('KeyUpEvent', 'F3');
     }
 
-    if (key === 0x51) { // Q
+    if (key === 78) { // Q = 0x51 - N = 78
         var isDriver: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, -1, 0) == alt.Player.local.scriptID;
         var isFrontPass: boolean = native.getPedInVehicleSeat(alt.Player.local.vehicle.scriptID, 0, 0) == alt.Player.local.scriptID;
 
