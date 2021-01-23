@@ -39,7 +39,7 @@ namespace Server.Admin
             HelpReports.Remove(helpReport);
 
             var onlineHelpers = Alt.Server.GetPlayers()
-                .Where(x => x.FetchAccount()?.Tester == true).ToList();
+                .Where(x => x.FetchAccount()?.AdminLevel > AdminLevel.Tester).ToList();
 
             if (!onlineHelpers.Any()) return;
 

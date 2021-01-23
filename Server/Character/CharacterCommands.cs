@@ -799,7 +799,7 @@ namespace Server.Character
 
                     if (playerAccount == null) continue;
 
-                    if (!playerAccount.Tester) continue;
+                    if (playerAccount.AdminLevel < AdminLevel.Tester) continue;
 
                     onlinePlayer.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
                 }
