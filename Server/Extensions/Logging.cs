@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using AltV.Net.Elements.Entities;
 using Serilog;
 using Serilog.Core;
@@ -101,11 +102,11 @@ namespace Server.Extensions
 
                     if (playerCharacter == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_characterDirectory}{playerCharacter.Name}.txt");
+                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
-                    await sw.DisposeAsync();
+                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
                 }
             }
             catch (Exception e)
@@ -124,11 +125,11 @@ namespace Server.Extensions
 
                     if (playerCharacter == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_characterDirectory}{playerCharacter.Name}.txt");
+                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
-                    await sw.DisposeAsync();
+                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
                 }
             }
             catch (Exception e)
@@ -147,11 +148,11 @@ namespace Server.Extensions
 
                     if (playerAccount == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_adminDirectory}{playerAccount.Username}.txt");
+                    await using var sourceStream = new FileStream($"{_adminDirectory}{playerAccount.Username}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
-                    await sw.DisposeAsync();
+                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
                 }
             }
             catch (Exception e)
@@ -168,10 +169,11 @@ namespace Server.Extensions
                 {
                     if (bankAccount == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_bankDirectory}{bankAccount.AccountNumber}.txt");
+                    await using var sourceStream = new FileStream($"{_bankDirectory}{bankAccount.AccountNumber}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-                    await sw.DisposeAsync();
+                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
+
+                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
                 }
             }
             catch (Exception e)

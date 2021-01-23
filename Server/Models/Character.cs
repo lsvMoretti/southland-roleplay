@@ -364,7 +364,7 @@ namespace Server.Models
         /// </summary>
         /// <param name="id">Character Id</param>
         /// <returns>Character DB</returns>
-        public static Character GetCharacter(int id)
+        public static Character? GetCharacter(int id)
         {
             using Context context = new Context();
             Character character = context.Character.Find(id);
