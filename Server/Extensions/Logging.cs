@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Security;
+using System.Security.Permissions;
 using System.Text;
 using AltV.Net.Elements.Entities;
 using Serilog;
@@ -102,7 +104,7 @@ namespace Server.Extensions
 
                     if (playerCharacter == null) return;
 
-                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
+                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
 
                     byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
@@ -125,7 +127,7 @@ namespace Server.Extensions
 
                     if (playerCharacter == null) return;
 
-                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
+                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.Append, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
 
                     byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
@@ -148,7 +150,7 @@ namespace Server.Extensions
 
                     if (playerAccount == null) return;
 
-                    await using var sourceStream = new FileStream($"{_adminDirectory}{playerAccount.Username}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
+                    await using var sourceStream = new FileStream($"{_adminDirectory}{playerAccount.Username}.txt", FileMode.Append, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
 
                     byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
@@ -169,7 +171,7 @@ namespace Server.Extensions
                 {
                     if (bankAccount == null) return;
 
-                    await using var sourceStream = new FileStream($"{_bankDirectory}{bankAccount.AccountNumber}.txt", FileMode.Append, FileAccess.ReadWrite, FileShare.None, bufferSize: 4096, useAsync: true);
+                    await using var sourceStream = new FileStream($"{_bankDirectory}{bankAccount.AccountNumber}.txt", FileMode.Append, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
 
                     byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
 
