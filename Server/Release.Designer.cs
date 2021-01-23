@@ -52,7 +52,7 @@ namespace Server {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("gameserver")]
+        [global::System.Configuration.DefaultSettingValueAttribute("dev_gameserver")]
         public string MySqlDebug {
             get {
                 return ((string)(this["MySqlDebug"]));
