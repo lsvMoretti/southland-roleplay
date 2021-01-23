@@ -8,8 +8,10 @@ var checkpointList:any = undefined;
 var currentPosition = -1;
 var marker:any = undefined;
 var speedCount = 0;
+var dmvVehicle:alt.Vehicle = undefined;
 
-function startDrivingTest(checkpointJson:string) {
+function startDrivingTest(vehicle:alt.Vehicle, checkpointJson:string) {
+    dmvVehicle = vehicle;
     checkpointList = JSON.parse(checkpointJson);
     alt.log(checkpointJson);
     currentPosition = 0;
@@ -32,11 +34,11 @@ alt.setInterval(() => {
         var meterPSec = alt.Player.local.vehicle.speed;
         var mph = Math.round(meterPSec * 2.236936);
 
-        var allowedSpeed = 55;
+        var allowedSpeed = 50;
 
         if (currentPosition >= 12 && currentPosition <= 14) {
             //In Motorway
-            allowedSpeed = 155;
+            allowedSpeed = 100;
         }
 
         if (mph > allowedSpeed) {
@@ -64,6 +66,8 @@ function updatePosition() {
     let playerDist = extensions.Distance(playerPos, marker.pos);
 
     if (playerDist < 5) {
+        if(alt.Player.local.vehicle !== dmvVehicle) return;
+
         currentPosition++;
         if (currentPosition === 26) {
             marker = undefined;
