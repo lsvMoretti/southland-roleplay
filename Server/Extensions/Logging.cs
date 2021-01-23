@@ -13,9 +13,9 @@ namespace Server.Extensions
 {
     public class Logging
     {
-        private static readonly string _characterDirectory = "C:/Logs/Characters/";
-        private static readonly string _adminDirectory = "C:/Logs/Admins/";
-        private static readonly string _bankDirectory = "C:/Logs/Banks/";
+        private static readonly string _characterDirectory = $"{Directory.GetCurrentDirectory()}/Logs/Characters/";
+        private static readonly string _adminDirectory = $"{Directory.GetCurrentDirectory()}/Logs/Admins/";
+        private static readonly string _bankDirectory = $"{Directory.GetCurrentDirectory()}/Logs/Banks/";
         private static bool _enableLogging = true;
 
         /// <summary>
