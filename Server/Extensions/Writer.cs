@@ -9,6 +9,7 @@ namespace Server.Extensions
         public override void Write(string value)
         {
             Alt.Log(value);
+            return;
         }
 
         public override Encoding Encoding => Encoding.ASCII;

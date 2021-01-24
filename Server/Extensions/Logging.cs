@@ -3,6 +3,7 @@ using System.IO;
 using System.Security;
 using System.Security.Permissions;
 using System.Text;
+using System.Threading.Tasks;
 using AltV.Net.Elements.Entities;
 using Serilog;
 using Serilog.Core;
@@ -100,15 +101,18 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    Models.Character? playerCharacter = player.FetchCharacter();
+                    await Task.Run(async () =>
+                    {
+                        Models.Character? playerCharacter = player.FetchCharacter();
 
-                    if (playerCharacter == null) return;
+                        if (playerCharacter == null) return;
 
-                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
-
-                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
-
-                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
+                        await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
@@ -123,15 +127,18 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
+                    await Task.Run(async () =>
+                    {
+                        Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
 
-                    if (playerCharacter == null) return;
+                        if (playerCharacter == null) return;
 
-                    await using var sourceStream = new FileStream($"{_characterDirectory}{playerCharacter.Name}.txt", FileMode.Append, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
-
-                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
-
-                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
+                        await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
@@ -146,15 +153,18 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    Models.Account? playerAccount = player.FetchAccount();
+                    await Task.Run(async () =>
+                    {
+                        Models.Account? playerAccount = player.FetchAccount();
 
-                    if (playerAccount == null) return;
+                        if (playerAccount == null) return;
 
-                    await using var sourceStream = new FileStream($"{_adminDirectory}{playerAccount.Username}.txt", FileMode.Append, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
-
-                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
-
-                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
+                        await using (StreamWriter sw = new StreamWriter($"{_adminDirectory}{playerAccount.Username}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
@@ -171,11 +181,14 @@ namespace Server.Extensions
                 {
                     if (bankAccount == null) return;
 
-                    await using var sourceStream = new FileStream($"{_bankDirectory}{bankAccount.AccountNumber}.txt", FileMode.Append, FileAccess.Write, FileShare.Write, bufferSize: 4096, useAsync: true);
-
-                    byte[] encodedText = Encoding.Unicode.GetBytes(logMessage);
-
-                    await sourceStream.WriteAsync(encodedText, 0, encodedText.Length);
+                    await Task.Run(async () =>
+                    {
+                        await using (StreamWriter sw = new StreamWriter($"{_bankDirectory}{bankAccount.AccountNumber}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
