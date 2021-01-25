@@ -2001,6 +2001,12 @@ namespace Server.Property
 
             bool anyDonations = context.Donations.Any(x => x.AccountId == player.GetClass().AccountId && x.Activated == true && x.Type == DonationType.Gold);
 
+            if (!anyDonations)
+            {
+                player.SendPermissionError();
+                return;
+            }
+
             if (ActiveBusiness.ActiveBusinessBlips.ContainsKey(nearProperty.Id))
             {
                 ActiveBusiness.RemoveActiveBusiness(nearProperty);
