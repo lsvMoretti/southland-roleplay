@@ -66,7 +66,10 @@ function updatePosition() {
     let playerDist = extensions.Distance(playerPos, marker.pos);
 
     if (playerDist < 5) {
-        if(alt.Player.local.vehicle !== dmvVehicle) return;
+        if(alt.Player.local.vehicle !== dmvVehicle) {
+            alt.emitServer('dmv:finishedDriving', 0);
+            return;
+        }
 
         currentPosition++;
         if (currentPosition === 26) {

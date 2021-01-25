@@ -182,6 +182,10 @@ namespace Server.DMV
             player.SendInfoNotification($"You have been warned for speeding. You have {speedCount} / 5 chances to slow down or you will fail!");
         }
 
+        public static void OnIncorrectVehicle(IPlayer player)
+        {
+        }
+
         public static void InitDmv()
         {
             Blip dmvBlip = new Blip("DMV", DmvPosition, 538, 84, 0.75f);
