@@ -57,6 +57,8 @@ namespace Server.Character
 
                 player.SendInfoNotification($"Your advert has been sent for approval.");
 
+                player.SetData("Advert:LastAd", DateTime.Now);
+
                 return true;
             }
             catch (Exception e)
@@ -110,6 +112,21 @@ namespace Server.Character
             {
                 player.SendErrorNotification($"You don't have enough money for this. {_adPrice:C}.");
                 return;
+            }
+
+            bool hasLastAdData = player.GetData("Advert:LastAd", out DateTime lastAd);
+
+            if (hasLastAdData)
+            {
+                DateTime now = DateTime.Now;
+
+                double waitTimeSeconds = 60;
+
+                if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) < 0)
+                {
+                    player.SendErrorNotification($"You must wait at least {waitTimeSeconds} seconds between each advert!");
+                    return;
+                }
             }
 
             if (message.Length < 3)
