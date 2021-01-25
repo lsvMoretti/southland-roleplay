@@ -147,9 +147,12 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     hairInfo = JSON.parse(customCharacter.Hair);
 
+    
     if (features.length < featureNames.length) {
         for (let index = 0; index < featureNames.length; index++) {
-            features[index] = 0.0;
+            if(features[index] === undefined){
+                features[index] = 0.0;
+            }
         }
     }
 
@@ -169,6 +172,36 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
     currentGender = customCharacter.Gender;
 
     ApplyCreatorOutfit();
+
+    parentOne = parentInfo.Mother;
+    parentTwo = parentInfo.Father;
+    parentMix = parentInfo.Similarity;
+    skinMix = parentInfo.SkinSimilarity;
+    parentOneSkin = parentInfo.MotherSkin;
+    parentTwoSkin = parentInfo.FatherSkin;
+    PedHeadBlendUpdate();
+
+    for (let index = 0; index < features.length; index++) {
+        const feature = features[index];
+        facialFeatureUpdate(index, feature);
+    }
+
+    for (let index = 0; index < appearanceItems.length; index++) {
+        const element = appearanceItems[index];
+        setFacialApperance(index, element.Value, element.Opacity);
+        
+    }
+
+    currentHairColor = hairInfo.Color;
+    currentHairHighlightColor = hairInfo.HighlightColor;
+
+    onEyebrowColorChange(customCharacter.EyebrowColor);
+    onFacialHairColorChange(customCharacter.BeardColor);
+    onEyeColorChange(customCharacter.EyeColor);
+    onblushColorChange(customCharacter.BlushColor);
+    onlipstickColorChange(customCharacter.LipstickColor);
+    onchestHairColorChange(customCharacter.ChestHairColor);
+
 }
 
 //#region Parent
@@ -177,6 +210,11 @@ var parentOne = 0;
 var parentTwo = 0;
 var parentMix = 0.5;
 var skinMix = 0.5;
+var parentOneSkin = 0;
+var parentTwoSkin = 0;
+
+var currentHairColor = 0;
+var currentHairHighlightColor = 0;
 
 function onParentChange(parent: any, faceId: any) {
     alt.log('Parent Change: ' + parent + ", " + faceId);
@@ -213,8 +251,6 @@ function onParentChange(parent: any, faceId: any) {
     PedHeadBlendUpdate();
 }
 
-var parentOneSkin = 0;
-var parentTwoSkin = 0;
 
 function onParentSkinChange(parent: any, newParentSkin: any) {
     alt.log('Parent Skin Change: ' + parent + ", " + newParentSkin);
@@ -322,8 +358,6 @@ function onHairChange(newHair: any) {
     }
 }
 
-var currentHairColor = 0;
-var currentHairHighlightColor = 0;
 
 function onHairColorChange(newHairColor: any) {
     currentHairColor = newHairColor;

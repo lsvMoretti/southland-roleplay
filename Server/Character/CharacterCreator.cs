@@ -24,11 +24,21 @@ namespace Server.Character
         /// <param name="reason">0 - Surgery, 1 - First Time</param>
         public static void SendToCreator(IPlayer player, int reason = 0)
         {
-            CharacterHandler.SaveCharacterPosition(player);
+            if (!player.GetClass().CreatorRoom)
+            {
+                CharacterHandler.SaveCharacterPosition(player);
+            }
 
             player.SetData("LastPos", player.Position);
             player.Position = CreatorRoom.CreatorPosition;
-            player.Emit("loadCharacterCreator", JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), player.GetClass().Name);
+
+            Models.Character? playerCharacter = player.FetchCharacter();
+
+            string customCharacter = !string.IsNullOrEmpty(playerCharacter.CustomCharacter)
+                ? playerCharacter.CustomCharacter
+                : JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter());
+
+            player.Emit("loadCharacterCreator", customCharacter, JsonConvert.SerializeObject(CustomCharacter.DefaultCharacter()), player.GetClass().Name);
             player.Dimension = (short)player.GetPlayerId();
             player.Rotation = CreatorRoom.CreatorRotation;
             player.HideChat(true);
