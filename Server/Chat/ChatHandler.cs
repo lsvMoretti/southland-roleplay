@@ -285,43 +285,43 @@ namespace Server.Chat
 
                                 case MessageType.Me:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name} {message}");
+                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
 
                                     break;
 
                                 case MessageType.MeLong:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name} {message}");
+                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
 
                                     break;
 
                                 case MessageType.MeLow:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name} {message}");
+                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
 
                                     break;
 
                                 case MessageType.My:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{player.GetClass().Name}'s {message}");
+                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name}'s {message}");
 
                                     break;
 
                                 case MessageType.Do:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{message} (( {player.GetClass().Name} ))");
+                                    target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
 
                                     break;
 
                                 case MessageType.DoLow:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{message} (( {player.GetClass().Name} ))");
+                                    target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
 
                                     break;
 
                                 case MessageType.DoLong:
                                     // We send the message
-                                    target.SendChatMessage($"* {ColorChatMe}{message} (( {player.GetClass().Name} ))");
+                                    target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
 
                                     break;
 
