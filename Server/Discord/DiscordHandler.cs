@@ -11,7 +11,7 @@ namespace Server.Discord
     public class DiscordHandler
     {
         private static readonly ulong DiscordLogChannelId = 795062350398881832;
-        private static readonly ulong DiscordIgAdminChatChannelId = 787791455950471218;
+        private static readonly ulong DiscordIgAdminChatChannelId = 802384633378635788;
         private static readonly ulong DiscordIgReportsId = 795086774149447721;
         private static readonly ulong DiscordDepartmentId = 685633206246178860;
 
