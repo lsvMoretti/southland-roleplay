@@ -19,6 +19,8 @@ var localPlayer = alt.Player.local.scriptID;
 
 var orginalRotation = 90;
 
+var customCharacterString:string;
+
 var featureNames = ["Nose Width", "Nose Bottom Height", "Nose Tip Length", "Nose Bridge Depth", "Nose Tip Height",
     "Nose Broken", "Brow Height", "Brow Depth", "Cheekbone Height", "Cheekbone Width", "Cheek Depth",
     "Eye Size", "Lip Thickness", "Jaw Width", "Jaw Shape", "Chin Height", "Chin Depth", "Chin Width",
@@ -67,6 +69,8 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
 
     customCharacter = JSON.parse(customCharacterJson);
+
+    customCharacterString = customCharacterJson;
 
     alt.log(customCharacter);
 
@@ -157,7 +161,7 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
     }
 
     if (appearanceItems.length === 0) {
-        for (let index = 0; index <= 11; index++) {
+        for (let index = 0; index <= appearanceItems.length; index++) {
             var newApperance
             {
                 const Value = -1;
@@ -173,34 +177,6 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     ApplyCreatorOutfit();
 
-    parentOne = parentInfo.Mother;
-    parentTwo = parentInfo.Father;
-    parentMix = parentInfo.Similarity;
-    skinMix = parentInfo.SkinSimilarity;
-    parentOneSkin = parentInfo.MotherSkin;
-    parentTwoSkin = parentInfo.FatherSkin;
-    PedHeadBlendUpdate();
-
-    for (let index = 0; index < features.length; index++) {
-        const feature = features[index];
-        facialFeatureUpdate(index, feature);
-    }
-
-    for (let index = 0; index < appearanceItems.length; index++) {
-        const element = appearanceItems[index];
-        setFacialApperance(index, element.Value, element.Opacity);
-        
-    }
-
-    currentHairColor = hairInfo.Color;
-    currentHairHighlightColor = hairInfo.HighlightColor;
-
-    onEyebrowColorChange(customCharacter.EyebrowColor);
-    onFacialHairColorChange(customCharacter.BeardColor);
-    onEyeColorChange(customCharacter.EyeColor);
-    onblushColorChange(customCharacter.BlushColor);
-    onlipstickColorChange(customCharacter.LipstickColor);
-    onchestHairColorChange(customCharacter.ChestHairColor);
 
 }
 
@@ -305,11 +281,14 @@ function facialFeatureUpdate(slot: any, value: any) {
 
 //#region Apperances
 
-function setFacialApperance(slot: any, appearance: any, opacity: any) {
+function setFacialApperance(slot: any, appearance: any, opacity: any, reduceOne:boolean = true) {
     localPlayer = alt.Player.local.scriptID;
     var convertedOpacity = Number(opacity) / 100;
 
-    var convertedAppearance = appearance - 1;
+    var convertedAppearance = appearance;
+    if(reduceOne){
+        convertedAppearance -= 1;
+    }
 
     if (convertedAppearance == -1) {
         convertedAppearance = 255;
@@ -767,9 +746,11 @@ function genderChange(newGender: any) {
 function creatorLoaded() {
     if (creatorView !== undefined) {
         creatorView.emit('currentGender', customCharacter.Gender);
+        creatorView.emit('currentCharacter', customCharacterString);
         genderChange(customCharacter.Gender);
         alt.log('Current Gender' + customCharacter.Gender);
-    }
+
+        }
 }
 
 function ApplyCreatorOutfit() {
@@ -800,6 +781,43 @@ function ApplyCreatorOutfit() {
         }
     },
         600);
+
+        
+        
+        parentOne = parentInfo.Mother;
+        parentTwo = parentInfo.Father;
+        parentMix = parentInfo.Similarity;
+        skinMix = parentInfo.SkinSimilarity;
+        parentOneSkin = parentInfo.MotherSkin;
+        parentTwoSkin = parentInfo.FatherSkin;
+        PedHeadBlendUpdate();
+
+        for (let index = 0; index < features.length; index++) {
+            const feature = features[index];
+            facialFeatureUpdate(index, feature);
+        }
+
+        for (let index = 0; index < appearanceItems.length; index++) {
+            const element = appearanceItems[index];
+            alt.log('Appearnce Item Client: ' + index + ': Value: ' + element.Value + ', Opacity: '+element.Opacity.toFixed(0))
+            setFacialApperance(index, element.Value, element.Opacity.toFixed(0), false);
+            
+        }
+
+        currentHairColor = hairInfo.Color;
+        currentHairHighlightColor = hairInfo.HighlightColor;
+        onHairChange(hairInfo.Hair);
+        onHairColorChange(hairInfo.Color);
+        onhairHighlightColorChange(hairInfo.HighlightColor);
+
+        onEyebrowColorChange(customCharacter.EyebrowColor);
+        onFacialHairColorChange(customCharacter.BeardColor);
+        onEyeColorChange(customCharacter.EyeColor);
+        onblushColorChange(customCharacter.BlushColor);
+        onlipstickColorChange(customCharacter.LipstickColor);
+        onchestHairColorChange(customCharacter.ChestHairColor);
+        onHairChange(hairInfo.Hair);
+        onHairChange(hairInfo.Hair);
 }
 
 function closeCharacterCreator() {
