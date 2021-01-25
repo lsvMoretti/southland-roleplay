@@ -45,6 +45,17 @@ namespace Server.Chat
                 return;
             }
 
+            using Context context = new Context();
+
+            bool anyDonations =
+                context.Donations.Any(x => x.AccountId == player.GetClass().AccountId && x.Activated == true);
+
+            if (!anyDonations)
+            {
+                player.SendPermissionError();
+                return;
+            }
+
             bool hasBlockData = player.GetData($"BlockedPMs:{targetAccount.Id}", out bool blocked);
 
             if (hasBlockData)
