@@ -119,8 +119,38 @@ namespace Server.Character
             if (hasLastAdData)
             {
                 DateTime now = DateTime.Now;
-                //TODO: Change this when donator stuff added
-                double waitTimeSeconds = 60;
+                double waitTimeSeconds = 120;
+
+                using Context context = new Context();
+
+                List<Donations> donations = context.Donations.Where(x =>
+                    x.AccountId == player.GetClass().AccountId && x.Activated == true).ToList();
+
+                bool isSilverDonator = false;
+                bool isGoldDonator = false;
+
+                foreach (Donations donation in donations)
+                {
+                    if (donation.Type == DonationType.Silver)
+                    {
+                        isSilverDonator = true;
+                    }
+
+                    if (donation.Type == DonationType.Gold)
+                    {
+                        isGoldDonator = true;
+                    }
+                }
+
+                if (isSilverDonator)
+                {
+                    waitTimeSeconds = 60;
+                }
+
+                if (isGoldDonator)
+                {
+                    waitTimeSeconds = 30;
+                }
 
                 if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) < 0)
                 {

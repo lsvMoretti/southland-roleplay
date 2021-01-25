@@ -64,6 +64,8 @@ namespace Server
 
         public DbSet<Marijuana> Marijuana { get; set; }
 
+        public DbSet<Donations> Donations { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 #if DEBUG
