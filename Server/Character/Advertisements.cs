@@ -119,7 +119,7 @@ namespace Server.Character
             if (hasLastAdData)
             {
                 DateTime now = DateTime.Now;
-
+                //TODO: Change this when donator stuff added
                 double waitTimeSeconds = 60;
 
                 if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) < 0)

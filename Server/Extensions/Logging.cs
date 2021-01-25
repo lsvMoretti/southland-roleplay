@@ -107,6 +107,12 @@ namespace Server.Extensions
 
                         if (playerCharacter == null) return;
 
+                        while (!IsFileReady($"{_characterDirectory}{playerCharacter.Name}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
+
                         await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
                         {
                             await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
@@ -132,6 +138,12 @@ namespace Server.Extensions
                         Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
 
                         if (playerCharacter == null) return;
+
+                        while (!IsFileReady($"{_characterDirectory}{playerCharacter.Name}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
 
                         await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
                         {
@@ -159,6 +171,12 @@ namespace Server.Extensions
 
                         if (playerAccount == null) return;
 
+                        while (!IsFileReady($"{_adminDirectory}{playerAccount.Username}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
+
                         await using (StreamWriter sw = new StreamWriter($"{_adminDirectory}{playerAccount.Username}.txt", true))
                         {
                             await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
@@ -183,6 +201,12 @@ namespace Server.Extensions
 
                     await Task.Run(async () =>
                     {
+                        while (!IsFileReady($"{_bankDirectory}{bankAccount.AccountNumber}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
+
                         await using (StreamWriter sw = new StreamWriter($"{_bankDirectory}{bankAccount.AccountNumber}.txt", true))
                         {
                             await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
@@ -194,6 +218,21 @@ namespace Server.Extensions
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+        }
+
+        public static bool IsFileReady(string filename)
+        {
+            // If the file can be opened for exclusive access it means that the file
+            // is no longer locked by another process.
+            try
+            {
+                using (FileStream inputStream = File.Open(filename, FileMode.Open, FileAccess.Read, FileShare.None))
+                    return inputStream.Length > 0;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

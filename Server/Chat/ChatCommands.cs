@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
+using System.Xml.Serialization;
 using AltV.Net;
 using AltV.Net.Elements.Entities;
 using DSharpPlus.Entities;
@@ -16,6 +17,49 @@ namespace Server.Chat
 {
     public class ChatCommands
     {
+        [Command("blockpm", onlyOne: true, commandType: CommandType.Character,
+            description: "Used to block a PM from a player")]
+        public static void CommandBlockPm(IPlayer player, string args = "")
+        {
+            if (!player.IsSpawned()) return;
+
+            if (args == "")
+            {
+                player.SendSyntaxMessage("/blockpm [NameOrId]");
+                return;
+            }
+
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
+
+            if (targetPlayer == null)
+            {
+                player.SendErrorNotification("Unable to find this player.");
+                return;
+            }
+
+            Models.Account? targetAccount = targetPlayer.FetchAccount();
+
+            if (targetAccount == null)
+            {
+                player.SendErrorNotification("Unable to find the target account.");
+                return;
+            }
+
+            bool hasBlockData = player.GetData($"BlockedPMs:{targetAccount.Id}", out bool blocked);
+
+            if (hasBlockData)
+            {
+                player.DeleteData($"BlockedPMs:{targetAccount.Id}");
+                player.SendInfoNotification($"You've removed the block for {targetPlayer.GetClass().Name}.");
+                Logging.AddToCharacterLog(player, $"has allowed PMs from Account Id: {targetAccount.Id}.");
+                return;
+            }
+
+            player.SetData($"BlockedPMs:{targetAccount.Id}", true);
+            player.SendInfoNotification($"You've blocked the PMs from {targetPlayer.GetClass().Name}.");
+            Logging.AddToCharacterLog(player, $"has blocked PMs from {targetAccount.Id}.");
+        }
+
         [Command("fontsize", onlyOne: true, commandType: CommandType.Chat, description: "Used to set your font style")]
         public static void CommandFontSize(IPlayer player, string args = "")
         {
@@ -251,6 +295,12 @@ namespace Server.Chat
                 if (targetPlayer == null)
                 {
                     player.SendErrorNotification("Player not found!");
+                    return;
+                }
+
+                if (targetPlayer.HasData($"BlockedPMs:{player.GetClass().AccountId}"))
+                {
+                    player.SendErrorNotification("This player isn't able to receive PMs at the moment.");
                     return;
                 }
 
