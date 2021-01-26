@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
+using AltV.Net;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using Newtonsoft.Json;
@@ -722,11 +723,13 @@ namespace Server.Weapons
 
                 bool hasAmmoData = player.GetData("weaponEvent:CurrentAmmo", out int lastAmmoCount);
 
+                Console.WriteLine($"Bullet Count: {bulletCount}, Ammo Count: {lastAmmoCount}");
+                /*
                 if (hasAmmoData && lastAmmoCount > 0)
                 {
                     bulletCount = lastAmmoCount;
                 }
-
+                */
                 weaponInfo.AmmoCount = bulletCount;
 
                 weaponItem.ItemValue = JsonConvert.SerializeObject(weaponInfo);
