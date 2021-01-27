@@ -210,6 +210,24 @@ namespace Server.Vehicle
             {
                 player.Emit("DisableSeatSwitch", vehicle);
 
+                if (vehicle.Driver == player)
+                {
+                    Models.Vehicle? data = vehicle.FetchVehicleData();
+
+                    if (data != null)
+                    {
+                        if (data.FactionId == 1)
+                        {
+                            if (!player.IsLeo(true))
+                            {
+                                player.SendErrorNotification("You can't enter this vehicle.");
+                                player.Emit("Vehicle:RemoveFromVehicle");
+                                return;
+                            }
+                        }
+                    }
+                }
+
                 Dictionary<byte, int> occupants = vehicle.Occupants();
 
                 if (occupants.ContainsKey(seat))
