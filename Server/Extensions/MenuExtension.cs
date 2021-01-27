@@ -614,6 +614,8 @@ namespace Server.Extensions
 
                 if (serverTrigger == "EupMenu:Police:PropFemale") EupMenu.OnFemalePolicePropSelect(player, selectedItem);
 
+                if (serverTrigger == "EupMenu:Police:FemaleRanks") EupMenu.OnPoliceFemaleRankSelect(player, selectedItem);
+
                 #endregion EUP Menu
 
                 #region Open World Storage

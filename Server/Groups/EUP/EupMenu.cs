@@ -210,23 +210,20 @@ namespace Server.Groups.EUP
 
             if (player.FetchCharacter().Sex == 1)
             {
-                player.SendErrorNotification("Coming soon!");
+                // Female
+                menuItems.Add(new NativeMenuItem("Props"));
+                menuItems.Add(new NativeMenuItem("Ranks"));
+
+                foreach (EupOutfit femaleOutfit in FemalePoliceOutfits)
+                {
+                    menuItems.Add(new NativeMenuItem(femaleOutfit.Name));
+                }
+
+                NativeMenu menu = new NativeMenu("EupMenu:Police:Female", "EUP", "Select an Outfit", menuItems);
+
+                NativeUi.ShowNativeMenu(player, menu, true);
+
                 return;
-                /*
-                 // Female
-                 menuItems.Add(new NativeMenuItem("Props"));
-                 //menuItems.Add(new NativeMenuItem("Ranks"));
-
-                 foreach (EupOutfit femaleOutfit in FemalePoliceOutfits)
-                 {
-                     menuItems.Add(new NativeMenuItem(femaleOutfit.Name));
-                 }
-
-                 NativeMenu menu = new NativeMenu("EupMenu:Police:Female", "EUP", "Select an Outfit", menuItems);
-
-                 NativeUi.ShowNativeMenu(player, menu, true);
-
-                 return;*/
             }
         }
 
@@ -286,7 +283,7 @@ namespace Server.Groups.EUP
 
             if (option == "Ranks")
             {
-                //ShowMalePoliceRanks(player);
+                ShowFemalePoliceRanks(player);
                 return;
             }
 
@@ -475,5 +472,50 @@ namespace Server.Groups.EUP
         }
 
         #endregion Female Police Props
+
+        #region Female Police Ranks
+
+        private static void ShowFemalePoliceRanks(IPlayer player)
+        {
+            List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
+
+            foreach (EupProp malePoliceRank in MalePoliceRanks)
+            {
+                menuItems.Add(new NativeMenuItem(malePoliceRank.Name));
+            }
+
+            NativeMenu menu = new NativeMenu("EupMenu:Police:FemaleRanks", "EUP", "Select a Rank", menuItems);
+
+            NativeUi.ShowNativeMenu(player, menu, true);
+        }
+
+        public static void OnPoliceFemaleRankSelect(IPlayer player, string option)
+        {
+            if (option == "Close") return;
+
+            EupProp selectedRank = MalePoliceRanks.FirstOrDefault(x => x.Name == option);
+
+            if (selectedRank == null)
+            {
+                player.SendErrorNotification("Unable to find the rank.");
+                return;
+            }
+
+            if (selectedRank.PropType == EupPropType.Clothing)
+            {
+                player.SetClothes(selectedRank.Slot, selectedRank.Data[0], selectedRank.Data[1]);
+            }
+
+            if (selectedRank.PropType == EupPropType.Prop)
+            {
+                player.SetAccessory(selectedRank.Slot, selectedRank.Data[0], selectedRank.Data[1]);
+            }
+
+            player.SendNotification($"~y~You've selected the rank {option}.");
+
+            Logging.AddToCharacterLog(player, $"has set their rank prop to {option}.");
+        }
+
+        #endregion Female Police Ranks
     }
 }
