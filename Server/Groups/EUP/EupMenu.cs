@@ -67,6 +67,14 @@ namespace Server.Groups.EUP
             new EupProp("LSPD Belt Badge", EupPropType.Clothing,5, new []{91, 0}),
             new EupProp("LSPD Neck Badge", EupPropType.Clothing,5, new []{92, 0}),
             new EupProp("Two Mags On Belt", EupPropType.Clothing,5, new []{90, 0}),
+            new EupProp("Empty Holster", EupPropType.Clothing,7, new []{152, 0}),
+            new EupProp("Leg Holster", EupPropType.Clothing,7, new []{153, 0}),
+            new EupProp("Holster w/ Mags", EupPropType.Clothing,7, new []{154, 0}),
+            new EupProp("Holster w/ Gun & Mags", EupPropType.Clothing,7, new []{155, 0}),
+            new EupProp("Holster w/ Gun", EupPropType.Clothing,7, new []{156, 0}),
+            new EupProp("Tie & US Badge", EupPropType.Clothing,7, new []{157, 0}),
+            new EupProp("Loose Tie", EupPropType.Clothing,7, new []{158, 0}),
+            new EupProp("Gang Unit Vest", EupPropType.Clothing,9, new []{63, 0}),
         };
 
         public static List<EupProp> MalePoliceRanks = new List<EupProp>
@@ -93,14 +101,15 @@ namespace Server.Groups.EUP
 
         public static List<EupOutfit> FemalePoliceOutfits = new List<EupOutfit>
         {
-            new EupOutfit("Class C - Short", new []{14, 0}, new []{34, 0}, new []{25, 0},  new []{349, 0}),
-            new EupOutfit("Class C - Long", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{350, 0}),
-            new EupOutfit("Traffic - Short", new []{14, 0}, new []{34, 0}, new []{25, 0},  new []{349, 1}),
-            new EupOutfit("Traffic - Long", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{350, 1}),
-            new EupOutfit("Police Tee", new []{14, 0}, new []{34, 0}, new []{25, 0},  new []{348, 0}),
-            new EupOutfit("Police Jacket", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{351, 0}),
-            new EupOutfit("SWAT", new []{14, 0}, new []{132, 0}, new []{25, 0},  new []{347, 0}),
-            new EupOutfit("SWAT Tee", new []{14, 0}, new []{127, 0}, new []{25, 0},  new []{348, 1}),
+            new EupOutfit("Class A - Long", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{385, 0}),
+            new EupOutfit("Class A - Long Traffic", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{385, 1}),
+            new EupOutfit("Class C - Short", new []{14, 0}, new []{34, 0}, new []{25, 0},  new []{383, 0}),
+            new EupOutfit("Class C - Short Traffic", new []{14, 0}, new []{34, 0}, new []{25, 0},  new []{383, 1}),
+            new EupOutfit("Class C - Long", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{384, 0}),
+            new EupOutfit("Class C - Long Traffic", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{384, 1}),
+            new EupOutfit("LSPD Tee", new []{3, 0}, new []{34, 0}, new []{25, 0},  new []{382, 0}),
+            new EupOutfit("SWAT", new []{14, 0}, new []{132, 0}, new []{25, 0},  new []{381, 0}),
+            new EupOutfit("SWAT Tee", new []{14, 0}, new []{127, 0}, new []{25, 0},  new []{382, 1}),
         };
 
         public static List<EupProp> FemalePoliceProps = new List<EupProp>
@@ -109,17 +118,51 @@ namespace Server.Groups.EUP
             new EupProp("No Hat", EupPropType.Prop, 0, new []{-1, 0}),
             new EupProp("No Vest", EupPropType.Clothing, 9, new []{56, -1}),
             new EupProp("No Belt", EupPropType.Clothing, 8, new []{169, -1}),
-            new EupProp("LSPD Badge", EupPropType.Clothing,5, new []{85, 0}),
-            new EupProp("Officer Hat", EupPropType.Prop,0, new []{148, 0}),
-            new EupProp("LSPD ASU Helmet", EupPropType.Prop,0, new []{151, 1}),
-            new EupProp("Motorcycle Helmet", EupPropType.Prop,0, new []{153, 0}),
+            new EupProp("LSPD Badge", EupPropType.Clothing,5, new []{89, 0}),
+            new EupProp("Belt & Badge", EupPropType.Clothing,5, new []{90, 0}),
+            new EupProp("Officer Hat", EupPropType.Prop,0, new []{152, 0}),
+            new EupProp("LSPD ASU Helmet", EupPropType.Prop,0, new []{156, 1}),
+            new EupProp("LSPD ASU Helmet Visor", EupPropType.Prop,0, new []{157, 1}),
+            new EupProp("Motorcycle Helmet", EupPropType.Prop,0, new []{158, 1}),
             new EupProp("LSPD Hi-Vis", EupPropType.Clothing,9, new []{56, 0}),
-            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{202, 0}),
-            new EupProp("Duty Belt 2", EupPropType.Clothing,8, new []{203, 0}),
-            new EupProp("Duty Belt 3", EupPropType.Clothing,8, new []{204, 0}),
+            new EupProp("Traffic Hi-Vis", EupPropType.Clothing,9, new []{56, 8}),
+            new EupProp("Shoulder Mic", EupPropType.Clothing,9, new []{57, 0}),
+            new EupProp("Belt & Mic", EupPropType.Clothing,9, new []{58, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{216, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{217, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{218, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{220, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{221, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{223, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{224, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{225, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{226, 0}),
+            new EupProp("Duty Belt 1", EupPropType.Clothing,8, new []{227, 0}),
+            new EupProp("Radio", EupPropType.Clothing,8, new []{228, 0}),
+            new EupProp("Underarm Holster", EupPropType.Clothing,8, new []{229, 0}),
+            new EupProp("Underarm w/o Gun Holster", EupPropType.Clothing,8, new []{231, 0}),
+            new EupProp("Police Vest", EupPropType.Clothing,8, new []{230, 0}),
             new EupProp("LSPD Armor Vest", EupPropType.Clothing,9, new []{58, 4}),
             new EupProp("SWAT Helmet", EupPropType.Prop,0, new []{150, 0}),
-            new EupProp("SWAT Vest", EupPropType.Clothing,9, new []{57, 0}),
+            new EupProp("SWAT Vest", EupPropType.Clothing,9, new []{59, 0}),
+        };
+
+        public static List<EupProp> FemalePoliceRanks = new List<EupProp>
+        {
+            new EupProp("No Rank", EupPropType.Clothing,10, new []{81, -1}),
+            new EupProp("Police Officer III", EupPropType.Clothing,10, new []{94, 0}),
+            new EupProp("Police Officer III+I", EupPropType.Clothing,10, new []{ 94, 1}),
+            new EupProp("Sergeant I", EupPropType.Clothing,10, new []{ 94, 2}),
+            new EupProp("Sergeant II", EupPropType.Clothing,10, new []{ 94, 3}),
+            new EupProp("Detective I", EupPropType.Clothing,10, new []{ 94, 4}),
+            new EupProp("Detective II", EupPropType.Clothing,10, new []{ 94, 5}),
+            new EupProp("Detective III", EupPropType.Clothing,10, new []{ 94, 6}),
+            new EupProp("Lieutenant", EupPropType.Clothing,10, new []{93, 0}),
+            new EupProp("Captain", EupPropType.Clothing,10, new []{ 93, 1}),
+            new EupProp("Commander", EupPropType.Clothing,10, new []{ 93, 2}),
+            new EupProp("Deputy Chief", EupPropType.Clothing,10, new []{ 93, 3}),
+            new EupProp("Assistant Chief", EupPropType.Clothing,10, new []{ 93, 4}),
+            new EupProp("Chief of Police", EupPropType.Clothing,10, new []{ 93, 5}),
         };
 
         #endregion LSPD Female
