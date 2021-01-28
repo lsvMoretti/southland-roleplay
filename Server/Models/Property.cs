@@ -219,7 +219,7 @@ namespace Server.Models
         /// <param name="player"></param>
         /// <param name="range"></param>
         /// <returns></returns>
-        public static Property FetchNearbyProperty(IPlayer player, float range)
+        public static Property? FetchNearbyProperty(IPlayer player, float range)
         {
             Position playerPosition = player.Position;
 
@@ -234,11 +234,9 @@ namespace Server.Models
 
                 float distance = propertyPosition.Distance(playerPosition);
 
-                if (distance < lastDistance)
-                {
-                    lastProperty = property;
-                    lastDistance = distance;
-                }
+                if (!(distance < lastDistance)) continue;
+                lastProperty = property;
+                lastDistance = distance;
             }
 
             return lastProperty;

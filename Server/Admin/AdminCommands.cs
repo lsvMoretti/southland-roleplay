@@ -2419,26 +2419,40 @@ namespace Server.Admin
         [Command("deleteproperty", AdminLevel.HeadAdmin, commandType: CommandType.Admin, description: "Property: Deletes a property")]
         public static void AdminCommandDeleteProperty(IPlayer player)
         {
-            Models.Property nearbyProperty = Models.Property.FetchNearbyProperty(player, 5);
-
-            if (nearbyProperty == null)
+            try
             {
-                player.SendErrorNotification("You're not near a property.");
+                Models.Property? nearbyProperty = Models.Property.FetchNearbyProperty(player, 5);
+
+                if (nearbyProperty == null)
+                {
+                    player.SendErrorNotification("You're not near a property.");
+                    return;
+                }
+
+                using Context context = new Context();
+
+                Models.Property? propertyDb = context.Property.FirstOrDefault(x => x.Id == nearbyProperty.Id);
+
+                if (propertyDb == null)
+                {
+                    player.SendErrorNotification("Property doesn't exist!");
+                    return;
+                }
+
+                context.Property.Remove(propertyDb);
+
+                context.SaveChanges();
+
+                player.SendInfoNotification($"You have removed {propertyDb.Address} from the system.");
+                Logging.AddToAdminLog(player, $"has removed property {propertyDb.Address} from the system.");
+
+                LoadProperties.UnloadProperty(propertyDb);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 return;
             }
-
-            using Context context = new Context();
-
-            Models.Property propertyDb = context.Property.Find(nearbyProperty.Id);
-
-            context.Property.Remove(propertyDb);
-
-            context.SaveChanges();
-
-            player.SendInfoNotification($"You have removed {propertyDb.Address} from the system.");
-            Logging.AddToAdminLog(player, $"has removed property {propertyDb.Address} from the system.");
-
-            LoadProperties.UnloadProperty(propertyDb);
         }
 
         [Command("setblip", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Property: Sets a properties blip")]

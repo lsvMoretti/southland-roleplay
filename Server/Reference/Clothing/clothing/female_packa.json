@@ -1,0 +1,2454 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 120,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Brown Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Green Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Aqua Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 121,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Necklace",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink & Gold Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White & Nude Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Flower Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Polka Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Neon Green Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Navy Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 122,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Checked Long Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 123,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Mexican Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 123,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Brown Neck Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink & Gold Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Flower Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White & Nude Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Flower Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Nude & Gold Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 7,
+        "drawable": 124,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Short Nails",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Red Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Red Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Blue Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Light Blue Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Black Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Blue Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Green Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Orange Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 232,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Right Yellow Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Red Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Red Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Blue Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Light Blue Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Black Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Blue Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Green Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Orange Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 8,
+        "drawable": 233,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Left Yellow Leg Bandana",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 386,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Bralette",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 386,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White & Black Bralette",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 386,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red & Black Bralette",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 386,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Bralette",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 386,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Bralette",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 387,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Party Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 387,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Party Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 387,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Fade Party Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 387,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Green Party Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 387,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Party Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 387,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Party Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Brown Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Dark Brown Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Brown Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 388,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Leather Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 389,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 389,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 389,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 389,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 389,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 389,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Orange Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 390,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Adidas Long-sleeve",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 390,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Adidas Long-sleeve",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 390,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Adidas Long-sleeve",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 390,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Adidas Long-sleeve",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Glitter Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Orange Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 391,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Green Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Orange Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 392,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Adidas Hoodie",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 393,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Slit Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 393,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Slit Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 393,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Nude Slit Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Orange Always Hustling",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Heart",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Gettin' Money",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Nike",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Guess",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Nike",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Cookies",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Mickey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Givenchy",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White S-TV",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Vans",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Cali",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Justice",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Cutthroat",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Heart",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Adidas",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Purple Drummer",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Heartbreak Hotel",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Hollister",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Warriors",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Nike Air",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Nike",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Rip 'n Dip",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Thrasher",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Heart",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 394,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Love",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 395,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Thot Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 395,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Thot Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 395,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Thot Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 396,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 396,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 396,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Brown Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 396,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Camo Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 396,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Brown Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 396,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Jacket",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 397,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 397,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 397,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 397,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 397,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Club Dress",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 398,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Puffy",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 398,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Puffy",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 398,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Puffy",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 398,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Puffy",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 398,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Puffy",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 399,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Redsox Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 399,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Dodgers Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 399,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yankees Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 400,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Sox Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 400,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Cardinals Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 400,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Indian Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 400,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Indian Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 400,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Redsox Jersey",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Blue Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Black Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Grey Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Yellow Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Pink Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "Red Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 401,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "",
+        "DisplayNameFemale": "White Crop Top",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+]
+}
