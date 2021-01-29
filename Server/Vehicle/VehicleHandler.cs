@@ -235,6 +235,8 @@ namespace Server.Vehicle
                     occupants.Remove(seat);
                 }
 
+                player.GetClass().LastVehicle = vehicle;
+
                 occupants.Add(seat, player.GetPlayerId());
 
                 vehicle.SetData("OCCUPANTLIST", JsonConvert.SerializeObject(occupants, Formatting.None, new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore }));
