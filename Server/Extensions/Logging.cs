@@ -1,5 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Security;
+using System.Security.Permissions;
+using System.Text;
+using System.Threading.Tasks;
 using AltV.Net.Elements.Entities;
 using Serilog;
 using Serilog.Core;
@@ -10,9 +14,9 @@ namespace Server.Extensions
 {
     public class Logging
     {
-        private static readonly string _characterDirectory = "C:/Logs/Characters/";
-        private static readonly string _adminDirectory = "C:/Logs/Admins/";
-        private static readonly string _bankDirectory = "C:/Logs/Banks/";
+        private static readonly string _characterDirectory = $"{Directory.GetCurrentDirectory()}/Logs/Characters/";
+        private static readonly string _adminDirectory = $"{Directory.GetCurrentDirectory()}/Logs/Admins/";
+        private static readonly string _bankDirectory = $"{Directory.GetCurrentDirectory()}/Logs/Banks/";
         private static bool _enableLogging = true;
 
         /// <summary>
@@ -21,10 +25,10 @@ namespace Server.Extensions
         public static void InitLogging()
         {
             try
-            {
+            {/*
 #if DEBUG
                 _enableLogging = false;
-#endif
+#endif*/
                 if (_enableLogging)
                 {
                     if (!Directory.Exists(_characterDirectory))
@@ -97,15 +101,24 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    Models.Character? playerCharacter = player.FetchCharacter();
+                    await Task.Run(async () =>
+                    {
+                        Models.Character? playerCharacter = player.FetchCharacter();
 
-                    if (playerCharacter == null) return;
+                        if (playerCharacter == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_characterDirectory}{playerCharacter.Name}.txt");
+                        while (!IsFileReady($"{_characterDirectory}{playerCharacter.Name}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-
-                    await sw.DisposeAsync();
+                        await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
@@ -120,15 +133,24 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
+                    await Task.Run(async () =>
+                    {
+                        Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
 
-                    if (playerCharacter == null) return;
+                        if (playerCharacter == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_characterDirectory}{playerCharacter.Name}.txt");
+                        while (!IsFileReady($"{_characterDirectory}{playerCharacter.Name}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-
-                    await sw.DisposeAsync();
+                        await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
@@ -143,15 +165,24 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    Models.Account? playerAccount = player.FetchAccount();
+                    await Task.Run(async () =>
+                    {
+                        Models.Account? playerAccount = player.FetchAccount();
 
-                    if (playerAccount == null) return;
+                        if (playerAccount == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_adminDirectory}{playerAccount.Username}.txt");
+                        while (!IsFileReady($"{_adminDirectory}{playerAccount.Username}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-
-                    await sw.DisposeAsync();
+                        await using (StreamWriter sw = new StreamWriter($"{_adminDirectory}{playerAccount.Username}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
@@ -168,15 +199,40 @@ namespace Server.Extensions
                 {
                     if (bankAccount == null) return;
 
-                    StreamWriter sw = File.AppendText($"{_bankDirectory}{bankAccount.AccountNumber}.txt");
+                    await Task.Run(async () =>
+                    {
+                        while (!IsFileReady($"{_bankDirectory}{bankAccount.AccountNumber}.txt"))
+                        {
+                            await Task.Delay(100);
+                            continue;
+                        }
 
-                    await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-                    await sw.DisposeAsync();
+                        await using (StreamWriter sw = new StreamWriter($"{_bankDirectory}{bankAccount.AccountNumber}.txt", true))
+                        {
+                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
+                            sw.Close();
+                        }
+                    });
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+        }
+
+        public static bool IsFileReady(string filename)
+        {
+            // If the file can be opened for exclusive access it means that the file
+            // is no longer locked by another process.
+            try
+            {
+                using (FileStream inputStream = File.Open(filename, FileMode.Open, FileAccess.Read, FileShare.None))
+                    return inputStream.Length > 0;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

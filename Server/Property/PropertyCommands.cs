@@ -1997,6 +1997,16 @@ namespace Server.Property
                 return;
             }
 
+            using Context context = new Context();
+
+            bool anyDonations = context.Donations.Any(x => x.AccountId == player.GetClass().AccountId && x.Activated == true && x.Type == DonationType.Gold);
+
+            if (!anyDonations)
+            {
+                player.SendPermissionError();
+                return;
+            }
+
             if (ActiveBusiness.ActiveBusinessBlips.ContainsKey(nearProperty.Id))
             {
                 ActiveBusiness.RemoveActiveBusiness(nearProperty);
@@ -2019,8 +2029,6 @@ namespace Server.Property
             }
 
             player.SendNotification("~g~You've set this business to active!");
-
-            using Context context = new Context();
 
             Models.Property property = context.Property.Find(nearProperty.Id);
 

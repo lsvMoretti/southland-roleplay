@@ -77,7 +77,7 @@ namespace Server.DMV
             player.GetClass().Cash -= 25;
 
             player.SendInfoNotification($"The test has started. A fee of {25:C0} has been taken. Head to the location around the corner.");
-            player.SendInfoNotification($"The City Speed Limit is 35 MPH, Highways and Interstates are 55 MPH. You will be judged on your speed!");
+            player.SendInfoNotification($"The City Speed Limit is 50 MPH, Highways and Interstates are 100 MPH. You will be judged on your speed!");
 
             IVehicle dmvVehicle = new AltV.Net.Elements.Entities.Vehicle(Alt.Hash("prairie"), vehicleSpawnPosition, new DegreeRotation(0, 0, 197f));
 
@@ -104,7 +104,7 @@ namespace Server.DMV
                 checkpoints.Add(drivingCheckpoint.Value);
             }
 
-            player.Emit("startDrivingTest", JsonConvert.SerializeObject(checkpoints, Formatting.None,
+            player.Emit("startDrivingTest", dmvVehicle, JsonConvert.SerializeObject(checkpoints, Formatting.None,
                 new JsonSerializerSettings()
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -125,7 +125,7 @@ namespace Server.DMV
                 return;
             }
 
-            playerVehicle.Remove();
+            playerVehicle?.Remove();
 
             if (success)
             {
@@ -180,6 +180,10 @@ namespace Server.DMV
         public static void OnSpeeding(IPlayer player, int speedCount)
         {
             player.SendInfoNotification($"You have been warned for speeding. You have {speedCount} / 5 chances to slow down or you will fail!");
+        }
+
+        public static void OnIncorrectVehicle(IPlayer player)
+        {
         }
 
         public static void InitDmv()

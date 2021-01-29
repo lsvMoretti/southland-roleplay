@@ -10,6 +10,10 @@ export function IsScrambleOpen() {
     return opened;
 }
 
+alt.onServer('Vehicle:RemoveFromVehicle', () => {
+    native.taskLeaveVehicle(alt.Player.local.scriptID, alt.Player.local.vehicle.scriptID, 16);
+});
+
 alt.onServer('VehicleScramble:LoadPage', (word: string, jumbleWord: string, time: number, attempts: number) => {
     if (vehicleScrambleWebView != undefined) {
         alt.setTimeout(() => {

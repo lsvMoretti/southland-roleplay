@@ -1180,7 +1180,7 @@ namespace Server.Inventory
                 return;
             }
 
-            DroppedItem droppedItem = DroppedItems.FetchNearestDroppedItem(player.Position, 2f);
+            DroppedItem? droppedItem = DroppedItems.FetchNearestDroppedItem(player.Position, 2f);
 
             if (droppedItem == null)
             {
@@ -1188,19 +1188,33 @@ namespace Server.Inventory
                 return;
             }
 
-            Inventory playerInventory = player.FetchInventory();
+            Inventory? playerInventory = player.FetchInventory();
+
+            if (playerInventory == null)
+            {
+                player.SendErrorNotification("Unable to fetch your inventory.");
+                return;
+            }
 
             if (droppedItem.Item.Id.Contains("AMMO"))
             {
-                InventoryItem currentAmmoItem = playerInventory.GetInventory().FirstOrDefault(x => x.Id == droppedItem.Item.Id);
+                InventoryItem? currentAmmoItem = playerInventory.GetInventory().FirstOrDefault(x => x.Id == droppedItem.Item.Id);
                 if (currentAmmoItem != null)
                 {
                     int.TryParse(droppedItem.Item.ItemValue, out int ammoCount);
                     int.TryParse(currentAmmoItem.ItemValue, out int currentAmmo);
                     InventoryItem newAmmoItem = new InventoryItem(currentAmmoItem.Id, currentAmmoItem.CustomName,
                         (currentAmmo + ammoCount).ToString());
-                    playerInventory.RemoveItem(currentAmmoItem);
-                    playerInventory.AddItem(newAmmoItem);
+                    if (!playerInventory.RemoveItem(currentAmmoItem))
+                    {
+                        player.SendErrorNotification("Unable to do this!");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(newAmmoItem))
+                    {
+                        player.SendErrorNotification("Unable to do this!");
+                    }
                     DroppedItems.RemoveDroppedItem(droppedItem);
 
                     player.SendInfoNotification($"You've picked up {droppedItem.Item.CustomName} from the ground.");

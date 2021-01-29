@@ -21,7 +21,7 @@ namespace Server.Chat
         {
             NotificationExtension.SendInfoNotification(player, message);
         }
-        
+
         public static void SendInfoMessage(this IPlayer player, string message)
         {
             player.Emit("chatmessage", null, "{FDFE8B}" + "[INFO]{ffffff} " + message);
@@ -31,9 +31,10 @@ namespace Server.Chat
         {
             player.Emit("chatmessage", null, "{FDFE8B}" + "[PAY]{ffffff} " + message);
         }
+
         public static void SendSyntaxMessage(this IPlayer player, string message)
         {
-            player.Emit("chatmessage", null, $"{ChatHandler.ColorInfo}[Syntax] " +"{ffffff}" + message);
+            player.Emit("chatmessage", null, $"{ChatHandler.ColorInfo}[Syntax] " + "{ffffff}" + message);
         }
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Server.Chat
 
         public static void SendMegaphoneMessage(this IPlayer player, string message)
         {
-            player.Emit("chatmessage", null, "{ccff66}" + "[MEGAPHONE]{ffffff} "+ message);
+            player.Emit("chatmessage", null, "{ccff66}" + "[MEGAPHONE]{ffffff} " + message);
         }
 
         /// <summary>
@@ -73,7 +74,6 @@ namespace Server.Chat
 
         public static void SendCharityMessage(this IPlayer player, double amount)
         {
-            
             var info = TimeZoneInfo.FindSystemTimeZoneById("UTC");
 
             DateTimeOffset localServerTime = DateTimeOffset.Now;
@@ -153,7 +153,7 @@ namespace Server.Chat
         {
             player.Emit("chatmessage", null, $"{ChatHandler.ColorAdminInfo} [ADMIN] {ChatHandler.ColorWhite}{message} ");
         }
-        
+
         public static void SendHelperMessage(this IPlayer player, string message)
         {
             player.Emit("chatmessage", null, $"{ChatHandler.ColorAdminInfo} [HELPER] {ChatHandler.ColorWhite}{message} ");
@@ -181,7 +181,12 @@ namespace Server.Chat
 
         public static void SendRadioMessage(this IPlayer player, string message)
         {
-            player.Emit("chatmessage", null, $"{ChatHandler.ColorRadioMessage}[RADIO] {ChatHandler.ColorWhite}{message}");
+            player.Emit("chatmessage", null, $"{ChatHandler.ColorRadioMessage}[DISP] {message}");
+        }
+
+        public static void SendDepartmentRadioMessage(this IPlayer player, string message)
+        {
+            player.Emit("chatmessage", null, $"{ChatHandler.ColorRadioMessage}[DEP] {message}");
         }
     }
 }

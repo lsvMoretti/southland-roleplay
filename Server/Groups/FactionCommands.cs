@@ -193,7 +193,7 @@ namespace Server.Groups
 
             string playerName = player.GetClass().Name;
 
-            PlayerFaction playerFaction = JsonConvert
+            PlayerFaction? playerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == activeFaction.Id);
 
@@ -203,7 +203,7 @@ namespace Server.Groups
                 return;
             }
 
-            Rank playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
+            Rank? playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
                 .FirstOrDefault(x => x.Id == playerFaction.RankId);
 
             string rank = "";
@@ -226,7 +226,7 @@ namespace Server.Groups
                 // Not on duty
                 if (!targetCharacter.FactionDuty) continue;
 
-                target.SendRadioMessage($"{rank} {playerName} says: {args}");
+                target.SendRadioMessage($"{playerName} says: {args}");
             }
 
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk, excludePlayer: true);
@@ -253,14 +253,14 @@ namespace Server.Groups
             if (!allowed)
             {
                 allowed =
-                    Faction.FetchFaction(playerCharacter.ActiveFaction).SubFactionType == SubFactionTypes.Medical ||
+                    Faction.FetchFaction(playerCharacter.ActiveFaction)?.SubFactionType == SubFactionTypes.Medical ||
                     !playerCharacter.FactionDuty;
             }
 
             if (!allowed)
             {
                 allowed =
-                    Faction.FetchFaction(playerCharacter.ActiveFaction).SubFactionType == SubFactionTypes.Government ||
+                    Faction.FetchFaction(playerCharacter.ActiveFaction)?.SubFactionType == SubFactionTypes.Government ||
                     !playerCharacter.FactionDuty;
             }
 
@@ -278,11 +278,11 @@ namespace Server.Groups
                 return;
             }
 
-            PlayerFaction playerFaction = JsonConvert
+            PlayerFaction? playerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == activeFaction.Id);
 
-            Rank playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
+            Rank? playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
                 .FirstOrDefault(x => x.Id == playerFaction.RankId);
 
             string rank = "";
@@ -325,7 +325,7 @@ namespace Server.Groups
 
                 if (!canReceive) continue;
 
-                target.SendRadioMessage($"[Departmental - {factionName}] {rank} {playerCharacter.Name} says: {args}");
+                target.SendDepartmentRadioMessage($"[Departmental - {factionName}] {playerCharacter.Name} says: {args}");
             }
 
             ChatHandler.SendMessageToNearbyPlayers(player, args, MessageType.Talk, excludePlayer: true);

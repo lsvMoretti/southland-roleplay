@@ -28,7 +28,7 @@ namespace Server.Groups
             new DutyPosition(new Position(459.17804f, -998.03076f, 30.914307f), DutyPositionType.Law),
 
             // Davis FD
-            new DutyPosition(new Position(200.55824f, -1643.3671f, 29.802246f), DutyPositionType.Medical )
+            new DutyPosition(new Position(201.0989f, -1643.9868f, 29.802246f), DutyPositionType.Medical )
         };
 
         [Command("duty")]

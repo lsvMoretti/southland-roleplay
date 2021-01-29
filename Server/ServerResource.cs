@@ -291,6 +291,8 @@ namespace Server
 
                 Alt.OnClient<IPlayer, int>("dmv:speeding", DmvHandler.OnSpeeding);
 
+                Alt.OnClient<IPlayer>("dmv:wrongVehicle", DmvHandler.OnIncorrectVehicle);
+
                 #endregion DMV System
 
                 #region Taxi System

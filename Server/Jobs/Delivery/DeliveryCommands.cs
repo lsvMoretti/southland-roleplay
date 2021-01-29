@@ -146,7 +146,7 @@ namespace Server.Jobs.Delivery
                 return;
             }
 
-            DeliveryPoint nearestPoint = DeliveryHandler.FetchNearestPoint(player.Position);
+            DeliveryPoint? nearestPoint = DeliveryHandler.FetchNearestPoint(player.Position);
 
             if (nearestPoint == null)
             {
@@ -161,7 +161,7 @@ namespace Server.Jobs.Delivery
                 return;
             }
 
-            Warehouse warehouse = WarehouseHandler.FetchWarehouse(nearestPoint.WarehouseId);
+            Warehouse? warehouse = WarehouseHandler.FetchWarehouse(nearestPoint.WarehouseId);
 
             if (warehouse == null)
             {

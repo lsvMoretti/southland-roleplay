@@ -491,6 +491,12 @@ namespace Server.Character.Clothing
                 }
             }
 
+            player.SetAccessory(0, -1, 0);
+            player.SetAccessory(1, -1, 0);
+            player.SetAccessory(2, -1, 0);
+            player.SetAccessory(6, -1, 0);
+            player.SetAccessory(7, -1, 0);
+
             foreach (AccessoryData data in accessories)
             {
                 player.SetAccessory(data.slot, data.drawable, data.texture);

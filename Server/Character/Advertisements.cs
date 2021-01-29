@@ -40,7 +40,7 @@ namespace Server.Character
                 AdvertList.Add(player.GetClass().CharacterId, message);
 
                 List<IPlayer> onlineAdmins =
-                    Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Moderator).ToList();
+                    Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
 
                 if (!onlineAdmins.Any())
                 {
@@ -56,6 +56,8 @@ namespace Server.Character
                 }
 
                 player.SendInfoNotification($"Your advert has been sent for approval.");
+
+                player.SetData("Advert:LastAd", DateTime.Now);
 
                 return true;
             }
@@ -110,6 +112,51 @@ namespace Server.Character
             {
                 player.SendErrorNotification($"You don't have enough money for this. {_adPrice:C}.");
                 return;
+            }
+
+            bool hasLastAdData = player.GetData("Advert:LastAd", out DateTime lastAd);
+
+            if (hasLastAdData)
+            {
+                DateTime now = DateTime.Now;
+                double waitTimeSeconds = 120;
+
+                using Context context = new Context();
+
+                List<Donations> donations = context.Donations.Where(x =>
+                    x.AccountId == player.GetClass().AccountId && x.Activated == true).ToList();
+
+                bool isSilverDonator = false;
+                bool isGoldDonator = false;
+
+                foreach (Donations donation in donations)
+                {
+                    if (donation.Type == DonationType.Silver)
+                    {
+                        isSilverDonator = true;
+                    }
+
+                    if (donation.Type == DonationType.Gold)
+                    {
+                        isGoldDonator = true;
+                    }
+                }
+
+                if (isSilverDonator)
+                {
+                    waitTimeSeconds = 60;
+                }
+
+                if (isGoldDonator)
+                {
+                    waitTimeSeconds = 30;
+                }
+
+                if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) < 0)
+                {
+                    player.SendErrorNotification($"You must wait at least {waitTimeSeconds} seconds between each advert!");
+                    return;
+                }
             }
 
             if (message.Length < 3)

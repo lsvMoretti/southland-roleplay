@@ -278,3 +278,9 @@ if ('alt' in window) {
 
     });
 }
+
+window.addEventListener('keydown', function(e) {
+    if(e.key == 32 && e.target == document.body) {
+      e.preventDefault();
+    }
+  });

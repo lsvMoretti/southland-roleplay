@@ -13,6 +13,9 @@
         VehicleWindowShut,
         My,
         Low,
-        DoLow
+        DoLow,
+        MeLow,
+        MeLong,
+        DoLong
     }
 }

@@ -133,6 +133,6 @@ namespace Server.Models
 
     public enum AdminLevel
     {
-        None, Moderator, Administrator, HeadAdmin, Management, Director
+        None, Tester, Administrator, HeadAdmin, Management, Director
     }
 }
