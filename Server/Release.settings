@@ -12,7 +12,7 @@
       <Value Profile="(Default)">gameserver</Value>
     </Setting>
     <Setting Name="MySqlDebug" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">gameserver</Value>
+      <Value Profile="(Default)">dev_gameserver</Value>
     </Setting>
     <Setting Name="TranslationKeyOne" Type="System.String" Scope="Application">
       <Value Profile="(Default)">73ee4d81fbac4d5c8e6e39a00263d1bd</Value>

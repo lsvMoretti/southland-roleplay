@@ -24,6 +24,26 @@ namespace Server.Weapons
 
             if (string.IsNullOrEmpty(playerCharacter.ActiveWeapon)) return;
 
+            bool hasLastSwitchTime = player.GetData("LastWeaponKeyBindPress", out DateTime lastPress);
+
+            if (!hasLastSwitchTime)
+            {
+                player.SetData("LastWeaponKeyBindPress", DateTime.Now);
+            }
+            else
+            {
+                DateTime now = DateTime.Now;
+
+                if (DateTime.Compare(now, lastPress.AddSeconds(3)) < 0)
+                {
+                    Console.WriteLine($"{playerCharacter.Name} has tried switching weapons too fast.");
+                    player.SendErrorNotification("Please wait before switching!");
+                    return;
+                }
+
+                player.SetData("LastWeaponKeyBindPress", DateTime.Now);
+            }
+
             bool hasCurrentWeaponData = player.GetData("CURRENTWEAPON", out string currentWeapon);
 
             if (hasCurrentWeaponData && !string.IsNullOrEmpty(currentWeapon))

@@ -18,9 +18,9 @@ namespace Server.Jobs.Trucking
     {
         private static Dictionary<int, IVehicle> _truckingVehicles = new Dictionary<int, IVehicle>();
         private static readonly Position TruckSpawnPosition = new Position(-409.43738f, -2789.8022f, 6.060791f);
-        private static readonly Rotation TruckSpawnRotation = new Rotation(0,0, -44.762325f);
+        private static readonly Rotation TruckSpawnRotation = new Rotation(0, 0, -44.762325f);
         private static readonly int Payment = 15;
-        
+
         [Command("starttrucking", commandType: CommandType.Job, description: "Used to start trucking")]
         public static void TruckingCommandStart(IPlayer player)
         {
@@ -29,7 +29,7 @@ namespace Server.Jobs.Trucking
                 player.SendErrorNotification("You must be on foot.");
                 return;
             }
-            
+
             if (!player.HasJob(Models.Jobs.DeliveryJob))
             {
                 player.SendPermissionError();
@@ -56,8 +56,6 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-
-
             IVehicle truck = Alt.CreateVehicle(VehicleModel.Pounder, TruckSpawnPosition, TruckSpawnRotation);
             truck.ManualEngineControl = true;
             truck.EngineOn = false;
@@ -65,14 +63,13 @@ namespace Server.Jobs.Trucking
 
             truck.GetClass().FuelLevel = 100;
             truck.GetClass().Distance = Convert.ToSingle(Utility.GenerateRandomNumber(6));
-            
+
             truck.SetData("Trucking:Owner", player.GetClass().CharacterId);
             truck.SetData("Trucking:Products", 0);
-            
+
             _truckingVehicles.Add(player.GetClass().CharacterId, truck);
-            
+
             player.SendInfoNotification("The Pounder has been spawned! You can now head to a /warehouses and /loadtruck.");
-            
         }
 
         [Command("stoptrucking", commandType: CommandType.Job, description: "Used to stop trucking")]
@@ -95,9 +92,8 @@ namespace Server.Jobs.Trucking
             truck.Delete();
 
             _truckingVehicles.Remove(player.GetClass().CharacterId);
-            
-            player.SendInfoNotification("You've stopped trucking.");
 
+            player.SendInfoNotification("You've stopped trucking.");
         }
 
         [Command("loadtruck", commandType: CommandType.Job, description: "Used to load the truck at Post Op.")]
@@ -112,9 +108,9 @@ namespace Server.Jobs.Trucking
             if (!player.IsInVehicle)
             {
                 player.SendErrorNotification("You must be in your truck!");
-                return; 
+                return;
             }
-            
+
             bool hasVehicle = _truckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle truck);
 
             if (!hasVehicle)
@@ -142,7 +138,7 @@ namespace Server.Jobs.Trucking
                 player.SendErrorNotification("You must be near a warehouse!");
                 return;
             }
-            
+
             player.Vehicle.GetData("Trucking:Products", out int productCount);
 
             if (productCount >= 50)
@@ -150,21 +146,19 @@ namespace Server.Jobs.Trucking
                 player.SendErrorNotification("You have the max products (50)");
                 return;
             }
-            
+
             Timer waitTimer = new Timer(5000)
             {
                 AutoReset = false
             };
-            
+
             waitTimer.Start();
-            
-            
 
             waitTimer.Elapsed += (sender, args) =>
             {
                 waitTimer.Stop();
                 truck.DeleteData("Trucking:Loading");
-                
+
                 int remainingProducts = 50 - productCount;
 
                 if (remainingProducts <= 10)
@@ -175,15 +169,14 @@ namespace Server.Jobs.Trucking
                 }
 
                 int newCount = productCount += 10;
-            
+
                 truck.SetData("Trucking:Products", newCount);
                 player.SendInfoNotification($"You've loaded {newCount}/50 products. You can now /deliver to head to a location!");
             };
-            
-            truck.SetData("Trucking:Loading", true);
-            
-            player.SendInfoNotification("Loading the products..", 5000);
 
+            truck.SetData("Trucking:Loading", true);
+
+            player.SendInfoNotification("Loading the products..", 5000);
         }
 
         [Command("deliver", commandType: CommandType.Job, description: "Used to deliver to a business")]
@@ -195,7 +188,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            bool hasVehicle = _truckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle truck);
+            bool hasVehicle = _truckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle? truck);
 
             if (!hasVehicle)
             {
@@ -203,17 +196,27 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
+            if (player.GetClass().LastVehicle == null || player.GetClass().LastVehicle != truck)
+            {
+                player.SendErrorNotification("Your last vehicle isn't a pounder!");
+                return;
+            }
 
             bool hasDeliveryPoint = player.GetData("Trucking:DeliveryBusiness", out int businessId);
 
             if (hasDeliveryPoint)
             {
-                Models.Property deliverBusiness = Models.Property.FetchProperty(businessId);
+                Models.Property? deliverBusiness = Models.Property.FetchProperty(businessId);
+
+                if (deliverBusiness == null)
+                {
+                    player.SendErrorMessage("Unable to find this business.");
+                }
 
                 float doorDistance = player.Position.Distance(deliverBusiness.FetchExteriorPosition());
-                
+
                 Console.WriteLine($"Distance to {deliverBusiness.BusinessName} is {doorDistance}");
-                
+
                 if (doorDistance > 5)
                 {
                     player.SendErrorNotification("You must be stood by the business door!");
@@ -236,15 +239,15 @@ namespace Server.Jobs.Trucking
                     if (truckProducts > 10)
                     {
                         int truckCount = truckProducts -= businessProductSpace;
-                    
+
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
                         player.SendInfoNotification($"You've dropped off {businessProductSpace} products at the business. This business is now full! You have {truckCount} products left in your truck.");
-                    
+
                         using Context context = new Context();
 
                         Models.Property fullBusiness = context.Property.Find(deliverBusiness.Id);
-                        
+
                         Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                         playerCharacter.PaydayAmount += Payment;
@@ -260,11 +263,11 @@ namespace Server.Jobs.Trucking
                         truck.SetData("Trucking:Products", 0);
                         player.DeleteData("Trucking:DeliveryBusiness");
                         player.SendInfoNotification($"You've dropped off {truckProducts} products at the business. You have 0 products left in your truck.");
-                    
+
                         using Context context = new Context();
 
                         Models.Property fullBusiness = context.Property.Find(deliverBusiness.Id);
-                        
+
                         Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                         playerCharacter.PaydayAmount += Payment;
@@ -283,11 +286,11 @@ namespace Server.Jobs.Trucking
                         truck.SetData("Trucking:Products", 0);
                         player.DeleteData("Trucking:DeliveryBusiness");
                         player.SendInfoNotification($"You've dropped off {truckProducts} products at the business. You have 0 products left in your truck.");
-                    
+
                         using Context context = new Context();
 
                         Models.Property business = context.Property.Find(deliverBusiness.Id);
-                        
+
                         Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                         playerCharacter.PaydayAmount += Payment;
@@ -304,7 +307,7 @@ namespace Server.Jobs.Trucking
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
                         player.SendInfoNotification($"You've dropped off 10 products at the business. You have {truckCount} products left in your truck.");
-                    
+
                         using Context context = new Context();
 
                         Models.Property business = context.Property.Find(deliverBusiness.Id);
@@ -312,9 +315,9 @@ namespace Server.Jobs.Trucking
                         Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                         playerCharacter.PaydayAmount += Payment;
-                        
+
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!");
-                        
+
                         business.Products = business.Products += 10;
                         context.SaveChanges();
                         return;
@@ -323,11 +326,11 @@ namespace Server.Jobs.Trucking
 
                 return;
             }
-            
+
             // Hasn't been assigned a property yet
 
             Random random = new Random();
-            
+
             List<Models.Property> properties = Models.Property.FetchProperties()
                 .Where(x => x.PropertyType != PropertyType.House && x.Products < 100 && x.BlipId > 0 && !x.Hidden).ToList();
 
@@ -336,15 +339,15 @@ namespace Server.Jobs.Trucking
                 player.SendErrorNotification("There are no businesses that need stocking!");
                 return;
             }
-            
+
             int index = random.Next(properties.Count);
 
             Models.Property selectedProperty = properties[index];
-            
+
             player.SetData("Trucking:DeliveryBusiness", selectedProperty.Id);
-            
+
             player.SetWaypoint(selectedProperty.FetchExteriorPosition());
-            
+
             player.SendInfoNotification($"Head to {selectedProperty.BusinessName} and type /deliver again.");
         }
     }

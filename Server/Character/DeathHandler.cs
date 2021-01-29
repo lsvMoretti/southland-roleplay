@@ -183,14 +183,14 @@ namespace Server.Character
 
             if (playerFaction == null || playerFaction.SubFactionType != SubFactionTypes.Medical)
             {
-                if (player.FetchAccount().AdminLevel < AdminLevel.Moderator)
+                if (player.FetchAccount().AdminLevel < AdminLevel.Tester)
                 {
                     player.SendPermissionError();
                     return;
                 }
             }
 
-            if (player.FetchAccount().AdminLevel < AdminLevel.Moderator && !player.FetchCharacter().FactionDuty)
+            if (player.FetchAccount().AdminLevel < AdminLevel.Tester && !player.FetchCharacter().FactionDuty)
             {
                 player.SendPermissionError();
                 return;

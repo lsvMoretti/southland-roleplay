@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
+using AltV.Net;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
 using Newtonsoft.Json;
@@ -722,16 +723,25 @@ namespace Server.Weapons
 
                 bool hasAmmoData = player.GetData("weaponEvent:CurrentAmmo", out int lastAmmoCount);
 
+                Console.WriteLine($"Bullet Count: {bulletCount}, Ammo Count: {lastAmmoCount}");
+                /*
                 if (hasAmmoData && lastAmmoCount > 0)
                 {
                     bulletCount = lastAmmoCount;
                 }
-
+                */
                 weaponInfo.AmmoCount = bulletCount;
 
                 weaponItem.ItemValue = JsonConvert.SerializeObject(weaponInfo);
 
                 Models.Character? playerCharacter = player.FetchCharacter();
+                Inventory.Inventory playerInventory = player.FetchInventory();
+
+                if (!playerInventory.AddItem(weaponItem))
+                {
+                    player.SendErrorMessage("Not enough space!");
+                    return;
+                }
 
                 if (!string.IsNullOrEmpty(playerCharacter?.ActiveWeapon))
                 {
@@ -747,32 +757,23 @@ namespace Server.Weapons
 
                 player.GetData("CURRENTWEAPON", out string weaponItemId);
 
+                player.DeleteData("CURRENTWEAPON");
+                player.DeleteData("CurrentWeaponHash");
+
                 #region Melee
 
                 if (weaponItemId == "ITEM_WEAPON_MELEE_BOTTLE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.RemoveWeapon(WeaponModel.BrokenBottle);
                     player.SendWeaponMessage("Broken Bottle has been holstered.");
                 }
                 if (weaponItemId == "ITEM_WEAPON_MELEE_BAT")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.RemoveWeapon(WeaponModel.BaseballBat);
                     player.SendWeaponMessage("Baseball Bat has been holstered.");
                 }
                 if (weaponItemId == "ITEM_WEAPON_MELEE_CROWBAR")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.RemoveWeapon(WeaponModel.Crowbar);
                     player.SendWeaponMessage("Crowbar has been holstered.");
                 }
@@ -780,10 +781,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_MELEE_HAMMER")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Hammer has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -802,10 +799,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_PISTOL")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -822,10 +815,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_PISTOL_MK2")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Pistol MK2 has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -842,10 +831,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_COMBATPISTOL")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Combat Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -862,10 +847,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_APPISTOL")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("AP Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -882,10 +863,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_PISTOL50")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Pistol 50 has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -902,10 +879,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_SNS")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("SNS Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -922,10 +895,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_SNS_MK2")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("SNS Pistol MK2 has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -942,10 +911,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_HEAVYPISTOL")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Heavy Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -962,10 +927,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_VINTAGEPISTOL")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Vintage Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -982,10 +943,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_REVOLVER")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Revolver has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -1002,10 +959,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_REVOLVER_MK2")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Revolver MK2 has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -1022,10 +975,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_MICROSMG")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Micro SMG has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -1041,30 +990,18 @@ namespace Server.Weapons
 
                 if (weaponItemId == "ITEM_WEAPON_SMG")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.RemoveWeapon(WeaponModel.SMG);
                     player.SendWeaponMessage("SMG has been holstered.");
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SMG_MK2")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.RemoveWeapon(WeaponModel.SMGMkII);
                     player.SendWeaponMessage("SMG MK2 has been holstered.");
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_ASSAULTSMG")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.RemoveWeapon(WeaponModel.AssaultSMG);
                     player.SendWeaponMessage("Assault SMG has been holstered.");
                 }
@@ -1072,10 +1009,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_COMBATPDW")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Combat PDW has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -1092,10 +1025,6 @@ namespace Server.Weapons
                 if (weaponItemId == "ITEM_WEAPON_MACHINEPISTOL")
                 {
                     player.Emit("WeaponSwitchAnim", player.IsLeo(true) ? 1 : 3);
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage("Machine Pistol has been holstered.");
                     Timer timer = new Timer(1700)
                     {
@@ -1111,273 +1040,161 @@ namespace Server.Weapons
 
                 if (weaponItemId == "ITEM_WEAPON_MINISMG")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.MiniSMG);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_PUMPSHOTGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.PumpShotgun);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_PUMPSHOTGUN_MK2")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.PumpShotgunMkII);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SAWNOFFSHOTGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.SawedOffShotgun);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_ASSAULTSHOTGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.AssaultShotgun);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_BULLPUPSHOTGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.BullpupShotgun);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_HEAVYSHOTGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.HeavyShotgun);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_ASSAULTRIFLE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.AssaultRifle);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_ASSAULTRIFLE_MK2")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.AssaultRifleMkII);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_CARBINE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.CarbineRifle);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_CARBINE_MK2")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.CarbineRifleMkII);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_ADVANCEDRIFLE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.AdvancedRifle);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SPECIALCARBINE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.SpecialCarbine);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SPECIALCARBINE_MK2")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.SpecialCarbineMkII);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_BULLPUPRIFLE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.BullpupRifle);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_BULLPUPRIFLE_MK2")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.BullpupRifleMkII);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_GUSENBERG")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.GusenbergSweeper);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SNIPERRIFLE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.SniperRifle);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_HEAVYSNIPER")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.HeavySniper);
                 }
                 if (weaponItemId == "ITEM_WEAPON_GRENADE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Grenade);
                 }
                 if (weaponItemId == "ITEM_WEAPON_BZGAS")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.BZGas);
                 }
                 if (weaponItemId == "ITEM_WEAPON_MOLOTOV")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.MolotovCocktail);
                 }
                 if (weaponItemId == "ITEM_WEAPON_PROXMINE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.ProximityMines);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_BASEBALL")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Baseball);
                 }
 
                 if (weaponItemId == "ITEM_WEAPON_SMOKEGRENADE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.TearGas);
                 }
                 if (weaponItemId == "ITEM_WEAPON_KNIFE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Knife);
                 }
                 if (weaponItemId == "ITEM_WEAPON_MACHETE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Machete);
                 }
                 if (weaponItemId == "ITEM_WEAPON_SWITCHBLADE")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Switchblade);
                 }
@@ -1386,58 +1203,34 @@ namespace Server.Weapons
 
                 if (weaponItemId == "ITEM_POLICE_WEAPON_STUNGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.StunGun);
                 }
 
                 if (weaponItemId == "ITEM_POLICE_WEAPON_PISTOL")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.CombatPistol);
                 }
 
                 if (weaponItemId == "ITEM_POLICE_WEAPON_NIGHTSTICK")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Nightstick);
                 }
 
                 if (weaponItemId == "ITEM_POLICE_WEAPON_FLASHLIGHT")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Flashlight);
                 }
                 if (weaponItemId == "ITEM_POLICE_WEAPON_SHOTGUN")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.PumpShotgunMkII);
                 }
                 if (weaponItemId == "ITEM_POLICE_WEAPON_AR")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.CarbineRifleMkII);
                 }
@@ -1448,40 +1241,24 @@ namespace Server.Weapons
 
                 if (weaponItemId == "ITEM_FIRE_WEAPON_FLASHLIGHT")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Flashlight);
                 }
 
                 if (weaponItemId == "ITEM_FIRE_WEAPON_HATCHET")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Hatchet);
                 }
 
                 if (weaponItemId == "ITEM_FIRE_WEAPON_CROWBAR")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.Crowbar);
                 }
 
                 if (weaponItemId == "ITEM_FIRE_WEAPON_FIRE_EXTINGUISHER")
                 {
-                    player.DeleteData("CURRENTWEAPON");
-                    player.DeleteData("CurrentWeaponHash");
-                    Inventory.Inventory playerInventory = player.FetchInventory();
-                    playerInventory.AddItem(weaponItem);
                     player.SendWeaponMessage($"{weaponItem.GetName(false)} has been holstered.");
                     player.RemoveWeapon(WeaponModel.FireExtinguisher);
                 }

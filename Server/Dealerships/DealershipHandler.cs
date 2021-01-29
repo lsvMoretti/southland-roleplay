@@ -187,21 +187,14 @@ namespace Server.Dealerships
 
                 if (vehicleModel == 0) return;
 
-                IVehicle previewVehicle = null;
+                IVehicle previewVehicle = await AltAsync.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
 
-                previewVehicle = await AltAsync.Do(() =>
-                {
-                    IVehicle vehicle = Alt.Server.CreateVehicle(vehicleModel, vehiclePosition,
-                        new DegreeRotation(0, 0, 270));
+                previewVehicle.Dimension = player.Dimension;
+                previewVehicle.EngineOn = false;
+                previewVehicle.LockState = VehicleLockState.Locked;
+                previewVehicle.NumberplateText = "PREVIEW";
 
-                    vehicle.Dimension = player.Dimension;
-                    vehicle.EngineOn = false;
-                    vehicle.LockState = VehicleLockState.Locked;
-                    vehicle.NumberplateText = "PREVIEW";
-
-                    previewVehicles.Add(player.GetPlayerId(), vehicle.Id);
-                    return vehicle;
-                });
+                previewVehicles.Add(player.GetPlayerId(), previewVehicle.Id);
 
                 player.SetData("dealership:selectedPreviewVehicle", JsonConvert.SerializeObject(selectedDealershipVehicle));
 

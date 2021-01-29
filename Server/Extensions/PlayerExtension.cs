@@ -1114,5 +1114,16 @@ namespace Server.Extensions
             }
             set => _player.SetSyncedMetaData("UcpName", value);
         }
+
+        public IVehicle? LastVehicle
+        {
+            get
+            {
+                bool hasLastVehicle = _player.GetData("Vehicle:LastVehicle", out IVehicle vehicle);
+
+                return !hasLastVehicle ? null : vehicle;
+            }
+            set => _player.SetData("Vehicle:LastVehicle", value);
+        }
     }
 }

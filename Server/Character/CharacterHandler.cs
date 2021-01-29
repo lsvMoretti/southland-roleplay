@@ -437,7 +437,6 @@ namespace Server.Character
             character.PosZ = player.Position.Z;
 
             context.SaveChanges();
-            
         }
 
         public static void CheckPlayerAfk()
@@ -451,59 +450,55 @@ namespace Server.Character
             {
                 Models.Account pAccount = player?.FetchAccount();
 
-               if (pAccount == null) continue;
+                if (pAccount == null) continue;
 
-               if (player.GetClass().EditingCharacter) continue;
+                if (player.GetClass().EditingCharacter) continue;
 
-               if (pAccount.AdminLevel == AdminLevel.Director) continue;
+                if (pAccount.AdminLevel == AdminLevel.Director) continue;
 
-               Position playerPosition = Position.Zero;
+                Position playerPosition = Position.Zero;
 
-               lock (player)
-               {
-                   playerPosition = player.Position;
-               }
+                lock (player)
+                {
+                    playerPosition = player.Position;
+                }
 
-               bool hasLastTime = player.GetData(lastTimeData, out DateTime lastMove);
-               bool hasLastPos = player.GetData(lastPositionData, out Position lastPosition);
+                bool hasLastTime = player.GetData(lastTimeData, out DateTime lastMove);
+                bool hasLastPos = player.GetData(lastPositionData, out Position lastPosition);
 
-               if (!hasLastTime || !hasLastPos)
-               { 
-                   player.SetData(lastTimeData, DateTime.Now);
-                   player.SetData(lastPositionData, playerPosition);
-                   continue;
-               }
+                if (!hasLastTime || !hasLastPos)
+                {
+                    player.SetData(lastTimeData, DateTime.Now);
+                    player.SetData(lastPositionData, playerPosition);
+                    continue;
+                }
 
-               if (lastPosition.Distance(playerPosition) >= 1.5)
-               {
-                   // Has moved more than 3 meters since last check
-                   player.SetData(lastTimeData, DateTime.Now);
-                   player.SetData(lastPositionData, playerPosition);
-                   continue;
-               }
-               
-               if (DateTime.Compare(DateTime.Now, lastMove.AddMinutes(_afkTime)) <= 0) continue;
+                if (lastPosition.Distance(playerPosition) >= 1.5)
+                {
+                    // Has moved more than 3 meters since last check
+                    player.SetData(lastTimeData, DateTime.Now);
+                    player.SetData(lastPositionData, playerPosition);
+                    continue;
+                }
 
-               // Not moved for 10 minutes or had an update
-               Logging.AddToCharacterLog(player, "has been kicked for AFK.");
-               using Context context = new Context();
+                if (DateTime.Compare(DateTime.Now, lastMove.AddMinutes(_afkTime)) <= 0) continue;
 
-               Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
+                // Not moved for 10 minutes or had an update
+                Logging.AddToCharacterLog(player, "has been kicked for AFK.");
+                using Context context = new Context();
 
-               playerAccount.AfkKicks++;
+                Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
 
-               context.SaveChanges();
+                playerAccount.AfkKicks++;
 
-               
+                context.SaveChanges();
 
-               player.Kick("AFK Limit Reached");
+                player.Kick("AFK Limit Reached");
 
-               Console.WriteLine($"{playerAccount.Username} has been kicked for AFK.");
-
+                Console.WriteLine($"{playerAccount.Username} has been kicked for AFK.");
             }
 
             Console.WriteLine($"Checked {onlinePlayers.Count} Online Players for AFK.");
-
         }
 
         public static void FetchPlayerDimension(IPlayer player)

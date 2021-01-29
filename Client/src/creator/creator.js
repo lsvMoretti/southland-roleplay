@@ -1,5 +1,6 @@
 if ('alt' in window) {
     alt.on('currentGender', setCurrentGender);
+    alt.on('currentCharacter', setCurrentCharacter);
 }
 
 var gender = 0;
@@ -7,6 +8,776 @@ var gender = 0;
 function setCurrentGender(newGender) {
     gender = newGender;
 }
+
+//#region Parents
+
+var ParentNames = [
+    "Benjamin", "Daniel", "Joshua", "Noah", "Andrew", "Joan", "Alex", "Isaac", "Evan", "Ethan", "Vincent",
+    "Angel", "Diego", "Adrian", "Gabriel", "Michael", "Santiago", "Kevin", "Louis", "Samuel", "Anthony",
+    "Claude", "Niko", "John", "Hannah", "Aubrey", "Jasmine", "Giselle", "Amelia", "Isabella", "Zoe", "Ava",
+    "Camilla", "Violet", "Sophia", "Eveline", "Nicole", "Ashley", "Gracie", "Brianna", "Natalie", "Olivia",
+    "Elizabeth", "Charlotte", "Emma", "Misty"
+];
+
+var parentIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 44, 43, 42, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 45]
+
+var ParentOne = ParentNames[0];
+var ParentTwo = ParentNames[0];
+var ParentOneNameIndex = 0;
+var ParentTwoNameIndex = 0;
+var ParentOneIndex = parentIndex[0];
+var ParentTwoIndex = parentIndex[0];
+
+var parentMix = 0.5;
+
+var parentMixSlider = document.getElementById('parentMixSlider');
+var parentMixValue = document.getElementById('parentMixValue');
+
+parentMixSlider.value = parentMix;
+parentMixValue.innerHTML = parentMixSlider.value;
+
+var ParentOneSkin = ParentNames[0];
+var ParentTwoSkin = ParentNames[0];
+var ParentOneNameIndexSkin = 0;
+var ParentTwoNameIndexSkin = 0;
+var ParentOneIndexSkin = parentIndex[0];
+var ParentTwoIndexSkin = parentIndex[0];
+
+var skinMix = 0.5;
+
+var skinMixSlider = document.getElementById('skinMixSlider');
+var skinMixValue = document.getElementById('skinMixValue');
+
+skinMixSlider.value = skinMix;
+skinMixValue.innerHTML = skinMixSlider.value;
+
+//#endregion
+
+//#region Facial Features
+
+var noseWidth = 0.0;
+
+var noseWidthSlider = document.getElementById('noseWidthSlider');
+var noseWidthValue = document.getElementById('noseWidthValue');
+
+noseWidthSlider.value = noseWidth;
+noseWidthValue.innerHTML = noseWidthSlider.value;
+
+var noseBottom = 0.0;
+
+var noseBottomSlider = document.getElementById('noseBottomSlider');
+var noseBottomValue = document.getElementById('noseBottomValue');
+
+noseBottomSlider.value = noseBottom;
+noseBottomValue.innerHTML = noseBottomSlider.value;
+
+var noseTipLength = 0.0;
+
+var noseTipLengthSlider = document.getElementById('noseTipLengthSlider');
+var noseTipLengthValue = document.getElementById('noseTipLengthValue');
+
+noseTipLengthSlider.value = noseTipLength;
+noseTipLengthValue.innerHTML = noseTipLengthSlider.value;
+
+
+var noseBridgeDepth = 0.0;
+
+var noseBridgeDepthSlider = document.getElementById('noseBridgeDepthSlider');
+var noseBridgeDepthValue = document.getElementById('noseBridgeDepthValue');
+
+noseBridgeDepthSlider.value = noseBridgeDepth;
+noseBridgeDepthValue.innerHTML = noseBridgeDepthSlider.value;
+
+var noseTipHeight = 0.0;
+
+var noseTipHeightSlider = document.getElementById('noseTipHeightSlider');
+var noseTipHeightValue = document.getElementById('noseTipHeightValue');
+
+noseTipHeightSlider.value = noseTipHeight;
+noseTipHeightValue.innerHTML = noseTipHeightSlider.value;
+
+var noseBroken = 0.0;
+
+var noseBrokenSlider = document.getElementById('noseBrokenSlider');
+var noseBrokenValue = document.getElementById('noseBrokenValue');
+
+noseBrokenSlider.value = noseBroken;
+noseBrokenValue.innerHTML = noseBrokenSlider.value;
+
+var browHeight = 0.0;
+
+var browHeightSlider = document.getElementById('browHeightSlider');
+var browHeightValue = document.getElementById('browHeightValue');
+
+browHeightSlider.value = browHeight;
+browHeightValue.innerHTML = browHeightSlider.value;
+
+var cheekboneHeight = 0.0;
+
+var checkBoneHeightSlider = document.getElementById('checkBoneHeightSlider');
+var cheekBoneHeightValue = document.getElementById('cheekBoneHeightValue');
+
+checkBoneHeightSlider.value = cheekboneHeight;
+cheekBoneHeightValue.innerHTML = checkBoneHeightSlider.value;
+
+var cheekboneWidth = 0.0;
+
+var checkBoneWidthSlider = document.getElementById('checkBoneWidthSlider');
+var cheekBoneWidthValue = document.getElementById('cheekBoneWidthValue');
+
+checkBoneWidthSlider.value = cheekboneWidth;
+cheekBoneWidthValue.innerHTML = checkBoneWidthSlider.value;
+
+var cheekDepth = 0.0;
+
+var cheekDepthSlider = document.getElementById('cheekDepthSlider');
+var cheekDepthValue = document.getElementById('cheekDepthValue');
+
+cheekDepthSlider.value = cheekDepth;
+cheekDepthValue.innerHTML = cheekDepthSlider.value;
+
+
+var eyeSize = 0.0;
+
+var eyeSizeSlider = document.getElementById('eyeSizeSlider');
+var eyeSizeValue = document.getElementById('eyeSizeValue');
+
+eyeSizeSlider.value = eyeSize;
+eyeSizeValue.innerHTML = eyeSizeSlider.value;
+
+var lipThickness = 0.0;
+
+var lipThicknessSlider = document.getElementById('lipThicknessSlider');
+var lipThicknessValue = document.getElementById('lipThicknessValue');
+
+lipThicknessSlider.value = lipThickness;
+lipThicknessValue.innerHTML = lipThicknessSlider.value;
+
+var jawWidth = 0.0;
+
+var jawWidthSlider = document.getElementById('jawWidthSlider');
+var jawWidthValue = document.getElementById('jawWidthValue');
+
+jawWidthSlider.value = jawWidth;
+jawWidthValue.innerHTML = jawWidthSlider.value;
+
+var jawHeight = 0.0;
+
+var jawHeightSlider = document.getElementById('jawHeightSlider');
+var jawHeightValue = document.getElementById('jawHeightValue');
+
+jawHeightSlider.value = jawHeight;
+jawHeightValue.innerHTML = jawHeightSlider.value;
+
+var chinHeight = 0.0;
+
+var chinHeightSlider = document.getElementById('chinHeightSlider');
+var chinHeightValue = document.getElementById('chinHeightValue');
+
+chinHeightSlider.value = chinHeight;
+chinHeightValue.innerHTML = chinHeightSlider.value;
+
+var chinDepth = 0.0;
+
+var chinDepthSlider = document.getElementById('chinDepthSlider');
+var chinDepthValue = document.getElementById('chinDepthValue');
+
+chinDepthSlider.value = chinDepth;
+chinDepthValue.innerHTML = chinDepthSlider.value;
+
+var chinWidth = 0.0;
+
+var chinWidthSlider = document.getElementById('chinWidthSlider');
+var chinWidthValue = document.getElementById('chinWidthValue');
+
+chinWidthSlider.value = chinWidth;
+chinWidthValue.innerHTML = chinWidthSlider.value;
+
+var chinIndent = 0.0;
+
+var chinIndentSlider = document.getElementById('chinIndentSlider');
+var chinIndentValue = document.getElementById('chinIndentValue');
+
+chinIndentSlider.value = chinIndent;
+chinIndentValue.innerHTML = chinIndentSlider.value;
+
+var neckWidth = 0.0;
+
+var neckWidthSlider = document.getElementById('neckWidthSlider');
+var neckWidthValue = document.getElementById('neckWidthValue');
+
+neckWidthSlider.value = neckWidth;
+neckWidthValue.innerHTML = neckWidthSlider.value;
+
+//#endregion Facial Features
+
+//#region Apperances
+
+var blemishNames = ["None", "Measles", "Pimples", "Spots", "Break Out", "Blackheads", "Build Up", "Pustules", "Zits",
+    "Full Acne", "Acne", "Cheek Rash", "Face Rash", "Picker", "Puberty", "Eyesore", "Chin Rash", "Two Face",
+    "T Zone", "Greasy", "Marked", "Acne Scarring", "Full Acne Scarring", "Cold Sores", "Impetigo"]
+
+var currentBlemish = 0;
+
+var blemishText = document.getElementById('blemishName');
+
+var blemishOpacity = 50;
+
+var blemishOpactiyField = document.getElementById('blemishOpactiyValue');
+var blemishOpactiySlider = document.getElementById('blemishOpacitySlider');
+
+
+
+var facialHairNames = ["None", "Light Stubble", "Balbo", "Circle Beard", "Goatee", "Chin", "Chin Fuzz", "Pencil Chin Strap",
+    "Scruffy", "Musketeer", "Mustache", "Trimmed Beard", "Stubble", "Thin Circle Beard", "Horseshoe",
+    "Pencil and 'Chops", "Chin Strap Beard", "Balbo and Sideburns", "Mutton Chops", "Scruffy Beard", "Curly",
+    "Curly & Deep Stranger", "Handlebar", "Faustic", "Otto & Patch", "Otto & Full Stranger", "Light Franz",
+    "The Hampstead", "The Ambrose", "Lincoln Curtain"]
+
+var currentFacialHair = 0;
+
+var facialHairText = document.getElementById('facialHairName');
+
+var facialHairOpacity = 50;
+
+var facialHairOpactiyField = document.getElementById('facialHairOpacityValue');
+var facialHairOpacitySlider = document.getElementById('facialHairOpacitySlider');
+
+var eyebrowNames = ["None", "Balanced", "Fashion", "Cleopatra", "Quizzical", "Femme", "Seductive", "Pinched", "Chola",
+    "Triomphe", "Carefree", "Curvaceous", "Rodent", "Double Tram", "Thin", "Penciled", "Mother Plucker",
+    "Straight and Narrow", "Natural", "Fuzzy", "Unkempt", "Caterpillar", "Regular", "Mediterranean", "Groomed",
+    "Bushels", "Feathered", "Prickly", "Monobrow", "Winged", "Triple Tram", "Arched Tram", "Cutouts",
+    "Fade Away", "Solo Tram"]
+
+var currentEyebrow = 0;
+
+var eyebrowText = document.getElementById('eyebrowsName');
+
+var eyebrowOpacity = 50;
+
+var eyebrowOpactiyField = document.getElementById('eyebrowsOpactiyValue');
+var eyebrowOpacitySlider = document.getElementById('eyebrowsOpacitySlider');
+
+var ageingNames = ["None", "Crow's Feet", "First Signs", "Middle Aged", "Worry Lines", "Depression", "Distinguished", "Aged",
+    "Weathered", "Wrinkled", "Sagging", "Tough Life", "Vintage", "Retired", "Junkie", "Geriatric"]
+
+var currentAgeing = 0;
+
+var ageingText = document.getElementById('ageingName');
+
+var ageingOpacity = 50;
+
+var ageingOpacityField = document.getElementById('ageingOpacityValue');
+var ageingOpacitySlider = document.getElementById('ageingOpacitySlider');
+
+var makeupNames = ["None", "Smoky Black", "Bronze", "Soft Gray", "Retro Glam", "Natural Look", "Cat Eyes", "Chola", "Vamp",
+    "Vinewood Glamour", "Bubblegum", "Aqua Dream", "Pin Up", "Purple Passion", "Smoky Cat Eye",
+    "Smoldering Ruby", "Pop Princess"]
+
+var currentMakeup = 0;
+
+var makeupText = document.getElementById('makeupName');
+
+var makeupOpacity = 50;
+
+var makeupOpacityField = document.getElementById('makeupOpacityValue');
+var makeupOpacitySlider = document.getElementById('makeupOpacitySlider');
+
+var blushNames = ["None", "Full", "Angled", "Round", "Horizontal", "High", "Sweetheart", "Eighties"]
+
+var currentBlush = 0;
+
+var blushText = document.getElementById('blushName');
+
+var blushOpacity = 50;
+
+var blushOpacityField = document.getElementById('blushOpacityValue');
+var blushOpacitySlider = document.getElementById('blushOpacitySlider');
+
+var complextionNames = ["None", "Rosy Cheeks", "Stubble Rash", "Hot Flush", "Sunburn", "Bruised", "Alchoholic", "Patchy", "Totem", "Blood Vessels", "Damaged", "Pale", "Ghostly"]
+
+var currentComplextion = 0;
+
+var complextionText = document.getElementById('complextionName');
+
+var complextionOpacity = 50;
+
+var complextionOpacityField = document.getElementById('complextionOpacityValue');
+var complextionOpacitySlider = document.getElementById('complextionOpacitySlider');
+
+var sunDamageNames = ["None", "Uneven", "Sandpaper", "Patchy", "Rough", "Leathery", "Textured", "Coarse", "Rugged", "Creased", "Cracked", "Gritty"]
+
+var currentsunDamage = 0;
+
+var sunDamageText = document.getElementById('sunDamageName');
+
+var sunDamageOpacity = 50;
+
+var sunDamageOpacityField = document.getElementById('sunDamageOpacityValue');
+var sunDamageOpacitySlider = document.getElementById('sunDamageOpacitySlider');
+
+var lipstickNames = ["None", "Color Matte", "Color Gloss", "Lined Matte", "Lined Gloss", "Heavy Lined Matte",
+    "Heavy Lined Gloss", "Lined Nude Matte", "Liner Nude Gloss", "Smudged", "Geisha"]
+
+var currentlipstick = 0;
+
+var lipstickText = document.getElementById('lipstickName');
+
+var lipstickOpacity = 50;
+
+var lipstickOpacityField = document.getElementById('lipstickOpacityValue');
+var lipstickOpacitySlider = document.getElementById('lipstickOpacitySlider');
+
+var frecklesNames = ["None", "Cherub", "All Over", "Irregular", "Dot Dash", "Over the Bridge", "Baby Doll", "Pixie",
+    "Sun Kissed", "Beauty Marks", "Line Up", "Modelesque", "Occasional", "Speckled", "Rain Drops", "Double Dip",
+    "One Sided", "Pairs", "Growth"]
+
+var currentfreckles = 0;
+
+var frecklesText = document.getElementById('frecklesName');
+
+var frecklesOpacity = 50;
+
+var frecklesOpacityField = document.getElementById('frecklesOpacityValue');
+var frecklesOpacitySlider = document.getElementById('frecklesOpacitySlider');
+
+var chestHairNames = ["None", "Natural", "The Strip", "The Tree", "Hairy", "Grisly", "Ape", "Groomed Ape", "Bikini",
+    "Lightning Bolt", "Reverse Lightning", "Love Heart", "Chestache", "Happy Face", "Skull", "Snail Trail",
+    "Slug and Nips", "Hairy Arms"]
+
+var currentchestHair = 0;
+
+var chestHairText = document.getElementById('chestHairName');
+
+var chestHairOpacity = 50;
+
+var chestHairOpacityField = document.getElementById('chestHairOpacityValue');
+var chestHairOpacitySlider = document.getElementById('chestHairOpacitySlider');
+
+//#endregion
+
+//#region Hair Colors
+
+var maleHairs = ["Close Shave", "Buzzcut", "Faux Hawk", "Hipster", "Side Parting", "Shorter Cut", "Biker", "Ponytail",
+    "Cornrows", "Slicked", "Short Brushed", "Spikey", "Caesar", "Chopped",
+    "Dreads", "Long Hair", "Shaggy Curls", "Surfer Dude", "Short Side Part", "High Slicked Sides",
+    "Long Slicked", "Hipster Youth", "Mullet", "Classic Cornrows", "Palm Cornrows", "Lightning Cornrows",
+    "Whipped Cornrows", "Zig Zag Cornrows", "Snail Cornrows", "Hightop", "Loose Swept Back",
+    "Undercut Swept Back", "Undercut Swept Side", "Spiked Mohawk", "Mod", "Layered Mod", "Flattop",
+    "Military Buzzcut"];
+
+var maleHairsInt = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29,
+    30, 31, 32, 33, 34, 35, 36, 72, 73];
+
+var femaleHairs = ["Close Shave", "Short", "Layered Bob", "Pigtails", "Ponytail", "Braided Mohawk", "Braids", "Bob", "Faux Hawk", "French Twist",
+    "Long Bob", "Loose Tied", "Pixie", "Shaved Bangs", "Top Knot", "Wavy Bob", "Messy Bun", "Pin Up Girl", "Tight Bun", "Twisted Bob",
+    "Flapper Bob", "Big Bangs", "Braided Top Knot", "Mullet", "Pinched Cornrows", "Leaf Cornrows", "Zig Zag Cornrows", "Pigtail Bangs",
+    "Wave Braids", "Coil Braids", "Rolled Quiff", "Loose Swept Back", "Undercut Swept Back", "Undercut Swept Side", "Spiked Mohawk",
+    "Bandana and Braid", "Layered Mod", "Skinbyrd", "Neat Bun", "Right Side Braid", "Short Right Part", "Long back Middle Part", "Long Middle Part",
+    "Short Left Part", "Medium Straight", "Bob Bandana", "Medium Left Beach Wave", "Left High Pony", "Long Dreads", "Medium Smooth", "Long Braid Crown",
+    "Loose Bun", "Looped Pigtails Bangs", "Medium one shoulder", "Long Mermaid Bangs", "Dreaded High Pony", "Medium Right Waves", "High Bun bangs",
+    "Short Afro", "Short Curly Bands", "Thick Right Braid", "Long Left Deep Part", "Short Volume Bob", "Top Bun Wispy Bangs", "Long Straight Middle Part",
+    "Long Straight Middle Part Bangs", "Medium Waves Middle Part", "High Pony Bangs", "High Pony Highlights", "Short Wide Right Part", "Long Super Straight",
+    "Up do Sweep Across", "Long back layers", "Dreaded Bob", "Long back Highlights", "Left Braid", "Tight Bun Side Swept", "Cute Pixie"];
+
+var femaleHairsInt = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31,
+    32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+    61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77];
+
+var currentHair = 0;
+var currentHairInt = 0;
+
+var hairTypeName = document.getElementById('hairTypeName');
+
+var hairColorValue = document.getElementById('hairColorValue');
+var hairColorSlider = document.getElementById('hairColorSlider');
+
+var currentHairColor = 0;
+
+var hairHighlightColorValue = document.getElementById('hairHighlightColorValue');
+var hairHighlightColorSlider = document.getElementById('hairHighlightColorSlider');
+
+var currenthairHighlightColor = 0;
+
+var eyebrowColorValue = document.getElementById('eyebrowColorValue');
+var eyebrowColorSlider = document.getElementById('eyebrowColorSlider');
+
+var currenteyebrowColor = 0;
+
+var facialHairColorValue = document.getElementById('facialHairColorValue');
+var facialHairColorSlider = document.getElementById('facialHairColorSlider');
+
+var currentfacialHairColor = 0;
+
+var blushColorValue = document.getElementById('blushColorValue');
+var blushColorSlider = document.getElementById('blushColorSlider');
+
+var currentblushColor = 0;
+
+var lipstickColorValue = document.getElementById('lipstickColorValue');
+var lipstickColorSlider = document.getElementById('lipstickColorSlider');
+
+var currentlipstickColor = 0;
+
+var chestHairColorValue = document.getElementById('chestHairColorValue');
+var chestHairColorSlider = document.getElementById('chestHairColorSlider');
+
+var currentchestHairColor = 0;
+
+var eyeColorArray = ["Green", "Emerald", "Light Blue", "Ocean Blue", "Light Brown", "Dark Brown", "Hazel", "Dark Gray",
+    "Light Gray", "Pink", "Yellow", "Purple", "Blackout", "Shades of Gray", "Tequila Sunrise", "Atomic", "Warp",
+    "ECola", "Space Ranger", "Ying Yang", "Bullseye", "Lizard", "Dragon", "Extra Terrestrial", "Goat", "Smiley",
+    "Possessed", "Demon", "Infected", "Alien", "Undead", "Zombie"];
+
+var eyeColorValue = document.getElementById('eyeColorValue');
+
+var currentEyeColorId = 0;
+//#endregion
+
+function setCurrentCharacter(characterString){
+    let customCharacter = JSON.parse(characterString);
+
+    let parentInfo = JSON.parse(customCharacter.Parents);
+
+    let features = JSON.parse(customCharacter.Features);
+
+    let appearanceItems = JSON.parse(customCharacter.Appearance);
+
+    let hairInfo = JSON.parse(customCharacter.Hair);
+    //#region Parents
+
+    ParentOne = ParentNames[parentInfo.Father];
+    ParentOneNameIndex = parentInfo.Father;
+    ParentOneIndex = parentIndex[parentInfo.Father];
+
+    ParentTwo = ParentNames[parentInfo.Mother];
+    ParentTwoNameIndex = parentInfo.Mother;
+    ParentTwoIndex = parentIndex[parentInfo.Mother];
+
+    let parentOneField = document.getElementById('ParentOneName');
+    let parentTwoField = document.getElementById('ParentTwoName');
+    parentOneField.innerHTML = ParentOne + "(" + ParentOneIndex + ")";
+    parentTwoField.innerHTML = ParentTwo + "(" + ParentTwoIndex + ")";
+
+    parentMix = parentInfo.Similarity;
+    parentMixValue.innerHTML = parentInfo.Similarity;
+    parentMixSlider.value = parentMix;
+
+    if(parentInfo.FatherSkin === undefined){
+        parentInfo.FatherSkin = 0;
+    }
+    if(parentInfo.MotherSkin === undefined){
+        parentInfo.MotherSkin = 0;
+    }
+
+    ParentOneSkin = ParentNames[parentInfo.FatherSkin];
+    ParentTwoSkin = ParentNames[parentInfo.MotherSkin];
+    ParentOneNameIndexSkin = parentInfo.FatherSkin;
+    ParentTwoNameIndexSkin = parentInfo.MotherSkin;
+    ParentOneIndexSkin = parentIndex[parentInfo.FatherSkin];
+    ParentTwoIndexSkin = parentIndex[parentInfo.MotherSkin];
+
+    let parentOneSkinField = document.getElementById('ParentOneSkinName');
+    let parentTwoSkinField = document.getElementById('ParentTwoSkinName');
+    parentOneSkinField.innerHTML = ParentOneSkin;
+    parentTwoSkinField.innerHTML = ParentTwoSkin;
+
+    skinMixSlider.value = parentInfo.SkinSimilarity;
+    skinMixValue.innerHTML = parentInfo.SkinSimilarity;
+
+    //#endregion Parents
+
+    //#region Facial Features
+    
+
+    //#region Nose Width
+    noseWidth = features[0];
+    noseWidthSlider.value = noseWidth;
+    noseWidthValue.innerHTML = noseWidthSlider.value;
+    //#endregion
+
+    //#region Nose Bottom height
+
+    noseBottom = features[1];
+    noseBottomSlider.value = noseBottom;
+    noseBottomValue.innerHTML = noseBottomSlider.value;
+
+    //#endregion
+
+    //#region Nose Tip Length
+    noseTipLength = features[2];
+    noseTipLengthSlider.value = noseTipLength;
+    noseTipLengthValue.innerHTML = noseTipLengthSlider.value;
+    //#endregion
+
+    //#region Nose Bridge Depth
+    noseBridgeDepth = features[3];
+
+    noseBridgeDepthSlider.value = noseBridgeDepth;
+    noseBridgeDepthValue.innerHTML = noseBridgeDepthSlider.value;
+    
+    //#endregion
+
+    //#region Nose Tip Height
+    noseTipHeight = features[4];
+    noseTipHeightSlider.value = noseTipHeight;
+    noseTipHeightValue.innerHTML = noseTipHeightSlider.value;
+    //#endregion
+
+    //#region Nose Broken
+    noseBroken = features[5];
+
+    noseBrokenSlider.value = noseBroken;
+    noseBrokenValue.innerHTML = noseBrokenSlider.value;
+    //#endregion
+
+    //#region Brow Height
+    browHeight = features[6];
+
+    browHeightSlider.value = browHeight;
+    browHeightValue.innerHTML = browHeightSlider.value;
+    //#endregion
+
+    //#region Brow Depth
+    browDepth = features[7];
+
+    browDepthSlider.value = browDepth;
+    browDepthValue.innerHTML = browDepthSlider.value;
+    //#endregion
+
+    //#region Cheekbone Height
+    
+    cheekboneHeight = features[8];
+
+    checkBoneHeightSlider.value = cheekboneHeight;
+    cheekBoneHeightValue.innerHTML = checkBoneHeightSlider.value;
+    //#endregion
+
+    //#region Check Bone Width
+
+    cheekboneWidth = features[9];
+
+    checkBoneWidthSlider.value = cheekboneWidth;
+    cheekBoneWidthValue.innerHTML = checkBoneWidthSlider.value;
+    //#endregion
+
+    //#region Cheek Depth
+    cheekDepth = features[10];
+    cheekDepthSlider.value = cheekDepth;
+    cheekDepthValue.innerHTML = cheekDepthSlider.value;
+    //#endregion
+
+    //#region Eye Size
+    eyeSize = features[11];
+
+    eyeSizeSlider.value = eyeSize;
+    eyeSizeValue.innerHTML = eyeSizeSlider.value;
+    //#endregion
+
+    //#region Lip Thickness
+    
+    lipThickness = features[12];
+
+    lipThicknessSlider.value = lipThickness;
+    lipThicknessValue.innerHTML = lipThicknessSlider.value;
+    //#endregion
+
+    //#region Jaw Depth
+        
+    jawWidth = features[13];
+
+    jawWidthSlider.value = jawWidth;
+    jawWidthValue.innerHTML = jawWidthSlider.value;
+    //#endregion
+
+    //#region Jaw Height
+    
+    jawHeight = features[14];
+
+    jawHeightSlider.value = jawHeight;
+    jawHeightValue.innerHTML = jawHeightSlider.value;
+    //#endregion
+
+    //#region Chin Height
+    chinHeight = features[15];
+
+    chinHeightSlider.value = chinHeight;
+    chinHeightValue.innerHTML = chinHeightSlider.value;
+    //#endregion
+
+    //#region Chin Depth
+    
+    chinDepth = features[16];
+
+    chinDepthSlider.value = chinDepth;
+    chinDepthValue.innerHTML = chinDepthSlider.value;
+    //#endregion
+
+    //#region Chin Width
+    
+    chinWidth = features[17];
+
+    chinWidthSlider.value = chinWidth;
+    chinWidthValue.innerHTML = chinWidthSlider.value;
+
+    //#endregion
+
+    //#region Chin Indent
+    
+    chinIndent = features[18];
+
+    chinIndentSlider.value = chinIndent;
+    chinIndentValue.innerHTML = chinIndentSlider.value;
+    
+    //#endregion
+
+    //#region Neck Width
+    
+    neckWidth = features[19];
+
+    neckWidthSlider.value = neckWidth;
+    neckWidthValue.innerHTML = neckWidthSlider.value;
+    //#endregion
+    //#endregion
+
+    //#region Apperances
+
+    for (let index = 0; index < appearanceItems.length; index++) {
+        const element = appearanceItems[index];
+
+        console.log('CEF Appearance: ' + index + ', Value: ' + element.Value+ ', Opacity: ' + (element.Opacity * 100).toFixed(2));
+
+        if(element.Value !== 255) continue;
+        element.Value = -1;
+    }
+
+    currentBlemish = appearanceItems[0].Value + 1;
+    blemishText.innerHTML = blemishNames[currentBlemish];
+
+    blemishOpacity = (appearanceItems[0].Opacity * 100).toFixed(0);
+    blemishOpactiySlider.value = blemishOpacity;
+    blemishOpactiyField.innerHTML = blemishOpacity + "%";
+
+    currentFacialHair = appearanceItems[1].Value + 1;
+    facialHairText.innerHTML = facialHairNames[currentFacialHair];
+
+    facialHairOpacity = (appearanceItems[1].Opacity * 100).toFixed(0);
+    facialHairOpacitySlider.value = facialHairOpacity;
+    facialHairOpactiyField.innerHTML = facialHairOpacity + "%";
+
+    currentEyebrow = appearanceItems[2].Value + 1;
+    eyebrowText.innerHTML = eyebrowNames[currentEyebrow];
+
+    eyebrowOpacity = (appearanceItems[2].Opacity * 100).toFixed(0);
+    eyebrowOpactiyField.innerHTML = eyebrowOpacity + "%";
+    eyebrowOpacitySlider.value = eyebrowOpacity;
+
+    currentAgeing = appearanceItems[3].Value + 1;
+    ageingText.innerHTML = ageingNames[currentAgeing];
+
+    ageingOpacity = (appearanceItems[3].Opacity * 100).toFixed(0);
+    ageingOpacityField.innerHTML = ageingOpacity + "%";
+    ageingOpacitySlider.value = ageingOpacity;
+
+    currentMakeup = appearanceItems[4].Value + 1;
+    makeupText.innerHTML = makeupNames[currentMakeup];
+
+    makeupOpacity = (appearanceItems[4].Opacity * 100).toFixed(0);
+    makeupOpacityField.innerHTML = makeupOpacity + "%";
+    makeupOpacitySlider.value = makeupOpacity;
+
+    currentBlush = appearanceItems[5].Value + 1;
+    blushText.innerHTML = blushNames[currentBlush];
+
+    blushOpacity = (appearanceItems[5].Opacity * 100).toFixed(0);
+    blushOpacityField.innerHTML = blushOpacity + "%";
+    blushOpacitySlider.value = blushOpacity;
+
+    currentComplextion = appearanceItems[6].Value + 1;
+    complextionText.innerHTML = complextionNames[currentComplextion];
+
+    complextionOpacity = (appearanceItems[6].Opacity * 100).toFixed(0);
+    complextionOpacityField.innerHTML = complextionOpacity + "%";
+    complextionOpacitySlider.value = complextionOpacity;
+
+    currentsunDamage = appearanceItems[7].Value + 1;
+    sunDamageText.innerHTML = sunDamageNames[currentsunDamage];
+
+    sunDamageOpacity = (appearanceItems[7].Opacity * 100).toFixed(0);
+    sunDamageOpacityField.innerHTML = sunDamageOpacity + "%";
+    sunDamageOpacitySlider.value = sunDamageOpacity;
+
+    currentlipstick = appearanceItems[8].Value + 1;
+    lipstickText.innerHTML = lipstickNames[currentlipstick];
+
+    lipstickOpacity = (appearanceItems[8].Opacity * 100).toFixed(0);
+    lipstickOpacityField.innerHTML = lipstickOpacity + "%";
+    lipstickOpacitySlider.value = lipstickOpacity;
+
+    currentfreckles = appearanceItems[9].Value + 1;
+    frecklesText.innerHTML = frecklesNames[currentfreckles];
+
+    frecklesOpacity = (appearanceItems[9].Opacity * 100).toFixed(0);
+    frecklesOpacityField.innerHTML = frecklesOpacity + "%";
+    frecklesOpacitySlider.value = frecklesOpacity;
+
+    currentchestHair = appearanceItems[10].Value + 1;
+    chestHairText.innerHTML = chestHairNames[currentchestHair];
+
+    chestHairOpacity = (appearanceItems[10].Opacity * 100).toFixed(0);
+    chestHairOpacityField.innerHTML = chestHairOpacity+ "%";
+    chestHairOpacitySlider.value = chestHairOpacity;
+
+    //#endregion
+
+    //#region Hair & Colors
+    
+    currentHair = hairInfo.Hair;
+
+    if(gender === 0){
+        // Male
+        currentHairInt = maleHairsInt[currentHair];
+        hairTypeName.innerHTML = maleHairs[currentHair];
+    }
+    else{
+        currentHairInt = femaleHairsInt[currentHair];
+        hairTypeName.innerHTML = femaleHairs[currentHair];
+    }
+
+    currentHairColor = hairInfo.Color;
+    hairColorValue.innerHTML = currentHairColor;
+    hairColorSlider.value = currentHairColor;
+
+    currenthairHighlightColor = hairInfo.HighlightColor;
+    hairHighlightColorValue.innerHTML = currenthairHighlightColor;
+    hairHighlightColorSlider.value = currenthairHighlightColor;
+
+    currenteyebrowColor = customCharacter.EyebrowColor;
+    eyebrowColorValue.innerHTML = currenteyebrowColor;
+    eyebrowColorSlider.value = currenteyebrowColor;
+
+    currentfacialHairColor = customCharacter.BeardColor;
+    facialHairColorValue.innerHTML = currentfacialHairColor;
+    facialHairColorSlider.value = currentfacialHairColor;
+
+    currentblushColor = customCharacter.BlushColor;
+    blushColorValue.innerHTML = currentblushColor;
+    blushColorSlider.value = currentblushColor;
+
+    currentlipstickColor = customCharacter.LipstickColor;
+    lipstickColorValue.innerHTML = currentlipstickColor;
+    lipstickColorSlider.value = currentlipstickColor;
+
+    currentchestHairColor = customCharacter.ChestHairColor;
+    chestHairColorValue.innerHTML = currentchestHairColor;
+    chestHairColorSlider.value = currentchestHairColor;
+
+    currentEyeColorId = customCharacter.EyeColor;
+    eyeColorValue.innerHTML = eyeColorArray[currentEyeColorId];
+
+    //#endregion
+}
+
 
 //#region Collapse Handler
 
@@ -30,22 +801,7 @@ for (i = 0; i < coll.length; i++) {
 
 //#region Parents
 
-var ParentNames = [
-    "Benjamin", "Daniel", "Joshua", "Noah", "Andrew", "Joan", "Alex", "Isaac", "Evan", "Ethan", "Vincent",
-    "Angel", "Diego", "Adrian", "Gabriel", "Michael", "Santiago", "Kevin", "Louis", "Samuel", "Anthony",
-    "Claude", "Niko", "John", "Hannah", "Aubrey", "Jasmine", "Giselle", "Amelia", "Isabella", "Zoe", "Ava",
-    "Camilla", "Violet", "Sophia", "Eveline", "Nicole", "Ashley", "Gracie", "Brianna", "Natalie", "Olivia",
-    "Elizabeth", "Charlotte", "Emma", "Misty"
-];
 
-var parentIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 44, 43, 42, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 45]
-
-var ParentOne = ParentNames[0];
-var ParentTwo = ParentNames[0];
-var ParentOneNameIndex = 0;
-var ParentTwoNameIndex = 0;
-var ParentOneIndex = parentIndex[0];
-var ParentTwoIndex = parentIndex[0];
 function LoadParentNames() {
     var parentOneField = document.getElementById('ParentOneName');
     var parentTwoField = document.getElementById('ParentTwoName');
@@ -74,11 +830,6 @@ function ParentOnePrevious() {
 
     ParentOne = ParentNames[ParentOneNameIndex];
     parentOneField.innerHTML = ParentOne + "(" + ParentOneIndex + ")";
-
-    console.log("Index: " + ParentOneNameIndex);
-    console.log("Name: " + ParentOne);
-    console.log("ID Index: " + ParentOneIndex);
-
     alt.emit('ParentChange', 1, ParentOneIndex);
 }
 
@@ -140,13 +891,6 @@ function ParentTwoNext() {
     alt.emit('ParentChange', 2, ParentTwoIndex);
 }
 
-var parentMix = 0.5;
-
-var parentMixSlider = document.getElementById('parentMixSlider');
-var parentMixValue = document.getElementById('parentMixValue');
-
-parentMixSlider.value = parentMix;
-parentMixValue.innerHTML = parentMixSlider.value;
 
 parentMixSlider.oninput = function () {
     parentMixValue.innerHTML = this.value;
@@ -154,12 +898,6 @@ parentMixSlider.oninput = function () {
     alt.emit('creator:parentMixChange', this.value);
 }
 
-var ParentOneSkin = ParentNames[0];
-var ParentTwoSkin = ParentNames[0];
-var ParentOneNameIndexSkin = 0;
-var ParentTwoNameIndexSkin = 0;
-var ParentOneIndexSkin = parentIndex[0];
-var ParentTwoIndexSkin = parentIndex[0];
 
 function ParentOneSkinPrevious() {
     var parentOneSkinField = document.getElementById('ParentOneSkinName');
@@ -233,13 +971,6 @@ function ParentTwoSkinNext() {
     alt.emit('ParentSkinChange', 2, ParentTwoIndex);
 }
 
-var skinMix = 0.5;
-
-var skinMixSlider = document.getElementById('skinMixSlider');
-var skinMixValue = document.getElementById('skinMixValue');
-
-skinMixSlider.value = skinMix;
-skinMixValue.innerHTML = skinMixSlider.value;
 
 skinMixSlider.oninput = function () {
     skinMixValue.innerHTML = this.value;
@@ -251,13 +982,6 @@ skinMixSlider.oninput = function () {
 //#region Facial Features
 
 //#region Nose Width
-var noseWidth = 0.0;
-
-var noseWidthSlider = document.getElementById('noseWidthSlider');
-var noseWidthValue = document.getElementById('noseWidthValue');
-
-noseWidthSlider.value = noseWidth;
-noseWidthValue.innerHTML = noseWidthSlider.value;
 
 noseWidthSlider.oninput = function () {
     noseWidthValue.innerHTML = this.value;
@@ -268,13 +992,7 @@ noseWidthSlider.oninput = function () {
 //#endregion
 
 //#region Nose Bottom height
-var noseBottom = 0.0;
 
-var noseBottomSlider = document.getElementById('noseBottomSlider');
-var noseBottomValue = document.getElementById('noseBottomValue');
-
-noseBottomSlider.value = noseBottom;
-noseBottomValue.innerHTML = noseBottomSlider.value;
 
 noseBottomSlider.oninput = function () {
     noseBottomValue.innerHTML = this.value;
@@ -285,13 +1003,6 @@ noseBottomSlider.oninput = function () {
 //#endregion
 
 //#region Nose Tip Length
-var noseTipLength = 0.0;
-
-var noseTipLengthSlider = document.getElementById('noseTipLengthSlider');
-var noseTipLengthValue = document.getElementById('noseTipLengthValue');
-
-noseTipLengthSlider.value = noseTipLength;
-noseTipLengthValue.innerHTML = noseTipLengthSlider.value;
 
 noseTipLengthSlider.oninput = function () {
     noseTipLengthValue.innerHTML = this.value;
@@ -301,13 +1012,6 @@ noseTipLengthSlider.oninput = function () {
 //#endregion
 
 //#region Nose Bridge Depth
-var noseBridgeDepth = 0.0;
-
-var noseBridgeDepthSlider = document.getElementById('noseBridgeDepthSlider');
-var noseBridgeDepthValue = document.getElementById('noseBridgeDepthValue');
-
-noseBridgeDepthSlider.value = noseBridgeDepth;
-noseBridgeDepthValue.innerHTML = noseBridgeDepthSlider.value;
 
 noseBridgeDepthSlider.oninput = function () {
     noseBridgeDepthValue.innerHTML = this.value;
@@ -318,13 +1022,6 @@ noseBridgeDepthSlider.oninput = function () {
 //#endregion
 
 //#region Nose Tip Height
-var noseTipHeight = 0.0;
-
-var noseTipHeightSlider = document.getElementById('noseTipHeightSlider');
-var noseTipHeightValue = document.getElementById('noseTipHeightValue');
-
-noseTipHeightSlider.value = noseTipHeight;
-noseTipHeightValue.innerHTML = noseTipHeightSlider.value;
 
 noseTipHeightSlider.oninput = function () {
     noseTipHeightValue.innerHTML = this.value;
@@ -335,13 +1032,6 @@ noseTipHeightSlider.oninput = function () {
 //#endregion
 
 //#region Nose Broken
-var noseBroken = 0.0;
-
-var noseBrokenSlider = document.getElementById('noseBrokenSlider');
-var noseBrokenValue = document.getElementById('noseBrokenValue');
-
-noseBrokenSlider.value = noseBroken;
-noseBrokenValue.innerHTML = noseBrokenSlider.value;
 
 noseBrokenSlider.oninput = function () {
     noseBrokenValue.innerHTML = this.value;
@@ -352,13 +1042,6 @@ noseBrokenSlider.oninput = function () {
 //#endregion
 
 //#region Brow Height
-var browHeight = 0.0;
-
-var browHeightSlider = document.getElementById('browHeightSlider');
-var browHeightValue = document.getElementById('browHeightValue');
-
-browHeightSlider.value = browHeight;
-browHeightValue.innerHTML = browHeightSlider.value;
 
 browHeightSlider.oninput = function () {
     browHeightValue.innerHTML = this.value;
@@ -385,13 +1068,6 @@ browDepthSlider.oninput = function () {
 //#endregion
 
 //#region Cheekbone Height
-var cheekboneHeight = 0.0;
-
-var checkBoneHeightSlider = document.getElementById('checkBoneHeightSlider');
-var cheekBoneHeightValue = document.getElementById('cheekBoneHeightValue');
-
-checkBoneHeightSlider.value = cheekboneHeight;
-cheekBoneHeightValue.innerHTML = checkBoneHeightSlider.value;
 
 checkBoneHeightSlider.oninput = function () {
     cheekBoneHeightValue.innerHTML = this.value;
@@ -402,13 +1078,6 @@ checkBoneHeightSlider.oninput = function () {
 //#endregion
 
 //#region Cheekbone Width
-var cheekboneWidth = 0.0;
-
-var checkBoneWidthSlider = document.getElementById('checkBoneWidthSlider');
-var cheekBoneWidthValue = document.getElementById('cheekBoneWidthValue');
-
-checkBoneWidthSlider.value = cheekboneWidth;
-cheekBoneWidthValue.innerHTML = checkBoneWidthSlider.value;
 
 checkBoneWidthSlider.oninput = function () {
     cheekBoneWidthValue.innerHTML = this.value;
@@ -418,13 +1087,6 @@ checkBoneWidthSlider.oninput = function () {
 //#endregion
 
 //#region Cheek Depth
-var cheekDepth = 0.0;
-
-var cheekDepthSlider = document.getElementById('cheekDepthSlider');
-var cheekDepthValue = document.getElementById('cheekDepthValue');
-
-cheekDepthSlider.value = cheekDepth;
-cheekDepthValue.innerHTML = cheekDepthSlider.value;
 
 cheekDepthSlider.oninput = function () {
     cheekDepthValue.innerHTML = this.value;
@@ -435,13 +1097,6 @@ cheekDepthSlider.oninput = function () {
 //#endregion
 
 //#region Eye Size
-var eyeSize = 0.0;
-
-var eyeSizeSlider = document.getElementById('eyeSizeSlider');
-var eyeSizeValue = document.getElementById('eyeSizeValue');
-
-eyeSizeSlider.value = eyeSize;
-eyeSizeValue.innerHTML = eyeSizeSlider.value;
 
 eyeSizeSlider.oninput = function () {
     eyeSizeValue.innerHTML = this.value;
@@ -452,13 +1107,6 @@ eyeSizeSlider.oninput = function () {
 //#endregion
 
 //#region Lip Thickness
-var lipThickness = 0.0;
-
-var lipThicknessSlider = document.getElementById('lipThicknessSlider');
-var lipThicknessValue = document.getElementById('lipThicknessValue');
-
-lipThicknessSlider.value = lipThickness;
-lipThicknessValue.innerHTML = lipThicknessSlider.value;
 
 lipThicknessSlider.oninput = function () {
     lipThicknessValue.innerHTML = this.value;
@@ -469,13 +1117,6 @@ lipThicknessSlider.oninput = function () {
 //#endregion
 
 //#region Jaw Width
-var jawWidth = 0.0;
-
-var jawWidthSlider = document.getElementById('jawWidthSlider');
-var jawWidthValue = document.getElementById('jawWidthValue');
-
-jawWidthSlider.value = jawWidth;
-jawWidthValue.innerHTML = jawWidthSlider.value;
 
 jawWidthSlider.oninput = function () {
     jawWidthValue.innerHTML = this.value;
@@ -486,13 +1127,6 @@ jawWidthSlider.oninput = function () {
 //#endregion
 
 //#region Jaw Height
-var jawHeight = 0.0;
-
-var jawHeightSlider = document.getElementById('jawHeightSlider');
-var jawHeightValue = document.getElementById('jawHeightValue');
-
-jawHeightSlider.value = jawHeight;
-jawHeightValue.innerHTML = jawHeightSlider.value;
 
 jawHeightSlider.oninput = function () {
     jawHeightValue.innerHTML = this.value;
@@ -502,13 +1136,6 @@ jawHeightSlider.oninput = function () {
 //#endregion
 
 //#region Chin Height
-var chinHeight = 0.0;
-
-var chinHeightSlider = document.getElementById('chinHeightSlider');
-var chinHeightValue = document.getElementById('chinHeightValue');
-
-chinHeightSlider.value = chinHeight;
-chinHeightValue.innerHTML = chinHeightSlider.value;
 
 chinHeightSlider.oninput = function () {
     chinHeightValue.innerHTML = this.value;
@@ -519,13 +1146,6 @@ chinHeightSlider.oninput = function () {
 //#endregion
 
 //#region Chin Depth
-var chinDepth = 0.0;
-
-var chinDepthSlider = document.getElementById('chinDepthSlider');
-var chinDepthValue = document.getElementById('chinDepthValue');
-
-chinDepthSlider.value = chinDepth;
-chinDepthValue.innerHTML = chinDepthSlider.value;
 
 chinDepthSlider.oninput = function () {
     chinDepthValue.innerHTML = this.value;
@@ -536,13 +1156,6 @@ chinDepthSlider.oninput = function () {
 //#endregion
 
 //#region Chin Width
-var chinWidth = 0.0;
-
-var chinWidthSlider = document.getElementById('chinWidthSlider');
-var chinWidthValue = document.getElementById('chinWidthValue');
-
-chinWidthSlider.value = chinWidth;
-chinWidthValue.innerHTML = chinWidthSlider.value;
 
 chinWidthSlider.oninput = function () {
     chinWidthValue.innerHTML = this.value;
@@ -553,13 +1166,6 @@ chinWidthSlider.oninput = function () {
 //#endregion
 
 //#region Chin Indent
-var chinIndent = 0.0;
-
-var chinIndentSlider = document.getElementById('chinIndentSlider');
-var chinIndentValue = document.getElementById('chinIndentValue');
-
-chinIndentSlider.value = chinIndent;
-chinIndentValue.innerHTML = chinIndentSlider.value;
 
 chinIndentSlider.oninput = function () {
     chinIndentValue.innerHTML = this.value;
@@ -569,13 +1175,6 @@ chinIndentSlider.oninput = function () {
 //#endregion
 
 //#region Neck Width
-var neckWidth = 0.0;
-
-var neckWidthSlider = document.getElementById('neckWidthSlider');
-var neckWidthValue = document.getElementById('neckWidthValue');
-
-neckWidthSlider.value = neckWidth;
-neckWidthValue.innerHTML = neckWidthSlider.value;
 
 neckWidthSlider.oninput = function () {
     neckWidthValue.innerHTML = this.value;
@@ -634,13 +1233,6 @@ function LoadFeatureMenu() {
 
 //#region Blemishes
 
-var blemishNames = ["None", "Measles", "Pimples", "Spots", "Break Out", "Blackheads", "Build Up", "Pustules", "Zits",
-    "Full Acne", "Acne", "Cheek Rash", "Face Rash", "Picker", "Puberty", "Eyesore", "Chin Rash", "Two Face",
-    "T Zone", "Greasy", "Marked", "Acne Scarring", "Full Acne Scarring", "Cold Sores", "Impetigo"]
-
-var currentBlemish = 0;
-
-var blemishText = document.getElementById('blemishName');
 
 function previousBlemish() {
     if (currentBlemish === 0) {
@@ -668,11 +1260,6 @@ function nextBlemish() {
     alt.emit('creator:setFacialApperance', 0, currentBlemish, blemishOpacity);
 }
 
-var blemishOpacity = 50;
-
-var blemishOpactiyField = document.getElementById('blemishOpactiyValue');
-var blemishOpactiySlider = document.getElementById('blemishOpacitySlider');
-
 blemishOpactiySlider.oninput = function () {
     blemishOpactiyField.innerHTML = this.value + "%";
     blemishOpacity = this.value;
@@ -682,16 +1269,6 @@ blemishOpactiySlider.oninput = function () {
 //#endregion
 
 //#region Facial Hair
-
-var facialHairNames = ["None", "Light Stubble", "Balbo", "Circle Beard", "Goatee", "Chin", "Chin Fuzz", "Pencil Chin Strap",
-    "Scruffy", "Musketeer", "Mustache", "Trimmed Beard", "Stubble", "Thin Circle Beard", "Horseshoe",
-    "Pencil and 'Chops", "Chin Strap Beard", "Balbo and Sideburns", "Mutton Chops", "Scruffy Beard", "Curly",
-    "Curly & Deep Stranger", "Handlebar", "Faustic", "Otto & Patch", "Otto & Full Stranger", "Light Franz",
-    "The Hampstead", "The Ambrose", "Lincoln Curtain"]
-
-var currentFacialHair = 0;
-
-var facialHairText = document.getElementById('facialHairName');
 
 function previousFacialHair() {
     if (currentFacialHair === 0) {
@@ -719,11 +1296,6 @@ function nextFacialHair() {
     alt.emit('creator:setFacialApperance', 1, currentFacialHair, facialHairOpacity);
 }
 
-var facialHairOpacity = 50;
-
-var facialHairOpactiyField = document.getElementById('facialHairOpacityValue');
-var facialHairOpacitySlider = document.getElementById('facialHairOpacitySlider');
-
 facialHairOpacitySlider.oninput = function () {
     facialHairOpactiyField.innerHTML = this.value + "%";
     facialHairOpacity = this.value;
@@ -734,15 +1306,7 @@ facialHairOpacitySlider.oninput = function () {
 
 //#region Eyebrows
 
-var eyebrowNames = ["None", "Balanced", "Fashion", "Cleopatra", "Quizzical", "Femme", "Seductive", "Pinched", "Chola",
-    "Triomphe", "Carefree", "Curvaceous", "Rodent", "Double Tram", "Thin", "Penciled", "Mother Plucker",
-    "Straight and Narrow", "Natural", "Fuzzy", "Unkempt", "Caterpillar", "Regular", "Mediterranean", "Groomed",
-    "Bushels", "Feathered", "Prickly", "Monobrow", "Winged", "Triple Tram", "Arched Tram", "Cutouts",
-    "Fade Away", "Solo Tram"]
 
-var currentEyebrow = 0;
-
-var eyebrowText = document.getElementById('eyebrowsName');
 
 function previousEyebrows() {
     if (currentEyebrow === 0) {
@@ -770,11 +1334,6 @@ function nextEyebrows() {
     alt.emit('creator:setFacialApperance', 2, currentEyebrow, eyebrowOpacity);
 }
 
-var eyebrowOpacity = 50;
-
-var eyebrowOpactiyField = document.getElementById('eyebrowsOpactiyValue');
-var eyebrowOpacitySlider = document.getElementById('eyebrowsOpacitySlider');
-
 eyebrowOpacitySlider.oninput = function () {
     eyebrowOpactiyField.innerHTML = this.value + "%";
     eyebrowOpacity = this.value;
@@ -784,13 +1343,6 @@ eyebrowOpacitySlider.oninput = function () {
 //#endregion
 
 //#region Ageing
-
-var ageingNames = ["None", "Crow's Feet", "First Signs", "Middle Aged", "Worry Lines", "Depression", "Distinguished", "Aged",
-    "Weathered", "Wrinkled", "Sagging", "Tough Life", "Vintage", "Retired", "Junkie", "Geriatric"]
-
-var currentAgeing = 0;
-
-var ageingText = document.getElementById('ageingName');
 
 function previousAgeing() {
     if (currentAgeing === 0) {
@@ -818,11 +1370,6 @@ function nextAgeing() {
     alt.emit('creator:setFacialApperance', 3, currentAgeing, ageingOpacity);
 }
 
-var ageingOpacity = 50;
-
-var ageingOpacityField = document.getElementById('ageingOpacityValue');
-var ageingOpacitySlider = document.getElementById('ageingOpacitySlider');
-
 ageingOpacitySlider.oninput = function () {
     ageingOpacityField.innerHTML = this.value + "%";
     ageingOpacity = this.value;
@@ -832,14 +1379,6 @@ ageingOpacitySlider.oninput = function () {
 //#endregion
 
 //#region Makeup
-
-var makeupNames = ["None", "Smoky Black", "Bronze", "Soft Gray", "Retro Glam", "Natural Look", "Cat Eyes", "Chola", "Vamp",
-    "Vinewood Glamour", "Bubblegum", "Aqua Dream", "Pin Up", "Purple Passion", "Smoky Cat Eye",
-    "Smoldering Ruby", "Pop Princess"]
-
-var currentMakeup = 0;
-
-var makeupText = document.getElementById('makeupName');
 
 function previousMakeup() {
     if (currentMakeup === 0) {
@@ -867,11 +1406,6 @@ function nextMakeup() {
     alt.emit('creator:setFacialApperance', 4, currentMakeup, makeupOpacity);
 }
 
-var makeupOpacity = 50;
-
-var makeupOpacityField = document.getElementById('makeupOpacityValue');
-var makeupOpacitySlider = document.getElementById('makeupOpacitySlider');
-
 makeupOpacitySlider.oninput = function () {
     makeupOpacityField.innerHTML = this.value + "%";
     makeupOpacity = this.value;
@@ -881,12 +1415,6 @@ makeupOpacitySlider.oninput = function () {
 //#endregion
 
 //#region Blush
-
-var blushNames = ["None", "Full", "Angled", "Round", "Horizontal", "High", "Sweetheart", "Eighties"]
-
-var currentBlush = 0;
-
-var blushText = document.getElementById('blushName');
 
 function previousBlush() {
     if (currentBlush === 0) {
@@ -913,12 +1441,6 @@ function nextBlush() {
     blushText.innerHTML = blushNames[currentBlush];
     alt.emit('creator:setFacialApperance', 5, currentBlush, blushOpacity);
 }
-
-var blushOpacity = 50;
-
-var blushOpacityField = document.getElementById('blushOpacityValue');
-var blushOpacitySlider = document.getElementById('blushOpacitySlider');
-
 blushOpacitySlider.oninput = function () {
     blushOpacityField.innerHTML = this.value + "%";
     blushOpacity = this.value;
@@ -928,12 +1450,6 @@ blushOpacitySlider.oninput = function () {
 //#endregion
 
 //#region Complextion
-
-var complextionNames = ["None", "Rosy Cheeks", "Stubble Rash", "Hot Flush", "Sunburn", "Bruised", "Alchoholic", "Patchy", "Totem", "Blood Vessels", "Damaged", "Pale", "Ghostly"]
-
-var currentComplextion = 0;
-
-var complextionText = document.getElementById('complextionName');
 
 function previouscomplextion() {
     if (currentComplextion === 0) {
@@ -961,11 +1477,6 @@ function nextcomplextion() {
     alt.emit('creator:setFacialApperance', 6, currentComplextion, complextionOpacity);
 }
 
-var complextionOpacity = 50;
-
-var complextionOpacityField = document.getElementById('complextionOpacityValue');
-var complextionOpacitySlider = document.getElementById('complextionOpacitySlider');
-
 complextionOpacitySlider.oninput = function () {
     complextionOpacityField.innerHTML = this.value + "%";
     complextionOpacity = this.value;
@@ -975,12 +1486,6 @@ complextionOpacitySlider.oninput = function () {
 //#endregion
 
 //#region sunDamage
-
-var sunDamageNames = ["None", "Uneven", "Sandpaper", "Patchy", "Rough", "Leathery", "Textured", "Coarse", "Rugged", "Creased", "Cracked", "Gritty"]
-
-var currentsunDamage = 0;
-
-var sunDamageText = document.getElementById('sunDamageName');
 
 function previoussunDamage() {
     if (currentsunDamage === 0) {
@@ -1008,11 +1513,6 @@ function nextsunDamage() {
     alt.emit('creator:setFacialApperance', 7, currentsunDamage, sunDamageOpacity);
 }
 
-var sunDamageOpacity = 50;
-
-var sunDamageOpacityField = document.getElementById('sunDamageOpacityValue');
-var sunDamageOpacitySlider = document.getElementById('sunDamageOpacitySlider');
-
 sunDamageOpacitySlider.oninput = function () {
     sunDamageOpacityField.innerHTML = this.value + "%";
     sunDamageOpacity = this.value;
@@ -1022,13 +1522,6 @@ sunDamageOpacitySlider.oninput = function () {
 //#endregion
 
 //#region lipstick
-
-var lipstickNames = ["None", "Color Matte", "Color Gloss", "Lined Matte", "Lined Gloss", "Heavy Lined Matte",
-    "Heavy Lined Gloss", "Lined Nude Matte", "Liner Nude Gloss", "Smudged", "Geisha"]
-
-var currentlipstick = 0;
-
-var lipstickText = document.getElementById('lipstickName');
 
 function previouslipstick() {
     if (currentlipstick === 0) {
@@ -1056,11 +1549,6 @@ function nextlipstick() {
     alt.emit('creator:setFacialApperance', 8, currentlipstick, lipstickOpacity);
 }
 
-var lipstickOpacity = 50;
-
-var lipstickOpacityField = document.getElementById('lipstickOpacityValue');
-var lipstickOpacitySlider = document.getElementById('lipstickOpacitySlider');
-
 lipstickOpacitySlider.oninput = function () {
     lipstickOpacityField.innerHTML = this.value + "%";
     lipstickOpacity = this.value;
@@ -1070,14 +1558,6 @@ lipstickOpacitySlider.oninput = function () {
 //#endregion
 
 //#region freckles
-
-var frecklesNames = ["None", "Cherub", "All Over", "Irregular", "Dot Dash", "Over the Bridge", "Baby Doll", "Pixie",
-    "Sun Kissed", "Beauty Marks", "Line Up", "Modelesque", "Occasional", "Speckled", "Rain Drops", "Double Dip",
-    "One Sided", "Pairs", "Growth"]
-
-var currentfreckles = 0;
-
-var frecklesText = document.getElementById('frecklesName');
 
 function previousfreckles() {
     if (currentfreckles === 0) {
@@ -1105,11 +1585,6 @@ function nextfreckles() {
     alt.emit('creator:setFacialApperance', 9, currentfreckles, frecklesOpacity);
 }
 
-var frecklesOpacity = 50;
-
-var frecklesOpacityField = document.getElementById('frecklesOpacityValue');
-var frecklesOpacitySlider = document.getElementById('frecklesOpacitySlider');
-
 frecklesOpacitySlider.oninput = function () {
     frecklesOpacityField.innerHTML = this.value + "%";
     frecklesOpacity = this.value;
@@ -1120,13 +1595,6 @@ frecklesOpacitySlider.oninput = function () {
 
 //#region chestHair
 
-var chestHairNames = ["None", "Natural", "The Strip", "The Tree", "Hairy", "Grisly", "Ape", "Groomed Ape", "Bikini",
-    "Lightning Bolt", "Reverse Lightning", "Love Heart", "Chestache", "Happy Face", "Skull", "Snail Trail",
-    "Slug and Nips", "Hairy Arms"]
-
-var currentchestHair = 0;
-
-var chestHairText = document.getElementById('chestHairName');
 
 function previouschestHair() {
     if (currentchestHair === 0) {
@@ -1153,11 +1621,6 @@ function nextchestHair() {
     chestHairText.innerHTML = chestHairNames[currentchestHair];
     alt.emit('creator:setFacialApperance', 10, currentchestHair, chestHairOpacity);
 }
-
-var chestHairOpacity = 50;
-
-var chestHairOpacityField = document.getElementById('chestHairOpacityValue');
-var chestHairOpacitySlider = document.getElementById('chestHairOpacitySlider');
 
 chestHairOpacitySlider.oninput = function () {
     chestHairOpacityField.innerHTML = this.value + "%";
@@ -1210,36 +1673,6 @@ function LoadAppearanceMenu() {
 
 //#region Hair Type
 
-var maleHairs = ["Close Shave", "Buzzcut", "Faux Hawk", "Hipster", "Side Parting", "Shorter Cut", "Biker", "Ponytail",
-    "Cornrows", "Slicked", "Short Brushed", "Spikey", "Caesar", "Chopped",
-    "Dreads", "Long Hair", "Shaggy Curls", "Surfer Dude", "Short Side Part", "High Slicked Sides",
-    "Long Slicked", "Hipster Youth", "Mullet", "Classic Cornrows", "Palm Cornrows", "Lightning Cornrows",
-    "Whipped Cornrows", "Zig Zag Cornrows", "Snail Cornrows", "Hightop", "Loose Swept Back",
-    "Undercut Swept Back", "Undercut Swept Side", "Spiked Mohawk", "Mod", "Layered Mod", "Flattop",
-    "Military Buzzcut"];
-
-var maleHairsInt = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29,
-    30, 31, 32, 33, 34, 35, 36, 72, 73];
-
-var femaleHairs = ["Close Shave", "Short", "Layered Bob", "Pigtails", "Ponytail", "Braided Mohawk", "Braids", "Bob", "Faux Hawk", "French Twist",
-    "Long Bob", "Loose Tied", "Pixie", "Shaved Bangs", "Top Knot", "Wavy Bob", "Messy Bun", "Pin Up Girl", "Tight Bun", "Twisted Bob",
-    "Flapper Bob", "Big Bangs", "Braided Top Knot", "Mullet", "Pinched Cornrows", "Leaf Cornrows", "Zig Zag Cornrows", "Pigtail Bangs",
-    "Wave Braids", "Coil Braids", "Rolled Quiff", "Loose Swept Back", "Undercut Swept Back", "Undercut Swept Side", "Spiked Mohawk",
-    "Bandana and Braid", "Layered Mod", "Skinbyrd", "Neat Bun", "Right Side Braid", "Short Right Part", "Long back Middle Part", "Long Middle Part",
-    "Short Left Part", "Medium Straight", "Bob Bandana", "Medium Left Beach Wave", "Left High Pony", "Long Dreads", "Medium Smooth", "Long Braid Crown",
-    "Loose Bun", "Looped Pigtails Bangs", "Medium one shoulder", "Long Mermaid Bangs", "Dreaded High Pony", "Medium Right Waves", "High Bun bangs",
-    "Short Afro", "Short Curly Bands", "Thick Right Braid", "Long Left Deep Part", "Short Volume Bob", "Top Bun Wispy Bangs", "Long Straight Middle Part",
-    "Long Straight Middle Part Bangs", "Medium Waves Middle Part", "High Pony Bangs", "High Pony Highlights", "Short Wide Right Part", "Long Super Straight",
-    "Up do Sweep Across", "Long back layers", "Dreaded Bob", "Long back Highlights", "Left Braid", "Tight Bun Side Swept", "Cute Pixie"];
-
-var femaleHairsInt = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31,
-    32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
-    61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77];
-
-var currentHair = 0;
-var currentHairInt = 0;
-
-var hairTypeName = document.getElementById('hairTypeName');
 
 function previoushairType() {
     if (gender === 0) {
@@ -1303,10 +1736,6 @@ function nexthairType() {
 
 //#region Hair Color
 
-var hairColorValue = document.getElementById('hairColorValue');
-var hairColorSlider = document.getElementById('hairColorSlider');
-
-var currentHairColor = 0;
 
 hairColorSlider.oninput = function () {
     hairColorValue.innerHTML = this.value;
@@ -1318,11 +1747,6 @@ hairColorSlider.oninput = function () {
 
 //#region Hair Highlight Color
 
-var hairHighlightColorValue = document.getElementById('hairHighlightColorValue');
-var hairHighlightColorSlider = document.getElementById('hairHighlightColorSlider');
-
-var currenthairHighlightColor = 0;
-
 hairHighlightColorSlider.oninput = function () {
     hairHighlightColorValue.innerHTML = this.value;
     currenthairHighlightColor = this.value;
@@ -1333,10 +1757,6 @@ hairHighlightColorSlider.oninput = function () {
 
 //#region Eyebrow Color
 
-var eyebrowColorValue = document.getElementById('eyebrowColorValue');
-var eyebrowColorSlider = document.getElementById('eyebrowColorSlider');
-
-var currenteyebrowColor = 0;
 
 eyebrowColorSlider.oninput = function () {
     eyebrowColorValue.innerHTML = this.value;
@@ -1348,10 +1768,6 @@ eyebrowColorSlider.oninput = function () {
 
 //#region Facial Hair Color
 
-var facialHairColorValue = document.getElementById('facialHairColorValue');
-var facialHairColorSlider = document.getElementById('facialHairColorSlider');
-
-var currentfacialHairColor = 0;
 
 facialHairColorSlider.oninput = function () {
     facialHairColorValue.innerHTML = this.value;
@@ -1363,10 +1779,6 @@ facialHairColorSlider.oninput = function () {
 
 //#region Blush Color
 
-var blushColorValue = document.getElementById('blushColorValue');
-var blushColorSlider = document.getElementById('blushColorSlider');
-
-var currentblushColor = 0;
 
 blushColorSlider.oninput = function () {
     blushColorValue.innerHTML = this.value;
@@ -1378,10 +1790,6 @@ blushColorSlider.oninput = function () {
 
 //#region Lipstick Color
 
-var lipstickColorValue = document.getElementById('lipstickColorValue');
-var lipstickColorSlider = document.getElementById('lipstickColorSlider');
-
-var currentlipstickColor = 0;
 
 lipstickColorSlider.oninput = function () {
     lipstickColorValue.innerHTML = this.value;
@@ -1393,10 +1801,6 @@ lipstickColorSlider.oninput = function () {
 
 //#region Chest Hair Color
 
-var chestHairColorValue = document.getElementById('chestHairColorValue');
-var chestHairColorSlider = document.getElementById('chestHairColorSlider');
-
-var currentchestHairColor = 0;
 
 chestHairColorSlider.oninput = function () {
     chestHairColorValue.innerHTML = this.value;
@@ -1408,14 +1812,6 @@ chestHairColorSlider.oninput = function () {
 
 //#region Eye Color
 
-var eyeColorArray = ["Green", "Emerald", "Light Blue", "Ocean Blue", "Light Brown", "Dark Brown", "Hazel", "Dark Gray",
-    "Light Gray", "Pink", "Yellow", "Purple", "Blackout", "Shades of Gray", "Tequila Sunrise", "Atomic", "Warp",
-    "ECola", "Space Ranger", "Ying Yang", "Bullseye", "Lizard", "Dragon", "Extra Terrestrial", "Goat", "Smiley",
-    "Possessed", "Demon", "Infected", "Alien", "Undead", "Zombie"];
-
-var eyeColorValue = document.getElementById('eyeColorValue');
-
-var currentEyeColorId = 0;
 
 function previouseyeColor() {
     if (currentEyeColorId === 0) {

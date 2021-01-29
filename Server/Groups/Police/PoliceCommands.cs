@@ -274,12 +274,18 @@ namespace Server.Groups.Police
 
             string[] paramStrings = args.Split(' ');
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(paramStrings[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(paramStrings[0]);
 
             if (targetPlayer == null)
             {
                 player.SendSyntaxMessage("/arrest [IdOrName] [Time Mins]");
                 player.SendErrorNotification("Unable to find target player.");
+                return;
+            }
+
+            if (targetPlayer == player)
+            {
+                player.SendErrorNotification("You can't jail yourself!");
                 return;
             }
 
@@ -366,12 +372,18 @@ namespace Server.Groups.Police
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
                 player.SendSyntaxMessage("/unarrest [IdOrName]");
                 player.SendErrorNotification("Unable to find target player.");
+                return;
+            }
+
+            if (targetPlayer == player)
+            {
+                player.SendErrorNotification("You can't unjail yourself!");
                 return;
             }
 
@@ -406,7 +418,7 @@ namespace Server.Groups.Police
                 PoliceHandler.JailCells.Add(cell.Key, newCount);
             }
 
-            targetPlayer.Position = PoliceHandler.UnJailPosition;
+            targetPlayer.Position = targetPlayer.Position;
             targetPlayer.Dimension = 0;
 
             targetCharacter.JailMinutes = 0;
@@ -619,13 +631,13 @@ namespace Server.Groups.Police
                 return;
             }
 
-            Models.Character playerCharacter = player.FetchCharacter();
+            Models.Character? playerCharacter = player.FetchCharacter();
 
-            PlayerFaction activePlayerFaction = JsonConvert
+            PlayerFaction? activePlayerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == playerCharacter.ActiveFaction);
 
-            if (activePlayerFaction == null || !activePlayerFaction.Leader)
+            if (activePlayerFaction == null)
             {
                 player.SendPermissionError();
                 return;
@@ -658,7 +670,7 @@ namespace Server.Groups.Police
 
             string nameorid = string.Join(' ', splitString.Skip(1));
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
 
             if (targetPlayer == null)
             {
@@ -666,11 +678,17 @@ namespace Server.Groups.Police
                 return;
             }
 
-            Models.Character targetCharacter = targetPlayer.FetchCharacter();
+            Models.Character? targetCharacter = targetPlayer.FetchCharacter();
 
             if (targetCharacter == null)
             {
                 player.SendErrorNotification("Target not found!");
+                return;
+            }
+
+            if (player == targetPlayer)
+            {
+                player.SendErrorNotification("You can't do this!");
                 return;
             }
 

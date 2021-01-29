@@ -15,6 +15,12 @@ namespace Server.Property.Stores
         {
             Models.Character playerCharacter = player.FetchCharacter();
 
+            if (string.IsNullOrEmpty(playerCharacter.LicensesHeld))
+            {
+                player.SendErrorNotification("You don't have any licenses.");
+                return;
+            }
+
             List<LicenseTypes> playerLicenseTypes =
                 JsonConvert.DeserializeObject<List<LicenseTypes>>(playerCharacter.LicensesHeld);
 
@@ -108,7 +114,7 @@ namespace Server.Property.Stores
                     player.SendErrorNotification($"You don't have enough. You require {cost:C}.");
                     return;
                 }
-                
+
                 WeaponInfo newWeaponInfo = new WeaponInfo(0, true, player.GetClass().Name);
 
                 InventoryItem newItem = new InventoryItem("ITEM_WEAPON_PISTOL_MK2", $"{option}", JsonConvert.SerializeObject(newWeaponInfo));

@@ -566,7 +566,7 @@ namespace Server.Character
                 return;
             }
 
-            var onlinePlayers = Alt.GetAllPlayers();
+            var onlinePlayers = Alt.Server.GetPlayers();
 
             var onlineAdmins = new List<IPlayer>();
 
@@ -576,7 +576,7 @@ namespace Server.Character
 
                 if (account is null) continue;
 
-                if (account.AdminLevel < AdminLevel.Moderator) continue;
+                if (account.AdminLevel < AdminLevel.Administrator) continue;
 
                 onlineAdmins.Add(onlinePlayer);
             }
@@ -643,7 +643,7 @@ namespace Server.Character
 
                     if (adminAccount == null) continue;
 
-                    if (adminAccount.AdminLevel < AdminLevel.Moderator && !adminAccount.Developer) continue;
+                    if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
                     onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
                 }
@@ -730,7 +730,7 @@ namespace Server.Character
 
         #region Help Me System
 
-        [Command("helpers", commandType: CommandType.Character, description: "See onduty helpers!")]
+        [Command("testers", commandType: CommandType.Character, description: "See onduty testers!")]
         public static void CommandViewHelpers(IPlayer player)
         {
             if (player.FetchCharacter() == null)
@@ -739,15 +739,15 @@ namespace Server.Character
                 return;
             }
 
-            var onlineHelpers = Alt.GetAllPlayers().Where(x => x.HasSyncedMetaData(HelperCommands.HelperDutyData)).OrderByDescending(x => x.GetClass().UcpName);
+            var onlineHelpers = Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel == AdminLevel.Tester);
 
             if (!onlineHelpers.Any())
             {
-                player.SendErrorMessage("No on-duty helpers");
+                player.SendErrorMessage("No on-duty testers");
                 return;
             }
 
-            player.SendHelperMessage("____[On Duty Helpers]____");
+            player.SendHelperMessage("____[On Duty Testers]____");
 
             foreach (var onlineHelper in onlineHelpers)
             {
@@ -755,7 +755,7 @@ namespace Server.Character
             }
         }
 
-        [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Helper!")]
+        [Command("helpme", onlyOne: true, commandType: CommandType.Character, description: "Get help from a Tester!")]
         public static void CommandHelpMe(IPlayer player, string message = "")
         {
             if (player.FetchCharacter() == null)
@@ -795,11 +795,11 @@ namespace Server.Character
             {
                 foreach (IPlayer onlinePlayer in onlinePlayers)
                 {
-                    Models.Account playerAccount = onlinePlayer?.FetchAccount();
+                    Models.Account? playerAccount = onlinePlayer?.FetchAccount();
 
                     if (playerAccount == null) continue;
 
-                    if (!playerAccount.Tester) continue;
+                    if (playerAccount.AdminLevel < AdminLevel.Tester) continue;
 
                     onlinePlayer.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
                 }
@@ -814,7 +814,7 @@ namespace Server.Character
         {
             if (!player.IsSpawned()) return;
 
-            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
+            HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
 
             if (helpReport == null)
             {
@@ -853,7 +853,7 @@ namespace Server.Character
                 return;
             }
 
-            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == reportId);
+            HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == reportId);
 
             if (helpReport == null)
             {
@@ -1212,7 +1212,7 @@ namespace Server.Character
 
             int bankAccountCount = BankAccount.FindCharacterBankAccounts(playerCharacter).Count;
 
-            Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
+            Faction? activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
             List<AdminRecord> playerAdminRecords = AdminRecord.FetchAdminRecords(playerCharacter.OwnerId);
             int banCount = playerAdminRecords.Count(x => x.RecordType == AdminRecordType.Ban);
@@ -1227,11 +1227,11 @@ namespace Server.Character
             player.SendStatsMessage($"Active Number: {playerCharacter.ActivePhoneNumber}, Payday Account: {playerCharacter.PaydayAccount}, Bank Accounts: {bankAccountCount}");
             if (activeFaction != null)
             {
-                PlayerFaction activePlayerFaction = JsonConvert
+                PlayerFaction? activePlayerFaction = JsonConvert
                     .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                     .FirstOrDefault(x => x.Id == playerCharacter.ActiveFaction);
 
-                Rank playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
+                Rank? playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
                     .FirstOrDefault(x => x.Id == activePlayerFaction?.RankId);
 
                 player.SendStatsMessage($"Active Faction: {activeFaction.Name}, Rank: {playerRank?.Name}");
@@ -1321,11 +1321,23 @@ namespace Server.Character
                 return;
             }
 
+            List<IPlayer> playerList = Alt.Server.GetPlayers().ToList();
+
             bool tryParse = int.TryParse(args, out int playerId);
 
             if (tryParse)
             {
-                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().PlayerId == playerId);
+                IPlayer? targetPlayer = null;
+
+                foreach (IPlayer p in playerList)
+                {
+                    if (!p.IsSpawned()) continue;
+
+                    if (p.GetClass().PlayerId != playerId) continue;
+
+                    targetPlayer = p;
+                    break;
+                }
 
                 if (targetPlayer == null)
                 {
@@ -1337,8 +1349,16 @@ namespace Server.Character
                 return;
             }
 
-            List<IPlayer> targetList = Alt.Server.GetPlayers()
-                .Where(x => x.GetClass().Name.ToLower().Contains(args.ToLower())).ToList();
+            List<IPlayer> targetList = new List<IPlayer>();
+
+            foreach (IPlayer p in playerList)
+            {
+                if (!p.IsSpawned()) continue;
+
+                if (!p.GetClass().Name.ToLower().Contains(args.ToLower())) continue;
+
+                targetList.Add(p);
+            }
 
             if (!targetList.Any())
             {

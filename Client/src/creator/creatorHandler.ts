@@ -19,6 +19,8 @@ var localPlayer = alt.Player.local.scriptID;
 
 var orginalRotation = 90;
 
+var customCharacterString:string;
+
 var featureNames = ["Nose Width", "Nose Bottom Height", "Nose Tip Length", "Nose Bridge Depth", "Nose Tip Height",
     "Nose Broken", "Brow Height", "Brow Depth", "Cheekbone Height", "Cheekbone Width", "Cheek Depth",
     "Eye Size", "Lip Thickness", "Jaw Width", "Jaw Shape", "Chin Height", "Chin Depth", "Chin Width",
@@ -67,6 +69,8 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
     defaultCustomCharacter = JSON.parse(defaultCustomCharacterJson);
 
     customCharacter = JSON.parse(customCharacterJson);
+
+    customCharacterString = customCharacterJson;
 
     alt.log(customCharacter);
 
@@ -117,7 +121,7 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     creatorView.on('ParentSkinChange', onParentSkinChange);
 
-    creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -225.87692, -1199.0901, -148.92383, 0, 0, -90, 20, true, 2);
+    creatorCamera = native.createCamWithParams('DEFAULT_SCRIPTED_CAMERA', -225.87692, -1199.0901, -148.72383, 0, 0, -90, 20, true, 2);
 
     tickInterval = alt.setInterval(onTick, 0);
 
@@ -147,14 +151,17 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
 
     hairInfo = JSON.parse(customCharacter.Hair);
 
+    
     if (features.length < featureNames.length) {
         for (let index = 0; index < featureNames.length; index++) {
-            features[index] = 0.0;
+            if(features[index] === undefined){
+                features[index] = 0.0;
+            }
         }
     }
 
     if (appearanceItems.length === 0) {
-        for (let index = 0; index <= 11; index++) {
+        for (let index = 0; index <= appearanceItems.length; index++) {
             var newApperance
             {
                 const Value = -1;
@@ -169,6 +176,8 @@ function loadCharacterCreator(customCharacterJson: any, defaultCustomCharacterJs
     currentGender = customCharacter.Gender;
 
     ApplyCreatorOutfit();
+
+
 }
 
 //#region Parent
@@ -177,6 +186,11 @@ var parentOne = 0;
 var parentTwo = 0;
 var parentMix = 0.5;
 var skinMix = 0.5;
+var parentOneSkin = 0;
+var parentTwoSkin = 0;
+
+var currentHairColor = 0;
+var currentHairHighlightColor = 0;
 
 function onParentChange(parent: any, faceId: any) {
     alt.log('Parent Change: ' + parent + ", " + faceId);
@@ -213,8 +227,6 @@ function onParentChange(parent: any, faceId: any) {
     PedHeadBlendUpdate();
 }
 
-var parentOneSkin = 0;
-var parentTwoSkin = 0;
 
 function onParentSkinChange(parent: any, newParentSkin: any) {
     alt.log('Parent Skin Change: ' + parent + ", " + newParentSkin);
@@ -269,11 +281,14 @@ function facialFeatureUpdate(slot: any, value: any) {
 
 //#region Apperances
 
-function setFacialApperance(slot: any, appearance: any, opacity: any) {
+function setFacialApperance(slot: any, appearance: any, opacity: any, reduceOne:boolean = true) {
     localPlayer = alt.Player.local.scriptID;
     var convertedOpacity = Number(opacity) / 100;
 
-    var convertedAppearance = appearance - 1;
+    var convertedAppearance = appearance;
+    if(reduceOne){
+        convertedAppearance -= 1;
+    }
 
     if (convertedAppearance == -1) {
         convertedAppearance = 255;
@@ -322,8 +337,6 @@ function onHairChange(newHair: any) {
     }
 }
 
-var currentHairColor = 0;
-var currentHairHighlightColor = 0;
 
 function onHairColorChange(newHairColor: any) {
     currentHairColor = newHairColor;
@@ -732,10 +745,14 @@ function genderChange(newGender: any) {
 
 function creatorLoaded() {
     if (creatorView !== undefined) {
-        creatorView.emit('currentGender', customCharacter.Gender);
-        genderChange(customCharacter.Gender);
-        alt.log('Current Gender' + customCharacter.Gender);
-    }
+        alt.setTimeout(() => {
+            creatorView.emit('currentGender', customCharacter.Gender);
+            creatorView.emit('currentCharacter', customCharacterString);
+            genderChange(customCharacter.Gender);
+            alt.log('Current Gender' + customCharacter.Gender);
+        }, 1000);
+
+        }
 }
 
 function ApplyCreatorOutfit() {
@@ -766,6 +783,43 @@ function ApplyCreatorOutfit() {
         }
     },
         600);
+
+        
+        
+        parentOne = parentInfo.Mother;
+        parentTwo = parentInfo.Father;
+        parentMix = parentInfo.Similarity;
+        skinMix = parentInfo.SkinSimilarity;
+        parentOneSkin = parentInfo.MotherSkin;
+        parentTwoSkin = parentInfo.FatherSkin;
+        PedHeadBlendUpdate();
+
+        for (let index = 0; index < features.length; index++) {
+            const feature = features[index];
+            facialFeatureUpdate(index, feature);
+        }
+
+        for (let index = 0; index < appearanceItems.length; index++) {
+            const element = appearanceItems[index];
+            alt.log('Appearnce Item Client: ' + index + ': Value: ' + element.Value + ', Opacity: '+element.Opacity.toFixed(0))
+            setFacialApperance(index, element.Value, element.Opacity.toFixed(0), false);
+            
+        }
+
+        currentHairColor = hairInfo.Color;
+        currentHairHighlightColor = hairInfo.HighlightColor;
+        onHairChange(hairInfo.Hair);
+        onHairColorChange(hairInfo.Color);
+        onhairHighlightColorChange(hairInfo.HighlightColor);
+
+        onEyebrowColorChange(customCharacter.EyebrowColor);
+        onFacialHairColorChange(customCharacter.BeardColor);
+        onEyeColorChange(customCharacter.EyeColor);
+        onblushColorChange(customCharacter.BlushColor);
+        onlipstickColorChange(customCharacter.LipstickColor);
+        onchestHairColorChange(customCharacter.ChestHairColor);
+        onHairChange(hairInfo.Hair);
+        onHairChange(hairInfo.Hair);
 }
 
 function closeCharacterCreator() {

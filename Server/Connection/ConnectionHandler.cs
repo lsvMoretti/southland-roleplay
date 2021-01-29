@@ -127,7 +127,7 @@ namespace Server.Connection
                 }
 
 #if DEBUG
-                if (playerAccount.AdminLevel < AdminLevel.Moderator)
+                if (playerAccount.AdminLevel < AdminLevel.Tester)
                 {
                     if (!playerAccount.Tester)
                     {
@@ -241,7 +241,7 @@ namespace Server.Connection
                 }
 
 #if DEBUG
-                if (playerAccount.AdminLevel < AdminLevel.Moderator)
+                if (playerAccount.AdminLevel < AdminLevel.Tester)
                 {
                     if (!playerAccount.Tester)
                     {

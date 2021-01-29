@@ -153,25 +153,17 @@ namespace Server.Motel
 
         public static bool ToggleNearestRoomLock(IPlayer player, bool isAdmin = false)
         {
-            MotelRoom nearRoom = FetchNearestMotelRoom(player.Position);
+            Models.Character? playerCharacter = player.FetchCharacter();
 
-            if (nearRoom == null) return false;
-
-            Models.Character playerCharacter = player.FetchCharacter();
-
-            if (nearRoom.OwnerId != playerCharacter.Id)
-            {
-                player.SendErrorNotification("You don't rent this room!");
-                return true;
-            }
+            if (playerCharacter == null) return false;
 
             using Context context = new Context();
 
-            var motel = context.Motels.Find(nearRoom.MotelId);
+            Models.Motel? motel = null;
 
-            if (motel == null)
+            if (playerCharacter.InMotel > 0)
             {
-                motel = context.Motels.Find(playerCharacter.InMotel);
+                motel = context.Motels.FirstOrDefault(x => x.Id == playerCharacter.InMotel);
 
                 if (motel == null)
                 {
@@ -181,7 +173,7 @@ namespace Server.Motel
 
                 List<MotelRoom> insideMotelRooms = JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
 
-                MotelRoom insideRoom = insideMotelRooms.FirstOrDefault(x => x.Id == playerCharacter.InMotelRoom);
+                MotelRoom? insideRoom = insideMotelRooms.FirstOrDefault(x => x.Id == playerCharacter.InMotelRoom);
 
                 if (insideRoom == null)
                 {
@@ -207,9 +199,27 @@ namespace Server.Motel
                 return true;
             }
 
+            MotelRoom? nearRoom = FetchNearestMotelRoom(player.Position);
+
+            if (nearRoom == null) return false;
+
+            if (nearRoom.OwnerId != playerCharacter.Id)
+            {
+                player.SendErrorNotification("You don't rent this room!");
+                return true;
+            }
+
+            motel = context.Motels.FirstOrDefault(x => x.Id == nearRoom.MotelId);
+
             List<MotelRoom> motelRooms = JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
 
-            MotelRoom room = motelRooms.FirstOrDefault(x => x.Id == nearRoom.Id);
+            MotelRoom? room = motelRooms.FirstOrDefault(x => x.Id == nearRoom.Id);
+
+            if (room == null)
+            {
+                player.SendErrorNotification("Unable to find the motel room.");
+                return false;
+            }
 
             room.Locked = !room.Locked;
 

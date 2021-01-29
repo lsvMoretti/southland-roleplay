@@ -42,7 +42,7 @@ alt.setInterval(() => {
     let currentAmmo: number = native.getAmmoInPedWeapon(alt.Player.local.scriptID, currentWeapon[1]);
 
     alt.emitServer('CurrentWeaponAmmo', currentAmmo);
-}, 1000);
+}, 50);
 
 alt.onServer('WeaponSwitchAnim', (type: number) => {
     const ped: number = alt.Player.local.scriptID;
