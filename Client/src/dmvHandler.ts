@@ -9,9 +9,11 @@ var currentPosition = -1;
 var marker:any = undefined;
 var speedCount = 0;
 var dmvVehicle:alt.Vehicle = undefined;
+let drivingEnabled:boolean = false;
 
 function startDrivingTest(vehicle:alt.Vehicle, checkpointJson:string) {
     dmvVehicle = vehicle;
+    drivingEnabled = true;
     checkpointList = JSON.parse(checkpointJson);
     alt.log(checkpointJson);
     currentPosition = 0;
@@ -20,7 +22,11 @@ function startDrivingTest(vehicle:alt.Vehicle, checkpointJson:string) {
 }
 
 alt.everyTick(() => {
-    updatePosition();
+    if(!drivingEnabled) return;
+
+    if(alt.Player.local.vehicle === dmvVehicle){
+        updatePosition();
+    }
 
     if (marker !== undefined) {
         marker.draw();
@@ -28,6 +34,7 @@ alt.everyTick(() => {
 });
 
 alt.setInterval(() => {
+    if(!drivingEnabled) return;
     if (marker === undefined) return;
 
     if (alt.Player.local.vehicle !== null) {
@@ -48,6 +55,7 @@ alt.setInterval(() => {
                 speedCount = 0;
                 alt.log('Speeding');
                 alt.emitServer('dmv:finishedDriving', 0);
+                drivingEnabled = false;
                 return;
             }
 
@@ -65,12 +73,9 @@ function updatePosition() {
 
     let playerDist = extensions.Distance(playerPos, marker.pos);
 
+    if(alt.Player.local.vehicle === undefined) return;
+
     if (playerDist < 5) {
-        if(alt.Player.local.vehicle === undefined) return;
-        if(alt.Player.local.vehicle !== dmvVehicle) {
-            alt.emitServer('dmv:finishedDriving', 0);
-            return;
-        }
 
         currentPosition++;
         if (currentPosition === 26) {
@@ -78,6 +83,7 @@ function updatePosition() {
             speedCount = 0;
             alt.log('Reached end of DMV test');
             alt.emitServer('dmv:finishedDriving', 1);
+            drivingEnabled = false;
             return;
         }
         marker = new DmvMarker(currentPosition);
