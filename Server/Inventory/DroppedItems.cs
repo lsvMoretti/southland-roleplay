@@ -17,7 +17,6 @@ namespace Server.Inventory
         public static void LoadDroppedItemsForPlayer(IPlayer player)
         {
             if (!droppedGameItems.Any()) return;
-
         }
 
         public static void CreateDroppedItem(InventoryItem item, Position position)
@@ -37,7 +36,7 @@ namespace Server.Inventory
             droppedGameItems.Add(newDroppedItem);
         }
 
-        public static DroppedItem FetchNearestDroppedItem(Position position, float range)
+        public static DroppedItem? FetchNearestDroppedItem(Position position, float range)
         {
             return droppedGameItems.FirstOrDefault(x => x.Position.Distance(position) <= range);
         }
