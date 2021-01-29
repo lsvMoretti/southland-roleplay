@@ -83,7 +83,7 @@ namespace Server.Jobs.Delivery
             return ordered.Any() ? ordered.FirstOrDefault() : null;
         }
 
-        public static Warehouse FetchWarehouse(int id)
+        public static Warehouse? FetchWarehouse(int id)
         {
             using Context context = new Context();
 

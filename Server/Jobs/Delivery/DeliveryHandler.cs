@@ -85,14 +85,13 @@ namespace Server.Jobs.Delivery
             return new Position(deliveryPoint.PosX, deliveryPoint.PosY, deliveryPoint.PosZ);
         }
 
-        public static DeliveryPoint FetchNearestPoint(Position position, float range = 5f)
+        public static DeliveryPoint? FetchNearestPoint(Position position, float range = 5f)
         {
             using Context context = new Context();
 
             List<DeliveryPoint> deliveryPoints =
                 context.DeliveryPoint.ToList();
 
-            
             List<DeliveryPoint> inRangeList = new List<DeliveryPoint>();
 
             foreach (DeliveryPoint deliveryPoint in deliveryPoints)

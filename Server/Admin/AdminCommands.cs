@@ -3895,7 +3895,7 @@ namespace Server.Admin
             context.SaveChanges();
         }
 
-        [Command("vehicle", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
+        [Command("vehicle", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
         public static void VehicleTest(IPlayer player, string model = "")
         {
             if (model == "")
