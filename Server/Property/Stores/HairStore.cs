@@ -26,7 +26,7 @@ namespace Server.Property.Stores
             "Long Slicked", "Hipster Youth", "Mullet", "Classic Cornrows", "Palm Cornrows", "Lightning Cornrows",
             "Whipped Cornrows", "Zig Zag Cornrows", "Snail Cornrows", "Hightop", "Loose Swept Back",
             "Undercut Swept Back", "Undercut Swept Side", "Spiked Mohawk", "Mod", "Layered Mod", "Flattop",
-            "Military Buzzcut"
+            "Military Buzzcut", "Elvis", "Braids", "Taper", "Dreads", "Geezy", "Wave Fade"
         };
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Server.Property.Stores
         private static int[] _maleHairIntList = new int[]
         {
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29,
-            30, 31, 32, 33, 34, 35, 36, 72, 73
+            30, 31, 32, 33, 34, 35, 36, 72, 73, 74, 81, 76, 77, 79, 80
         };
 
         /// <summary>
@@ -52,7 +52,8 @@ namespace Server.Property.Stores
             "Loose Bun", "Looped Pigtails Bangs", "Medium one shoulder", "Long Mermaid Bangs", "Dreaded High Pony", "Medium Right Waves", "High Bun bangs",
             "Short Afro", "Short Curly Bands", "Thick Right Braid", "Long Left Deep Part", "Short Volume Bob", "Top Bun Wispy Bangs", "Long Straight Middle Part",
             "Long Straight Middle Part Bangs", "Medium Waves Middle Part", "High Pony Bangs", "High Pony Highlights", "Short Wide Right Part", "Long Super Straight",
-            "Up do Sweep Across", "Long back layers", "Dreaded Bob", "Long back Highlights", "Left Braid", "Tight Bun Side Swept", "Cute Pixie"
+            "Up do Sweep Across", "Long back layers", "Dreaded Bob", "Long back Highlights", "Left Braid", "Tight Bun Side Swept", "Cute Pixie", "Box Braids", "Box Dreads", "Hair Bun", "Cornrows", "Double Braided Ponytail",
+            "Double Bun", "Dreads Ponytail", "Half Braided Curly", "Long Braid", "Long Hair", "Long Ponytail", "Low Ponytail", "Pig Tails", "Short Curly Hair", "Short Ponytail", "Straight Bob"
         };
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Server.Property.Stores
         {
             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 26, 27, 28, 29, 30, 31,
             32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
-            61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77
+            61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94
         };
 
         private static string[] _facialHair = new string[] {"None", "Light Stubble", "Balbo", "Circle Beard", "Goatee", "Chin", "Chin Fuzz",
