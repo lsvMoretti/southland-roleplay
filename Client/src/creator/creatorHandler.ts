@@ -745,10 +745,12 @@ function genderChange(newGender: any) {
 
 function creatorLoaded() {
     if (creatorView !== undefined) {
-        creatorView.emit('currentGender', customCharacter.Gender);
-        creatorView.emit('currentCharacter', customCharacterString);
-        genderChange(customCharacter.Gender);
-        alt.log('Current Gender' + customCharacter.Gender);
+        alt.setTimeout(() => {
+            creatorView.emit('currentGender', customCharacter.Gender);
+            creatorView.emit('currentCharacter', customCharacterString);
+            genderChange(customCharacter.Gender);
+            alt.log('Current Gender' + customCharacter.Gender);
+        }, 1000);
 
         }
 }
