@@ -281,11 +281,11 @@ namespace Server.Admin
             targetPlayer.Position = PoliceHandler.JailLocation;
             targetPlayer.Dimension = targetPlayer.GetPlayerId();
 
-            targetPlayer.SendAdminMessage($"You have been admin jailed by {adminUsername} for {time:##'Minutes'}.");
+            targetPlayer.SendAdminMessage($"You have been admin jailed by {adminUsername} for {time:##' Minutes'}.");
 
-            player.SendAdminMessage($"You have admin jailed {targetAccount.Username} for {time:##'Minutes'}.");
+            player.SendAdminMessage($"You have admin jailed {targetAccount.Username} for {time:##' Minutes'}.");
 
-            Logging.AddToAdminLog(player, $"has admin jailed {targetAccount.Username} for {time:##'Minutes'}.");
+            Logging.AddToAdminLog(player, $"has admin jailed {targetAccount.Username} for {time:##' Minutes'}.");
         }
 
         [Command("pveh", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Character: Shows a list of player vehicles")]
