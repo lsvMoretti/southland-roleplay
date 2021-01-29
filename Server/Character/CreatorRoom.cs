@@ -398,8 +398,26 @@ namespace Server.Character
 
                         player.GetClass().CompletedTutorial = true;
                     }
+                    else
+                    {
+                        using Context context = new Context();
+
+                        Models.Character pCharacter = context.Character.Find(playerCharacter.Id);
+
+                        pCharacter.StartStage = 2;
+                        pCharacter.PosX = TutorialHandler.StrawberrySpawnPosition.X;
+                        pCharacter.PosY = TutorialHandler.StrawberrySpawnPosition.Y;
+                        pCharacter.PosZ = TutorialHandler.StrawberrySpawnPosition.Z;
+
+                        pCharacter.Dimension = 0;
+                        context.SaveChanges();
+
+                        LeaveCreatorRoom(player);
+
+                        player.GetClass().CompletedTutorial = true;
+                    }
                     // Send to Tutorial
-                    TutorialHandler.StartTutorial(player);
+                    //TutorialHandler.StartTutorial(player);
                     return;
                 }
 
