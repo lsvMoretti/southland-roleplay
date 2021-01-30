@@ -93,6 +93,16 @@ namespace Server.Character
 
             playerCharacter.Sex = customCharacter.Gender;
 
+#if DEBUG
+            List<ApperanceInfo> apperanceInfo =
+                JsonConvert.DeserializeObject<List<ApperanceInfo>>(customCharacter.Appearance);
+
+            foreach (ApperanceInfo info in apperanceInfo)
+            {
+                Console.WriteLine($"Index: {apperanceInfo.IndexOf(info)}, Value: {info.Value}, Opacity: {info.Opacity}");
+            }
+#endif
+
             player.Emit("loadCustomPlayer", playerCharacter.CustomCharacter, playerCharacter.ClothesJson, playerCharacter.AccessoryJson);
 
             List<ClothesData> clothingData =

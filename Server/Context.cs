@@ -70,7 +70,7 @@ namespace Server
         {
 #if DEBUG
 
-            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDb};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};Convert Zero Datetime=true", new MySqlServerVersion(new Version(8, 0, 22)));
+            optionsBuilder.UseMySql($"server=localhost;database={Release.Default.MySqlDebug};user={Release.Default.MySqlUser};password={Release.Default.MySqlPass};Convert Zero Datetime=true", new MySqlServerVersion(new Version(8, 0, 22)));
 
 #endif
 
