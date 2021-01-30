@@ -129,7 +129,7 @@ namespace Server.Groups.Fire
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {

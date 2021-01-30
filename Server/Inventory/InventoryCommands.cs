@@ -1269,7 +1269,7 @@ namespace Server.Inventory
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -1360,7 +1360,7 @@ namespace Server.Inventory
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
             if (targetPlayer == null)
             {
@@ -1416,7 +1416,7 @@ namespace Server.Inventory
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
             if (targetPlayer == null)
             {

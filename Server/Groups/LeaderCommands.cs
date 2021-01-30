@@ -234,7 +234,7 @@ namespace Server.Groups
                 }
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -310,7 +310,7 @@ namespace Server.Groups
                 }
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -426,7 +426,7 @@ namespace Server.Groups
                 }
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -492,7 +492,7 @@ namespace Server.Groups
                 return;
             }
 
-            IPlayer targetPlayer =
+            IPlayer? targetPlayer =
                 Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
 
             if (targetPlayer == null)

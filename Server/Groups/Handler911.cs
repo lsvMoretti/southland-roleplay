@@ -57,7 +57,7 @@ namespace Server.Groups
 
                 IEnumerable<IPlayer> players = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null);
 
-                foreach (IPlayer targetPlayer in players)
+                foreach (IPlayer? targetPlayer in players)
                 {
                     if (!targetPlayer.FetchCharacter().FactionDuty) continue;
 
@@ -148,7 +148,7 @@ namespace Server.Groups
 
                 IEnumerable<IPlayer> players = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null);
 
-                foreach (IPlayer targetPlayer in players)
+                foreach (IPlayer? targetPlayer in players)
                 {
                     List<PlayerFaction> playerFactions =
                         JsonConvert.DeserializeObject<List<PlayerFaction>>(targetPlayer.FetchCharacter().FactionList);

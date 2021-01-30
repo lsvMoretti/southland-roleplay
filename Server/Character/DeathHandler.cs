@@ -202,7 +202,7 @@ namespace Server.Character
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(idorName);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(idorName);
 
             if (targetPlayer == null)
             {

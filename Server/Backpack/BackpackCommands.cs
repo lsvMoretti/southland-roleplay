@@ -603,7 +603,7 @@ namespace Server.Backpack
 
             player.GetData("Backpack:GiveItemToPlayer", out int targetId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
             if (targetPlayer == null)
             {

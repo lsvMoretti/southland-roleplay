@@ -190,7 +190,7 @@ namespace Server.Jobs.Taxi
 
             CallHandler.TaxiCalls.Remove(selectedCall);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == selectedCall.CallerId);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == selectedCall.CallerId);
 
             if (targetPlayer == null)
             {
@@ -250,7 +250,7 @@ namespace Server.Jobs.Taxi
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {

@@ -194,7 +194,7 @@ function setCustomCharacter(ped: number, customCharacterJson: string, clothesJso
             element.Value = 255;
         }
 
-        if (element.Value > 0) {
+        if (element.Value >= 0) {
             native.setPedHeadOverlay(ped, index, element.Value, element.Opacity);
             if (index == 1) {
                 native.setPedHeadOverlayColor(ped, index, 1, customCharacter.BeardColor, customCharacter.BeardColor);

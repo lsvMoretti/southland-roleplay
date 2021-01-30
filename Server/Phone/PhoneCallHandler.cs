@@ -166,7 +166,7 @@ namespace Server.Phone
             };
         }
 
-        public static void PickupCall(IPlayer caller, Phones callerPhone, IPlayer targetPlayer, Phones targetPhone)
+        public static void PickupCall(IPlayer caller, Phones callerPhone, IPlayer? targetPlayer, Phones targetPhone)
         {
             caller.SendPhoneMessage($"They have picked up.");
             caller.SetData("ONPHONEWITH", targetPlayer.GetPlayerId());

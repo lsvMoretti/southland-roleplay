@@ -48,7 +48,7 @@ namespace Server.Character
         {
             if (target.Type == BaseObjectType.Player)
             {
-                IPlayer targetPlayer = (IPlayer)target;
+                IPlayer? targetPlayer = (IPlayer)target;
 
                 if (targetPlayer.GetClass().AdminDuty)
                 {

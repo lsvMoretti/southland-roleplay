@@ -66,7 +66,7 @@ namespace Server.Developer
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
             if (targetPlayer == null)
             {
                 player.SendNotification("~r~Unable to find player");
