@@ -151,7 +151,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -187,7 +187,7 @@ namespace Server.Admin
 
             player.GetData("Admin:SendTo:Player", out int playerId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == playerId);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == playerId);
 
             if (targetPlayer == null)
             {
@@ -232,7 +232,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(argSplit[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(argSplit[0]);
 
             if (targetPlayer == null)
             {
@@ -297,7 +297,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
 
             if (targetPlayer == null)
             {
@@ -432,7 +432,7 @@ namespace Server.Admin
 
             bool tryParse = int.TryParse(idorname, out int id);
 
-            IPlayer targetPlayer = null;
+            IPlayer? targetPlayer = null;
 
             if (!tryParse)
             {
@@ -472,7 +472,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
 
             if (targetPlayer == null)
             {
@@ -505,9 +505,9 @@ namespace Server.Admin
                 return;
             }
 
-            foreach (IPlayer targetPlayer in Alt.Server.GetPlayers())
+            foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers())
             {
-                targetPlayer.SendAdminBroadcastMessage(message);
+                targetPlayer?.SendAdminBroadcastMessage(message);
             }
 
             Logging.AddToAdminLog(player, $"has broadcasted: {message}");
@@ -522,7 +522,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(idorname);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(idorname);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -565,7 +565,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(idorname);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(idorname);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -1341,7 +1341,7 @@ namespace Server.Admin
             player.SendInfoNotification(
                 $"You've removed {playerCharacter.Name} from {Faction.FetchFaction(selectedPlayerFaction.Id).Name}.");
 
-            IPlayer targetPlayer =
+            IPlayer? targetPlayer =
                 Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == playerCharacter.Id);
 
             targetPlayer?.SendInfoNotification(
@@ -1417,7 +1417,7 @@ namespace Server.Admin
             player.SendInfoNotification(
                 $"You have set {playerCharacter.Name}'s rank to {selectedRank.Name} in {selectedFaction.Name}.");
 
-            IPlayer targetPlayer =
+            IPlayer? targetPlayer =
                 Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == playerCharacter.Id);
 
             targetPlayer?.SendInfoNotification(
@@ -1448,7 +1448,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -1571,7 +1571,7 @@ namespace Server.Admin
             player.SendInfoNotification(
                 $"You've added {targetCharacter.Name} to the {selectedFaction.Name} faction with the rank of {selectedRank.Name}.");
 
-            IPlayer targetPlayer =
+            IPlayer? targetPlayer =
                 Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
 
             targetPlayer?.SendInfoNotification(
@@ -1665,7 +1665,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -1742,7 +1742,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == adminReport.Player);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == adminReport.Player);
 
             if (targetPlayer == null)
             {
@@ -1775,7 +1775,7 @@ namespace Server.Admin
                 foreach (IPlayer onlineAdmin in onlineAdmins)
                 {
                     onlineAdmin.SendAdminMessage(
-                        $"Admin {player.FetchAccount().Username} has accepted report Id: {adminReport.Id}.");
+                        $"Admin {player.FetchAccount()?.Username} has accepted report Id: {adminReport.Id}.");
                 }
             }
 
@@ -1805,7 +1805,7 @@ namespace Server.Admin
                 return;
             }
 
-            AdminReport adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Id == id);
+            AdminReport? adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Id == id);
 
             if (adminReport == null)
             {
@@ -1813,7 +1813,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == adminReport.Player);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == adminReport.Player);
 
             if (targetPlayer == null)
             {
@@ -1866,7 +1866,7 @@ namespace Server.Admin
 
             string[] argsSplit = args.Split(' ');
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -1926,7 +1926,7 @@ namespace Server.Admin
 
             string[] argsSplit = args.Split(' ');
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
 
             if (targetPlayer?.FetchAccount() == null)
             {
@@ -2041,7 +2041,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
 
             if (targetPlayer == null)
             {
@@ -2079,7 +2079,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(argsSplit[0]);
 
             if (targetPlayer == null)
             {
@@ -2668,7 +2668,7 @@ namespace Server.Admin
 
                 context.SaveChanges();
 
-                foreach (IPlayer targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
+                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
                 {
                     targetPlayer.LoadInteriorProp(args);
                 }
@@ -2702,7 +2702,7 @@ namespace Server.Admin
                 property.PropList = JsonConvert.SerializeObject(propList);
                 context.SaveChanges();
 
-                foreach (IPlayer targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
+                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
                 {
                     targetPlayer.LoadInteriorProp(args);
                 }
@@ -2770,7 +2770,7 @@ namespace Server.Admin
 
                 player.SendInfoNotification($"You've removed {args} from Apartment {apartment.Name}");
 
-                foreach (IPlayer targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
+                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
                 {
                     targetPlayer.UnloadInteriorProp(args);
                 }
@@ -2806,7 +2806,7 @@ namespace Server.Admin
 
                 player.SendInfoNotification($"You've removed {args} from property {property.Address}.");
 
-                foreach (IPlayer targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
+                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
                 {
                     targetPlayer.UnloadInteriorProp(args);
                 }
@@ -3017,7 +3017,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -3085,7 +3085,7 @@ namespace Server.Admin
 
             player.GetData("admin:weapon:giveWeaponTo", out string targetName);
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(targetName);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(targetName);
 
             if (targetPlayer == null)
             {
@@ -3157,7 +3157,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(split[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(split[0]);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -3198,7 +3198,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null)
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null)
                 .FirstOrDefault(x => x.GetPlayerId() == targetPlayerId);
 
             if (targetPlayer == null)
@@ -3231,7 +3231,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(nameorid);
 
             if (targetPlayer == null)
             {
@@ -4067,7 +4067,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -4221,7 +4221,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -4292,7 +4292,7 @@ namespace Server.Admin
         {
             player.GetData("admin:CurrentlySpectating", out int targetId);
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(targetId.ToString());
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(targetId.ToString());
 
             if (targetPlayer == null) return;
             player.Position = targetPlayer.Position - new Position(0, 0, 2);
@@ -4912,7 +4912,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = null;
+            IPlayer? targetPlayer = null;
 
             foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.GetClass().Name.ToLower().Contains("mask")))
             {
@@ -4946,7 +4946,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -5004,7 +5004,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(string.Join(' ', splitString.Skip(1)));
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(string.Join(' ', splitString.Skip(1)));
 
             if (targetPlayer == null)
             {
@@ -5037,7 +5037,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (!targetPlayer.IsSpawned())
             {
@@ -5103,7 +5103,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {
@@ -5153,7 +5153,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5260,7 +5260,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5307,7 +5307,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5375,7 +5375,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5421,7 +5421,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5481,7 +5481,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -6736,7 +6736,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null)
             {

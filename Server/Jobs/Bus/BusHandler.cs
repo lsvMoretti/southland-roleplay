@@ -73,7 +73,7 @@ namespace Server.Jobs.Bus
 
                             vehicle.Remove();
 
-                            IPlayer targetPlayer = Alt.Server.GetPlayers()
+                            IPlayer? targetPlayer = Alt.Server.GetPlayers()
                                 .FirstOrDefault(x => x.GetClass().CharacterId == keyValuePair.Key);
 
                             if (targetPlayer == null) continue;

@@ -301,7 +301,7 @@ namespace Server.Chat
                     return;
                 }
 
-                IPlayer targetPlayer = Utility.FindPlayerByNameOrId(split[0]);
+                IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(split[0]);
 
                 if (targetPlayer == null)
                 {
@@ -351,7 +351,7 @@ namespace Server.Chat
                     return;
                 }
 
-                IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
                 if (targetPlayer?.FetchCharacter() == null)
                 {
@@ -409,7 +409,7 @@ namespace Server.Chat
             string playerRank = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson)
                 .FirstOrDefault(x => x.Id == playerFaction.RankId).Name;
 
-            foreach (IPlayer targetPlayer in targetPlayers)
+            foreach (IPlayer? targetPlayer in targetPlayers)
             {
                 List<PlayerFaction> targetFactions =
                     JsonConvert.DeserializeObject<List<PlayerFaction>>(targetPlayer.FetchCharacter().FactionList);

@@ -454,7 +454,7 @@ namespace Server.Groups.Police
 
             string[] splitParams = args.Split(' ');
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(splitParams[0]);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(splitParams[0]);
 
             if (targetPlayer == null)
             {
@@ -840,7 +840,7 @@ namespace Server.Groups.Police
                 return;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (player == targetPlayer) return;
 

@@ -1315,7 +1315,7 @@ namespace Server.Property
         {
             if (option == "Close") return;
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().Name == option);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().Name == option);
 
             if (targetPlayer == null)
             {
@@ -1356,7 +1356,7 @@ namespace Server.Property
             NativeUi.ShowNativeMenu(targetPlayer, menu, true);
         }
 
-        public static void PropertySellOfferToPlayer(IPlayer targetPlayer, string option)
+        public static void PropertySellOfferToPlayer(IPlayer? targetPlayer, string option)
         {
             if (option == "Close" || option == "No")
             {

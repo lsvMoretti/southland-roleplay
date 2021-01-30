@@ -66,7 +66,7 @@ namespace Server.Jobs.Taxi
             player.SetData("ONPHONEWITH", 0);
             player.SetData("PHONERINGING", false);
 
-            foreach (IPlayer targetPlayer in Alt.Server.GetPlayers())
+            foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers())
             {
                 bool hasData = targetPlayer.GetData("taxi:onDuty", out bool onDuty);
 

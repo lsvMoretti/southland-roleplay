@@ -44,7 +44,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == helpReport.Player);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == helpReport.Player);
 
             if (targetPlayer == null)
             {
@@ -118,7 +118,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == helpReport.Player);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == helpReport.Player);
 
             if (targetPlayer == null)
             {

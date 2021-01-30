@@ -433,7 +433,7 @@ namespace Server.Phone
 
             // On an active call
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
 
             if (targetPlayer != null)
             {
@@ -505,7 +505,7 @@ namespace Server.Phone
                 return;
             }
 
-            IPlayer targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
+            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
 
             if (targetPlayer == null)
             {
