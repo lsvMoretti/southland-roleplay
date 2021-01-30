@@ -46,6 +46,10 @@ alt.setInterval(() => {
     }
 }, 500);
 
+export function toggleHud(enabled: boolean) {
+    allowHud = enabled;
+}
+
 function ShowHud() {
     if (hudWebView !== undefined) {
         HideHud();

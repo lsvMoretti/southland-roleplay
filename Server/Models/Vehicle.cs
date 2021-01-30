@@ -285,7 +285,7 @@ namespace Server.Models
             return context.Vehicle.Where(i => i.GarageId == garageId).ToList();
         }
 
-        public static async void UpdateVehicle(IVehicle vehicle, bool despawn = false, string? garage = null, bool updatePos = true)
+        public static void UpdateVehicle(IVehicle vehicle, bool despawn = false, string? garage = null, bool updatePos = true)
         {
             if (vehicle.FetchVehicleData() == null) return;
 
@@ -360,7 +360,7 @@ namespace Server.Models
 
             if (despawn)
             {
-                await AltAsync.Do(() => { Alt.RemoveVehicle(vehicle); });
+                Alt.Server.RemoveVehicle(vehicle);
             }
         }
     }

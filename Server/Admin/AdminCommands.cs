@@ -2101,7 +2101,7 @@ namespace Server.Admin
 
         #endregion Health and Armor
 
-        [Command("deletecharacter", AdminLevel.Management, true, commandType: CommandType.Admin, description: "Character: Deletes a character")]
+        [Command("deletecharacter", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Character: Deletes a character")]
         public static void AdminCommandDeleteCharacter(IPlayer player, string args = "")
         {
             if (args == "")
@@ -6348,17 +6348,6 @@ namespace Server.Admin
                 player.GetClass().Name = player.FetchCharacter().Name;
                 player.Emit("EnabledAdminDuty", false);
                 player.LoadCharacterCustomization();
-                bool hasOldId = player.GetData("OldAdminId", out int playerId);
-
-                if (hasOldId)
-                {
-                    player.SetPlayerId(playerId);
-                }
-                else
-                {
-                    player.SetPlayerId(CreatorRoom.NextId);
-                    CreatorRoom.NextId++;
-                }
             }
             else
             {
@@ -6380,8 +6369,6 @@ namespace Server.Admin
                 player.Model = (uint)AdminHandler.AdminModels[index];
 
                 player.SetData("OldAdminId", player.GetPlayerId());
-
-                player.SetPlayerId(0);
             }
         }
 

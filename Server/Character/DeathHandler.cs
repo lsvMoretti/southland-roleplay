@@ -181,6 +181,8 @@ namespace Server.Character
         {
             Faction playerFaction = Faction.FetchFaction(player.FetchCharacter().ActiveFaction);
 
+            bool admin = false;
+
             if (playerFaction == null || playerFaction.SubFactionType != SubFactionTypes.Medical)
             {
                 if (player.FetchAccount().AdminLevel < AdminLevel.Tester)
@@ -207,6 +209,12 @@ namespace Server.Character
             if (targetPlayer == null)
             {
                 player.SendErrorNotification("Player not found.");
+                return;
+            }
+
+            if (targetPlayer == player && player.FetchAccount().AdminLevel < AdminLevel.Tester)
+            {
+                player.SendErrorNotification("Unable to do this!");
                 return;
             }
 

@@ -106,7 +106,6 @@ namespace Server.Groups.Fire
         [Command("heal", onlyOne: true, commandType: CommandType.Faction, description: "FD: Used to heal a player")]
         public static void FireCommandHealPlayer(IPlayer player, string args = "")
         {
-            
             if (!player.IsSpawned()) return;
 
             Models.Character playerCharacter = player.FetchCharacter();
@@ -134,6 +133,12 @@ namespace Server.Groups.Fire
             if (targetPlayer == null)
             {
                 player.SendErrorNotification("Target not found.");
+                return;
+            }
+
+            if (targetPlayer == player)
+            {
+                player.SendErrorNotification("Unable to do this!");
                 return;
             }
 
