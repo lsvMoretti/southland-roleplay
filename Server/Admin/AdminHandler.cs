@@ -38,7 +38,7 @@ namespace Server.Admin
 
             HelpReports.Remove(helpReport);
 
-            var onlineHelpers = Alt.Server.GetPlayers()
+            var onlineHelpers = Alt.GetAllPlayers()
                 .Where(x => x.FetchAccount()?.AdminLevel > AdminLevel.Tester).ToList();
 
             if (!onlineHelpers.Any()) return;
@@ -102,7 +102,7 @@ namespace Server.Admin
 
             AdminReportObjects.Remove(reportObject);
 
-            var onlineAdmins = Alt.Server.GetPlayers()
+            var onlineAdmins = Alt.GetAllPlayers()
                 .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
 
             if (!onlineAdmins.Any()) return;

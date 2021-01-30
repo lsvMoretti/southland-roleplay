@@ -236,7 +236,7 @@ namespace Server.Admin
 
             player.GetData("Admin:SendTo:Player", out int playerId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == playerId);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == playerId);
 
             if (targetPlayer == null)
             {
@@ -485,7 +485,7 @@ namespace Server.Admin
 
             if (!tryParse)
             {
-                targetPlayer = Alt.Server.GetPlayers()
+                targetPlayer = Alt.GetAllPlayers()
                     .FirstOrDefault(x => x.GetClass().Name.ToLower().Contains(idorname.ToLower()));
 
                 if (targetPlayer == null)
@@ -496,7 +496,7 @@ namespace Server.Admin
             }
             else
             {
-                targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == id);
+                targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == id);
 
                 if (targetPlayer == null)
                 {
@@ -554,7 +554,7 @@ namespace Server.Admin
                 return;
             }
 
-            foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers())
+            foreach (IPlayer? targetPlayer in Alt.GetAllPlayers())
             {
                 targetPlayer?.SendAdminBroadcastMessage(message);
             }
@@ -1391,7 +1391,7 @@ namespace Server.Admin
                 $"You've removed {playerCharacter.Name} from {Faction.FetchFaction(selectedPlayerFaction.Id).Name}.");
 
             IPlayer? targetPlayer =
-                Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == playerCharacter.Id);
+                Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == playerCharacter.Id);
 
             targetPlayer?.SendInfoNotification(
                 $"You've been removed from {Faction.FetchFaction(selectedPlayerFaction.Id).Name}.");
@@ -1467,7 +1467,7 @@ namespace Server.Admin
                 $"You have set {playerCharacter.Name}'s rank to {selectedRank.Name} in {selectedFaction.Name}.");
 
             IPlayer? targetPlayer =
-                Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == playerCharacter.Id);
+                Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == playerCharacter.Id);
 
             targetPlayer?.SendInfoNotification(
                 $"Your rank in {selectedFaction.Name} has been updated to {selectedRank.Name}.");
@@ -1621,7 +1621,7 @@ namespace Server.Admin
                 $"You've added {targetCharacter.Name} to the {selectedFaction.Name} faction with the rank of {selectedRank.Name}.");
 
             IPlayer? targetPlayer =
-                Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
+                Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
 
             targetPlayer?.SendInfoNotification(
                 $"You've been added to the {selectedFaction.Name} faction with the rank of {selectedRank.Name}.");
@@ -1791,7 +1791,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == adminReport.Player);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x == adminReport.Player);
 
             if (targetPlayer == null)
             {
@@ -1816,7 +1816,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have accepted report Id {adminReport.Id}. Message: {adminReport.Message}.");
             player.SendInfoNotification($"Player TP Id: {targetPlayer.GetPlayerId()}");
 
-            var onlineAdmins = Alt.Server.GetPlayers()
+            var onlineAdmins = Alt.GetAllPlayers()
                 .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
 
             if (onlineAdmins.Any())
@@ -1862,7 +1862,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == adminReport.Player);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x == adminReport.Player);
 
             if (targetPlayer == null)
             {
@@ -1884,7 +1884,7 @@ namespace Server.Admin
 
             player.SendInfoNotification($"You have declined report Id: {adminReport.Id}.");
 
-            foreach (IPlayer onlineAdmin in Alt.Server.GetPlayers()
+            foreach (IPlayer onlineAdmin in Alt.GetAllPlayers()
                 .Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester))
             {
                 onlineAdmin.SendAdminMessage(
@@ -2717,7 +2717,7 @@ namespace Server.Admin
 
                 context.SaveChanges();
 
-                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
+                foreach (IPlayer? targetPlayer in Alt.GetAllPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
                 {
                     targetPlayer.LoadInteriorProp(args);
                 }
@@ -2751,7 +2751,7 @@ namespace Server.Admin
                 property.PropList = JsonConvert.SerializeObject(propList);
                 context.SaveChanges();
 
-                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
+                foreach (IPlayer? targetPlayer in Alt.GetAllPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
                 {
                     targetPlayer.LoadInteriorProp(args);
                 }
@@ -2819,7 +2819,7 @@ namespace Server.Admin
 
                 player.SendInfoNotification($"You've removed {args} from Apartment {apartment.Name}");
 
-                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
+                foreach (IPlayer? targetPlayer in Alt.GetAllPlayers().Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name && x.FetchCharacter()?.InsideApartmentComplex == complex.Id))
                 {
                     targetPlayer.UnloadInteriorProp(args);
                 }
@@ -2855,7 +2855,7 @@ namespace Server.Admin
 
                 player.SendInfoNotification($"You've removed {args} from property {property.Address}.");
 
-                foreach (IPlayer? targetPlayer in Alt.Server.GetPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
+                foreach (IPlayer? targetPlayer in Alt.GetAllPlayers().Where(x => x.FetchCharacter()?.InsideProperty == property.Id))
                 {
                     targetPlayer.UnloadInteriorProp(args);
                 }
@@ -3247,7 +3247,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null)
+            IPlayer? targetPlayer = Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null)
                 .FirstOrDefault(x => x.GetPlayerId() == targetPlayerId);
 
             if (targetPlayer == null)
@@ -4069,7 +4069,7 @@ namespace Server.Admin
             string username = player.FetchAccount().Username;
 
             List<IPlayer> onlineAdmins =
-                Alt.Server.GetPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Tester).ToList();
+                Alt.GetAllPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Tester).ToList();
 
             foreach (IPlayer onlineAdmin in onlineAdmins)
             {
@@ -4106,7 +4106,7 @@ namespace Server.Admin
             string username = player.FetchAccount().Username;
 
             List<IPlayer> onlineAdmins =
-                Alt.Server.GetPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Tester).ToList();
+                Alt.GetAllPlayers().Where(x => x.FetchAccount().AdminLevel >= AdminLevel.Tester).ToList();
 
             foreach (IPlayer onlineAdmin in onlineAdmins)
             {
@@ -4717,7 +4717,7 @@ namespace Server.Admin
 
             if (propList.Any())
             {
-                foreach (var client in Alt.Server.GetPlayers().Where(x =>
+                foreach (var client in Alt.GetAllPlayers().Where(x =>
                     x.FetchCharacter() != null && x.FetchCharacter().InsideGarage == garageId))
                 {
                     foreach (var prop in propList)
@@ -4971,7 +4971,7 @@ namespace Server.Admin
 
             IPlayer? targetPlayer = null;
 
-            foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.GetClass().Name.ToLower().Contains("mask")))
+            foreach (IPlayer target in Alt.GetAllPlayers().Where(x => x.GetClass().Name.ToLower().Contains("mask")))
             {
                 string[] nameSplit = target.GetClass().Name.Split(' ');
 
@@ -5210,7 +5210,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.GetAllPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5317,7 +5317,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.GetAllPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5364,7 +5364,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.GetAllPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5432,7 +5432,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.GetAllPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
@@ -5478,7 +5478,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer", out int targetCharacterId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.GetAllPlayers()
                 .FirstOrDefault(x => x.GetClass()?.CharacterId == targetCharacterId);
 
             if (targetPlayer == null)

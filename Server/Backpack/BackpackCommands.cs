@@ -288,7 +288,7 @@ namespace Server.Backpack
 
             if (option == "Give to player")
             {
-                IEnumerable<IPlayer> playerList = Alt.Server.GetPlayers();
+                IEnumerable<IPlayer> playerList = Alt.GetAllPlayers();
                 float lastDistance = 3;
                 IPlayer lastPlayer = null;
                 Position playerPosition = player.Position;
@@ -470,7 +470,7 @@ namespace Server.Backpack
 
             if (option == "Give to player")
             {
-                IEnumerable<IPlayer> playerList = Alt.Server.GetPlayers();
+                IEnumerable<IPlayer> playerList = Alt.GetAllPlayers();
                 float lastDistance = 3;
                 IPlayer lastPlayer = null;
                 Position playerPosition = player.Position;
@@ -603,7 +603,7 @@ namespace Server.Backpack
 
             player.GetData("Backpack:GiveItemToPlayer", out int targetId);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
             if (targetPlayer == null)
             {

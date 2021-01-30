@@ -55,7 +55,7 @@ namespace Server.Groups
                 player.SetData("ONPHONEWITH", 0);
                 player.SetData("PHONERINGING", false);
 
-                IEnumerable<IPlayer> players = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null);
+                IEnumerable<IPlayer> players = Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null);
 
                 foreach (IPlayer? targetPlayer in players)
                 {
@@ -146,7 +146,7 @@ namespace Server.Groups
                 player.SetData("ONPHONEWITH", 0);
                 player.SetData("PHONERINGING", false);
 
-                IEnumerable<IPlayer> players = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null);
+                IEnumerable<IPlayer> players = Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null);
 
                 foreach (IPlayer? targetPlayer in players)
                 {

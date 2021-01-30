@@ -104,14 +104,14 @@ namespace Server.Extensions
                 _memUsage = currentProcess.WorkingSet64;
             }
 
-            /*foreach (IPlayer player in Alt.Server.GetPlayers())
+            /*foreach (IPlayer player in Alt.GetAllPlayers())
             {
                 if(!player.IsSpawned()) continue;
 
                 if(player.Ping > )
             }*/
 
-            foreach (var player in Alt.Server.GetPlayers())
+            foreach (var player in Alt.GetAllPlayers())
             {
                 Models.Character playerCharacter = player.FetchCharacter();
 
@@ -134,7 +134,7 @@ namespace Server.Extensions
 
             using Context context = new Context();
 
-            foreach (IPlayer player in Alt.Server.GetPlayers())
+            foreach (IPlayer player in Alt.GetAllPlayers())
             {
                 if (player.FetchCharacter() == null) continue;
 
@@ -216,7 +216,7 @@ namespace Server.Extensions
 
                 playerCharacter.TotalMinutes += 1;
             }
-            //DiscordBot.UpdateDiscordPlayerCount(Alt.Server.GetPlayers().Count(x => x.FetchCharacter() != null));
+            //DiscordBot.UpdateDiscordPlayerCount(Alt.GetAllPlayers().Count(x => x.FetchCharacter() != null));
             context.SaveChanges();
             _minuteTimer.Start();
 

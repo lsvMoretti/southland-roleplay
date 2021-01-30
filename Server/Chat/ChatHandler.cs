@@ -163,7 +163,7 @@ namespace Server.Chat
 
                 if (playerVehicle == null) return;
 
-                foreach (IPlayer occupant in Alt.Server.GetPlayers().Where(x => x.Vehicle == playerVehicle))
+                foreach (IPlayer occupant in Alt.GetAllPlayers().Where(x => x.Vehicle == playerVehicle))
                 {
                     if (occupant == player && excludePlayer) continue;
 
@@ -191,7 +191,7 @@ namespace Server.Chat
                 range = 5.5f;
             }
 
-            foreach (IPlayer target in Alt.Server.GetPlayers())
+            foreach (IPlayer target in Alt.GetAllPlayers())
             {
                 if (!target.IsSpawned()) continue;
 

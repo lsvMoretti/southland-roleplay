@@ -35,7 +35,7 @@ namespace Server.Extensions.Marker
 
         public static void OnMarkerAdded(Marker marker)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
             {
                 LoadMarkerForPlayer(player, marker);
             }
@@ -43,7 +43,7 @@ namespace Server.Extensions.Marker
 
         public static void OnMarkerRemoved(Marker marker)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
             {
                 RemoveMarkerForPlayer(player, marker);
             }

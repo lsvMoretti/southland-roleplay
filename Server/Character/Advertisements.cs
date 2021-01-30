@@ -40,7 +40,7 @@ namespace Server.Character
                 AdvertList.Add(player.GetClass().CharacterId, message);
 
                 List<IPlayer> onlineAdmins =
-                    Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
+                    Alt.GetAllPlayers().Where(x => x.FetchAccount()?.AdminLevel >= AdminLevel.Tester).ToList();
 
                 if (!onlineAdmins.Any())
                 {
@@ -77,7 +77,7 @@ namespace Server.Character
 
             AdvertList.Remove(characterId);
 
-            foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+            foreach (IPlayer target in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
             {
                 target.SendAdvertMessage(message);
             }

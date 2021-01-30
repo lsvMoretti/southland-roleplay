@@ -45,7 +45,7 @@ namespace Server.Jobs.Taxi
         {
             bool onDuty = false;
 
-            foreach (IPlayer player in Alt.Server.GetPlayers())
+            foreach (IPlayer player in Alt.GetAllPlayers())
             {
                 player.GetData("taxi:onDuty", out bool taxiDuty);
 
@@ -56,7 +56,7 @@ namespace Server.Jobs.Taxi
 
             if (onDuty)
             {
-                foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+                foreach (IPlayer target in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
                 {
                     target.SendAdvertMessage($"We have taxi's driving about! Call 5555 today for a cab!");
                 }

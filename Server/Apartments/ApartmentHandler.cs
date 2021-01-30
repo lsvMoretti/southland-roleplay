@@ -371,7 +371,7 @@ namespace Server.Apartments
         /// <param name="apartment"></param>
         public static void ReloadApartment(Apartment apartment)
         {
-            List<IPlayer> players = Alt.Server.GetPlayers()
+            List<IPlayer> players = Alt.GetAllPlayers()
                 .Where(x => x.FetchCharacter()?.InsideApartment == apartment.Name).ToList();
 
             if (!players.Any()) return;

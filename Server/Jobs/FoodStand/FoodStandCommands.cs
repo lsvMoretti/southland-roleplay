@@ -108,7 +108,7 @@ namespace Server.Jobs.FoodStand
                 
                 using Context context = new Context();
                 
-                foreach (IPlayer player in Alt.Server.GetPlayers())
+                foreach (IPlayer player in Alt.GetAllPlayers())
                 {
                     bool hasJobData = player.GetData(_jobDataName, out bool hasJob);
                     if(!hasJobData || !hasJob) continue;
@@ -144,7 +144,7 @@ namespace Server.Jobs.FoodStand
                             player.GetData(_jobDataType, out int type);
                             
                             player.SetData(_jobTimerCount, 1);
-                            foreach (IPlayer adPlayer in Alt.Server.GetPlayers().Where(x => x.IsSpawned()))
+                            foreach (IPlayer adPlayer in Alt.GetAllPlayers().Where(x => x.IsSpawned()))
                             {
                                 if (type == 1)
                                 {

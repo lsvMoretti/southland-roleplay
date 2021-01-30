@@ -2223,7 +2223,7 @@ namespace Server.Vehicle
 
             context.SaveChanges();
 
-            IPlayer oldOwner = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == oldOwnerId);
+            IPlayer oldOwner = Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == oldOwnerId);
 
             oldOwner?.SendInfoNotification($"Someone has bought your {vehicleData.Name} for {vehicleData.SalePrice:C}.");
 

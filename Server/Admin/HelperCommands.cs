@@ -44,7 +44,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == helpReport.Player);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x == helpReport.Player);
 
             if (targetPlayer == null)
             {
@@ -66,7 +66,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have accepted help request Id {helpReport.Id}. Message: {helpReport.Message}.");
             player.SendInfoNotification($"Player Id: {targetPlayer.GetPlayerId()}");
 
-            var onlineHelpers = Alt.Server.GetPlayers()
+            var onlineHelpers = Alt.GetAllPlayers()
                 .Where(x => x.FetchAccount()?.Tester == true).ToList();
 
             if (onlineHelpers.Any())
@@ -118,7 +118,7 @@ namespace Server.Admin
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x == helpReport.Player);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x == helpReport.Player);
 
             if (targetPlayer == null)
             {
@@ -138,7 +138,7 @@ namespace Server.Admin
 
             player.SendInfoNotification($"You have declined report Id: {helpReport.Id}.");
 
-            foreach (IPlayer onlineHelper in Alt.Server.GetPlayers()
+            foreach (IPlayer onlineHelper in Alt.GetAllPlayers()
                 .Where(x => x.FetchAccount()?.Tester == true))
             {
                 if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;

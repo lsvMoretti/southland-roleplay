@@ -44,7 +44,7 @@ namespace Server.Extensions
                 List<string> onlinePlayerList = new List<string>();
 
 #if RELEASE
-                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+                foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
                 {
                     onlinePlayerList.Add(player.GetClass().Name);
                 }
@@ -157,7 +157,7 @@ namespace Server.Extensions
 
         public static void SendPlayerCount()
         {
-            hubConnection.InvokeAsync("ReceivePlayerCount", Alt.Server.GetPlayers().Count());
+            hubConnection.InvokeAsync("ReceivePlayerCount", Alt.GetAllPlayers().Count());
         }
 
         public static void SendUserLogin(Models.Account playerAccount)

@@ -1286,7 +1286,7 @@ namespace Server.Property
 
             if (option == "Player")
             {
-                List<IPlayer> playerList = Alt.Server.GetPlayers().Where(x =>
+                List<IPlayer> playerList = Alt.GetAllPlayers().Where(x =>
                     x.FetchCharacter() != null && x.Position.Distance(player.Position) <= 5f).ToList();
 
                 if (!playerList.Any())
@@ -1315,7 +1315,7 @@ namespace Server.Property
         {
             if (option == "Close") return;
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().Name == option);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().Name == option);
 
             if (targetPlayer == null)
             {
@@ -1368,7 +1368,7 @@ namespace Server.Property
 
             Models.Property property = Models.Property.FetchProperty(propertyId);
 
-            IPlayer player = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == property.OwnerId);
+            IPlayer player = Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == property.OwnerId);
 
             if (player == null)
             {

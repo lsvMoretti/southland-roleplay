@@ -75,7 +75,7 @@ namespace Server.Property
 
             string message = $"It looks like the {property.BusinessName} is open for business! [Yellow Blip Icon]";
 
-            foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+            foreach (IPlayer target in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
             {
                 target.SendAdvertMessage(message);
             }

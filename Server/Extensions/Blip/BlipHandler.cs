@@ -41,7 +41,7 @@ namespace Server.Extensions.Blip
 
         public static void OnBlipAdded(Objects.Blip blip)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
             {
                 LoadBlipForPlayer(player, blip);
             }
@@ -49,7 +49,7 @@ namespace Server.Extensions.Blip
 
         public static void OnBlipRemoved(Objects.Blip blip)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
             {
                 RemoveAllBlipsForPlayer(player);
                 LoadBlipsOnSpawn(player);

@@ -45,7 +45,7 @@ namespace Server.Character
 
         private static void TimerOnElapsed(object sender, ElapsedEventArgs e)
         {
-            List<IPlayer> players = Alt.Server.GetPlayers().ToList();
+            List<IPlayer> players = Alt.GetAllPlayers().ToList();
 
             if (!players.Any()) return;
 

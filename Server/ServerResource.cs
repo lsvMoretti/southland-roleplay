@@ -555,7 +555,7 @@ namespace Server
 
             int playerSaveCount = 0;
 
-            foreach (IPlayer player in Alt.Server.GetPlayers())
+            foreach (IPlayer player in Alt.GetAllPlayers())
             {
                 Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
