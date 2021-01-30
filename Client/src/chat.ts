@@ -77,6 +77,7 @@ view.on('chatmessage',
 
         alt.emit("ChatStatus", false);
         opened = false;
+        alt.showCursor(false);
         alt.emitServer('ChatStatusChange', opened);
         alt.toggleGameControls(true);
     });
@@ -121,6 +122,7 @@ alt.on('keyup', (key) => {
         view.focus();
         alt.emitServer('ChatStatusChange', opened);
         alt.toggleGameControls(false);
+        alt.showCursor(true);
     }
     else if (!opened && key === 0xBF && alt.gameControlsEnabled()) {
         alt.emit("ChatStatus", true);
@@ -129,6 +131,7 @@ alt.on('keyup', (key) => {
         view.emit('openChat', true);
         alt.emitServer('ChatStatusChange', opened);
         alt.toggleGameControls(false);
+        alt.showCursor(true);
     }
     else if (opened && key === 0x1B) {
         alt.emit("ChatStatus", false);
@@ -136,6 +139,7 @@ alt.on('keyup', (key) => {
         view.emit('closeChat');
         alt.emitServer('ChatStatusChange', opened);
         alt.toggleGameControls(true);
+        alt.showCursor(false);
     }
 
     if (key === 0x76) {
