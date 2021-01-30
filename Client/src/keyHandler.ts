@@ -83,16 +83,28 @@ alt.everyTick(() => {
     native.disableControlAction(0, 213, true);
 });
 
-alt.on('keyup', (key) => {
+alt.on('keyup', async (key) => {
     if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;
 
     if (getEditObjectStatus()) {
         return;
     }
 
-    if(key === 119){
-        // F8
-        let screenshot = alt.takeScreenshot();
+    if(key === 120){
+        // F9
+        let permissionState = alt.getPermissionState(alt.Permission.ScreenCapture);
+
+        if(permissionState == alt.PermissionState.Allowed){
+            alt.log('Allowed');
+            let screenshot = await alt.takeScreenshot();
+            
+            alt.emitServer('Player:TakeScreenshot', screenshot);
+        }
+        else{
+            alt.log(permissionState);
+        }
+
+
     }
 
     if (key === 187) {

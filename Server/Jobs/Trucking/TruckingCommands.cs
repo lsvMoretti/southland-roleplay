@@ -57,7 +57,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            IVehicle? truck = await AltAsync.CreateVehicle(VehicleModel.Pounder, TruckSpawnPosition, TruckSpawnRotation);
+            IVehicle? truck = Alt.Server.CreateVehicle((uint)VehicleModel.Pounder, TruckSpawnPosition, TruckSpawnRotation);
 
             if (truck == null)
             {

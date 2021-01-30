@@ -3905,7 +3905,9 @@ namespace Server.Admin
                 return;
             }
 
-            IVehicle? temporaryVehicle = await AltAsync.CreateVehicle(model, player.Position.Around(2f), player.Rotation);
+            uint hash = Alt.Hash(model);
+
+            IVehicle? temporaryVehicle = Alt.Server.CreateVehicle(hash, player.Position.Around(2f), player.Rotation);
 
             if (temporaryVehicle == null)
             {

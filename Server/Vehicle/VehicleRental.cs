@@ -167,7 +167,7 @@ namespace Server.Vehicle
             Inventory.Inventory? playerInventory = player.FetchInventory();
 
             IVehicle? rentalVehicle =
-                await AltAsync.CreateVehicle(vehicleModel, rentalSpawn, rentalRotation);
+                Alt.Server.CreateVehicle((uint)vehicleModel, rentalSpawn, rentalRotation);
 
             if (rentalVehicle == null)
             {

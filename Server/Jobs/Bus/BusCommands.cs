@@ -105,7 +105,7 @@ namespace Server.Jobs.Bus
                     return;
                 }
 
-                IVehicle? busVehicle = await AltAsync.CreateVehicle(VehicleModel.Bus, vehicleSpawnPosition,
+                IVehicle? busVehicle = Alt.Server.CreateVehicle((uint)VehicleModel.Bus, vehicleSpawnPosition,
                     new Rotation(0, 0, firstPoint.RotZ));
 
                 if (busVehicle == null)

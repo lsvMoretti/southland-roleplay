@@ -189,7 +189,7 @@ namespace Server.Dealerships
 
                 if (vehicleModel == 0) return;
 
-                IVehicle? previewVehicle = await AltAsync.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
+                IVehicle? previewVehicle = Alt.Server.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
 
                 if (previewVehicle == null)
                 {
