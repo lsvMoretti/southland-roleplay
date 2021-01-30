@@ -479,9 +479,9 @@ namespace Server.Groups.EUP
         {
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
-            foreach (EupProp malePoliceRank in MalePoliceRanks)
+            foreach (EupProp femalePoliceRank in FemalePoliceRanks)
             {
-                menuItems.Add(new NativeMenuItem(malePoliceRank.Name));
+                menuItems.Add(new NativeMenuItem(femalePoliceRank.Name));
             }
 
             NativeMenu menu = new NativeMenu("EupMenu:Police:FemaleRanks", "EUP", "Select a Rank", menuItems);
@@ -493,7 +493,7 @@ namespace Server.Groups.EUP
         {
             if (option == "Close") return;
 
-            EupProp selectedRank = MalePoliceRanks.FirstOrDefault(x => x.Name == option);
+            EupProp? selectedRank = FemalePoliceRanks.FirstOrDefault(x => x.Name == option);
 
             if (selectedRank == null)
             {
