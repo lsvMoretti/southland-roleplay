@@ -161,8 +161,19 @@ namespace Server.Character
                 }
                 else
                 {
-                    playerCharacter.StartStage = 1;
-                    TutorialHandler.StartTutorial(player);
+                    //playerCharacter.StartStage = 1;
+                    //TutorialHandler.StartTutorial(player);
+                    playerCharacter.StartStage = 2;
+                    playerCharacter.PosX = TutorialHandler.StrawberrySpawnPosition.X;
+                    playerCharacter.PosY = TutorialHandler.StrawberrySpawnPosition.Y;
+                    playerCharacter.PosZ = TutorialHandler.StrawberrySpawnPosition.Z;
+
+                    playerCharacter.Dimension = 0;
+                    context.SaveChanges();
+
+                    CreatorRoom.LeaveCreatorRoom(player);
+
+                    player.GetClass().CompletedTutorial = true;
                 }
             }
 
