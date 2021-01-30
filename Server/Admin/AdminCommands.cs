@@ -6348,17 +6348,6 @@ namespace Server.Admin
                 player.GetClass().Name = player.FetchCharacter().Name;
                 player.Emit("EnabledAdminDuty", false);
                 player.LoadCharacterCustomization();
-                bool hasOldId = player.GetData("OldAdminId", out int playerId);
-
-                if (hasOldId)
-                {
-                    player.SetPlayerId(playerId);
-                }
-                else
-                {
-                    player.SetPlayerId(CreatorRoom.NextId);
-                    CreatorRoom.NextId++;
-                }
             }
             else
             {
@@ -6380,8 +6369,6 @@ namespace Server.Admin
                 player.Model = (uint)AdminHandler.AdminModels[index];
 
                 player.SetData("OldAdminId", player.GetPlayerId());
-
-                player.SetPlayerId(0);
             }
         }
 
