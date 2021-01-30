@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
 using AltV.Net;
+using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
@@ -22,7 +23,7 @@ namespace Server.Jobs.Trucking
         private static readonly int Payment = 15;
 
         [Command("starttrucking", commandType: CommandType.Job, description: "Used to start trucking")]
-        public static void TruckingCommandStart(IPlayer player)
+        public static async void TruckingCommandStart(IPlayer player)
         {
             if (player.IsInVehicle)
             {
@@ -56,7 +57,14 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            IVehicle truck = Alt.CreateVehicle(VehicleModel.Pounder, TruckSpawnPosition, TruckSpawnRotation);
+            IVehicle? truck = Alt.Server.CreateVehicle((uint)VehicleModel.Pounder, TruckSpawnPosition, TruckSpawnRotation);
+
+            if (truck == null)
+            {
+                player.SendErrorNotification("Unable to spawn the vehicle!");
+                return;
+            }
+
             truck.ManualEngineControl = true;
             truck.EngineOn = false;
             truck.LockState = VehicleLockState.Unlocked;

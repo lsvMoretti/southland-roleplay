@@ -2,7 +2,6 @@
 import * as native from 'natives';
 import * as nametag from "../nametags";
 import * as vehicleHandler from '../vehicle/vehicleHandler';
-
 alt.onServer('Blindfolded', (blindfolded: boolean) => {
     if (blindfolded) {
         native.doScreenFadeOut(1000);
@@ -191,13 +190,13 @@ function clearBlood(entity: alt.Player) {
     native.clearPedBloodDamage(alt.Player.local.scriptID);
 }
 
-alt.setStat('stamina', 100);
-alt.setStat('strength', 100);
-alt.setStat('lung_capacity', 100);
-alt.setStat('wheelie_ability', 100);
-alt.setStat('flying_ability', 100);
-alt.setStat('shooting_ability', 100);
-alt.setStat('stealth_ability', 100);
+alt.setStat(alt.StatName.Stamina, 100);
+alt.setStat(alt.StatName.Strength, 100);
+alt.setStat(alt.StatName.LungCapacity, 100);
+alt.setStat(alt.StatName.Wheelie, 100);
+alt.setStat(alt.StatName.Flying, 100);
+alt.setStat(alt.StatName.Shooting, 100);
+alt.setStat(alt.StatName.Stealth, 100);
 
 alt.onServer('StartScreenEvent', (effectName: string, duration: number, looped: boolean) => {
     native.animpostfxPlay(effectName, duration, looped);
@@ -305,8 +304,12 @@ function closeSpectatorCam() {
 }
 
 alt.onServer('player:FetchForwardPosition', (returnEvent: string, distance: number) => {
+
+let entityRot:native.Vector3 = native.getEntityRotation(alt.Player.local.scriptID, 2);
+let entityRotation = new alt.Vector3(entityRot.x, entityRot.y, entityRot.z);
+
     let positionInFrontOfPlayer = PositionInFront(alt.Player.local.pos,
-        native.getEntityRotation(alt.Player.local.scriptID, 2),
+        entityRotation,
         distance);
 
     alt.log('Position:' +

@@ -189,5 +189,10 @@ namespace Server.Extensions
         {
             hubConnection.InvokeAsync("SendDiscordReportMessage", reportId, message);
         }
+
+        public static async void SendScreenShotToDiscord(string discordId, string image)
+        {
+            await hubConnection.InvokeAsync("SendScreenshotToDiscordUser", discordId, image);
+        }
     }
 }

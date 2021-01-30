@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using AltV.Net;
+using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
@@ -70,13 +71,13 @@ namespace Server.Jobs.Bus
             NativeUi.ShowNativeMenu(player, menu, true);
         }
 
-        public static void OnBusRouteSelect(IPlayer player, string option)
+        public static async void OnBusRouteSelect(IPlayer player, string option)
         {
             try
             {
                 if (option == "Close") return;
 
-                BusRoute busRoute = BusRoute.FetchBusRoute(option);
+                BusRoute? busRoute = BusRoute.FetchBusRoute(option);
 
                 if (busRoute == null)
                 {
@@ -104,10 +105,14 @@ namespace Server.Jobs.Bus
                     return;
                 }
 
-                player.SetData("BusJob:StopCount", busStopList.Count);
-
-                IVehicle busVehicle = Alt.CreateVehicle(VehicleModel.Bus, vehicleSpawnPosition,
+                IVehicle? busVehicle = Alt.Server.CreateVehicle((uint)VehicleModel.Bus, vehicleSpawnPosition,
                     new Rotation(0, 0, firstPoint.RotZ));
+
+                if (busVehicle == null)
+                {
+                    player.SendErrorNotification("Unable to spawn the bus!");
+                    return;
+                }
 
                 busVehicle.PrimaryColor = 6;
                 busVehicle.SecondaryColor = 6;
@@ -121,6 +126,7 @@ namespace Server.Jobs.Bus
 
                 BusHandler.BusVehicles.Add(player.GetClass().CharacterId, busVehicle);
 
+                player.SetData("BusJob:StopCount", busStopList.Count);
                 player.SetData("bus:onRoute", true);
 
                 player.Emit("bus:startJob", JsonConvert.SerializeObject(busStopList));

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using AltV.Net;
+using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
@@ -62,7 +63,7 @@ namespace Server.Vehicle
         }
 
         [Command("rentvehicle", commandType: CommandType.Vehicle, description: "Rental: Used to rent a vehicle.")]
-        public static void VehicleRentalCommand(IPlayer player)
+        public static async void VehicleRentalCommand(IPlayer player)
         {
             if (!player.IsSpawned()) return;
 
@@ -163,7 +164,22 @@ namespace Server.Vehicle
                 return;
             }
 
-            Inventory.Inventory playerInventory = player.FetchInventory();
+            Inventory.Inventory? playerInventory = player.FetchInventory();
+
+            IVehicle? rentalVehicle =
+                Alt.Server.CreateVehicle((uint)vehicleModel, rentalSpawn, rentalRotation);
+
+            if (rentalVehicle == null)
+            {
+                player.SendErrorNotification("Unable to spawn the vehicle.");
+                return;
+            }
+
+            if (playerInventory == null)
+            {
+                player.SendErrorNotification("Unable to get your inventory!");
+                return;
+            }
 
             bool keyAdded = playerInventory.AddItem(rentalKey);
 
@@ -174,9 +190,6 @@ namespace Server.Vehicle
             }
 
             player.RemoveCash(cost);
-
-            IVehicle rentalVehicle =
-                Alt.CreateVehicle(vehicleModel, rentalSpawn, rentalRotation);
 
             rentalVehicle.ManualEngineControl = true;
             rentalVehicle.EngineOn = false;
@@ -194,13 +207,13 @@ namespace Server.Vehicle
             player.SendNotification($"~g~Your rental car is waiting for you. Cost: {DilettanteInitCost:C}.");
             player.SetWaypoint(rentalSpawn);
 
-            using Context context = new Context();
+            await using Context context = new Context();
 
             Models.Character character = context.Character.Find(playerCharacter.Id);
 
             character.RentVehicleKey = rentalKeyCode;
 
-            context.SaveChanges();
+            await context.SaveChangesAsync();
 
             bool hasWelcomeData = player.GetData(WelcomePlayer.WelcomeData, out int status);
 

@@ -523,6 +523,8 @@ namespace Server
                 Alt.OnClient<IPlayer, IVehicle>("newSirenHandler:HornRelease", SirenHandler.OnHornRelease);
 
                 #endregion Siren Handler
+
+                Alt.OnClient<IPlayer, string>("Player:TakeScreenshot", Screenshots.OnPlayerSendScreenshot);
             }
             catch (Exception e)
             {

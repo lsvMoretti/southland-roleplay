@@ -176,5 +176,10 @@ namespace SignalR
         {
             await Clients.Groups("Discord").SendAsync("SendLinkedDiscordMessage", userId);
         }
+
+        public async void SendScreenshotToDiscordUser(string userId, string screenshot)
+        {
+            await Clients.Groups("Discord").SendAsync("SendScreenshotToDiscordUser", userId, screenshot);
+        }
     }
 }

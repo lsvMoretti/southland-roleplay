@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AltV.Net;
+using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
@@ -3896,7 +3897,7 @@ namespace Server.Admin
         }
 
         [Command("vehicle", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
-        public static void VehicleTest(IPlayer player, string model = "")
+        public static async void VehicleTest(IPlayer player, string model = "")
         {
             if (model == "")
             {
@@ -3904,7 +3905,15 @@ namespace Server.Admin
                 return;
             }
 
-            IVehicle temporaryVehicle = Alt.CreateVehicle(model, player.Position.Around(2f), player.Rotation);
+            uint hash = Alt.Hash(model);
+
+            IVehicle? temporaryVehicle = Alt.Server.CreateVehicle(hash, player.Position.Around(2f), player.Rotation);
+
+            if (temporaryVehicle == null)
+            {
+                player.SendErrorNotification("Unable to spawn!");
+                return;
+            }
 
             temporaryVehicle.Dimension = player.Dimension;
 

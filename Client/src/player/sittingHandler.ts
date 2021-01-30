@@ -79,7 +79,7 @@ function toggleSitting() {
         alt.log('Sending IsPlayerFree');
         sittingObject = object;
         objectName = closest.objName;
-        entityPosition = entityPos;
+        entityPosition = new alt.Vector3(entityPos.x, entityPos.y, entityPos.z);
         var pos = new alt.Vector3(entityPos.x, entityPos.y, entityPos.z);
         alt.emitServer('sitting:IsPlayerPositionFree', pos.x, pos.y, pos.z, closest.objName);
         return;

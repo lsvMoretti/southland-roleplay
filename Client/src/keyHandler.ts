@@ -83,11 +83,28 @@ alt.everyTick(() => {
     native.disableControlAction(0, 213, true);
 });
 
-alt.on('keyup', (key) => {
+alt.on('keyup', async (key) => {
     if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;
 
     if (getEditObjectStatus()) {
         return;
+    }
+
+    if(key === 120){
+        // F9
+        let permissionState = alt.getPermissionState(alt.Permission.ScreenCapture);
+
+        if(permissionState == alt.PermissionState.Allowed){
+            alt.log('Allowed');
+            let screenshot = await alt.takeScreenshot();
+            
+            alt.emitServer('Player:TakeScreenshot', screenshot);
+        }
+        else{
+            alt.log(permissionState);
+        }
+
+
     }
 
     if (key === 187) {
@@ -566,11 +583,13 @@ function enterVehicleAsDriver() {
 
         let boneFLDoor = native.getEntityBoneIndexByName(vehicle, 'door_dside_f');//Front Left
         const posFLDoor = native.getWorldPositionOfEntityBone(vehicle, boneFLDoor);
-        const distFLDoor = Distance({ x: posFLDoor.x, y: posFLDoor.y, z: posFLDoor.z }, alt.Player.local.pos);
+        let FlPos = new alt.Vector3(posFLDoor.x, posFLDoor.y, posFLDoor.z );
+        const distFLDoor = Distance(FlPos, alt.Player.local.pos);
 
         let boneFRDoor = native.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front Right
         const posFRDoor = native.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
-        const distFRDoor = Distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
+        let FrPos = new alt.Vector3(posFRDoor.x, posFRDoor.y, posFRDoor.z );
+        const distFRDoor = Distance(FrPos, alt.Player.local.pos);
 
         if (native.isVehicleSeatFree(vehicle, -1, false)) {
             let vehicleClass = native.getVehicleClass(vehicle);
@@ -665,15 +684,18 @@ function enterVehicleAsPassenger() {
 
     let boneFRDoor = native.getEntityBoneIndexByName(vehicle, 'door_pside_f');//Front right
     const posFRDoor = native.getWorldPositionOfEntityBone(vehicle, boneFRDoor);
-    const distFRDoor = Distance({ x: posFRDoor.x, y: posFRDoor.y, z: posFRDoor.z }, alt.Player.local.pos);
+    let frDoorPos = new alt.Vector3(posFRDoor.x, posFRDoor.y, posFRDoor.z);
+    const distFRDoor = Distance(frDoorPos, alt.Player.local.pos);
 
     let boneBLDoor = native.getEntityBoneIndexByName(vehicle, 'door_dside_r');//Back Left
     const posBLDoor = native.getWorldPositionOfEntityBone(vehicle, boneBLDoor);
-    const distBLDoor = Distance({ x: posBLDoor.x, y: posBLDoor.y, z: posBLDoor.z }, alt.Player.local.pos);
+    let blDoorPos = new alt.Vector3(posBLDoor.x, posBLDoor.y, posBLDoor.z);
+    const distBLDoor = Distance(blDoorPos, alt.Player.local.pos);
 
     let boneBRDoor = native.getEntityBoneIndexByName(vehicle, 'door_pside_r');//Back Right
     const posBRDoor = native.getWorldPositionOfEntityBone(vehicle, boneBRDoor);
-    const distBRDoor = Distance({ x: posBRDoor.x, y: posBRDoor.y, z: posBRDoor.z }, alt.Player.local.pos);
+    let brDoorPos = new alt.Vector3(posBRDoor.x, posBRDoor.y, posBRDoor.z);
+    const distBRDoor = Distance(brDoorPos, alt.Player.local.pos);
 
     let minDist = Math.min(distFRDoor, distBLDoor, distBRDoor);
 
