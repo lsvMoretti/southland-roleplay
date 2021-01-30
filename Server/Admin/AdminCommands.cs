@@ -4254,7 +4254,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Property Id: {nearestProperty.Id}.");
         }
 
-        [Command("spectate", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: Used to spectate other players")]
+        //[Command("spectate", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: Used to spectate other players")]
         public static void SpectateTest(IPlayer player, string args = "")
         {
             if (args == "")
