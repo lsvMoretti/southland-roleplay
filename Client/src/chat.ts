@@ -1,6 +1,7 @@
 import * as alt from 'alt-client';
 import * as game from 'natives';
 import * as nameTags from './nametags';
+import * as hudHandler from "./hud/hudHandler";
 
 let buffer: any = [];
 
@@ -144,6 +145,7 @@ alt.on('keyup', (key) => {
         view.emit('hideChat', hidden);
         alt.emit('hideChat', hidden);
         nameTags.ToggleNameTags(!hidden);
+        hudHandler.toggleHud(!hidden);
     }
 })
 
