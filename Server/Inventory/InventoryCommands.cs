@@ -410,7 +410,7 @@ namespace Server.Inventory
             if (item.Id.Contains("BEER") && !item.Id.Contains("CASE"))
             {
                 // Breakable Bottle
-                itemList.Add(new NativeMenuItem("Break Bottle"));
+                //itemList.Add(new NativeMenuItem("Break Bottle"));
             }
 
             itemMenu.MenuItems = itemList;
