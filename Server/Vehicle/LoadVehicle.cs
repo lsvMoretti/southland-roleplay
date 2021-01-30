@@ -120,7 +120,7 @@ namespace Server.Vehicle
 
         public static async Task<IVehicle> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
-            IVehicle vehicle = null;
+            IVehicle? vehicle = null;
 
             bool modelParse = int.TryParse(vehicleData.Model, out int vModelResult);
 
@@ -129,8 +129,7 @@ namespace Server.Vehicle
                 vModelResult = (int)Alt.Hash(vehicleData.Model);
             }
 
-            vehicle = await AltAsync.CreateVehicle((uint)vModelResult, spawnPosition,
-                new Rotation(0, 0, vehicleData.RotZ));
+            vehicle = Alt.Server.CreateVehicle((uint)vModelResult, spawnPosition, new Rotation(0, 0, vehicleData.RotZ));
 
             if (vehicle == null)
                 return null;

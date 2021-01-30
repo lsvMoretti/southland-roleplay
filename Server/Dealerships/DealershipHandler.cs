@@ -158,15 +158,12 @@ namespace Server.Dealerships
                 {
                     var oldVehId = previewVehicles[player.GetPlayerId()];
 
-                    await AltAsync.Do(() =>
-                    {
-                        IVehicle oldPreviewVehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == oldVehId);
+                    IVehicle? oldPreviewVehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == oldVehId);
 
-                        if (oldPreviewVehicle != null)
-                        {
-                            oldPreviewVehicle.Delete();
-                        }
-                    });
+                    if (oldPreviewVehicle != null)
+                    {
+                        oldPreviewVehicle.Delete();
+                    }
 
                     previewVehicles.Remove(player.GetPlayerId());
                 }
@@ -184,7 +181,13 @@ namespace Server.Dealerships
 
                 if (vehicleModel == 0) return;
 
-                IVehicle previewVehicle = await AltAsync.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
+                IVehicle? previewVehicle =
+                    Alt.Server.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
+
+                if (previewVehicle == null)
+                {
+                    player.SendErrorNotification("Unable to create the preview vehicle");
+                }
 
                 previewVehicle.Dimension = player.Dimension;
                 previewVehicle.EngineOn = false;
@@ -206,13 +209,10 @@ namespace Server.Dealerships
                 delayTimer.Elapsed += (sender, args) =>
                 {
                     delayTimer.Stop();
-                    AltAsync.Do(() =>
-                    {
-                        CameraExtension.CreateCameraAtEntity(player,
-                            new Position(currentDealership.CamPosX, currentDealership.CamPosY,
-                                currentDealership.CamPosZ), currentDealership.CamRotZ, 80, previewVehicle);
-                        player.Emit("ShowPreviewScreen", previewVehicle);
-                    });
+                    CameraExtension.CreateCameraAtEntity(player,
+                        new Position(currentDealership.CamPosX, currentDealership.CamPosY,
+                            currentDealership.CamPosZ), currentDealership.CamRotZ, 80, previewVehicle);
+                    player.Emit("ShowPreviewScreen", previewVehicle);
                 };
             }
             catch (Exception e)

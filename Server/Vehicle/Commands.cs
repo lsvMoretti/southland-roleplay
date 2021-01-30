@@ -1734,7 +1734,7 @@ namespace Server.Vehicle
                 return;
             }
 
-            AltAsync.Do(() => { Models.Vehicle.UpdateVehicle(player.Vehicle, true, pGarage.Id, true); });
+            Models.Vehicle.UpdateVehicle(player.Vehicle, true, pGarage.Id, true);
 
             player.SendInfoNotification($"You've parked the vehicle.");
         }
@@ -1845,7 +1845,7 @@ namespace Server.Vehicle
 
             context.SaveChanges();
 
-            AltAsync.Do(() => { LoadVehicle.UnloadVehicle(targetVehicle); });
+            LoadVehicle.UnloadVehicle(targetVehicle);
 
             player.SendInfoNotification($"You have put {targetVehicleData.Name} into your trunk.");
             Logging.AddToCharacterLog(player, $"has stored vehicle id {targetVehicleData.Id}");
