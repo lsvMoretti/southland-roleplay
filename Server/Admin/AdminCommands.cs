@@ -2101,7 +2101,7 @@ namespace Server.Admin
 
         #endregion Health and Armor
 
-        [Command("deletecharacter", AdminLevel.Management, true, commandType: CommandType.Admin, description: "Character: Deletes a character")]
+        [Command("deletecharacter", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin, description: "Character: Deletes a character")]
         public static void AdminCommandDeleteCharacter(IPlayer player, string args = "")
         {
             if (args == "")
