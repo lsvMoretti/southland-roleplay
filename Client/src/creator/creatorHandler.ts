@@ -48,7 +48,7 @@ alt.everyTick(() => {
 });
 */
 
-alt.on('connectionComplete', (hasMapChanged: any) => {
+alt.on('connectionComplete', () => {
     native.requestModel(native.getHashKey('mp_m_freemode_01'));
     native.requestModel(native.getHashKey('mp_f_freemode_01'));
 });
