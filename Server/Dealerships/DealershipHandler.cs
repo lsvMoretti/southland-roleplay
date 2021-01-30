@@ -65,9 +65,9 @@ namespace Server.Dealerships
         {
             try
             {
-                bool tryGetBlip = dealershipBlips.TryGetValue(dealership.Id, out Blip dealershipBlip);
+                bool tryGetBlip = dealershipBlips.TryGetValue(dealership.Id, out Blip? dealershipBlip);
 
-                bool tryGetLabel = dealershipLabels.TryGetValue(dealership.Id, out TextLabel dealershipTextLabel);
+                bool tryGetLabel = dealershipLabels.TryGetValue(dealership.Id, out TextLabel? dealershipTextLabel);
 
                 if (tryGetBlip)
                 {
@@ -81,7 +81,7 @@ namespace Server.Dealerships
 
                 foreach (KeyValuePair<int, ushort> previewVehicle in previewVehicles.Where(x => x.Key == dealership.Id))
                 {
-                    IVehicle vehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.Id == previewVehicle.Value);
+                    IVehicle? vehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.Id == previewVehicle.Value);
 
                     vehicle?.Remove();
                 }
@@ -95,28 +95,36 @@ namespace Server.Dealerships
 
         public static async void OnWebViewClose(IPlayer player)
         {
-            player.FreezeCam(false);
-            player.FreezeInput(false);
-            player.ShowCursor(false);
-            player.HideChat(false);
-            player.ChatInput(true);
-
-            if (previewVehicles.ContainsKey(player.GetPlayerId()))
+            try
             {
-                var vehId = previewVehicles[player.GetPlayerId()];
+                player.FreezeCam(false);
+                player.FreezeInput(false);
+                player.ShowCursor(false);
+                player.HideChat(false);
+                player.ChatInput(true);
 
-                IVehicle? vehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == vehId);
+                if (previewVehicles.ContainsKey(player.GetPlayerId()))
+                {
+                    var vehId = previewVehicles[player.GetPlayerId()];
 
-                if (vehicle == null) return;
+                    IVehicle? vehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == vehId);
 
-                vehicle.Delete();
+                    if (vehicle == null) return;
 
-                previewVehicles.Remove(player.GetPlayerId());
+                    vehicle.Delete();
+
+                    previewVehicles.Remove(player.GetPlayerId());
+                }
+
+                CameraExtension.DeleteCamera(player);
+
+                player.Dimension = 0;
             }
-
-            CameraExtension.DeleteCamera(player);
-
-            player.Dimension = 0;
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return;
+            }
         }
 
         public static async void OnVehiclePreviewSelect(IPlayer player, int index)
@@ -181,8 +189,7 @@ namespace Server.Dealerships
 
                 if (vehicleModel == 0) return;
 
-                IVehicle? previewVehicle =
-                    Alt.Server.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
+                IVehicle? previewVehicle = await AltAsync.CreateVehicle(vehicleModel, vehiclePosition, new DegreeRotation(0, 0, 270));
 
                 if (previewVehicle == null)
                 {
