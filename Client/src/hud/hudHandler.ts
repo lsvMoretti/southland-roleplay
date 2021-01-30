@@ -47,7 +47,7 @@ alt.setInterval(() => {
 }, 500);
 
 export function toggleHud(enabled: boolean) {
-    allowHud = enabled;
+    HudState = enabled;
 }
 
 function ShowHud() {
