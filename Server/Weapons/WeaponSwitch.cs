@@ -758,7 +758,7 @@ namespace Server.Weapons
             tickTimer.Elapsed += (sender, args) =>
             {
                 tickTimer.Stop();
-                foreach (IPlayer player in Alt.Server.GetPlayers())
+                foreach (IPlayer player in Alt.GetAllPlayers())
                 {
                     if (player == null) continue;
                     bool hasLastData = player.GetData("tick:lastWeapon", out uint lastWeapon);

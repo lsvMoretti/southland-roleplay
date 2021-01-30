@@ -493,7 +493,7 @@ namespace Server.Groups
             }
 
             IPlayer? targetPlayer =
-                Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
+                Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
 
             if (targetPlayer == null)
             {

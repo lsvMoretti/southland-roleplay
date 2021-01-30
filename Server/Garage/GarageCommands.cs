@@ -86,7 +86,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer? occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.GetAllPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -109,7 +109,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer? occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.GetAllPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -257,7 +257,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer? occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.GetAllPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;
@@ -280,7 +280,7 @@ namespace Server.Garage
 
                 foreach (KeyValuePair<byte, int> keyValuePair in occupants)
                 {
-                    IPlayer? occupant = Alt.Server.GetPlayers()
+                    IPlayer? occupant = Alt.GetAllPlayers()
                         .FirstOrDefault(x => x.GetPlayerId() == keyValuePair.Value);
 
                     if (occupant == null) continue;

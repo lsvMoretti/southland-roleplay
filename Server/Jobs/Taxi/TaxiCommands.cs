@@ -61,7 +61,7 @@ namespace Server.Jobs.Taxi
 
             player.SendInfoNotification("You have gone on Taxi Duty.");
 
-            foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+            foreach (IPlayer target in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
             {
                 target.SendAdvertMessage($"A taxi is now available. Please call 5555 to arrange your transport!");
             }
@@ -190,7 +190,7 @@ namespace Server.Jobs.Taxi
 
             CallHandler.TaxiCalls.Remove(selectedCall);
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().CharacterId == selectedCall.CallerId);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().CharacterId == selectedCall.CallerId);
 
             if (targetPlayer == null)
             {
@@ -307,7 +307,7 @@ namespace Server.Jobs.Taxi
                     return;
                 }
 
-                targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+                targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
                 if (targetPlayer == null)
                 {

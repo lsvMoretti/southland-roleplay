@@ -38,7 +38,7 @@ namespace Server.Groups
             {
                 int factionCount = 0;
 
-                foreach (IPlayer client in Alt.Server.GetPlayers())
+                foreach (IPlayer client in Alt.GetAllPlayers())
                 {
                     if (!client.IsSpawned()) continue;
 
@@ -213,7 +213,7 @@ namespace Server.Groups
                 rank = playerRank.Name;
             }
 
-            foreach (IPlayer target in Alt.Server.GetPlayers())
+            foreach (IPlayer target in Alt.GetAllPlayers())
             {
                 Models.Character targetCharacter = target.FetchCharacter();
 
@@ -301,7 +301,7 @@ namespace Server.Groups
                 factionName += s.First();
             }
 
-            foreach (IPlayer target in Alt.Server.GetPlayers())
+            foreach (IPlayer target in Alt.GetAllPlayers())
             {
                 Models.Character targetCharacter = target.FetchCharacter();
 

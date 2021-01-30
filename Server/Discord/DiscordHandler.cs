@@ -56,7 +56,7 @@ namespace Server.Discord
 
         public static void OnReceiveAdminMessage(string username, string message)
         {
-            foreach (IPlayer admin in Alt.Server.GetPlayers())
+            foreach (IPlayer admin in Alt.GetAllPlayers())
             {
                 if (!admin.IsSpawned()) continue;
 

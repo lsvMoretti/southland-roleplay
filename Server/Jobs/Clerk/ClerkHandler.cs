@@ -200,7 +200,7 @@ namespace Server.Jobs.Clerk
 
             string ad = $"[{clerk.StoreName}] {adText}";
 
-            foreach (IPlayer target in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+            foreach (IPlayer target in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
             {
                 target.SendAdvertMessage(ad);
             }

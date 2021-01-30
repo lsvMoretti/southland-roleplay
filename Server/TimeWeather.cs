@@ -75,7 +75,7 @@ namespace Server
      $"alt:V Server - Game Time: {serverSettings.Hour}:{serverSettings.Minute} - V{Utility.Build} - {Utility.LastUpdate} [DEBUG MODE]";
 #endif
 
-                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+                foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
                 {
                     DateTime dateNow = DateTime.Now;
 
@@ -110,7 +110,7 @@ namespace Server
 
                 CurrentWeather = FetchCurrentWeather();
 
-                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.GetClass().Spawned).ToList())
+                foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.GetClass().Spawned).ToList())
                 {
                     if (player.GetClass().CreatorRoom) continue;
                     player.SetWeather((uint)CurrentWeatherType);

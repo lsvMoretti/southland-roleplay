@@ -62,7 +62,7 @@ namespace Server.Doors
 
         public static void UpdateDoorsForAllPlayers()
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers())
+            foreach (IPlayer player in Alt.GetAllPlayers())
             {
                 UpdateDoorsForPlayer(player);
             }

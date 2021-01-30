@@ -86,7 +86,7 @@ namespace Server.Vehicle
                         {
                             var driverInfo = vehicle.GetClass().Occupants.FirstOrDefault(x => x.Key == 1);
 
-                            IPlayer driver = Alt.Server.GetPlayers()
+                            IPlayer driver = Alt.GetAllPlayers()
                                 .FirstOrDefault(x => x.GetPlayerId() == driverInfo.Value);
 
                             driver?.Emit("Vehicle:SetEngineStatus", vehicle, vehicle.EngineOn, true);
@@ -412,7 +412,7 @@ namespace Server.Vehicle
             if (hasTaxiDriverData && taxiDriverId > 0 && hasTaxiFareData)
             {
                 player.SendInfoNotification($"You owe the Cab Driver {currentCost:C}.");
-                IPlayer cabDriver = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == taxiDriverId);
+                IPlayer cabDriver = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == taxiDriverId);
 
                 if (cabDriver != null)
                 {

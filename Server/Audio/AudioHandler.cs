@@ -154,7 +154,7 @@ namespace Server.Audio
 
             foreach (var occupantId in player.Vehicle.Occupants())
             {
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
+                var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
 
                 targetPlayer?.SendInfoNotification($"Now playing: {selectedStation.StationName}");
                 targetPlayer?.PlayMusicFromUrl(selectedStation.StationUrl);
@@ -190,7 +190,7 @@ namespace Server.Audio
 
             foreach (var occupantId in player.Vehicle.Occupants())
             {
-                var targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
+                var targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == occupantId.Value);
 
                 targetPlayer?.StopMusic();
             }

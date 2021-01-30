@@ -351,7 +351,7 @@ namespace Server.Chat
                     return;
                 }
 
-                IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+                IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
                 if (targetPlayer?.FetchCharacter() == null)
                 {
@@ -384,7 +384,7 @@ namespace Server.Chat
 
             if (playerCharacter == null) return;
 
-            List<IPlayer> targetPlayers = Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList();
+            List<IPlayer> targetPlayers = Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList();
 
             Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
@@ -433,7 +433,7 @@ namespace Server.Chat
 
             string username = player.FetchAccount().Username;
 
-            foreach (IPlayer admin in Alt.Server.GetPlayers())
+            foreach (IPlayer admin in Alt.GetAllPlayers())
             {
                 if (!admin.IsSpawned()) continue;
 

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Xml.Serialization;
 using AltV.Net;
 using AltV.Net.Elements.Entities;
 
@@ -15,17 +17,41 @@ namespace Server.Extensions
         {
             try
             {
+                ICollection<IPlayer> playerList = Alt.GetAllPlayers();
+
                 bool tryParse = int.TryParse(nameorid, out int id);
 
                 if (tryParse)
                 {
                     if (id == 0) return null;
 
-                    return Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == id);
+                    foreach (IPlayer player in playerList)
+                    {
+                        lock (player)
+                        {
+                            if (player.GetPlayerId() != id) continue;
+
+                            return player;
+                        }
+                    }
                 }
 
-                return Alt.Server.GetPlayers().FirstOrDefault(x =>
-                    x.FetchCharacter() != null && x.GetClass().Name.ToLower().Contains(nameorid.ToLower()));
+                foreach (IPlayer player in playerList)
+                {
+                    lock (player)
+                    {
+                        Models.Character? playerCharacter = player.FetchCharacter();
+
+                        if (playerCharacter == null) continue;
+
+                        if (player.GetClass().Name.ToLower().Contains(nameorid.ToLower()))
+                        {
+                            return player;
+                        }
+                    }
+                }
+
+                return null;
             }
             catch (Exception e)
             {

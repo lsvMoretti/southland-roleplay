@@ -40,7 +40,7 @@ namespace Server.Property
 
         public static void ReloadPropertyRadio(Models.Property property)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.Dimension == property.Id).ToList())
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.Dimension == property.Id).ToList())
             {
                 player.StopMusic();
                 SetPropertyRadioForPlayer(player, property);

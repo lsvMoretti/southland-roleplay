@@ -32,7 +32,7 @@ namespace Server.Phone
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers()
+            IPlayer? targetPlayer = Alt.GetAllPlayers()
                 .FirstOrDefault(x => x.GetClass().CharacterId == targetPhone.CharacterId);
 
             if (targetPlayer == null || !targetPhone.TurnedOn)

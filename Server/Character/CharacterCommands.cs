@@ -447,7 +447,7 @@ namespace Server.Character
         {
             if (player.FetchCharacter() == null) return;
 
-            List<IPlayer> playerList = Alt.Server.GetPlayers().Where(x => x.FetchCharacter().FactionDuty).ToList();
+            List<IPlayer> playerList = Alt.GetAllPlayers().Where(x => x.FetchCharacter().FactionDuty).ToList();
 
             if (!playerList.Any())
             {
@@ -566,7 +566,7 @@ namespace Server.Character
                 return;
             }
 
-            var onlinePlayers = Alt.Server.GetPlayers();
+            var onlinePlayers = Alt.GetAllPlayers();
 
             var onlineAdmins = new List<IPlayer>();
 
@@ -631,7 +631,7 @@ namespace Server.Character
 
             player.SendInfoNotification($"You've created a new report id {newReport.Id}. Please await for further assistance.");
 
-            List<IPlayer> onlineAdmins = Alt.Server.GetPlayers().ToList();
+            List<IPlayer> onlineAdmins = Alt.GetAllPlayers().ToList();
 
             if (onlineAdmins.Any())
             {
@@ -739,7 +739,7 @@ namespace Server.Character
                 return;
             }
 
-            var onlineHelpers = Alt.Server.GetPlayers().Where(x => x.FetchAccount()?.AdminLevel == AdminLevel.Tester);
+            var onlineHelpers = Alt.GetAllPlayers().Where(x => x.FetchAccount()?.AdminLevel == AdminLevel.Tester);
 
             if (!onlineHelpers.Any())
             {
@@ -789,7 +789,7 @@ namespace Server.Character
 
             player.SendInfoNotification($"You've created a new helpme id {newReport.Id}. Please await for further assistance.");
 
-            List<IPlayer> onlinePlayers = Alt.Server.GetPlayers().ToList();
+            List<IPlayer> onlinePlayers = Alt.GetAllPlayers().ToList();
 
             if (onlinePlayers.Any())
             {
@@ -1321,7 +1321,7 @@ namespace Server.Character
                 return;
             }
 
-            List<IPlayer> playerList = Alt.Server.GetPlayers().ToList();
+            List<IPlayer> playerList = Alt.GetAllPlayers().ToList();
 
             bool tryParse = int.TryParse(args, out int playerId);
 
@@ -1449,7 +1449,7 @@ namespace Server.Character
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetPlayerId);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetPlayerId);
 
             if (targetPlayer?.FetchCharacter() == null)
             {
@@ -2047,7 +2047,7 @@ namespace Server.Character
                 return;
             }
 
-            IPlayer friskingPlayer = Alt.Server.GetPlayers().FirstOrDefault(i => i.GetPlayerId() == friskId);
+            IPlayer friskingPlayer = Alt.GetAllPlayers().FirstOrDefault(i => i.GetPlayerId() == friskId);
 
             if (friskingPlayer == null || !friskingPlayer.IsSpawned())
             {

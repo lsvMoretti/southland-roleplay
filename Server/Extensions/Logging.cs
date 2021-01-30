@@ -26,7 +26,7 @@ namespace Server.Extensions
         {
             try
             {
-                _enableLogging = false;
+                _enableLogging = true;
                 if (_enableLogging)
                 {
                     if (!Directory.Exists(_characterDirectory))

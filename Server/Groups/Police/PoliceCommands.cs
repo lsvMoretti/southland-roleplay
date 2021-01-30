@@ -768,7 +768,7 @@ namespace Server.Groups.Police
             }
 
             List<IPlayer> nearbyPlayers =
-                Alt.Server.GetPlayers().Where(x => x.Position.Distance(player.Position) < 30).ToList();
+                Alt.GetAllPlayers().Where(x => x.Position.Distance(player.Position) < 30).ToList();
 
             string playerName = player.GetClass().Name;
 

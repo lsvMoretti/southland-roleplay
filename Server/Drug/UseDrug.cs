@@ -64,7 +64,7 @@ namespace Server.Drug
             tickTimer.Elapsed += (sender, args) =>
             {
                 tickTimer.Stop();
-                foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.IsSpawned()))
+                foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.IsSpawned()))
                 {
                     #region Marijuana
 

@@ -444,7 +444,7 @@ namespace Server.Character
             string lastTimeData = "AFK:LastMove";
             string lastPositionData = "AFK:LastPosition";
 
-            List<IPlayer> onlinePlayers = Alt.Server.GetPlayers().ToList();
+            List<IPlayer> onlinePlayers = Alt.GetAllPlayers().ToList();
 
             foreach (IPlayer player in onlinePlayers)
             {

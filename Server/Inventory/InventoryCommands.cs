@@ -410,14 +410,12 @@ namespace Server.Inventory
             if (item.Id.Contains("BEER") && !item.Id.Contains("CASE"))
             {
                 // Breakable Bottle
-                itemList.Add(new NativeMenuItem("Break Bottle"));
+                //itemList.Add(new NativeMenuItem("Break Bottle"));
             }
 
             itemMenu.MenuItems = itemList;
 
             int index = inventory.GetInventory().IndexOf(item);
-
-            Console.WriteLine($"Item Index: {index}");
 
             player.SetData("SELECTEDINVITEM", index);
 
@@ -591,7 +589,7 @@ namespace Server.Inventory
             {
                 List<IPlayer> targetList = new List<IPlayer>();
 
-                List<IPlayer> playerList = Alt.Server.GetPlayers().ToList();
+                List<IPlayer> playerList = Alt.GetAllPlayers().ToList();
 
                 Position playerPosition = player.Position;
 
@@ -944,7 +942,7 @@ namespace Server.Inventory
         {
             if (option == "Close") return;
 
-            IPlayer target = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetClass().Name == option);
+            IPlayer target = Alt.GetAllPlayers().FirstOrDefault(x => x.GetClass().Name == option);
 
             if (target?.FetchCharacter() == null)
             {
@@ -1047,7 +1045,7 @@ namespace Server.Inventory
 
             player.GetData("SELECTEDINVITEM", out int itemIndex);
 
-            IPlayer target = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetValue);
+            IPlayer target = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetValue);
 
             if (target == null)
             {
@@ -1360,7 +1358,7 @@ namespace Server.Inventory
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
             if (targetPlayer == null)
             {
@@ -1416,7 +1414,7 @@ namespace Server.Inventory
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetId);
 
             if (targetPlayer == null)
             {

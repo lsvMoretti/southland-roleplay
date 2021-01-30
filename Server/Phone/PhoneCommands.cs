@@ -407,7 +407,7 @@ namespace Server.Phone
             {
                 player.GetData("ISCALLINGCHARACTER", out int targetCharacterId);
 
-                IPlayer? targetCaller = Alt.Server.GetPlayers()
+                IPlayer? targetCaller = Alt.GetAllPlayers()
                     .FirstOrDefault(x => x.GetClass().CharacterId == targetCharacterId);
 
                 if (targetCaller != null)
@@ -433,7 +433,7 @@ namespace Server.Phone
 
             // On an active call
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
 
             if (targetPlayer != null)
             {
@@ -505,7 +505,7 @@ namespace Server.Phone
                 return;
             }
 
-            IPlayer? targetPlayer = Alt.Server.GetPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
+            IPlayer? targetPlayer = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == onPhoneWith);
 
             if (targetPlayer == null)
             {
@@ -619,7 +619,7 @@ namespace Server.Phone
             }
 
             IPlayer? targetPlayer =
-                Alt.Server.GetPlayers().FirstOrDefault(x => x.FetchCharacter()?.Id == targetPhone.CharacterId);
+                Alt.GetAllPlayers().FirstOrDefault(x => x.FetchCharacter()?.Id == targetPhone.CharacterId);
 
             if (targetPlayer == null || !targetPhone.TurnedOn)
             {

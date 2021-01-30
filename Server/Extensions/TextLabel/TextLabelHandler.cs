@@ -61,7 +61,7 @@ namespace Server.Extensions.TextLabel
         /// <param name="textLabel"></param>
         public static void OnTextLabelAdded(TextLabel textLabel)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
             {
                 LoadTextLabelForPlayer(player, textLabel);
             }
@@ -73,7 +73,7 @@ namespace Server.Extensions.TextLabel
         /// <param name="textLabel"></param>
         public static void OnTextLabelRemoved(TextLabel textLabel)
         {
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null))
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null))
             {
                 RemoveAllTextLabelsForPlayer(player);
 

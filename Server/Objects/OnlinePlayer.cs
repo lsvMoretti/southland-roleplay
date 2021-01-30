@@ -27,7 +27,7 @@ namespace Server.Objects
         {
             List<OnlinePlayer> onlinePlayers = new List<OnlinePlayer>();
 
-            foreach (IPlayer player in Alt.Server.GetPlayers().Where(x => x.FetchCharacter() != null).ToList())
+            foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
             {
                 if (player.GetClass().AdminDuty)
                 {
