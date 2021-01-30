@@ -37,11 +37,10 @@ namespace Server.Character
 
             if (args == "")
             {
-                player.SendSyntaxMessage("/blindfold [NameOrId]");
-                return;
+                args = player.GetClass().Name;
             }
 
-            IPlayer targetPlayer = Utility.FindPlayerByNameOrId(args);
+            IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(args);
 
             if (targetPlayer == null || !targetPlayer.IsSpawned())
             {
