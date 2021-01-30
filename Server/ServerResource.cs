@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Mime;
 using System.Numerics;
 using System.Runtime.ExceptionServices;
+using System.Security;
 using System.Threading.Tasks;
 using System.Timers;
 using AltV.Net;
@@ -63,6 +65,7 @@ namespace Server
 {
     public class ServerResource : AsyncResource
     {
+        [HandleProcessCorruptedStateExceptions]
         public override async void OnStart()
         {
             try
@@ -530,8 +533,12 @@ namespace Server
             }
             catch (Exception e)
             {
+                Log.Logger = new LoggerConfiguration().WriteTo
+                    .File($"{Directory.GetCurrentDirectory()}/mainCatch.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
+
+                Log.Error(e, "Main Thread Fail");
                 Console.WriteLine(e);
-                throw;
+                return;
             }
         }
 
