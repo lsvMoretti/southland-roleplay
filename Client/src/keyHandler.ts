@@ -98,7 +98,7 @@ alt.on('keyup', async (key) => {
             alt.log('Allowed');
             let screenshot = await alt.takeScreenshot();
             
-            //alt.emitServer('Player:TakeScreenshot', screenshot);
+            alt.emitServer('Player:TakeScreenshot', screenshot);
         }
         else{
             alt.log(permissionState);

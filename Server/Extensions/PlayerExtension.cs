@@ -417,9 +417,11 @@ namespace Server.Extensions
         /// <returns>True if has job. False if doesn't</returns>
         public static bool HasJob(this IPlayer player, Models.Jobs job)
         {
-            Models.Character playerCharacter = player.FetchCharacter();
+            Models.Character? playerCharacter = player.FetchCharacter();
 
             if (playerCharacter == null) return false;
+
+            if (string.IsNullOrEmpty(playerCharacter.JobList)) return false;
 
             return JsonConvert.DeserializeObject<List<Models.Jobs>>(playerCharacter.JobList).Contains(job);
         }
