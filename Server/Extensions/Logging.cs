@@ -99,23 +99,16 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    await Task.Run(async () =>
+                    await Task.Run(() =>
                     {
                         Models.Character? playerCharacter = player.FetchCharacter();
 
                         if (playerCharacter == null) return;
 
-                        while (!IsFileReady($"{_characterDirectory}{playerCharacter.Name}.txt"))
-                        {
-                            await Task.Delay(100);
-                            continue;
-                        }
+                        Log.Logger = new LoggerConfiguration().WriteTo
+                            .File($"{_characterDirectory}{playerCharacter.Name}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
 
-                        await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
-                        {
-                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-                            sw.Close();
-                        }
+                        Log.Information(logMessage);
                     });
                 }
             }
@@ -131,23 +124,16 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    await Task.Run(async () =>
+                    await Task.Run(() =>
                     {
                         Models.Character? playerCharacter = Models.Character.GetCharacter(characterId);
 
                         if (playerCharacter == null) return;
 
-                        while (!IsFileReady($"{_characterDirectory}{playerCharacter.Name}.txt"))
-                        {
-                            await Task.Delay(100);
-                            continue;
-                        }
+                        Log.Logger = new LoggerConfiguration().WriteTo
+                            .File($"{_characterDirectory}{playerCharacter.Name}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
 
-                        await using (StreamWriter sw = new StreamWriter($"{_characterDirectory}{playerCharacter.Name}.txt", true))
-                        {
-                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-                            sw.Close();
-                        }
+                        Log.Information(logMessage);
                     });
                 }
             }
@@ -163,23 +149,16 @@ namespace Server.Extensions
             {
                 if (_enableLogging)
                 {
-                    await Task.Run(async () =>
+                    await Task.Run(() =>
                     {
                         Models.Account? playerAccount = player.FetchAccount();
 
                         if (playerAccount == null) return;
 
-                        while (!IsFileReady($"{_adminDirectory}{playerAccount.Username}.txt"))
-                        {
-                            await Task.Delay(100);
-                            continue;
-                        }
+                        Log.Logger = new LoggerConfiguration().WriteTo
+                            .File($"{_adminDirectory}{playerAccount.Username}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
 
-                        await using (StreamWriter sw = new StreamWriter($"{_adminDirectory}{playerAccount.Username}.txt", true))
-                        {
-                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-                            sw.Close();
-                        }
+                        Log.Information(logMessage);
                     });
                 }
             }
@@ -197,19 +176,12 @@ namespace Server.Extensions
                 {
                     if (bankAccount == null) return;
 
-                    await Task.Run(async () =>
+                    await Task.Run(() =>
                     {
-                        while (!IsFileReady($"{_bankDirectory}{bankAccount.AccountNumber}.txt"))
-                        {
-                            await Task.Delay(100);
-                            continue;
-                        }
+                        Log.Logger = new LoggerConfiguration().WriteTo
+                            .File($"{_bankDirectory}{bankAccount.AccountNumber}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
 
-                        await using (StreamWriter sw = new StreamWriter($"{_bankDirectory}{bankAccount.AccountNumber}.txt", true))
-                        {
-                            await sw.WriteLineAsync($"[{DateTime.Now}] - {logMessage}");
-                            sw.Close();
-                        }
+                        Log.Information(logMessage);
                     });
                 }
             }

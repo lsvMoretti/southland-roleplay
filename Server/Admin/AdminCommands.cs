@@ -43,6 +43,54 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("setdim", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to set a players dim")]
+        public static void AdminCommandSetDim(IPlayer player, string args = "")
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(args))
+                {
+                    player.SendSyntaxMessage("/setdim [Dimension] [IDOrName]");
+                    return;
+                }
+
+                string[] splitString = args.Split(' ');
+
+                if (splitString.Length < 2)
+                {
+                    player.SendSyntaxMessage("/setdim [Dimension] [IDOrName]");
+                    return;
+                }
+
+                bool dimParse = int.TryParse(splitString[0], out int dimension);
+
+                if (!dimParse)
+                {
+                    player.SendErrorNotification("Dimension must be a number.");
+                    return;
+                }
+
+                string idOrName = string.Join(' ', splitString.Skip(1));
+
+                IPlayer? targetPlayer = Utility.FindPlayerByNameOrId(idOrName);
+
+                if (targetPlayer == null)
+                {
+                    player.SendErrorNotification("Unable to find a player");
+                    return;
+                }
+
+                targetPlayer.Dimension = dimension;
+
+                player.SendInfoMessage($"You've set {targetPlayer.GetClass().Name}'s dimension to {dimension}.");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return;
+            }
+        }
+
         [Command("twp", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
             description: "Used to teleport to your map waypoint")]
         public static void AdminCommandTPWaypoint(IPlayer player)

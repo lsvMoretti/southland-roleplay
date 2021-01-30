@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using AltV.Net.Elements.Entities;
 
 namespace Server.Extensions
@@ -27,7 +30,11 @@ namespace Server.Extensions
 
                 Console.WriteLine($"Screenshot received from {player.GetClass().Name}");
 
-                SignalR.SendScreenShotToDiscord(playerAccount.DiscordId, screenshot);
+                string filePath = $"{Directory.GetCurrentDirectory()}/screens/{playerAccount.Username}-{DateTime.Now.ToString("dd-MM-yy-hh-mm-ss")}.jpg";
+
+                File.WriteAllBytes(filePath, Convert.FromBase64String(screenshot));
+
+                SignalR.SendScreenShotToDiscord(playerAccount.DiscordId, filePath);
             }
             catch (Exception e)
             {
