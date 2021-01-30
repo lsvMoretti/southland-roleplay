@@ -105,16 +105,13 @@ namespace Server.Dealerships
             {
                 var vehId = previewVehicles[player.GetPlayerId()];
 
-                await AltAsync.Do(() =>
-                {
-                    IVehicle vehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == vehId);
+                IVehicle? vehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == vehId);
 
-                    if (vehicle == null) return;
+                if (vehicle == null) return;
 
-                    vehicle.Delete();
+                vehicle.Delete();
 
-                    previewVehicles.Remove(player.GetPlayerId());
-                });
+                previewVehicles.Remove(player.GetPlayerId());
             }
 
             CameraExtension.DeleteCamera(player);
