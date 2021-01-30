@@ -43,7 +43,7 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
-        [Command("setdim", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to set a players dim")]
+        [Command("setdim", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Used to set a players dim")]
         public static void AdminCommandSetDim(IPlayer player, string args = "")
         {
             try
