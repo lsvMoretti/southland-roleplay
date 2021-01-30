@@ -417,8 +417,6 @@ namespace Server.Inventory
 
             int index = inventory.GetInventory().IndexOf(item);
 
-            Console.WriteLine($"Item Index: {index}");
-
             player.SetData("SELECTEDINVITEM", index);
 
             NativeUi.ShowNativeMenu(player, itemMenu, true);
