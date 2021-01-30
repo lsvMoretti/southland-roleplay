@@ -121,59 +121,81 @@ namespace Server.Character
         [Command("respawn", commandType: CommandType.Character, description: "Used once you have been downed to give up.")]
         public static void CommandRespawn(IPlayer player)
         {
-            if (player == null) return;
-
-            player.GetData("REVIVED", out bool revived);
-
-            player.GetData("CANRESPAWN", out bool canRespawn);
-
-            if (revived || !player.GetClass().Downed)
+            try
             {
-                player.SendErrorNotification("You're not dead.");
-                return;
-            }
+                player.GetData("REVIVED", out bool revived);
 
-            if (!canRespawn)
+                player.GetData("CANRESPAWN", out bool canRespawn);
+
+                if (revived || !player.GetClass().Downed)
+                {
+                    player.SendErrorNotification("You're not dead.");
+                    return;
+                }
+
+                if (!canRespawn)
+                {
+                    player.SendErrorNotification("You can't respawn yet!");
+                    return;
+                }
+
+                bool hasCurrentWeaponData = player.GetData("CurrentWeaponHash", out uint weaponHash);
+
+                if (hasCurrentWeaponData && weaponHash != 0)
+                {
+                    using Context context = new Context();
+
+                    Models.Character playerCharacter = player.FetchCharacter();
+
+                    playerCharacter.CurrentWeapon = string.Empty;
+
+                    context.SaveChanges();
+                }
+
+                DeadBody newBody = new DeadBody(player);
+                int nextId = _nextDeadBodyId;
+                _nextDeadBodyId++;
+
+                DeadBodies.Add(nextId, newBody);
+
+                DeadBodyHandler.LoadDeadBodyForAll(newBody);
+
+                player.GetClass().Downed = false;
+                player.DeleteSyncedMetaData("KnockedDown");
+                player.SetData("CANRESPAWN", false);
+                player.SetData("REVIVED", true);
+                player.DeleteData("WeaponDamageData");
+
+                player.FreezeInput(false);
+
+                player.SetPosition(new Position(1154.004f, -1525.728f, 34.84343f), Rotation.Zero, 1, true, true, switchOut: true);
+
+                Inventory.Inventory? inventory = player.FetchInventory();
+
+                if (inventory != null)
+                {
+                    List<InventoryItem> items = inventory.GetInventory().Where(x => x.Id.Contains("WEAPON")).ToList();
+
+                    foreach (InventoryItem inventoryItem in items)
+                    {
+                        inventory.RemoveItem(inventoryItem);
+
+                        WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(inventoryItem.ItemValue);
+
+                        Logging.AddToCharacterLog(player, $"Removed {inventoryItem.GetName(false)} from their inventory. Ammo: {weaponInfo.AmmoCount}");
+                    }
+                }
+
+                player.Dimension = 0;
+                Alt.EmitAllClients("clearBlood", player);
+
+                CharacterHandler.LoadCustomCharacter(player);
+            }
+            catch (Exception e)
             {
-                player.SendErrorNotification("You can't respawn yet!");
-                return;
+                Console.WriteLine(e);
+                throw;
             }
-
-            bool hasCurrentWeaponData = player.GetData("CurrentWeaponHash", out uint weaponHash);
-
-            if (hasCurrentWeaponData && weaponHash != 0)
-            {
-                using Context context = new Context();
-
-                Models.Character playerCharacter = player.FetchCharacter();
-
-                playerCharacter.CurrentWeapon = string.Empty;
-
-                context.SaveChanges();
-            }
-
-            DeadBody newBody = new DeadBody(player);
-            int nextId = _nextDeadBodyId;
-            _nextDeadBodyId++;
-
-            DeadBodies.Add(nextId, newBody);
-
-            DeadBodyHandler.LoadDeadBodyForAll(newBody);
-
-            player.GetClass().Downed = false;
-            player.DeleteSyncedMetaData("KnockedDown");
-            player.SetData("CANRESPAWN", false);
-            player.SetData("REVIVED", true);
-            player.DeleteData("WeaponDamageData");
-
-            player.FreezeInput(false);
-
-            player.SetPosition(new Position(1154.004f, -1525.728f, 34.84343f), Rotation.Zero, 1, true, true, switchOut: true);
-
-            player.Dimension = 0;
-            Alt.EmitAllClients("clearBlood", player);
-
-            CharacterHandler.LoadCustomCharacter(player);
         }
 
         [Command("revive", onlyOne: true, commandType: CommandType.Fire, description: "Used to revive another player")]
