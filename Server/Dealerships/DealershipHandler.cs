@@ -207,10 +207,7 @@ namespace Server.Dealerships
 
                 player.HideChat(true);
                 player.ShowCursor(true);
-                CameraExtension.CreateCameraAtEntity(player,
-                    new Position(currentDealership.CamPosX, currentDealership.CamPosY,
-                        currentDealership.CamPosZ), currentDealership.CamRotZ, 80, previewVehicle);
-                player.EmitLocked("ShowPreviewScreen", previewVehicle);/*
+
                 var delayTimer = new Timer(2000);
 
                 delayTimer.Start();
@@ -219,7 +216,12 @@ namespace Server.Dealerships
                 delayTimer.Elapsed += (sender, args) =>
                 {
                     delayTimer.Stop();
-                    };*/
+                    if (!previewVehicle.Exists) return;
+                    CameraExtension.CreateCameraAtEntity(player,
+                        new Position(currentDealership.CamPosX, currentDealership.CamPosY,
+                            currentDealership.CamPosZ), currentDealership.CamRotZ, 80, previewVehicle);
+                    player.EmitLocked("ShowPreviewScreen", previewVehicle);
+                };
             }
             catch (Exception e)
             {
