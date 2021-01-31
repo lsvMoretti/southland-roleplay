@@ -645,7 +645,7 @@ namespace Server.Character
 
                         if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
-                        if (!player.GetClass().AdminDuty) continue;
+                        if (!onlineAdmin.GetClass().AdminDuty) continue;
 
                         onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
                     }
@@ -806,7 +806,7 @@ namespace Server.Character
 
                         if (playerAccount.AdminLevel < AdminLevel.Tester) continue;
 
-                        if (!player.GetClass().AdminDuty) continue;
+                        if (!onlinePlayer.GetClass().AdminDuty) continue;
 
                         onlinePlayer?.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
                     }
