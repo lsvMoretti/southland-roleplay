@@ -3279,10 +3279,16 @@ namespace Server.Admin
 
             List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
+            GameItem marijuanaSeed = GameWorld.GetGameItem("ITEM_MARIJUANASEED");
+
+            menuItems.Add(new NativeMenuItem(marijuanaSeed.Name, marijuanaSeed.Description));
+
             List<GameItem> drugItems = GameWorld.GameItems.Where(x => x.ID.Contains("ITEM_DRUG")).ToList();
 
             foreach (GameItem drugItem in drugItems)
             {
+                if (drugItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" ||
+                    drugItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_LARGE") continue;
                 menuItems.Add(new NativeMenuItem(drugItem.Name, drugItem.Description));
             }
 
@@ -3299,7 +3305,7 @@ namespace Server.Admin
 
             player.GetData("admin:drugs:Quantity", out double quantity);
 
-            GameItem selectedGameItem = GameWorld.GameItems.FirstOrDefault(x => x.Name == option);
+            GameItem? selectedGameItem = GameWorld.GameItems.FirstOrDefault(x => x.Name == option);
 
             if (selectedGameItem == null)
             {
