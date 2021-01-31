@@ -40,11 +40,17 @@ namespace Server.Character
 
             if (JsonConvert.DeserializeObject<CustomCharacter>(selectedCharacter.CustomCharacter).Gender == 0)
             {
-                player.Model = (uint)PedModel.FreemodeMale01;
+                if (player.Model != (uint)PedModel.FreemodeMale01)
+                {
+                    player.Model = (uint)PedModel.FreemodeMale01;
+                }
             }
             else
             {
-                player.Model = (uint)PedModel.FreemodeFemale01;
+                if (player.Model != (uint)PedModel.FreemodeFemale01)
+                {
+                    player.Model = (uint)PedModel.FreemodeFemale01;
+                }
             }
 
             player.Emit("loadCustomPlayer", selectedCharacter.CustomCharacter, selectedCharacter.ClothesJson, selectedCharacter.AccessoryJson);
