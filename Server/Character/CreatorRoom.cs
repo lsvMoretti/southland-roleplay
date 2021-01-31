@@ -187,6 +187,13 @@ namespace Server.Character
                             characterDb.Outfits = JsonConvert.SerializeObject(new List<Outfit>());
                         }
 
+                        if (string.IsNullOrEmpty(characterDb.SpawnPosition))
+                        {
+                            SpawnPosition newPosition = new SpawnPosition(SpawnType.LastLocation);
+
+                            characterDb.SpawnPosition = JsonConvert.SerializeObject(newPosition);
+                        }
+
                         context.SaveChanges();
 
                         int index = playerCharacters.IndexOf(playerCharacter);
@@ -693,8 +700,95 @@ namespace Server.Character
                     }
                     else
                     {
-                        player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
-                            switchOut: true);
+                        if (string.IsNullOrEmpty(playerCharacter.SpawnPosition))
+                        {
+                            player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                switchOut: true);
+                        }
+                        else
+                        {
+                            SpawnPosition spawnPosition =
+                                JsonConvert.DeserializeObject<SpawnPosition>(playerCharacter.SpawnPosition);
+
+                            if (spawnPosition.SpawnType == SpawnType.LastLocation)
+                            {
+                                player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                    switchOut: true);
+                            }
+
+                            if (spawnPosition.SpawnType == SpawnType.Faction)
+                            {
+                                Faction? faction = Faction.FetchFaction(spawnPosition.FactionId);
+
+                                if (faction == null || faction.SpawnPosX == 0)
+                                {
+                                    player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                        switchOut: true);
+                                }
+                                else
+                                {
+                                    characterPosition = new Position(faction.SpawnPosX, faction.SpawnPosY, faction.SpawnPosZ);
+                                    player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                        switchOut: true);
+                                }
+                            }
+
+                            if (spawnPosition.SpawnType == SpawnType.Property)
+                            {
+                                Models.Property? property = Models.Property.FetchProperty(spawnPosition.PropertyId);
+
+                                if (property == null)
+                                {
+                                    player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                        switchOut: true);
+                                }
+                                else
+                                {
+                                    characterPosition = property.FetchExteriorPosition();
+                                    player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                        switchOut: true);
+                                }
+                            }
+
+                            if (spawnPosition.SpawnType == SpawnType.Motel)
+                            {
+                                using Context context = new Context();
+
+                                Models.Motel? motel = context.Motels.FirstOrDefault(x => x.Id == spawnPosition.MotelId);
+
+                                if (motel == null)
+                                {
+                                    player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                        switchOut: true);
+                                }
+                                else
+                                {
+                                    List<MotelRoom> motelRooms =
+                                        JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
+
+                                    if (!motelRooms.Any())
+                                    {
+                                        player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                            switchOut: true);
+                                    }
+
+                                    MotelRoom? motelRoom =
+                                        motelRooms.FirstOrDefault(x => x.Id == spawnPosition.MotelRoomId);
+
+                                    if (motelRoom == null)
+                                    {
+                                        player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                            switchOut: true);
+                                    }
+                                    else
+                                    {
+                                        characterPosition = new Position(motelRoom.PosX, motelRoom.PosY, motelRoom.PosZ);
+                                        player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
+                                            switchOut: true);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
