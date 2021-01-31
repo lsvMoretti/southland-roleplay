@@ -245,10 +245,11 @@ alt.onServer('dealership:CloseView', CloseDealershipView);
 
 function CloseDealershipView() {
     alt.setTimeout(() => {
-        currentView.destroy();
-        currentView = undefined;
-    },
-        1000);
+        if(currentView !== undefined){
+            currentView.destroy();
+            currentView = undefined;
+        }
+    },100);
     alt.emitServer('dealership:pageclosed');
 }
 

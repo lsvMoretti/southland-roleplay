@@ -148,7 +148,7 @@ namespace Server.Character
 
             DateTimeOffset localTime = TimeZoneInfo.ConvertTime(localServerTime, info);
 
-            player.SendInfoMessage($"(Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}))");
+            player.SendInfoMessage($"Real World Time: {localTime.Hour:D2}:{localTime.Minute:D2} - {localTime.Day:D2}/{localTime.Month:D2}/{localTime.Year}");
         }
 
         [Command("time", commandType: CommandType.Character, description: "Used to view the time")]

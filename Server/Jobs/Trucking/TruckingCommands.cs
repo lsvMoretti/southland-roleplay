@@ -77,7 +77,7 @@ namespace Server.Jobs.Trucking
 
             _truckingVehicles.Add(player.GetClass().CharacterId, truck);
 
-            player.SendInfoNotification("The Pounder has been spawned! You can now head to a /warehouses and /loadtruck.");
+            player.SendInfoNotification("The Pounder has been spawned! You can now head to a /warehouses and /loadtruck.", 10000);
         }
 
         [Command("stoptrucking", commandType: CommandType.Job, description: "Used to stop trucking")]
@@ -223,8 +223,6 @@ namespace Server.Jobs.Trucking
 
                 float doorDistance = player.Position.Distance(deliverBusiness.FetchExteriorPosition());
 
-                Console.WriteLine($"Distance to {deliverBusiness.BusinessName} is {doorDistance}");
-
                 if (doorDistance > 5)
                 {
                     player.SendErrorNotification("You must be stood by the business door!");
@@ -250,7 +248,7 @@ namespace Server.Jobs.Trucking
 
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
-                        player.SendInfoNotification($"You've dropped off {businessProductSpace} products at the business. This business is now full! You have {truckCount} products left in your truck.");
+                        player.SendInfoNotification($"You've dropped off {businessProductSpace} products at the business. This business is now full! You have {truckCount} products left in your truck.", , 10000);
 
                         using Context context = new Context();
 
@@ -270,7 +268,7 @@ namespace Server.Jobs.Trucking
                     {
                         truck.SetData("Trucking:Products", 0);
                         player.DeleteData("Trucking:DeliveryBusiness");
-                        player.SendInfoNotification($"You've dropped off {truckProducts} products at the business. You have 0 products left in your truck.");
+                        player.SendInfoNotification($"You've dropped off {truckProducts} products at the business. You have 0 products left in your truck.", , 10000);
 
                         using Context context = new Context();
 
@@ -280,7 +278,7 @@ namespace Server.Jobs.Trucking
 
                         playerCharacter.PaydayAmount += Payment;
 
-                        player.SendInfoNotification($"You've gained {Payment:C} into your next payday!");
+                        player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", , 10000);
 
                         fullBusiness.Products += truckProducts;
                         context.SaveChanges();
@@ -293,7 +291,7 @@ namespace Server.Jobs.Trucking
                     {
                         truck.SetData("Trucking:Products", 0);
                         player.DeleteData("Trucking:DeliveryBusiness");
-                        player.SendInfoNotification($"You've dropped off {truckProducts} products at the business. You have 0 products left in your truck.");
+                        player.SendInfoNotification($"You've dropped off {truckProducts} products at the business. You have 0 products left in your truck.", , 10000);
 
                         using Context context = new Context();
 
@@ -303,7 +301,7 @@ namespace Server.Jobs.Trucking
 
                         playerCharacter.PaydayAmount += Payment;
 
-                        player.SendInfoNotification($"You've gained {Payment:C} into your next payday!");
+                        player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", , 10000);
 
                         business.Products += truckProducts;
                         context.SaveChanges();
@@ -314,7 +312,7 @@ namespace Server.Jobs.Trucking
                         int truckCount = truckProducts -= 10;
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
-                        player.SendInfoNotification($"You've dropped off 10 products at the business. You have {truckCount} products left in your truck.");
+                        player.SendInfoNotification($"You've dropped off 10 products at the business. You have {truckCount} products left in your truck.", 10000);
 
                         using Context context = new Context();
 
@@ -324,7 +322,7 @@ namespace Server.Jobs.Trucking
 
                         playerCharacter.PaydayAmount += Payment;
 
-                        player.SendInfoNotification($"You've gained {Payment:C} into your next payday!");
+                        player.SendInfoNotification($"You've gained {Payment:C} into your next payday!",, 10000);
 
                         business.Products = business.Products += 10;
                         context.SaveChanges();
@@ -356,7 +354,7 @@ namespace Server.Jobs.Trucking
 
             player.SetWaypoint(selectedProperty.FetchExteriorPosition());
 
-            player.SendInfoNotification($"Head to {selectedProperty.BusinessName} and type /deliver again.");
+            player.SendInfoNotification($"Head to {selectedProperty.BusinessName} and type /deliver again.", , 10000);
         }
     }
 }
