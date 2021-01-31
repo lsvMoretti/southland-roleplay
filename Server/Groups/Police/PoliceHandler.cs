@@ -93,6 +93,15 @@ namespace Server.Groups.Police
                 WeaponInfo generalInfo = new WeaponInfo(1, true, "LSPD");
                 WeaponInfo pistolInfo = new WeaponInfo(100, true, "LSPD");
 
+                if (playerInventory.HasItem("ITEM_POLICE_WEAPON_STUNGUN") ||
+                    playerInventory.HasItem("ITEM_POLICE_WEAPON_PISTOL") ||
+                    playerInventory.HasItem("ITEM_POLICE_WEAPON_NIGHTSTICK") ||
+                    playerInventory.HasItem("ITEM_POLICE_WEAPON_FLASHLIGHT"))
+                {
+                    player.SendErrorNotification("You can only equip this once. Please select Remove Weapons from the menu.");
+                    return true;
+                }
+
                 // Normal Duty
                 inventoryItems.Add(new InventoryItem("ITEM_POLICE_WEAPON_STUNGUN", "Stungun", generalInfo.ToString()));
                 inventoryItems.Add(new InventoryItem("ITEM_POLICE_WEAPON_PISTOL", "Pistol", pistolInfo.ToString()));
@@ -106,6 +115,12 @@ namespace Server.Groups.Police
 
             if (type == 1)
             {
+                if (playerInventory.HasItem("ITEM_POLICE_WEAPON_SHOTGUN"))
+                {
+                    player.SendErrorNotification("You can only equip this once. Please select Remove Weapons from the menu.");
+                    return true;
+                }
+
                 // Shotgun
                 WeaponInfo shotgunInfo = new WeaponInfo(50, true, "LSPD");
                 inventoryItems.Add(new InventoryItem("ITEM_POLICE_WEAPON_SHOTGUN", "Shotgun", shotgunInfo.ToString()));
@@ -118,6 +133,13 @@ namespace Server.Groups.Police
             if (type == 2)
             {
                 // AR
+
+                if (playerInventory.HasItem("ITEM_POLICE_WEAPON_AR"))
+                {
+                    player.SendErrorNotification("You can only equip this once. Please select Remove Weapons from the menu.");
+                    return true;
+                }
+
                 WeaponInfo arInfo = new WeaponInfo(200, true, "LSPD");
                 inventoryItems.Add(new InventoryItem("ITEM_POLICE_WEAPON_AR", "Assault Rife", arInfo.ToString()));
 

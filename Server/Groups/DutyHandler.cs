@@ -84,6 +84,7 @@ namespace Server.Groups
 
                 menuItems.Add(new NativeMenuItem("Duty Uniform"));
                 menuItems.Add(new NativeMenuItem("Patrol Equipment"));
+                menuItems.Add(new NativeMenuItem("Remove Police Weapons"));
                 menuItems.Add(new NativeMenuItem("Shotgun"));
                 menuItems.Add(new NativeMenuItem("Assault Rifle"));
                 //menuItems.Add(new NativeMenuItem("Detective Loadout"));
@@ -311,6 +312,18 @@ namespace Server.Groups
                 player.SendInfoNotification($"Patrol Equipment Given");
 
                 Logging.AddToCharacterLog(player, "Has taken Duty Equipment.");
+            }
+
+            if (option == "Remove Police Weapons")
+            {
+                bool success = PoliceHandler.RemovePoliceItems(player);
+                if (success)
+                {
+                    player.SendInfoNotification("Items Removed.");
+                    return;
+                }
+                player.SendInfoNotification("Unable to remove police items");
+                return;
             }
 
             if (option == "Shotgun")
