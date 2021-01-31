@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
@@ -24,6 +25,7 @@ namespace Server.Character
 
         public string KillerName { get; set; }
         public uint KillerWeapon { get; set; }
+        public DateTime TimeOfDeath { get; set; }
 
         public DeadBody(IPlayer player)
         {
@@ -33,7 +35,7 @@ namespace Server.Character
             Clothes = player.FetchCharacter().ClothesJson;
             Accessories = player.FetchCharacter().AccessoryJson;
 
-            Tattoos = player.FetchCharacter().TattooJson;  
+            Tattoos = player.FetchCharacter().TattooJson;
 
             PosX = player.Position.X;
             PosY = player.Position.Y;
@@ -45,7 +47,7 @@ namespace Server.Character
 
             List<ClothesData> clothing = JsonConvert.DeserializeObject<List<ClothesData>>(Clothes);
 
-            ClothesData top = clothing.FirstOrDefault(x => x.slot == (int) ClothesType.Top);
+            ClothesData? top = clothing.FirstOrDefault(x => x.slot == (int)ClothesType.Top);
 
             if (top != null)
             {
@@ -58,6 +60,8 @@ namespace Server.Character
 
             KillerName = lastKiller;
             KillerWeapon = lastWeapon;
+
+            TimeOfDeath = DateTime.Now;
         }
     }
 }

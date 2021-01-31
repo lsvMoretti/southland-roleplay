@@ -702,6 +702,8 @@ namespace Server
 
             DoorHandler.SetPoliceDoorsLocked();
 
+            DeadBodyHandler.InitDeadBodyClearing();
+
             await LoadVehicle.LoadFactionVehicles();
 
             await LoadVehicle.LoadCharacterVehicles();
