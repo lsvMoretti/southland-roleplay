@@ -595,15 +595,18 @@ namespace Server.Inventory
 
                 foreach (IPlayer target in playerList)
                 {
-                    if (!target.IsSpawned()) continue;
+                    lock (target)
+                    {
+                        if (!target.IsSpawned()) continue;
 
-                    if (target.Dimension != player.Dimension) continue;
+                        if (target.Dimension != player.Dimension) continue;
 
-                    Position targetPosition = target.Position;
+                        Position targetPosition = target.Position;
 
-                    if (playerPosition.Distance(targetPosition) > 4) continue;
+                        if (playerPosition.Distance(targetPosition) > 4) continue;
 
-                    targetList.Add(target);
+                        targetList.Add(target);
+                    }
                 }
 
                 if (!targetList.Any())
@@ -1045,7 +1048,7 @@ namespace Server.Inventory
 
             player.GetData("SELECTEDINVITEM", out int itemIndex);
 
-            IPlayer target = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetValue);
+            IPlayer? target = Alt.GetAllPlayers().FirstOrDefault(x => x.GetPlayerId() == targetValue);
 
             if (target == null)
             {
