@@ -708,7 +708,7 @@ namespace Server.Character
                 return;
             }
 
-            AdminReport adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Id == reportId);
+            AdminReport? adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Id == reportId);
 
             if (adminReport == null)
             {
