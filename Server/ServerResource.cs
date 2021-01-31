@@ -534,7 +534,9 @@ namespace Server
             catch (Exception e)
             {
                 Log.Logger = new LoggerConfiguration().WriteTo
-                    .File($"{Directory.GetCurrentDirectory()}/mainCatch.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
+                    .File($"{Directory.GetCurrentDirectory()}/mainCatch.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}")
+                    .WriteTo.Console()
+                    .CreateLogger();
 
                 Log.Error(e, "Main Thread Fail");
                 Console.WriteLine(e);
