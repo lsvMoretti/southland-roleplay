@@ -115,9 +115,9 @@ namespace Server.Admin
 
         public static void SendMessageToReport(int reportId, string messageText)
         {
-            AdminReport adminReport = AdminReports.FirstOrDefault(x => x.Id == reportId);
+            AdminReport? adminReport = AdminReports.FirstOrDefault(x => x.Id == reportId);
 
-            IPlayer reportPlayer = adminReport?.Player;
+            IPlayer? reportPlayer = adminReport?.Player;
 
             reportPlayer?.SendAdminMessage($"Report Message: {messageText}");
         }

@@ -637,15 +637,18 @@ namespace Server.Character
             {
                 foreach (IPlayer onlineAdmin in onlineAdmins)
                 {
-                    if (onlineAdmin == null) continue;
+                    lock (onlineAdmin)
+                    {
+                        Models.Account? adminAccount = onlineAdmin.FetchAccount();
 
-                    Models.Account adminAccount = onlineAdmin.FetchAccount();
+                        if (adminAccount == null) continue;
 
-                    if (adminAccount == null) continue;
+                        if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
-                    if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
+                        if (!player.GetClass().AdminDuty) continue;
 
-                    onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
+                        onlineAdmin.SendAdminMessage($"New Report by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Reason: {message}. Id: {newReport.Id}.");
+                    }
                 }
             }
 
@@ -705,7 +708,7 @@ namespace Server.Character
                 return;
             }
 
-            AdminReport adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Id == reportId);
+            AdminReport? adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Id == reportId);
 
             if (adminReport == null)
             {
@@ -795,13 +798,18 @@ namespace Server.Character
             {
                 foreach (IPlayer onlinePlayer in onlinePlayers)
                 {
-                    Models.Account? playerAccount = onlinePlayer?.FetchAccount();
+                    lock (onlinePlayer)
+                    {
+                        Models.Account? playerAccount = onlinePlayer?.FetchAccount();
 
-                    if (playerAccount == null) continue;
+                        if (playerAccount == null) continue;
 
-                    if (playerAccount.AdminLevel < AdminLevel.Tester) continue;
+                        if (playerAccount.AdminLevel < AdminLevel.Tester) continue;
 
-                    onlinePlayer.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
+                        if (!player.GetClass().AdminDuty) continue;
+
+                        onlinePlayer?.SendHelperMessage($"New Help Me by {player.GetClass().Name} (PID: {player.GetPlayerId()}). Request: {message}. Id: {newReport.Id}.");
+                    }
                 }
             }
 
