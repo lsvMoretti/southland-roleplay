@@ -337,7 +337,7 @@ namespace Server.Dealerships
                     return;
                 }
 
-                Models.Character playerCharacter = player?.FetchCharacter();
+                Models.Character? playerCharacter = player?.FetchCharacter();
 
                 if (playerCharacter == null)
                 {

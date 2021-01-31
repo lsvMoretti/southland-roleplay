@@ -200,7 +200,12 @@ namespace Server.Bank
             bankAccount.PinAttempts += 1;
             if (bankAccount.PinAttempts >= 3)
             {
+                player.SendErrorMessage("This Card has been disabled by the bank.");
                 bankAccount.WithdrawalBlocked = true;
+            }
+            else
+            {
+                player.SendErrorMessage("Incorrect PIN.");
             }
 
             context.SaveChanges();
