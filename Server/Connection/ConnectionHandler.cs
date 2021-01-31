@@ -44,6 +44,7 @@ namespace Server.Connection
             try
             {
                 Console.WriteLine($"{player.Name} has connected.");
+                player.Dimension = -1;
                 player.Emit("showLogin");
                 player.SendInfoMessage($"Welcome to Southland Roleplay. Upon logging in, you accept the server rules.");
                 player.SendInfoMessage($"Version: v{Utility.Build} - Build: {Utility.LastUpdate}");
@@ -395,13 +396,13 @@ namespace Server.Connection
                     ClerkHandler.StopClerkJob(player);
                 }
 
-                AdminReport adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Player == player);
+                AdminReport? adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Player == player);
 
                 if (adminReport != null)
                 {
                     AdminHandler.AdminReports.Remove(adminReport);
 
-                    AdminReportObject reportObject =
+                    AdminReportObject? reportObject =
                         AdminHandler.AdminReportObjects.FirstOrDefault(x =>
                             x.CharacterId == player.GetClass().CharacterId);
 
@@ -410,6 +411,13 @@ namespace Server.Connection
                         SignalR.RemoveReport(reportObject);
                         AdminHandler.AdminReportObjects.Remove(reportObject);
                     }
+                }
+
+                HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Player == player);
+
+                if (helpReport != null)
+                {
+                    AdminHandler.HelpReports.Remove(helpReport);
                 }
             }
             catch (Exception e)
