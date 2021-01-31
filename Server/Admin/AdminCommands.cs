@@ -43,6 +43,66 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("toga", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to toggle A Chat")]
+        public static void AdminCommandToggleAdminChat(IPlayer player)
+        {
+            bool hasData = player.GetData("AdminChat:Toggled", out bool toggled);
+
+            if (!hasData)
+            {
+                player.SetData("AdminChat:Toggled", true);
+                player.SendInfoNotification("You've disabled the Admin Chat");
+                return;
+            }
+
+            player.DeleteData("AdminChat:Toggled");
+            player.SendInfoNotification("You've enabled the Admin Chat.");
+        }
+
+        [Command("reports", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to view reports")]
+        public static void AdminCommandViewReports(IPlayer player)
+        {
+            List<AdminReport> adminReports = AdminHandler.AdminReports;
+
+            if (!adminReports.Any())
+            {
+                player.SendInfoNotification("There are no admin reports.");
+                return;
+            }
+
+            player.SendInfoMessage($"Fetching {adminReports.Count} unanswered reports.");
+
+            foreach (AdminReport adminReport in adminReports)
+            {
+                lock (adminReport)
+                {
+                    player.SendInfoMessage($"Report ID: {adminReport.Id}, Player Id: {adminReport.Player.GetClass().PlayerId}, Reason: {adminReport.Message}");
+                }
+            }
+        }
+
+        [Command("helpmes", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to view helpme's")]
+        public static void AdminCommandViewHelpMes(IPlayer player)
+        {
+            List<HelpReport> helpReports = AdminHandler.HelpReports;
+
+            if (!helpReports.Any())
+            {
+                player.SendInfoNotification("There are no helpme's.");
+                return;
+            }
+
+            player.SendInfoMessage($"Fetching {helpReports.Count} unanswered helpme's.");
+
+            foreach (HelpReport helpReport in helpReports)
+            {
+                lock (helpReport)
+                {
+                    player.SendInfoMessage($"Help Me ID: {helpReport.Id}, Player Id: {helpReport.Player.GetClass().PlayerId}, Reason: {helpReport.Message}");
+                }
+            }
+        }
+
         [Command("setdim", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Used to set a players dim")]
         public static void AdminCommandSetDim(IPlayer player, string args = "")
         {

@@ -216,7 +216,11 @@ namespace Server.Dealerships
                 delayTimer.Elapsed += (sender, args) =>
                 {
                     delayTimer.Stop();
-                    if (!previewVehicle.Exists) return;
+                    if (!previewVehicle.Exists)
+                    {
+                        player.EmitLocked("dealership:CloseView");
+                        return;
+                    }
                     CameraExtension.CreateCameraAtEntity(player,
                         new Position(currentDealership.CamPosX, currentDealership.CamPosY,
                             currentDealership.CamPosZ), currentDealership.CamRotZ, 80, previewVehicle);
@@ -225,7 +229,7 @@ namespace Server.Dealerships
             }
             catch (Exception e)
             {
-                player.Emit("closeCurrentPage");
+                player.EmitLocked("dealership:CloseView");
 
                 Console.WriteLine(e);
                 return;
@@ -240,7 +244,11 @@ namespace Server.Dealerships
 
             IVehicle previewVehicle = Alt.Server.GetVehicles().First(i => i.Id == previewVehicleId);
 
-            if (previewVehicle == null) return;
+            if (previewVehicle == null)
+            {
+                player.EmitLocked("dealership:CloseView");
+                return;
+            }
 
             DegreeRotation currentVehicleRotation = previewVehicle.Rotation;
 
@@ -254,7 +262,11 @@ namespace Server.Dealerships
 
             IVehicle previewVehicle = Alt.Server.GetVehicles().First(i => i.Id == previewVehicleId);
 
-            if (previewVehicle == null) return;
+            if (previewVehicle == null)
+            {
+                player.EmitLocked("dealership:CloseView");
+                return;
+            }
 
             LsvColor previewColor = new LsvColor();
 
@@ -325,7 +337,7 @@ namespace Server.Dealerships
                     return;
                 }
 
-                Models.Character playerCharacter = player?.FetchCharacter();
+                Models.Character? playerCharacter = player?.FetchCharacter();
 
                 if (playerCharacter == null)
                 {

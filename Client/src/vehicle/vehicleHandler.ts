@@ -241,6 +241,8 @@ function ViewDealershipLoaded() {
     currentView.emit('loadDealershipVehicleInfo', dealershipJson);
 }
 
+alt.onServer('dealership:CloseView', CloseDealershipView);
+
 function CloseDealershipView() {
     alt.setTimeout(() => {
         currentView.destroy();

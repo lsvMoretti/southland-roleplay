@@ -42,6 +42,10 @@ namespace Server.Language
             Languages.Add(new Language("Persian", "fa"));
             Languages.Add(new Language("Urdu", "ur"));
             Languages.Add(new Language("Afrikaans", "af"));
+            Languages.Add(new Language("Croatian", "hr"));
+            Languages.Add(new Language("Turkish", "tr"));
+            Languages.Add(new Language("Bulgarian", "bg"));
+            Languages.Add(new Language("Greek", "el"));
 
             Blip positionBlip = new Blip("ULSA", LearnPosition, 133, 58, 0.75f);
             positionBlip.Add();
@@ -85,7 +89,7 @@ namespace Server.Language
                     Translations translation =
                         JsonConvert.DeserializeObject<Translations>(trim);
 
-                ;
+                    ;
                     Console.WriteLine(
                         $"Result: {translation.translations.FirstOrDefault()?.text}");
 

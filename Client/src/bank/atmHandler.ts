@@ -148,10 +148,6 @@ function InputPin(pin: any) {
 
     var accNo = selectedBankCard.ItemValue;
 
-    alt.log("Account No: " + accNo);
-
-    alt.log("Card Accounts JSON: " + cardAccounts);
-
     var bankAccounts = JSON.parse(cardAccounts);
 
     var SelectedBankAccount = undefined;
