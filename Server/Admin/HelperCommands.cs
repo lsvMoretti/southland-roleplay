@@ -22,12 +22,6 @@ namespace Server.Admin
                 return;
             }
 
-            if (!player.GetClass().AdminDuty || !player.FetchAccount().Tester)
-            {
-                player.SendErrorNotification("Your not on duty!");
-                return;
-            }
-
             bool tryParse = int.TryParse(idString, out int id);
 
             if (!tryParse)
@@ -36,7 +30,7 @@ namespace Server.Admin
                 return;
             }
 
-            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == id);
+            HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == id);
 
             if (helpReport == null)
             {
@@ -96,12 +90,6 @@ namespace Server.Admin
                 return;
             }
 
-            if (!player.GetClass().AdminDuty || !player.FetchAccount().Tester)
-            {
-                player.SendErrorNotification("Your not on duty!");
-                return;
-            }
-
             bool tryParse = int.TryParse(idString, out int id);
 
             if (!tryParse)
@@ -110,7 +98,7 @@ namespace Server.Admin
                 return;
             }
 
-            HelpReport helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == id);
+            HelpReport? helpReport = AdminHandler.HelpReports.FirstOrDefault(x => x.Id == id);
 
             if (helpReport == null)
             {
