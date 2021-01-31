@@ -1212,6 +1212,7 @@ namespace Server.Inventory
                     if (!playerInventory.AddItem(newAmmoItem))
                     {
                         player.SendErrorNotification("Unable to do this!");
+                        return;
                     }
                     DroppedItems.RemoveDroppedItem(droppedItem);
 
