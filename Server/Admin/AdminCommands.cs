@@ -43,6 +43,22 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("toga", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to toggle A Chat")]
+        public static void AdminCommandToggleAdminChat(IPlayer player)
+        {
+            bool hasData = player.GetData("AdminChat:Toggled", out bool toggled);
+
+            if (!hasData)
+            {
+                player.SetData("AdminChat:Toggled", true);
+                player.SendInfoNotification("You've disabled the Admin Chat");
+                return;
+            }
+
+            player.DeleteData("AdminChat:Toggled");
+            player.SendInfoNotification("You've enabled the Admin Chat.");
+        }
+
         [Command("reports", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to view reports")]
         public static void AdminCommandViewReports(IPlayer player)
         {

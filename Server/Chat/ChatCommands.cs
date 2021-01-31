@@ -443,6 +443,8 @@ namespace Server.Chat
 
                 if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
 
+                if (admin.HasData("AdminChat:Toggled")) continue;
+
                 admin.SendAdminChatMessage($"{username} says: {message}");
             }
 
