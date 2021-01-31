@@ -568,9 +568,23 @@ namespace Server.Character
         {
             if (player.FetchCharacter() == null) return;
 
-            List<IPlayer> playerList = Alt.GetAllPlayers().Where(x => x.FetchCharacter().FactionDuty).ToList();
+            List<IPlayer> playerList = Alt.GetAllPlayers().ToList();
 
-            if (!playerList.Any())
+            List<IPlayer> factionPlayers = new List<IPlayer>();
+
+            foreach (IPlayer targetPlayer in playerList)
+            {
+                lock (targetPlayer)
+                {
+                    if (targetPlayer.FetchCharacter() == null) continue;
+
+                    if (!targetPlayer.FetchCharacter().FactionDuty) continue;
+
+                    factionPlayers.Add(targetPlayer);
+                }
+            }
+
+            if (!factionPlayers.Any())
             {
                 player.SendErrorNotification("No-one is on duty!");
                 return;
@@ -579,15 +593,18 @@ namespace Server.Character
             int medical = 0;
             int police = 0;
 
-            foreach (IPlayer target in playerList)
+            foreach (IPlayer target in factionPlayers)
             {
-                Faction targetFaction = Faction.FetchFaction(target.FetchCharacter().ActiveFaction);
+                lock (target)
+                {
+                    Faction? targetFaction = Faction.FetchFaction(target.FetchCharacter().ActiveFaction);
 
-                if (targetFaction == null || !target.FetchCharacter().FactionDuty) continue;
+                    if (targetFaction == null || !target.FetchCharacter().FactionDuty) continue;
 
-                if (targetFaction.SubFactionType == SubFactionTypes.Law) police++;
+                    if (targetFaction.SubFactionType == SubFactionTypes.Law) police++;
 
-                if (targetFaction.SubFactionType == SubFactionTypes.Medical) medical++;
+                    if (targetFaction.SubFactionType == SubFactionTypes.Medical) medical++;
+                }
             }
 
             player.SendInfoNotification($"Current Law Enforcement on duty: {police}. Current Medical on duty: {medical}.");
