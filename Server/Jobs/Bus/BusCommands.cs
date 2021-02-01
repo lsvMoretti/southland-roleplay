@@ -186,7 +186,7 @@ namespace Server.Jobs.Bus
 
             player.SetData("bus:onRoute", false);
 
-            _routeEarning = stopCount < 15 ? 80 : 150;
+            _routeEarning = stopCount < 15 ? 40 : 80;
 
             player.SendInfoNotification($"You've completed the bus route. You've gained {_routeEarning:C} from this.");
 
