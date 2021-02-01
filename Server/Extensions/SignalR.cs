@@ -142,57 +142,91 @@ namespace Server.Extensions
         /// <param name="message"></param>
         public void SendMessageToACP(string message)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("SendMessageToACP", message);
+#endif
         }
 
         public static void SendDiscordMessage(ulong channelId, string message)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("SendDiscordMessage", channelId.ToString(), message);
+#endif
         }
 
         public static void SendDiscordEmbed(ulong channelId, DiscordEmbed embed)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("SendDiscordEmbed", channelId.ToString(), JsonConvert.SerializeObject(embed));
+#endif
         }
 
         public static void SendPlayerCount()
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("ReceivePlayerCount", Alt.GetAllPlayers().Count());
+#endif
         }
 
         public static void SendUserLogin(Models.Account playerAccount)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("OnUserLogin", playerAccount.Id, playerAccount.Username);
+#endif
         }
 
         public static void SendUserLogout(Models.Account playerAccount)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("OnUserLogout", playerAccount.Id, playerAccount.Username);
+#endif
         }
 
         public static void SendDiscordUserMessage(string userId, string message)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("SendDiscordUserMessage", userId, message);
+
+#endif
         }
 
         public static void AddReport(AdminReportObject report)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("SendGameReport", JsonConvert.SerializeObject(report));
+#endif
         }
 
         public static void RemoveReport(AdminReportObject report)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("RemoveGameReport", JsonConvert.SerializeObject(report));
+#endif
         }
 
         public static void SendReportMessage(int reportId, string message)
         {
+#if RELEASE
+
             hubConnection.InvokeAsync("SendDiscordReportMessage", reportId, message);
+#endif
         }
 
         public static async void SendScreenShotToDiscord(string discordId, string image)
         {
+#if RELEASE
+
             await hubConnection.InvokeAsync("SendScreenshotToDiscordUser", discordId, image);
+#endif
         }
     }
 }

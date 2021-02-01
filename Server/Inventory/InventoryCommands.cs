@@ -1226,9 +1226,7 @@ namespace Server.Inventory
 
             InventoryItem item = new InventoryItem(droppedItem.Item.Id, droppedItem.Item.CustomName, droppedItem.Item.ItemValue, droppedItem.Item.Quantity);
 
-            bool addItem = playerInventory.AddItem(item);
-
-            if (addItem)
+            if (playerInventory.AddItem(item))
             {
                 DroppedItems.RemoveDroppedItem(droppedItem);
 
