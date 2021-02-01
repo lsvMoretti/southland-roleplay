@@ -684,6 +684,8 @@ namespace Server.Extensions
                 if (serverTrigger == "DrugSystem:RemoveDrugQuantityFromBag") Drug.Commands.OnRemoveDrugFromBagQuantitySelect(player, selectedItem);
 
                 #endregion Drug System Revamp
+
+                if (serverTrigger == "Character:SpawnSelectionMenu") CharacterCommands.OnSpawnSelectionMenuSelect(player, selectedItem);
             }
             catch (Exception e)
             {
