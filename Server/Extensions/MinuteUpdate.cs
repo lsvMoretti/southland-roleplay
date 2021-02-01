@@ -136,100 +136,104 @@ namespace Server.Extensions
 
             foreach (IPlayer player in Alt.GetAllPlayers())
             {
-                if (player.FetchCharacter() == null) continue;
-
-                if (player.GetClass().CreatorRoom) continue;
-
-                // Payday
-
-                Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
-
-                if (playerCharacter == null) continue;
-
-                if (playerCharacter.InJail && playerCharacter.JailMinutes <= 0)
+                lock (player)
                 {
-                    // In jail and finished time;
-                    player.Position = PoliceHandler.UnJailPosition;
-                    player.Dimension = 0;
-                    playerCharacter.InJail = false;
-                    playerCharacter.JailMinutes = 0;
+                    if (player.FetchCharacter() == null) continue;
 
-                    PlayerChatExtension.SendInfoNotification(player, $"You have been released from jail.");
-                }
-                else if (playerCharacter.InJail && playerCharacter.JailMinutes > 0)
-                {
-                    playerCharacter.JailMinutes -= 1;
-                    PlayerChatExtension.SendInfoNotification(player, $"You have {playerCharacter.JailMinutes} minutes remaining in jail.");
-                }
+                    if (player.GetClass().CreatorRoom) continue;
 
-                Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
+                    // Payday
 
-                if (playerAccount.InJail && playerAccount.JailMinutes <= 0)
-                {
-                    // In jail and finished time;
-                    player.Position = PoliceHandler.UnJailPosition;
-                    player.Dimension = 0;
-                    playerAccount.InJail = false;
-                    playerAccount.JailMinutes = 0;
-                    player.SendAdminMessage($"You have been released from jail.");
-                }
-                else if (playerAccount.InJail && playerAccount.JailMinutes > 0)
-                {
-                    playerAccount.JailMinutes -= 1;
+                    Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
-                    PlayerChatExtension.SendInfoNotification(player, $"You have {playerAccount.JailMinutes} minutes remaining in admin jail.");
+                    if (playerCharacter == null) continue;
 
-                    continue;
-                }
-
-                playerCharacter.LastTimeCheck = DateTime.Now;
-                playerCharacter.PosX = player.Position.X;
-                playerCharacter.PosY = player.Position.Y;
-                playerCharacter.PosZ = player.Position.Z;
-                playerCharacter.RotZ = player.Rotation.Yaw;
-
-                bool hasLastTime = player.GetData("AFK:LastMove", out DateTime lastMove);
-
-                if (hasLastTime)
-                {
-                    if (DateTime.Compare(DateTime.Now, lastMove.AddMinutes(5)) > 0 && playerAccount.AdminLevel < AdminLevel.Director)
+                    if (playerCharacter.InJail && playerCharacter.JailMinutes <= 0)
                     {
-                        Console.WriteLine($"[{DateTime.Now}] - {player.GetClass().Name} hasn't done anything since {lastMove}.");
-                        Alt.Server.LogInfo($"[{DateTime.Now}] - {player.GetClass().Name} hasn't done anything since {lastMove}.");
+                        // In jail and finished time;
+                        player.Position = PoliceHandler.UnJailPosition;
+                        player.Dimension = 0;
+                        playerCharacter.InJail = false;
+                        playerCharacter.JailMinutes = 0;
+
+                        PlayerChatExtension.SendInfoNotification(player, $"You have been released from jail.");
+                    }
+                    else if (playerCharacter.InJail && playerCharacter.JailMinutes > 0)
+                    {
+                        playerCharacter.JailMinutes -= 1;
+                        PlayerChatExtension.SendInfoNotification(player, $"You have {playerCharacter.JailMinutes} minutes remaining in jail.");
+                    }
+
+                    Models.Account playerAccount = context.Account.Find(player.GetClass().AccountId);
+
+                    if (playerAccount.InJail && playerAccount.JailMinutes <= 0)
+                    {
+                        // In jail and finished time;
+                        player.Position = PoliceHandler.UnJailPosition;
+                        player.Dimension = 0;
+                        playerAccount.InJail = false;
+                        playerAccount.JailMinutes = 0;
+                        player.SendAdminMessage($"You have been released from jail.");
+                    }
+                    else if (playerAccount.InJail && playerAccount.JailMinutes > 0)
+                    {
+                        playerAccount.JailMinutes -= 1;
+
+                        PlayerChatExtension.SendInfoNotification(player, $"You have {playerAccount.JailMinutes} minutes remaining in admin jail.");
+
                         continue;
                     }
-                }
 
-                if (playerCharacter.TotalMinutes >= 59)
-                {
-                    playerCharacter.TotalMinutes = 0;
-                    playerCharacter.TotalHours += 1;
-                    /*if (playerCharacter.TotalHours % 50 == 0)
+                    playerCharacter.LastTimeCheck = DateTime.Now;
+                    playerCharacter.PosX = player.Position.X;
+                    playerCharacter.PosY = player.Position.Y;
+                    playerCharacter.PosZ = player.Position.Z;
+                    playerCharacter.RotZ = player.Rotation.Yaw;
+
+                    bool hasLastTime = player.GetData("AFK:LastMove", out DateTime lastMove);
+
+                    if (hasLastTime)
+                    {
+                        if (DateTime.Compare(DateTime.Now, lastMove.AddMinutes(5)) > 0 && playerAccount.AdminLevel < AdminLevel.Director)
+                        {
+                            Console.WriteLine($"[{DateTime.Now}] - {player.GetClass().Name} hasn't done anything since {lastMove}.");
+                            Alt.Server.LogInfo($"[{DateTime.Now}] - {player.GetClass().Name} hasn't done anything since {lastMove}.");
+                            continue;
+                        }
+                    }
+
+                    if (playerCharacter.TotalMinutes >= 59)
+                    {
+                        playerCharacter.TotalMinutes = 0;
+                        playerCharacter.TotalHours += 1;
+                        /*if (playerCharacter.TotalHours % 50 == 0)
                     {
                         playerCharacter.Money += 20000;
                         player.SendInfoMessage($"You've hit another fifty hours! Here is {20000:C}!");
                     }*/
 
-                    Payday.ProcessPlayerPayday(player);
-                    continue;
-                }
+                        Payday.ProcessPlayerPayday(player);
+                        continue;
+                    }
 
-                playerCharacter.TotalMinutes += 1;
+                    playerCharacter.TotalMinutes += 1;
+                }
             }
             //DiscordBot.UpdateDiscordPlayerCount(Alt.GetAllPlayers().Count(x => x.FetchCharacter() != null));
             context.SaveChanges();
             _minuteTimer.Start();
 
+            /*
             foreach (Models.Character character in context.Character.Where(x => x.InJail))
             {
-                if (Models.Account.FindAccountById(character.OwnerId).IsOnline) continue;
+                if (!Models.Account.FindAccountById(character.OwnerId).IsOnline) continue;
 
                 if (character.JailMinutes > 120)
                 {
                     character.JailMinutes -= 1;
                 }
             }
-
+            */
             context.SaveChanges();
         }
     }

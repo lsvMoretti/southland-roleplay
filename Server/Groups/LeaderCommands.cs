@@ -17,6 +17,61 @@ namespace Server.Groups
 {
     public class LeaderCommands
     {
+        [Command("setspawn", commandType: CommandType.Faction, description: "[Leader] Used to set a spawn point")]
+        public static void LeaderCommandSetSpawn(IPlayer player)
+        {
+            Faction? activeFaction = Faction.FetchFaction(player.FetchCharacter().ActiveFaction);
+
+            if (activeFaction == null)
+            {
+                player.SendErrorNotification("You are not in an active faction.");
+                return;
+            }
+
+            List<PlayerFaction> playerFactions =
+                JsonConvert.DeserializeObject<List<PlayerFaction>>(player.FetchCharacter().FactionList);
+
+            PlayerFaction? playerFaction = playerFactions.FirstOrDefault(x => x.Id == activeFaction.Id);
+
+            if (playerFaction == null)
+            {
+                player.SendErrorNotification("You are not in your active faction.");
+                return;
+            }
+
+            bool canSetSpawn = playerFaction.Leader;
+
+            if (activeFaction.FactionType == FactionTypes.Faction &&
+                activeFaction.SubFactionType == SubFactionTypes.None)
+            {
+                canSetSpawn = false;
+            }
+
+            if (!canSetSpawn)
+            {
+                player.SendPermissionError();
+                return;
+            }
+
+            using Context context = new Context();
+
+            Faction? faction = context.Faction.FirstOrDefault(x => x.Id == activeFaction.Id);
+
+            if (faction == null)
+            {
+                player.SendErrorNotification("Unable to find the faction.");
+                return;
+            }
+
+            faction.SpawnPosX = player.Position.X;
+            faction.SpawnPosY = player.Position.Y;
+            faction.SpawnPosZ = player.Position.Z;
+
+            context.SaveChanges();
+
+            player.SendInfoNotification("You've updated the spawn location of the faction.");
+        }
+
         [Command("fpark", commandType: CommandType.Faction, description: "[Leader] Parks a faction vehicle")]
         public static void LeaderCommandFPark(IPlayer player)
         {

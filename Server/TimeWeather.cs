@@ -75,26 +75,31 @@ namespace Server
      $"alt:V Server - Game Time: {serverSettings.Hour}:{serverSettings.Minute} - V{Utility.Build} - {Utility.LastUpdate} [DEBUG MODE]";
 #endif
 
-                foreach (IPlayer player in Alt.GetAllPlayers().Where(x => x.FetchCharacter() != null).ToList())
+                foreach (IPlayer player in Alt.GetAllPlayers())
                 {
-                    DateTime dateNow = DateTime.Now;
-
-                    if (player.GetClass().CreatorRoom)
+                    lock (player)
                     {
-                        player.SetDateTime(dateNow.Day, dateNow.Month, dateNow.Year, 12, 0, 0);
-                        player.SetWeather(WeatherType.Clear);
-                        player.SetData("Weather:LastHour", -1);
-                    }
-                    else
-                    {
-                        bool hasLastWeather = player.GetData("Weather:LastHour", out int lastHour);
+                        if (player.FetchCharacter() == null) continue;
 
-                        if (!hasLastWeather || oldHour != lastHour)
+                        DateTime dateNow = DateTime.Now;
+
+                        if (player.GetClass().CreatorRoom)
                         {
-                            // Hasn't had last hour update or old hour is different to last update
+                            player.SetDateTime(dateNow.Day, dateNow.Month, dateNow.Year, 12, 0, 0);
+                            player.SetWeather(WeatherType.Clear);
+                            player.SetData("Weather:LastHour", -1);
+                        }
+                        else
+                        {
+                            bool hasLastWeather = player.GetData("Weather:LastHour", out int lastHour);
 
-                            player.SetDateTime(dateNow.Day, dateNow.Month, dateNow.Year, serverSettings.Hour, serverSettings.Minute, 0);
-                            player.Emit("OnTimeUpdate");
+                            if (!hasLastWeather || oldHour != lastHour)
+                            {
+                                // Hasn't had last hour update or old hour is different to last update
+
+                                player.SetDateTime(dateNow.Day, dateNow.Month, dateNow.Year, serverSettings.Hour, serverSettings.Minute, 0);
+                                player.Emit("OnTimeUpdate");
+                            }
                         }
                     }
                 }

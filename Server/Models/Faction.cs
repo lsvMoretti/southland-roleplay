@@ -34,6 +34,10 @@ namespace Server.Models
         /// </summary>
         public string? DivisionJson { get; set; }
 
+        public float SpawnPosX { get; set; }
+        public float SpawnPosY { get; set; }
+        public float SpawnPosZ { get; set; }
+
         /// <summary>
         /// Adds a faction to the DB
         /// </summary>

@@ -335,6 +335,11 @@ namespace Server.Models
         public string? ActiveWeapon { get; set; }
 
         /// <summary>
+        /// JSON of SpawnPosition
+        /// </summary>
+        public string? SpawnPosition { get; set; }
+
+        /// <summary>
         /// Creates a Character
         /// </summary>
         /// <param name="character"></param>

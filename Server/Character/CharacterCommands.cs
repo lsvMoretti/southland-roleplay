@@ -30,6 +30,127 @@ namespace Server.Character
 {
     public class CharacterCommands
     {
+        [Command("spawn", commandType: CommandType.Character, description: "Used to select your spawn location")]
+        public static void CharacterCommandSpawn(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            List<NativeMenuItem> menuItems = new List<NativeMenuItem>
+            {
+                new NativeMenuItem("Last Location", "Spawn at your last location")
+            };
+
+            Models.Character? playerCharacter = player.FetchCharacter();
+
+            if (playerCharacter == null) return;
+
+            List<Models.Property> playerProperty = Models.Property.FetchCharacterProperties(playerCharacter);
+
+            foreach (Models.Property property in playerProperty)
+            {
+                lock (property)
+                {
+                    menuItems.Add(new NativeMenuItem($"Property: {property.Address}"));
+                }
+            }
+
+            List<PlayerFaction> playerFactions =
+                JsonConvert.DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList);
+
+            foreach (PlayerFaction playerFaction in playerFactions)
+            {
+                Faction? faction = Faction.FetchFaction(playerFaction.Id);
+
+                if (faction == null) continue;
+
+                menuItems.Add(new NativeMenuItem($"Faction: {faction.Name}"));
+            }
+
+            NativeMenu menu = new NativeMenu("Character:SpawnSelectionMenu", "Spawn", "Select your Spawn", menuItems);
+
+            NativeUi.ShowNativeMenu(player, menu, true);
+        }
+
+        public static void OnSpawnSelectionMenuSelect(IPlayer player, string option)
+        {
+            if (option == "Close") return;
+
+            using Context context = new Context();
+
+            Models.Character? playerCharacter =
+                context.Character.FirstOrDefault(x => x.Id == player.GetClass().CharacterId);
+
+            if (playerCharacter == null)
+            {
+                player.SendErrorMessage("Unable to find your character.");
+                return;
+            }
+
+            SpawnPosition? spawnPosition = JsonConvert.DeserializeObject<SpawnPosition?>(playerCharacter.SpawnPosition);
+
+            if (spawnPosition == null)
+            {
+                player.SendErrorNotification("Unable to fetch your spawn information.");
+                return;
+            }
+
+            if (option == "Last Location")
+            {
+                spawnPosition.SpawnType = SpawnType.LastLocation;
+                player.SendInfoNotification("You've updated your spawn location to your Last Location.");
+            }
+            else
+            {
+                string[] stringSplit = option.Split(' ');
+
+                if (stringSplit[0].ToLower().Contains("property"))
+                {
+                    string propertyAddress = string.Join(' ', stringSplit.Skip(1));
+                    Console.WriteLine($"Property Address: {propertyAddress}");
+                    Models.Property? property = context.Property.FirstOrDefault(x => x.Address == propertyAddress);
+
+                    if (property == null)
+                    {
+                        player.SendErrorNotification("Unable to find the property.");
+                        return;
+                    }
+
+                    spawnPosition.SpawnType = SpawnType.Property;
+                    spawnPosition.PropertyId = property.Id;
+                    player.SendInfoNotification($"You've set your spawn location to {propertyAddress}.");
+                }
+
+                if (stringSplit[0].ToLower().Contains("faction"))
+                {
+                    string factionName = string.Join(' ', stringSplit.Skip(1));
+
+                    Console.WriteLine($"Faction Name: {factionName}");
+
+                    Faction? faction = context.Faction.FirstOrDefault(x => x.Name == factionName);
+
+                    if (faction == null)
+                    {
+                        player.SendErrorNotification("Unable to find this faction.");
+                        return;
+                    }
+
+                    if (faction.SpawnPosX == 0f)
+                    {
+                        player.SendErrorNotification("The faction leader hasn't setup a spawn point.");
+                        return;
+                    }
+
+                    spawnPosition.SpawnType = SpawnType.Faction;
+                    spawnPosition.FactionId = faction.Id;
+
+                    player.SendInfoNotification($"You've set your spawn location to faction's {factionName} spawn point.");
+                }
+            }
+
+            playerCharacter.SpawnPosition = JsonConvert.SerializeObject(spawnPosition);
+            context.SaveChanges();
+        }
+
         [Command("blindfold", onlyOne: true, commandType: CommandType.Character,
             description: "Used to blindfold others")]
         public static void CharacterCommandBlindfold(IPlayer player, string args = "")
@@ -447,9 +568,23 @@ namespace Server.Character
         {
             if (player.FetchCharacter() == null) return;
 
-            List<IPlayer> playerList = Alt.GetAllPlayers().Where(x => x.FetchCharacter().FactionDuty).ToList();
+            List<IPlayer> playerList = Alt.GetAllPlayers().ToList();
 
-            if (!playerList.Any())
+            List<IPlayer> factionPlayers = new List<IPlayer>();
+
+            foreach (IPlayer targetPlayer in playerList)
+            {
+                lock (targetPlayer)
+                {
+                    if (targetPlayer.FetchCharacter() == null) continue;
+
+                    if (!targetPlayer.FetchCharacter().FactionDuty) continue;
+
+                    factionPlayers.Add(targetPlayer);
+                }
+            }
+
+            if (!factionPlayers.Any())
             {
                 player.SendErrorNotification("No-one is on duty!");
                 return;
@@ -458,15 +593,18 @@ namespace Server.Character
             int medical = 0;
             int police = 0;
 
-            foreach (IPlayer target in playerList)
+            foreach (IPlayer target in factionPlayers)
             {
-                Faction targetFaction = Faction.FetchFaction(target.FetchCharacter().ActiveFaction);
+                lock (target)
+                {
+                    Faction? targetFaction = Faction.FetchFaction(target.FetchCharacter().ActiveFaction);
 
-                if (targetFaction == null || !target.FetchCharacter().FactionDuty) continue;
+                    if (targetFaction == null || !target.FetchCharacter().FactionDuty) continue;
 
-                if (targetFaction.SubFactionType == SubFactionTypes.Law) police++;
+                    if (targetFaction.SubFactionType == SubFactionTypes.Law) police++;
 
-                if (targetFaction.SubFactionType == SubFactionTypes.Medical) medical++;
+                    if (targetFaction.SubFactionType == SubFactionTypes.Medical) medical++;
+                }
             }
 
             player.SendInfoNotification($"Current Law Enforcement on duty: {police}. Current Medical on duty: {medical}.");
