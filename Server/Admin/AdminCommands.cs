@@ -43,6 +43,32 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("rcc", AdminLevel.Tester, description: "Used to respawn a vehicle")]
+        public static async void AdminCommandRespawnClosestVehicle(IPlayer player)
+        {
+            IVehicle? nearestVehicle = VehicleHandler.FetchNearestVehicle(player);
+
+            if (nearestVehicle == null)
+            {
+                player.SendErrorNotification("Your not near a vehicle!");
+                return;
+            }
+
+            Models.Vehicle? vehicleData = nearestVehicle.FetchVehicleData();
+
+            if (vehicleData == null)
+            {
+                player.SendInfoNotification("Not a database vehicle. Vehicle despawned!");
+                nearestVehicle.Remove();
+            }
+
+            Position vehiclePosition = nearestVehicle.Position;
+
+            LoadVehicle.UnloadVehicle(nearestVehicle);
+
+            await LoadVehicle.LoadDatabaseVehicleAsync(vehicleData, vehiclePosition, true);
+        }
+
         [Command("toga", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to toggle A Chat")]
         public static void AdminCommandToggleAdminChat(IPlayer player)
         {
