@@ -76,7 +76,13 @@ namespace Server.Inventory
         private void SaveInventory()
         {
             using Context context = new Context();
-            InventoryData invData = context.Inventory.Find(data.Id);
+            InventoryData? invData = context.Inventory.FirstOrDefault(x => x.Id == data.Id);
+
+            if (invData == null)
+            {
+                Console.WriteLine($"Inventory ID: {data.Id} is null!");
+                return;
+            }
 
             invData.Items = JsonConvert.SerializeObject(_items);
 
