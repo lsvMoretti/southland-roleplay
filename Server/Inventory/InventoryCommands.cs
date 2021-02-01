@@ -504,6 +504,8 @@ namespace Server.Inventory
                 bool success = inventory.RemoveItem(item, item.Quantity);
                 if (success)
                 {
+                    Console.WriteLine($"Item Quantity: {item.Quantity}");
+                    item.Quantity += 1;
                     player.SetData("SELECTEDINVITEM", -1);
                     DroppedItems.CreateDroppedItem(item, player.Position.Around(0.5f));
                     player.SendInfoNotification($"You've dropped {item.CustomName} from your inventory.");
