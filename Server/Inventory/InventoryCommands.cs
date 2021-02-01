@@ -1224,13 +1224,15 @@ namespace Server.Inventory
                 }
             }
 
-            bool addItem = playerInventory.AddItem(droppedItem.Item);
+            InventoryItem item = new InventoryItem(droppedItem.Item.Id, droppedItem.Item.CustomName, droppedItem.Item.ItemValue, droppedItem.Item.Quantity);
+
+            bool addItem = playerInventory.AddItem(item);
 
             if (addItem)
             {
                 DroppedItems.RemoveDroppedItem(droppedItem);
 
-                player.SendInfoNotification($"You've picked up {droppedItem.Item.CustomName} from the ground.");
+                player.SendInfoNotification($"You've picked up {item.CustomName} from the ground.");
 
                 if (droppedItem.Item.Id.Contains("PHONE"))
                 {
