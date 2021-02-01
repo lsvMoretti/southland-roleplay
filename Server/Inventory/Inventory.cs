@@ -138,7 +138,7 @@ namespace Server.Inventory
             //item = new InventoryItem(item.Id, item.CustomName, item.ItemValue, item.Quantity);
             if (item.ItemInfo.Stackable)
             {
-                InventoryItem stackableItem = GetItem(item.Id);
+                InventoryItem? stackableItem = GetItem(item.Id);
                 if (stackableItem != null)
                 {
                     stackableItem.Quantity += item.Quantity;
@@ -185,7 +185,7 @@ namespace Server.Inventory
                 InventoryItem i = new InventoryItem(item.Id, item.CustomName, item.ItemValue, item.Quantity);
                 if (item.ItemInfo.Stackable)
                 {
-                    InventoryItem stackableItem = GetItem(item.Id);
+                    InventoryItem? stackableItem = GetItem(item.Id);
                     if (stackableItem != null)
                     {
                         stackableItem.Quantity += item.Quantity;
@@ -212,7 +212,7 @@ namespace Server.Inventory
         /// <returns></returns>
         public bool RemoveItem(string id, double quantity = 1)
         {
-            InventoryItem itemToRemove = _items.FirstOrDefault(i => i.Id == id);
+            InventoryItem? itemToRemove = _items.FirstOrDefault(i => i.Id == id);
             return itemToRemove != null && RemoveItem(itemToRemove, quantity);
         }
 
@@ -265,9 +265,9 @@ namespace Server.Inventory
             }
         }
 
-        public InventoryItem GetItem(string id)
+        public InventoryItem? GetItem(string id)
         {
-            InventoryItem item = _items.FirstOrDefault(i => i.Id == id);
+            InventoryItem? item = _items.FirstOrDefault(i => i.Id == id);
             return item;
         }
 
