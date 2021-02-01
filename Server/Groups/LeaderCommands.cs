@@ -41,6 +41,12 @@ namespace Server.Groups
 
             bool canSetSpawn = playerFaction.Leader;
 
+            if (activeFaction.FactionType == FactionTypes.Faction &&
+                activeFaction.SubFactionType == SubFactionTypes.None)
+            {
+                canSetSpawn = false;
+            }
+
             if (!canSetSpawn)
             {
                 player.SendPermissionError();
