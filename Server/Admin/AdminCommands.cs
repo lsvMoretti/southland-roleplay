@@ -60,6 +60,7 @@ namespace Server.Admin
             {
                 player.SendInfoNotification("Not a database vehicle. Vehicle despawned!");
                 nearestVehicle.Remove();
+                return;
             }
 
             Position vehiclePosition = nearestVehicle.Position;
