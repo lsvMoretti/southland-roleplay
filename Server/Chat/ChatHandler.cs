@@ -105,6 +105,8 @@ namespace Server.Chat
         {
             string secondMessage = string.Empty;
 
+            if (!player.Exists) return;
+
             range = type switch
             {
                 MessageType.Talk => 8f,
@@ -186,6 +188,8 @@ namespace Server.Chat
                 return;
             }
 
+            if (!player.Exists) return;
+
             if (player.Dimension != 0 && type == MessageType.Talk)
             {
                 range = 5.5f;
@@ -193,172 +197,177 @@ namespace Server.Chat
 
             foreach (IPlayer target in Alt.GetAllPlayers())
             {
-                if (!target.IsSpawned()) continue;
-
-                List<Language.Language> targetLanguages = target.GetClass().SpokenLanguages;
-
-                if (target.FetchCharacter() != null && player.Dimension == target.Dimension)
+                lock (target)
                 {
-                    if (player != target || (player == target && !excludePlayer))
+                    if (!target.Exists) continue;
+
+                    if (!target.IsSpawned()) continue;
+
+                    List<Language.Language> targetLanguages = target.GetClass().SpokenLanguages;
+
+                    if (target.FetchCharacter() != null && player.Dimension == target.Dimension)
                     {
-                        float distance = player.Position.Distance(target.Position);
-
-                        if (distance <= range)
+                        if (player != target || (player == target && !excludePlayer))
                         {
-                            // Getting message color
-                            string chatMessageColor = GetChatMessageColor(distance, distanceGap);
-                            string oocMessageColor = GetOocMessageColor(distance, distanceGap);
+                            float distance = player.Position.Distance(target.Position);
 
-                            switch (type)
+                            if (distance <= range)
                             {
-                                case MessageType.Talk:
-                                    // We send the message
+                                // Getting message color
+                                string chatMessageColor = GetChatMessageColor(distance, distanceGap);
+                                string oocMessageColor = GetOocMessageColor(distance, distanceGap);
 
-                                    if (playerLanguage.Code == "en")
-                                    {
-                                        target.SendChatMessage($"{chatMessageColor}{player.GetClass().Name} says: {message}");
-                                    }
-                                    else
-                                    {
-                                        bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
+                                switch (type)
+                                {
+                                    case MessageType.Talk:
+                                        // We send the message
 
-                                        target.SendChatMessage(hasLanguage
-                                            ? $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}"
-                                            : $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {translatedText}");
-                                    }
-
-                                    break;
-
-                                case MessageType.Shout:
-                                    // We send the message
-
-                                    if (playerLanguage.Code == "en")
-                                    {
-                                        target.SendChatMessage($"{chatMessageColor}{player.GetClass().Name} shouts: {message}");
-                                    }
-                                    else
-                                    {
-                                        bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
-
-                                        target.SendChatMessage(hasLanguage
-                                            ? $"{chatMessageColor}{player.GetClass().Name} shouts in {playerLanguage.LanguageName}: {message}"
-                                            : $"{chatMessageColor}{player.GetClass().Name} shouts in {playerLanguage.LanguageName}: {translatedText}");
-                                    }
-
-                                    break;
-
-                                case MessageType.Whisper:
-                                    // We send the message
-
-                                    if (playerLanguage.Code == "en")
-                                    {
-                                        target.SendChatMessage($"{ColorChatClose}{player.GetClass().Name} whispers: {message}");
-                                    }
-                                    else
-                                    {
-                                        bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
-
-                                        target.SendChatMessage(hasLanguage
-                                            ? $"{ColorChatClose}{player.GetClass().Name} whispers in {playerLanguage.LanguageName}: {message}"
-                                            : $"{ColorChatClose}{player.GetClass().Name} whispers in {playerLanguage.LanguageName}: {translatedText}");
-                                    }
-
-                                    break;
-
-                                case MessageType.Low:
-                                    // We send the message
-
-                                    if (playerLanguage.Code == "en")
-                                    {
-                                        target.SendChatMessage($"{ColorChatClose}{player.GetClass().Name} says in a low voice: {message}");
-                                    }
-                                    else
-                                    {
-                                        bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
-
-                                        target.SendChatMessage(hasLanguage
-                                            ? $"{ColorChatClose}{player.GetClass().Name} says in a low voice in {playerLanguage.LanguageName}: {message}"
-                                            : $"{ColorChatClose}{player.GetClass().Name} says in a low voice in {playerLanguage.LanguageName}: {translatedText}");
-                                    }
-
-                                    break;
-
-                                case MessageType.Me:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
-
-                                    break;
-
-                                case MessageType.MeLong:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
-
-                                    break;
-
-                                case MessageType.MeLow:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
-
-                                    break;
-
-                                case MessageType.My:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name}'s {message}");
-
-                                    break;
-
-                                case MessageType.Do:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
-
-                                    break;
-
-                                case MessageType.DoLow:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
-
-                                    break;
-
-                                case MessageType.DoLong:
-                                    // We send the message
-                                    target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
-
-                                    break;
-
-                                case MessageType.Ooc:
-                                    // We send the message
-                                    target.SendChatMessage($"{oocMessageColor}(( {player.GetClass().Name} (Id:{player.GetPlayerId()}): {message} ))");
-
-                                    break;
-
-                                case MessageType.LocalPhone:
-                                    // We send the message
-
-                                    if (playerLanguage.Code == "en")
-                                    {
-                                        target.SendChatMessage(target == player
-                                            ? $"{ChatHandler.ColorChatNear}[Phone] {ChatHandler.ColorWhite}{player.GetClass().Name} says: {message}"
-                                            : $"{chatMessageColor}{player.GetClass().Name} says: {message}");
-                                    }
-                                    else
-                                    {
-                                        bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
-
-                                        if (hasLanguage)
+                                        if (playerLanguage.Code == "en")
                                         {
-                                            target.SendChatMessage(target == player
-                                                ? $"{ChatHandler.ColorChatNear}[Phone] {ChatHandler.ColorWhite}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}"
-                                                : $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}");
+                                            target.SendChatMessage($"{chatMessageColor}{player.GetClass().Name} says: {message}");
                                         }
                                         else
                                         {
-                                            target.SendChatMessage(target == player
-                                                ? $"{ChatHandler.ColorChatNear}[Phone] {ChatHandler.ColorWhite}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}"
+                                            bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
+
+                                            target.SendChatMessage(hasLanguage
+                                                ? $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}"
                                                 : $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {translatedText}");
                                         }
-                                    }
 
-                                    break;
+                                        break;
+
+                                    case MessageType.Shout:
+                                        // We send the message
+
+                                        if (playerLanguage.Code == "en")
+                                        {
+                                            target.SendChatMessage($"{chatMessageColor}{player.GetClass().Name} shouts: {message}");
+                                        }
+                                        else
+                                        {
+                                            bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
+
+                                            target.SendChatMessage(hasLanguage
+                                                ? $"{chatMessageColor}{player.GetClass().Name} shouts in {playerLanguage.LanguageName}: {message}"
+                                                : $"{chatMessageColor}{player.GetClass().Name} shouts in {playerLanguage.LanguageName}: {translatedText}");
+                                        }
+
+                                        break;
+
+                                    case MessageType.Whisper:
+                                        // We send the message
+
+                                        if (playerLanguage.Code == "en")
+                                        {
+                                            target.SendChatMessage($"{ColorChatClose}{player.GetClass().Name} whispers: {message}");
+                                        }
+                                        else
+                                        {
+                                            bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
+
+                                            target.SendChatMessage(hasLanguage
+                                                ? $"{ColorChatClose}{player.GetClass().Name} whispers in {playerLanguage.LanguageName}: {message}"
+                                                : $"{ColorChatClose}{player.GetClass().Name} whispers in {playerLanguage.LanguageName}: {translatedText}");
+                                        }
+
+                                        break;
+
+                                    case MessageType.Low:
+                                        // We send the message
+
+                                        if (playerLanguage.Code == "en")
+                                        {
+                                            target.SendChatMessage($"{ColorChatClose}{player.GetClass().Name} says in a low voice: {message}");
+                                        }
+                                        else
+                                        {
+                                            bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
+
+                                            target.SendChatMessage(hasLanguage
+                                                ? $"{ColorChatClose}{player.GetClass().Name} says in a low voice in {playerLanguage.LanguageName}: {message}"
+                                                : $"{ColorChatClose}{player.GetClass().Name} says in a low voice in {playerLanguage.LanguageName}: {translatedText}");
+                                        }
+
+                                        break;
+
+                                    case MessageType.Me:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
+
+                                        break;
+
+                                    case MessageType.MeLong:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
+
+                                        break;
+
+                                    case MessageType.MeLow:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name} {message}");
+
+                                        break;
+
+                                    case MessageType.My:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {player.GetClass().Name}'s {message}");
+
+                                        break;
+
+                                    case MessageType.Do:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
+
+                                        break;
+
+                                    case MessageType.DoLow:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
+
+                                        break;
+
+                                    case MessageType.DoLong:
+                                        // We send the message
+                                        target.SendChatMessage($"{ColorChatMe}* {message} (( {player.GetClass().Name} ))");
+
+                                        break;
+
+                                    case MessageType.Ooc:
+                                        // We send the message
+                                        target.SendChatMessage($"{oocMessageColor}(( {player.GetClass().Name} (Id:{player.GetPlayerId()}): {message} ))");
+
+                                        break;
+
+                                    case MessageType.LocalPhone:
+                                        // We send the message
+
+                                        if (playerLanguage.Code == "en")
+                                        {
+                                            target.SendChatMessage(target == player
+                                                ? $"{ColorChatNear}[Phone] {ColorWhite}{player.GetClass().Name} says: {message}"
+                                                : $"{chatMessageColor}{player.GetClass().Name} says: {message}");
+                                        }
+                                        else
+                                        {
+                                            bool hasLanguage = targetLanguages.Any(x => x.Code == playerLanguage.Code);
+
+                                            if (hasLanguage)
+                                            {
+                                                target.SendChatMessage(target == player
+                                                    ? $"{ColorChatNear}[Phone] {ColorWhite}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}"
+                                                    : $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}");
+                                            }
+                                            else
+                                            {
+                                                target.SendChatMessage(target == player
+                                                    ? $"{ColorChatNear}[Phone] {ColorWhite}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {message}"
+                                                    : $"{chatMessageColor}{player.GetClass().Name} says in {playerLanguage.LanguageName}: {translatedText}");
+                                            }
+                                        }
+
+                                        break;
+                                }
                             }
                         }
                     }
