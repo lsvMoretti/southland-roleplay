@@ -135,7 +135,7 @@ namespace Server
         /// Fetches the latest information from OpenWeather
         /// </summary>
         /// <returns></returns>
-        private static OpenWeather FetchCurrentWeather()
+        private static OpenWeather? FetchCurrentWeather()
         {
             try
             {
@@ -148,10 +148,10 @@ namespace Server
                 }
 
                 using WebClient wc = new WebClient();
-                string updatedJson = wc.DownloadString(
+                string? updatedJson = wc.DownloadString(
                     $"https://api.openweathermap.org/data/2.5/weather?id={serverSettings.WeatherLocation}&mode=json&units=metric&APPID=37c1a999011411a01b4d200ea16e9b9a");
                 wc.Dispose();
-
+                if (string.IsNullOrEmpty(updatedJson)) return null;
                 OpenWeather currentWeather = JsonConvert.DeserializeObject<OpenWeather>(updatedJson);
 
                 int currentWeatherType = currentWeather.weather.First().id;
