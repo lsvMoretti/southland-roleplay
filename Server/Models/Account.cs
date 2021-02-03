@@ -112,6 +112,9 @@ namespace Server.Models
 
         public DonationLevel DonationLevel { get; set; }
 
+        public int AcceptedReports { get; set; }
+        public int AcceptedHelps { get; set; }
+
         public static Account FindAccountById(int id)
         {
             using Context context = new Context();
@@ -135,11 +138,37 @@ namespace Server.Models
 
     public enum DonationLevel
     {
-        None, Bronze, Silver, Gold
+        [Description("None")]
+        None,
+
+        [Description("Bronze")]
+        Bronze,
+
+        [Description("Silver")]
+        Silver,
+
+        [Description("Gold")]
+        Gold
     }
 
     public enum AdminLevel
     {
-        None, Tester, Administrator, HeadAdmin, Management, Director
+        [Description("None")]
+        None,
+
+        [Description("Tester")]
+        Tester,
+
+        [Description("Administrator")]
+        Administrator,
+
+        [Description("Head Administrator")]
+        HeadAdmin,
+
+        [Description("Management")]
+        Management,
+
+        [Description("Director")]
+        Director
     }
 }

@@ -74,6 +74,16 @@ namespace Server.Admin
                 }
             }
 
+            using Context context = new Context();
+
+            Models.Account? adminAccount = context.Account.FirstOrDefault(x => x.Id == player.GetClass().AccountId);
+
+            if (adminAccount != null)
+            {
+                adminAccount.AcceptedHelps += 1;
+                context.SaveChanges();
+            }
+
             DiscordHandler.SendMessageToReportsChannel(
                 $"Tester {player.FetchAccount().Username} has accepted Help Id {helpReport.Id}");
 

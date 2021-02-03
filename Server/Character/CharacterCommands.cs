@@ -8,6 +8,7 @@ using AltV.Net.Async;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using DSharpPlus.Entities;
+using EnumsNET;
 using Newtonsoft.Json;
 using Server.Admin;
 using Server.Apartments;
@@ -1389,6 +1390,14 @@ namespace Server.Character
             }
 
             player.SendStatsMessage($"Bans: {banCount}, Kicks: {kickCount}, Jails: {jailCount}, Warnings: {warnCount}, AFK Kicks: {player.FetchAccount().AfkKicks}.");
+
+            Models.Account? playerAccount = player.FetchAccount();
+
+            if (playerAccount != null)
+            {
+                player.SendStatsMessage($"Donator Level: {playerAccount.DonationLevel.AsString(EnumFormat.Description)}");
+                player.SendStatsMessage($"Admin Level: {playerAccount.AdminLevel.AsString(EnumFormat.Description)}, Accepted Reports: {playerAccount.AcceptedReports}, Accepted HelpMe's: {playerAccount.AcceptedHelps}");
+            }
         }
 
         [Command("reloadtext", commandType: CommandType.Character, description: "Other: Used to reload text draws")]
