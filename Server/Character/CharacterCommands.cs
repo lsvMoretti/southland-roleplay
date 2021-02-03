@@ -1395,7 +1395,7 @@ namespace Server.Character
 
             if (playerAccount != null)
             {
-                player.SendStatsMessage($"Donator Level: {playerAccount.DonationLevel.AsString(EnumFormat.Description)}");
+                player.SendStatsMessage($"Donator Level: {playerAccount.DonatorLevel.AsString(EnumFormat.Description)}");
                 player.SendStatsMessage($"Admin Level: {playerAccount.AdminLevel.AsString(EnumFormat.Description)}, Accepted Reports: {playerAccount.AcceptedReports}, Accepted HelpMe's: {playerAccount.AcceptedHelps}");
             }
         }

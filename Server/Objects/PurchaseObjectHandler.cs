@@ -180,25 +180,25 @@ namespace Server.Objects
 
                 int count = propertyObjects.Count;
 
-                if (playerAccount.DonationLevel == DonationLevel.None && count >= 50)
+                if (playerAccount.DonatorLevel == DonationLevel.None && count >= 50)
                 {
                     player.SendErrorNotification("You've reached your limit.");
                     return;
                 }
 
-                if (playerAccount.DonationLevel == DonationLevel.Bronze && count >= 100)
+                if (playerAccount.DonatorLevel == DonationLevel.Bronze && count >= 100)
                 {
                     player.SendErrorNotification("You've reached your limit.");
                     return;
                 }
 
-                if (playerAccount.DonationLevel == DonationLevel.Silver && count >= 250)
+                if (playerAccount.DonatorLevel == DonationLevel.Silver && count >= 250)
                 {
                     player.SendErrorNotification("You've reached your limit.");
                     return;
                 }
 
-                if (playerAccount.DonationLevel == DonationLevel.Gold && count >= 700)
+                if (playerAccount.DonatorLevel == DonationLevel.Gold && count >= 700)
                 {
                     player.SendErrorNotification("You've reached your limit.");
                     return;

@@ -128,7 +128,7 @@ function playerPositionFree() {
     native.freezeEntityPosition(localPlayer, true);
     isSitting = true;
     currentScenario = sittableProp.scenario;
-    alt.emitServer('sitting:SetPlayerPosition', newPos, native.getEntityHeading(sittingObject));
+    alt.emitServer('sitting:SetPlayerPosition', newPos, native.getEntityHeading(sittingObject) + 180);
     alt.log('CurrentScenario ' + currentScenario);
     alt.setTimeout(() => {
         alt.log('Moving');

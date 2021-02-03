@@ -129,8 +129,8 @@ namespace Server.Character
                     return;
                 }
 
-                bool isSilverDonator = playerAccount.DonationLevel == DonationLevel.Silver;
-                bool isGoldDonator = playerAccount.DonationLevel == DonationLevel.Gold;
+                bool isSilverDonator = playerAccount.DonatorLevel == DonationLevel.Silver;
+                bool isGoldDonator = playerAccount.DonatorLevel == DonationLevel.Gold;
 
                 if (isSilverDonator)
                 {
