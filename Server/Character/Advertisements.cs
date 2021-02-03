@@ -121,26 +121,16 @@ namespace Server.Character
                 DateTime now = DateTime.Now;
                 double waitTimeSeconds = 120;
 
-                using Context context = new Context();
+                Models.Account? playerAccount = player.FetchAccount();
 
-                List<Donations> donations = context.Donations.Where(x =>
-                    x.AccountId == player.GetClass().AccountId && x.Activated == true).ToList();
-
-                bool isSilverDonator = false;
-                bool isGoldDonator = false;
-
-                foreach (Donations donation in donations)
+                if (playerAccount == null)
                 {
-                    if (donation.Type == DonationType.Silver)
-                    {
-                        isSilverDonator = true;
-                    }
-
-                    if (donation.Type == DonationType.Gold)
-                    {
-                        isGoldDonator = true;
-                    }
+                    player.SendErrorNotification("Unable to fetch your account data.");
+                    return;
                 }
+
+                bool isSilverDonator = playerAccount.DonationLevel == DonationLevel.Silver;
+                bool isGoldDonator = playerAccount.DonationLevel == DonationLevel.Gold;
 
                 if (isSilverDonator)
                 {

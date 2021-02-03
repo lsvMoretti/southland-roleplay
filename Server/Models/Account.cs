@@ -110,6 +110,8 @@ namespace Server.Models
 
         public bool Helper { get; set; }
 
+        public DonationLevel DonationLevel { get; set; }
+
         public static Account FindAccountById(int id)
         {
             using Context context = new Context();
@@ -129,6 +131,11 @@ namespace Server.Models
 
             return acc.Id;
         }
+    }
+
+    public enum DonationLevel
+    {
+        None, Bronze, Silver, Gold
     }
 
     public enum AdminLevel
