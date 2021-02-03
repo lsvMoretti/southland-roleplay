@@ -572,6 +572,20 @@ namespace Server.Property
                 return;
             }
 
+            Interiors? propertyInterior =
+                Interiors.InteriorList.FirstOrDefault(x => x.InteriorName == insideProperty.InteriorName);
+
+            if (propertyInterior != null)
+            {
+                Position interiorPosition = propertyInterior.Position;
+
+                if (player.Position.Distance(interiorPosition) > 2f)
+                {
+                    player.SendErrorNotification("Your not near the door.");
+                    return;
+                }
+            }
+
             Models.Character playerCharacterDb = context.Character.Find(playerCharacter.Id);
 
             if (playerCharacterDb == null) return;
@@ -1997,11 +2011,9 @@ namespace Server.Property
                 return;
             }
 
-            using Context context = new Context();
+            bool goldDonator = player.FetchAccount()?.DonationLevel == DonationLevel.Gold;
 
-            bool anyDonations = context.Donations.Any(x => x.AccountId == player.GetClass().AccountId && x.Activated == true && x.Type == DonationType.Gold);
-
-            if (!anyDonations)
+            if (!goldDonator)
             {
                 player.SendPermissionError();
                 return;
@@ -2029,6 +2041,8 @@ namespace Server.Property
             }
 
             player.SendNotification("~g~You've set this business to active!");
+
+            using Context context = new Context();
 
             Models.Property property = context.Property.Find(nearProperty.Id);
 

@@ -45,10 +45,7 @@ namespace Server.Chat
                 return;
             }
 
-            using Context context = new Context();
-
-            bool anyDonations =
-                context.Donations.Any(x => x.AccountId == player.GetClass().AccountId && x.Activated == true);
+            bool anyDonations = player.FetchAccount()?.DonationLevel > DonationLevel.None;
 
             if (!anyDonations)
             {

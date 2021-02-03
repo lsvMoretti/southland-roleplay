@@ -211,6 +211,16 @@ namespace Server.Character.Clothing
 
                 #region Clothing
 
+                player.SetClothes(1, -1, -1);
+
+                player.SetClothes(4, -1, -1);
+                player.SetClothes(6, -1, -1);
+                player.SetClothes(7, -1, -1);
+                player.SetClothes(8, -1, -1);
+                player.SetClothes(9, -1, -1);
+                player.SetClothes(10, -1, -1);
+                player.SetClothes(11, -1, -1);
+
                 List<InventoryItem> clothingItems = playerInventory.GetInventoryItems("ITEM_CLOTHES");
 
                 foreach (ClothesData clothesData in outfitClothingList)
@@ -276,6 +286,14 @@ namespace Server.Character.Clothing
                 #endregion Clothing
 
                 #region Accessories
+
+                player.SetAccessory(0, -1, -1);
+
+                player.SetAccessory(1, -1, -1);
+
+                player.SetAccessory(2, -1, -1);
+                player.SetAccessory(6, -1, -1);
+                player.SetAccessory(7, -1, -1);
 
                 List<InventoryItem> accessoryItems = playerInventory.GetInventoryItems("ITEM_CLOTHES_ACCESSORY");
 

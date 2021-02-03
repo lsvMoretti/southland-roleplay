@@ -2459,4 +2459,19 @@
     "Ipl": "",
     "Description": null
   },
+  {
+    "InteriorName": "24/7 Interior",
+    "Position": {
+      "X": 1731.877,
+      "Y": 6412.8525,
+      "Z": 35.025635,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  }
 ]

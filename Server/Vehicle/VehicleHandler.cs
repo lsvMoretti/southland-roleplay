@@ -260,15 +260,10 @@ namespace Server.Vehicle
                     if (vehicleData.Engine)
                     {
                         vehicle.EngineOn = true;
-                        vehicle.EngineOn = true;
-                        vehicle.EngineOn = true;
                     }
 
                     if (!vehicleData.Engine)
                     {
-                        vehicle.EngineOn = false;
-                        vehicle.EngineOn = false;
-                        vehicle.EngineOn = false;
                         vehicle.EngineOn = false;
                     }
 
