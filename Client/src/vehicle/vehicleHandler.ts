@@ -249,7 +249,7 @@ function CloseDealershipView() {
             currentView.destroy();
             currentView = undefined;
         }
-    },100);
+    }, 20);
     alt.emitServer('dealership:pageclosed');
 }
 
