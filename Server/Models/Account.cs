@@ -110,7 +110,7 @@ namespace Server.Models
 
         public bool Helper { get; set; }
 
-        public DonationLevel DonationLevel { get; set; }
+        public DonationLevel DonatorLevel { get; set; }
 
         public int AcceptedReports { get; set; }
         public int AcceptedHelps { get; set; }

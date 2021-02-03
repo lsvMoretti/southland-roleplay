@@ -2011,7 +2011,7 @@ namespace Server.Property
                 return;
             }
 
-            bool goldDonator = player.FetchAccount()?.DonationLevel == DonationLevel.Gold;
+            bool goldDonator = player.FetchAccount()?.DonatorLevel == DonationLevel.Gold;
 
             if (!goldDonator)
             {

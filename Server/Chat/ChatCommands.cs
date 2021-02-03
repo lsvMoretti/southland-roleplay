@@ -45,7 +45,7 @@ namespace Server.Chat
                 return;
             }
 
-            bool anyDonations = player.FetchAccount()?.DonationLevel > DonationLevel.None;
+            bool anyDonations = player.FetchAccount()?.DonatorLevel > DonationLevel.None;
 
             if (!anyDonations)
             {
