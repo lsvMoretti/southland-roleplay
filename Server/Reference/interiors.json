@@ -2473,5 +2473,35 @@
     },
     "Ipl": "",
     "Description": null
+  },
+  {
+    "InteriorName": "Irish Pub Front",
+    "Position": {
+      "X": -347.99,
+      "Y": -1952.92,
+      "Z": 44.31,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "",
+    "Description": null
+  },
+  {
+    "InteriorName": "Irish Pub Rear",
+    "Position": {
+      "X": -329.37,
+      "Y": -1950.20,
+      "Z": 47.34,
+      "Normalized": {
+        "X": -0.99767953,
+        "Y": -0.068059154,
+        "Z": 0.0018396297
+      }
+    },
+    "Ipl": "",
+    "Description": null
   }
 ]
