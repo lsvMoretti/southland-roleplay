@@ -572,6 +572,20 @@ namespace Server.Property
                 return;
             }
 
+            Interiors? propertyInterior =
+                Interiors.InteriorList.FirstOrDefault(x => x.InteriorName == insideProperty.InteriorName);
+
+            if (propertyInterior != null)
+            {
+                Position interiorPosition = propertyInterior.Position;
+
+                if (player.Position.Distance(interiorPosition) > 2f)
+                {
+                    player.SendErrorNotification("Your not near the door.");
+                    return;
+                }
+            }
+
             Models.Character playerCharacterDb = context.Character.Find(playerCharacter.Id);
 
             if (playerCharacterDb == null) return;
