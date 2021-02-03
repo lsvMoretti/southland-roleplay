@@ -171,6 +171,40 @@ namespace Server.Objects
                 return;
             }
 
+            Models.Account? playerAccount = player.FetchAccount();
+
+            if (!string.IsNullOrEmpty(nearbyProperty.PropertyObjects))
+            {
+                List<PropertyObject> propertyObjects =
+                    JsonConvert.DeserializeObject<List<PropertyObject>>(nearbyProperty.PropertyObjects);
+
+                int count = propertyObjects.Count;
+
+                if (playerAccount.DonationLevel == DonationLevel.None && count >= 50)
+                {
+                    player.SendErrorNotification("You've reached your limit.");
+                    return;
+                }
+
+                if (playerAccount.DonationLevel == DonationLevel.Bronze && count >= 100)
+                {
+                    player.SendErrorNotification("You've reached your limit.");
+                    return;
+                }
+
+                if (playerAccount.DonationLevel == DonationLevel.Silver && count >= 250)
+                {
+                    player.SendErrorNotification("You've reached your limit.");
+                    return;
+                }
+
+                if (playerAccount.DonationLevel == DonationLevel.Gold && count >= 700)
+                {
+                    player.SendErrorNotification("You've reached your limit.");
+                    return;
+                }
+            }
+
             Inventory.Inventory playerInventory = player.FetchInventory();
 
             if (playerInventory == null)
