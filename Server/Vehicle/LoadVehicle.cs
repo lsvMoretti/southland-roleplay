@@ -136,7 +136,10 @@ namespace Server.Vehicle
 
             vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
 
-            vehicle.ManualEngineControl = true;
+            if (vehicleData.Class != 13)
+            {
+                vehicle.ManualEngineControl = true;
+            }
 
             vehicle.NumberplateText = !vehicleData.HasPlateBeenStolen ? vehicleData.Plate : "__";
 
@@ -267,7 +270,10 @@ namespace Server.Vehicle
 
             //vehicle.Rotation = new DegreeRotation(0, 0, vehicleData.RotZ);
 
-            vehicle.ManualEngineControl = true;
+            if (vehicleData.Class != 13)
+            {
+                vehicle.ManualEngineControl = true;
+            }
 
             vehicle.NumberplateText = !vehicleData.HasPlateBeenStolen ? vehicleData.Plate : "__";
 
