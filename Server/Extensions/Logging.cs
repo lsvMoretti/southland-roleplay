@@ -106,7 +106,8 @@ namespace Server.Extensions
                         if (playerCharacter == null) return;
 
                         Log.Logger = new LoggerConfiguration().WriteTo
-                            .File($"{_characterDirectory}{playerCharacter.Name}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
+                            .File($"{_characterDirectory}{playerCharacter.Name}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+                                rollOnFileSizeLimit: true, shared: true, rollingInterval: RollingInterval.Day).CreateLogger();
 
                         Log.Information(logMessage);
                     });
@@ -131,7 +132,8 @@ namespace Server.Extensions
                         if (playerCharacter == null) return;
 
                         Log.Logger = new LoggerConfiguration().WriteTo
-                            .File($"{_characterDirectory}{playerCharacter.Name}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
+                            .File($"{_characterDirectory}{playerCharacter.Name}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+                                rollOnFileSizeLimit: true, shared: true, rollingInterval: RollingInterval.Day).CreateLogger();
 
                         Log.Information(logMessage);
                     });
@@ -156,7 +158,8 @@ namespace Server.Extensions
                         if (playerAccount == null) return;
 
                         Log.Logger = new LoggerConfiguration().WriteTo
-                            .File($"{_adminDirectory}{playerAccount.Username}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
+                            .File($"{_adminDirectory}{playerAccount.Username}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+                                rollOnFileSizeLimit: true, shared: true, rollingInterval: RollingInterval.Day).CreateLogger();
 
                         Log.Information(logMessage);
                     });
@@ -179,7 +182,8 @@ namespace Server.Extensions
                     await Task.Run(() =>
                     {
                         Log.Logger = new LoggerConfiguration().WriteTo
-                            .File($"{_bankDirectory}{bankAccount.AccountNumber}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}").CreateLogger();
+                            .File($"{_bankDirectory}{bankAccount.AccountNumber}.txt", outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj}{NewLine}{Exception}",
+                                rollOnFileSizeLimit: true, shared: true, rollingInterval: RollingInterval.Day).CreateLogger();
 
                         Log.Information(logMessage);
                     });

@@ -63,7 +63,7 @@ export function OnCruiseControlPress(){
     SendNotification('Cruise Control Disabled', 3000, 'info', 'topCenter');
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
    if(!cruiseControlStatus) return;
     if(alt.Player.local.vehicle == null){
         cruiseControlStatus = false;
@@ -147,4 +147,4 @@ alt.everyTick(() => {
     }
     
     native.setVehicleForwardSpeed(vehicleId, vehicleVelocity);
-});
+}, 0);

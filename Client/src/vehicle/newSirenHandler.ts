@@ -46,7 +46,7 @@ alt.on('keydown', (key) => {
     
 });
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     // Fetch Vehicle
     let playerVehicle = alt.Player.local.vehicle;
     
@@ -87,7 +87,7 @@ alt.everyTick(() => {
         alt.emitServer('newSirenHandler:HornRelease', playerVehicle);
     }
     
-});
+}, 0);
 
 // When Horn Key is pressed, call below function
 alt.onServer('newSirenHandler:HornActive', hornActive);

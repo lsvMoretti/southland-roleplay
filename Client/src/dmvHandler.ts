@@ -21,7 +21,7 @@ function startDrivingTest(vehicle:alt.Vehicle, checkpointJson:string) {
     native.setNewWaypoint(marker.pos.x, marker.pos.y);
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if(!drivingEnabled) return;
 
     if(alt.Player.local.vehicle === dmvVehicle){
@@ -31,7 +31,7 @@ alt.everyTick(() => {
     if (marker !== undefined) {
         marker.draw();
     }
-});
+}, 0);
 
 alt.setInterval(() => {
     if(!drivingEnabled) return;

@@ -5,7 +5,7 @@ import Message from './Message';
 export default class BigMessage extends Message {
     public static Initialize(scaleForm: string, transitionOutAnimName: string) {
         super.Initialize(scaleForm, transitionOutAnimName);
-        alt.everyTick(() => this.Render());
+        alt.setInterval(() => this.Render(), 0);
     }
 
     public static ShowMissionPassedMessage(msg: string, subtitle: string = "", time: number = 5000): void {

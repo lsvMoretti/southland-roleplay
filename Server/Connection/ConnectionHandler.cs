@@ -13,7 +13,9 @@ using Server.Character;
 using Server.Chat;
 using Server.Discord;
 using Server.Extensions;
+using Server.Jobs.Bus;
 using Server.Jobs.Clerk;
+using Server.Jobs.Trucking;
 using Server.Models;
 using Server.Property;
 
@@ -394,6 +396,23 @@ namespace Server.Connection
                 if (player.GetClass().ClerkJob > 0)
                 {
                     ClerkHandler.StopClerkJob(player);
+                }
+
+                bool hasDeliveryVehicle = TruckingCommands.TruckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle? truckingVehicle);
+
+                if (hasDeliveryVehicle)
+                {
+                    TruckingCommands.TruckingVehicles.Remove(player.GetClass().CharacterId);
+                    truckingVehicle?.Delete();
+                }
+
+                bool hasBusVehicle =
+                    BusHandler.BusVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle? busVehicle);
+
+                if (hasBusVehicle)
+                {
+                    BusHandler.BusVehicles.Remove(player.GetClass().CharacterId);
+                    busVehicle?.Delete();
                 }
 
                 AdminReport? adminReport = AdminHandler.AdminReports.FirstOrDefault(x => x.Player == player);

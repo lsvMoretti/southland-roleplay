@@ -104,7 +104,7 @@ namespace Server.Jobs.Bus
 
         public static void OnEnterMarker(IPlayer player, int stopId, int stopCount)
         {
-            player.SendNotification($"You've reached {stopId}/{stopCount}");
+            player.SendNotification($"You've reached {stopId}/{stopCount - 1}");
         }
     }
 }

@@ -43,7 +43,7 @@ let hornSoundIds:number[] = [];
 let vehicleHorns:boolean[] = [];
 let oldVehicleHorns:boolean[] = [];
 
-alt.everyTick(() => {
+alt.setInterval(() => {
 
     let vehicle:alt.Vehicle = alt.Player.local.vehicle;
 
@@ -130,7 +130,7 @@ alt.everyTick(() => {
             return;
         }
     }
-});
+},0);
 
 function setSirenStateForVehicle(vehicle: number, newState:number){
 

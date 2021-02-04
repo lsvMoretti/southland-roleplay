@@ -30,7 +30,7 @@ namespace Server.Motel
                 return;
             }
 
-            MotelRoom nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
+            MotelRoom? nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
 
             if (nearRoom == null)
             {
@@ -62,7 +62,13 @@ namespace Server.Motel
 
             List<MotelRoom> motelRooms = JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
 
-            MotelRoom room = motelRooms.FirstOrDefault(x => x.Id == nearRoom.Id);
+            MotelRoom? room = motelRooms.FirstOrDefault(x => x.Id == nearRoom.Id);
+
+            if (room == null)
+            {
+                player.SendErrorNotification("Unable to find this room.");
+                return;
+            }
 
             room.OwnerId = playerCharacter.Id;
 
@@ -73,12 +79,11 @@ namespace Server.Motel
             character.RentingMotelRoom = true;
 
             context.SaveChanges();
-            
 
             player.RemoveCash(room.Value);
 
             player.SendInfoNotification($"You are now renting room {room.Id} at the {motel.Name}. This has cost you {room.Value:C}.");
-            
+
             MotelHandler.ReloadMotel(motel);
         }
 
@@ -138,7 +143,6 @@ namespace Server.Motel
             character.RentingMotelRoom = false;
 
             context.SaveChanges();
-            
 
             player.SendInfoNotification($"You have un rented this room.");
 

@@ -34,7 +34,7 @@ function atMarkerPosition() {
     alt.emitServer("Clerk:ReachedPosition");
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (currentMarker == undefined) return;
 
     var distance = extensions.Distance(alt.Player.local.pos, currentPos);
@@ -44,7 +44,7 @@ alt.everyTick(() => {
     if (distance < 1) {
         atMarkerPosition();
     }
-});
+}, 0);
 
 class ClerkMarker {
     Type: number;

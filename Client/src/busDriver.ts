@@ -24,13 +24,13 @@ function startBusJob(stopJson: string) {
     currentMarker = new BusMarker(nextStopId);
 }
 
-alt.everyTick(() => {
-    updatePosition();
+alt.setInterval(() => {
 
     if (currentMarker !== undefined) {
+        updatePosition();
         currentMarker.draw();
     }
-});
+}, 0);
 
 function updatePosition() {
     if (currentMarker === undefined) return;

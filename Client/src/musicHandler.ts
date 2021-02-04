@@ -46,7 +46,7 @@ function CloseAudioControlPanel() {
         alt.setTimeout(() => {
             audioControlView.destroy();
             audioControlView = undefined;
-        }, 1000);
+        }, 10);
         alt.showCursor(false);
     }
 }
@@ -57,9 +57,11 @@ function playMusicFromUrl(url: string) {
     if (musicView !== undefined) {
         stopMusic();
     }
-    musicView = new alt.WebView("http://resource/files/html/radio.html", false);
-    musicView.focus();
-    musicView.on('radioPageLoaded', radioPageLoaded);
+    alt.setTimeout(() => {
+        musicView = new alt.WebView("http://resource/files/html/radio.html", false);
+        musicView.focus();
+        musicView.on('radioPageLoaded', radioPageLoaded);
+    }, 30);
 }
 
 function radioPageLoaded() {
@@ -76,5 +78,5 @@ function stopMusic() {
         musicView.destroy();
         musicView = undefined;
     },
-        1000);
+        10);
 }

@@ -23,7 +23,7 @@ alt.onServer('WeaponEquipped', (weaponHash: any) => {
     LastAmmo = native.getAmmoInPedWeapon(alt.Player.local.scriptID, weaponHash);
 });
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     let scriptId: number = alt.Player.local.scriptID;
 
     if (native.isPedArmed(scriptId, 6)) {
@@ -31,7 +31,7 @@ alt.everyTick(() => {
         native.disableControlAction(1, 141, true);
         native.disableControlAction(1, 142, true);
     }
-});
+}, 0);
 
 alt.setInterval(() => {
     let player: number = alt.Player.local.scriptID;

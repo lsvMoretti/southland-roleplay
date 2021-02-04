@@ -25,9 +25,9 @@ function OnMotelAdded(motelJson:string){
 
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     ProcessMotelRoomLabels();
-})
+}, 0)
 
 function ProcessMotelRoomLabels(){
     if(roomLabels.length == 0) return;

@@ -82,9 +82,9 @@ function deleteTextLabel(textLabelJson:string) {
     }
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     processTextLabels();
-});
+}, 0);
 
 function processTextLabels() {
     if (textLabelArray.length === 0) return;

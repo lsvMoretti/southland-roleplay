@@ -76,9 +76,6 @@ alt.setInterval(() => {
 },
     0);
 
-alt.everyTick(() => {
-    //native.setPedCanSwitchWeapon(alt.Player.local.scriptID, false);
-});
 
 alt.onServer('loadIpl', (iplString: string) => {
     native.requestIpl(iplString);
@@ -257,7 +254,7 @@ alt.onServer('ToggleTransparency',
         native.setEntityVisible(alt.Player.local.scriptID, state, false);
     });
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (specPlayer != undefined) {
         var players = alt.Player.all;
 
@@ -282,7 +279,7 @@ alt.everyTick(() => {
             native.pointCamAtEntity(specCam, player.scriptID, 0, 0, 0, true);
         }
     }
-});
+}, 0);
 
 function closeSpectatorCam() {
     native.renderScriptCams(false, false, 0, true, false, null);
