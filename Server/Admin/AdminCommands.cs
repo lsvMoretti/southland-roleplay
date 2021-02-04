@@ -3460,7 +3460,7 @@ namespace Server.Admin
             player.SendStatsMessage(
                 $"Bans: {banCount}, Kicks: {kickCount}, Jails: {jailCount}, Warnings: {warnCount}, AFK Kicks: {targetPlayer.FetchAccount().AfkKicks}.");
 
-            Models.Account? playerAccount = player.FetchAccount();
+            Models.Account? playerAccount = targetPlayer.FetchAccount();
 
             if (playerAccount != null)
             {
