@@ -17,7 +17,7 @@ namespace Server.Jobs.Trucking
 {
     public class TruckingCommands
     {
-        private static Dictionary<int, IVehicle> _truckingVehicles = new Dictionary<int, IVehicle>();
+        public static Dictionary<int, IVehicle> TruckingVehicles = new Dictionary<int, IVehicle>();
         private static readonly Position TruckSpawnPosition = new Position(-409.43738f, -2789.8022f, 6.060791f);
         private static readonly Rotation TruckSpawnRotation = new Rotation(0, 0, -44.762325f);
         private static readonly int Payment = 15;
@@ -43,7 +43,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            if (_truckingVehicles.ContainsKey(player.GetClass().CharacterId))
+            if (TruckingVehicles.ContainsKey(player.GetClass().CharacterId))
             {
                 player.SendErrorNotification("You already have a truck out!");
                 return;
@@ -75,7 +75,7 @@ namespace Server.Jobs.Trucking
             truck.SetData("Trucking:Owner", player.GetClass().CharacterId);
             truck.SetData("Trucking:Products", 0);
 
-            _truckingVehicles.Add(player.GetClass().CharacterId, truck);
+            TruckingVehicles.Add(player.GetClass().CharacterId, truck);
 
             player.SendInfoNotification("The Pounder has been spawned! You can now head to a /warehouses and /loadtruck.", 10000);
         }
@@ -89,7 +89,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            bool hasVehicle = _truckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle truck);
+            bool hasVehicle = TruckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle truck);
 
             if (!hasVehicle)
             {
@@ -99,7 +99,7 @@ namespace Server.Jobs.Trucking
 
             truck.Delete();
 
-            _truckingVehicles.Remove(player.GetClass().CharacterId);
+            TruckingVehicles.Remove(player.GetClass().CharacterId);
 
             player.SendInfoNotification("You've stopped trucking.");
         }
@@ -119,7 +119,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            bool hasVehicle = _truckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle truck);
+            bool hasVehicle = TruckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle truck);
 
             if (!hasVehicle)
             {
@@ -196,7 +196,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            bool hasVehicle = _truckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle? truck);
+            bool hasVehicle = TruckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle? truck);
 
             if (!hasVehicle)
             {
