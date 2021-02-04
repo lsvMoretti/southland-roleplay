@@ -2487,7 +2487,8 @@
       }
     },
     "Ipl": "",
-    "Description": null
+    "Description": null,
+    "IsMapped": true
   },
   {
     "InteriorName": "Irish Pub Rear",
@@ -2502,6 +2503,7 @@
       }
     },
     "Ipl": "",
-    "Description": null
+    "Description": null,
+    "IsMapped": true
   }
 ]

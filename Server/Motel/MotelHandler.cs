@@ -260,6 +260,8 @@ namespace Server.Motel
 
             player.SetSyncedMetaData("PlayerDimension", player.Dimension);
             context.SaveChanges();
+
+            Logging.AddToCharacterLog(player, $"Has entered Motel Room {room.Id} at Motel Id: {room.MotelId}");
         }
 
         public static void SetPlayerOutOfMotelRoom(IPlayer player)

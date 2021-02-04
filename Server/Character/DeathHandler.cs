@@ -81,6 +81,8 @@ namespace Server.Character
                     DiscordHandler.SendMessageToLogChannel(
                             $"Player {player.GetClass().Name} ({player.FetchAccount().Username}) has been killed by {killerPlayer.GetClass().Name}({killerPlayer.FetchAccount().Username}). Weapon: {weaponModel.ToString()}");
 
+                    Logging.AddToCharacterLog(player, $"Player {player.GetClass().Name} ({player.FetchAccount().Username}) has been killed by {killerPlayer.GetClass().Name}({killerPlayer.FetchAccount().Username}). Weapon: {weaponModel.ToString()}");
+
                     player.SetData("LastKiller", killerPlayer.GetClass().Name);
                     player.SetData("LastKillerWeapon", weapon);
                 }
@@ -88,6 +90,8 @@ namespace Server.Character
                 if (killer.Type == BaseObjectType.Vehicle)
                 {
                     IVehicle vehicle = (IVehicle)killer;
+
+                    Logging.AddToCharacterLog(player, $"Player {player.GetClass().Name} ({player.FetchAccount().Username}) has been killed by a vehicle. Driver: {vehicle.Driver?.GetClass().Name} ({vehicle.Driver?.FetchAccount().Username}).");
 
                     DiscordHandler.SendMessageToLogChannel(
                         $"Player {player.GetClass().Name} ({player.FetchAccount().Username}) has been killed by a vehicle. Driver: {vehicle.Driver?.GetClass().Name} ({vehicle.Driver?.FetchAccount().Username}).");
@@ -97,6 +101,8 @@ namespace Server.Character
             {
                 DiscordHandler.SendMessageToLogChannel(
                     $"Player {player.GetClass().Name} ({player.FetchAccount().Username}) has died.");
+
+                Logging.AddToCharacterLog(player, $"Player {player.GetClass().Name} ({player.FetchAccount().Username}) has died.");
             }
 
             Timer deathTimer = new Timer(30000) { AutoReset = false };

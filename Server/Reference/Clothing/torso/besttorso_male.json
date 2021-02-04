@@ -975,7 +975,7 @@
   },
   "15": {
     "0": {
-      "BestTorsoDrawable": -1,
+      "BestTorsoDrawable": 15,
       "BestTorsoTexture": -1
     }
   },
