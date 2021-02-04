@@ -249,7 +249,7 @@ function CloseDealershipView() {
             currentView.destroy();
             currentView = undefined;
         }
-        
+
     }, 20);
     alt.emitServer('dealership:pageclosed');
 }
@@ -409,6 +409,3 @@ function anchorInterval() {
         native.setBoatAnchor(vehicle.scriptID, anchorStatus);
     };
 }
-
-alt.everyTick(() => {
-});

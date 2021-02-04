@@ -88,13 +88,13 @@ function showMDC(name: string, rank: string, unit: string) {
     mdcWindow.focus();
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (mdcWindow !== undefined) {
         for (let index = 0; index < 31; index++) {
             native.disableInputGroup(index);
         }
     }
-});
+}, 0);
 
 //#region MDC Persons Search Page
 var profileJson: string = null;

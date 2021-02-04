@@ -473,7 +473,13 @@ namespace Server.Property
                 return;
             }
 
-            Interiors interior = Interiors.InteriorList.FirstOrDefault(x =>
+            if (player.Dimension != nearestProperty.ExtDimension)
+            {
+                player.SendErrorNotification("You can't enter here.");
+                return;
+            }
+
+            Interiors? interior = Interiors.InteriorList.FirstOrDefault(x =>
                 x.InteriorName == nearestProperty.InteriorName && x.Ipl == nearestProperty.Ipl);
 
             if (interior == null)

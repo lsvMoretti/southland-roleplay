@@ -279,7 +279,7 @@ export default class NativeUI {
         this._background = new Sprite("commonmenu", "gradient_bgd", new Point(this._offset.X, 144 + this._offset.Y - 37 + this._extraOffset), new Size(290, 25));
         this._visible = false;
 
-        alt.everyTick(this.render.bind(this));
+        alt.setInterval(this.render.bind(this), 0);
         //alt.log(`Created Native UI! ${this.title}`);
     }
 

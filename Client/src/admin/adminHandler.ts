@@ -295,7 +295,7 @@ alt.onServer('EnabledAdminDuty', (adminMode: boolean) => {
     }
 });
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     var scriptID = alt.Player.local.scriptID;
 
     if (AdminMode) {
@@ -303,4 +303,4 @@ alt.everyTick(() => {
         native.setEntityInvincible(scriptID, true);
         native.setEntityHealth(scriptID, 200, 0);
     }
-});
+}, 0);

@@ -45,6 +45,6 @@ function processMarkers() {
         displayMarker(element);
     });
 }
-alt.everyTick(() => {
+alt.setInterval(() => {
     processMarkers();
-});
+}, 0);

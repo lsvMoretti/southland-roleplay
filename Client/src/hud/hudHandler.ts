@@ -5,7 +5,7 @@ import * as nameTags from '../nametags';
 var hudWebView: alt.WebView = undefined;
 var localPlayer: any = undefined;
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (native.isHudComponentActive(14)) {
         // Rectile
         native.hideHudComponentThisFrame(14);
@@ -20,7 +20,7 @@ alt.everyTick(() => {
         // Hide Hud
         native.hideHudAndRadarThisFrame();
     }
-});
+}, 0);
 
 var HudState = false;
 var allowHud = false;

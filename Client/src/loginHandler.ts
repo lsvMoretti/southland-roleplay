@@ -31,11 +31,11 @@ function closeLogin() {
     }, 1000);
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if (disableMenu) {
         native.disableControlAction(0, 199, true);
     }
     else {
         native.disableControlAction(0, 199, false);
     }
-});
+}, 0);

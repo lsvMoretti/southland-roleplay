@@ -41,12 +41,6 @@ function onTick() {
     native.disableAllControlActions(1);
     native.freezeEntityPosition(localPlayer, true);
 }
-/*
-alt.everyTick(() => {
-    if (creatorCamera !== undefined) {
-    }
-});
-*/
 
 alt.on('connectionComplete', () => {
     native.requestModel(native.getHashKey('mp_m_freemode_01'));

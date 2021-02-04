@@ -114,6 +114,12 @@ namespace Server.Character
                 return;
             }
 
+            if (message.Length < 3)
+            {
+                player.SendErrorNotification("You need to input a longer advert.");
+                return;
+            }
+
             bool hasLastAdData = player.GetData("Advert:LastAd", out DateTime lastAd);
 
             if (hasLastAdData)
@@ -142,18 +148,16 @@ namespace Server.Character
                     waitTimeSeconds = 30;
                 }
 
-                if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) < 0)
+                if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) >= 0)
                 {
+#if DEBUG
+                    Console.WriteLine($"Last Ad Time: {lastAd}, Current Time: {now}");
+#endif
                     player.SendErrorNotification($"You must wait at least {waitTimeSeconds} seconds between each advert!");
                     return;
                 }
             }
 
-            if (message.Length < 3)
-            {
-                player.SendErrorNotification("You need to input a longer advert.");
-                return;
-            }
             /*
                         if (player.Position.Distance(AdvertPosition) > 5)
                         {

@@ -54,7 +54,7 @@ async function showObject(index:number){
     
 }
 
-alt.everyTick(() => {
+alt.setInterval(() => {
     if(lastObject != null){
         
         if(lastRotZ >= 360){
@@ -79,7 +79,7 @@ alt.everyTick(() => {
         native.setEntityCoordsNoOffset(editObject, frontPos.x + editPos.x, frontPos.y + editPos.y, frontPos.z + editPos.z , true, true, true);
         native.setEntityRotation(editObject, playerRot.x + editRot.x, playerRot.y  + editRot.y, playerRot.z  + editRot.z, 2, true);
     }
-});
+}, 0);
 
 async function onChangeIndex(index:number){
     await showObject(index);

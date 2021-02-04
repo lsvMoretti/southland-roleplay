@@ -137,12 +137,12 @@ function viewBankInfo(index: number) {
     var BankAccounts = JSON.parse(BankJson);
 
     var BankAccount = BankAccounts[index];
-    currentBankAccount = JSON.stringify(BankAccount);
     if (BankAccount == undefined) {
         closeBankView();
         alt.showCursor(false);
         return;
     }
+    currentBankAccount = JSON.stringify(BankAccount);
 }
 
 function bankHomePageLoaded() {

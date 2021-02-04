@@ -38,7 +38,7 @@ alt.onServer('setPlayerSpawned', (toggle: boolean) => {
 
 var sirenMute: boolean = false;
 
-alt.everyTick(() => {
+alt.setInterval(() => {
 
     let isCuffed:boolean = alt.Player.local.getSyncedMeta('IsCuffed');
 
@@ -81,7 +81,7 @@ alt.everyTick(() => {
     // Home Key
     native.disableControlAction(0, 212, true);
     native.disableControlAction(0, 213, true);
-});
+}, 0);
 
 alt.on('keyup', async (key) => {
     if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;

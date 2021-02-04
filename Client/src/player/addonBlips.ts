@@ -101,6 +101,3 @@ alt.setInterval(() => {
         atmBlip = undefined;
     }
 }, 0);
-/*
-alt.everyTick(() => {
-});*/
