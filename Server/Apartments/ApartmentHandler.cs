@@ -172,6 +172,8 @@ namespace Server.Apartments
 
             player.Position = interior.Position;
 
+            Logging.AddToCharacterLog(player, $"Has entered Apartment Complex: {complex.ComplexName} ({complex.Id}), Apartment: {selectedApartment.Name}");
+
             player.RequestIpl(interior.Ipl);
             player.SetSyncedMetaData("PlayerDimension", player.Dimension);
 

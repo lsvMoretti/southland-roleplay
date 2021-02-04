@@ -507,6 +507,8 @@ namespace Server.Property
                 player.Position = interior.Position;
             }
 
+            Logging.AddToCharacterLog(player, $"Has entered property ID: {nearestProperty.Id}");
+
             int dimension = nearestProperty.Id;
 
             player.Dimension = dimension;
