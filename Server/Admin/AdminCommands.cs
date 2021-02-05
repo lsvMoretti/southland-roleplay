@@ -423,6 +423,14 @@ namespace Server.Admin
             player.SendAdminMessage($"You have admin jailed {targetAccount.Username} for {time:##' Minutes'}.");
 
             Logging.AddToAdminLog(player, $"has admin jailed {targetAccount.Username} for {time:##' Minutes'}.");
+
+            foreach (var loopPlayer in Alt.GetAllPlayers())
+            {
+                lock (loopPlayer)
+                {
+                    loopPlayer.SendAdminMessage($"Admin {player.GetClass().UcpName} has admin jailed {targetAccount.Username} for {time:##' Minutes'}.");
+                }
+            }
         }
 
         [Command("pveh", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Character: Shows a list of player vehicles")]
@@ -2056,6 +2064,14 @@ namespace Server.Admin
                 $"Admin {player.FetchAccount().Username} has kicked {targetPlayer.GetClass().Name}. Reason: {reason}");
 
             targetPlayer.Kick(reason);
+
+            foreach (var loopPlayer in Alt.GetAllPlayers())
+            {
+                lock (loopPlayer)
+                {
+                    loopPlayer.SendAdminMessage($"Admin {player.FetchAccount().Username} has kicked {targetPlayer.GetClass().Name}. Reason: {reason}");
+                }
+            }
         }
 
         #endregion Kick Command
@@ -2136,6 +2152,14 @@ namespace Server.Admin
                 $"Admin {player.FetchAccount().Username} has banned {targetPlayer.GetClass().Name}. Reason: {reason}. Unban time: {targetAccount.UnBanTime}");
 
             targetPlayer.Kick(reason);
+
+            foreach (var loopPlayer in Alt.GetAllPlayers())
+            {
+                lock (loopPlayer)
+                {
+                    loopPlayer.SendAdminMessage($"Admin {player.FetchAccount().Username} has banned {targetPlayer.GetClass().Name}. Reason: {reason}.");
+                }
+            }
         }
 
         #endregion Ban Command
