@@ -46,6 +46,9 @@ namespace Server.Language
             Languages.Add(new Language("Turkish", "tr"));
             Languages.Add(new Language("Bulgarian", "bg"));
             Languages.Add(new Language("Greek", "el"));
+            Languages.Add(new Language("Serbian (Cyrillic)", "sr-Cyrl"));
+            Languages.Add(new Language("Serbian (Latin)", "sr-Latn"));
+            Languages.Add(new Language("Romanian", "ro"));
 
             Blip positionBlip = new Blip("ULSA", LearnPosition, 133, 58, 0.75f);
             positionBlip.Add();
