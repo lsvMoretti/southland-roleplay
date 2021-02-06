@@ -500,7 +500,7 @@ namespace Server.Admin
             }
 
             IVehicle targetVehicle =
-                Alt.Server.GetVehicles().FirstOrDefault(x =>
+                Alt.GetAllVehicles().FirstOrDefault(x =>
                     x.FetchVehicleData() != null && x.FetchVehicleData().Id == selectedDbVehicle.Id);
 
             if (targetVehicle != null)
@@ -538,7 +538,7 @@ namespace Server.Admin
                 return;
             }
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.FetchVehicleData()?.Id == vid);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(i => i.FetchVehicleData()?.Id == vid);
 
             if (targetVehicle == null)
             {
@@ -2296,7 +2296,7 @@ namespace Server.Admin
 
             foreach (Models.Vehicle playerVehicle in playerVehicles)
             {
-                IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetVehicleId() == playerVehicle.Id);
+                IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetVehicleId() == playerVehicle.Id);
 
                 targetVehicle?.Remove();
 
@@ -4126,7 +4126,7 @@ namespace Server.Admin
                 return;
             }
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == id);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == id);
 
             if (targetVehicle == null)
             {
@@ -4160,7 +4160,7 @@ namespace Server.Admin
                 return;
             }
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == id);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == id);
 
             if (targetVehicle == null)
             {
@@ -5519,7 +5519,7 @@ namespace Server.Admin
 
             player.GetData("AdminCommand:ManagingPlayer:VehicleId", out int targetVehicleId);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass()?.Id == targetVehicleId);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass()?.Id == targetVehicleId);
 
             if (targetVehicle == null)
             {

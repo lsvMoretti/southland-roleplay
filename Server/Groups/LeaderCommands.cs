@@ -215,7 +215,7 @@ namespace Server.Groups
             foreach (Models.Vehicle factionVehicle in factionVehicles)
             {
                 IVehicle targetVehicle =
-                    Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == factionVehicle.Id);
+                    Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == factionVehicle.Id);
 
                 if (targetVehicle != null)
                 {

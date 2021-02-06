@@ -333,7 +333,7 @@ namespace Server.Backpack
 
             if (option == "Transfer to Vehicle")
             {
-                IEnumerable<IVehicle> vehicles = Alt.Server.GetVehicles();
+                IEnumerable<IVehicle> vehicles = Alt.GetAllVehicles();
 
                 float lastDistance = 5f;
                 IVehicle lastVehicle = null;
@@ -515,7 +515,7 @@ namespace Server.Backpack
 
             if (option == "Transfer to Vehicle")
             {
-                IEnumerable<IVehicle> vehicles = Alt.Server.GetVehicles();
+                IEnumerable<IVehicle> vehicles = Alt.GetAllVehicles();
 
                 float lastDistance = 5f;
                 IVehicle lastVehicle = null;

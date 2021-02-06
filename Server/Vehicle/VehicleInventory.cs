@@ -120,7 +120,7 @@ namespace Server.Vehicle
 
             player.GetData("vehicle:inventory:interaction", out int vehicleId);
 
-            IVehicle nearbyVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle nearbyVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
             if (nearbyVehicle == null || !nearbyVehicle.Exists)
             {
@@ -237,7 +237,7 @@ namespace Server.Vehicle
 
             player.GetData("vehicle:inventory:interaction", out int vehicleId);
 
-            IVehicle nearbyVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle nearbyVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
             if (nearbyVehicle == null || !nearbyVehicle.Exists)
             {
@@ -362,7 +362,7 @@ namespace Server.Vehicle
 
             player.GetData("vehicle:inventory:interaction", out int vehicleId);
 
-            IVehicle nearbyVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle nearbyVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
             if (nearbyVehicle == null || !nearbyVehicle.Exists)
             {
@@ -422,7 +422,7 @@ namespace Server.Vehicle
 
             player.GetData("vehicle:inventory:interaction", out int vehicleId);
 
-            IVehicle nearbyVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle nearbyVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
             if (nearbyVehicle == null || !nearbyVehicle.Exists)
             {
@@ -536,7 +536,7 @@ namespace Server.Vehicle
 
             player.GetData("vehicle:inventory:interaction", out int vehicleId);
 
-            IVehicle nearbyVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle nearbyVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
             if (nearbyVehicle == null || !nearbyVehicle.Exists)
             {

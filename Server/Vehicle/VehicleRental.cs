@@ -144,7 +144,7 @@ namespace Server.Vehicle
                 return;
             }
 
-            bool vehicleSpotTaken = Alt.Server.GetVehicles().Any(x => x.Position.Distance(rentalSpawn) < 4);
+            bool vehicleSpotTaken = Alt.GetAllVehicles().Any(x => x.Position.Distance(rentalSpawn) < 4);
 
             if (vehicleSpotTaken)
             {

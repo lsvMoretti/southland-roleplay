@@ -20,7 +20,7 @@ namespace Server.Extensions
         {
             if (player.FetchCharacter() == null) return;
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.Position.Distance(position) < 10f);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.Position.Distance(position) < 10f);
 
             if (targetVehicle != null)
             {
@@ -94,7 +94,7 @@ namespace Server.Extensions
 
             player.SetData("OnVehicleClickMenuVehicle", null);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.Id == vehicleId);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.Id == vehicleId);
 
             if (targetVehicle == null) return;
 

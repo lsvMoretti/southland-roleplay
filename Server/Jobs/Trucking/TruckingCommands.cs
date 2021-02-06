@@ -49,7 +49,7 @@ namespace Server.Jobs.Trucking
                 return;
             }
 
-            List<IVehicle> vehicles = Alt.Server.GetVehicles().ToList();
+            List<IVehicle> vehicles = Alt.GetAllVehicles().ToList();
 
             if (vehicles.Any(x => x.Position.Distance(TruckSpawnPosition) <= 5))
             {

@@ -585,7 +585,7 @@ namespace Server
 
             int vehicleCount = 0;
 
-            foreach (IVehicle vehicle in Alt.Server.GetVehicles())
+            foreach (IVehicle vehicle in Alt.GetAllVehicles())
             {
                 Models.Vehicle vehicleData = context.Vehicle.Find(vehicle.GetClass().Id);
 

@@ -51,7 +51,7 @@ namespace Server.Jobs.Bus
                 {
                     IVehicle vehicle = keyValuePair.Value;
 
-                    IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == vehicle);
+                    IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x == vehicle);
 
                     if (targetVehicle == null)
                     {

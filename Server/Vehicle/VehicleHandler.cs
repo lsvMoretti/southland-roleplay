@@ -57,7 +57,7 @@ namespace Server.Vehicle
         {
             fuelTimer.Stop();
 
-            List<IVehicle> vehicleList = Alt.Server.GetVehicles().Where(x => x.FetchVehicleData() != null).ToList();
+            List<IVehicle> vehicleList = Alt.GetAllVehicles().Where(x => x.FetchVehicleData() != null).ToList();
 
             if (!vehicleList.Any())
             {
@@ -118,7 +118,7 @@ namespace Server.Vehicle
             {
                 oneMinuteTimer.Stop();
 
-                List<IVehicle> vehicleList = Alt.Server.GetVehicles().Where(x => x.FetchVehicleData() != null).ToList();
+                List<IVehicle> vehicleList = Alt.GetAllVehicles().Where(x => x.FetchVehicleData() != null).ToList();
 
                 if (!vehicleList.Any())
                 {
@@ -170,7 +170,7 @@ namespace Server.Vehicle
         {
             oneSecondTimer.Stop();
 
-            List<IVehicle> vehicleList = Alt.Server.GetVehicles().Where(x => x.FetchVehicleData() != null).ToList();
+            List<IVehicle> vehicleList = Alt.GetAllVehicles().Where(x => x.FetchVehicleData() != null).ToList();
 
             if (!vehicleList.Any())
             {
@@ -442,7 +442,7 @@ namespace Server.Vehicle
         {
             try
             {
-                IEnumerable<IVehicle> vehicles = Alt.Server.GetVehicles().Where(x => x.Dimension == player.Dimension);
+                IEnumerable<IVehicle> vehicles = Alt.GetAllVehicles().Where(x => x.Dimension == player.Dimension);
 
                 float lastDistance = radius + 1;
 
