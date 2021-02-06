@@ -139,7 +139,11 @@ namespace Server.Chat
 
             string? translatedText = null;
 
-            if (playerLanguage?.Code != "en")
+            if (playerLanguage?.Code != "en" && type == MessageType.LocalPhone || playerLanguage?.Code != "en" && type == MessageType.Low
+                                                                               || playerLanguage?.Code != "en" && type == MessageType.Talk
+                                                                               || playerLanguage?.Code != "en" && type == MessageType.Shout
+                                                                               || playerLanguage?.Code != "en" && type == MessageType.Whisper
+                                                                               || playerLanguage?.Code != "en" && type == MessageType.VehicleWindowShut)
             {
                 try
                 {

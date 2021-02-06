@@ -85,16 +85,10 @@ namespace Server.Language
 
                     // Send the request and get response.
                     HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
-                    Console.WriteLine($"Translation as String: {await response.Content.ReadAsStringAsync()}");
                     string result = await response.Content.ReadAsStringAsync();
                     string trim = result.Trim('[', ']');
-                    Console.WriteLine($"After Trim: {trim}");
                     Translations translation =
                         JsonConvert.DeserializeObject<Translations>(trim);
-
-                    ;
-                    Console.WriteLine(
-                        $"Result: {translation.translations.FirstOrDefault()?.text}");
 
                     return translation;
                 }
