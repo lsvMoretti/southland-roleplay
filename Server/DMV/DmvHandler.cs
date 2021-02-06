@@ -66,7 +66,7 @@ namespace Server.DMV
             Position vehicleSpawnPosition = DrivingCheckpoints.FirstOrDefault().Value;
 
             bool spaceOccupied =
-                Alt.Server.GetVehicles().Any(x => x.Position.Distance(vehicleSpawnPosition) <= 5f);
+                Alt.GetAllVehicles().Any(x => x.Position.Distance(vehicleSpawnPosition) <= 5f);
 
             if (spaceOccupied)
             {

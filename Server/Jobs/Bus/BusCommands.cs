@@ -97,7 +97,7 @@ namespace Server.Jobs.Bus
 
                 Position vehicleSpawnPosition = new Position(firstPoint.PosX, firstPoint.PosY, firstPoint.PosZ);
 
-                bool spaceTaken = Alt.Server.GetVehicles().Any(x => x.Position.Distance(vehicleSpawnPosition) < 5f);
+                bool spaceTaken = Alt.GetAllVehicles().Any(x => x.Position.Distance(vehicleSpawnPosition) < 5f);
 
                 if (spaceTaken)
                 {
@@ -159,7 +159,7 @@ namespace Server.Jobs.Bus
 
             var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x == keyValuePair.Value);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x == keyValuePair.Value);
 
             targetVehicle?.Remove();
 
@@ -176,7 +176,7 @@ namespace Server.Jobs.Bus
         {
             var keyValuePair = BusHandler.BusVehicles.FirstOrDefault(x => x.Key == player.GetClass().CharacterId);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().First(x => x == keyValuePair.Value);
+            IVehicle targetVehicle = Alt.GetAllVehicles().First(x => x == keyValuePair.Value);
 
             targetVehicle?.Remove();
 

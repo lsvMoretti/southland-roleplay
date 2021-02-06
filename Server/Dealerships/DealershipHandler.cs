@@ -81,7 +81,7 @@ namespace Server.Dealerships
 
                 foreach (KeyValuePair<int, ushort> previewVehicle in previewVehicles.Where(x => x.Key == dealership.Id))
                 {
-                    IVehicle? vehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.Id == previewVehicle.Value);
+                    IVehicle? vehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.Id == previewVehicle.Value);
 
                     vehicle?.Remove();
                 }
@@ -107,7 +107,7 @@ namespace Server.Dealerships
                 {
                     var vehId = previewVehicles[player.GetPlayerId()];
 
-                    IVehicle? vehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == vehId);
+                    IVehicle? vehicle = Alt.GetAllVehicles().FirstOrDefault(i => i.Id == vehId);
 
                     if (vehicle == null) return;
 
@@ -166,7 +166,7 @@ namespace Server.Dealerships
                 {
                     var oldVehId = previewVehicles[player.GetPlayerId()];
 
-                    IVehicle? oldPreviewVehicle = Alt.Server.GetVehicles().FirstOrDefault(i => i.Id == oldVehId);
+                    IVehicle? oldPreviewVehicle = Alt.GetAllVehicles().FirstOrDefault(i => i.Id == oldVehId);
 
                     if (oldPreviewVehicle != null)
                     {
@@ -242,7 +242,7 @@ namespace Server.Dealerships
 
             ushort previewVehicleId = previewVehicles[player.GetPlayerId()];
 
-            IVehicle previewVehicle = Alt.Server.GetVehicles().First(i => i.Id == previewVehicleId);
+            IVehicle previewVehicle = Alt.GetAllVehicles().First(i => i.Id == previewVehicleId);
 
             if (previewVehicle == null)
             {
@@ -260,7 +260,7 @@ namespace Server.Dealerships
             if (player == null) return;
             ushort previewVehicleId = previewVehicles[player.GetPlayerId()];
 
-            IVehicle previewVehicle = Alt.Server.GetVehicles().First(i => i.Id == previewVehicleId);
+            IVehicle previewVehicle = Alt.GetAllVehicles().First(i => i.Id == previewVehicleId);
 
             if (previewVehicle == null)
             {

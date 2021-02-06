@@ -247,7 +247,7 @@ namespace Server.Vehicle
                 return;
             }
 
-            IVehicle? nearVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
+            IVehicle? nearVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == vehicleId);
 
             if (nearVehicle is null || nearVehicle.Position.Distance(player.Position) > 5)
             {
@@ -448,7 +448,7 @@ namespace Server.Vehicle
             }
             else
             {
-                vehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.NumberplateText.ToLower() == plate.ToLower());
+                vehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.NumberplateText.ToLower() == plate.ToLower());
             }
 
             if (vehicle == null || vehicle.FetchVehicleData() == null)
@@ -1263,7 +1263,7 @@ namespace Server.Vehicle
 
             if (playerVehicle == null)
             {
-                playerVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.Position.Distance(player.Position) < 5f);
+                playerVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.Position.Distance(player.Position) < 5f);
 
                 if (playerVehicle == null)
                 {
@@ -1786,7 +1786,7 @@ namespace Server.Vehicle
                 }
             }
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == targetId);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == targetId);
 
             if (targetVehicle == null || targetVehicle.FetchVehicleData() == null)
             {
@@ -1809,7 +1809,7 @@ namespace Server.Vehicle
         {
             player.GetData("StoreCycleId", out int targetId);
 
-            IVehicle targetVehicle = Alt.Server.GetVehicles().FirstOrDefault(x => x.GetClass().Id == targetId);
+            IVehicle targetVehicle = Alt.GetAllVehicles().FirstOrDefault(x => x.GetClass().Id == targetId);
 
             IVehicle playerVehicle = player.Vehicle;
             Position trunkPosition = new Position(playerVehicle.Position.X, position, playerVehicle.Position.Z);
