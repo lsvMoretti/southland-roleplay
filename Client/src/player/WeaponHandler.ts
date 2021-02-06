@@ -32,7 +32,7 @@ alt.setInterval(() => {
         native.disableControlAction(1, 142, true);
     }
 }, 0);
-
+/*
 alt.setInterval(() => {
     let player: number = alt.Player.local.scriptID;
     let fistHash: number = alt.hash('weapon_unarmed');
@@ -42,7 +42,7 @@ alt.setInterval(() => {
     let currentAmmo: number = native.getAmmoInPedWeapon(alt.Player.local.scriptID, currentWeapon[1]);
 
     alt.emitServer('CurrentWeaponAmmo', currentAmmo);
-}, 50);
+}, 50);*/
 
 alt.onServer('WeaponSwitchAnim', (type: number) => {
     const ped: number = alt.Player.local.scriptID;
