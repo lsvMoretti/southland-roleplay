@@ -55,6 +55,13 @@ namespace Server.Character
                     return false;
                 }
 
+                Models.Character? targetCharacter = targetPlayer.FetchCharacter();
+
+                if (targetCharacter != null)
+                {
+                    Logging.AddToCharacterLog(targetPlayer, $"has been hit by {targetPlayer.GetClass().Name} (({targetPlayer.GetClass().UcpName})) with a {(WeaponModel)weapon}.");
+                }
+
                 bool isFist = (WeaponModel)weapon == WeaponModel.Fist;
 
                 if (isFist)
