@@ -1486,7 +1486,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("drugdeal", onlyOne: true, commandType: CommandType.Anim, description: "/drugdeal [1-3]")]
+        [Command("drugdeal", onlyOne: true, commandType: CommandType.Anim, description: "/drugdeal [1-5]")]
         public static void AnimCommandDrugDeal(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1497,7 +1497,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/drugdeal [1-3]");
+                player.SendSyntaxMessage("/drugdeal [1-5]");
                 return;
             }
 
@@ -1515,8 +1515,16 @@ namespace Server.Animation
                     Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "amb@world_human_drug_dealer_hard@male@idle_b", "idle_d");
                     break;
 
+                case 4:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_DRUG_DEALER");
+                    break;
+
+                case 5:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_DRUG_DEALER_HARD");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/drugdeal [1-3]");
+                    player.SendSyntaxMessage("/drugdeal [1-5]");
                     break;
             }
         }
