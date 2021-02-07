@@ -891,7 +891,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("smoke", onlyOne: true, commandType: CommandType.Anim, description: "/smoke [1-13]")]
+        [Command("smoke", onlyOne: true, commandType: CommandType.Anim, description: "/smoke [1-14]")]
         public static void AnimCommandSmoke(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -983,7 +983,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("binoculars", onlyOne: true, commandType: CommandType.Anim, description: "/binoculars [1-6]")]
+        [Command("binoculars", onlyOne: true, commandType: CommandType.Anim, description: "/binoculars [1-7]")]
         public static void AnimCommandBinoculars(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1040,7 +1040,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("hobo", onlyOne: true, commandType: CommandType.Anim, description: "/hobo [1-9]")]
+        [Command("hobo", onlyOne: true, commandType: CommandType.Anim, description: "/hobo [1-13]")]
         public static void AnimCommandHobo(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1051,7 +1051,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/hobo [1-9]");
+                player.SendSyntaxMessage("/hobo [1-13]");
                 return;
             }
 
@@ -1102,8 +1102,24 @@ namespace Server.Animation
                         "amb@world_human_bum_wash@male@low@idle_a", "idle_a");
                     break;
 
+                case 10:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_FREEWAY");
+                    break;
+
+                case 11:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_SLUMPED");
+                    break;
+
+                case 12:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_STANDING");
+                    break;
+
+                case 13:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_WASH");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/hobo [1-9]");
+                    player.SendSyntaxMessage("/hobo [1-13]");
                     break;
             }
         }
