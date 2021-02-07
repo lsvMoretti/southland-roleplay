@@ -975,7 +975,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("smoke", onlyOne: true, commandType: CommandType.Anim, description: "/smoke [1-14]")]
+        [Command("smoke", onlyOne: true, commandType: CommandType.Anim, description: "/smoke [1-18]")]
         public static void AnimCommandSmoke(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -986,7 +986,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/smoke [1-14]");
+                player.SendSyntaxMessage("/smoke [1-18]");
                 return;
             }
 
@@ -1061,8 +1061,24 @@ namespace Server.Animation
                     Handler.PlayScenario(player, "WORLD_HUMAN_AA_SMOKE");
                     break;
 
+                case 15:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING");
+                    break;
+
+                case 16:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING_CLUBHOUSE");
+                    break;
+
+                case 17:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING_POT");
+                    break;
+
+                case 18:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING_POT_CLUBHOUSE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/smoke [1-14]");
+                    player.SendSyntaxMessage("/smoke [1-18]");
                     break;
             }
         }
