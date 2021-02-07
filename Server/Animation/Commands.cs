@@ -1376,7 +1376,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("cheer", onlyOne: true, commandType: CommandType.Anim, description: "/cheer [1-8]")]
+        [Command("cheer", onlyOne: true, commandType: CommandType.Anim, description: "/cheer [1-9]")]
         public static void AnimCommandCheer(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1387,7 +1387,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/cheer [1-8]");
+                player.SendSyntaxMessage("/cheer [1-9]");
                 return;
             }
 
@@ -1433,13 +1433,17 @@ namespace Server.Animation
                         "base");
                     break;
 
+                case 9:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CHEERING");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/cheer [1-8]");
+                    player.SendSyntaxMessage("/cheer [1-9]");
                     break;
             }
         }
 
-        [Command("clipboard", onlyOne: true, commandType: CommandType.Anim, description: "/clipboard [1-3]")]
+        [Command("clipboard", onlyOne: true, commandType: CommandType.Anim, description: "/clipboard [1-5]")]
         public static void AnimCommandClipboard(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1450,7 +1454,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/clipboard [1-3]");
+                player.SendSyntaxMessage("/clipboard [1-5]");
                 return;
             }
 
@@ -1468,8 +1472,16 @@ namespace Server.Animation
                     Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "amb@world_human_clipboard@male@idle_b", "idle_d");
                     break;
 
+                case 4:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CHEERING");
+                    break;
+
+                case 5:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CLIPBOARD_FACILITY");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/clipboard [1-3]");
+                    player.SendSyntaxMessage("/clipboard [1-5]");
                     break;
             }
         }
