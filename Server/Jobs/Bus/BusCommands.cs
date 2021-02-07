@@ -118,7 +118,7 @@ namespace Server.Jobs.Bus
                 busVehicle.SecondaryColor = 6;
                 busVehicle.NumberplateText = "TRANSIT";
                 busVehicle.SetNumberPlateStyleExt(NumberPlateStyle.BlueWhite3);
-                busVehicle.SetData("FUELLEVEL", 100);
+                busVehicle.SetSyncedMetaData("FUELLEVEL", 100);
                 busVehicle.SetData("bus:emptyTime", DateTime.Now.AddMinutes(10));
                 busVehicle.SetData("ODOREADING", 193921124f);
                 busVehicle.ManualEngineControl = false;
