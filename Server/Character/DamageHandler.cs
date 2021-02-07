@@ -205,7 +205,7 @@ namespace Server.Character
                 return;
             }
 
-            if (targetPlayer.Position.Distance(player.Position) > 3)
+            if (targetPlayer.Position.Distance(player.Position) > 3 && !player.GetClass().AdminDuty)
             {
                 player.SendErrorNotification("You must be closer!");
                 return;
