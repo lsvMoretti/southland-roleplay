@@ -61,14 +61,12 @@ namespace Server.Admin
             player.SendInfoNotification($"Player Id: {targetPlayer.GetPlayerId()}");
 
             var onlineHelpers = Alt.GetAllPlayers()
-                .Where(x => x.FetchAccount()?.Tester == true).ToList();
+                .Where(x => x.FetchAccount()?.AdminLevel > AdminLevel.None).ToList();
 
             if (onlineHelpers.Any())
             {
                 foreach (IPlayer onlineHelper in onlineHelpers)
                 {
-                    if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;
-
                     onlineHelper.SendHelperMessage(
                         $"Tester {player.FetchAccount().Username} has accepted report Id: {helpReport.Id}.");
                 }
@@ -137,9 +135,9 @@ namespace Server.Admin
             player.SendInfoNotification($"You have declined report Id: {helpReport.Id}.");
 
             foreach (IPlayer onlineHelper in Alt.GetAllPlayers()
-                .Where(x => x.FetchAccount()?.Tester == true))
+                .Where(x => x.FetchAccount()?.AdminLevel > AdminLevel.None))
             {
-                if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) return;
+                if (!onlineHelper.HasSyncedMetaData(HelperDutyData)) continue;
 
                 onlineHelper.SendHelperMessage(
                     $"Tester {player.FetchAccount().Username} has denied help me request Id: {helpReport.Id}.");
