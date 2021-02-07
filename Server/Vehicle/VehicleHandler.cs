@@ -86,7 +86,7 @@ namespace Server.Vehicle
                         {
                             var driverInfo = vehicle.GetClass().Occupants.FirstOrDefault(x => x.Key == 1);
 
-                            IPlayer driver = Alt.GetAllPlayers()
+                            IPlayer? driver = Alt.GetAllPlayers()
                                 .FirstOrDefault(x => x.GetPlayerId() == driverInfo.Value);
 
                             driver?.Emit("Vehicle:SetEngineStatus", vehicle, vehicle.EngineOn, true);
@@ -301,6 +301,7 @@ namespace Server.Vehicle
                     if (vehicleClass == 13 && seat == 0)
                     {
                         // Cycles
+                        vehicle.ManualEngineControl = false;
                         vehicle.EngineOn = true;
 
                         using Context context = new Context();

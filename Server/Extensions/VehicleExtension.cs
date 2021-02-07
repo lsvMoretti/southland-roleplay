@@ -234,12 +234,11 @@ namespace Server.Extensions
         {
             get
             {
-                _vehicle.GetData("FUELLEVEL", out int fuelLevel);
+                _vehicle.GetSyncedMetaData("FUELLEVEL", out int fuelLevel);
                 return fuelLevel;
             }
             set
             {
-                _vehicle.SetData("FUELLEVEL", value);
                 _vehicle.SetSyncedMetaData("FUELLEVEL", value);
             }
         }

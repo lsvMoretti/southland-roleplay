@@ -173,6 +173,13 @@ namespace Server.Vehicle
                 vehicleData.FuelLevel = 100;
             }
 
+            if (vehicleData.Class == 13)
+            {
+                // Cycle
+                vehicle.EngineOn = true;
+                vehicle.ManualEngineControl = false;
+            }
+
             if (!ignoreDamage)
             {
                 if (!string.IsNullOrEmpty(vehicleData.DamageData))
@@ -305,6 +312,13 @@ namespace Server.Vehicle
             {
                 vehicle.LockState = VehicleLockState.Locked;
                 vehicle.GetClass().FuelLevel = 100;
+            }
+
+            if (vehicleData.Class == 13)
+            {
+                // Cycle
+                vehicle.EngineOn = true;
+                vehicle.ManualEngineControl = false;
             }
 
             if (!ignoreDamage)
