@@ -19,6 +19,58 @@ namespace Server.Animation
             Handler.StopPlayerAnimation(player);
         }
 
+        [Command("cop", commandType: CommandType.Anim, description: "/cop [1-8]")]
+        public static void AnimCommandCop(IPlayer player, string numberString = "")
+        {
+            if (!Handler.CanAnim(player, true)) return;
+            bool tryParse = int.TryParse(numberString, out int number);
+
+            if (!tryParse || numberString == "")
+            {
+                player.SendSyntaxMessage("/cop [1-8]");
+                return;
+            }
+
+            switch (number)
+            {
+                case 1:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_COP_IDLES");
+                    break;
+
+                case 2:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_PATROL");
+                    break;
+
+                case 3:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND");
+                    break;
+
+                case 4:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND_CASINO");
+                    break;
+
+                case 5:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND_CLUBHOUSE");
+                    break;
+
+                case 6:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND_FACILITY");
+                    break;
+
+                case 7:
+                    Handler.PlayScenario(player, "CODE_HUMAN_POLICE_CROWD_CONTROL");
+                    break;
+
+                case 8:
+                    Handler.PlayScenario(player, "CODE_HUMAN_POLICE_INVESTIGATE");
+                    break;
+
+                default:
+                    player.SendSyntaxMessage("/cop [1-8]");
+                    break;
+            }
+        }
+
         [Command("surrender", commandType: CommandType.Anim, description: "/surrender")]
         public static void AnimCommandSurrender(IPlayer player)
         {
