@@ -483,7 +483,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("idle", onlyOne: true, commandType: CommandType.Anim, description: "/idle [1-28]")]
+        [Command("idle", onlyOne: true, commandType: CommandType.Anim, description: "/idle [1-30]")]
         public static void AnimCommandIdle(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -494,7 +494,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/idle [1-28]");
+                player.SendSyntaxMessage("/idle [1-30]");
                 return;
             }
 
@@ -640,8 +640,16 @@ namespace Server.Animation
                         "amb@world_human_prostitute@hooker@idle_a", "idle_a");
                     break;
 
+                case 29:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_HANG_OUT_STREET");
+                    break;
+
+                case 30:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_HANG_OUT_STREET_CLUBHOUSE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/idle [1-28]");
+                    player.SendSyntaxMessage("/idle [1-30]");
                     break;
             }
         }
