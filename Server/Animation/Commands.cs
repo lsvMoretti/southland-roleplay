@@ -1830,7 +1830,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("sit", onlyOne: true, commandType: CommandType.Anim, description: "/sit [1-9]")]
+        [Command("sit", onlyOne: true, commandType: CommandType.Anim, description: "/sit [1-34]")]
         public static void AnimCommandSit(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1841,7 +1841,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/sit [1-9]");
+                player.SendSyntaxMessage("/sit [1-34]");
                 return;
             }
             switch (number)
@@ -1882,8 +1882,108 @@ namespace Server.Animation
                     Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "anim@mp_rollarcoaster", "idle_b_player_two");
                     break;
 
+                case 10:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_ARMCHAIR");
+                    break;
+
+                case 11:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BAR");
+                    break;
+
+                case 12:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH");
+                    break;
+
+                case 13:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_FACILITY");
+                    break;
+
+                case 14:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_DRINK");
+                    break;
+
+                case 15:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_DRINK_FACILITY");
+                    break;
+
+                case 16:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_DRINK_BEER");
+                    break;
+
+                case 17:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_FOOD");
+                    break;
+
+                case 18:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_FOOD_FACILITY");
+                    break;
+
+                case 19:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BUS_STOP_WAIT");
+                    break;
+
+                case 20:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR");
+                    break;
+
+                case 21:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_DRINK");
+                    break;
+
+                case 22:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_DRINK_BEER");
+                    break;
+
+                case 23:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_DRINK_BEER");
+                    break;
+
+                case 24:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_UPRIGHT");
+                    break;
+
+                case 25:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER");
+                    break;
+
+                case 26:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_COMPUTER");
+                    break;
+
+                case 27:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_COMPUTER_LOW");
+                    break;
+
+                case 28:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_DECKCHAIR");
+                    break;
+
+                case 29:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_DECKCHAIR_DRINK");
+                    break;
+
+                case 30:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS");
+                    break;
+
+                case 31:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS_PRISON");
+                    break;
+
+                case 32:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_SEWING");
+                    break;
+
+                case 33:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_STRIP_WATCH");
+                    break;
+
+                case 34:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_SUNLOUNGER");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/sit [1-9]");
+                    player.SendSyntaxMessage("/sit [1-34]");
                     break;
             }
         }
@@ -2054,7 +2154,5 @@ namespace Server.Animation
             if (!canAnim) return;
             Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "anim@move_m@prisoner_cuffed_rc", "aim_low_loop");
         }
-
-        [Command("")]
     }
 }
