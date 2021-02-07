@@ -654,7 +654,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("lean", onlyOne: true, commandType: CommandType.Anim, description: "/lean [1-38]")]
+        [Command("lean", onlyOne: true, commandType: CommandType.Anim, description: "/lean [1-40]")]
         public static void AnimCommandLean(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -665,7 +665,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/lean [1-38]");
+                player.SendSyntaxMessage("/lean [1-40]");
                 return;
             }
 
@@ -861,8 +861,16 @@ namespace Server.Animation
                         "amb@world_human_leaning@male@wall@back@texting@idle_a", "idle_b");
                     break;
 
+                case 39:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_LEANING");
+                    break;
+
+                case 40:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_LEANING_CASINO_TERRACE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/lean [1-38]");
+                    player.SendSyntaxMessage("/lean [1-30]");
                     break;
             }
         }
