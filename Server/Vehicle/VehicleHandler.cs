@@ -170,7 +170,7 @@ namespace Server.Vehicle
         {
             oneSecondTimer.Stop();
 
-            List<IVehicle> vehicleList = Alt.GetAllVehicles().Where(x => x.FetchVehicleData() != null).ToList();
+            List<IVehicle> vehicleList = Alt.GetAllVehicles().ToList();
 
             if (!vehicleList.Any())
             {
@@ -180,26 +180,31 @@ namespace Server.Vehicle
 
             foreach (IVehicle vehicle in vehicleList)
             {
-                Position currentPosition = vehicle.Position;
-
-                if (vehicle.GetData("LASTVEHICLEPOSITION", out Position vehiclePosition))
+                lock (vehicle)
                 {
-                    if (currentPosition == vehiclePosition) continue;
+                    if (vehicle.FetchVehicleData() == null) continue;
 
-                    float currentDistance = vehicle.GetClass().Distance;
+                    Position currentPosition = vehicle.Position;
 
-                    float distance = currentPosition.Distance(vehiclePosition);
+                    if (vehicle.GetData("LASTVEHICLEPOSITION", out Position vehiclePosition))
+                    {
+                        if (currentPosition == vehiclePosition) continue;
 
-                    float newDistance = currentDistance + distance;
+                        float currentDistance = vehicle.GetClass().Distance;
 
-                    vehicle.GetClass().Distance = (float)decimal.Round((decimal)newDistance, 2);
+                        float distance = currentPosition.Distance(vehiclePosition);
+
+                        float newDistance = currentDistance + distance;
+
+                        vehicle.GetClass().Distance = (float)decimal.Round((decimal)newDistance, 2);
+
+                        vehicle.SetData("LASTVEHICLEPOSITION", currentPosition);
+
+                        continue;
+                    }
 
                     vehicle.SetData("LASTVEHICLEPOSITION", currentPosition);
-
-                    continue;
                 }
-
-                vehicle.SetData("LASTVEHICLEPOSITION", currentPosition);
             }
             oneSecondTimer.Start();
         }
