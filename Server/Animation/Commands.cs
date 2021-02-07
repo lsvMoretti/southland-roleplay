@@ -902,7 +902,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/smoke [1-13]");
+                player.SendSyntaxMessage("/smoke [1-14]");
                 return;
             }
 
@@ -973,8 +973,12 @@ namespace Server.Animation
                         "amb@world_human_smoking_pot@male@idle_a", "idle_c");
                     break;
 
+                case 14:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_AA_SMOKE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/smoke [1-13]");
+                    player.SendSyntaxMessage("/smoke [1-14]");
                     break;
             }
         }
@@ -990,7 +994,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/binoculars [1-6]");
+                player.SendSyntaxMessage("/binoculars [1-7]");
                 return;
             }
 
@@ -1026,8 +1030,12 @@ namespace Server.Animation
                         "amb@world_human_binoculars@female@idle_b", "idle_f");
                     break;
 
+                case 7:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BINOCULARS");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/binoculars [1-6]");
+                    player.SendSyntaxMessage("/binoculars [1-7]");
                     break;
             }
         }
@@ -1958,5 +1966,7 @@ namespace Server.Animation
             if (!canAnim) return;
             Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "anim@move_m@prisoner_cuffed_rc", "aim_low_loop");
         }
+
+        [Command("")]
     }
 }

@@ -5,6 +5,11 @@ const maxCountLoadTry = 255;
 
 alt.onServer('animation:StartAnimation', startAnimation);
 alt.onServer('animation:StopAnimation', stopAnimation);
+alt.onServer('animation:StartScenario', startScenario);
+
+export function startScenario(scenario:string){
+    native.taskStartScenarioInPlace(alt.Player.local.scriptID, scenario, 0, true);
+}
 
 export function stopAnimation() {
     var scriptId = alt.Player.local.scriptID;

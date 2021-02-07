@@ -10,7 +10,7 @@ alt.onServer('receiveDoorList', (doors:any) => {
 
 let doorArray: boolean[] = [];
 
-await alt.setInterval(async () => {
+alt.setInterval(async () => {
 
     if(doorList == undefined) return;
 
