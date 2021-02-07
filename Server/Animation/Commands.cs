@@ -19,6 +19,38 @@ namespace Server.Animation
             Handler.StopPlayerAnimation(player);
         }
 
+        [Command("medic", commandType: CommandType.Anim, description: "/medic [1-3]")]
+        public static void AnimCommandMedic(IPlayer player, string numberString = "")
+        {
+            if (!Handler.CanAnim(player, true)) return;
+            bool tryParse = int.TryParse(numberString, out int number);
+
+            if (!tryParse || numberString == "")
+            {
+                player.SendSyntaxMessage("/medic [1-3]");
+                return;
+            }
+
+            switch (number)
+            {
+                case 1:
+                    Handler.PlayScenario(player, "CODE_HUMAN_MEDIC_KNEEL");
+                    break;
+
+                case 2:
+                    Handler.PlayScenario(player, "CODE_HUMAN_MEDIC_TEND_TO_DEAD");
+                    break;
+
+                case 3:
+                    Handler.PlayScenario(player, "CODE_HUMAN_MEDIC_TIME_OF_DEATH");
+                    break;
+
+                default:
+                    player.SendSyntaxMessage("/medic [1-3]");
+                    break;
+            }
+        }
+
         [Command("cop", commandType: CommandType.Anim, description: "/cop [1-8]")]
         public static void AnimCommandCop(IPlayer player, string numberString = "")
         {
