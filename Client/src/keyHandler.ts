@@ -448,10 +448,29 @@ alt.on('EnteredVehicle', () => {
 });
 
 function startFingerPointing() {
-    Animation.startAnimation('anim@mp_point', 'task_mp_pointing', -1, 1);
+    const localPlayer = alt.Player.local.scriptID;
+
+    native.requestAnimDict("anim@mp_point");
+
+    while(!native.hasAnimDictLoaded("anim@mp_point")){
+        continue;
+    }
+
+    native.setPedConfigFlag(localPlayer, 36, true);
+    native.taskMoveNetworkByName(localPlayer, "task_mp_pointing", 0.5, false, "anim@mp_point", 24);
+
+    native.removeAnimDict("anim@mp_point");
 }
 function stopFingerPointing() {
-    Animation.stopAnimation();
+    const localPlayer = alt.Player.local.scriptID;
+
+    native.requestTaskMoveNetworkStateTransition(localPlayer, "Stop");
+
+    if(!native.isPedInjured(localPlayer)){
+        native.clearPedSecondaryTask(localPlayer);
+    }
+    native.setPedConfigFlag(localPlayer, 36, false);
+    native.clearPedSecondaryTask(localPlayer);
 }
 
 alt.setInterval(() => {
