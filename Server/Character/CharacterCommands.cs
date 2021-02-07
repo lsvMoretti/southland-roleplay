@@ -715,6 +715,8 @@ namespace Server.Character
 
                 if (account is null) continue;
 
+                if (account.Id == 1) continue;
+
                 if (account.AdminLevel < AdminLevel.Administrator) continue;
 
                 onlineAdmins.Add(onlinePlayer);
@@ -889,7 +891,7 @@ namespace Server.Character
                 return;
             }
 
-            player.SendHelperMessage("____[On Duty Testers]____");
+            player.SendHelperMessage("[On Duty Testers]");
 
             foreach (var onlineHelper in onlineHelpers)
             {
