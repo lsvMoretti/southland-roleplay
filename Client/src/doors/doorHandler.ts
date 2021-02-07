@@ -10,15 +10,15 @@ alt.onServer('receiveDoorList', (doors:any) => {
 
 let doorArray: boolean[] = [];
 
-alt.setInterval(() => {
+await alt.setInterval(async () => {
 
     if(doorList == undefined) return;
 
-    updateDoorStatus();
+    await updateDoorStatus();
 
 }, 1000);
 
-function updateDoorStatus(){
+async function updateDoorStatus(){
     doorList.forEach((door: { PosX: number; PosY: number; PosZ: number; Model: any; Locked: boolean; }) => {
         let entity = native.getClosestObjectOfType(door.PosX, door.PosY, door.PosZ, 1, Number(door.Model), false, false, false);
 
