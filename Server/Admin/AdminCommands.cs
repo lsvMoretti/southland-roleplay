@@ -6765,7 +6765,7 @@ namespace Server.Admin
         [Command("vstats", AdminLevel.Tester, commandType: CommandType.Admin, description: "Used to view vehicle stats")]
         public static void AdminVehicleStatsCommand(IPlayer player)
         {
-            IVehicle vehicle = player.Vehicle ?? VehicleHandler.FetchNearestVehicle(player);
+            IVehicle? vehicle = player.Vehicle ?? VehicleHandler.FetchNearestVehicle(player);
 
             if (vehicle?.FetchVehicleData() == null)
             {
@@ -6773,26 +6773,27 @@ namespace Server.Admin
                 return;
             }
 
-            Models.Vehicle vehicleData = vehicle.FetchVehicleData();
+            Models.Vehicle? vehicleData = vehicle.FetchVehicleData();
 
-            Models.Character ownerData = Models.Character.GetCharacter(vehicleData.OwnerId);
+            Models.Character? ownerData = Models.Character.GetCharacter(vehicleData.OwnerId);
 
             player.SendInfoMessage($"Vehicle Id: {vehicleData.Id}, Inventory Id: {vehicleData.InventoryId}");
-            if (ownerData == null)
-            {
-                player.SendInfoMessage("Owner: None");
-            }
-            else
-            {
-                player.SendInfoMessage($"Owner: {ownerData.Name}, Purchase Price: {vehicleData.VehiclePrice:C}");
-            }
-            List<VehicleMods> vehicleMods = JsonConvert.DeserializeObject<List<VehicleMods>>(vehicleData.VehicleMods);
+            player.SendInfoMessage(ownerData == null
+                ? "Owner: None"
+                : $"Owner: {ownerData.Name}, Purchase Price: {vehicleData.VehiclePrice:C}");
 
-            player.SendInfoMessage($"Color 1: {vehicleData.Color1}, Color 2: {vehicleData.Color2}, Vehicle Color: {vehicleData.WheelColor}, Mod count: {vehicleMods.Count(x => x.modType > 0)}");
+            player.SendInfoMessage($"Color 1: {vehicleData.Color1}, Color 2: {vehicleData.Color2}, Vehicle Color: {vehicleData.WheelColor}");
+
+            if (!string.IsNullOrEmpty(vehicleData.VehicleMods))
+            {
+                List<VehicleMods> vehicleMods = JsonConvert.DeserializeObject<List<VehicleMods>>(vehicleData.VehicleMods);
+                player.SendInfoMessage($"Vehicle Mod Count: {vehicleMods.Count(x => x.modType > 0)}");
+            }
+
             player.SendInfoMessage($"Mileage: {vehicleData.Odometer / 1609} Miles");
             if (vehicleData.FactionId > 0)
             {
-                Faction vehicleFaction = Faction.FetchFaction(vehicleData.FactionId);
+                Faction? vehicleFaction = Faction.FetchFaction(vehicleData.FactionId);
 
                 if (vehicleFaction != null)
                 {
