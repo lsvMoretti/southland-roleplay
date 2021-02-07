@@ -1589,7 +1589,7 @@ namespace Server.Animation
                     break;
 
                 case 4:
-                    Handler.PlayScenario(player, "WORLD_HUMAN_CHEERING");
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CLIPBOARD");
                     break;
 
                 case 5:

@@ -431,6 +431,8 @@ alt.on('keyup', async (key) => {
 });
 
 alt.on('keydown', (key) => {
+    if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;
+
     if (getEditObjectStatus()) {
         onKeyDownEvent(key);
         return;
