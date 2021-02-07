@@ -19,6 +19,90 @@ namespace Server.Animation
             Handler.StopPlayerAnimation(player);
         }
 
+        [Command("medic", commandType: CommandType.Anim, description: "/medic [1-3]")]
+        public static void AnimCommandMedic(IPlayer player, string numberString = "")
+        {
+            if (!Handler.CanAnim(player, true)) return;
+            bool tryParse = int.TryParse(numberString, out int number);
+
+            if (!tryParse || numberString == "")
+            {
+                player.SendSyntaxMessage("/medic [1-3]");
+                return;
+            }
+
+            switch (number)
+            {
+                case 1:
+                    Handler.PlayScenario(player, "CODE_HUMAN_MEDIC_KNEEL");
+                    break;
+
+                case 2:
+                    Handler.PlayScenario(player, "CODE_HUMAN_MEDIC_TEND_TO_DEAD");
+                    break;
+
+                case 3:
+                    Handler.PlayScenario(player, "CODE_HUMAN_MEDIC_TIME_OF_DEATH");
+                    break;
+
+                default:
+                    player.SendSyntaxMessage("/medic [1-3]");
+                    break;
+            }
+        }
+
+        [Command("cop", commandType: CommandType.Anim, description: "/cop [1-8]")]
+        public static void AnimCommandCop(IPlayer player, string numberString = "")
+        {
+            if (!Handler.CanAnim(player, true)) return;
+            bool tryParse = int.TryParse(numberString, out int number);
+
+            if (!tryParse || numberString == "")
+            {
+                player.SendSyntaxMessage("/cop [1-8]");
+                return;
+            }
+
+            switch (number)
+            {
+                case 1:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_COP_IDLES");
+                    break;
+
+                case 2:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_PATROL");
+                    break;
+
+                case 3:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND");
+                    break;
+
+                case 4:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND_CASINO");
+                    break;
+
+                case 5:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND_CLUBHOUSE");
+                    break;
+
+                case 6:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_GUARD_STAND_FACILITY");
+                    break;
+
+                case 7:
+                    Handler.PlayScenario(player, "CODE_HUMAN_POLICE_CROWD_CONTROL");
+                    break;
+
+                case 8:
+                    Handler.PlayScenario(player, "CODE_HUMAN_POLICE_INVESTIGATE");
+                    break;
+
+                default:
+                    player.SendSyntaxMessage("/cop [1-8]");
+                    break;
+            }
+        }
+
         [Command("surrender", commandType: CommandType.Anim, description: "/surrender")]
         public static void AnimCommandSurrender(IPlayer player)
         {
@@ -399,7 +483,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("idle", onlyOne: true, commandType: CommandType.Anim, description: "/idle [1-28]")]
+        [Command("idle", onlyOne: true, commandType: CommandType.Anim, description: "/idle [1-30]")]
         public static void AnimCommandIdle(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -410,7 +494,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/idle [1-28]");
+                player.SendSyntaxMessage("/idle [1-30]");
                 return;
             }
 
@@ -556,13 +640,21 @@ namespace Server.Animation
                         "amb@world_human_prostitute@hooker@idle_a", "idle_a");
                     break;
 
+                case 29:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_HANG_OUT_STREET");
+                    break;
+
+                case 30:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_HANG_OUT_STREET_CLUBHOUSE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/idle [1-28]");
+                    player.SendSyntaxMessage("/idle [1-30]");
                     break;
             }
         }
 
-        [Command("lean", onlyOne: true, commandType: CommandType.Anim, description: "/lean [1-38]")]
+        [Command("lean", onlyOne: true, commandType: CommandType.Anim, description: "/lean [1-40]")]
         public static void AnimCommandLean(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -573,7 +665,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/lean [1-38]");
+                player.SendSyntaxMessage("/lean [1-40]");
                 return;
             }
 
@@ -769,8 +861,16 @@ namespace Server.Animation
                         "amb@world_human_leaning@male@wall@back@texting@idle_a", "idle_b");
                     break;
 
+                case 39:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_LEANING");
+                    break;
+
+                case 40:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_LEANING_CASINO_TERRACE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/lean [1-38]");
+                    player.SendSyntaxMessage("/lean [1-30]");
                     break;
             }
         }
@@ -891,7 +991,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("smoke", onlyOne: true, commandType: CommandType.Anim, description: "/smoke [1-13]")]
+        [Command("smoke", onlyOne: true, commandType: CommandType.Anim, description: "/smoke [1-18]")]
         public static void AnimCommandSmoke(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -902,7 +1002,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/smoke [1-13]");
+                player.SendSyntaxMessage("/smoke [1-18]");
                 return;
             }
 
@@ -973,13 +1073,33 @@ namespace Server.Animation
                         "amb@world_human_smoking_pot@male@idle_a", "idle_c");
                     break;
 
+                case 14:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_AA_SMOKE");
+                    break;
+
+                case 15:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING");
+                    break;
+
+                case 16:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING_CLUBHOUSE");
+                    break;
+
+                case 17:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING_POT");
+                    break;
+
+                case 18:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_SMOKING_POT_CLUBHOUSE");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/smoke [1-13]");
+                    player.SendSyntaxMessage("/smoke [1-18]");
                     break;
             }
         }
 
-        [Command("binoculars", onlyOne: true, commandType: CommandType.Anim, description: "/binoculars [1-6]")]
+        [Command("binoculars", onlyOne: true, commandType: CommandType.Anim, description: "/binoculars [1-7]")]
         public static void AnimCommandBinoculars(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -990,7 +1110,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/binoculars [1-6]");
+                player.SendSyntaxMessage("/binoculars [1-7]");
                 return;
             }
 
@@ -1026,13 +1146,17 @@ namespace Server.Animation
                         "amb@world_human_binoculars@female@idle_b", "idle_f");
                     break;
 
+                case 7:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BINOCULARS");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/binoculars [1-6]");
+                    player.SendSyntaxMessage("/binoculars [1-7]");
                     break;
             }
         }
 
-        [Command("hobo", onlyOne: true, commandType: CommandType.Anim, description: "/hobo [1-9]")]
+        [Command("hobo", onlyOne: true, commandType: CommandType.Anim, description: "/hobo [1-13]")]
         public static void AnimCommandHobo(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1043,7 +1167,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/hobo [1-9]");
+                player.SendSyntaxMessage("/hobo [1-13]");
                 return;
             }
 
@@ -1094,8 +1218,24 @@ namespace Server.Animation
                         "amb@world_human_bum_wash@male@low@idle_a", "idle_a");
                     break;
 
+                case 10:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_FREEWAY");
+                    break;
+
+                case 11:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_SLUMPED");
+                    break;
+
+                case 12:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_STANDING");
+                    break;
+
+                case 13:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_BUM_WASH");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/hobo [1-9]");
+                    player.SendSyntaxMessage("/hobo [1-13]");
                     break;
             }
         }
@@ -1352,7 +1492,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("cheer", onlyOne: true, commandType: CommandType.Anim, description: "/cheer [1-8]")]
+        [Command("cheer", onlyOne: true, commandType: CommandType.Anim, description: "/cheer [1-9]")]
         public static void AnimCommandCheer(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1363,7 +1503,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/cheer [1-8]");
+                player.SendSyntaxMessage("/cheer [1-9]");
                 return;
             }
 
@@ -1409,13 +1549,17 @@ namespace Server.Animation
                         "base");
                     break;
 
+                case 9:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CHEERING");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/cheer [1-8]");
+                    player.SendSyntaxMessage("/cheer [1-9]");
                     break;
             }
         }
 
-        [Command("clipboard", onlyOne: true, commandType: CommandType.Anim, description: "/clipboard [1-3]")]
+        [Command("clipboard", onlyOne: true, commandType: CommandType.Anim, description: "/clipboard [1-5]")]
         public static void AnimCommandClipboard(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1426,7 +1570,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/clipboard [1-3]");
+                player.SendSyntaxMessage("/clipboard [1-5]");
                 return;
             }
 
@@ -1444,13 +1588,21 @@ namespace Server.Animation
                     Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "amb@world_human_clipboard@male@idle_b", "idle_d");
                     break;
 
+                case 4:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CLIPBOARD");
+                    break;
+
+                case 5:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_CLIPBOARD_FACILITY");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/clipboard [1-3]");
+                    player.SendSyntaxMessage("/clipboard [1-5]");
                     break;
             }
         }
 
-        [Command("drugdeal", onlyOne: true, commandType: CommandType.Anim, description: "/drugdeal [1-3]")]
+        [Command("drugdeal", onlyOne: true, commandType: CommandType.Anim, description: "/drugdeal [1-5]")]
         public static void AnimCommandDrugDeal(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1461,7 +1613,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/drugdeal [1-3]");
+                player.SendSyntaxMessage("/drugdeal [1-5]");
                 return;
             }
 
@@ -1479,8 +1631,16 @@ namespace Server.Animation
                     Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "amb@world_human_drug_dealer_hard@male@idle_b", "idle_d");
                     break;
 
+                case 4:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_DRUG_DEALER");
+                    break;
+
+                case 5:
+                    Handler.PlayScenario(player, "WORLD_HUMAN_DRUG_DEALER_HARD");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/drugdeal [1-3]");
+                    player.SendSyntaxMessage("/drugdeal [1-5]");
                     break;
             }
         }
@@ -1734,7 +1894,7 @@ namespace Server.Animation
             }
         }
 
-        [Command("sit", onlyOne: true, commandType: CommandType.Anim, description: "/sit [1-9]")]
+        [Command("sit", onlyOne: true, commandType: CommandType.Anim, description: "/sit [1-34]")]
         public static void AnimCommandSit(IPlayer player, string numberString = "")
         {
             bool canAnim = Handler.CanAnim(player, true);
@@ -1745,7 +1905,7 @@ namespace Server.Animation
 
             if (!tryParse || numberString == "")
             {
-                player.SendSyntaxMessage("/sit [1-9]");
+                player.SendSyntaxMessage("/sit [1-34]");
                 return;
             }
             switch (number)
@@ -1786,8 +1946,108 @@ namespace Server.Animation
                     Handler.PlayPlayerAnimationEx(player, (int)AnimationFlags.Loop, "anim@mp_rollarcoaster", "idle_b_player_two");
                     break;
 
+                case 10:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_ARMCHAIR");
+                    break;
+
+                case 11:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BAR");
+                    break;
+
+                case 12:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH");
+                    break;
+
+                case 13:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_FACILITY");
+                    break;
+
+                case 14:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_DRINK");
+                    break;
+
+                case 15:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_DRINK_FACILITY");
+                    break;
+
+                case 16:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_DRINK_BEER");
+                    break;
+
+                case 17:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_FOOD");
+                    break;
+
+                case 18:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BENCH_FOOD_FACILITY");
+                    break;
+
+                case 19:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_BUS_STOP_WAIT");
+                    break;
+
+                case 20:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR");
+                    break;
+
+                case 21:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_DRINK");
+                    break;
+
+                case 22:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_DRINK_BEER");
+                    break;
+
+                case 23:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_DRINK_BEER");
+                    break;
+
+                case 24:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_UPRIGHT");
+                    break;
+
+                case 25:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER");
+                    break;
+
+                case 26:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_COMPUTER");
+                    break;
+
+                case 27:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_COMPUTER_LOW");
+                    break;
+
+                case 28:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_DECKCHAIR");
+                    break;
+
+                case 29:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_DECKCHAIR_DRINK");
+                    break;
+
+                case 30:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS");
+                    break;
+
+                case 31:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_MUSCLE_BENCH_PRESS_PRISON");
+                    break;
+
+                case 32:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_SEWING");
+                    break;
+
+                case 33:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_STRIP_WATCH");
+                    break;
+
+                case 34:
+                    Handler.PlayScenario(player, "PROP_HUMAN_SEAT_SUNLOUNGER");
+                    break;
+
                 default:
-                    player.SendSyntaxMessage("/sit [1-9]");
+                    player.SendSyntaxMessage("/sit [1-34]");
                     break;
             }
         }

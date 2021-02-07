@@ -389,7 +389,7 @@ namespace Server.Property.Stores
 
                     player.SetClothes(2, _femaleHairIntList[index], 0);
 
-                    HairTattooData hairTattooData = TattooHandler.FetchHairTattooData(_maleHairIntList[index], player.GetClass().IsMale);
+                    HairTattooData hairTattooData = TattooHandler.FetchHairTattooData(_femaleHairIntList[index], player.GetClass().IsMale);
 
                     if (hairTattooData != null)
                     {

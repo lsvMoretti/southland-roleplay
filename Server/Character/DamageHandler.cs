@@ -55,6 +55,13 @@ namespace Server.Character
                     return false;
                 }
 
+                Models.Character? targetCharacter = targetPlayer.FetchCharacter();
+
+                if (targetCharacter != null)
+                {
+                    Logging.AddToCharacterLog(targetPlayer, $"has been hit by {targetPlayer.GetClass().Name} (({targetPlayer.GetClass().UcpName})) with a {(WeaponModel)weapon}.");
+                }
+
                 bool isFist = (WeaponModel)weapon == WeaponModel.Fist;
 
                 if (isFist)
@@ -198,7 +205,7 @@ namespace Server.Character
                 return;
             }
 
-            if (targetPlayer.Position.Distance(player.Position) > 3)
+            if (targetPlayer.Position.Distance(player.Position) > 3 && !player.GetClass().AdminDuty)
             {
                 player.SendErrorNotification("You must be closer!");
                 return;

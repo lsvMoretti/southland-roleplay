@@ -53,7 +53,6 @@ namespace Server.Extensions
         public static void SetVehicleDistance(this IVehicle vehicle, float distance)
         {
             vehicle.SetSyncedMetaData("ODOREADING", distance);
-            vehicle.SetData("ODOREADING", distance);
         }
 
         /// <summary>
@@ -64,7 +63,7 @@ namespace Server.Extensions
         [Obsolete("Use .GetClass instead", true)]
         public static float GetVehicleDistance(this IVehicle vehicle)
         {
-            vehicle.GetData("ODOREADING", out float reading);
+            vehicle.GetSyncedMetaData("ODOREADING", out float reading);
 
             return reading;
         }
@@ -189,14 +188,13 @@ namespace Server.Extensions
         {
             get
             {
-                _vehicle.GetData("ODOREADING", out float reading);
+                _vehicle.GetSyncedMetaData("ODOREADING", out float reading);
 
                 return reading;
             }
             set
             {
                 _vehicle.SetSyncedMetaData("ODOREADING", value);
-                _vehicle.SetData("ODOREADING", value);
             }
         }
 
@@ -236,12 +234,11 @@ namespace Server.Extensions
         {
             get
             {
-                _vehicle.GetData("FUELLEVEL", out int fuelLevel);
+                _vehicle.GetSyncedMetaData("FUELLEVEL", out int fuelLevel);
                 return fuelLevel;
             }
             set
             {
-                _vehicle.SetData("FUELLEVEL", value);
                 _vehicle.SetSyncedMetaData("FUELLEVEL", value);
             }
         }

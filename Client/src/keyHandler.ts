@@ -5,6 +5,7 @@ import * as chatHandler from './chat';
 import * as sirenHandler from './vehicle/sirenHandler';
 import * as cruiseControl from './vehicle/cruiseControl';
 import * as vehicleHandler from './vehicle/vehicleHandler';
+import Fingerpointing from './animation/fingerpointing';
 
 import { getEditObjectStatus, onKeyDownEvent } from "./objects/objectPreview";
 import * as Animation from "./animation";
@@ -21,7 +22,7 @@ var cursorState = false;
 
 var nativeUiMenuOpen = false;
 
-let fingerPointKeyDown: boolean = false;
+let pointing = new Fingerpointing();
 
 export function SetNativeUiState(state: boolean) {
     nativeUiMenuOpen = state;
@@ -88,6 +89,11 @@ alt.on('keyup', async (key) => {
 
     if (getEditObjectStatus()) {
         return;
+    }
+
+    if(key == 66){
+        // B Key
+        pointing.stop();
     }
 
     if(key === 120){
@@ -425,6 +431,8 @@ alt.on('keyup', async (key) => {
 });
 
 alt.on('keydown', (key) => {
+    if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;
+
     if (getEditObjectStatus()) {
         onKeyDownEvent(key);
         return;
@@ -439,6 +447,11 @@ alt.on('keydown', (key) => {
     if (key === 0x11) {
         leftCtrlDown = true;
     }
+
+    if(key == 66){
+        // B Key
+        pointing.start();
+    }
 });
 
 var crouchToggle: boolean;
@@ -447,19 +460,11 @@ alt.on('EnteredVehicle', () => {
     crouchToggle = false;
 });
 
-function startFingerPointing() {
-    Animation.startAnimation('anim@mp_point', 'task_mp_pointing', -1, 1);
-}
-function stopFingerPointing() {
-    Animation.stopAnimation();
-}
-
 alt.setInterval(() => {
     if (!IsSpawned) return;
 
     if (native.isControlPressed(0, 48)) {
         // INPUT_HUD_SPECIAL
-
         native.setBigmapActive(true, false);
     }
     if (native.isControlJustReleased(0, 48)) {
@@ -531,19 +536,6 @@ alt.setInterval(() => {
             alt.log('Crouching');
             native.setPedMovementClipset(scriptId, "move_ped_crouched", 1.0);
         }
-    }
-
-    if (native.isControlPressed(0, 29) &&
-        fingerPointKeyDown === false &&
-        native.isPedOnFoot(alt.Player.local.scriptID)) {
-        // Not in vehicle, not aiming & pressing B
-        fingerPointKeyDown = true;
-        startFingerPointing();
-    }
-
-    if (!native.isControlPressed(0, 29) && fingerPointKeyDown === true) {
-        fingerPointKeyDown = false;
-        stopFingerPointing();
     }
 }, 0);
 

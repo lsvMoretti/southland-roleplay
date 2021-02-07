@@ -6,6 +6,12 @@ namespace Server.Animation
 {
     public class Handler
     {
+        public static void PlayScenario(IPlayer player, string scenario)
+        {
+            player.SetInAnimation(true);
+            player.Emit("animation:StartScenario", scenario);
+        }
+
         /// <summary>
         /// Plays an Animation for a player
         /// </summary>
