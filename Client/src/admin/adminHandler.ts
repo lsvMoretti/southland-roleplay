@@ -26,7 +26,7 @@ alt.onServer('teleportToWaypoint', () => {
             native.freezeEntityPosition(player, false);
             alt.clearInterval(interval);
         }
-    }, 100);
+    }, 500);
 });
 
 alt.onServer('RockstarEditor:Toggle', (toggle: boolean) => {
@@ -295,6 +295,8 @@ alt.onServer('EnabledAdminDuty', (adminMode: boolean) => {
     }
 });
 
+let invisibleArray = new Array();
+
 alt.setInterval(() => {
     var scriptID = alt.Player.local.scriptID;
 
@@ -303,4 +305,20 @@ alt.setInterval(() => {
         native.setEntityInvincible(scriptID, true);
         native.setEntityHealth(scriptID, 200, 0);
     }
+
+    alt.Player.all.forEach(target => {
+
+        if(target == alt.Player.local) return;
+
+        const targetId = target.scriptID;
+
+        let visible:boolean = target.getSyncedMeta("Admin:Invisible")
+
+        if(visible === true){
+            native.setEntityVisible(targetId, false, false);
+        }
+        if(visible === undefined && !native.isEntityVisible(targetId)){
+            native.setEntityVisible(targetId, true, false);
+        }
+    });
 }, 0);

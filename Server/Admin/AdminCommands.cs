@@ -44,6 +44,24 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("invisible", AdminLevel.Administrator, commandType: CommandType.Admin,
+            description: "Used to go invisible")]
+        public static void AdminCommandInvisible(IPlayer player)
+        {
+            bool isInvisible = player.GetSyncedMetaData("Admin:Invisible", out bool invisible);
+
+            if (isInvisible)
+            {
+                player.DeleteSyncedMetaData("Admin:Invisible");
+                player.SendInfoMessage("You've stopped being Invisible.");
+            }
+            else
+            {
+                player.SetSyncedMetaData("Admin:Invisible", true);
+                player.SendInfoMessage("You've become invisible.");
+            }
+        }
+
         [Command("rcc", AdminLevel.Tester, description: "Used to respawn a vehicle")]
         public static async void AdminCommandRespawnClosestVehicle(IPlayer player)
         {
