@@ -1,0 +1,2594 @@
+{
+  "clothingItem": [
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 424,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Absent Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 424,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Absent Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 424,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Absent Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 424,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Absent Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 425,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Adidas Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 425,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Adidas Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 425,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Adidas Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 425,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Adidas Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 425,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Adidas Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 425,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Adidas Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 426,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Billionare Boys Club Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 427,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "CDG Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 427,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "CDG Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 427,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "CDG Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 428,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Champion Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 429,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chrome Hearts Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 429,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chrome Hearts Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 429,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Chrome Hearts Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 430,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cookies Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 430,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cookies Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 430,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cookies Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 430,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cookies Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 431,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Crenshaw Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 432,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cutthroat Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 432,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cutthroat Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 432,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cutthroat Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 432,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Cutthroat Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 433,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Deathclub Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 433,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Deathclub Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 434,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desto Dubb Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 434,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desto Dubb Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 434,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desto Dubb Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 434,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desto Dubb Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 434,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Desto Dubb Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 435,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dirty Pesos Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 435,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dirty Pesos Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 435,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Dirty Pesos Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 5,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 436,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "GAP Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 437,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Half Evil Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 437,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Half Evil Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 438,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Heathen Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 438,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Heathen Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 439,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Hundreds Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 440,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Iraq Radio Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 441,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Jordan Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 441,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Jordan Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 441,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Jordan Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 441,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Jordan Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 442,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kappa Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 442,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kappa Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 442,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kappa Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 442,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kappa Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 442,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kappa Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 443,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kenzo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 443,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kenzo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 443,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Kenzo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 444,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Nike Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 445,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Polo Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 446,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Puma Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 446,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Puma Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 446,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Puma Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 446,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Puma Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 446,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Puma Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 446,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Puma Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 447,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Superdry Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 447,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Superdry Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 447,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Superdry Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 447,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Superdry Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 448,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Vlone Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 449,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wcked Thoughts Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 449,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wcked Thoughts Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 11,
+        "drawable": 449,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Wcked Thoughts Hoodie",
+        "DisplayNameFemale": "None",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 0,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 1,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 2,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 3,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 4,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 5,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 6,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 7,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 8,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 9,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 10,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 11,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 12,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 13,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 14,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 15,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 16,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 17,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 18,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 19,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 20,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 21,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 22,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 23,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 24,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+    {
+      "Key": {
+        "slot": 4,
+        "drawable": 148,
+        "texture": 25,
+        "male": false
+      },
+      "Value": {
+        "DisplayNameMale": "Sagging Skinny Jeans",
+        "DisplayNameFemale": "",
+        "TorsoData": 0,
+        "Price": 5
+      }
+    },
+]
+}

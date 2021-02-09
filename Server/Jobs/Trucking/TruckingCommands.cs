@@ -198,7 +198,7 @@ namespace Server.Jobs.Trucking
 
             bool hasVehicle = TruckingVehicles.TryGetValue(player.GetClass().CharacterId, out IVehicle? truck);
 
-            if (!hasVehicle)
+            if (!hasVehicle || truck == null)
             {
                 player.SendErrorNotification("You don't have a truck!");
                 return;
@@ -219,6 +219,7 @@ namespace Server.Jobs.Trucking
                 if (deliverBusiness == null)
                 {
                     player.SendErrorMessage("Unable to find this business.");
+                    return;
                 }
 
                 float doorDistance = player.Position.Distance(deliverBusiness.FetchExteriorPosition());
@@ -229,7 +230,13 @@ namespace Server.Jobs.Trucking
                     return;
                 }
 
-                truck.GetData("Trucking:Products", out int truckProducts);
+                bool hasTruckProductData = truck.GetData("Trucking:Products", out int truckProducts);
+
+                if (!hasTruckProductData || truckProducts <= 0)
+                {
+                    player.SendErrorNotification("You don't have any products!");
+                    return;
+                }
 
                 int businessProductSpace = 100 - deliverBusiness.Products;
 
