@@ -24,21 +24,6 @@ namespace Server.Extensions
                 WeaponCommands.Command_Weapons(player);
             }
 
-            if (key.ToLower() == "y")
-            {
-                if (!player.IsSpawned()) return;
-
-                if (player.IsDead) return;
-
-                if (PropertyCommands.CommandEnterProperty(player)) return;
-
-                if (PropertyCommands.CommandExitProperty(player)) return;
-
-                if (PropertyCommands.BuyCommand(player)) return;
-
-                ClothingCommand.CommandClothes(player);
-            }
-
             if (key.ToLower() == "i")
             {
                 if (!player.IsSpawned()) return;
@@ -77,7 +62,21 @@ namespace Server.Extensions
 
             if (key.ToLower() == "y")
             {
+
+                if (!player.IsSpawned()) return;
+
+                if (player.IsDead) return;
+
                 if (Vehicle.Commands.EngineCommand(player)) return;
+
+                if (PropertyCommands.CommandEnterProperty(player)) return;
+
+                if (PropertyCommands.CommandExitProperty(player)) return;
+
+                if (PropertyCommands.BuyCommand(player)) return;
+
+                ClothingCommand.CommandClothes(player);
+
             }
 
             if (key.ToLower() == "l")
