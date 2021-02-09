@@ -30,16 +30,16 @@ namespace Server.Property
     public class PropertyCommands
     {
         [Command("buy", commandType: CommandType.Property, description: "Used to buy items from properties")]
-        public static void BuyCommand(IPlayer player)
+        public static bool BuyCommand(IPlayer player)
         {
-            if (player.FetchCharacter() == null) return;
+            if (player.FetchCharacter() == null) return true;
 
             bool hasCurrentWeaponData = player.GetData("CurrentWeaponHash", out uint weaponHash);
 
             if (hasCurrentWeaponData || weaponHash != 0)
             {
                 player.SendErrorNotification("You must holster your weapon before the clerk can serve you.");
-                return;
+                return true;
             }
 
             Models.Property property = Models.Property.FetchNearbyProperty(player, 5f);
@@ -70,15 +70,15 @@ namespace Server.Property
 
                 if (property == null)
                 {
-                    player.SendErrorNotification($"You're not near a property.");
-                    return;
+                    //player.SendErrorNotification($"You're not near a property.");
+                    return false;
                 }
             }
 
             if (property.Products <= 0)
             {
                 player.SendErrorNotification("This business is out of stock.");
-                return;
+                return true;
             }
 
             player.SetData("INSTOREID", property.Id);
@@ -93,19 +93,19 @@ namespace Server.Property
                     WelcomePlayer.OnBuyCommand(player);
                 }
                 ClothingStore.ShowClothesStoreMenu(player);
-                return;
+                return true;
             }
 
             if (property.PropertyType == PropertyType.Hair)
             {
                 HairStore.LoadHairStoreMenu(player);
-                return;
+                return true;
             }
 
             if (property.PropertyType == PropertyType.Tattoo)
             {
                 TattooStore.ShowTattooMenu(player);
-                return;
+                return true;
             }
 
             if (property.PropertyType == PropertyType.Surgeon)
@@ -113,23 +113,23 @@ namespace Server.Property
                 if (player.FetchCharacter()?.Money < CharacterCreator.SurgeonCost)
                 {
                     player.SendErrorNotification($"You need {CharacterCreator.SurgeonCost:C} to carry out Surgery.");
-                    return;
+                    return true;
                 }
 
                 CharacterCreator.SendToCreator(player);
-                return;
+                return true;
             }
 
             if (property.PropertyType == PropertyType.KeySmith)
             {
                 KeySmith.ShowKeySmithMenu(player, property);
-                return;
+                return true;
             }
 
             if (property.PropertyType == PropertyType.GunStore)
             {
                 GunStore.ShowGunStoreMainMenu(player);
-                return;
+                return true;
             }
 
             List<GameItem> itemList = JsonConvert.DeserializeObject<List<GameItem>>(property.ItemList);
@@ -137,7 +137,7 @@ namespace Server.Property
             if (!itemList.Any())
             {
                 player.SendErrorNotification($"No items available.");
-                return;
+                return true;
             }
 
             NativeMenu shopMenu = new NativeMenu("PropertyBuyItem", "Purchase", property.BusinessName);
@@ -169,6 +169,8 @@ namespace Server.Property
             player.SetData("BUYITEMLIST", JsonConvert.SerializeObject(gameItems));
 
             NativeUi.ShowNativeMenu(player, shopMenu, true);
+
+            return true;
         }
 
         public static void Remote_PropertyBuyItem(IPlayer player, string item)
@@ -427,12 +429,12 @@ namespace Server.Property
         }
 
         [Command("enter", commandType: CommandType.Property, description: "Used to enter properties")]
-        public static void CommandEnterProperty(IPlayer player)
+        public static bool CommandEnterProperty(IPlayer player)
         {
             if (player.GetClass().Downed)
             {
                 player.SendErrorNotification("You can't do that when downed.");
-                return;
+                return true;
             }
 
             MotelRoom? nearRoom = MotelHandler.FetchNearestMotelRoom(player.Position);
@@ -442,41 +444,41 @@ namespace Server.Property
                 if (nearRoom.Locked)
                 {
                     player.SendErrorNotification("Room locked.");
-                    return;
+                    return true;
                 }
 
                 MotelHandler.SetPlayerIntoMotelRoom(player, nearRoom);
-                return;
+                return true;
             }
 
-            ApartmentComplexes nearestComplex = ApartmentComplexes.FetchNearestApartmentComplex(player, 5f);
+            ApartmentComplexes? nearestComplex = ApartmentComplexes.FetchNearestApartmentComplex(player, 5f);
 
             if (nearestComplex != null)
             {
                 ApartmentHandler.LoadApartmentList(player, nearestComplex);
-                return;
+                return true;
             }
 
-            Models.Property nearestProperty = Models.Property.FetchNearbyProperty(player, 4f);
+            Models.Property? nearestProperty = Models.Property.FetchNearbyProperty(player, 4f);
 
-            if (nearestProperty == null) return;
+            if (nearestProperty == null) return false;
 
             if (nearestProperty.Locked)
             {
                 player.SendNotification($"~r~Property is locked.");
-                return;
+                return true;
             }
 
             if (!nearestProperty.Enterable)
             {
                 player.SendErrorNotification("You can't enter here.");
-                return;
+                return true;
             }
 
             if (player.Dimension != nearestProperty.ExtDimension)
             {
                 player.SendErrorNotification("You can't enter here.");
-                return;
+                return true;
             }
 
             Interiors? interior = Interiors.InteriorList.FirstOrDefault(x =>
@@ -485,7 +487,7 @@ namespace Server.Property
             if (interior == null)
             {
                 player.SendErrorNotification("An error occurred fetching the interior.");
-                return;
+                return true;
             }
 
             if (!string.IsNullOrEmpty(interior.Ipl))
@@ -520,7 +522,7 @@ namespace Server.Property
 
             Models.Character playerCharacter = context.Character.Find(player.FetchCharacterId());
 
-            if (playerCharacter == null) return;
+            if (playerCharacter == null) return true;
 
             playerCharacter.InsideProperty = nearestProperty.Id;
             playerCharacter.Dimension = dimension;
@@ -541,43 +543,45 @@ namespace Server.Property
                     player.LoadInteriorProp(prop);
                 }
             }
+
+            return true;
         }
 
         [Command("exit", commandType: CommandType.Property, description: "Used to exit properties")]
-        public static void CommandExitProperty(IPlayer player)
+        public static bool CommandExitProperty(IPlayer player)
         {
             if (player.GetClass().Downed)
             {
                 player.SendErrorNotification("You can't do that when downed.");
-                return;
+                return true;
             }
 
             Models.Character playerCharacter = player.FetchCharacter();
 
-            if (playerCharacter == null) return;
+            if (playerCharacter == null) return true;
 
             if (playerCharacter.InMotelRoom > 0)
             {
                 MotelHandler.SetPlayerOutOfMotelRoom(player);
-                return;
+                return true;
             }
 
             if (playerCharacter.InsideApartmentComplex > 0)
             {
                 ApartmentHandler.LeaveApartment(player);
-                return;
+                return true;
             }
 
             using Context context = new Context();
 
             Models.Property? insideProperty = Models.Property.FetchProperty(playerCharacter.InsideProperty);
 
-            if (insideProperty == null) return;
+            if (insideProperty == null) return false;
 
             if (insideProperty.Locked)
             {
                 player.SendNotification($"~r~Property is locked.");
-                return;
+                return true;
             }
 
             Interiors? propertyInterior =
@@ -590,13 +594,13 @@ namespace Server.Property
                 if (player.Position.Distance(interiorPosition) > 2f)
                 {
                     player.SendErrorNotification("Your not near the door.");
-                    return;
+                    return true;
                 }
             }
 
             Models.Character playerCharacterDb = context.Character.Find(playerCharacter.Id);
 
-            if (playerCharacterDb == null) return;
+            if (playerCharacterDb == null) return true;
 
             playerCharacterDb.InsideProperty = insideProperty.ExtDimension;
 
@@ -630,6 +634,8 @@ namespace Server.Property
                     player.UnloadInteriorProp(prop);
                 }
             }
+
+            return true;
         }
 
         [Command("setrequiredproducts", onlyOne: true, commandType: CommandType.Property,

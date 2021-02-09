@@ -86,7 +86,7 @@ namespace Server.Models
         /// <param name="player"></param>
         /// <param name="range"></param>
         /// <returns></returns>
-        public static ApartmentComplexes FetchNearestApartmentComplex(IPlayer player, float range)
+        public static ApartmentComplexes? FetchNearestApartmentComplex(IPlayer player, float range)
         {
             Position playerPosition = player.Position;
 
