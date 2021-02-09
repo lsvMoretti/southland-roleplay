@@ -1,7 +1,10 @@
 ﻿using AltV.Net.Elements.Entities;
+using EntityStreamer;
 using Server.Character;
+using Server.Character.Clothing;
 using Server.Chat;
 using Server.Groups.Police;
+using Server.Inventory;
 using Server.Property;
 using Server.Vehicle;
 using Server.Weapons;
@@ -12,6 +15,39 @@ namespace Server.Extensions
     {
         public static void OnKeyUpEvent(IPlayer player, string key)
         {
+            if (key.ToLower() == "u")
+            {
+                if (!player.IsSpawned()) return;
+
+                if (player.IsDead) return;
+
+                WeaponCommands.Command_Weapons(player);
+            }
+
+            if (key.ToLower() == "y")
+            {
+                if (!player.IsSpawned()) return;
+
+                if (player.IsDead) return;
+
+                if (PropertyCommands.CommandEnterProperty(player)) return;
+
+                if (PropertyCommands.CommandExitProperty(player)) return;
+
+                if (PropertyCommands.BuyCommand(player)) return;
+
+                ClothingCommand.CommandClothes(player);
+            }
+
+            if (key.ToLower() == "i")
+            {
+                if (!player.IsSpawned()) return;
+
+                if (player.IsDead) return;
+
+                InventoryCommands.InventoryCommand(player);
+            }
+
             if (key.ToLower() == "f")
             {
                 player.GetData("INCREATORROOM", out bool inCreator);

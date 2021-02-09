@@ -1070,7 +1070,7 @@ namespace Server.Vehicle.ModShop
                 atProperty.Products -= 1;
 
                 // 10% of mod value
-                double modValuePercentage = price * 0.1;
+                double modValuePercentage = price * 0.5;
 
                 atProperty.Balance += modValuePercentage;
 

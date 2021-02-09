@@ -22,10 +22,9 @@ namespace Server.Character.Scenes
 
                 Scene newScene = new Scene(text, position, newLabel, characterId);
 
-
                 if (addToDb)
                 {
-                    using Context context =new Context();
+                    using Context context = new Context();
 
                     Models.Scene dbScene = new Models.Scene(characterId, position, text, dimension);
 
@@ -41,7 +40,6 @@ namespace Server.Character.Scenes
                 }
 
                 Scenes.Add(newScene);
-                
             }
             catch (Exception e)
             {
@@ -50,13 +48,18 @@ namespace Server.Character.Scenes
             }
         }
 
-        public static Scene FetchNearestScene(Position position, float range = 3f)
+        public static Scene? FetchNearestScene(Position position, float range = 3f, int characterId = 0)
         {
             float lastDistance = range;
-            Scene lastScene = null;
+            Scene? lastScene = null;
 
             foreach (Scene scene in Scenes)
             {
+                if (characterId > 0)
+                {
+                    if (scene.CharacterId != characterId) continue;
+                }
+
                 Position scenePosition = scene.Position;
 
                 var distance = scenePosition.Distance(position);
@@ -78,7 +81,6 @@ namespace Server.Character.Scenes
                 if (scene == null) return false;
 
                 scene.TextLabel.Remove();
-
 
                 if (scene.DatabaseId <= 0) return false;
 
@@ -130,12 +132,11 @@ namespace Server.Character.Scenes
 
             Console.WriteLine($"Loading Scenes..");
 
-
             LsvColor color = new LsvColor(194, 162, 218);
 
             foreach (Models.Scene scene in scenes)
             {
-                CreateScene(scene.Text, new Position(scene.PosX, scene.PosY, scene.PosZ),  color, scene.CharacterId,scene.Dimension, false, scene.Id);
+                CreateScene(scene.Text, new Position(scene.PosX, scene.PosY, scene.PosZ), color, scene.CharacterId, scene.Dimension, false, scene.Id);
             }
 
             Console.WriteLine($"Loaded {scenes.Count} Scenes.");

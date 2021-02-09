@@ -16696,5 +16696,11 @@
       "BestTorsoDrawable": 3,
       "BestTorsoTexture": 0
     }
+  },
+  "408": {
+    "1": {
+      "BestTorsoDrawable": 153,
+      "BestTorsoTexture": 0
+    }
   }
 }

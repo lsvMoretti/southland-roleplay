@@ -35,5 +35,25 @@
     "StationName": "Hot 108 Jamz",
     "StationUrl": "http://listen.hot108.com/hot108?aw_0_req.gdpr=true&esPlayer&cb=145971.mp3"
   },
+  {
+    "StationName": "181fm - The Eagle",
+    "StationUrl": "https://listen.181fm.com/181-eagle_128k.mp3"
+  },
+  {
+    "StationName": "Power 106 FM",
+    "StationUrl": "http://node-20.zeno.fm/kke12ee08wquv?rj-ttl=5&rj-tok=AAABd4cTOS4AYENky2pbEl8-6g"
+  },
+  {
+    "StationName": "South Los Radio",
+    "StationUrl": "http://procyon.shoutca.st:8280/stream"
+  },
+  {
+    "StationName": "Mero",
+    "StationUrl": "http://hydra.shoutca.st:8423/stream?type=http&nocache=1669"
+  },
+  {
+    "StationName": "Western Bounce",
+    "StationUrl": "http://node-18.zeno.fm/sstexz5zmwzuv?rj-ttl=5&rj-tok=AAABd4cUvXMAYlZaoBjQfjxekg"
+  },
 
 ]

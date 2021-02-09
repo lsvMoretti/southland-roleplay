@@ -123,6 +123,21 @@ alt.on('keyup', async (key) => {
         leftCtrlDown = false;
     }
 
+    if(key === 73){
+        // i
+        alt.emitServer('KeyUpEvent', 'i');
+    }
+
+    if(key === 89){
+        // y
+        alt.emitServer('KeyUpEvent', 'y');
+    }
+
+    if(key === 85){
+        // u
+        alt.emitServer('KeyUpEvent', 'u');
+    }
+
     if (key === 0x72) {
         alt.emitServer('KeyUpEvent', 'F3');
     }
