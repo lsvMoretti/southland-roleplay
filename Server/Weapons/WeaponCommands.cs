@@ -721,9 +721,6 @@ namespace Server.Weapons
 
                 WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(weaponItem.ItemValue);
 
-                bool hasAmmoData = player.GetData("weaponEvent:CurrentAmmo", out int lastAmmoCount);
-
-                Console.WriteLine($"Bullet Count: {bulletCount}, Ammo Count: {lastAmmoCount}");
                 /*
                 if (hasAmmoData && lastAmmoCount > 0)
                 {

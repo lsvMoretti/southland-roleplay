@@ -128,11 +128,6 @@ alt.on('keyup', async (key) => {
         alt.emitServer('KeyUpEvent', 'i');
     }
 
-    if(key === 89){
-        // y
-        alt.emitServer('KeyUpEvent', 'y');
-    }
-
     if(key === 85){
         // u
         alt.emitServer('KeyUpEvent', 'u');

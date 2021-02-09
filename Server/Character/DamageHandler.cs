@@ -59,7 +59,7 @@ namespace Server.Character
 
                 if (targetCharacter != null)
                 {
-                    Logging.AddToCharacterLog(targetPlayer, $"has been hit by {targetPlayer.GetClass().Name} (({targetPlayer.GetClass().UcpName})) with a {(WeaponModel)weapon}.");
+                    Logging.AddToCharacterLog(targetPlayer, $"has been hit by {player.GetClass().Name} (({player.GetClass().UcpName})) with a {(WeaponModel)weapon}.");
                 }
 
                 bool isFist = (WeaponModel)weapon == WeaponModel.Fist;

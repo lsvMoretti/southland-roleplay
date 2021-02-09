@@ -59,6 +59,8 @@ function drawNameTags() {
 
         if (player.scriptID === alt.Player.local.scriptID) continue;
 
+        if(player.getSyncedMeta("Admin:Invisible")) continue;
+
         const name = player.getSyncedMeta("playerNameTag");
         const playerId = player.getSyncedMeta("playerId");
 
