@@ -149,6 +149,14 @@ namespace Server.Property
 
                         PropertyTextLabels.Add(property.Id, propertyTextLabel);
                     }
+
+                    if (property.EnterFee > 0)
+                    {
+                        TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{property.Address}\nFee: {property.EnterFee:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
+                        propertyTextLabel.Add();
+
+                        PropertyTextLabels.Add(property.Id, propertyTextLabel);
+                    }
                     else
                     {
                         TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{property.Address}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
@@ -162,6 +170,14 @@ namespace Server.Property
                     if (property.OwnerId == 0 && property.Value > 1)
                     {
                         TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{propertyType}\n{property.Address}\nFor Sale: {property.Value:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
+                        propertyTextLabel.Add();
+
+                        PropertyTextLabels.Add(property.Id, propertyTextLabel);
+                    }
+
+                    if (property.EnterFee > 0)
+                    {
+                        TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{propertyType}\n{property.Address}\nFee: {property.EnterFee:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
                         propertyTextLabel.Add();
 
                         PropertyTextLabels.Add(property.Id, propertyTextLabel);
@@ -239,6 +255,58 @@ namespace Server.Property
 
             propertyMarker.Add();
 
+            string propertyType = "";
+
+            switch (property.PropertyType)
+            {
+                case PropertyType.House:
+
+                    break;
+
+                case PropertyType.GeneralBiz:
+
+                    break;
+
+                case PropertyType.VehicleModShop:
+                    break;
+
+                case PropertyType.LowEndClothes:
+                    propertyType = "Clothing Store";
+                    break;
+
+                case PropertyType.MedClothes:
+                    propertyType = "Clothing Store";
+                    break;
+
+                case PropertyType.HighClothes:
+                    propertyType = "Clothing Store";
+                    break;
+
+                case PropertyType.Hair:
+                    propertyType = "Hair Salon";
+                    break;
+
+                case PropertyType.Tattoo:
+                    propertyType = "Tattoo Parlor";
+                    break;
+
+                case PropertyType.Surgeon:
+                    propertyType = "Surgeon";
+                    break;
+
+                case PropertyType.KeySmith:
+                    propertyType = "Key Smith";
+                    break;
+
+                case PropertyType.GunStore:
+                    propertyType = "Gun Store";
+                    break;
+
+                default:
+                    propertyType = "";
+                    break;
+            }
+
             if (property.PropertyType == PropertyType.House)
             {
                 if (property.OwnerId == 0 && property.Value > 1)
@@ -258,62 +326,19 @@ namespace Server.Property
             }
             else
             {
-                string propertyType = "";
-
-                switch (property.PropertyType)
-                {
-                    case PropertyType.House:
-
-                        break;
-
-                    case PropertyType.GeneralBiz:
-
-                        break;
-
-                    case PropertyType.VehicleModShop:
-                        break;
-
-                    case PropertyType.LowEndClothes:
-                        propertyType = "Clothing Store";
-                        break;
-
-                    case PropertyType.MedClothes:
-                        propertyType = "Clothing Store";
-                        break;
-
-                    case PropertyType.HighClothes:
-                        propertyType = "Clothing Store";
-                        break;
-
-                    case PropertyType.Hair:
-                        propertyType = "Hair Salon";
-                        break;
-
-                    case PropertyType.Tattoo:
-                        propertyType = "Tattoo Parlour";
-                        break;
-
-                    case PropertyType.Surgeon:
-                        propertyType = "Surgeon";
-                        break;
-
-                    case PropertyType.KeySmith:
-                        propertyType = "Key Smith";
-                        break;
-
-                    case PropertyType.GunStore:
-                        propertyType = "Gun Store";
-                        break;
-
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-
                 if (string.IsNullOrEmpty(propertyType))
                 {
                     if (property.OwnerId == 0 && property.Value > 1)
                     {
                         TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{property.Address}\nFor Sale: {property.Value:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
+                        propertyTextLabel.Add();
+
+                        PropertyTextLabels.Add(property.Id, propertyTextLabel);
+                    }
+
+                    if (property.EnterFee > 0)
+                    {
+                        TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{property.Address}\nFee: {property.EnterFee:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
                         propertyTextLabel.Add();
 
                         PropertyTextLabels.Add(property.Id, propertyTextLabel);
@@ -335,6 +360,14 @@ namespace Server.Property
 
                         PropertyTextLabels.Add(property.Id, propertyTextLabel);
                     }
+
+                    if (property.EnterFee > 0)
+                    {
+                        TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{propertyType}\n{property.Address}\nFee: {property.EnterFee:C}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
+                        propertyTextLabel.Add();
+
+                        PropertyTextLabels.Add(property.Id, propertyTextLabel);
+                    }
                     else
                     {
                         TextLabel propertyTextLabel = new TextLabel($"{property.BusinessName}\n{propertyType}\n{property.Address}", propertyPosition, TextFont.FontChaletLondon, new LsvColor(Color.DarkOliveGreen));
@@ -351,14 +384,27 @@ namespace Server.Property
 
                     PropertyBlips.Add(property.Id, propertyBlip);
                 }
-
-                if (!string.IsNullOrEmpty(property.InteriorName))
-                {
-                    MapHandler.LoadMapForProperty(property);
-                }
-
-                LoadPropertyObjects(property);
             }
+
+            if (!string.IsNullOrEmpty(property.InteriorName))
+            {
+                MapHandler.LoadMapForProperty(property);
+            }
+
+            if (string.IsNullOrEmpty(property.PropertyObjects))
+            {
+                using Context context = new Context();
+
+                Models.Property dbProperty = context.Property.Find(property.Id);
+
+                if (dbProperty != null)
+                {
+                    dbProperty.PropertyObjects = JsonConvert.SerializeObject(new List<PropertyObject>());
+                    context.SaveChanges();
+                }
+            }
+
+            LoadPropertyObjects(property);
         }
 
         public static void UnloadProperty(Models.Property property)

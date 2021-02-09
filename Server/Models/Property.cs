@@ -181,6 +181,8 @@ namespace Server.Models
 
         public DateTime LastSetActive { get; set; }
 
+        public double EnterFee { get; set; }
+
         /// <summary>
         /// Fetches total list of properties
         /// </summary>

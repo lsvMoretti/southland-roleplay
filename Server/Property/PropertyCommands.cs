@@ -29,6 +29,55 @@ namespace Server.Property
 {
     public class PropertyCommands
     {
+        [Command("enterfee", onlyOne: true, commandType: CommandType.Property, description: "Used to set an enter fee")]
+        public static void PropertyCommandSetEnterFee(IPlayer player, string args = "")
+        {
+            if (player.FetchCharacter() == null) return;
+
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendSyntaxMessage("/enterfee [EnterFee]");
+                return;
+            }
+
+            bool tryParse = double.TryParse(args, out double price);
+
+            if (!tryParse)
+            {
+                player.SendSyntaxMessage("/enterfee [EnterFee]");
+                return;
+            }
+
+            Models.Property? nearestProperty = Models.Property.FetchNearbyProperty(player, 3f);
+
+            if (nearestProperty == null)
+            {
+                player.SendErrorNotification("Your not near a property.");
+                return;
+            }
+
+            if (nearestProperty.OwnerId != player.GetClass().CharacterId)
+            {
+                player.SendErrorNotification("You're not the owner.");
+                return;
+            }
+
+            using Context context = new Context();
+
+            Models.Property? property = context.Property.FirstOrDefault(x => x.Id == nearestProperty.Id);
+
+            if (property == null) return;
+
+            property.EnterFee = price;
+
+            context.SaveChanges();
+
+            player.SendInfoNotification($"You've set the entrance fee to {price:C}.");
+            Logging.AddToCharacterLog(player, $"has set the entrance fee of property ID: {property.Id} to {price:C}.");
+
+            LoadProperties.ReloadProperty(property);
+        }
+
         [Command("buy", commandType: CommandType.Property, description: "Used to buy items from properties")]
         public static bool BuyCommand(IPlayer player)
         {
@@ -488,6 +537,19 @@ namespace Server.Property
             {
                 player.SendErrorNotification("An error occurred fetching the interior.");
                 return true;
+            }
+
+            if (nearestProperty.EnterFee > 0)
+            {
+                if (player.GetClass().Cash < nearestProperty.EnterFee)
+                {
+                    player.SendErrorNotification("You don't have enough cash to enter.");
+                    return true;
+                }
+
+                nearestProperty.AddToBalance(nearestProperty.EnterFee);
+                player.RemoveCash(nearestProperty.EnterFee);
+                player.SendInfoNotification($"It's cost you {nearestProperty.EnterFee:C} to enter.");
             }
 
             if (!string.IsNullOrEmpty(interior.Ipl))
