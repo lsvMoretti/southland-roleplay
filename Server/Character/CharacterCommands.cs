@@ -31,6 +31,24 @@ namespace Server.Character
 {
     public class CharacterCommands
     {
+        [Command("flipcoin", commandType: CommandType.Character, description: "Used to flip a coin.")]
+        public static void FlipCoinCommand(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            Random rnd = new Random();
+
+            int value = rnd.Next(2);
+
+            if (value == 0)
+            {
+                player.SendEmoteMessage($"flips a coin. It lands on Heads.");
+                return;
+            }
+
+            player.SendEmoteMessage($"flips a coin. It lands on Tails.");
+        }
+
         [Command("spawn", commandType: CommandType.Character, description: "Used to select your spawn location")]
         public static void CharacterCommandSpawn(IPlayer player)
         {
