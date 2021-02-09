@@ -23,9 +23,9 @@ namespace Server.Groups.EUP
             new EupOutfit("Traffic - Long", new []{1, 0}, new []{35, 0}, new []{25, 0},  new []{375, 1}),
             new EupOutfit("Police Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{374, 0}),
             new EupOutfit("Traffic Jacket", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{374, 1}),
-            new EupOutfit("SWAT", new []{1, 0}, new []{130, 0}, new []{25, 0},  new []{369, 0}),
+            new EupOutfit("SWAT", new []{1, 0}, new []{135, 0}, new []{25, 0},  new []{369, 0}),
             new EupOutfit("Police Tee", new []{0, 0}, new []{35, 0}, new []{25, 0},  new []{380, 0}),
-            new EupOutfit("SWAT Tee", new []{1, 0}, new []{130, 0}, new []{25, 0},  new []{380, 1}),
+            new EupOutfit("SWAT Tee", new []{1, 0}, new []{135, 0}, new []{25, 0},  new []{380, 1}),
         };
 
         public static List<EupProp> MalePoliceProps = new List<EupProp>
