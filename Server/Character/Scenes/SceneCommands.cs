@@ -55,7 +55,16 @@ namespace Server.Character.Scenes
 
             Position playerPosition = player.Position;
 
-            Scene nearestScene = SceneHandler.FetchNearestScene(playerPosition);
+            Scene? nearestScene = null;
+
+            if (player.FetchAccount()?.AdminLevel >= AdminLevel.Administrator)
+            {
+                nearestScene = SceneHandler.FetchNearestScene(playerPosition);
+            }
+            else
+            {
+                nearestScene = SceneHandler.FetchNearestScene(playerPosition, 3f, player.GetClass().CharacterId);
+            }
 
             if (nearestScene == null)
             {
@@ -71,13 +80,10 @@ namespace Server.Character.Scenes
 
             if (player.GetClass().CharacterId != nearestScene.CharacterId)
             {
-                if (player.FetchAccount().AdminLevel < AdminLevel.Administrator)
+                if (player.FetchAccount()?.AdminLevel < AdminLevel.Administrator)
                 {
-                    if (!player.FetchAccount().Developer)
-                    {
-                        player.SendErrorNotification("You can't remove this scene.");
-                        return;
-                    }
+                    player.SendErrorNotification("You can't remove this scene.");
+                    return;
                 }
             }
 
