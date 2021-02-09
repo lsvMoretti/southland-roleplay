@@ -750,26 +750,26 @@ namespace Server.Vehicle
 
             if (!player.IsInVehicle)
             {
-                player.SendNotification($"~r~You must be in a vehicle.");
+                //player.SendNotification($"~r~You must be in a vehicle.");
                 return false;
             }
 
             if (player.Vehicle.Driver != player)
             {
-                player.SendNotification($"~r~Your not in the drivers seat!");
+                //player.SendNotification($"~r~Your not in the drivers seat!");
                 return false;
             }
 
             if (player.Vehicle.GetClass().FuelLevel == 0)
             {
-                player.SendNotification("~r~This vehicle has no fuel!");
+                //player.SendNotification("~r~This vehicle has no fuel!");
                 return false;
             }
 
             if (player.Vehicle.FetchVehicleData()?.Class == 13)
             {
                 // Cycle
-                player.SendNotification("~r~You can't do that on a bicycle!");
+                //player.SendNotification("~r~You can't do that on a bicycle!");
                 return false;
             }
 
@@ -822,7 +822,7 @@ namespace Server.Vehicle
             {
                 if (player.Vehicle.FetchVehicleData().Impounded)
                 {
-                    player.SendErrorNotification("The vehicle is impounded.");
+                    //player.SendErrorNotification("The vehicle is impounded.");
                     return false;
                 }
 
