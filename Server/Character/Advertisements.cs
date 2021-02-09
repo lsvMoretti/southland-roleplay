@@ -92,6 +92,89 @@ namespace Server.Character
             AdvertList.Remove(characterId);
         }
 
+        [Command("pad", onlyOne: true, commandType: CommandType.Character,
+            description: "Advertisement: Used to advertise")]
+        public static void CommandPhoneAdvert(IPlayer player, string message = "")
+        {
+            if (message == "")
+            {
+                player.SendSyntaxMessage("/advert [Advert Message]");
+                return;
+            }
+
+            if (!player.IsSpawned())
+            {
+                player.SendLoginError();
+                return;
+            }
+
+            if (player.GetClass().Cash < _adPrice)
+            {
+                player.SendErrorNotification($"You don't have enough money for this. {_adPrice:C}.");
+                return;
+            }
+
+            if (message.Length < 3)
+            {
+                player.SendErrorNotification("You need to input a longer advert.");
+                return;
+            }
+
+            bool hasLastAdData = player.GetData("Advert:LastAd", out DateTime lastAd);
+
+            if (hasLastAdData)
+            {
+                DateTime now = DateTime.Now;
+                double waitTimeSeconds = 120;
+
+                Models.Account? playerAccount = player.FetchAccount();
+
+                if (playerAccount == null)
+                {
+                    player.SendErrorNotification("Unable to fetch your account data.");
+                    return;
+                }
+
+                bool isSilverDonator = playerAccount.DonatorLevel == DonationLevel.Silver;
+                bool isGoldDonator = playerAccount.DonatorLevel == DonationLevel.Gold;
+
+                if (isSilverDonator)
+                {
+                    waitTimeSeconds = 60;
+                }
+
+                if (isGoldDonator)
+                {
+                    waitTimeSeconds = 30;
+                }
+
+                if (DateTime.Compare(lastAd.AddSeconds(waitTimeSeconds), now) >= 0)
+                {
+#if DEBUG
+                    Console.WriteLine($"Last Ad Time: {lastAd}, Current Time: {now}");
+#endif
+                    player.SendErrorNotification($"You must wait at least {waitTimeSeconds} seconds between each advert!");
+                    return;
+                }
+            }
+
+            /*
+                        if (player.Position.Distance(AdvertPosition) > 5)
+                        {
+                            player.SendErrorNotification("You're not in range of the advertisement building.");
+                            return;
+                        }
+            */
+            player.RemoveCash(_adPrice);
+
+            Models.Character? playerCharacter = player.FetchCharacter();
+
+            AddAdvert(player,
+                !string.IsNullOrEmpty(playerCharacter?.ActivePhoneNumber)
+                    ? $"{message} [Ph: {playerCharacter.ActivePhoneNumber}]"
+                    : message);
+        }
+
         [Command("ad", onlyOne: true, commandType: CommandType.Character,
             description: "Advertisement: Used to advertise")]
         public static void CommandAdvert(IPlayer player, string message = "")
