@@ -581,7 +581,7 @@ namespace Server.Character
                                 return;
                             }
 
-                            MotelRoom inMotelRoom = JsonConvert.DeserializeObject<List<MotelRoom>>(inMotel.RoomList)
+                            MotelRoom? inMotelRoom = JsonConvert.DeserializeObject<List<MotelRoom>>(inMotel.RoomList)
                                 .FirstOrDefault(x => x.Id == playerCharacter.InMotelRoom);
 
                             if (inMotelRoom == null)
@@ -609,7 +609,7 @@ namespace Server.Character
                             List<Apartment> apartments =
                                 JsonConvert.DeserializeObject<List<Apartment>>(complex.ApartmentList);
 
-                            Apartment apartment =
+                            Apartment? apartment =
                                 apartments.FirstOrDefault(x => x.Name == playerCharacter.InsideApartment);
 
                             if (apartment == null)
@@ -618,7 +618,7 @@ namespace Server.Character
                                 return;
                             }
 
-                            Interiors apartmentInterior =
+                            Interiors? apartmentInterior =
                                 Interiors.InteriorList.FirstOrDefault(x => x.InteriorName == apartment.InteriorName);
 
                             if (apartmentInterior == null)
@@ -811,6 +811,17 @@ namespace Server.Character
                 DoorHandler.UpdateDoorsForPlayer(player);
 
                 MotelHandler.LoadMotelsForPlayer(player);
+
+                if (playerCharacter.FactionDuty)
+                {
+                    Faction? activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
+
+                    if (activeFaction?.SubFactionType == SubFactionTypes.Law)
+                    {
+                        player.Health = 200;
+                        player.Armor = 100;
+                    }
+                }
             }
             catch (Exception e)
             {
