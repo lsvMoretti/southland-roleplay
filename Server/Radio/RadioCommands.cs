@@ -148,6 +148,102 @@ namespace Server.Radio
 
         }
 
+        [Command("leave", onlyOne: true, commandType: CommandType.Character, description: "Used to leave a radio slot")]
+        public static void RadioCommandLeave(IPlayer player, string args = "")
+        {
+            
+            if (!player.IsSpawned()) return;
+
+            if (string.IsNullOrEmpty(args))
+            {
+                player.SendSyntaxMessage("/leave [1-4]");
+                return;
+            }
+
+            string[] splitString = args.Split(' ');
+
+            if (splitString.Length != 1)
+            {
+                player.SendSyntaxMessage("/leave [1-4]");
+                return;
+            }
+
+            bool slotParse = int.TryParse(splitString[0], out int slot);
+
+            if (!slotParse)
+            {
+                player.SendSyntaxMessage("/leave [1-4]");
+                return;
+            }
+
+            if (slot < 1 || slot > 4)
+            {
+                player.SendSyntaxMessage("/tune [1-4]");
+                return;
+            }
+            
+            
+            Inventory.Inventory? playerInventory = player.FetchInventory();
+
+            if (playerInventory == null)
+            {
+                player.SendErrorNotification("Unable to fetch your inventory.");
+                return;
+            }
+
+            List<InventoryItem> radioItems = playerInventory.GetInventoryItems("ITEM_RADIO");
+
+            if (radioItems.Count > 1)
+            {
+                player.SendErrorNotification("You must only have one radio on you!");
+                return;
+            }
+
+            InventoryItem? radio = radioItems[0];
+
+            if (radio == null)
+            {
+                player.SendErrorNotification("Unable to fetch your radio.");
+                return;
+            }
+
+            RadioItem? radioItem = JsonConvert.DeserializeObject<RadioItem?>(radio.ItemValue);
+
+            if (radioItem == null)
+            {
+                player.SendErrorNotification("You've not set any channels.");
+                return;
+            }
+
+            RadioChannelItem? radioChannelItem = radioItem.RadioChannels.FirstOrDefault(x => x.Slot == slot);
+
+            if (radioChannelItem == null)
+            {
+                player.SendErrorNotification("You've not set this slot");
+                return;
+            }
+
+            radioItem.RadioChannels.Remove(radioChannelItem);
+            
+            
+            InventoryItem newRadioGameItem = new InventoryItem(radio.Id, radio.CustomName, JsonConvert.SerializeObject(radioItem));
+
+            if (!playerInventory.AddItem(newRadioGameItem))
+            {
+                player.SendErrorNotification("Unable to update the radio.");
+                return;
+            }
+
+            if (!playerInventory.RemoveItem(radio))
+            {
+                player.SendErrorNotification("An error occurred.");
+                return;
+            }
+            
+            player.SendInfoMessage($"You've left radio slot {slot}.");
+
+        }
+
         [Command("r", onlyOne: true, commandType: CommandType.Character,
             description: "Used to send a message to others")]
         public static void RadioCommandRadio(IPlayer player, string args = "")
