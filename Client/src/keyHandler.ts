@@ -133,7 +133,7 @@ alt.on('keyup', async (key) => {
         alt.emitServer('KeyUpEvent', 'u');
     }
 
-    if (key === 0x72) {
+    if (key === 114) {
         alt.emitServer('KeyUpEvent', 'F3');
     }
 
@@ -160,7 +160,7 @@ alt.on('keyup', async (key) => {
         cursorState = false;
     }*/
 
-    if (key === 0x71) {
+    if (key === 113) {
         // F2
         if (!IsSpawned) return;
 
@@ -178,7 +178,7 @@ alt.on('keyup', async (key) => {
         }
     }
 
-    if (key === 0x25) {
+    if (key === 37) {
         // Left Arrow
 
         if (!IsSpawned) return;
@@ -196,7 +196,7 @@ alt.on('keyup', async (key) => {
         }
     }
 
-    if (key === 0x27) {
+    if (key === 39) {
         // Right Arrow
 
         if (!IsSpawned) return;
@@ -214,12 +214,12 @@ alt.on('keyup', async (key) => {
         }
     }
 
-    if (key === 0x12) {
+    if (key === 18) {
         // Left Alt
         leftAltDown = false;
     }
 
-    if (key === 0x20) {
+    if (key === 32) {
         // Space
         if (!IsSpawned) return;
 
@@ -234,7 +234,7 @@ alt.on('keyup', async (key) => {
         }*/
     }
 
-    if (key === 0x46) {
+    if (key === 70) {
         alt.emitServer('KeyUpEvent', 'f');
     }
 
@@ -243,16 +243,16 @@ alt.on('keyup', async (key) => {
         alt.emitServer('KeyUpEvent', 'LMB');
     }
 
-    if (key === 0x59) {
+    if (key === 89) {
         alt.emitServer('KeyUpEvent', 'y');
     }
 
-    if (key === 0x4C) {
+    if (key === 76) {
         // L
         alt.emitServer('KeyUpEvent', 'l');
     }
 
-    if (key === 0x45) {
+    if (key === 69) {
         alt.log('E Key');
         // E Key
         if (leftAltDown) {
@@ -261,7 +261,7 @@ alt.on('keyup', async (key) => {
         }
     }
 
-    if (key === 0xBE) {
+    if (key === 190) {
         // Period Key
         if (alt.Player.local.vehicle != undefined) {
             // In Vehicle
@@ -275,7 +275,7 @@ alt.on('keyup', async (key) => {
         }
     }
 
-    if (key === 0x4D) {
+    if (key === 77) {
         // M Key
         if (alt.Player.local.vehicle != undefined) {
             // In Vehicle
@@ -448,13 +448,13 @@ alt.on('keydown', (key) => {
         return;
     }
 
-    if (key === 0x12) {
+    if (key === 18) {
         // Left Alt
         alt.log('Left Alt Down');
         leftAltDown = true;
     }
 
-    if (key === 0x11) {
+    if (key === 17) {
         leftCtrlDown = true;
     }
 
