@@ -466,6 +466,105 @@ namespace Server.Weapons
                     return;
                 }
 
+                #region Max Ammo
+
+                bool hasCurrentWeaponData = player.GetData("CURRENTWEAPON", out string weaponItemId);
+
+                if (hasCurrentWeaponData)
+                {
+                    if (weaponItemId == "ITEM_WEAPON_PISTOL")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+
+                    if (weaponItemId == "ITEM_WEAPON_PISTOL_MK2")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+
+                    if (weaponItemId == "ITEM_WEAPON_APPISTOL")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+
+                    if (weaponItemId == "ITEM_WEAPON_COMBATPISTOL")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+
+                    if (weaponItemId == "ITEM_WEAPON_PISTOL50")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+
+                    if (weaponItemId == "ITEM_WEAPON_SNS")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                    if (weaponItemId == "ITEM_WEAPON_SNS_MK2")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                    if (weaponItemId == "ITEM_WEAPON_HEAVYPISTOL")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                    if (weaponItemId == "ITEM_WEAPON_SNS")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                    if (weaponItemId == "ITEM_WEAPON_VINTAGEPISTOL")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                    if (weaponItemId == "ITEM_WEAPON_REVOLVER")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                    if (weaponItemId == "ITEM_WEAPON_REVOLVER_MK2")
+                    {
+                        if (ammoCount > 30)
+                        {
+                            ammoCount = 30;
+                        }
+                    }
+                }
+
+                #endregion
+                
                 for (int i = 1; i <= ammoCount; i++)
                 {
                     bulletCount.Add(i.ToString());
@@ -603,14 +702,288 @@ namespace Server.Weapons
             }
 
             int totalBullets = currentAmmo + bulletCount;
+            
+            bool hasCurrentWeaponData = player.GetData("CURRENTWEAPON", out string weaponItemId);
+
+            if (hasCurrentWeaponData && totalBullets > 30)
+            {
+                Inventory.Inventory? playerInventory = player.FetchInventory();
+                    
+                player.GetData("WeaponManagementSelectedWeapon", out string weaponData);
+
+                InventoryItem weaponItem = 
+                    JsonConvert.DeserializeObject<InventoryItem>(weaponData);
+
+                InventoryItem? selectedWeaponItem = playerInventory?.GetItem(weaponItem.Id, weaponItem.ItemValue);
+
+                    
+                if (weaponItemId == "ITEM_WEAPON_PISTOL")
+                {
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+
+                if (weaponItemId == "ITEM_WEAPON_PISTOL_MK2")
+                {
+                        
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+
+                if (weaponItemId == "ITEM_WEAPON_APPISTOL")
+                {
+                        
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+
+                if (weaponItemId == "ITEM_WEAPON_COMBATPISTOL")
+                {
+                        
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+
+                if (weaponItemId == "ITEM_WEAPON_PISTOL50")
+                {
+                        
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+
+                if (weaponItemId == "ITEM_WEAPON_SNS")
+                {
+                        
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                if (weaponItemId == "ITEM_WEAPON_SNS_MK2")
+                {
+                        
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                if (weaponItemId == "ITEM_WEAPON_HEAVYPISTOL")
+                {
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                if (weaponItemId == "ITEM_WEAPON_SNS")
+                {
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                if (weaponItemId == "ITEM_WEAPON_VINTAGEPISTOL")
+                {
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                if (weaponItemId == "ITEM_WEAPON_REVOLVER")
+                {
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                if (weaponItemId == "ITEM_WEAPON_REVOLVER_MK2")
+                {
+                    if (selectedWeaponItem == null)
+                    {
+                        selectedWeaponItem = new InventoryItem(weaponItem.Id, weaponItem.CustomName);
+                        selectedWeaponItem.ItemValue = "0";
+                    }
+                    else
+                    {
+                        playerInventory.RemoveItem(selectedWeaponItem);
+                    }
+                    bool weaponAmmoParse = int.TryParse(selectedWeaponItem.ItemValue, out int itemAmmoCount);
+                    
+                    int bullets = itemAmmoCount + bulletCount;
+
+                    selectedWeaponItem.ItemValue = bullets.ToString();
+
+                    playerInventory.AddItem(selectedWeaponItem);
+                    player.SendErrorNotification("You can only put 30 bullets in max.");
+                    return;
+                }
+                }
+            
 
             player.GetData("CurrentWeaponHash", out uint weaponHash);
-
-            player.RemoveAllWeapons();
-
-            //player.TriggerEvent("RemovedWeapon");
-
-            player.GiveWeapon(weaponHash, totalBullets, true);
 
             using Context context = new Context();
 
@@ -620,6 +993,7 @@ namespace Server.Weapons
 
             WeaponInfo weaponInfo = JsonConvert.DeserializeObject<WeaponInfo>(currentWeapon.ItemValue);
 
+            
             weaponInfo.AmmoCount = totalBullets;
 
             currentWeapon.ItemValue = JsonConvert.SerializeObject(weaponInfo);
@@ -627,6 +1001,12 @@ namespace Server.Weapons
             playerCharacter.CurrentWeapon = JsonConvert.SerializeObject(currentWeapon);
 
             context.SaveChanges();
+
+            player.RemoveAllWeapons();
+
+            //player.TriggerEvent("RemovedWeapon");
+
+            player.GiveWeapon(weaponHash, totalBullets, true);
         }
 
         [Command("unequip", commandType: CommandType.Character, description: "Unequips your current weapon")]
