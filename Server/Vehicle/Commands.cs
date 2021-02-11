@@ -847,13 +847,13 @@ namespace Server.Vehicle
                         if (!canEngine)
                         {
                             player.SendErrorNotification("You don't have the keys");
-                            return false;
+                            return true;
                         }
                     }
                     else if (player.FetchCharacter().ActiveFaction == 0)
                     {
                         player.SendErrorNotification("You don't have the keys");
-                        return false;
+                        return true;
                     }
                 }
             }
