@@ -36,6 +36,7 @@ using Server.Models;
 using Server.Motel;
 using Server.Objects;
 using Server.Property;
+using Server.Radio;
 using Server.Vehicle;
 using Server.Weapons;
 using Console = System.Console;
@@ -3189,8 +3190,18 @@ namespace Server.Admin
         }
 
         [Command("reloadradio", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
-            description: "Other: Reloads radio stations")]
+            description: "Other: Reloads radio channels")]
         public static void AdminCommandReloadRadio(IPlayer player)
+        {
+            RadioHandler.LoadRadioChannels();
+            
+            player.SendInfoNotification($"Reloaded Radio Channels!");
+        }
+        
+        
+        [Command("reloadstations", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
+            description: "Other: Reloads radio stations")]
+        public static void AdminCommandReloadStations(IPlayer player)
         {
             AudioHandler.LoadRadioStations();
 

@@ -83,7 +83,7 @@ namespace Server.Groups.Police.MDT
         public static void PlayerRequestBackup(IPlayer player)
         {
             player.GetData(_unitData, out string unit);
-            FactionCommands.FactionCommandRadio(player, $"{unit} requesting back up!");
+            //FactionCommands.FactionCommandRadio(player, $"{unit} requesting back up!");
             player.SendInfoNotification("Backup requested!");
         }
 
@@ -94,7 +94,7 @@ namespace Server.Groups.Police.MDT
         public static void PlayerRespond911(IPlayer player)
         {
             player.GetData(_unitData, out string unit);
-            FactionCommands.FactionCommandRadio(player, $"{unit} responding to last 911 call.");
+            //FactionCommands.FactionCommandRadio(player, $"{unit} responding to last 911 call.");
             player.SendInfoNotification("Responding last 911!");
         }
 
@@ -274,7 +274,7 @@ namespace Server.Groups.Police.MDT
             if (respondingCall == null) return;
             
             player.GetData(_unitData, out string unit);
-            FactionCommands.FactionCommandRadio(player, $"{unit} responding to the 911 at {respondingCall.Location}.");
+            //FactionCommands.FactionCommandRadio(player, $"{unit} responding to the 911 at {respondingCall.Location}.");
         }
     }
 }

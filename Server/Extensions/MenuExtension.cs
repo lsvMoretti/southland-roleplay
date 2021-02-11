@@ -27,6 +27,7 @@ using Server.Objects;
 using Server.Phone;
 using Server.Property;
 using Server.Property.Stores;
+using Server.Radio;
 using Server.Vehicle;
 using Server.Vehicle.ModShop;
 using Server.Weapons;
@@ -686,6 +687,7 @@ namespace Server.Extensions
                 #endregion Drug System Revamp
 
                 if (serverTrigger == "Character:SpawnSelectionMenu") CharacterCommands.OnSpawnSelectionMenuSelect(player, selectedItem);
+
             }
             catch (Exception e)
             {
