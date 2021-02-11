@@ -702,6 +702,7 @@ namespace Server.Character
                     {
                         if (string.IsNullOrEmpty(playerCharacter.SpawnPosition))
                         {
+                            player.Dimension = 0;
                             player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                 switchOut: true);
                         }
@@ -712,6 +713,7 @@ namespace Server.Character
 
                             if (spawnPosition.SpawnType == SpawnType.LastLocation)
                             {
+                                player.Dimension = playerCharacter.Dimension;
                                 player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                     switchOut: true);
                             }
@@ -722,11 +724,13 @@ namespace Server.Character
 
                                 if (faction == null || faction.SpawnPosX == 0)
                                 {
+                                    player.Dimension = playerCharacter.Dimension;
                                     player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                         switchOut: true);
                                 }
                                 else
                                 {
+                                    player.Dimension = playerCharacter.Dimension;
                                     characterPosition = new Position(faction.SpawnPosX, faction.SpawnPosY, faction.SpawnPosZ);
                                     player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                         switchOut: true);
@@ -739,12 +743,14 @@ namespace Server.Character
 
                                 if (property == null)
                                 {
+                                    player.Dimension = playerCharacter.Dimension;
                                     player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                         switchOut: true);
                                 }
                                 else
                                 {
                                     characterPosition = property.FetchExteriorPosition();
+                                    player.Dimension = property.ExtDimension;
                                     player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                         switchOut: true);
                                 }
@@ -758,6 +764,7 @@ namespace Server.Character
 
                                 if (motel == null)
                                 {
+                                    player.Dimension = 0;
                                     player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                         switchOut: true);
                                 }
@@ -766,6 +773,7 @@ namespace Server.Character
                                     List<MotelRoom> motelRooms =
                                         JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
 
+                                    
                                     if (!motelRooms.Any())
                                     {
                                         player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
@@ -777,14 +785,13 @@ namespace Server.Character
 
                                     if (motelRoom == null)
                                     {
+                                        player.Dimension = 0;
                                         player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
                                             switchOut: true);
                                     }
                                     else
                                     {
-                                        characterPosition = new Position(motelRoom.PosX, motelRoom.PosY, motelRoom.PosZ);
-                                        player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,
-                                            switchOut: true);
+                                        MotelHandler.SetPlayerIntoMotelRoom(player, motelRoom);
                                     }
                                 }
                             }
@@ -792,7 +799,7 @@ namespace Server.Character
                     }
                 }
 
-                player.Dimension = (int)playerCharacter.Dimension;
+                //player.Dimension = (int)playerCharacter.Dimension;
                 player.SetSyncedMetaData("PlayerDimension", player.Dimension);
 
                 if (!string.IsNullOrEmpty(playerCharacter.CurrentLanguage))
