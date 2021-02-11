@@ -25,10 +25,7 @@ namespace Server.Jobs.Taxi
                 return;
             }
 
-            bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
-                .Contains(Models.Jobs.TaxiDriver);
-
-            if (!hasTaxiJob)
+            if (!player.HasJob(Models.Jobs.TaxiDriver))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
@@ -78,10 +75,7 @@ namespace Server.Jobs.Taxi
                 return;
             }
 
-            bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
-                .Contains(Models.Jobs.TaxiDriver);
-
-            if (!hasTaxiJob)
+            if (!player.HasJob(Models.Jobs.TaxiDriver))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
@@ -129,10 +123,7 @@ namespace Server.Jobs.Taxi
                 return;
             }
 
-            bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
-                .Contains(Models.Jobs.TaxiDriver);
-
-            if (!hasTaxiJob)
+            if (!player.HasJob(Models.Jobs.TaxiDriver))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
@@ -219,16 +210,12 @@ namespace Server.Jobs.Taxi
                 return;
             }
 
-            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            if (string.IsNullOrEmpty(player.FetchCharacter().JobList))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
             }
-
-            bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
-                .Contains(Models.Jobs.TaxiDriver);
-
-            if (!hasTaxiJob)
+            if (!player.HasJob(Models.Jobs.TaxiDriver))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
@@ -340,15 +327,13 @@ namespace Server.Jobs.Taxi
         {
             if (!player.IsSpawned()) return;
 
-            if (!string.IsNullOrEmpty(player.FetchCharacter().JobList))
+            if (string.IsNullOrEmpty(player.FetchCharacter().JobList))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
             }
-            bool hasTaxiJob = JsonConvert.DeserializeObject<List<Models.Jobs>>(player.FetchCharacter().JobList)
-                .Contains(Models.Jobs.TaxiDriver);
 
-            if (!hasTaxiJob)
+            if (!player.HasJob(Models.Jobs.TaxiDriver))
             {
                 player.SendErrorNotification("You don't have the Taxi Job!");
                 return;
