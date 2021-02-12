@@ -30,7 +30,7 @@ namespace Server.Models
         {
             using Context context = new Context();
 
-            Bans ban = context.Bans.FirstOrDefault(x => x.IpAddress == player.Ip);
+            Bans? ban = context.Bans.FirstOrDefault(x => x.IpAddress == player.Ip);
 
             if (ban != null) return true;
 

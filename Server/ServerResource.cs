@@ -57,6 +57,7 @@ using Server.Motel;
 using Server.Objects;
 using Server.Phone;
 using Server.Property;
+using Server.Radio;
 using Server.Vehicle;
 using Server.Vehicle.ModShop;
 using Server.Weapons;
@@ -704,6 +705,8 @@ namespace Server
 
             DeadBodyHandler.InitDeadBodyClearing();
 
+            RadioHandler.LoadRadioChannels();
+            
             await LoadVehicle.LoadFactionVehicles();
 
             await LoadVehicle.LoadCharacterVehicles();
