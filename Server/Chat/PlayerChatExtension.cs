@@ -179,9 +179,9 @@ namespace Server.Chat
             player.Emit("chatmessage", null, $"{ChatHandler.ColorStatMessage}{message}");
         }
 
-        public static void SendRadioMessage(this IPlayer player, int channel, string message)
+        public static void SendRadioMessage(this IPlayer player, int slot, int channel, string message)
         {
-            player.Emit("chatmessage", null, $"{ChatHandler.ColorRadioMessage}[{channel}] {message}");
+            player.Emit("chatmessage", null, $"{ChatHandler.ColorRadioMessage}[S:{slot} #{channel}] {message}");
         }
 
         public static void SendDepartmentRadioMessage(this IPlayer player, string message)

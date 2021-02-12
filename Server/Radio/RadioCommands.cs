@@ -386,9 +386,11 @@ namespace Server.Radio
 
                             if (radioItem == null) continue;
 
-                            if (!radioItem.RadioChannels.Any(x => x.Channel == channel)) continue;
+                            var channelItem = radioItem.RadioChannels.FirstOrDefault(x => x.Channel == channel);
 
-                            target.SendRadioMessage(channel, $"{playerName} says: {message}");
+                            if (channelItem == null) continue;
+
+                            target.SendRadioMessage(channelItem.Slot, channel, $"{playerName} says: {message}");
 
                             messageSent = true;
                         }
