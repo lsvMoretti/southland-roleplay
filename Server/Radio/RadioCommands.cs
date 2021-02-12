@@ -388,7 +388,7 @@ namespace Server.Radio
 
                             if (!radioItem.RadioChannels.Any(x => x.Channel == channel)) continue;
 
-                            target.SendRadioMessage($"{playerName} says: {message}");
+                            target.SendRadioMessage(channel, $"{playerName} says: {message}");
 
                             messageSent = true;
                         }
