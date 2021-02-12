@@ -59,9 +59,8 @@ namespace Server.Radio
                         return;
                     }
                 }
-                
             }
-            
+
             Inventory.Inventory? playerInventory = player.FetchInventory();
 
             if (playerInventory == null)
@@ -92,9 +91,9 @@ namespace Server.Radio
                 {
                     new RadioChannelItem(channel, slot)
                 };
-                
+
                 RadioItem radioItem = new RadioItem(radioChannelItems);
-                
+
                 InventoryItem newRadioGameItem = new InventoryItem(radio.Id, radio.CustomName, JsonConvert.SerializeObject(radioItem));
 
                 if (!playerInventory.AddItem(newRadioGameItem))
@@ -108,7 +107,7 @@ namespace Server.Radio
                     player.SendErrorNotification("An error occurred.");
                     return;
                 }
-                
+
                 player.SendInfoNotification($"You've set channel {channel} to slot {slot} on your radio.");
             }
             else
@@ -127,7 +126,7 @@ namespace Server.Radio
                     player.SendInfoNotification("Radio Slot already used. Overwriting it.");
                     radioItem.RadioChannels.Add(new RadioChannelItem(channel, slot));
                 }
-                
+
                 InventoryItem newRadioGameItem = new InventoryItem(radio.Id, radio.CustomName, JsonConvert.SerializeObject(radioItem));
 
                 if (!playerInventory.AddItem(newRadioGameItem))
@@ -141,17 +140,14 @@ namespace Server.Radio
                     player.SendErrorNotification("An error occurred.");
                     return;
                 }
-                
+
                 player.SendInfoNotification($"You've set channel {channel} to slot {slot} on your radio.");
-
             }
-
         }
 
         [Command("leave", onlyOne: true, commandType: CommandType.Character, description: "Used to leave a radio slot")]
         public static void RadioCommandLeave(IPlayer player, string args = "")
         {
-            
             if (!player.IsSpawned()) return;
 
             if (string.IsNullOrEmpty(args))
@@ -181,8 +177,7 @@ namespace Server.Radio
                 player.SendSyntaxMessage("/tune [1-4]");
                 return;
             }
-            
-            
+
             Inventory.Inventory? playerInventory = player.FetchInventory();
 
             if (playerInventory == null)
@@ -224,8 +219,7 @@ namespace Server.Radio
             }
 
             radioItem.RadioChannels.Remove(radioChannelItem);
-            
-            
+
             InventoryItem newRadioGameItem = new InventoryItem(radio.Id, radio.CustomName, JsonConvert.SerializeObject(radioItem));
 
             if (!playerInventory.AddItem(newRadioGameItem))
@@ -239,9 +233,8 @@ namespace Server.Radio
                 player.SendErrorNotification("An error occurred.");
                 return;
             }
-            
-            player.SendInfoMessage($"You've left radio slot {slot}.");
 
+            player.SendInfoMessage($"You've left radio slot {slot}.");
         }
 
         [Command("r", onlyOne: true, commandType: CommandType.Character,
@@ -271,7 +264,7 @@ namespace Server.Radio
                 player.SendSyntaxMessage("/r [Slot] [Message]");
                 return;
             }
-            
+
             if (slot < 1 || slot > 4)
             {
                 player.SendSyntaxMessage("/r [1-4] [Message]");
@@ -279,8 +272,7 @@ namespace Server.Radio
             }
 
             string message = string.Join(" ", stringSplit.Skip(1));
-            
-            
+
             Inventory.Inventory? playerInventory = player.FetchInventory();
 
             if (playerInventory == null)
@@ -335,29 +327,27 @@ namespace Server.Radio
                     }
                     if (radioChannel.DutyCheck && !player.FetchCharacter().FactionDuty)
                     {
-                        
                         player.SendPermissionError();
-                        return;  
+                        return;
                     }
                 }
             }
-            
-            SendRadioMessageToChannelFromPlayer(player, radioChannel.Channel, message);
-            
-            ChatHandler.SendMessageToNearbyPlayers(player, message, MessageType.Talk, excludePlayer: true);
 
+            SendRadioMessageToChannelFromPlayer(player, channelItem.Channel, message);
+
+            ChatHandler.SendMessageToNearbyPlayers(player, message, MessageType.Talk, excludePlayer: true);
         }
 
         public static void SendRadioMessageToChannelFromPlayer(IPlayer player, int channel, string message)
         {
             string playerName = player.GetClass().Name;
-            
+
             foreach (IPlayer target in Alt.GetAllPlayers())
             {
                 lock (target)
                 {
                     if (!target.IsSpawned()) continue;
-                    
+
                     Models.Character? targetCharacter = target.FetchCharacter();
 
                     if (targetCharacter == null) continue;
@@ -402,7 +392,6 @@ namespace Server.Radio
 
                             messageSent = true;
                         }
-                        
                     }
                 }
             }
