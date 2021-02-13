@@ -688,6 +688,7 @@ namespace Server.Extensions
 
                 if (serverTrigger == "Character:SpawnSelectionMenu") CharacterCommands.OnSpawnSelectionMenuSelect(player, selectedItem);
 
+                if (serverTrigger == "VehicleCommands:FindVehicleSelect") Vehicle.Commands.OnFindVehicleSelect(player, selectedItem, index);
             }
             catch (Exception e)
             {
