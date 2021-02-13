@@ -21,6 +21,118 @@ namespace Server.Vehicle
 {
     public class Commands
     {
+        [Command("vfind", commandType: CommandType.Vehicle, description: "Used to find your vehicle")]
+        public static void VehicleCommandFind(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            ICollection<IVehicle> vehicles = Alt.GetAllVehicles();
+
+            List<IVehicle> playerVehicles = new List<IVehicle>();
+
+            foreach (IVehicle vehicle in vehicles)
+            {
+                lock (vehicle)
+                {
+                    if (!vehicle.Exists) continue;
+
+                    Models.Vehicle? vehicleData = vehicle.FetchVehicleData();
+
+                    if (vehicleData == null) continue;
+
+                    if (vehicleData.OwnerId != player.GetClass().CharacterId) continue;
+
+                    if (vehicle.Driver != null) continue;
+
+                    playerVehicles.Add(vehicle);
+                }
+            }
+
+            if (!playerVehicles.Any())
+            {
+                player.SendErrorNotification("Unable to find any vehicles or they're currently occupied!");
+                return;
+            }
+
+            List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
+
+            foreach (IVehicle playerVehicle in playerVehicles)
+            {
+                lock (playerVehicle)
+                {
+                    if (!playerVehicle.Exists) continue;
+
+                    menuItems.Add(new NativeMenuItem(playerVehicle.FetchVehicleData().Name));
+                }
+            }
+
+            NativeMenu menu = new NativeMenu("VehicleCommands:FindVehicleSelect", "Vehicles", "Select the vehicle you wish to track", menuItems)
+            {
+                PassIndex = true
+            };
+
+            NativeUi.ShowNativeMenu(player, menu, true);
+        }
+
+        public static void OnFindVehicleSelect(IPlayer player, string option, int index)
+        {
+            if (option == "Close") return;
+
+            ICollection<IVehicle> vehicles = Alt.GetAllVehicles();
+
+            List<Models.Vehicle> databaseVehicles =
+                Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId);
+
+            IEnumerable<Models.Vehicle?> databaseVehicle = databaseVehicles.Where(x => x.Name == option);
+
+            if (databaseVehicle.Count() == 1)
+            {
+                IVehicle? vehicle = vehicles.FirstOrDefault(x =>
+                   x.FetchVehicleData()!.Id == databaseVehicle.First()!.Id);
+
+                if (vehicle == null)
+                {
+                    player.SendErrorNotification("Unable to track this vehicle.");
+                    return;
+                }
+
+                player.SetWaypoint(vehicle.Position);
+                player.SendInfoNotification("The GPS has been set to this vehicles location.");
+                return;
+            }
+
+            List<IVehicle> playerVehicles = new List<IVehicle>();
+
+            foreach (IVehicle vehicle in vehicles)
+            {
+                lock (vehicle)
+                {
+                    if (!vehicle.Exists) continue;
+
+                    Models.Vehicle? vehicleData = vehicle.FetchVehicleData();
+
+                    if (vehicleData == null) continue;
+
+                    if (vehicleData.OwnerId != player.GetClass().CharacterId) continue;
+
+                    if (vehicle.Driver != null) continue;
+
+                    playerVehicles.Add(vehicle);
+                }
+            }
+
+            IVehicle? vehicleIndex = playerVehicles[index];
+
+            if (vehicleIndex == null)
+            {
+                player.SendErrorNotification("Unable to track this vehicle.");
+                return;
+            }
+
+            player.SetWaypoint(vehicleIndex.Position);
+            player.SendInfoNotification("The GPS has been set to this vehicles location.");
+        }
+
         [Command("takeplate", commandType: CommandType.Vehicle, description: "Used to take a plate from a vehicle")]
         public static void VehicleCommandTakePlate(IPlayer player)
         {

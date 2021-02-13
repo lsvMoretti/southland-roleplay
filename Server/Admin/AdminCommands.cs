@@ -45,6 +45,29 @@ namespace Server.Admin
 {
     public class AdminCommands
     {
+        [Command("paydayboost", AdminLevel.HeadAdmin, true, commandType: CommandType.Admin,
+            description: "Used to boost the servers paydays")]
+        public static void AdminCommandPaydayBoost(IPlayer player, string args = "")
+        {
+            bool tryParse = int.TryParse(args, out int boost);
+
+            if (!tryParse)
+            {
+                player.SendSyntaxMessage("/paydayboost [1-*]");
+                return;
+            }
+
+            if (boost < 1)
+            {
+                player.SendSyntaxMessage("/paydayboost [1-*]");
+                return;
+            }
+
+            DiscordHandler.SendMessageToLogChannel($"{player.GetClass().UcpName} has boosted the paydays from {Payday.PaydayBoost} to {boost}");
+            player.SendInfoNotification($"You've boosted the paydays from {Payday.PaydayBoost} to {boost}.");
+            Payday.PaydayBoost = boost;
+        }
+
         [Command("invisible", AdminLevel.Administrator, commandType: CommandType.Admin,
             description: "Used to go invisible")]
         public static void AdminCommandInvisible(IPlayer player)
@@ -3194,11 +3217,10 @@ namespace Server.Admin
         public static void AdminCommandReloadRadio(IPlayer player)
         {
             RadioHandler.LoadRadioChannels();
-            
+
             player.SendInfoNotification($"Reloaded Radio Channels!");
         }
-        
-        
+
         [Command("reloadstations", AdminLevel.HeadAdmin, commandType: CommandType.Admin,
             description: "Other: Reloads radio stations")]
         public static void AdminCommandReloadStations(IPlayer player)

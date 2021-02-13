@@ -15,6 +15,8 @@ namespace Server.Character
         private static readonly float MaxInterest = 5000f;
         private static float _paydayAmount = 120;
 
+        public static int PaydayBoost = 1;
+
         /// <summary>
         /// Process the players payday
         /// </summary>
@@ -49,8 +51,7 @@ namespace Server.Character
                     return;
                 }
 
-                
-                if(mainBankAccount.AccountType != BankAccountType.Debit)
+                if (mainBankAccount.AccountType != BankAccountType.Debit)
                 {
                     player.SendErrorNotification("Unable to receive your payday. You bank account is a savings type. It must be debit!");
                     return;
@@ -62,7 +63,7 @@ namespace Server.Character
                     return;
                 }
 
-                if(playerCharacter.TotalHours <= 150)
+                if (playerCharacter.TotalHours <= 150)
                 {
                     _paydayAmount = 520;
                 }
@@ -71,15 +72,20 @@ namespace Server.Character
                     _paydayAmount = 120;
                 }
 
+                if (PaydayBoost > 1)
+                {
+                    _paydayAmount = _paydayAmount * PaydayBoost;
+                }
+
                 List<BankAccount> playerBankAccounts = BankAccount.FindCharacterBankAccounts(playerCharacter);
 
                 Faction activeFaction = Faction.FetchFaction(playerCharacter.ActiveFaction);
 
                 float totalInterest = 0;
 
-                lock (playerBankAccounts)
+                foreach (BankAccount playerBankAccount in playerBankAccounts)
                 {
-                    foreach (BankAccount playerBankAccount in playerBankAccounts)
+                    lock (playerBankAccount)
                     {
                         BankAccount bAccount = context.BankAccount.Find(playerBankAccount.Id);
 
@@ -123,7 +129,6 @@ namespace Server.Character
                                 bAccount.Balance += playerCharacter.PaydayAmount;
 
                                 playerCharacter.PaydayAmount = 0;
-
 
                                 player.SendChatMessage($"Government Income: {_paydayAmount:C}");
 
@@ -189,7 +194,7 @@ namespace Server.Character
                                 float paybackRate = 0.05f;
                                 paybackAmount = (int)Math.Round(bAccount.Balance * paybackRate);
                             }
-                            
+
                             int totalAmount = (int)taxAmount + paybackAmount;
 
                             bAccount.Balance = -totalAmount;
@@ -236,8 +241,6 @@ namespace Server.Character
                 playerCharacter.GraffitiCleanCount = 0;
 
                 context.SaveChanges();
-
-                
             }
             catch (Exception e)
             {
