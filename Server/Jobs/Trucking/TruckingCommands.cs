@@ -268,6 +268,7 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!");
 
                         fullBusiness.Products = 100;
+                        fullBusiness.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
@@ -288,6 +289,7 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", 10000);
 
                         fullBusiness.Products += truckProducts;
+                        fullBusiness.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
@@ -311,6 +313,7 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", 10000);
 
                         business.Products += truckProducts;
+                        business.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
@@ -332,6 +335,7 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", 10000);
 
                         business.Products = business.Products += 10;
+                        business.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
