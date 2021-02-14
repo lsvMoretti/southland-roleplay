@@ -25,7 +25,18 @@ namespace Server.Extensions
             propertyDb.Balance += amount;
 
             context.SaveChanges();
-            
+        }
+
+        public static void RemoveProduct(this Models.Property property, int amount = 1)
+        {
+            using Context context = new Context();
+
+            Models.Property propertyDb = context.Property.Find(property.Id);
+
+            if (propertyDb == null) return;
+
+            propertyDb.Products -= amount;
+            context.SaveChanges();
         }
     }
 }
