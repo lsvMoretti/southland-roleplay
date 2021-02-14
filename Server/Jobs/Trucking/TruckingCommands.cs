@@ -251,7 +251,7 @@ namespace Server.Jobs.Trucking
                 {
                     if (truckProducts > 10)
                     {
-                        int truckCount = truckProducts -= businessProductSpace;
+                        int truckCount = truckProducts - businessProductSpace;
 
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
@@ -316,7 +316,7 @@ namespace Server.Jobs.Trucking
                     }
                     else
                     {
-                        int truckCount = truckProducts -= 10;
+                        int truckCount = truckProducts - 10;
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
                         player.SendInfoNotification($"You've dropped off 10 products at the business. You have {truckCount} products left in your truck.", 10000);
@@ -336,8 +336,6 @@ namespace Server.Jobs.Trucking
                         return;
                     }
                 }
-
-                return;
             }
 
             // Hasn't been assigned a property yet
