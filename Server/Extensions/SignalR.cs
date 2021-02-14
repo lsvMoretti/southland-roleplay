@@ -83,6 +83,28 @@ namespace Server.Extensions
             hubConnection.On<int, string>("SendMessageToReport", AdminHandler.SendMessageToReport);
 
             hubConnection.On<int>("CloseReport", AdminHandler.CloseReport);
+
+            hubConnection.On("DiscordFetchLinkedAccounts", () =>
+            {
+                using Context context = new Context();
+
+                List<Models.Account> accounts = context.Account.ToList();
+
+                List<ulong> discordIds = new List<ulong>();
+
+                foreach (Models.Account account in accounts)
+                {
+                    if (string.IsNullOrEmpty(account.DiscordId)) continue;
+
+                    bool tryParse = ulong.TryParse(account.DiscordId, out ulong discordId);
+
+                    if (!tryParse) continue;
+
+                    discordIds.Add(discordId);
+                }
+
+                hubConnection.InvokeAsync("DiscordReturnLinkedAccounts", JsonConvert.SerializeObject(discordIds));
+            });
         }
 
         public static void SendGameTime()

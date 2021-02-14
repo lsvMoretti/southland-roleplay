@@ -181,5 +181,15 @@ namespace SignalR
         {
             await Clients.Groups("Discord").SendAsync("SendScreenshotToDiscordUser", userId, screenshot);
         }
+
+        public async void DiscordFetchLinkedAccounts()
+        {
+            await Clients.Groups("AltVServer").SendAsync("DiscordFetchLinkedAccounts");
+        }
+
+        public async void DiscordReturnLinkedAccounts(string json)
+        {
+            await Clients.Groups("Discord").SendAsync("DiscordReturnLinkedAccounts", json);
+        }
     }
 }
