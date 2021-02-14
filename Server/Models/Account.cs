@@ -115,7 +115,7 @@ namespace Server.Models
         public int AcceptedReports { get; set; }
         public int AcceptedHelps { get; set; }
 
-        public static Account FindAccountById(int id)
+        public static Account? FindAccountById(int id)
         {
             using Context context = new Context();
             return context.Account.Find(id);

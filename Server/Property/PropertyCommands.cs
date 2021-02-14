@@ -263,8 +263,6 @@ namespace Server.Property
 
             if (selectedItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_SMALL" || selectedItem.ID == "ITEM_DRUG_ZIPLOCK_BAG_LARGE")
             {
-                player.RemoveCash(price);
-
                 DrugBag newDrugBag = new DrugBag(DrugType.Empty, 0);
 
                 bool drugBagAdded =
@@ -276,6 +274,9 @@ namespace Server.Property
                     return;
                 }
 
+                player.RemoveCash(price);
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -288,8 +289,6 @@ namespace Server.Property
                     player.SendErrorNotification("You already have a backpack equipped!");
                     return;
                 }
-
-                player.RemoveCash(price);
 
                 Models.Backpack newBackpack = null;
 
@@ -333,14 +332,15 @@ namespace Server.Property
 
                 player.LoadCharacterCustomization();
 
+                player.RemoveCash(price);
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
 
             if (selectedItem.ID == "ITEM_SPRAYCAN")
             {
-                player.RemoveCash(price);
-
                 bool sprayCanAdded =
                     playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name, 5.ToString()));
 
@@ -350,14 +350,15 @@ namespace Server.Property
                     return;
                 }
 
+                player.RemoveCash(price);
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
 
             if (selectedItem.ID == "ITEM_GRAFFITISTRIPPER")
             {
-                player.RemoveCash(price);
-
                 bool graffitiStripper =
                     playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name, 5.ToString()));
 
@@ -367,14 +368,15 @@ namespace Server.Property
                     return;
                 }
 
+                player.RemoveCash(price);
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
 
             if (selectedItem.ID == "ITEM_SPRAYCAN")
             {
-                player.RemoveCash(price);
-
                 bool sprayCanAdded =
                     playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name, 5.ToString()));
 
@@ -384,14 +386,15 @@ namespace Server.Property
                     return;
                 }
 
+                player.RemoveCash(price);
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
 
             if (selectedItem.ID == "ITEM_GRAFFITISTRIPPER")
             {
-                player.RemoveCash(price);
-
                 bool graffitiStripper =
                     playerInventory.AddItem(new InventoryItem(selectedItem.ID, selectedItem.Name, 5.ToString()));
 
@@ -401,6 +404,10 @@ namespace Server.Property
                     return;
                 }
 
+                player.RemoveCash(price);
+
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -438,6 +445,8 @@ namespace Server.Property
 
                 player.RemoveCash(price);
 
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
                 player.SendInfoNotification($"Your new phone number is: {newPhone.PhoneNumber}");
                 return;
@@ -458,6 +467,8 @@ namespace Server.Property
 
                 player.RemoveCash(price);
 
+                property.AddToBalance(selectedItem.Price);
+                property.RemoveProduct();
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
 
                 return;
@@ -472,6 +483,7 @@ namespace Server.Property
             }
 
             property.AddToBalance(selectedItem.Price);
+            property.RemoveProduct();
             player.RemoveCash(price);
 
             player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");

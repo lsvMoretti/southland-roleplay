@@ -251,7 +251,7 @@ namespace Server.Jobs.Trucking
                 {
                     if (truckProducts > 10)
                     {
-                        int truckCount = truckProducts -= businessProductSpace;
+                        int truckCount = truckProducts - businessProductSpace;
 
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
@@ -268,6 +268,7 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!");
 
                         fullBusiness.Products = 100;
+                        fullBusiness.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
@@ -288,6 +289,7 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", 10000);
 
                         fullBusiness.Products += truckProducts;
+                        fullBusiness.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
@@ -311,12 +313,13 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", 10000);
 
                         business.Products += truckProducts;
+                        business.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
                     else
                     {
-                        int truckCount = truckProducts -= 10;
+                        int truckCount = truckProducts - 10;
                         truck.SetData("Trucking:Products", truckCount);
                         player.DeleteData("Trucking:DeliveryBusiness");
                         player.SendInfoNotification($"You've dropped off 10 products at the business. You have {truckCount} products left in your truck.", 10000);
@@ -332,12 +335,11 @@ namespace Server.Jobs.Trucking
                         player.SendInfoNotification($"You've gained {Payment:C} into your next payday!", 10000);
 
                         business.Products = business.Products += 10;
+                        business.RequiredProducts = 0;
                         context.SaveChanges();
                         return;
                     }
                 }
-
-                return;
             }
 
             // Hasn't been assigned a property yet

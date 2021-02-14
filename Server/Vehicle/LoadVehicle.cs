@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Timers;
 using AltV.Net;
 using AltV.Net.Async;
 using AltV.Net.Data;
@@ -466,6 +467,49 @@ namespace Server.Vehicle
             context.SaveChanges();
 
             vehicle.Remove();
+        }
+
+        public static void StartCharacterVehicleDespawnTimer()
+        {
+            Timer timer = new Timer(900000)
+            {
+                AutoReset = true
+            };
+            timer.Start();
+
+            timer.Elapsed += (sender, args) =>
+            {
+                ICollection<IVehicle> vehicles = Alt.GetAllVehicles();
+
+                int startCount = vehicles.Count;
+                int removeCount = 0;
+
+                foreach (IVehicle vehicle in vehicles)
+                {
+                    lock (vehicle)
+                    {
+                        if (!vehicle.Exists) continue;
+                        var vehicleData = vehicle.FetchVehicleData();
+                        if (vehicleData is null) continue;
+
+                        if (vehicle.Driver != null) continue;
+
+                        if (vehicleData.FactionId > 0) continue;
+
+                        var vehicleCharacter = Models.Character.GetCharacter(vehicleData.OwnerId);
+
+                        if (vehicleCharacter is null) continue;
+
+                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(5), DateTime.Now) <= 0) continue;
+
+                        UnloadVehicle(vehicle, true);
+
+                        removeCount += 1;
+                    }
+                }
+
+                Console.WriteLine($"Cleared un-used character vehicles. {removeCount}/{startCount} removed.");
+            };
         }
     }
 }
