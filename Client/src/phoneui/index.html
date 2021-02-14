@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="phone.css">
+<script src="https://kit.fontawesome.com/be2c54c88e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container" class="col-lg-3">
+        <div class="img-container">
+            <!--#region Top Banner-->
+            <div class="topbanner">
+                <div class="toptext">
+                    <i class="fas fa-signal fa-sm"> Southland</i>   
+                </div>
+                <i class="clockicon fas fa-clock fa-sm" id="time"> 23:59</i>
+            </div>
+            <!--#endregion-->
+            <div class="centerArea">
+                <!--#region App Page-->
+                <i class="appIcon fas fa-phone-square fa-3x" id="phoneIcon" onclick="phoneIconClick()"></i>
+                <i class="appIcon fas fa-sms fa-3x" id="smsIcon" onclick="smsIconClick()"></i>
+                <!--#endregion-->
+
+                <!-- #region Phone Page -->
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/1.png" onclick="phoneDialNumber(1)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/2.png"  onclick="phoneDialNumber(2)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage" >
+                    <img src="./images/dial/3.png" onclick="phoneDialNumber(3)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/4.png" onclick="phoneDialNumber(4)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/5.png" onclick="phoneDialNumber(5)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage" onclick="phoneDialNumber(6)">
+                    <img src="./images/dial/6.png" onclick="phoneDialNumber(6)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage" >
+                    <img src="./images/dial/7.png" onclick="phoneDialNumber(7)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/8.png"  onclick="phoneDialNumber(8)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage" >
+                    <img src="./images/dial/9.png"onclick="phoneDialNumber(9)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage" >
+                    <img src="./images/dial/0.png"onclick="phoneDialNumber(0)">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/star.png">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/hash.png">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/phone.png">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/BL.png">
+                </div>
+                <div class="page phonePage transparent" id="phonePage">
+                    <img src="./images/dial/br.png">
+                </div>
+                <!-- #endregion -->
+            </div>
+            <!--#region Bottom Banner-->
+            <div class="bottomBanner">
+                <i class="homeIcon far fa-circle fa-2x" onclick="homeIconClick()"></i>
+            </div>
+            <!--#endregion-->
+            
+            <img src="./images/background.png" />
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

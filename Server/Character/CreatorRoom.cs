@@ -464,7 +464,7 @@ namespace Server.Character
 
                 player.GetClass().CreatorRoom = false;
 
-                LoadVehicle.CharacterLoaded(playerCharacter);
+                //LoadVehicle.CharacterLoaded(playerCharacter);
                 DroppedItems.LoadDroppedItemsForPlayer(player);
                 TextLabelHandler.LoadTextLabelsOnSpawn(player);
                 MarkerHandler.LoadMarkersOnSpawn(player);
@@ -773,7 +773,6 @@ namespace Server.Character
                                     List<MotelRoom> motelRooms =
                                         JsonConvert.DeserializeObject<List<MotelRoom>>(motel.RoomList);
 
-                                    
                                     if (!motelRooms.Any())
                                     {
                                         player.SetPosition(characterPosition + new Position(0, 0, 0.25f), Rotation.Zero, 5000,

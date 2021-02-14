@@ -1585,7 +1585,7 @@ namespace Server.Vehicle
                 return;
             }
 
-            PropertyGarage propertyGarage = Models.Property.FetchNearbyGarage(player, 5f);
+            var propertyGarage = Models.Property.FetchNearbyGarage(player, 5f);
 
             if (propertyGarage == null)
             {

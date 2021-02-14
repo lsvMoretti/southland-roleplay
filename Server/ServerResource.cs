@@ -706,10 +706,10 @@ namespace Server
             DeadBodyHandler.InitDeadBodyClearing();
 
             RadioHandler.LoadRadioChannels();
-            
+
             await LoadVehicle.LoadFactionVehicles();
 
-            await LoadVehicle.LoadCharacterVehicles();
+            //await LoadVehicle.LoadCharacterVehicles();
         }
     }
 }

@@ -260,7 +260,7 @@ namespace Server.Models
         /// <param name="player"></param>
         /// <param name="range"></param>
         /// <returns></returns>
-        public static PropertyGarage FetchNearbyGarage(IPlayer player, float range)
+        public static PropertyGarage? FetchNearbyGarage(IPlayer player, float range)
         {
             List<Property> propertyList = FetchProperties();
 
