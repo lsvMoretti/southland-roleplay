@@ -1788,9 +1788,11 @@ namespace Server.Vehicle
 
             Position vehiclePosition = new Position(selectedVehicle.PosX, selectedVehicle.PosY, selectedVehicle.PosZ);
 
-            await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, vehiclePosition);
+            IVehicle vehicle = await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, vehiclePosition);
 
             player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
+
+            player.SetWaypoint(vehicle.Position);
         }
 
         [Command("vpark", commandType: CommandType.Vehicle,

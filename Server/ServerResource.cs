@@ -707,6 +707,8 @@ namespace Server
 
             RadioHandler.LoadRadioChannels();
 
+            LoadVehicle.StartCharacterVehicleDespawnTimer();
+
             await LoadVehicle.LoadFactionVehicles();
 
             //await LoadVehicle.LoadCharacterVehicles();
