@@ -677,6 +677,8 @@ namespace Server.Groups
                 player.SendInfoNotification($"You've taken a Fire Extinguisher from the locker.");
             }
 
+            player.Position = player.Position;
+
             #endregion Fire Department Weapons
         }
     }

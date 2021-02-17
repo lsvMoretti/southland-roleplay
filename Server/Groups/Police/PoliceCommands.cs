@@ -239,7 +239,8 @@ namespace Server.Groups.Police
                 player.SendPermissionError();
                 return;
             }
-
+            player.ShowCursor(true);
+            player.ChatInput(false);
             MdtHandler.ShowMdt(player);
         }
 

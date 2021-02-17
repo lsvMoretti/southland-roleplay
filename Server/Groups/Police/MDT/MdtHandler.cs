@@ -213,8 +213,6 @@ namespace Server.Groups.Police.MDT
 
             Models.Property selectedProperty = context.Property.FirstOrDefault(x => x.Address == propertyAddress);
 
-            
-
             if (selectedProperty == null)
             {
                 player.SendErrorNotification("Unable to find this property.");
@@ -235,7 +233,6 @@ namespace Server.Groups.Police.MDT
             player.SetData(_unitData, unit);
 
             player.SendNotification($"~g~Radio Channel Set: {unit}.");
-
         }
 
         public static void OnMdcPlateSearch(IPlayer player, string plate)
@@ -272,7 +269,7 @@ namespace Server.Groups.Police.MDT
             Call911 respondingCall = CallList[index];
 
             if (respondingCall == null) return;
-            
+
             player.GetData(_unitData, out string unit);
             //FactionCommands.FactionCommandRadio(player, $"{unit} responding to the 911 at {respondingCall.Location}.");
         }
