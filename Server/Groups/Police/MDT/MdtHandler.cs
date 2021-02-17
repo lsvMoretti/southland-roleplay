@@ -34,7 +34,7 @@ namespace Server.Groups.Police.MDT
 
             List<Rank> factionRanks = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson);
 
-            PlayerFaction playerFaction = JsonConvert
+            PlayerFaction? playerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == activeFaction.Id);
 
@@ -51,6 +51,8 @@ namespace Server.Groups.Police.MDT
             player.ShowCursor(true);
             player.FreezeCam(true);
             player.FreezePlayer(true);
+
+            player.SetKeybindStatus(false);
 
             if (hasUnitData)
             {
@@ -74,6 +76,7 @@ namespace Server.Groups.Police.MDT
             player.ShowCursor(false);
             player.FreezeCam(false);
             player.FreezePlayer(false);
+            player.SetKeybindStatus(true);
         }
 
         /// <summary>

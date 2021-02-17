@@ -192,7 +192,7 @@ namespace SignalR
             await Clients.Groups("Discord").SendAsync("DiscordReturnLinkedAccounts", json);
         }
 
-        public async void FetchDonatorAccounts()
+        public async void DiscordFetchDonatorAccounts()
         {
             await Clients.Groups("AltVServer").SendAsync("DiscordFetchDonatorAccounts");
         }
