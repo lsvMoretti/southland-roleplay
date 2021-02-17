@@ -10,6 +10,7 @@ using Server.Chat;
 using Server.Discord;
 using Server.Groups.Police;
 using Server.Models;
+using Server.Property;
 
 namespace Server.Extensions
 {
@@ -43,6 +44,9 @@ namespace Server.Extensions
         private static void _hourTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _hourTimer.Stop();
+
+            PropertyHandler.PlayerEntrances = new List<PlayerEntrance>();
+
             List<Models.Property> mortgageProperties = Models.Property.FetchProperties().Where(x => x.MortgageValue > 0).ToList();
 
             if (!mortgageProperties.Any())

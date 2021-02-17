@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AltV.Net;
 using AltV.Net.Elements.Entities;
@@ -13,9 +14,12 @@ namespace Server.Property
 {
     public class PropertyHandler
     {
+        public static List<PlayerEntrance> PlayerEntrances = new List<PlayerEntrance>();
+
         #region Voucher Values
 
         public static readonly int HomelessVoucher = 0;
+
         public static readonly int VLowVoucher = 25000;
         public static readonly int LowVoucher = 75000;
         public static readonly int MedVoucher = 200000;
@@ -52,6 +56,18 @@ namespace Server.Property
             if (string.IsNullOrEmpty(property.MusicStation)) return;
 
             player.PlayMusicFromUrl(property.MusicStation);
+        }
+    }
+
+    public class PlayerEntrance
+    {
+        public int PropertyId { get; set; }
+        public int CharacterId { get; set; }
+
+        public PlayerEntrance(int propertyId, int characterId)
+        {
+            PropertyId = propertyId;
+            CharacterId = characterId;
         }
     }
 }

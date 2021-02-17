@@ -601,6 +601,25 @@ namespace Server.Property
             playerCharacter.InsideProperty = nearestProperty.Id;
             playerCharacter.Dimension = dimension;
 
+            if (nearestProperty.PropertyType != PropertyType.House && nearestProperty.OwnerId != 0)
+            {
+                // Boosted Earnings on players entering
+                var playerEntered = PropertyHandler.PlayerEntrances.FirstOrDefault(x =>
+                    x.PropertyId == nearestProperty.Id && x.CharacterId == playerCharacter.Id);
+
+                if (playerEntered == null)
+                {
+                    PropertyHandler.PlayerEntrances.Add(new PlayerEntrance(nearestProperty.Id, playerCharacter.Id));
+
+                    int totalEnters = PropertyHandler.PlayerEntrances.Count(x => x.PropertyId == nearestProperty.Id);
+
+                    if (totalEnters % 5 == 0)
+                    {
+                        nearestProperty.AddToBalance(500);
+                    }
+                }
+            }
+
             context.SaveChanges();
 
             if (!string.IsNullOrEmpty(nearestProperty.MusicStation))
