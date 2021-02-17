@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using Server.Admin;
 using Server.Chat;
 using Server.Discord;
+using Server.Models;
 
 namespace Server.Extensions
 {
@@ -104,6 +105,33 @@ namespace Server.Extensions
                 }
 
                 hubConnection.InvokeAsync("DiscordReturnLinkedAccounts", JsonConvert.SerializeObject(discordIds));
+            });
+
+            hubConnection.On("DiscordFetchDonatorAccounts", () =>
+            {
+                using Context context = new Context();
+
+                List<Models.Account> accounts = context.Account.ToList();
+
+                List<DonatorInfo> donatorInfo = new List<DonatorInfo>();
+
+                foreach (Models.Account account in accounts)
+                {
+                    if (string.IsNullOrEmpty(account.DiscordId)) continue;
+                    if (account.DonatorLevel == DonationLevel.None) continue;
+
+                    bool tryParse = ulong.TryParse(account.DiscordId, out ulong discordId);
+
+                    if (!tryParse) continue;
+
+                    donatorInfo.Add(new DonatorInfo
+                    {
+                        Id = discordId,
+                        DonatorLevel = account.DonatorLevel
+                    });
+                }
+
+                hubConnection.InvokeAsync("DiscordReturnDonatorAccounts", JsonConvert.SerializeObject(donatorInfo));
             });
         }
 
@@ -250,5 +278,11 @@ namespace Server.Extensions
             await hubConnection.InvokeAsync("SendScreenshotToDiscordUser", discordId, image);
 #endif
         }
+    }
+
+    public class DonatorInfo
+    {
+        public ulong Id { get; set; }
+        public DonationLevel DonatorLevel { get; set; }
     }
 }
