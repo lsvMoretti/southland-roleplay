@@ -184,14 +184,22 @@ namespace SignalR
 
         public async void DiscordFetchLinkedAccounts()
         {
-            Console.WriteLine($"Fetching Discord Linked Accounts");
             await Clients.Groups("AltVServer").SendAsync("DiscordFetchLinkedAccounts");
         }
 
         public async void DiscordReturnLinkedAccounts(string json)
         {
-            Console.WriteLine($"Received Return Discord Accounts");
             await Clients.Groups("Discord").SendAsync("DiscordReturnLinkedAccounts", json);
+        }
+
+        public async void FetchDonatorAccounts()
+        {
+            await Clients.Groups("AltVServer").SendAsync("DiscordFetchDonatorAccounts");
+        }
+
+        public async void DiscordReturnDonatorAccounts(string json)
+        {
+            await Clients.Groups("Discord").SendAsync("DiscordReturnDonatorAccounts", json);
         }
     }
 }
