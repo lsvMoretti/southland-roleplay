@@ -500,11 +500,12 @@ namespace Server.Vehicle
 
                         if (vehicleCharacter is null) continue;
 
-                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(15), DateTime.Now) <= 0) continue;
+                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(15), DateTime.Now) > 0)
+                        {
+                            UnloadVehicle(vehicle, true);
 
-                        UnloadVehicle(vehicle, true);
-
-                        removeCount += 1;
+                            removeCount += 1;
+                        }
                     }
                 }
 

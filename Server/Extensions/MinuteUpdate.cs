@@ -142,13 +142,11 @@ namespace Server.Extensions
             {
                 lock (player)
                 {
-                    if (player.FetchCharacter() == null) continue;
-
                     if (player.GetClass().CreatorRoom) continue;
 
                     // Payday
 
-                    Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+                    Models.Character? playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                     if (playerCharacter == null) continue;
 
