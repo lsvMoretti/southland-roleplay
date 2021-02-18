@@ -500,7 +500,7 @@ namespace Server.Vehicle
 
                         if (vehicleCharacter is null) continue;
 
-                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(5), DateTime.Now) <= 0) continue;
+                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(15), DateTime.Now) <= 0) continue;
 
                         UnloadVehicle(vehicle, true);
 
