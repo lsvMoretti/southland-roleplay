@@ -70,7 +70,7 @@ namespace Server.Groups.Police.MDT
         /// <param name="player"></param>
         public static void CloseMdt(IPlayer player)
         {
-            player.Emit("closeMDC");
+            //player.Emit("closeMDC");
             player.ChatInput(true);
             player.HideChat(false);
             player.ShowCursor(false);
