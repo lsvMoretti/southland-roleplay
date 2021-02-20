@@ -104,6 +104,294 @@ namespace Server.Jobs.ChopShop
 
             var chopShopPart = new InventoryItem(ChopShopPart, "Vehicle Part", vehicleDb.Id.ToString());
 
+            var leftFrontWheelRemoved = nearestVehicle.IsWheelDetached(0);
+            if (!leftFrontWheelRemoved)
+            {
+                Timer timer = new Timer(ChopWaitTime)
+                {
+                    AutoReset = false
+                };
+                timer.Start();
+                player.SetData(ChopShopCommandInUse, true);
+                player.SendInfoNotification("Starting to remove the left front wheel from the vehicle");
+                timer.Elapsed += (sender, args) =>
+                {
+                    if (!player.Exists) return;
+                    if (!nearestVehicle.Exists)
+                    {
+                        player.SendErrorNotification("Unable to find the vehicle");
+                        return;
+                    }
+
+                    if (player.Position.Distance(nearestVehicle.Position) > 5)
+                    {
+                        player.SendErrorNotification("You've moved away from the vehicle.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(chopShopPart))
+                    {
+                        player.SendErrorNotification("Your inventory is full!");
+                        return;
+                    }
+                    Context removeContext = new Context();
+                    var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
+                    if (removeVehicleDb is null)
+                    {
+                        player.SendErrorNotification("Unable to get the vehicle data.");
+                        return;
+                    }
+                    removeContext.SaveChanges();
+                    nearestVehicle.SetWheelDetached(0, true);
+                    removeVehicleDb.RemovedParts += 1;
+                    Models.Vehicle.UpdateVehicle(nearestVehicle);
+                    player.SendInfoNotification("You've removed the left front wheel from the vehicle.");
+                    player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                };
+                return;
+            }
+
+            var rightFrontWheelRemoved = nearestVehicle.IsWheelDetached(1);
+            if (!rightFrontWheelRemoved)
+            {
+                Timer timer = new Timer(ChopWaitTime)
+                {
+                    AutoReset = false
+                };
+                timer.Start();
+                player.SetData(ChopShopCommandInUse, true);
+                player.SendInfoNotification("Starting to remove the right front wheel from the vehicle");
+                timer.Elapsed += (sender, args) =>
+                {
+                    if (!player.Exists) return;
+                    if (!nearestVehicle.Exists)
+                    {
+                        player.SendErrorNotification("Unable to find the vehicle");
+                        return;
+                    }
+
+                    if (player.Position.Distance(nearestVehicle.Position) > 5)
+                    {
+                        player.SendErrorNotification("You've moved away from the vehicle.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(chopShopPart))
+                    {
+                        player.SendErrorNotification("Your inventory is full!");
+                        return;
+                    }
+                    Context removeContext = new Context();
+                    var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
+                    if (removeVehicleDb is null)
+                    {
+                        player.SendErrorNotification("Unable to get the vehicle data.");
+                        return;
+                    }
+                    removeContext.SaveChanges();
+                    nearestVehicle.SetWheelDetached(1, true);
+                    removeVehicleDb.RemovedParts += 1;
+                    Models.Vehicle.UpdateVehicle(nearestVehicle);
+                    player.SendInfoNotification("You've removed the right front wheel from the vehicle.");
+                    player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                };
+                return;
+            }
+
+            var leftRearWheelDamaged = nearestVehicle.IsWheelDetached(4);
+            if (!leftRearWheelDamaged)
+            {
+                Timer timer = new Timer(ChopWaitTime)
+                {
+                    AutoReset = false
+                };
+                timer.Start();
+                player.SetData(ChopShopCommandInUse, true);
+                player.SendInfoNotification("Starting to remove the left rear wheel from the vehicle");
+                timer.Elapsed += (sender, args) =>
+                {
+                    if (!player.Exists) return;
+                    if (!nearestVehicle.Exists)
+                    {
+                        player.SendErrorNotification("Unable to find the vehicle");
+                        return;
+                    }
+
+                    if (player.Position.Distance(nearestVehicle.Position) > 5)
+                    {
+                        player.SendErrorNotification("You've moved away from the vehicle.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(chopShopPart))
+                    {
+                        player.SendErrorNotification("Your inventory is full!");
+                        return;
+                    }
+                    Context removeContext = new Context();
+                    var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
+                    if (removeVehicleDb is null)
+                    {
+                        player.SendErrorNotification("Unable to get the vehicle data.");
+                        return;
+                    }
+                    removeContext.SaveChanges();
+                    nearestVehicle.SetWheelDetached(4, true);
+                    removeVehicleDb.RemovedParts += 1;
+                    Models.Vehicle.UpdateVehicle(nearestVehicle);
+                    player.SendInfoNotification("You've removed the left rear wheel from the vehicle.");
+                    player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                };
+                return;
+            }
+
+            var rightRearWheelDamaged = nearestVehicle.IsWheelDetached(5);
+            if (!rightRearWheelDamaged)
+            {
+                Timer timer = new Timer(ChopWaitTime)
+                {
+                    AutoReset = false
+                };
+                timer.Start();
+                player.SetData(ChopShopCommandInUse, true);
+                player.SendInfoNotification("Starting to remove the right rear wheel from the vehicle");
+                timer.Elapsed += (sender, args) =>
+                {
+                    if (!player.Exists) return;
+                    if (!nearestVehicle.Exists)
+                    {
+                        player.SendErrorNotification("Unable to find the vehicle");
+                        return;
+                    }
+
+                    if (player.Position.Distance(nearestVehicle.Position) > 5)
+                    {
+                        player.SendErrorNotification("You've moved away from the vehicle.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(chopShopPart))
+                    {
+                        player.SendErrorNotification("Your inventory is full!");
+                        return;
+                    }
+                    Context removeContext = new Context();
+                    var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
+                    if (removeVehicleDb is null)
+                    {
+                        player.SendErrorNotification("Unable to get the vehicle data.");
+                        return;
+                    }
+                    removeContext.SaveChanges();
+                    nearestVehicle.SetWheelDetached(5, true);
+                    removeVehicleDb.RemovedParts += 1;
+                    Models.Vehicle.UpdateVehicle(nearestVehicle);
+                    player.SendInfoNotification("You've removed the right rear wheel from the vehicle.");
+                    player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                };
+                return;
+            }
+
+            var leftHeadlightDamage = nearestVehicle.IsLightDamaged(0);
+            if (!leftHeadlightDamage)
+            {
+                Timer timer = new Timer(ChopWaitTime)
+                {
+                    AutoReset = false
+                };
+                timer.Start();
+                player.SetData(ChopShopCommandInUse, true);
+                player.SendInfoNotification("Starting to remove the left headlight from the vehicle");
+                timer.Elapsed += (sender, args) =>
+                {
+                    if (!player.Exists) return;
+                    if (!nearestVehicle.Exists)
+                    {
+                        player.SendErrorNotification("Unable to find the vehicle");
+                        return;
+                    }
+
+                    if (player.Position.Distance(nearestVehicle.Position) > 5)
+                    {
+                        player.SendErrorNotification("You've moved away from the vehicle.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(chopShopPart))
+                    {
+                        player.SendErrorNotification("Your inventory is full!");
+                        return;
+                    }
+                    Context removeContext = new Context();
+                    var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
+                    if (removeVehicleDb is null)
+                    {
+                        player.SendErrorNotification("Unable to get the vehicle data.");
+                        return;
+                    }
+                    removeContext.SaveChanges();
+                    nearestVehicle.SetLightDamaged(0, true);
+                    removeVehicleDb.RemovedParts += 1;
+                    Models.Vehicle.UpdateVehicle(nearestVehicle);
+                    player.SendInfoNotification("You've removed the left headlight from the vehicle.");
+                    player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                };
+                return;
+            }
+
+            var rightHeadlightDamage = nearestVehicle.IsLightDamaged(1);
+            if (!rightHeadlightDamage)
+            {
+                Timer timer = new Timer(ChopWaitTime)
+                {
+                    AutoReset = false
+                };
+                timer.Start();
+                player.SetData(ChopShopCommandInUse, true);
+                player.SendInfoNotification("Starting to remove the right headlight from the vehicle");
+                timer.Elapsed += (sender, args) =>
+                {
+                    if (!player.Exists) return;
+                    if (!nearestVehicle.Exists)
+                    {
+                        player.SendErrorNotification("Unable to find the vehicle");
+                        return;
+                    }
+
+                    if (player.Position.Distance(nearestVehicle.Position) > 5)
+                    {
+                        player.SendErrorNotification("You've moved away from the vehicle.");
+                        return;
+                    }
+
+                    if (!playerInventory.AddItem(chopShopPart))
+                    {
+                        player.SendErrorNotification("Your inventory is full!");
+                        return;
+                    }
+                    Context removeContext = new Context();
+                    var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
+                    if (removeVehicleDb is null)
+                    {
+                        player.SendErrorNotification("Unable to get the vehicle data.");
+                        return;
+                    }
+                    removeContext.SaveChanges();
+                    nearestVehicle.SetLightDamaged(1, true);
+                    removeVehicleDb.RemovedParts += 1;
+                    Models.Vehicle.UpdateVehicle(nearestVehicle);
+                    player.SendInfoNotification("You've removed the right headlight from the vehicle.");
+                    player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                };
+                return;
+            }
+
             var frontBumperDamage = nearestVehicle.GetBumperDamageLevelExt(VehicleBumper.Front);
             if (frontBumperDamage != VehicleBumperDamage.None)
             {
@@ -147,6 +435,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front bumper from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -193,6 +482,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the rear bumper from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -239,6 +529,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -285,6 +576,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -330,6 +622,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the rear left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -375,6 +668,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the rear right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -420,6 +714,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the middle left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
@@ -465,6 +760,7 @@ namespace Server.Jobs.ChopShop
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the middle right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
+                    player.SetData(PlayerLastPartRemoved, DateTime.Now);
                 };
                 return;
             }
