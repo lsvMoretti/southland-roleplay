@@ -1590,7 +1590,7 @@ namespace Server.Vehicle
             if (propertyGarage == null)
             {
                 List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId)
-                    .Where(x => !x.Spawned && !x.IsStored).ToList();
+                    .Where(x => !x.Spawned && !x.IsStored && x.RespawnDelay == 0).ToList();
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
@@ -1629,6 +1629,8 @@ namespace Server.Vehicle
 
             foreach (Models.Vehicle garageVehicle in garageVehicles)
             {
+                if (garageVehicle.RespawnDelay > 0) continue;
+
                 if (garageVehicle.FactionId > 0 && playerCharacter.ActiveFaction == garageVehicle.FactionId)
                 {
                     garageItems.Add(new NativeMenuItem(garageVehicle.Name, garageVehicle.Plate));
@@ -1639,18 +1641,17 @@ namespace Server.Vehicle
                     garageItems.Add(new NativeMenuItem(garageVehicle.Name, garageVehicle.Plate));
                 }
             }
+            player.SetData("VGetGarage", propertyGarage.Id);
 
             NativeMenu garageMenu = new NativeMenu("vehicle:vget:garageMenu", "Vehicles", "Select a vehicle to spawn", garageItems)
             {
                 PassIndex = true
             };
 
-            player.SetData("VGetGarage", propertyGarage.Id);
-
             NativeUi.ShowNativeMenu(player, garageMenu, true);
         }
 
-        public static async void OnGarageVGetSelect(IPlayer player, string option, int index)
+        public static void OnGarageVGetSelect(IPlayer player, string option, int index)
         {
             try
             {
@@ -1698,7 +1699,7 @@ namespace Server.Vehicle
 
                 using Context context = new Context();
 
-                Models.Property property = await context.Property.FindAsync(pGarage.PropertyId);
+                Models.Property property = context.Property.Find(pGarage.PropertyId);
 
                 if (property == null)
                 {
@@ -1709,7 +1710,7 @@ namespace Server.Vehicle
                 List<PropertyGarage> propertyGarages =
                     JsonConvert.DeserializeObject<List<PropertyGarage>>(property.GarageList);
 
-                PropertyGarage propertyGarage = propertyGarages.FirstOrDefault(x => x.Id == garageId);
+                var propertyGarage = propertyGarages.FirstOrDefault(x => x.Id == garageId);
 
                 if (propertyGarage == null)
                 {
@@ -1717,11 +1718,11 @@ namespace Server.Vehicle
                     return;
                 }
 
-                await context.SaveChangesAsync();
+                context.SaveChangesAsync();
 
                 Position spawnPosition = new Position(propertyGarage.PosX, propertyGarage.PosY, propertyGarage.PosZ);
 
-                await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, spawnPosition);
+                LoadVehicle.LoadDatabaseVehicle(selectedVehicle, spawnPosition);
 
                 player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
             }
@@ -1737,7 +1738,7 @@ namespace Server.Vehicle
             if (option == "Close") return;
 
             List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId)
-                .Where(x => !x.Spawned).ToList();
+                .Where(x => !x.Spawned && x.RespawnDelay == 0).ToList();
 
             Models.Vehicle selectedVehicle = playerVehicles[index];
 

@@ -10,6 +10,7 @@ using Server.Chat;
 using Server.Discord;
 using Server.Groups.Police;
 using Server.Models;
+using Server.Property;
 
 namespace Server.Extensions
 {
@@ -43,6 +44,9 @@ namespace Server.Extensions
         private static void _hourTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
             _hourTimer.Stop();
+
+            PropertyHandler.PlayerEntrances = new List<PlayerEntrance>();
+
             List<Models.Property> mortgageProperties = Models.Property.FetchProperties().Where(x => x.MortgageValue > 0).ToList();
 
             if (!mortgageProperties.Any())
@@ -138,13 +142,11 @@ namespace Server.Extensions
             {
                 lock (player)
                 {
-                    if (player.FetchCharacter() == null) continue;
-
                     if (player.GetClass().CreatorRoom) continue;
 
                     // Payday
 
-                    Models.Character playerCharacter = context.Character.Find(player.GetClass().CharacterId);
+                    Models.Character? playerCharacter = context.Character.Find(player.GetClass().CharacterId);
 
                     if (playerCharacter == null) continue;
 
@@ -219,6 +221,28 @@ namespace Server.Extensions
                     playerCharacter.TotalMinutes += 1;
                 }
             }
+
+            foreach (var vehicle in Alt.GetAllVehicles())
+            {
+                lock (vehicle)
+                {
+                    if (!vehicle.Exists) continue;
+
+                    var vehicleData = vehicle.FetchVehicleData();
+
+                    if (vehicleData is null) continue;
+
+                    var vehicleContext = context.Vehicle.FirstOrDefault(x => x.Id == vehicleData.Id);
+
+                    if (vehicleContext is null) continue;
+
+                    if (vehicleContext.RespawnDelay > 0)
+                    {
+                        vehicleContext.RespawnDelay -= 1;
+                    }
+                }
+            }
+
             //DiscordBot.UpdateDiscordPlayerCount(Alt.GetAllPlayers().Count(x => x.FetchCharacter() != null));
             context.SaveChanges();
             _minuteTimer.Start();

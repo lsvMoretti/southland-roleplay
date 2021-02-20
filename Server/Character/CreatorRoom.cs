@@ -677,7 +677,15 @@ namespace Server.Character
                             player.RequestIpl(propertyInterior.Ipl);
 
                             player.Dimension = insideProperty.Id;
-                            player.SetPosition(propertyInterior.Position, Rotation.Zero);
+
+                            if (propertyInterior.IsMapped == true)
+                            {
+                                player.SetPosition(propertyInterior.Position, player.Rotation, 5000, unfreezeTime: 5000);
+                            }
+                            else
+                            {
+                                player.Position = propertyInterior.Position;
+                            }
                             player.SetSyncedMetaData("PlayerDimension", player.Dimension);
 
                             List<string> propertyPropList =

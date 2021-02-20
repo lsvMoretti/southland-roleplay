@@ -233,6 +233,16 @@ namespace Server.Models
         public string? StolenPlate { get; set; }
 
         /// <summary>
+        /// Amount of parts removed from chop shop
+        /// </summary>
+        public int RemovedParts { get; set; }
+
+        /// <summary>
+        /// Respawn delay if above 0, can't respawn
+        /// </summary>
+        public int RespawnDelay { get; set; }
+
+        /// <summary>
         /// Find vehicle
         /// </summary>
         /// <param name="id"></param>

@@ -34,7 +34,7 @@ namespace Server.Groups.Police.MDT
 
             List<Rank> factionRanks = JsonConvert.DeserializeObject<List<Rank>>(activeFaction.RanksJson);
 
-            PlayerFaction playerFaction = JsonConvert
+            PlayerFaction? playerFaction = JsonConvert
                 .DeserializeObject<List<PlayerFaction>>(playerCharacter.FactionList)
                 .FirstOrDefault(x => x.Id == activeFaction.Id);
 
@@ -52,6 +52,8 @@ namespace Server.Groups.Police.MDT
             player.FreezeCam(true);
             player.FreezePlayer(true);
 
+            player.SetKeybindStatus(false);
+
             if (hasUnitData)
             {
                 player.Emit("showMDC", playerCharacter.Name, playerRank.Name, unit);
@@ -68,12 +70,13 @@ namespace Server.Groups.Police.MDT
         /// <param name="player"></param>
         public static void CloseMdt(IPlayer player)
         {
-            player.Emit("closeMDC");
+            //player.Emit("closeMDC");
             player.ChatInput(true);
             player.HideChat(false);
             player.ShowCursor(false);
             player.FreezeCam(false);
             player.FreezePlayer(false);
+            player.SetKeybindStatus(true);
         }
 
         /// <summary>

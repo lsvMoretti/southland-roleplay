@@ -633,6 +633,16 @@ namespace Server.Extensions
             context.SaveChanges();
         }
 
+        /// <summary>
+        /// Toggles the use of keybinds
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="status">True = Keybinds allowed</param>
+        public static void SetKeybindStatus(this IPlayer player, bool status)
+        {
+            player.Emit("setKeybindStatus", status);
+        }
+
         public static PlayerEntity GetClass(this IPlayer player)
         {
             if (player.GetData("player-class", out PlayerEntity data))

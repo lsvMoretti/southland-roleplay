@@ -24,6 +24,8 @@ var nativeUiMenuOpen = false;
 
 let pointing = new Fingerpointing();
 
+let allowKeybind:boolean = true;
+
 export function SetNativeUiState(state: boolean) {
     nativeUiMenuOpen = state;
 }
@@ -38,6 +40,10 @@ alt.onServer('setPlayerSpawned', (toggle: boolean) => {
 });
 
 var sirenMute: boolean = false;
+
+alt.onServer('setKeybindStatus', (toggle:boolean) => {
+    allowKeybind = toggle;
+})
 
 alt.setInterval(() => {
 
@@ -86,6 +92,8 @@ alt.setInterval(() => {
 
 alt.on('keyup', async (key) => {
     if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;
+
+    if(!allowKeybind) return;
 
     if (getEditObjectStatus()) {
         return;
@@ -443,6 +451,8 @@ alt.on('keyup', async (key) => {
 alt.on('keydown', (key) => {
     if (chatHandler.IsChatOpen() || nativeUiMenuOpen || vehicleHandler.IsScrambleOpen()) return;
 
+    if(!allowKeybind) return;
+
     if (getEditObjectStatus()) {
         onKeyDownEvent(key);
         return;
@@ -472,6 +482,7 @@ alt.on('EnteredVehicle', () => {
 
 alt.setInterval(() => {
     if (!IsSpawned) return;
+    if(!allowKeybind) return;
 
     if (native.isControlPressed(0, 48)) {
         // INPUT_HUD_SPECIAL

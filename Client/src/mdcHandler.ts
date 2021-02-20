@@ -243,10 +243,10 @@ function mdcHomePageLoaded() {
 
 function closeMdc() {
     if (mdcWindow === undefined) return;
+    alt.emitServer('mdcWindowClose');
     alt.setTimeout(() => {
         mdcWindow.destroy();
         mdcWindow = undefined;
-        alt.emitServer('mdcWindowClose');
     }, 1000);
     alt.showCursor(false);
 }

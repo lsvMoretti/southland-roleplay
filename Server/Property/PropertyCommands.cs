@@ -276,7 +276,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -334,7 +334,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -352,7 +352,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -370,7 +370,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -388,7 +388,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -407,7 +407,7 @@ namespace Server.Property
                 player.RemoveCash(price);
 
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -446,7 +446,7 @@ namespace Server.Property
                 player.RemoveCash(price);
 
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
                 player.SendInfoNotification($"Your new phone number is: {newPhone.PhoneNumber}");
                 return;
@@ -468,7 +468,7 @@ namespace Server.Property
                 player.RemoveCash(price);
 
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
 
                 return;
@@ -483,7 +483,7 @@ namespace Server.Property
             }
 
             property.AddToBalance(selectedItem.Price);
-            property.RemoveProduct();
+            property.RemoveProducts();
             player.RemoveCash(price);
 
             player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
@@ -600,6 +600,25 @@ namespace Server.Property
 
             playerCharacter.InsideProperty = nearestProperty.Id;
             playerCharacter.Dimension = dimension;
+
+            if (nearestProperty.PropertyType != PropertyType.House && nearestProperty.OwnerId != 0)
+            {
+                // Boosted Earnings on players entering
+                var playerEntered = PropertyHandler.PlayerEntrances.FirstOrDefault(x =>
+                    x.PropertyId == nearestProperty.Id && x.CharacterId == playerCharacter.Id);
+
+                if (playerEntered == null)
+                {
+                    PropertyHandler.PlayerEntrances.Add(new PlayerEntrance(nearestProperty.Id, playerCharacter.Id));
+
+                    int totalEnters = PropertyHandler.PlayerEntrances.Count(x => x.PropertyId == nearestProperty.Id);
+
+                    if (totalEnters % 5 == 0)
+                    {
+                        nearestProperty.AddToBalance(500);
+                    }
+                }
+            }
 
             context.SaveChanges();
 
