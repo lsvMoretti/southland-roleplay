@@ -1590,7 +1590,7 @@ namespace Server.Vehicle
             if (propertyGarage == null)
             {
                 List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId)
-                    .Where(x => !x.Spawned && !x.IsStored).ToList();
+                    .Where(x => !x.Spawned && !x.IsStored && x.RespawnDelay > 0).ToList();
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
@@ -1629,6 +1629,8 @@ namespace Server.Vehicle
 
             foreach (Models.Vehicle garageVehicle in garageVehicles)
             {
+                if (garageVehicle.RespawnDelay > 0) continue;
+
                 if (garageVehicle.FactionId > 0 && playerCharacter.ActiveFaction == garageVehicle.FactionId)
                 {
                     garageItems.Add(new NativeMenuItem(garageVehicle.Name, garageVehicle.Plate));
@@ -1737,7 +1739,7 @@ namespace Server.Vehicle
             if (option == "Close") return;
 
             List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId)
-                .Where(x => !x.Spawned).ToList();
+                .Where(x => !x.Spawned && x.RespawnDelay > 0).ToList();
 
             Models.Vehicle selectedVehicle = playerVehicles[index];
 

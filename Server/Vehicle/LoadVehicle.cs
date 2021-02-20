@@ -119,7 +119,7 @@ namespace Server.Vehicle
             }
         }
 
-        public static async Task<IVehicle> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
+        public static async Task<IVehicle?> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle? vehicle = null;
 
@@ -252,12 +252,17 @@ namespace Server.Vehicle
                 vehicleDb.GarageId = string.Empty;
             }
 
+            if (vehicleDb.RemovedParts != 0)
+            {
+                vehicleDb.RemovedParts = 0;
+            }
+
             await context.SaveChangesAsync();
 
             return vehicle;
         }
 
-        public static IVehicle LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
+        public static IVehicle? LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
 
@@ -393,6 +398,10 @@ namespace Server.Vehicle
                 vehicleDb.GarageId = string.Empty;
             }
 
+            if (vehicleDb.RemovedParts != 0)
+            {
+                vehicleDb.RemovedParts = 0;
+            }
             context.SaveChanges();
 
             return vehicle;

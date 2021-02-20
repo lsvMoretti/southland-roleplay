@@ -1846,6 +1846,24 @@
     "Capacity": 0.1,
     "Price": 15,
     "Stackable": false
+  },
+  {
+    "ID": "ITEM_TOOLBOX",
+    "Name": "Toolbox",
+    "Description": "Useful for removing things.",
+    "Weight": 0.1,
+    "Capacity": 0.1,
+    "Price": 55,
+    "Stackable": false
+  },
+  {
+    "ID": "ITEM_CHOPSHOP_PART",
+    "Name": "Car Part",
+    "Description": "Removed from a vehicle.",
+    "Weight": 1,
+    "Capacity": 1,
+    "Price": 50,
+    "Stackable": false
   }
 
 ]
