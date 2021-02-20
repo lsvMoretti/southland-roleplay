@@ -144,6 +144,8 @@ namespace Server.Jobs.ChopShop
                     }
                     removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(0, true);
+                    nearestVehicle.SetWheelBurst(0, true);
+                    nearestVehicle.SetWheelHasTire(0, false);
                     removeVehicleDb.RemovedParts += 1;
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the left front wheel from the vehicle.");
@@ -192,6 +194,8 @@ namespace Server.Jobs.ChopShop
                     }
                     removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(1, true);
+                    nearestVehicle.SetWheelBurst(1, true);
+                    nearestVehicle.SetWheelHasTire(1, false);
                     removeVehicleDb.RemovedParts += 1;
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the right front wheel from the vehicle.");
@@ -240,6 +244,8 @@ namespace Server.Jobs.ChopShop
                     }
                     removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(4, true);
+                    nearestVehicle.SetWheelBurst(4, true);
+                    nearestVehicle.SetWheelHasTire(4, false);
                     removeVehicleDb.RemovedParts += 1;
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the left rear wheel from the vehicle.");
@@ -288,6 +294,8 @@ namespace Server.Jobs.ChopShop
                     }
                     removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(5, true);
+                    nearestVehicle.SetWheelBurst(5, true);
+                    nearestVehicle.SetWheelHasTire(5, false);
                     removeVehicleDb.RemovedParts += 1;
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the right rear wheel from the vehicle.");
