@@ -153,7 +153,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(0, true);
                     nearestVehicle.SetWheelBurst(0, true);
                     nearestVehicle.SetWheelHasTire(0, false);
@@ -163,14 +162,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the left front wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -217,7 +208,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(1, true);
                     nearestVehicle.SetWheelBurst(1, true);
                     nearestVehicle.SetWheelHasTire(1, false);
@@ -228,13 +218,6 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
-
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -281,7 +264,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(4, true);
                     nearestVehicle.SetWheelBurst(4, true);
                     nearestVehicle.SetWheelHasTire(4, false);
@@ -292,13 +274,6 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
-
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -345,7 +320,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetWheelDetached(5, true);
                     nearestVehicle.SetWheelBurst(5, true);
                     nearestVehicle.SetWheelHasTire(5, false);
@@ -355,15 +329,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the right rear wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-
-                    Position vehiclePosition = nearestVehicle.Position;
-
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -410,7 +375,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetLightDamaged(0, true);
                     removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
@@ -418,14 +382,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the left headlight from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -472,7 +428,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetLightDamaged(1, true);
                     removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
@@ -480,13 +435,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the right headlight from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -533,7 +481,6 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
-                    removeContext.SaveChanges();
                     nearestVehicle.SetBumperDamageLevel(0, 2);
                     removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
@@ -541,13 +488,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the front bumper from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -602,13 +542,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the rear bumper from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -663,13 +596,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the front left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -724,13 +650,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the front right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -784,13 +703,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the rear left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -844,13 +756,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the rear right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -904,13 +809,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the middle left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
@@ -964,14 +862,6 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the middle right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
-                    Position vehiclePosition = nearestVehicle.Position;
-
-                    Task.Run(async () =>
-                    {
-                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
-
-                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
-                    });
                 };
                 return;
             }
