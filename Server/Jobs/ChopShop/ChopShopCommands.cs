@@ -15,10 +15,11 @@ namespace Server.Jobs.ChopShop
     {
         private static readonly string ToolboxItem = "ITEM_TOOLBOX";
         private static readonly string PlayerLastPartRemoved = "ChopShop:LastPartRemoveTime";
-        private static readonly int MaxPartsFromVehicle = 5;
+        public static readonly int MaxPartsFromVehicle = 5;
         private static readonly string ChopShopPart = "ITEM_CHOPSHOP_PART";
         private static readonly string ChopShopCommandInUse = "ChopShop:CommandInUse";
         private static readonly double ChopWaitTime = 60000;
+        private static readonly string StopChopData = "ChopShop:StopChop";
 
         [Command("chop", commandType: CommandType.Vehicle, description: "Used to start chopping parts of a vehicle")]
         public static void ChopShopCommandChop(IPlayer player)
@@ -118,6 +119,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -168,6 +174,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -218,6 +229,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -268,6 +284,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -324,6 +345,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -378,6 +404,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -431,6 +462,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -484,6 +520,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -536,6 +577,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -588,6 +634,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -639,6 +690,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -690,6 +746,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -741,6 +802,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -792,6 +858,11 @@ namespace Server.Jobs.ChopShop
                 timer.Elapsed += (sender, args) =>
                 {
                     if (!player.Exists) return;
+                    if (player.HasData(StopChopData))
+                    {
+                        player.DeleteData(StopChopData);
+                        return;
+                    }
                     if (!nearestVehicle.Exists)
                     {
                         player.SendErrorNotification("Unable to find the vehicle");
@@ -833,6 +904,18 @@ namespace Server.Jobs.ChopShop
 
             player.SendErrorNotification("Unable to remove any more parts from the vehicle!");
             return;
+        }
+
+        [Command("stopchop", commandType: CommandType.Vehicle, description: "Used to stop chopping a vehicle")]
+        public static void ChopShopCommandStopChop(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            if (!player.HasData(ChopShopCommandInUse))
+            {
+                player.SendErrorNotification("You've not started chopping a vehicle!");
+                return;
+            }
         }
     }
 }

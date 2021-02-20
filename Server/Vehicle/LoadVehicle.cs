@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Server.Character;
 using Server.Extensions;
+using Server.Jobs.ChopShop;
 
 namespace Server.Vehicle
 {
@@ -181,6 +182,11 @@ namespace Server.Vehicle
                 vehicle.ManualEngineControl = false;
             }
 
+            if (vehicleData.RemovedParts >= ChopShopCommands.MaxPartsFromVehicle)
+            {
+                ignoreDamage = true;
+            }
+
             if (!ignoreDamage)
             {
                 if (!string.IsNullOrEmpty(vehicleData.DamageData))
@@ -325,6 +331,11 @@ namespace Server.Vehicle
                 // Cycle
                 vehicle.EngineOn = true;
                 vehicle.ManualEngineControl = false;
+            }
+
+            if (vehicleData.RemovedParts >= ChopShopCommands.MaxPartsFromVehicle)
+            {
+                ignoreDamage = true;
             }
 
             if (!ignoreDamage)
