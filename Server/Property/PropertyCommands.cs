@@ -276,7 +276,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -334,7 +334,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -352,7 +352,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -370,7 +370,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -388,7 +388,7 @@ namespace Server.Property
 
                 player.RemoveCash(price);
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -407,7 +407,7 @@ namespace Server.Property
                 player.RemoveCash(price);
 
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");
                 return;
             }
@@ -446,7 +446,7 @@ namespace Server.Property
                 player.RemoveCash(price);
 
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
                 player.SendInfoNotification($"Your new phone number is: {newPhone.PhoneNumber}");
                 return;
@@ -468,7 +468,7 @@ namespace Server.Property
                 player.RemoveCash(price);
 
                 property.AddToBalance(selectedItem.Price);
-                property.RemoveProduct();
+                property.RemoveProducts();
                 player.SendInfoNotification($"You’ve bought {selectedItem.Name} for {price:C}.");
 
                 return;
@@ -483,7 +483,7 @@ namespace Server.Property
             }
 
             property.AddToBalance(selectedItem.Price);
-            property.RemoveProduct();
+            property.RemoveProducts();
             player.RemoveCash(price);
 
             player.SendInfoNotification($"You've bought {selectedItem.Name} for {price:C}");

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Timers;
@@ -6,9 +7,11 @@ using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
+using Newtonsoft.Json;
 using Server.Commands;
 using Server.Extensions;
 using Server.Inventory;
+using Server.Models;
 using Server.Vehicle;
 
 namespace Server.Jobs.ChopShop
@@ -155,6 +158,7 @@ namespace Server.Jobs.ChopShop
                     nearestVehicle.SetWheelBurst(0, true);
                     nearestVehicle.SetWheelHasTire(0, false);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the left front wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -218,6 +222,7 @@ namespace Server.Jobs.ChopShop
                     nearestVehicle.SetWheelBurst(1, true);
                     nearestVehicle.SetWheelHasTire(1, false);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the right front wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -281,6 +286,7 @@ namespace Server.Jobs.ChopShop
                     nearestVehicle.SetWheelBurst(4, true);
                     nearestVehicle.SetWheelHasTire(4, false);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the left rear wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -344,6 +350,7 @@ namespace Server.Jobs.ChopShop
                     nearestVehicle.SetWheelBurst(5, true);
                     nearestVehicle.SetWheelHasTire(5, false);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the right rear wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -406,6 +413,7 @@ namespace Server.Jobs.ChopShop
                     removeContext.SaveChanges();
                     nearestVehicle.SetLightDamaged(0, true);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the left headlight from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -467,6 +475,7 @@ namespace Server.Jobs.ChopShop
                     removeContext.SaveChanges();
                     nearestVehicle.SetLightDamaged(1, true);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the right headlight from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -527,6 +536,7 @@ namespace Server.Jobs.ChopShop
                     removeContext.SaveChanges();
                     nearestVehicle.SetBumperDamageLevel(0, 2);
                     removeVehicleDb.RemovedParts += 1;
+                    removeContext.SaveChanges();
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front bumper from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -584,6 +594,8 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetBumperDamageLevel(1, 2);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -643,6 +655,8 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetPartDamageLevel(0, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -702,6 +716,8 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetPartDamageLevel(1, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -760,6 +776,8 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetPartDamageLevel(4, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -818,6 +836,8 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetPartDamageLevel(5, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -876,6 +896,8 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetPartDamageLevel(2, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -927,6 +949,7 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Your inventory is full!");
                         return;
                     }
+
                     Context removeContext = new Context();
                     var removeVehicleDb = removeContext.Vehicle.FirstOrDefault(x => x.Id == vehicleDb.Id);
                     if (removeVehicleDb is null)
@@ -934,6 +957,7 @@ namespace Server.Jobs.ChopShop
                         player.SendErrorNotification("Unable to get the vehicle data.");
                         return;
                     }
+                    removeVehicleDb.RemovedParts += 1;
                     removeContext.SaveChanges();
                     nearestVehicle.SetPartDamageLevel(3, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
@@ -968,7 +992,84 @@ namespace Server.Jobs.ChopShop
             }
 
             player.SetData(StopChopData, true);
+            player.DeleteData(ChopShopCommandInUse);
             player.SendInfoNotification("You've stopped chopping!");
+        }
+
+        [Command("sellparts", commandType: CommandType.Vehicle, description: "Used to sell chopped parts to a modshop")]
+        public static void ChopShopCommandSellParts(IPlayer player)
+        {
+            if (!player.IsSpawned()) return;
+
+            var playerInventory = player.FetchInventory();
+
+            if (playerInventory is null) return;
+
+            var chopParts = playerInventory.GetInventoryItems(ChopShopPart);
+
+            if (!chopParts.Any())
+            {
+                player.SendErrorNotification("You don't have any parts on you!");
+                return;
+            }
+
+            var nearbyProperty = Models.Property.FetchNearbyProperty(player, 7f);
+
+            if (nearbyProperty == null)
+            {
+                var properties = Models.Property.FetchProperties();
+
+                foreach (var property in properties)
+                {
+                    var points =
+                        JsonConvert.DeserializeObject<List<PropertyInteractionPoint>>(property.InteractionPoints);
+
+                    if (points.Any())
+                    {
+                        foreach (PropertyInteractionPoint propertyInteractionPoint in points)
+                        {
+                            Position position = new Position(propertyInteractionPoint.PosX, propertyInteractionPoint.PosY, propertyInteractionPoint.PosZ);
+
+                            if (player.Position.Distance(position) <= 7f)
+                            {
+                                nearbyProperty = property;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (nearbyProperty == null)
+                {
+                    player.SendErrorNotification("You're not near a property.");
+                    return;
+                }
+            }
+
+            if (nearbyProperty.PropertyType != PropertyType.VehicleModShop)
+            {
+                player.SendErrorNotification("You must be near a modshop.");
+                return;
+            }
+
+            int count = 0;
+            foreach (var chopPart in chopParts)
+            {
+                if (!playerInventory.RemoveItem(chopPart)) continue;
+                count++;
+            }
+
+            if (count == 0)
+            {
+                player.SendErrorNotification("Unable to add the parts to the garage!");
+                return;
+            }
+
+            double partPrice = chopParts.First().ItemInfo.Price;
+            nearbyProperty.AddProducts(count);
+            double earnings = partPrice * count;
+            player.SendInfoNotification($"You've sold {count} parts for a total of {earnings:C}");
+            player.AddCash(earnings);
         }
     }
 }
