@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Timers;
+using AltV.Net;
 using AltV.Net.Data;
 using AltV.Net.Elements.Entities;
 using AltV.Net.Enums;
@@ -157,6 +159,14 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the left front wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                    Position vehiclePosition = nearestVehicle.Position;
+
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
+
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -212,6 +222,14 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the right front wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                    Position vehiclePosition = nearestVehicle.Position;
+
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
+
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -267,6 +285,14 @@ namespace Server.Jobs.ChopShop
                     player.SendInfoNotification("You've removed the left rear wheel from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
+                    Position vehiclePosition = nearestVehicle.Position;
+
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
+
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -325,9 +351,12 @@ namespace Server.Jobs.ChopShop
 
                     Position vehiclePosition = nearestVehicle.Position;
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -383,10 +412,12 @@ namespace Server.Jobs.ChopShop
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
 
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -441,10 +472,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -499,10 +532,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -556,10 +591,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -613,10 +650,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -670,10 +709,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -726,10 +767,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -782,10 +825,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -838,10 +883,12 @@ namespace Server.Jobs.ChopShop
                     player.DeleteData(ChopShopCommandInUse);
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
-
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -895,9 +942,12 @@ namespace Server.Jobs.ChopShop
                     player.SetData(PlayerLastPartRemoved, DateTime.Now);
                     Position vehiclePosition = nearestVehicle.Position;
 
-                    LoadVehicle.UnloadVehicle(nearestVehicle);
+                    Task.Run(async () =>
+                    {
+                        LoadVehicle.UnloadVehicle(nearestVehicle, true);
 
-                    LoadVehicle.LoadDatabaseVehicle(vehicleData, vehiclePosition);
+                        await LoadVehicle.LoadDatabaseVehicleAsync(removeVehicleDb, vehiclePosition);
+                    });
                 };
                 return;
             }
@@ -916,6 +966,9 @@ namespace Server.Jobs.ChopShop
                 player.SendErrorNotification("You've not started chopping a vehicle!");
                 return;
             }
+
+            player.SetData(StopChopData, true);
+            player.SendInfoNotification("You've stopped chopping!");
         }
     }
 }
