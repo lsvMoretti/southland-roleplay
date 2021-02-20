@@ -500,7 +500,13 @@ namespace Server.Vehicle
 
                         if (vehicleCharacter is null) continue;
 
-                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(15), DateTime.Now) > 0)
+                        var characterAccount = Models.Account.FindAccountById(vehicleCharacter.OwnerId);
+
+                        if (characterAccount is null) continue;
+
+                        if (characterAccount.IsOnline) continue;
+
+                        if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(5), DateTime.Now) > 0)
                         {
                             UnloadVehicle(vehicle, true);
 
