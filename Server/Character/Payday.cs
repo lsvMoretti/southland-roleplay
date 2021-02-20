@@ -63,14 +63,7 @@ namespace Server.Character
                     return;
                 }
 
-                if (playerCharacter.TotalHours <= 150)
-                {
-                    _paydayAmount = 550;
-                }
-                else
-                {
-                    _paydayAmount = 150;
-                }
+                _paydayAmount = playerCharacter.TotalHours <= 150 ? 550 : 150;
 
                 if (PaydayBoost > 1)
                 {
