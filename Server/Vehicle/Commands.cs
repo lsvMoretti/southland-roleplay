@@ -1590,7 +1590,7 @@ namespace Server.Vehicle
             if (propertyGarage == null)
             {
                 List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId)
-                    .Where(x => !x.Spawned && !x.IsStored && x.RespawnDelay > 0).ToList();
+                    .Where(x => !x.Spawned && !x.IsStored && x.RespawnDelay == 0).ToList();
 
                 List<NativeMenuItem> menuItems = new List<NativeMenuItem>();
 
@@ -1641,13 +1641,12 @@ namespace Server.Vehicle
                     garageItems.Add(new NativeMenuItem(garageVehicle.Name, garageVehicle.Plate));
                 }
             }
+            player.SetData("VGetGarage", propertyGarage.Id);
 
             NativeMenu garageMenu = new NativeMenu("vehicle:vget:garageMenu", "Vehicles", "Select a vehicle to spawn", garageItems)
             {
                 PassIndex = true
             };
-
-            player.SetData("VGetGarage", propertyGarage.Id);
 
             NativeUi.ShowNativeMenu(player, garageMenu, true);
         }
@@ -1739,7 +1738,7 @@ namespace Server.Vehicle
             if (option == "Close") return;
 
             List<Models.Vehicle> playerVehicles = Models.Vehicle.FetchCharacterVehicles(player.GetClass().CharacterId)
-                .Where(x => !x.Spawned && x.RespawnDelay > 0).ToList();
+                .Where(x => !x.Spawned && x.RespawnDelay == 0).ToList();
 
             Models.Vehicle selectedVehicle = playerVehicles[index];
 
