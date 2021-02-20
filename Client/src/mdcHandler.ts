@@ -24,8 +24,6 @@ alt.onServer('MdcVehicleSearchNoResult', mdcVehicleSearchNoResult);
 alt.onServer('mdc:vehicleSearchResult', vehicleSearchResult);
 
 function showMDC(name: string, rank: string, unit: string) {
-    alt.showCursor(true);
-
     if (unit !== undefined) {
         officerUnit = unit;
     }
@@ -248,5 +246,4 @@ function closeMdc() {
         mdcWindow.destroy();
         mdcWindow = undefined;
     }, 1000);
-    alt.showCursor(false);
 }

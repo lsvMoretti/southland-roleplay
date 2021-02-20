@@ -74,6 +74,10 @@ namespace Server.Groups.Police.MDT
             player.ChatInput(true);
             player.HideChat(false);
             player.ShowCursor(false);
+            player.ShowCursor(false);
+            player.ShowCursor(false);
+            player.ShowCursor(false);
+            player.ShowCursor(false);
             player.FreezeCam(false);
             player.FreezePlayer(false);
             player.SetKeybindStatus(true);

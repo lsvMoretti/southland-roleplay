@@ -529,7 +529,6 @@ namespace Server.Vehicle
                         if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(5), DateTime.Now) > 0)
                         {
                             UnloadVehicle(vehicle, true);
-
                             removeCount += 1;
                         }
                     }
