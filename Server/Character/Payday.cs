@@ -13,7 +13,7 @@ namespace Server.Character
     {
         private static readonly float MaxTax = 1000f;
         private static readonly float MaxInterest = 5000f;
-        private static float _paydayAmount = 120;
+        private static float _paydayAmount = 150;
 
         public static int PaydayBoost = 1;
 
@@ -63,14 +63,7 @@ namespace Server.Character
                     return;
                 }
 
-                if (playerCharacter.TotalHours <= 150)
-                {
-                    _paydayAmount = 520;
-                }
-                else
-                {
-                    _paydayAmount = 120;
-                }
+                _paydayAmount = playerCharacter.TotalHours <= 150 ? 550 : 150;
 
                 if (PaydayBoost > 1)
                 {

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>1.0.2.3</AssemblyVersion>
-    <FileVersion>1.0.2.3</FileVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>

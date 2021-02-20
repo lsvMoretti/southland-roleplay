@@ -27,7 +27,7 @@ namespace Server.Extensions
             context.SaveChanges();
         }
 
-        public static void RemoveProduct(this Models.Property property, int amount = 1)
+        public static void RemoveProducts(this Models.Property property, int amount = 1)
         {
             using Context context = new Context();
 
@@ -36,6 +36,18 @@ namespace Server.Extensions
             if (propertyDb == null) return;
 
             propertyDb.Products -= amount;
+            context.SaveChanges();
+        }
+
+        public static void AddProducts(this Models.Property property, int amount)
+        {
+            using Context context = new Context();
+
+            Models.Property propertyDb = context.Property.Find(property.Id);
+
+            if (propertyDb == null) return;
+
+            propertyDb.Products += amount;
             context.SaveChanges();
         }
     }

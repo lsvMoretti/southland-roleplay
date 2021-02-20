@@ -221,6 +221,28 @@ namespace Server.Extensions
                     playerCharacter.TotalMinutes += 1;
                 }
             }
+
+            foreach (var vehicle in Alt.GetAllVehicles())
+            {
+                lock (vehicle)
+                {
+                    if (!vehicle.Exists) continue;
+
+                    var vehicleData = vehicle.FetchVehicleData();
+
+                    if (vehicleData is null) continue;
+
+                    var vehicleContext = context.Vehicle.FirstOrDefault(x => x.Id == vehicleData.Id);
+
+                    if (vehicleContext is null) continue;
+
+                    if (vehicleContext.RespawnDelay > 0)
+                    {
+                        vehicleContext.RespawnDelay -= 1;
+                    }
+                }
+            }
+
             //DiscordBot.UpdateDiscordPlayerCount(Alt.GetAllPlayers().Count(x => x.FetchCharacter() != null));
             context.SaveChanges();
             _minuteTimer.Start();

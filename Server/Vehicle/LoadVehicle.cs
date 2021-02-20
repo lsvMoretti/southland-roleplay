@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Server.Character;
 using Server.Extensions;
+using Server.Jobs.ChopShop;
 
 namespace Server.Vehicle
 {
@@ -119,7 +120,7 @@ namespace Server.Vehicle
             }
         }
 
-        public static async Task<IVehicle> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
+        public static async Task<IVehicle?> LoadDatabaseVehicleAsync(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle? vehicle = null;
 
@@ -179,6 +180,11 @@ namespace Server.Vehicle
                 // Cycle
                 vehicle.EngineOn = true;
                 vehicle.ManualEngineControl = false;
+            }
+
+            if (vehicleData.RemovedParts >= ChopShopCommands.MaxPartsFromVehicle)
+            {
+                ignoreDamage = true;
             }
 
             if (!ignoreDamage)
@@ -252,12 +258,17 @@ namespace Server.Vehicle
                 vehicleDb.GarageId = string.Empty;
             }
 
+            if (vehicleDb.RemovedParts != 0)
+            {
+                vehicleDb.RemovedParts = 0;
+            }
+
             await context.SaveChangesAsync();
 
             return vehicle;
         }
 
-        public static IVehicle LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
+        public static IVehicle? LoadDatabaseVehicle(Models.Vehicle vehicleData, Position spawnPosition, bool ignoreDamage = false)
         {
             IVehicle vehicle = null;
 
@@ -320,6 +331,11 @@ namespace Server.Vehicle
                 // Cycle
                 vehicle.EngineOn = true;
                 vehicle.ManualEngineControl = false;
+            }
+
+            if (vehicleData.RemovedParts >= ChopShopCommands.MaxPartsFromVehicle)
+            {
+                ignoreDamage = true;
             }
 
             if (!ignoreDamage)
@@ -393,6 +409,10 @@ namespace Server.Vehicle
                 vehicleDb.GarageId = string.Empty;
             }
 
+            if (vehicleDb.RemovedParts != 0)
+            {
+                vehicleDb.RemovedParts = 0;
+            }
             context.SaveChanges();
 
             return vehicle;
@@ -509,7 +529,6 @@ namespace Server.Vehicle
                         if (DateTime.Compare(vehicleCharacter.LastTimeCheck.AddMinutes(5), DateTime.Now) > 0)
                         {
                             UnloadVehicle(vehicle, true);
-
                             removeCount += 1;
                         }
                     }
