@@ -142,7 +142,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetBumperDamageLevelExt(VehicleBumper.Front, VehicleBumperDamage.None);
+                    nearestVehicle.SetBumperDamageLevel(0, 2);
                     removeVehicleDb.RemovedParts += 1;
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front bumper from the vehicle.");
@@ -189,7 +189,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetBumperDamageLevelExt(VehicleBumper.Rear, VehicleBumperDamage.None);
+                    nearestVehicle.SetBumperDamageLevel(1, 2);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the rear bumper from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -235,7 +235,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetPartDamageLevelExt(VehiclePart.FrontLeft, VehiclePartDamage.DamagedLevel3);
+                    nearestVehicle.SetPartDamageLevel(0, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -281,7 +281,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetPartDamageLevelExt(VehiclePart.FrontRight, VehiclePartDamage.DamagedLevel3);
+                    nearestVehicle.SetPartDamageLevel(1, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the front right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -326,7 +326,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetPartDamageLevelExt(VehiclePart.RearLeft, VehiclePartDamage.DamagedLevel3);
+                    nearestVehicle.SetPartDamageLevel(4, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the rear left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -371,7 +371,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetPartDamageLevelExt(VehiclePart.RearRight, VehiclePartDamage.DamagedLevel3);
+                    nearestVehicle.SetPartDamageLevel(5, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the rear right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -416,7 +416,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetPartDamageLevelExt(VehiclePart.MiddleLeft, VehiclePartDamage.DamagedLevel3);
+                    nearestVehicle.SetPartDamageLevel(2, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the middle left from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);
@@ -461,7 +461,7 @@ namespace Server.Jobs.ChopShop
                         return;
                     }
                     removeContext.SaveChanges();
-                    nearestVehicle.SetPartDamageLevelExt(VehiclePart.MiddleRight, VehiclePartDamage.DamagedLevel3);
+                    nearestVehicle.SetPartDamageLevel(3, 3);
                     Models.Vehicle.UpdateVehicle(nearestVehicle);
                     player.SendInfoNotification("You've removed the middle right from the vehicle.");
                     player.DeleteData(ChopShopCommandInUse);

@@ -1651,7 +1651,7 @@ namespace Server.Vehicle
             NativeUi.ShowNativeMenu(player, garageMenu, true);
         }
 
-        public static async void OnGarageVGetSelect(IPlayer player, string option, int index)
+        public static void OnGarageVGetSelect(IPlayer player, string option, int index)
         {
             try
             {
@@ -1699,7 +1699,7 @@ namespace Server.Vehicle
 
                 using Context context = new Context();
 
-                Models.Property property = await context.Property.FindAsync(pGarage.PropertyId);
+                Models.Property property = context.Property.Find(pGarage.PropertyId);
 
                 if (property == null)
                 {
@@ -1710,7 +1710,7 @@ namespace Server.Vehicle
                 List<PropertyGarage> propertyGarages =
                     JsonConvert.DeserializeObject<List<PropertyGarage>>(property.GarageList);
 
-                PropertyGarage propertyGarage = propertyGarages.FirstOrDefault(x => x.Id == garageId);
+                var propertyGarage = propertyGarages.FirstOrDefault(x => x.Id == garageId);
 
                 if (propertyGarage == null)
                 {
@@ -1718,11 +1718,11 @@ namespace Server.Vehicle
                     return;
                 }
 
-                await context.SaveChangesAsync();
+                context.SaveChangesAsync();
 
                 Position spawnPosition = new Position(propertyGarage.PosX, propertyGarage.PosY, propertyGarage.PosZ);
 
-                await LoadVehicle.LoadDatabaseVehicleAsync(selectedVehicle, spawnPosition);
+                LoadVehicle.LoadDatabaseVehicle(selectedVehicle, spawnPosition);
 
                 player.SendInfoNotification($"You have spawned {selectedVehicle.Name}, plate: {selectedVehicle.Plate}.");
             }
