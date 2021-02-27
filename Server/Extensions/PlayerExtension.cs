@@ -1101,6 +1101,19 @@ namespace Server.Extensions
             set => _player.SetData("CurrentWalkStyle", value);
         }
 
+        public bool TesterDuty
+        {
+            get
+            {
+                bool hasTesterDuty = _player.GetSyncedMetaData("TesterDuty", out bool testerDuty);
+
+                if (!hasTesterDuty) return false;
+                return testerDuty;
+            }
+
+            set => _player.SetSyncedMetaData("TesterDuty", value);
+        }
+
         public bool AdminDuty
         {
             get

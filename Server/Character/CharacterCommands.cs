@@ -735,7 +735,7 @@ namespace Server.Character
 
                 if (account.Id == 1) continue;
 
-                if (account.AdminLevel < AdminLevel.Administrator) continue;
+                if (account.AdminLevel < AdminLevel.JuniorAdmin) continue;
 
                 onlineAdmins.Add(onlinePlayer);
             }
@@ -802,7 +802,7 @@ namespace Server.Character
 
                         if (adminAccount == null) continue;
 
-                        if (adminAccount.AdminLevel < AdminLevel.Tester && !adminAccount.Developer) continue;
+                        if (adminAccount.AdminLevel < AdminLevel.JuniorAdmin && !adminAccount.Developer) continue;
 
                         if (!onlineAdmin.GetClass().AdminDuty) continue;
 

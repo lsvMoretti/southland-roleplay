@@ -419,12 +419,50 @@ namespace Server.Chat
             }
         }
 
-        [Command("a", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Admin Chat")]
+        [Command("a", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Admin Chat")]
         public static void CommandAdminChat(IPlayer player, string message = "")
         {
             if (message == "" || message.Length < 2)
             {
                 player.SendSyntaxMessage("/a [Message]");
+                return;
+            }
+
+            string username = player.FetchAccount().Username;
+
+            foreach (IPlayer admin in Alt.GetAllPlayers())
+            {
+                if (!admin.IsSpawned()) continue;
+
+                Models.Account adminAccount = admin.FetchAccount();
+
+                if (adminAccount == null) continue;
+
+                if (adminAccount.AdminLevel < AdminLevel.JuniorAdmin && !adminAccount.Developer) continue;
+
+                if (admin.HasData("AdminChat:Toggled")) continue;
+
+                admin.SendAdminChatMessage($"{username} says: {message}");
+            }
+
+            DiscordEmbedBuilder embedBuilder = new DiscordEmbedBuilder
+            {
+                Title = "In Game Message",
+                Color = DiscordColor.IndianRed
+            };
+
+            embedBuilder.AddField("Message", message);
+            embedBuilder.AddField("Admin", username);
+
+            DiscordHandler.SendEmbedToIgAdminChannel(embedBuilder);
+        }
+
+        [Command("t", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Tester Chat")]
+        public static void CommandTesterChat(IPlayer player, string message = "")
+        {
+            if (message == "" || message.Length < 2)
+            {
+                player.SendSyntaxMessage("/t [Message]");
                 return;
             }
 

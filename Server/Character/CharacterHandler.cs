@@ -443,6 +443,24 @@ namespace Server.Character
             character.PosZ = player.Position.Z;
 
             context.SaveChanges();
+
+            OfficerType officerType = player.GetClass().CurrentDuty;
+
+            if (officerType == OfficerType.Response)
+            {
+                //Do this
+            }
+
+            int afoCount = 0;
+            foreach (var target in Alt.GetAllPlayers())
+            {
+                lock (target)
+                {
+                    if (target.GetClass().CurrentDuty != OfficerType.AFO) continue;
+                    afoCount++;
+                }
+            }
+            Console.Write($"Total AFO Count: {afoCount}");
         }
 
         public static void CheckPlayerAfk()

@@ -68,7 +68,7 @@ namespace Server.Admin
             Payday.PaydayBoost = boost;
         }
 
-        [Command("invisible", AdminLevel.Administrator, commandType: CommandType.Admin,
+        [Command("invisible", AdminLevel.JuniorAdmin, commandType: CommandType.Admin,
             description: "Used to go invisible")]
         public static void AdminCommandInvisible(IPlayer player)
         {
@@ -245,7 +245,7 @@ namespace Server.Admin
             player.Emit("RockstarEditor:Toggle", true);
         }
 
-        [Command("tp", AdminLevel.Tester, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
+        [Command("tp", AdminLevel.JuniorAdmin, commandType: CommandType.Admin, description: "Other: Shows a list of places to TP too")]
         public static void CommandTP(IPlayer player)
         {
             Models.Account playerAccount = player.FetchAccount();
@@ -320,7 +320,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has created a new teleport at their position with the name: {args}.");
         }
 
-        [Command("sendto", AdminLevel.Tester, true, commandType: CommandType.Admin,
+        [Command("sendto", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "TP: TP a player to a location")]
         public static void AdminCommandSendTo(IPlayer player, string args = "")
         {
@@ -393,7 +393,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've sent {targetPlayer.GetClass().Name} to {selectedTeleport.Name}.");
         }
 
-        [Command("ajail", AdminLevel.Tester, true, commandType: CommandType.Admin,
+        [Command("ajail", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "AJail: Used to Admin Jail someone")]
         public static void AdminCommandJail(IPlayer player, string args = "")
         {
@@ -563,7 +563,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Spawned and Teleported {selectedDbVehicle.Name} to you.");
         }
 
-        [Command("agetcar", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Vehicle: TP a vehicle by Id")]
+        [Command("agetcar", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Vehicle: TP a vehicle by Id")]
         public static void AdminCommandGetCar(IPlayer player, string vehicleId = "")
         {
             if (vehicleId == "")
@@ -608,7 +608,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You have spawned vehicle Id: {vid} and teleported it to you.");
         }
 
-        [Command("goto", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: TP to another player")]
+        [Command("goto", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Player: TP to another player")]
         public static void AdminCommandGoto(IPlayer player, string idorname = "")
         {
             if (idorname == "")
@@ -650,7 +650,7 @@ namespace Server.Admin
                 $"You have teleported to {targetPlayer.GetClass().Name} (Id: {targetPlayer.GetPlayerId()})");
         }
 
-        [Command("bring", AdminLevel.Tester, true, "gethere", commandType: CommandType.Admin, description: "Player: Brings another player to you")]
+        [Command("bring", AdminLevel.JuniorAdmin, true, "gethere", commandType: CommandType.Admin, description: "Player: Brings another player to you")]
         public static void AdminCommandBring(IPlayer player, string nameorid = "")
         {
             if (nameorid == "")
@@ -683,7 +683,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has teleported {targetPlayer.GetClass().Name} to their location.");
         }
 
-        [Command("asay", AdminLevel.Administrator, true, "broadcast", commandType: CommandType.Admin, description: "Chat: Announce server wide")]
+        [Command("asay", AdminLevel.JuniorAdmin, true, "broadcast", commandType: CommandType.Admin, description: "Chat: Announce server wide")]
         public static void AdminCommandBroadcast(IPlayer player, string message = "")
         {
             if (message == "")
@@ -783,7 +783,7 @@ namespace Server.Admin
             Logging.AddToCharacterLog(targetPlayer, $"has been un-muted by {adminName}.");
         }
 
-        [Command("arefuel", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Vehicle: Admin refuels a vehicle")]
+        [Command("arefuel", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Vehicle: Admin refuels a vehicle")]
         public static void AdminCommandRefuel(IPlayer player, string fuelLevel = "")
         {
             if (fuelLevel == "")
@@ -900,7 +900,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've updated the camera position for dealership: {selectedDealership.Name}.");
         }
 
-        [Command("dealerid", AdminLevel.Administrator, commandType: CommandType.Admin, description: "Dealership: Returns the nearby dealership id")]
+        [Command("dealerid", AdminLevel.JuniorAdmin, commandType: CommandType.Admin, description: "Dealership: Returns the nearby dealership id")]
         public static void AdminCommandDealershipId(IPlayer player)
         {
             Dealership? nearestDealership = Dealership.FetchDealerships()
@@ -1904,7 +1904,7 @@ namespace Server.Admin
 
         #region Admin Reports
 
-        [Command("ar", AdminLevel.Tester, true, "acceptreport", commandType: CommandType.Admin, description: "Report: Accepts a report")]
+        [Command("ar", AdminLevel.JuniorAdmin, true, "acceptreport", commandType: CommandType.Admin, description: "Report: Accepts a report")]
         public static void AdminCommandAcceptReport(IPlayer player, string idString = "")
         {
             if (idString == "")
@@ -1985,7 +1985,7 @@ namespace Server.Admin
                 $"has accepted report Id {adminReport.Id} for character {targetPlayer.GetClass().Name}.");
         }
 
-        [Command("dr", AdminLevel.Tester, true, "denyreport", commandType: CommandType.Admin, description: "Report: Denies a report")]
+        [Command("dr", AdminLevel.JuniorAdmin, true, "denyreport", commandType: CommandType.Admin, description: "Report: Denies a report")]
         public static void AdminCommandDenyReport(IPlayer player, string idString = "")
         {
             if (idString == "")
@@ -2120,7 +2120,7 @@ namespace Server.Admin
 
         #region Ban Command
 
-        [Command("ban", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Player: Bans a player for specified days")]
+        [Command("ban", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Player: Bans a player for specified days")]
         public static void AdminCommandBan(IPlayer player, string args = "")
         {
             if (args == "")
@@ -2208,7 +2208,7 @@ namespace Server.Admin
 
         #region AFix Vehicle
 
-        [Command("afix", AdminLevel.Tester, commandType: CommandType.Admin, description: "Vehicle: Fixes a vehicle")]
+        [Command("afix", AdminLevel.JuniorAdmin, commandType: CommandType.Admin, description: "Vehicle: Fixes a vehicle")]
         public static void AdminCommandAFix(IPlayer player)
         {
             if (!player.IsInVehicle)
@@ -2237,7 +2237,7 @@ namespace Server.Admin
 
         #region Health and Armor
 
-        [Command("sethealth", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Player: Sets a players health")]
+        [Command("sethealth", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Player: Sets a players health")]
         public static void AdminCommandSetHealth(IPlayer player, string args = "")
         {
             if (args == "")
@@ -2275,7 +2275,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've set {targetPlayer.GetClass().Name}'s health to {health}.");
         }
 
-        [Command("setarmor", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Player: Sets a players armor")]
+        [Command("setarmor", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Player: Sets a players armor")]
         public static void AdminCommandSetArmor(IPlayer player, string args = "")
         {
             if (args == "")
@@ -2469,7 +2469,7 @@ namespace Server.Admin
                 $"Admin {username} has removed vehicle Id {vehicleData.Id} from the server.");
         }
 
-        [Command("createproperty", AdminLevel.Tester, true, commandType: CommandType.Admin, description: "Property: Creates a Property")]
+        [Command("createproperty", AdminLevel.Admin, true, commandType: CommandType.Admin, description: "Property: Creates a Property")]
         public static void AdminCommandCreateProperty(IPlayer player, string args = "")
         {
             if (args == "" || args.Length < 1)
@@ -2480,36 +2480,22 @@ namespace Server.Admin
 
             player.SetData("admin:property:PropertyNumber", args);
 
-            if (player.FetchAccount().AdminLevel >= AdminLevel.HeadAdmin)
+            List<NativeMenuItem> menuItems = new List<NativeMenuItem>
             {
-                List<NativeMenuItem> menuItems = new List<NativeMenuItem>
-                {
-                    new NativeMenuItem("House"),
-                    new NativeMenuItem("General Store"),
-                    new NativeMenuItem("Mod Shop"),
-                    new NativeMenuItem("Clothing Store"),
-                    new NativeMenuItem("Hair Salon"),
-                    new NativeMenuItem("Tattoo"),
-                    new NativeMenuItem("Surgeon"),
-                    new NativeMenuItem("Key Smith"),
-                    new NativeMenuItem("Gun Store"),
-                };
+                new NativeMenuItem("House"),
+                new NativeMenuItem("General Store"),
+                new NativeMenuItem("Mod Shop"),
+                new NativeMenuItem("Clothing Store"),
+                new NativeMenuItem("Hair Salon"),
+                new NativeMenuItem("Tattoo"),
+                new NativeMenuItem("Surgeon"),
+                new NativeMenuItem("Key Smith"),
+                new NativeMenuItem("Gun Store"),
+            };
 
-                NativeMenu menu = new NativeMenu("admin:property:CreatePropertyTypeSelect", "Property", "Select a Property Type", menuItems);
+            NativeMenu menu = new NativeMenu("admin:property:CreatePropertyTypeSelect", "Property", "Select a Property Type", menuItems);
 
-                NativeUi.ShowNativeMenu(player, menu, true);
-            }
-            else
-            {
-                List<NativeMenuItem> menuItems = new List<NativeMenuItem>
-                {
-                    new NativeMenuItem("House"),
-                };
-
-                NativeMenu menu = new NativeMenu("admin:property:CreatePropertyTypeSelect", "Property", "Select a Property Type", menuItems);
-
-                NativeUi.ShowNativeMenu(player, menu, true);
-            }
+            NativeUi.ShowNativeMenu(player, menu, true);
         }
 
         public static void OnCreatePropertyTypeSelect(IPlayer player, string option)
@@ -4028,7 +4014,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"has set property id {property.Id}'s interior to {selectedInterior.InteriorName}.");
         }
 
-        [Command("pstats", AdminLevel.Administrator, commandType: CommandType.Admin,
+        [Command("pstats", AdminLevel.JuniorAdmin, commandType: CommandType.Admin,
             description: "Property: Used to view property stats.")]
         public static void AdminCommandViewPStats(IPlayer player)
         {
@@ -4099,7 +4085,7 @@ namespace Server.Admin
             Logging.AddToAdminLog(player, $"Has set property id {property.Id} products to {products}");
         }
 
-        [Command("aengine", AdminLevel.Administrator, commandType: CommandType.Admin,
+        [Command("aengine", AdminLevel.JuniorAdmin, commandType: CommandType.Admin,
             description: "Vehicle: Used to start an engine")]
         public static void AdminCommandEngine(IPlayer player)
         {
@@ -4131,7 +4117,7 @@ namespace Server.Admin
             context.SaveChanges();
         }
 
-        [Command("vehicle", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
+        [Command("vehicle", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Vehicle: Used to spawn a temporary vehicle.")]
         public static async void VehicleTest(IPlayer player, string model = "")
         {
             if (model == "")
@@ -4159,7 +4145,7 @@ namespace Server.Admin
             player.SendInfoNotification($"Spawned a vehicle with the id of {temporaryVehicle.GetClass().Id}.");
         }
 
-        [Command("gotovehicle", AdminLevel.Tester, true, commandType: CommandType.Admin,
+        [Command("gotovehicle", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "Vehicle: Used to teleport to vehicles.")]
         public static void AdminCommandGotoVehicle(IPlayer player, string args = "")
         {
@@ -4410,7 +4396,7 @@ namespace Server.Admin
             player.SendInfoNotification($"You've set the vehicle livery to {livery}.");
         }
 
-        [Command("acleantag", AdminLevel.Administrator, commandType: CommandType.Admin,
+        [Command("acleantag", AdminLevel.JuniorAdmin, commandType: CommandType.Admin,
             description: "Graffiti: Cleans graffiti")]
         public static void AdminCommandCleanGraffiti(IPlayer player)
         {
@@ -5111,37 +5097,37 @@ namespace Server.Admin
             player.SendInfoNotification($"You've set clerk id {clerkId}'s linked property id to {propertyId}");
         }
 
-        [Command("xp", AdminLevel.Administrator)]
+        [Command("xp", AdminLevel.JuniorAdmin)]
         public static void AdminCommandXp(IPlayer player)
         {
             player.Position = player.Position + new Position(1, 0, 0);
         }
 
-        [Command("mp", AdminLevel.Administrator)]
+        [Command("mp", AdminLevel.JuniorAdmin)]
         public static void AdminCommandMp(IPlayer player)
         {
             player.Position = player.Position - new Position(1, 0, 0);
         }
 
-        [Command("xy", AdminLevel.Administrator)]
+        [Command("xy", AdminLevel.JuniorAdmin)]
         public static void AdminCommandXy(IPlayer player)
         {
             player.Position = player.Position + new Position(0, 1, 0);
         }
 
-        [Command("minusy", AdminLevel.Administrator)]
+        [Command("minusy", AdminLevel.JuniorAdmin)]
         public static void AdminCommandMy(IPlayer player)
         {
             player.Position = player.Position - new Position(0, 1, 0);
         }
 
-        [Command("xz", AdminLevel.Administrator)]
+        [Command("xz", AdminLevel.JuniorAdmin)]
         public static void AdminCommandXz(IPlayer player)
         {
             player.Position = player.Position + new Position(0, 0, 1);
         }
 
-        [Command("mz", AdminLevel.Administrator)]
+        [Command("mz", AdminLevel.JuniorAdmin)]
         public static void AdminCommandMz(IPlayer player)
         {
             player.Position = player.Position - new Position(0, 0, 1);
@@ -5715,7 +5701,7 @@ namespace Server.Admin
             }
         }
 
-        [Command("ainv", AdminLevel.Administrator, true, commandType: CommandType.Admin,
+        [Command("ainv", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "Inventory: Used to see a players inventory")]
         public static void AdminCommandViewInventory(IPlayer player, string args = "")
         {
@@ -6333,13 +6319,13 @@ namespace Server.Admin
             player.SendInfoNotification($"You have gone to interior: {selectedInterior.InteriorName}.");
         }
 
-        [Command("registerdoor", AdminLevel.Administrator, commandType: CommandType.Admin, description: "Doors: Used to register a door")]
+        [Command("registerdoor", AdminLevel.JuniorAdmin, commandType: CommandType.Admin, description: "Doors: Used to register a door")]
         public static void CommandDoorTest(IPlayer player)
         {
             player.Emit("getClosestDoor");
         }
 
-        [Command("setdoorowner", AdminLevel.Administrator, true, commandType: CommandType.Admin,
+        [Command("setdoorowner", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "Door: Used to set a door to a character")]
         public static void AdminCommandSetDoorOwner(IPlayer player, string args = "")
         {
@@ -6383,7 +6369,7 @@ namespace Server.Admin
             player.SendNotification($"~r~You've set door id {doorId} owner to {characterId}.");
         }
 
-        [Command("setdoorproperty", AdminLevel.Administrator, true, commandType: CommandType.Admin,
+        [Command("setdoorproperty", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "Door: Used to set a door to a property")]
         public static void AdminCommandSetDoorProperty(IPlayer player, string args = "")
         {
@@ -6435,7 +6421,7 @@ namespace Server.Admin
             player.SendNotification($"~r~You've set door id {doorId} property to {propertyId}.");
         }
 
-        [Command("setdoorfaction", AdminLevel.Administrator, true, commandType: CommandType.Admin,
+        [Command("setdoorfaction", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin,
             description: "Door: Used to set a door to a faction")]
         public static void AdminCommandSetDoorFaction(IPlayer player, string args = "")
         {
@@ -6487,7 +6473,7 @@ namespace Server.Admin
             player.SendNotification($"~r~You've set door id {doorId} faction to {factionId}.");
         }
 
-        [Command("alockdoor", AdminLevel.Administrator, true, commandType: CommandType.Admin, description: "Doors: Used to lock/unlock a door")]
+        [Command("alockdoor", AdminLevel.JuniorAdmin, true, commandType: CommandType.Admin, description: "Doors: Used to lock/unlock a door")]
         public static void AdminCommandALockDoor(IPlayer player, string args = "")
         {
             Door nearestDoor = null;
@@ -6580,7 +6566,35 @@ namespace Server.Admin
             player.SendInfoNotification($"Door set to your dimension of {player.Dimension}.");
         }
 
-        [Command("aduty", AdminLevel.Tester, commandType: CommandType.Admin,
+        [Command("testerduty", AdminLevel.Tester, commandType: CommandType.Admin,
+            description: "Used to go on admin duty")]
+        public static void AdminCommandTesterDuty(IPlayer player)
+        {
+            if (player.GetClass().TesterDuty)
+            {
+                // On Duty
+
+                player.GetClass().TesterDuty = false;
+                player.Emit("EnabledAdminDuty", false);
+                player.LoadCharacterCustomization();
+            }
+            else
+            {
+                bool hasCurrentWeaponData = player.GetData("CurrentWeaponHash", out uint weaponHash);
+
+                if (hasCurrentWeaponData && weaponHash != 0)
+                {
+                    player.Emit("fetchCurrentAmmo", "admin:duty:fetchAmmo", player.CurrentWeapon);
+                }
+
+                player.GetClass().TesterDuty = true;
+                player.Emit("EnabledAdminDuty", true);
+
+                player.SetData("OldAdminId", player.GetPlayerId());
+            }
+        }
+
+        [Command("aduty", AdminLevel.JuniorAdmin, commandType: CommandType.Admin,
             description: "Used to go on admin duty")]
         public static void AdminCommandAdminDuty(IPlayer player)
         {
