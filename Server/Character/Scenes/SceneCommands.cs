@@ -57,7 +57,7 @@ namespace Server.Character.Scenes
 
             Scene? nearestScene = null;
 
-            if (player.FetchAccount()?.AdminLevel >= AdminLevel.Administrator)
+            if (player.FetchAccount()?.AdminLevel >= AdminLevel.JuniorAdmin)
             {
                 nearestScene = SceneHandler.FetchNearestScene(playerPosition);
             }
@@ -80,7 +80,7 @@ namespace Server.Character.Scenes
 
             if (player.GetClass().CharacterId != nearestScene.CharacterId)
             {
-                if (player.FetchAccount()?.AdminLevel < AdminLevel.Administrator)
+                if (player.FetchAccount()?.AdminLevel < AdminLevel.JuniorAdmin)
                 {
                     player.SendErrorNotification("You can't remove this scene.");
                     return;

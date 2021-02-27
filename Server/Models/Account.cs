@@ -48,7 +48,7 @@ namespace Server.Models
         public DateTime RegistrationDate { get; set; }
 
         /// <summary>
-        /// Administrator level
+        /// JuniorAdmin level
         /// </summary>
         public AdminLevel AdminLevel { get; set; }
 
@@ -159,10 +159,13 @@ namespace Server.Models
         [Description("Tester")]
         Tester,
 
-        [Description("Administrator")]
-        Administrator,
+        [Description("Junior Admininistrator")]
+        JuniorAdmin,
 
-        [Description("Head Administrator")]
+        [Description("Admininistrator")]
+        Admin,
+
+        [Description("Head JuniorAdmin")]
         HeadAdmin,
 
         [Description("Management")]
